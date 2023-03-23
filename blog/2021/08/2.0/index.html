@@ -1,0 +1,496 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Uppy 2.0.0: smaller, faster, modular plugins, Preact X, stricter types, and much more — Uppy</title>
+    <meta charset="utf-8">
+    <meta name="title" content="Uppy 2.0.0: smaller, faster, modular plugins, Preact X, stricter types, and much more — Uppy">
+    <meta name="description" content="Today, our tails are positively wagging with excitement about the release of Uppy 2.0! This latest version is on average 25% smaller and up to a thousand times faster, thanks to dropping support for IE11 and a lot of refactoring work. We’ve upgraded many dependencies, most notably Preact 8 to Preact X, greatly improved TypeScript support and screen reader accessibility, paid technical debt, and ad">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@uppy_io">
+    <meta name="twitter:creator" content="@uppy_io">
+    <meta property="og:url" content="https://transloadit.github.io/uppy/blog/2021/08/2.0/index.html">
+    <meta property="og:title" content="Uppy 2.0.0: smaller, faster, modular plugins, Preact X, stricter types, and much more — Uppy">
+    <meta name="twitter:title" content="Uppy 2.0.0: smaller, faster, modular plugins, Preact X, stricter types, and much more — Uppy">
+    <meta name="twitter:description" content="Today, our tails are positively wagging with excitement about the release of Uppy 2.0! This latest version is on average 25% smaller and up to a thousand times faster, thanks to dropping support for IE11 and a lot of refactoring work. We’ve upgraded many dependencies, most notably Preact 8 to Preact X, greatly improved TypeScript support and screen reader accessibility, paid technical debt, and ad">
+    <meta property="og:image" content="/uppy/uppy/images/blog/2.0/uppy-2-0-cover.jpg">
+    <meta name="twitter:image" content="/uppy/uppy/images/blog/2.0/uppy-2-0-cover.jpg">
+
+    <meta name="google-site-verification" content="JxARoHXoCI8bD07pLV_u3z6xpuWNcSIZIcHEytyCkUc" />
+
+    <link rel="icon" href="/uppy/images/logos/uppy-dog-head-arrow.png" type="image/x-icon">
+    <link rel="alternate" type="application/rss+xml" title="Uppy" href="/atom.xml">
+
+    <script>
+      window.PAGE_TYPE = ""
+    </script>
+    
+<link rel="stylesheet" href="/uppy/css/main.css?version=2">
+
+    <!-- ^ poor man's solution to css cache busting. bump the version when there's something new we really want users to see -->
+  <meta name="generator" content="Hexo 4.2.1"></head>
+  <body class="page-inner ">
+    <div class="page">
+      <div class="TransloaditBar js-TransloaditBar">
+        <div class="TransloaditBar-about">
+          <!-- <a class="TransloaditBar-logo" href="https://transloadit.com/" target="_blank" rel="noopener">
+            <img class="TransloaditBar-logoImg" src="/uppy/images/transloadit-white-glyph.svg" width="20" height="20" alt="Transloadit">
+          </a> -->
+          <!-- <span>Uppy is an open source project by <a class="TransloaditBar-link" href="https://transloadit.com/" target="_blank">Transloadit</a></span> -->
+          This website is no longer maintained, please visit <a href="//uppy.io" target="_blank" rel="noopener" style="color:inherit">uppy.io</a> to get up-to-date info about Uppy.
+        </div>
+      </div>
+
+      <header id="header" class="MainHeader js-MainHeader">
+        <button class="MainHeader-menuBtn js-MenuBtn"></button>
+
+        <span id="logo" class="MainLogo">
+          <a class="MainLogo-link" href="/uppy/">Uppy</a>
+          <!-- Was used for 1.0, we can re-use for 2.0 or major announcements -->
+          <!-- <a class="MainLogo-announcement" href="/blog/2019/04/1.0/">
+            1.0
+            <span class="MainLogo-emoji">
+              <img src="/uppy/images/party-popper.png" srcset="/uppy/images/party-popper@2x.png 2x" alt="🎉">
+            </span>
+          </a> -->
+        </span>
+
+        <nav>
+          <ul id="nav" class="MainMenu">
+            <!-- @todo uncomment search input when we get our own swifttype -->
+<!-- <li>
+  <form id="search-form" class="MainMenu-search">
+    <input type="text" id="search-query" class="MainMenu-searchQuery st-default-search-input">
+  </form>
+</li> -->
+<!--li><a href="/uppy/guide/" class="nav-link">Guide</a></li-->
+<li><a href="/uppy/docs/" class="nav-link">Docs</a></li>
+<li><a href="/uppy/examples/dashboard/" class="nav-link">Examples</a></li>
+<!--li><a href="/uppy/stats/" class="nav-link">Stats</a></li-->
+<li><a href="/uppy/blog/" class="nav-link current">Blog</a></li>
+<li><a href="/uppy/support/" class="nav-link">Support</a></li>
+<li><a href="https://github.com/transloadit/uppy" target="_blank" rel="noopener" class="nav-link">GitHub</a></li>
+
+          </ul>
+        </nav>
+
+        <div class="MainHeader-tagline">
+          The file uploader that <span class="MainHeader-taglinePart js-MainHeader-taglinePart is-visible">loves to play fetch</span>
+        </div>
+
+        <ul class="MainHeader-taglineList js-MainHeader-taglineList">
+          
+          <li>won’t chew on your shoes</li>
+          
+          <li>is fully housebroken</li>
+          
+          <li>just wants to play with you</li>
+          
+          <li>doesn’t hump your leg</li>
+          
+          <li>also accepts cat pictures</li>
+          
+          <li>loves you unconditionally</li>
+          
+          <li>you don’t have to keep on a leash</li>
+          
+          <li>won’t pee on your rug</li>
+          
+          <li>loves to play fetch</li>
+          
+          <li>doesn’t bite (hard)</li>
+          
+          <li>won’t bark at the mailman</li>
+          
+          <li>is great with the kids</li>
+          
+          <li>can digest anything, even chocolate cake</li>
+          
+          <li>is always happy to see you</li>
+          
+          <li>isn’t afraid of fireworks</li>
+          
+          <li>is allowed everywhere</li>
+          
+        </ul>
+      </header>
+
+      <main class="MainContent js-MainContent" id="main">
+        
+          <div class="Sidebar js-Sidebar is-blog">
+    <ul class="main-menu">
+        <!-- @todo uncomment search input when we get our own swifttype -->
+<!-- <li>
+  <form id="search-form" class="MainMenu-search">
+    <input type="text" id="search-query" class="MainMenu-searchQuery st-default-search-input">
+  </form>
+</li> -->
+<!--li><a href="/uppy/guide/" class="nav-link">Guide</a></li-->
+<li><a href="/uppy/docs/" class="nav-link">Docs</a></li>
+<li><a href="/uppy/examples/dashboard/" class="nav-link">Examples</a></li>
+<!--li><a href="/uppy/stats/" class="nav-link">Stats</a></li-->
+<li><a href="/uppy/blog/" class="nav-link current">Blog</a></li>
+<li><a href="/uppy/support/" class="nav-link">Support</a></li>
+<li><a href="https://github.com/transloadit/uppy" target="_blank" rel="noopener" class="nav-link">GitHub</a></li>
+
+    </ul>
+    <div class="list">
+        <h2>
+            Recent Posts
+            <a href="/atom.xml" rel="noreferrer noopener" target="_blank" style="vertical-align: middle; margin-left: 5px">
+                <img src="/uppy/images/feed.png" style="width:15px;height:15px">
+            </a>
+        </h2>
+
+        <ul>
+  
+  <li>
+    <a href="/blog/2022/12/3.3/" class="sidebar-link">🎄 Uppy 3.1-3.3: Improved AWS S3 Multipart, Single File Mode</a>
+  </li>
+  
+  <li>
+    <a href="/blog/2022/09/3.0/" class="sidebar-link">Uppy 3.0: Future-proof, conveniently easy, stable as ever</a>
+  </li>
+  
+  <li>
+    <a href="/blog/2022/03/2.4-2.7/" class="sidebar-link">Uppy 2.4-2.7: Image Compressor, Transloadit Rate Limiting, ESM</a>
+  </li>
+  
+  <li>
+    <a href="/blog/2021/12/2.1-2.3/" class="sidebar-link">🎄 Uppy 2.1-2.3: Audio plugin, fast and efficient streaming for Companion, production-ready Unsplash, and more</a>
+  </li>
+  
+  <li>
+    <a href="/blog/2021/08/2.0/" class="sidebar-link current">Uppy 2.0.0: smaller, faster, modular plugins, Preact X, stricter types, and much more</a>
+  </li>
+  
+  <li>
+    <a href="/blog/2021/07/1.30/" class="sidebar-link">Uppy 1.30: Angular integration, granular image rotation, Google Drive shortcuts</a>
+  </li>
+  
+  <li>
+    <a href="/blog/2021/05/1.29/" class="sidebar-link">Uppy 1.29: Golden Retriever, disableLocalFiles, Webcam previews, uppy.logout</a>
+  </li>
+  
+  <li>
+    <a href="/blog/2021/04/1.27/" class="sidebar-link">Uppy 1.27: Drop Target plugin, Vue 3 support, Dashboard dynamic meta fields, “Shared with me” in Google Drive</a>
+  </li>
+  
+  <li>
+    <a href="/blog/2021/02/1.26/" class="sidebar-link">Uppy 1.26: Dashboard “disabled”, per-file headers</a>
+  </li>
+  
+  <li>
+    <a href="/blog/2021/01/1.25/" class="sidebar-link">Uppy 1.25: right-to-left scripts, Ukrainian translation, Companion improvements</a>
+  </li>
+  
+  <li>
+    <a href="/blog/2020/12/1.24/" class="sidebar-link">Uppy 1.24: 🎅 Happy Holidays — Svelte, React hook, Auto Open Image Editor</a>
+  </li>
+  
+</ul>
+        <ul class="Social">
+  <li><a href="https://twitter.com/uppy_io" target="_blank" rel="noopener" class="twitter-follow-button" data-show-count="false" data-dnt="true">Follow @uppy_io</a></li>
+  <li><iframe src="https://ghbtns.com/github-btn.html?user=transloadit&repo=uppy&type=watch&count=true"
+allowtransparency="true" frameborder="0" scrolling="0" width="100" height="20"></iframe></li>
+  <!-- to regenerate you can use this link: https://img.shields.io/badge/community-forum-d8006a.svg -->
+  <li><a href="https://community.transloadit.com/c/uppy" target="_blank" rel="noopener"><img src="/uppy/images/community-forum-d8006a.svg" /> </a></li>
+  <li class="BuildBadge">
+   <span class="wrapper">
+     <a href="https://github.com/transloadit/uppy/actions" target="_blank" rel="noopener"><img src="https://github.com/transloadit/uppy/workflows/End-to-end%20tests/badge.svg" alt="Build Status"></a>
+   </span>
+  </li>
+</ul>
+
+    </div>
+</div>
+
+
+<div class="Content js-Content with-sidebar">
+    
+  <h1>Uppy 2.0.0: smaller, faster, modular plugins, Preact X, stricter types, and much more</h1>
+  <div class="post-date">Monday Aug 30, 2021</div>
+    
+    <html><head></head><body><p>Today, our tails are positively wagging with excitement about the release of Uppy 2.0! This latest version is on average 25% smaller and up to a thousand times faster, thanks to dropping support for IE11 and a lot of refactoring work. We’ve upgraded many dependencies, most notably Preact 8 to Preact X, greatly improved TypeScript support and screen reader accessibility, paid technical debt, and added support for multiple messages in the Informer plugin.</p>
+<p>Chow down on all the juicy bits and pieces inside! And make sure to <a href="/uppy/examples/dashboard/">try Uppy live demo</a>.</p>
+<p><img src="/uppy/images/blog/2.0/uppy-2-0-cover.jpg" alt="Uppy 2.0 cover banner"></p>
+<a id="more"></a>
+
+<blockquote>
+<p>Uppy is a sleek, modular JavaScript file uploader that integrates seamlessly with any application. It is made for developers who want to provide their users with the ability to see image previews, edit metadata, pick large files directly from Dropbox, restore selected files when a tab was accidentally closed, or crop an image in-browser before sending.</p>
+</blockquote>
+<hr>
+<h2 id="A-pup-no-more"><a href="#A-pup-no-more" class="headerlink" title="A pup no more"></a>A pup no more</h2><p>Ever since the first introduction of Uppy <a href="/blog/2016/07/uppy-begins/">five years ago</a> (or 36 in <a href="https://www.akc.org/expert-advice/health/how-to-calculate-dog-years-to-human-years/" target="_blank" rel="noopener">dog-years</a>), we’ve always referred to our project as ‘the next open source file uploader for web browsers’. The release of <a href="/blog/2019/04/1.0/">Uppy 1.0</a> a little over two years ago, however, soon led to a steep increase in adoption. Uppy now boasts over <a href="https://github.com/transloadit/uppy/stargazers" target="_blank" rel="noopener">24,000 stargazers on GitHub</a>, making it the undisputed top dog in the world of file uploaders 🌍</p>
+<p>With that in mind, we felt it was high time to give Uppy some more much-needed trimming. We want to take this opportunity to break with the past, to make the project leaner – and to pave the way for an even brighter future for Uppy!</p>
+<img class="border" alt="Uppy 2.0 UI with files" src="/uppy/images/blog/2.0/uppy-ui-with-files.jpg">
+
+<h2 id="Table-of-Contents"><a href="#Table-of-Contents" class="headerlink" title="Table of Contents"></a>Table of Contents</h2><ul>
+<li><a href="#Highlights-since-1-0">Highlights since 1.0</a></li>
+<li><a href="#Smaller-bundles">Smaller bundles</a></li>
+<li><a href="#Faster">Faster</a></li>
+<li><a href="#Preact-X-and-upgraded-dependencies">Preact X and upgraded dependencies</a></li>
+<li><a href="#Plugin-is-replaced-with-BasePlugin-and-UIPlugin"><code>Plugin</code> is replaced with <code>BasePlugin</code> and <code>UIPlugin</code></a></li>
+<li><a href="#Strict-TypeScript-types-by-default">Strict TypeScript types by default</a></li>
+<li><a href="#Batch-pre-signing-URLs-for-AWS-S3-Multipart">Batch pre-signing URL’s for AWS S3 Multipart</a></li>
+<li><a href="#And-more">And more</a></li>
+<li><a href="#What-future-remains-for-1-0?">What future remains for 1.0?</a></li>
+<li><a href="#That’s-it">That’s it</a></li>
+</ul>
+<video alt="Video demo showing updated Uppy 2.0 UI" muted="" autoplay="" loop="">
+  <source src="/uppy/images/uppy-2-0-demo-aug-2021.mp4" type="video/mp4">
+  Your browser does not support the video tag: /uppy/uppy/images/uppy-2-0-demo-aug-2021.mp4
+</video>
+
+<h2 id="Highlights-since-1-0"><a href="#Highlights-since-1-0" class="headerlink" title="Highlights since 1.0"></a>Highlights since 1.0</h2><p>A lot of things have happened since we released Uppy 1.0 in April of 2019. In case you have missed some of our 1.x releases, here is a small overview. We have added:</p>
+<ul>
+<li>Official integrations for <a href="/blog/2020/11/1.23/">Vue</a> (<a href="/blog/2021/04/1.27/">3</a>), <a href="/blog/2021/07/1.30/">Angular</a>, and <a href="/blog/2020/12/1.24/">Svelte</a></li>
+<li><a href="/blog/2020/12/1.24/">Hooks</a> for the React integration</li>
+<li>Support for picking files from <a href="/blog/2020/11/1.23/">Box</a>, <a href="/blog/2020/10/1.22/">Unsplash</a>, <a href="/blog/2020/04/1.10/">Facebook</a>, and <a href="/blog/2020/04/1.10/">OneDrive</a> </li>
+<li><a href="/blog/2021/05/1.29/">“Ghost” files</a>, as part of a revamped Golden Retriever plugin, which makes recovering lost files even more intuitive</li>
+<li>Support for 25 more languages (bringing it to a total of <a href="/docs/locales/#List-of-locale-packs">37</a>)</li>
+<li><a href="/blog/2020/04/1.13/">Dark mode</a> </li>
+<li>an <a href="/blog/2020/07/1.18-image-editor/">Image Editor</a></li>
+<li>And four new core team members: <a href="https://github.com/ajkachnic" target="_blank" rel="noopener">@ajkachnic</a>, <a href="https://github.com/mifi" target="_blank" rel="noopener">@mifi</a>, <a href="https://github.com/aduh95" target="_blank" rel="noopener">@aduh95</a>, and <a href="https://github.com/murderlon" target="_blank" rel="noopener">@murderlon</a></li>
+</ul>
+<h2 id="Smaller-bundles"><a href="#Smaller-bundles" class="headerlink" title="Smaller bundles"></a>Smaller bundles</h2><p>With 2.0, following in the footsteps of Microsoft, we are dropping support for IE11. As a result, we are able to remove all built-in polyfills, and the new bundle size is <strong>25% smaller</strong>! If you want your app to still support older browsers (such as IE11), you may need to add the following polyfills to your bundle:</p>
+<ul>
+<li><a href="https://github.com/mo/abortcontroller-polyfill" target="_blank" rel="noopener">abortcontroller-polyfill</a></li>
+<li><a href="https://github.com/zloirock/core-js" target="_blank" rel="noopener">core-js</a></li>
+<li><a href="https://github.com/mozdevs/mediaDevices-getUserMedia-polyfill" target="_blank" rel="noopener">md-gum-polyfill</a></li>
+<li><a href="https://github.com/que-etc/resize-observer-polyfill" target="_blank" rel="noopener">resize-observer-polyfill</a></li>
+<li><a href="https://github.com/github/fetch" target="_blank" rel="noopener">whatwg-fetch</a></li>
+</ul>
+<p>If you’re using a bundler, you need import these before Uppy:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="token keyword module">import</span> <span class="token string">'core-js'</span>
+<span class="token keyword module">import</span> <span class="token string">'whatwg-fetch'</span>
+<span class="token keyword module">import</span> <span class="token string">'abortcontroller-polyfill/dist/polyfill-patch-fetch'</span>
+<span class="token comment">// Order matters here: AbortController needs fetch, which needs Promise (provided by core-js).</span>
+
+<span class="token keyword module">import</span> <span class="token string">'md-gum-polyfill'</span>
+<span class="token keyword module">import</span> <span class="token imports"><span class="token maybe-class-name">ResizeObserver</span></span> <span class="token keyword module">from</span> <span class="token string">'resize-observer-polyfill'</span>
+
+<span class="token dom variable">window</span><span class="token punctuation">.</span><span class="token property-access"><span class="token maybe-class-name">ResizeObserver</span></span> <span class="token operator">??=</span> <span class="token maybe-class-name">ResizeObserver</span>
+
+<span class="token keyword module">export</span> <span class="token exports"><span class="token punctuation">{</span> <span class="token keyword module">default</span> <span class="token punctuation">}</span></span> <span class="token keyword module">from</span> <span class="token string">'@uppy/core'</span>
+<span class="token keyword module">export</span> <span class="token exports"><span class="token operator">*</span></span> <span class="token keyword module">from</span> <span class="token string">'@uppy/core'</span></pre></td></tr></table></figure>
+<p>If you’re using Uppy from a CDN, we now provide two bundles: one for up-to-date browsers that do not include polyfills and use modern syntax, and one for legacy browsers. When migrating, be mindful about the types of browsers you want to support:</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="token comment">&lt;!-- Modern browsers (recommended) --></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://releases.transloadit.com/uppy/v2.0.1/uppy.min.js<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+
+<span class="token comment">&lt;!-- Legacy browsers (IE11+) --></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">nomodule</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://releases.transloadit.com/uppy/v2.0.1/uppy.legacy.min.js<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>module<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"><span class="token language-javascript"><span class="token keyword module">import</span> <span class="token string">"https://releases.transloadit.com/uppy/v2.0.1/uppy.min.js"</span><span class="token punctuation">;</span></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span></pre></td></tr></table></figure>
+<p>Please note that while you may be able to get 2.0 to work in IE11 this way, we do not officially support it anymore.</p>
+<h2 id="Faster"><a href="#Faster" class="headerlink" title="Faster"></a>Faster</h2><p>Uppy now loads faster thanks to the decreased bundle size. With Uppy 1.0, adding many files (hundreds or even thousands) used to take dozens of seconds. Uppy 2.0 does the same thing in mere milliseconds! So, at least for this specific use case, we feel comfortable in claiming that you may see your loading times go <strong>up to a thousand times faster</strong>.</p>
+<p>This was made possible by avoiding having to re-render all the file components whenever something changes, using <code>memoize</code> and <code>virtual-list</code> (allowing us to only render what is actually visible on screen). In addition, multiple files are now added to state in one go via <code>uppy.addFiles(Array)</code> as opposed to before, when <code>uppy.addFile(File)</code> + <code>uppy.setState</code> were being called in a loop.</p>
+<p>Before optimizations:</p>
+<p><img src="/uppy/images/blog/2.0/uppy-performance-before.gif" alt=""></p>
+<p>And after:</p>
+<p><img src="/uppy/images/blog/2.0/uppy-performance-after.gif" alt=""></p>
+<h2 id="Preact-X-and-upgraded-dependencies"><a href="#Preact-X-and-upgraded-dependencies" class="headerlink" title="Preact X and upgraded dependencies"></a>Preact X and upgraded dependencies</h2><p>We’ve upgraded almost all of Uppy’s dependencies. This includes the migration to Preact X. All plugins that depend on Preact have been upgraded from <code>8.2.9</code> to the latest version <code>10.5.13</code>. If you’d like your custom plugin to continue working with Uppy 2.0, it also needs to be using latest version of Preact.</p>
+<p>Other notable upgrades include browserify to <code>v10</code>, typescript to <code>v4.3</code>, autoprefixer to <code>v10</code>, and lerna to <code>v4</code>.</p>
+<h2 id="Plugin-is-replaced-with-BasePlugin-and-UIPlugin"><a href="#Plugin-is-replaced-with-BasePlugin-and-UIPlugin" class="headerlink" title="Plugin is replaced with BasePlugin and UIPlugin"></a><code>Plugin</code> is replaced with <code>BasePlugin</code> and <code>UIPlugin</code></h2><p><a href="/docs/uppy/"><code>@uppy/core</code></a> provided a <code>Plugin</code> class for creating plugins. This was used for any official plugin, but also for users who want to create their own custom plugin. However, <code>Plugin</code> always came bundled with Preact, even if the plugin itself didn’t add any UI elements.</p>
+<p>As of Uppy 2.0.0, <code>Plugin</code> has been replaced with <code>BasePlugin</code> and <code>UIPlugin</code>. <code>BasePlugin</code> is the minimum you need to create a plugin and <code>UIPlugin</code> adds Preact for rendering user interfaces. </p>
+<p><strong>Note:</strong> some bundlers will include <code>UIPlugin</code> (and therefore Preact) if you import from <code>@uppy/core</code>. To make sure this does not happen, you can import <code>Uppy</code> and <code>BasePlugin</code> directly: </p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="token keyword module">import</span> <span class="token imports"><span class="token maybe-class-name">Uppy</span></span> <span class="token keyword module">from</span> <span class="token string">'@uppy/core/lib/Uppy.js'</span>
+<span class="token keyword module">import</span> <span class="token imports"><span class="token maybe-class-name">BasePlugin</span></span> <span class="token keyword module">from</span> <span class="token string">'@uppy/core/lib/BasePlugin.js'</span></pre></td></tr></table></figure>
+<p>Interested in creating your own plugin? Check out the <a href="/docs/writing-plugins">“writing plugins”</a> guide.</p>
+<h2 id="Strict-TypeScript-types-by-default"><a href="#Strict-TypeScript-types-by-default" class="headerlink" title="Strict TypeScript types by default"></a>Strict TypeScript types by default</h2><p>Uppy used to have loose types by default and strict types as an opt-in. The default export was a function that returned the <code>Uppy</code> class, and the types came bundled with the default export (<code>Uppy.SomeType</code>).</p>
+<figure class="highlight ts"><table><tr><td class="code"><pre><span class="token keyword">import</span> Uppy <span class="token keyword">from</span> <span class="token string">'@uppy/core'</span>
+<span class="token keyword">import</span> Tus <span class="token keyword">from</span> <span class="token string">'@uppy/tus'</span>
+
+<span class="token keyword">const</span> uppy <span class="token operator">=</span> <span class="token generic-function"><span class="token function">Uppy</span><span class="token generic class-name"><span class="token operator">&lt;</span>Uppy<span class="token punctuation">.</span>StrictTypes<span class="token operator">></span></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+uppy<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>Tus<span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  invalidOption<span class="token operator">:</span> <span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token comment">// this will make the compilation fail!</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span></pre></td></tr></table></figure>
+<p>Uppy is now strictly typed by default and loose types have been removed. The default export is the <code>Uppy</code> class and not a function. This means you need to call <code>Uppy</code> with the <code>new</code> keyword when initializing it.</p>
+<figure class="highlight ts"><table><tr><td class="code"><pre><span class="token comment">// ...</span>
+
+<span class="token keyword">const</span> uppy <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Uppy</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+uppy<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>Tus<span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  invalidOption<span class="token operator">:</span> <span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token comment">// this will make the compilation fail!</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span></pre></td></tr></table></figure>
+<p>Uppy types are now individual exports and should be imported separately.</p>
+<!-- eslint-disable @typescript-eslint/no-unused-vars -->
+<figure class="highlight ts"><table><tr><td class="code"><pre><span class="token keyword">import</span> <span class="token keyword">type</span> <span class="token punctuation">{</span> PluginOptions<span class="token punctuation">,</span> UIPlugin<span class="token punctuation">,</span> PluginTarget <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@uppy/core'</span></pre></td></tr></table></figure>
+<h3 id="Event-types"><a href="#Event-types" class="headerlink" title="Event types"></a>Event types</h3><p><a href="/docs/uppy/"><code>@uppy/core</code></a> provides an <a href="/docs/uppy/#uppy-on-39-event-39-action"><code>.on</code></a> method to listen to <a href="/docs/uppy/#Events">events</a>. The types for these events were loose and allowed for invalid events to be passed, such as <code>uppy.on('upload-errrOOOoooOOOOOrrrr')</code>.</p>
+<p>Events have received a big update thanks to <a href="https://github.com/Hawxy" target="_blank" rel="noopener">@Hawxy</a>, making them more strict and accurate.</p>
+<p>A breaking change was required to make this happen:</p>
+<!-- eslint-disable @typescript-eslint/no-unused-vars -->
+<figure class="highlight ts"><table><tr><td class="code"><pre><span class="token comment">// Before:</span>
+
+<span class="token keyword">type</span> <span class="token class-name">Meta</span> <span class="token operator">=</span> <span class="token punctuation">{</span> myCustomMetadata<span class="token operator">:</span> <span class="token builtin">string</span> <span class="token punctuation">}</span>
+
+<span class="token comment">// Invalid event</span>
+uppy<span class="token punctuation">.</span><span class="token generic-function"><span class="token function">on</span><span class="token generic class-name"><span class="token operator">&lt;</span>Meta<span class="token operator">></span></span></span><span class="token punctuation">(</span><span class="token string">'upload-errrOOOoooOOOOOrrrr'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+  <span class="token comment">// ...</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token comment">// After:</span>
+
+<span class="token comment">// Normal event signature</span>
+uppy<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'complete'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>result<span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> successResults <span class="token operator">=</span> result<span class="token punctuation">.</span>successful
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token comment">// Custom signature</span>
+<span class="token keyword">type</span> <span class="token class-name">Meta</span> <span class="token operator">=</span> <span class="token punctuation">{</span> myCustomMetadata<span class="token operator">:</span> <span class="token builtin">string</span> <span class="token punctuation">}</span>
+
+<span class="token comment">// Notice how the custom type has now become the second argument</span>
+uppy<span class="token punctuation">.</span><span class="token generic-function"><span class="token function">on</span><span class="token generic class-name"><span class="token operator">&lt;</span><span class="token string">'complete'</span><span class="token punctuation">,</span> Meta<span class="token operator">></span></span></span><span class="token punctuation">(</span><span class="token string">'complete'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>result<span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+  <span class="token comment">// The passed type is now merged into the `meta` types.</span>
+  <span class="token keyword">const</span> meta <span class="token operator">=</span> result<span class="token punctuation">.</span>successful<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>meta<span class="token punctuation">.</span>myCustomMetadata
+<span class="token punctuation">}</span><span class="token punctuation">)</span></pre></td></tr></table></figure>
+<p>Plugins that add their own events can merge with existing ones in <code>@uppy/core</code> with <code>declare module '@uppy/core' { ... }</code>. This is a TypeScript pattern called <a href="https://www.typescriptlang.org/docs/handbook/declaration-merging.html#module-augmentation" target="_blank" rel="noopener">module augmentation</a>. For instance, when using <a href="/docs/dashboard/"><code>@uppy/dashboard</code></a>:</p>
+<!-- eslint-disable @typescript-eslint/no-unused-vars -->
+<figure class="highlight ts"><table><tr><td class="code"><pre>uppy<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'dashboard:file-edit-start'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>file<span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> fileName <span class="token operator">=</span> file<span class="token punctuation">.</span>name
+<span class="token punctuation">}</span><span class="token punctuation">)</span></pre></td></tr></table></figure>
+<h2 id="Batch-pre-signing-URLs-for-AWS-S3-Multipart"><a href="#Batch-pre-signing-URLs-for-AWS-S3-Multipart" class="headerlink" title="Batch pre-signing URLs for AWS S3 Multipart"></a>Batch pre-signing URLs for AWS S3 Multipart</h2><p>The <a href="/docs/aws-s3-multipart/"><code>@uppy/aws-s3-multipart</code></a> plugin can be used to upload files directly to an S3 bucket using S3’s Multipart upload strategy. With this strategy, files are chopped up in parts of 5MB+ each, so they can be uploaded concurrently. It is also very reliable: if a single part fails to upload, only that 5MB chunk has to be retried.</p>
+<p>However, in Uppy 1.0, every part had to make the trip to the server to generate a pre-signed URL. This meant that a 1GB file uploaded in 5MB chunks would require two hundred trips to the server.</p>
+<p>As of Uppy 2.0.0, we now pre-sign URLs in batches. That same 1GB file now only takes fifty trips to the server (if the limit was four).</p>
+<p>This is now the new default. Thanks to <a href="https://github.com/martin-brennan" target="_blank" rel="noopener">@martin-brennan</a> for this contribution!</p>
+<p>Do you care about reliable uploads? You could also consider <a href="/docs/tus/"><code>@uppy/tus</code></a> with a self-hosted or Transloadit Tus server. Tus can resume uploads, supports smaller chunks, and offers increased upload speeds.</p>
+<h2 id="And-more"><a href="#And-more" class="headerlink" title="And more"></a>And more</h2><ul>
+<li>The <code>.run</code> method on the <code>Uppy</code> instance has been removed. This method was already obsolete and only logged a warning. As of this major version, it no longer exists.</li>
+<li><a href="/docs/informer/"><code>@uppy/informer</code></a> now supports showing multiple notifications at the same time. The notifications themselves have also been improved.</li>
+<li>Improved screen reader accessibility for checkboxes and the ‘remove file’ button for <a href="/docs/dashboard/"><code>@uppy/dashboard</code></a>.</li>
+<li>Sort files and folders alphabetically in the Google Drive provider.</li>
+<li>Polished our code base with improved eslint rules, private field methods, and other modern JavaScript features that help us write more intention-revealing and safe code.</li>
+<li>To make Uppy more friendly towards new contributors, we have renamed our <code>master</code> branch to <code>main</code>.</li>
+</ul>
+<h2 id="What-future-remains-for-1-0"><a href="#What-future-remains-for-1-0" class="headerlink" title="What future remains for 1.0?"></a>What future remains for 1.0?</h2><p>Uppy 1.0 will continue to receive bug fixes for three more months (until <time datetime="2021-12-01">1 December 2021</time>), security fixes for one more year (until <time datetime="2022-09-01">1 September 2022</time>), but no more new features after today. Exceptions are unlikely, but <em>can</em> be made – to accommodate those with commercial support contracts, for example.</p>
+<h2 id="That’s-it"><a href="#That’s-it" class="headerlink" title="That’s it!"></a>That’s it!</h2><p>We hope you’ll waste no time in taking Uppy 2.0 out for a walk. When you do, please let us know what you thought of it on <a href="https://www.reddit.com/r/javascript/comments/penbr7/uppy_file_uploader_20_smaller_and_faster_modular/" target="_blank" rel="noopener">Reddit</a>, <a href="https://news.ycombinator.com/item?id=28359287" target="_blank" rel="noopener">HN</a>, ProductHunt, or <a href="https://twitter.com/uppy_io/status/1432399270846603264" target="_blank" rel="noopener">Twitter</a>. We’re howling at the moon to hear from you!</p>
+<!-- definitions -->
+
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script></body></html>
+
+    <center>
+        <br />
+        <a class="github-button" href="https://github.com/transloadit/uppy" data-icon="octicon-star" data-size="large"
+        data-show-count="true" aria-label="Star transloadit/uppy on GitHub">Star</a>
+    </center>
+
+    <div class="PostAuthors">
+        
+            <div class="PostAuthor">
+                <a class="PostAuthor-link" href="https://transloadit.com/about/#aduh95" target="_blank" rel="noopener">
+                    <img class="PostAuthor-img" src="https://www.gravatar.com/avatar/1ef7117c7b7a0caa172d567665dc8524?s=200">
+                    <h4 class="PostAuthor-name">Antoine du Hamel</h4>
+                    <div class="PostAuthor-tagline">Developer</div>
+                </a>
+            </div>
+        
+            <div class="PostAuthor">
+                <a class="PostAuthor-link" href="https://transloadit.com/about/#merlijn" target="_blank" rel="noopener">
+                    <img class="PostAuthor-img" src="https://www.gravatar.com/avatar/26363b11ef0d2c8070c3e4aa628e84c4?s=200">
+                    <h4 class="PostAuthor-name">Merlijn Vos</h4>
+                    <div class="PostAuthor-tagline">Developer</div>
+                </a>
+            </div>
+        
+            <div class="PostAuthor">
+                <a class="PostAuthor-link" href="https://transloadit.com/about/#artur" target="_blank" rel="noopener">
+                    <img class="PostAuthor-img" src="https://www.gravatar.com/avatar/6ddfaa9427d64ba52bbe021ea5e2ffef?s=200">
+                    <h4 class="PostAuthor-name">Artur Paikin</h4>
+                    <div class="PostAuthor-tagline">Developer</div>
+                </a>
+            </div>
+        
+            <div class="PostAuthor">
+                <a class="PostAuthor-link" href="https://transloadit.com/about/#renee" target="_blank" rel="noopener">
+                    <img class="PostAuthor-img" src="https://www.gravatar.com/avatar/2873ddbfdaa1440797750ba605c231ac?s=200">
+                    <h4 class="PostAuthor-name">Renée Kooi</h4>
+                    <div class="PostAuthor-tagline">Developer</div>
+                </a>
+            </div>
+        
+            <div class="PostAuthor">
+                <a class="PostAuthor-link" href="https://transloadit.com/about/#mikael" target="_blank" rel="noopener">
+                    <img class="PostAuthor-img" src="https://www.gravatar.com/avatar/b32426186bf182de99cfa12adbd22761?s=200">
+                    <h4 class="PostAuthor-name">Mikael Finstad</h4>
+                    <div class="PostAuthor-tagline">Developer</div>
+                </a>
+            </div>
+        
+            <div class="PostAuthor">
+                <a class="PostAuthor-link" href="https://transloadit.com/about/#andrew" target="_blank" rel="noopener">
+                    <img class="PostAuthor-img" src="https://www.gravatar.com/avatar/3946029abff4dcc66779e2dd5c166c7a?s=200">
+                    <h4 class="PostAuthor-name">Andrew Kachnic</h4>
+                    <div class="PostAuthor-tagline">Developer</div>
+                </a>
+            </div>
+        
+    </div>
+  <br />
+    <!-- <ul class="Social">
+        <li><iframe src="https://ghbtns.com/github-btn.html?user=transloadit&repo=uppy&type=watch&count=true"
+                allowtransparency="true" frameborder="0" scrolling="0" width="100" height="20"></iframe></li>
+    </ul> -->
+  <!-- <div id="disqus_thread"></div>
+<script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+
+var disqus_config = function () {
+this.page.url = 'https://uppy.io/blog/2021/08/2.0/';  // Replace PAGE_URL with your page's canonical URL variable
+// this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://uppy.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" target="_blank" rel="noopener">comments powered by Disqus.</a></noscript>
+                             -->
+</div>
+
+        
+      </main>
+
+      <script defer data-domain="transloadit.github.io" src="https://analytics.transloadit.com/js/plausible.js"></script>
+
+
+      
+        <script src="/uppy/js/smooth-scroll.min.js"></script>
+        <!-- Place this tag in your head or just before your close body tag. -->
+        <script async defer src="https://buttons.github.io/buttons.js"></script>
+      
+      <script src="/uppy/js/common.js"></script>
+
+      <!-- Twitter follow button script -->
+      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+    </div>
+  </body>
+</html>

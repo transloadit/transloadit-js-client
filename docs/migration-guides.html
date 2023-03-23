@@ -1,0 +1,989 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Migration guides — Uppy</title>
+    <meta charset="utf-8">
+    <meta name="title" content="Migration guides — Uppy">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@uppy_io">
+    <meta name="twitter:creator" content="@uppy_io">
+    <meta property="og:url" content="https://transloadit.github.io/uppy/docs/migration-guides.html">
+    <meta property="og:title" content="Migration guides — Uppy">
+    <meta name="twitter:title" content="Migration guides — Uppy">
+    <meta name="twitter:description" content="">
+    <meta property="og:image" content="http://transloadit.github.io/uppy/images/uppy-social-pink.png">
+    <meta name="twitter:image" content="http://transloadit.github.io/uppy/images/uppy-social-pink.png">
+
+    <meta name="google-site-verification" content="JxARoHXoCI8bD07pLV_u3z6xpuWNcSIZIcHEytyCkUc" />
+
+    <link rel="icon" href="/uppy/images/logos/uppy-dog-head-arrow.png" type="image/x-icon">
+    <link rel="alternate" type="application/rss+xml" title="Uppy" href="/atom.xml">
+
+    <script>
+      window.PAGE_TYPE = "docs"
+    </script>
+    
+<link rel="stylesheet" href="/uppy/css/main.css?version=2">
+
+    <!-- ^ poor man's solution to css cache busting. bump the version when there's something new we really want users to see -->
+  <meta name="generator" content="Hexo 4.2.1"></head>
+  <body class="page-inner ">
+    <div class="page">
+      <div class="TransloaditBar js-TransloaditBar">
+        <div class="TransloaditBar-about">
+          <!-- <a class="TransloaditBar-logo" href="https://transloadit.com/" target="_blank" rel="noopener">
+            <img class="TransloaditBar-logoImg" src="/uppy/images/transloadit-white-glyph.svg" width="20" height="20" alt="Transloadit">
+          </a> -->
+          <!-- <span>Uppy is an open source project by <a class="TransloaditBar-link" href="https://transloadit.com/" target="_blank">Transloadit</a></span> -->
+          This website is no longer maintained, please visit <a href="//uppy.io" target="_blank" rel="noopener" style="color:inherit">uppy.io</a> to get up-to-date info about Uppy.
+        </div>
+      </div>
+
+      <header id="header" class="MainHeader js-MainHeader">
+        <button class="MainHeader-menuBtn js-MenuBtn"></button>
+
+        <span id="logo" class="MainLogo">
+          <a class="MainLogo-link" href="/uppy/">Uppy</a>
+          <!-- Was used for 1.0, we can re-use for 2.0 or major announcements -->
+          <!-- <a class="MainLogo-announcement" href="/blog/2019/04/1.0/">
+            1.0
+            <span class="MainLogo-emoji">
+              <img src="/uppy/images/party-popper.png" srcset="/uppy/images/party-popper@2x.png 2x" alt="🎉">
+            </span>
+          </a> -->
+        </span>
+
+        <nav>
+          <ul id="nav" class="MainMenu">
+            <!-- @todo uncomment search input when we get our own swifttype -->
+<!-- <li>
+  <form id="search-form" class="MainMenu-search">
+    <input type="text" id="search-query" class="MainMenu-searchQuery st-default-search-input">
+  </form>
+</li> -->
+<!--li><a href="/uppy/guide/" class="nav-link current">Guide</a></li-->
+<li><a href="/uppy/docs/" class="nav-link current">Docs</a></li>
+<li><a href="/uppy/examples/dashboard/" class="nav-link">Examples</a></li>
+<!--li><a href="/uppy/stats/" class="nav-link">Stats</a></li-->
+<li><a href="/uppy/blog/" class="nav-link">Blog</a></li>
+<li><a href="/uppy/support/" class="nav-link">Support</a></li>
+<li><a href="https://github.com/transloadit/uppy" target="_blank" rel="noopener" class="nav-link">GitHub</a></li>
+
+          </ul>
+        </nav>
+
+        <div class="MainHeader-tagline">
+          The file uploader that <span class="MainHeader-taglinePart js-MainHeader-taglinePart is-visible">loves to play fetch</span>
+        </div>
+
+        <ul class="MainHeader-taglineList js-MainHeader-taglineList">
+          
+          <li>won’t chew on your shoes</li>
+          
+          <li>is fully housebroken</li>
+          
+          <li>just wants to play with you</li>
+          
+          <li>doesn’t hump your leg</li>
+          
+          <li>also accepts cat pictures</li>
+          
+          <li>loves you unconditionally</li>
+          
+          <li>you don’t have to keep on a leash</li>
+          
+          <li>won’t pee on your rug</li>
+          
+          <li>loves to play fetch</li>
+          
+          <li>doesn’t bite (hard)</li>
+          
+          <li>won’t bark at the mailman</li>
+          
+          <li>is great with the kids</li>
+          
+          <li>can digest anything, even chocolate cake</li>
+          
+          <li>is always happy to see you</li>
+          
+          <li>isn’t afraid of fireworks</li>
+          
+          <li>is allowed everywhere</li>
+          
+        </ul>
+      </header>
+
+      <main class="MainContent js-MainContent" id="main">
+        
+          
+    <div class="Sidebar js-Sidebar">
+  <ul class="main-menu">
+    <!-- @todo uncomment search input when we get our own swifttype -->
+<!-- <li>
+  <form id="search-form" class="MainMenu-search">
+    <input type="text" id="search-query" class="MainMenu-searchQuery st-default-search-input">
+  </form>
+</li> -->
+<!--li><a href="/uppy/guide/" class="nav-link current">Guide</a></li-->
+<li><a href="/uppy/docs/" class="nav-link current">Docs</a></li>
+<li><a href="/uppy/examples/dashboard/" class="nav-link">Examples</a></li>
+<!--li><a href="/uppy/stats/" class="nav-link">Stats</a></li-->
+<li><a href="/uppy/blog/" class="nav-link">Blog</a></li>
+<li><a href="/uppy/support/" class="nav-link">Support</a></li>
+<li><a href="https://github.com/transloadit/uppy" target="_blank" rel="noopener" class="nav-link">GitHub</a></li>
+
+  </ul>
+  
+  
+  <div class="list">
+    <h2>
+      <a href="/uppy/docs">Docs</a>
+    </h2>
+      
+    <div class="menu-root">
+      
+
+    
+    
+    
+    <ul>
+      
+        
+        
+        <li key="p-0-docs/index.html">
+          <a href="/docs/" class="sidebar-link">Getting Started</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-1-docs/uppy/index.html">
+          <a href="/docs/uppy/" class="sidebar-link">Uppy</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-2-docs/companion/index.html">
+          <a href="/docs/companion/" class="sidebar-link">Companion</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-3-docs/plugins/index.html">
+          <a href="/docs/plugins/" class="sidebar-link">List of Plugins</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-4-docs/plugin-options/index.html">
+          <a href="/docs/plugin-options/" class="sidebar-link">Common Plugin Options</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-5-docs/stores/index.html">
+          <a href="/docs/stores/" class="sidebar-link">Custom Stores</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-6-docs/community-projects/index.html">
+          <a href="/docs/community-projects/" class="sidebar-link">Community Projects</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-7-docs/locales/index.html">
+          <a href="/docs/locales/" class="sidebar-link">Locale Packs</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-8-docs/migration-guides.html">
+          <a href="/docs/migration-guides.html" class="sidebar-link current">Migration guides</a>
+          
+        </li>
+      
+    </ul>
+
+    
+    
+    
+        
+        <h3 id="" key="category-1-UI Elements" data-scroll="no">UI Elements</h3>
+        
+    
+    <ul>
+      
+        
+        
+        <li key="p-0-docs/dashboard/index.html">
+          <a href="/docs/dashboard/" class="sidebar-link">Dashboard</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-1-docs/status-bar/index.html">
+          <a href="/docs/status-bar/" class="sidebar-link">Status Bar</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-2-docs/progress-bar/index.html">
+          <a href="/docs/progress-bar/" class="sidebar-link">Progress Bar</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-3-docs/informer/index.html">
+          <a href="/docs/informer/" class="sidebar-link">Informer</a>
+          
+        </li>
+      
+    </ul>
+
+    
+    
+    
+        
+        <h3 id="" key="category-2-Sources" data-scroll="no">Sources</h3>
+        
+    
+    <ul>
+      
+        
+        
+        <li key="p-0-docs/drag-drop/index.html">
+          <a href="/docs/drag-drop/" class="sidebar-link">Drag & Drop</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-1-docs/drop-target/index.html">
+          <a href="/docs/drop-target/" class="sidebar-link">Drop Target</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-2-docs/file-input/index.html">
+          <a href="/docs/file-input/" class="sidebar-link">File Input</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-3-docs/audio/index.html">
+          <a href="/docs/audio/" class="sidebar-link">Audio</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-4-docs/webcam/index.html">
+          <a href="/docs/webcam/" class="sidebar-link">Webcam</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-5-docs/screen-capture/index.html">
+          <a href="/docs/screen-capture/" class="sidebar-link">Screen capture</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-6-docs/providers/index.html">
+          <a href="/docs/providers/" class="sidebar-link">Provider Plugins</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-7-docs/box/index.html">
+          <span title='Requires Companion'>ⓒ </span><a href="/docs/box/" class="sidebar-link">Box</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-8-docs/dropbox/index.html">
+          <span title='Requires Companion'>ⓒ </span><a href="/docs/dropbox/" class="sidebar-link">Dropbox</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-9-docs/google-drive/index.html">
+          <span title='Requires Companion'>ⓒ </span><a href="/docs/google-drive/" class="sidebar-link">Google Drive</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-10-docs/instagram/index.html">
+          <span title='Requires Companion'>ⓒ </span><a href="/docs/instagram/" class="sidebar-link">Instagram</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-11-docs/onedrive/index.html">
+          <span title='Requires Companion'>ⓒ </span><a href="/docs/onedrive/" class="sidebar-link">OneDrive</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-12-docs/zoom/index.html">
+          <span title='Requires Companion'>ⓒ </span><a href="/docs/zoom/" class="sidebar-link">Zoom</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-13-docs/facebook/index.html">
+          <span title='Requires Companion'>ⓒ </span><a href="/docs/facebook/" class="sidebar-link">Facebook</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-14-docs/unsplash/index.html">
+          <span title='Requires Companion'>ⓒ </span><a href="/docs/unsplash/" class="sidebar-link">Unsplash</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-15-docs/url/index.html">
+          <span title='Requires Companion'>ⓒ </span><a href="/docs/url/" class="sidebar-link">Import From URL</a>
+          
+        </li>
+      
+    </ul>
+
+    
+    
+    
+        
+        <h3 id="" key="category-3-Destinations" data-scroll="no">Destinations</h3>
+        
+    
+    <ul>
+      
+        
+        
+        <li key="p-0-docs/tus/index.html">
+          <a href="/docs/tus/" class="sidebar-link">Tus</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-1-docs/xhr-upload/index.html">
+          <a href="/docs/xhr-upload/" class="sidebar-link">XHR</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-2-docs/aws-s3/index.html">
+          <a href="/docs/aws-s3/" class="sidebar-link">AWS S3</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-3-docs/aws-s3-multipart/index.html">
+          <a href="/docs/aws-s3-multipart/" class="sidebar-link">AWS S3 Multipart</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-4-docs/transloadit/index.html">
+          <a href="/docs/transloadit/" class="sidebar-link">Transloadit</a>
+          
+        </li>
+      
+    </ul>
+
+    
+    
+    
+        
+        <h3 id="" key="category-4-Miscellaneous" data-scroll="no">Miscellaneous</h3>
+        
+    
+    <ul>
+      
+        
+        
+        <li key="p-0-docs/form/index.html">
+          <a href="/docs/form/" class="sidebar-link">Form</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-1-docs/golden-retriever/index.html">
+          <a href="/docs/golden-retriever/" class="sidebar-link">Golden Retriever</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-2-docs/image-editor/index.html">
+          <a href="/docs/image-editor/" class="sidebar-link">Image Editor</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-3-docs/thumbnail-generator/index.html">
+          <a href="/docs/thumbnail-generator/" class="sidebar-link">Thumbnail Generator</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-4-docs/redux/index.html">
+          <a href="/docs/redux/" class="sidebar-link">Redux</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-5-docs/compressor/index.html">
+          <a href="/docs/compressor/" class="sidebar-link">Compressor</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-6-docs/remote-sources/index.html">
+          <a href="/docs/remote-sources/" class="sidebar-link">Remote Sources</a>
+          
+        </li>
+      
+    </ul>
+
+    
+    
+    
+    <ul>
+      
+    </ul>
+
+    
+    
+    
+        
+        <h3 id="" key="category-6-React" data-scroll="no"><a href="/docs/react/">React</a></h3>
+        
+    
+    <ul>
+      
+        
+        
+        <li key="p-0-docs/react/index.html">
+          <a href="/docs/react/" class="sidebar-link">Introduction</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-1-docs/react/status-bar/index.html">
+          <a href="/docs/react/status-bar/" class="sidebar-link">&lt;StatusBar /></a>
+          
+        </li>
+      
+        
+        
+        <li key="p-2-docs/react/drag-drop/index.html">
+          <a href="/docs/react/drag-drop/" class="sidebar-link">&lt;DragDrop /></a>
+          
+        </li>
+      
+        
+        
+        <li key="p-3-docs/react/file-input/index.html">
+          <a href="/docs/react/file-input/" class="sidebar-link">&lt;FileInput /></a>
+          
+        </li>
+      
+        
+        
+        <li key="p-4-docs/react/progress-bar/index.html">
+          <a href="/docs/react/progress-bar/" class="sidebar-link">&lt;ProgressBar /></a>
+          
+        </li>
+      
+        
+        
+        <li key="p-5-docs/react/dashboard/index.html">
+          <a href="/docs/react/dashboard/" class="sidebar-link">&lt;Dashboard /></a>
+          
+        </li>
+      
+        
+        
+        <li key="p-6-docs/react/dashboard-modal/index.html">
+          <a href="/docs/react/dashboard-modal/" class="sidebar-link">&lt;DashboardModal /></a>
+          
+        </li>
+      
+        
+        
+        <li key="p-7-docs/react/native/index.html">
+          <a href="/docs/react/native/" class="sidebar-link">React Native</a>
+          
+        </li>
+      
+    </ul>
+
+    
+    
+    
+        
+        <h3 id="" key="category-7-Other Integrations" data-scroll="no"><a href="/docs/vue/">Other Integrations</a></h3>
+        
+    
+    <ul>
+      
+        
+        
+        <li key="p-0-docs/angular/index.html">
+          <a href="/docs/angular/" class="sidebar-link">Angular</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-1-docs/vue/index.html">
+          <a href="/docs/vue/" class="sidebar-link">Vue</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-2-docs/svelte/index.html">
+          <a href="/docs/svelte/" class="sidebar-link">Svelte</a>
+          
+        </li>
+      
+    </ul>
+
+    
+    
+    
+        
+        <h3 id="" key="category-8-Contributing" data-scroll="no"><a href="/docs/contributing.html">Contributing</a></h3>
+        
+    
+    <ul>
+      
+        
+        
+        <li key="p-0-docs/contributing.html">
+          <a href="/docs/contributing.html" class="sidebar-link">Contributing</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-1-docs/writing-plugins/index.html">
+          <a href="/docs/writing-plugins/" class="sidebar-link">Writing Plugins</a>
+          
+        </li>
+      
+    </ul>
+
+
+    </div>
+
+    <ul class="Social">
+  <li><a href="https://twitter.com/uppy_io" target="_blank" rel="noopener" class="twitter-follow-button" data-show-count="false" data-dnt="true">Follow @uppy_io</a></li>
+  <li><iframe src="https://ghbtns.com/github-btn.html?user=transloadit&repo=uppy&type=watch&count=true"
+allowtransparency="true" frameborder="0" scrolling="0" width="100" height="20"></iframe></li>
+  <!-- to regenerate you can use this link: https://img.shields.io/badge/community-forum-d8006a.svg -->
+  <li><a href="https://community.transloadit.com/c/uppy" target="_blank" rel="noopener"><img src="/uppy/images/community-forum-d8006a.svg" /> </a></li>
+  <li class="BuildBadge">
+   <span class="wrapper">
+     <a href="https://github.com/transloadit/uppy/actions" target="_blank" rel="noopener"><img src="https://github.com/transloadit/uppy/workflows/End-to-end%20tests/badge.svg" alt="Build Status"></a>
+   </span>
+  </li>
+</ul>
+
+    </div>
+  
+</div>
+
+
+
+<div class="Content js-Content docs with-sidebar">
+    <h1>Migration guides</h1>
+    <html><head></head><body><p>These cover all the major Uppy versions and how to migrate to them.</p>
+<h2 id="Migrate-from-Robodog-to-Uppy-plugins"><a href="#Migrate-from-Robodog-to-Uppy-plugins" class="headerlink" title="Migrate from Robodog to Uppy plugins"></a>Migrate from Robodog to Uppy plugins</h2><p>Uppy is flexible and extensible through plugins. But the integration code could sometimes be daunting. This is what brought <a href="/docs/robodog/">Robodog</a> to life. An alternative with the same features, but with a more ergonomic and minimal API.</p>
+<p>But, it didn’t come with its own set of new problems:</p>
+<ul>
+<li>It tries to do the exact same, but it looks like a different product.</li>
+<li>It’s confusing for users whether they want to use Robodog or Uppy directly.</li>
+<li>Robodog is more ergonomic because it’s limited. When you hit such a limit, you<br>need to refactor everything to Uppy with plugins.</li>
+</ul>
+<p>This has now led us to deprecating Robodog and embrace Uppy for its strong suits; modularity and flexibility. At the same time, we also introduced something to take away some repetitive integration code: <a href="/docs/remote-sources"><code>@uppy/remote-sources</code></a>.</p>
+<p>To mimic the Robodog implementation with all its features, you can use the code snippet below. But chances are Robodog did more than you need so feel free to remove things or go through the <a href="/docs/plugins/">list of plugins</a> and install and use the ones you need.</p>
+<p>You can also checkout how we migrated the Robodog example ourselves in this <a href="https://github.com/transloadit/uppy/commit/089aaed615c77bafaf905e291b6b4e82aaeb2f6f" target="_blank" rel="noopener">commit</a>.</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="token keyword module">import</span> <span class="token imports"><span class="token maybe-class-name">Uppy</span></span> <span class="token keyword module">from</span> <span class="token string">'@uppy/core'</span>
+<span class="token keyword module">import</span> <span class="token imports"><span class="token maybe-class-name">Dashboard</span></span> <span class="token keyword module">from</span> <span class="token string">'@uppy/dashboard'</span>
+<span class="token keyword module">import</span> <span class="token imports"><span class="token maybe-class-name">RemoteSources</span></span> <span class="token keyword module">from</span> <span class="token string">'@uppy/remote-sources'</span>
+<span class="token keyword module">import</span> <span class="token imports"><span class="token maybe-class-name">Webcam</span></span> <span class="token keyword module">from</span> <span class="token string">'@uppy/webcam'</span>
+<span class="token keyword module">import</span> <span class="token imports"><span class="token maybe-class-name">ScreenCapture</span></span> <span class="token keyword module">from</span> <span class="token string">'@uppy/screen-capture'</span>
+<span class="token keyword module">import</span> <span class="token imports"><span class="token maybe-class-name">GoldenRetriever</span></span> <span class="token keyword module">from</span> <span class="token string">'@uppy/golden-retriever'</span>
+<span class="token keyword module">import</span> <span class="token imports"><span class="token maybe-class-name">ImageEditor</span></span> <span class="token keyword module">from</span> <span class="token string">'@uppy/image-editor'</span>
+<span class="token keyword module">import</span> <span class="token imports"><span class="token maybe-class-name">Audio</span></span> <span class="token keyword module">from</span> <span class="token string">'@uppy/audio'</span>
+<span class="token keyword module">import</span> <span class="token maybe-class-name">Transloadit</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token constant">COMPANION_URL</span><span class="token punctuation">,</span> <span class="token constant">COMPANION_ALLOWED_HOSTS</span> <span class="token punctuation">}</span> <span class="token keyword module">from</span> <span class="token string">'@uppy/transloadit'</span>
+
+<span class="token keyword module">import</span> <span class="token string">'@uppy/core/dist/style.css'</span>
+<span class="token keyword module">import</span> <span class="token string">'@uppy/dashboard/dist/style.css'</span>
+<span class="token keyword module">import</span> <span class="token string">'@uppy/audio/dist/style.css'</span>
+<span class="token keyword module">import</span> <span class="token string">'@uppy/screen-capture/dist/style.css'</span>
+<span class="token keyword module">import</span> <span class="token string">'@uppy/image-editor/dist/style.css'</span>
+
+<span class="token keyword">new</span> <span class="token class-name">Uppy</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token method function property-access">use</span><span class="token punctuation">(</span><span class="token maybe-class-name">Dashboard</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">inline</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">target</span><span class="token operator">:</span> <span class="token string">'#app'</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">showProgressDetails</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">proudlyDisplayPoweredByUppy</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token method function property-access">use</span><span class="token punctuation">(</span><span class="token maybe-class-name">RemoteSources</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">companionUrl</span><span class="token operator">:</span> <span class="token constant">COMPANION_URL</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">companionAllowedHosts</span><span class="token operator">:</span> <span class="token constant">COMPANION_ALLOWED_HOSTS</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token method function property-access">use</span><span class="token punctuation">(</span><span class="token maybe-class-name">Webcam</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">target</span><span class="token operator">:</span> <span class="token maybe-class-name">Dashboard</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">showVideoSourceDropdown</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">showRecordingLength</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token method function property-access">use</span><span class="token punctuation">(</span><span class="token maybe-class-name">Audio</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">target</span><span class="token operator">:</span> <span class="token maybe-class-name">Dashboard</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">showRecordingLength</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token method function property-access">use</span><span class="token punctuation">(</span><span class="token maybe-class-name">ScreenCapture</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token literal-property property">target</span><span class="token operator">:</span> <span class="token maybe-class-name">Dashboard</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token method function property-access">use</span><span class="token punctuation">(</span><span class="token maybe-class-name">ImageEditor</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token literal-property property">target</span><span class="token operator">:</span> <span class="token maybe-class-name">Dashboard</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token method function property-access">use</span><span class="token punctuation">(</span><span class="token maybe-class-name">Transloadit</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">service</span><span class="token operator">:</span> <span class="token string">'https://api2.transloadit.com'</span><span class="token punctuation">,</span>
+    <span class="token keyword">async</span> <span class="token function">getAssemblyOptions</span> <span class="token punctuation">(</span><span class="token parameter">file</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token comment">// This is where you configure your auth key, auth secret, and template ID</span>
+      <span class="token comment">// /uppy/docs/transloadit/#getAssemblyOptions-file</span>
+      <span class="token comment">//</span>
+      <span class="token comment">// It is important to set the secret in production:</span>
+      <span class="token comment">// https://transloadit.com/docs/topics/signature-authentication/</span>
+      <span class="token keyword">const</span> response <span class="token operator">=</span> <span class="token keyword control-flow">await</span> <span class="token function">fetch</span><span class="token punctuation">(</span><span class="token string">'/some-endpoint'</span><span class="token punctuation">)</span>
+      <span class="token keyword control-flow">return</span> response<span class="token punctuation">.</span><span class="token method function property-access">json</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span></pre></td></tr></table></figure>
+<h2 id="Migrate-from-Uppy-2-x-to-3-x"><a href="#Migrate-from-Uppy-2-x-to-3-x" class="headerlink" title="Migrate from Uppy 2.x to 3.x"></a>Migrate from Uppy 2.x to 3.x</h2><h3 id="Uppy-is-pure-ESM"><a href="#Uppy-is-pure-ESM" class="headerlink" title="Uppy is pure ESM"></a>Uppy is pure ESM</h3><p>Following the footsteps of many packages, we now only ship Uppy core and its plugins as <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules" target="_blank" rel="noopener">ECMAScript Modules</a> (ESM). On Uppy 2.x, we were shipping CommonJS.</p>
+<p>If are already using ESM yourself, or are using the CDN builds, nothing changes for you!</p>
+<p>If you are using CommonJS, you might need to add some tooling for everything to work, or you might want to refactor your codebase to ESM – refer to the <a href="https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c" target="_blank" rel="noopener">Pure ESM package</a> gist for added information and help on how to do that.</p>
+<h3 id="Robodog-is-deprecated"><a href="#Robodog-is-deprecated" class="headerlink" title="Robodog is deprecated"></a>Robodog is deprecated</h3><p>See the <a href="#Migrate-from-Robodog-to-Uppy-plugins">Robodog migration guide</a>.</p>
+<h3 id="uppy-core"><a href="#uppy-core" class="headerlink" title="@uppy/core"></a><code>@uppy/core</code></h3><h4 id="Remove-AggregateError-polyfill"><a href="#Remove-AggregateError-polyfill" class="headerlink" title="Remove AggregateError polyfill."></a>Remove <code>AggregateError</code> polyfill.</h4><p>It’s supported by most modern browsers and <a href="https://github.com/transloadit/uppy/pull/3532#discussion_r818602636" target="_blank" rel="noopener">can be polyfilled by the user</a> if needed.</p>
+<p>To migrate: install a <code>AggregateError</code> polyfill or use <code>core-js</code>.</p>
+<h4 id="Remove-reset-method"><a href="#Remove-reset-method" class="headerlink" title="Remove reset() method."></a>Remove <code>reset()</code> method.</h4><p>It’s a duplicate of <code>cancelAll</code>, but with a less intention revealing name.</p>
+<p>To migrate: use <code>cancelAll</code>.</p>
+<h4 id="Remove-backwards-compatible-exports-static-properties-on-Uppy"><a href="#Remove-backwards-compatible-exports-static-properties-on-Uppy" class="headerlink" title="Remove backwards compatible exports (static properties on Uppy)`"></a>Remove backwards compatible exports (static properties on <code>Uppy</code>)`</h4><p><code>Uppy</code>, <code>UIPlugin</code>, <code>BasePlugin</code>, and <code>debugLogger</code> used to also be accessible on the <code>Uppy</code> export. This has now been removed due to the transition to ESM.</p>
+<p>To migrate: import the <code>Uppy</code> class by default and/or use named exports for everything else.</p>
+<h4 id="uppy-validateRestrictions-now-returns-a-RestrictionError"><a href="#uppy-validateRestrictions-now-returns-a-RestrictionError" class="headerlink" title="uppy.validateRestrictions() now returns a RestrictionError"></a><code>uppy.validateRestrictions()</code> now returns a <code>RestrictionError</code></h4><p>This method used to return <code>{ result: false, reason: err.message }</code>, but that felt strange as it tries to mimic an error. Instead it now return a <code>RestrictionError</code>, which is extended <code>Error</code> class.</p>
+<p>To migrate: check the return value, if it’s defined you have an error, otherwise all went well. Note that the error is <code>return</code>’ed, it’s not <code>throw</code>’n, so you don’t have to <code>catch</code> it.</p>
+<h3 id="uppy-transloadit"><a href="#uppy-transloadit" class="headerlink" title="@uppy/transloadit"></a><code>@uppy/transloadit</code></h3><p>Remove export of <code>ALLOWED_COMPANION_PATTERN</code>, <code>COMPANION</code>, and <code>COMPANION_PATTERN</code> in favor of <code>COMPANION_URL</code> and <code>COMPANION_ALLOWED_HOSTS</code>. This is to have more intention revealing names, <code>COMPANION</code> sounds like the Companion instance, <code>COMPANION_URL</code> makes it more clear that it’s a URL.</p>
+<p>These are properties can now be imported and used for remote sources plugins when using Transloadit:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="token keyword module">import</span> <span class="token punctuation">{</span> <span class="token constant">COMPANION_URL</span><span class="token punctuation">,</span> <span class="token constant">COMPANION_ALLOWED_HOSTS</span> <span class="token punctuation">}</span> <span class="token keyword module">from</span> <span class="token string">'@uppy/transloadit'</span>
+
+<span class="token comment">// ...</span>
+uppy<span class="token punctuation">.</span><span class="token method function property-access">use</span><span class="token punctuation">(</span><span class="token maybe-class-name">Dropbox</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  <span class="token literal-property property">companionUrl</span><span class="token operator">:</span> <span class="token constant">COMPANION_URL</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">companionAllowedHosts</span><span class="token operator">:</span> <span class="token constant">COMPANION_ALLOWED_HOSTS</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span></pre></td></tr></table></figure>
+<h3 id="uppy-aws-s3-multipart"><a href="#uppy-aws-s3-multipart" class="headerlink" title="@uppy/aws-s3-multipart"></a><code>@uppy/aws-s3-multipart</code></h3><h4 id="Make-headers-inside-the-return-value-of-prepareUploadParts-part-indexed-too"><a href="#Make-headers-inside-the-return-value-of-prepareUploadParts-part-indexed-too" class="headerlink" title="Make headers inside the return value of prepareUploadParts part-indexed too."></a>Make <code>headers</code> inside the return value of <a href="/docs/aws-s3-multipart/#prepareUploadParts-file-partData"><code>prepareUploadParts</code></a> part-indexed too.</h4><p>This is to allow custom headers to be set per part. See this <a href="https://github.com/transloadit/uppy/issues/3881" target="_blank" rel="noopener">issue</a> for details.</p>
+<p>To migrate: make headers part indexed like <code>presignedUrls</code>: <code>{ "headers": { "1": { "Content-MD5": "foo" } }}</code>.</p>
+<h4 id="Remove-client-getter-and-setter"><a href="#Remove-client-getter-and-setter" class="headerlink" title="Remove client getter and setter."></a>Remove <code>client</code> getter and setter.</h4><p>It’s internal usage only.</p>
+<p>To migrate: use exposed options only.</p>
+<h3 id="uppy-tus-uppy-aws-s3-uppy-xhr-upload"><a href="#uppy-tus-uppy-aws-s3-uppy-xhr-upload" class="headerlink" title="@uppy/tus/, @uppy/aws-s3, @uppy/xhr-upload"></a><code>@uppy/tus/</code>, <code>@uppy/aws-s3</code>, <code>@uppy/xhr-upload</code></h3><p>Rename <code>metaFields</code> option to <code>allowedMetaFields</code>. Counter intuitively, <code>metaFields</code> is for <em>filtering</em> which <code>metaFields</code> to send along with the request, not for adding extra meta fields to a request. As a lot of people were confused by this, and the name overlaps with the <a href="/docs/dashboard/#metaFields"><code>metaFields</code> option from Dashboard</a>, we renamed it.</p>
+<p>To migrate: use <code>allowedMetaFields</code>.</p>
+<h3 id="uppy-react"><a href="#uppy-react" class="headerlink" title="@uppy/react"></a><code>@uppy/react</code></h3><h4 id="Uppy-dependencies-have-become-peer-dependencies"><a href="#Uppy-dependencies-have-become-peer-dependencies" class="headerlink" title="Uppy dependencies have become peer dependencies"></a>Uppy dependencies have become peer dependencies</h4><p><code>@uppy/dashboard</code>, <code>@uppy/drag-drop</code>, <code>@uppy/file-input</code>, <code>@uppy/progress-bar</code>, and <code>@uppy/status-bar</code> are now peer dependencies. This means you don’t install all these packages if you only need one.</p>
+<p>To migrate: install only the packages you need. If you use the Dashboard component, you need <code>@uppy/dashboard</code>, and so onwards.</p>
+<h4 id="Don’t-expose-validProps-on-the-exported-components"><a href="#Don’t-expose-validProps-on-the-exported-components" class="headerlink" title="Don’t expose validProps on the exported components."></a>Don’t expose <code>validProps</code> on the exported components.</h4><p>It’s internal usage only.</p>
+<p>To migrate: use exposed options only.</p>
+<h3 id="uppy-svelte"><a href="#uppy-svelte" class="headerlink" title="@uppy/svelte"></a><code>@uppy/svelte</code></h3><p><code>@uppy/dashboard</code>, <code>@uppy/drag-drop</code>, <code>@uppy/progress-bar</code>, and <code>@uppy/status-bar</code> are now peer dependencies. This means you don’t install all these packages if you only need one.</p>
+<p>To migrate: install only the packages you need. If you use the Dashboard component, you need <code>@uppy/dashboard</code>, and so onwards.</p>
+<h3 id="uppy-vue"><a href="#uppy-vue" class="headerlink" title="@uppy/vue"></a><code>@uppy/vue</code></h3><p><code>@uppy/dashboard</code>, <code>@uppy/drag-drop</code>, <code>@uppy/file-input</code>, <code>@uppy/progress-bar</code>, and <code>@uppy/status-bar</code> are now peer dependencies. This means you don’t install all these packages if you only need one.</p>
+<p>To migrate: install only the packages you need. If you use the Dashboard component, you need <code>@uppy/dashboard</code>, and so onwards.</p>
+<h3 id="uppy-store-redux"><a href="#uppy-store-redux" class="headerlink" title="@uppy/store-redux"></a><code>@uppy/store-redux</code></h3><p>Remove backwards compatible exports (static properties on <code>ReduxStore</code>). Exports, such as <code>reducer</code>, used to also be accessible on the <code>ReduxStore</code> export. This has now been removed due to the transition to ESM.</p>
+<p>To migrate: use named imports.</p>
+<h3 id="uppy-thumbnail-generator"><a href="#uppy-thumbnail-generator" class="headerlink" title="@uppy/thumbnail-generator"></a><code>@uppy/thumbnail-generator</code></h3><p>Remove <code>rotateImage</code>, <code>protect</code>, and <code>canvasToBlob</code> from the plugin prototype. They are internal usage only.</p>
+<p>To migrate: use exposed options only.</p>
+<h3 id="Known-issues"><a href="#Known-issues" class="headerlink" title="Known issues"></a>Known issues</h3><ul>
+<li><a href="https://github.com/transloadit/uppy/issues/4057" target="_blank" rel="noopener"><code>ERESOLVE could not resolve</code> on npm install</a>.</li>
+<li><a href="https://github.com/transloadit/uppy/issues/4069" target="_blank" rel="noopener">@uppy/svelte reports a broken dependency with the Vite bundler</a>.</li>
+</ul>
+<h2 id="Migrate-from-Companion-3-x-to-4-x"><a href="#Migrate-from-Companion-3-x-to-4-x" class="headerlink" title="Migrate from Companion 3.x to 4.x"></a>Migrate from Companion 3.x to 4.x</h2><h3 id="Minimum-required-Node-js-version-is-v14-20-0"><a href="#Minimum-required-Node-js-version-is-v14-20-0" class="headerlink" title="Minimum required Node.js version is v14.20.0"></a>Minimum required Node.js version is v14.20.0</h3><p>Aligning with the Node.js <a href="https://nodejs.org/en/about/releases/" target="_blank" rel="noopener">Long Term Support (LTS) schedule</a> and to use modern syntax features.</p>
+<h3 id="companion-app-returns-app-emitter-instead-of-app"><a href="#companion-app-returns-app-emitter-instead-of-app" class="headerlink" title="companion.app() returns { app, emitter } instead of app"></a><code>companion.app()</code> returns <code>{ app, emitter }</code> instead of <code>app</code></h3><p>Companion 3.x provides the emitter as <code>companionEmitter</code> on <code>app</code>. As of 4.x, an object is returned<br>with an <code>app</code> property (express middleware) and an <code>emitter</code> property (event emitter). This<br>provides more flexibility in the future and follows best practices.</p>
+<h3 id="Removed-searchProviders-wrapper-object-inside-providerOptions"><a href="#Removed-searchProviders-wrapper-object-inside-providerOptions" class="headerlink" title="Removed searchProviders wrapper object inside providerOptions"></a>Removed <code>searchProviders</code> wrapper object inside <code>providerOptions</code></h3><p>To use <a href="/docs/unsplash"><code>@uppy/unsplash</code></a>, you had to configure Unsplash in Companion inside <code>providerOptions.searchProviders</code>. This is redundant, Unsplash is a provider as well so we removed the wrapper object.</p>
+<h3 id="Moved-the-s3-options-out-of-providerOptions"><a href="#Moved-the-s3-options-out-of-providerOptions" class="headerlink" title="Moved the s3 options out of providerOptions"></a>Moved the <code>s3</code> options out of <code>providerOptions</code></h3><p>To use AWS S3 for storage, you configured the <code>s3</code> object inside <code>providerOptions</code>. But as S3 is not a provider but a destination. To avoid confusion we moved the <code>s3</code> settings to the root settings object.</p>
+<h3 id="Removed-compatibility-for-legacy-Custom-Provider-implementations"><a href="#Removed-compatibility-for-legacy-Custom-Provider-implementations" class="headerlink" title="Removed compatibility for legacy Custom Provider implementations"></a>Removed compatibility for legacy Custom Provider implementations</h3><p><a href="/uppy/docs/companion/#Adding-custom-providers">Custom Provider</a><br>implementations must use the Promise API. The callback API is no longer supported.</p>
+<h3 id="Default-to-no-ACL-for-AWS-S3"><a href="#Default-to-no-ACL-for-AWS-S3" class="headerlink" title="Default to no ACL for AWS S3"></a>Default to no ACL for AWS S3</h3><p>Default to no <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/acl-overview.html" target="_blank" rel="noopener">ACL</a> for S3 uploads. Before the default was <code>public-read</code> but AWS now discourages ACLs. The environment variable <code>COMPANION_AWS_DISABLE_ACL</code> is also removed, instead Companion only uses <code>COMPANION_AWS_ACL</code>.</p>
+<h3 id="protocol-sent-from-Uppy-in-any-get-request-is-now-required-before-it-would-default-to-Multipart"><a href="#protocol-sent-from-Uppy-in-any-get-request-is-now-required-before-it-would-default-to-Multipart" class="headerlink" title="protocol sent from Uppy in any get request is now required (before it would default to Multipart)."></a><code>protocol</code> sent from Uppy in any <code>get</code> request is now required (before it would default to Multipart).</h3><p>If you use any official Uppy plugins, then no migration is needed. For custom plugins that talk to Companion, make to send along the <code>protocol</code> header with a value of <code>multipart</code>, <code>s3Multipart</code>, or <code>tus</code>.</p>
+<h3 id="emitSuccess-and-emitError-are-now-private-methods-on-the-Uploader-class"><a href="#emitSuccess-and-emitError-are-now-private-methods-on-the-Uploader-class" class="headerlink" title="emitSuccess and emitError are now private methods on the Uploader class."></a><code>emitSuccess</code> and <code>emitError</code> are now private methods on the <code>Uploader</code> class.</h3><p>It’s unlikely you’re using this, but it’s technically a breaking change.<br>In general, don’t depend on implicitly internal methods, use exposed APIs instead.</p>
+<h3 id="Removed-chunkSize-backwards-compatibility-for-AWS-S3-Multipart"><a href="#Removed-chunkSize-backwards-compatibility-for-AWS-S3-Multipart" class="headerlink" title="Removed chunkSize backwards compatibility for AWS S3 Multipart"></a>Removed <code>chunkSize</code> backwards compatibility for AWS S3 Multipart</h3><p><code>chunkSize</code> option will now be used as <code>partSize</code> in AWS multipart. Before only valid values would be respected. Invalid values would be ignored. Now any value will be passed on to the AWS SDK, possibly throwing an error on invalid values.</p>
+<h3 id="Removed-backwards-compatibility-for-metrics-endpoint"><a href="#Removed-backwards-compatibility-for-metrics-endpoint" class="headerlink" title="Removed backwards compatibility for /metrics endpoint"></a>Removed backwards compatibility for <code>/metrics</code> endpoint</h3><p>The <code>metrics</code> option is a boolean flag to tell Companion whether to provide an endpoint <code>/metrics</code> with Prometheus metrics. Metrics will now always be served under <code>options.server.path</code>. Before v4.x, it would always be served under the root.</p>
+<p>For example: if <code>{ options: { metrics: true, server: { path: '/companion' }}}</code>, metrics will now be served under <code>/companion/metrics</code>. In v3.x, the metrics would be served under <code>/metrics</code>.</p>
+<h2 id="Migrate-from-Uppy-1-x-to-2-x"><a href="#Migrate-from-Uppy-1-x-to-2-x" class="headerlink" title="Migrate from Uppy 1.x to 2.x"></a>Migrate from Uppy 1.x to 2.x</h2><h3 id="New-bundle-requires-manual-polyfilling"><a href="#New-bundle-requires-manual-polyfilling" class="headerlink" title="New bundle requires manual polyfilling"></a>New bundle requires manual polyfilling</h3><p>With 2.0, following in the footsteps of Microsoft, we are dropping support for IE11. As a result, we are able to remove all built-in polyfills, and the new bundle size is <strong>25% smaller</strong>! If you want your app to still support older browsers (such as IE11), you may need to add the following polyfills to your bundle:</p>
+<ul>
+<li><a href="https://github.com/mo/abortcontroller-polyfill" target="_blank" rel="noopener">abortcontroller-polyfill</a></li>
+<li><a href="https://github.com/zloirock/core-js" target="_blank" rel="noopener">core-js</a></li>
+<li><a href="https://github.com/mozdevs/mediaDevices-getUserMedia-polyfill" target="_blank" rel="noopener">md-gum-polyfill</a></li>
+<li><a href="https://github.com/que-etc/resize-observer-polyfill" target="_blank" rel="noopener">resize-observer-polyfill</a></li>
+<li><a href="https://github.com/github/fetch" target="_blank" rel="noopener">whatwg-fetch</a></li>
+</ul>
+<p>If you’re using a bundler, you need import these before Uppy:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="token keyword module">import</span> <span class="token string">'core-js'</span>
+<span class="token keyword module">import</span> <span class="token string">'whatwg-fetch'</span>
+<span class="token keyword module">import</span> <span class="token string">'abortcontroller-polyfill/dist/polyfill-patch-fetch'</span>
+<span class="token comment">// Order matters here: AbortController needs fetch, which needs Promise (provided by core-js).</span>
+
+<span class="token keyword module">import</span> <span class="token string">'md-gum-polyfill'</span>
+<span class="token keyword module">import</span> <span class="token imports"><span class="token maybe-class-name">ResizeObserver</span></span> <span class="token keyword module">from</span> <span class="token string">'resize-observer-polyfill'</span>
+
+<span class="token dom variable">window</span><span class="token punctuation">.</span><span class="token property-access"><span class="token maybe-class-name">ResizeObserver</span></span> <span class="token operator">??=</span> <span class="token maybe-class-name">ResizeObserver</span>
+
+<span class="token keyword module">export</span> <span class="token exports"><span class="token punctuation">{</span> <span class="token keyword module">default</span> <span class="token punctuation">}</span></span> <span class="token keyword module">from</span> <span class="token string">'@uppy/core'</span>
+<span class="token keyword module">export</span> <span class="token exports"><span class="token operator">*</span></span> <span class="token keyword module">from</span> <span class="token string">'@uppy/core'</span></pre></td></tr></table></figure>
+<p>If you’re using Uppy from a CDN, we now provide two bundles: one for up-to-date browsers that do not include polyfills and use modern syntax, and one for legacy browsers. When migrating, be mindful about the types of browsers you want to support:</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="token comment">&lt;!-- Modern browsers (recommended) --></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://releases.transloadit.com/uppy/v3.6.1/uppy.min.js<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+
+<span class="token comment">&lt;!-- Legacy browsers (IE11+) --></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">nomodule</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://releases.transloadit.com/uppy/v3.6.1/uppy.legacy.min.js<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>module<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"><span class="token language-javascript"><span class="token keyword module">import</span> <span class="token string">"https://releases.transloadit.com/uppy/v3.6.1/uppy.min.js"</span><span class="token punctuation">;</span></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span></pre></td></tr></table></figure>
+<p>Please note that while you may be able to get 2.0 to work in IE11 this way, we do not officially support it anymore.</p>
+<h3 id="Use-BasePlugin-or-UIPlugin-instead-of-Plugin"><a href="#Use-BasePlugin-or-UIPlugin-instead-of-Plugin" class="headerlink" title="Use BasePlugin or UIPlugin instead of Plugin"></a>Use <code>BasePlugin</code> or <code>UIPlugin</code> instead of <code>Plugin</code></h3><p><a href="/docs/uppy/"><code>@uppy/core</code></a> used to provide a <code>Plugin</code> class for creating plugins. This was used for any official plugin, but also for users who want to create their own custom plugin. But, <code>Plugin</code> always came bundled with Preact, even if the plugin itself didn’t add any UI elements.</p>
+<p><code>Plugin</code> has been replaced with <code>BasePlugin</code> and <code>UIPlugin</code>. <code>BasePlugin</code> is the minimum you need to create a plugin and <code>UIPlugin</code> adds Preact for rendering user interfaces.</p>
+<p>You can import them from <a href="/docs/uppy/"><code>@uppy/core</code></a>:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="token keyword module">import</span> <span class="token imports"><span class="token punctuation">{</span> <span class="token maybe-class-name">BasePlugin</span><span class="token punctuation">,</span> <span class="token maybe-class-name">UIPlugin</span> <span class="token punctuation">}</span></span> <span class="token keyword module">from</span> <span class="token string">'@uppy/core'</span></pre></td></tr></table></figure>
+<p><strong>Note:</strong> some bundlers will include <code>UIPlugin</code> (and thus Preact) if you import from <code>@uppy/core</code>. To make sure this does not happen, you can import <code>Uppy</code> and <code>BasePlugin</code> directly:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="token keyword module">import</span> <span class="token imports"><span class="token maybe-class-name">Uppy</span></span> <span class="token keyword module">from</span> <span class="token string">'@uppy/core/lib/Uppy.js'</span>
+<span class="token keyword module">import</span> <span class="token imports"><span class="token maybe-class-name">BasePlugin</span></span> <span class="token keyword module">from</span> <span class="token string">'@uppy/core/lib/BasePlugin.js'</span></pre></td></tr></table></figure>
+<h3 id="Use-the-latest-Preact-for-your-Uppy-plugins"><a href="#Use-the-latest-Preact-for-your-Uppy-plugins" class="headerlink" title="Use the latest Preact for your Uppy plugins"></a>Use the latest Preact for your Uppy plugins</h3><p>Official plugins have already been upgraded. If you are using any custom plugins, upgrade Preact to the latest version. At the time of writing this is <code>10.5.13</code>.</p>
+<h3 id="Set-plugin-titles-from-locales"><a href="#Set-plugin-titles-from-locales" class="headerlink" title="Set plugin titles from locales"></a>Set plugin titles from locales</h3><p>Titles for plugins used to be set with the <code>title</code> property in the plugin options, but all other strings are set in <code>locale</code>. This has now been aligned. You should set your plugin title from the <code>locale</code> property.</p>
+<p>Before</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="token keyword module">import</span> <span class="token imports"><span class="token maybe-class-name">Webcam</span></span> <span class="token keyword module">from</span> <span class="token string">'@uppy/webcam'</span>
+
+uppy<span class="token punctuation">.</span><span class="token method function property-access">use</span><span class="token punctuation">(</span><span class="token maybe-class-name">Webcam</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  <span class="token literal-property property">title</span><span class="token operator">:</span> <span class="token string">'Some title'</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span></pre></td></tr></table></figure>
+<p>After</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="token keyword module">import</span> <span class="token imports"><span class="token maybe-class-name">Webcam</span></span> <span class="token keyword module">from</span> <span class="token string">'@uppy/webcam'</span>
+
+uppy<span class="token punctuation">.</span><span class="token method function property-access">use</span><span class="token punctuation">(</span><span class="token maybe-class-name">Webcam</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  <span class="token literal-property property">locale</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">strings</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token literal-property property">title</span><span class="token operator">:</span> <span class="token string">'Some title'</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span></pre></td></tr></table></figure>
+<h3 id="Initialize-Uppy-with-the-new-keyword"><a href="#Initialize-Uppy-with-the-new-keyword" class="headerlink" title="Initialize Uppy with the new keyword"></a>Initialize Uppy with the <code>new</code> keyword</h3><p>The default export <code>Uppy</code> is no longer callable as a function. This means you construct the <code>Uppy</code> instance using the <code>new</code> keyword.</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="token keyword module">import</span> <span class="token imports"><span class="token maybe-class-name">Uppy</span></span> <span class="token keyword module">from</span> <span class="token string">'@uppy/core'</span>
+
+<span class="token keyword">const</span> uppy <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Uppy</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">// correct.</span>
+
+<span class="token keyword">const</span> otherUppy <span class="token operator">=</span> <span class="token function"><span class="token maybe-class-name">Uppy</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">// incorrect, will throw.</span></pre></td></tr></table></figure>
+<h3 id="Rename-allowMultipleUploads-to-allowMultipleUploadBatches"><a href="#Rename-allowMultipleUploads-to-allowMultipleUploadBatches" class="headerlink" title="Rename allowMultipleUploads to allowMultipleUploadBatches"></a>Rename <code>allowMultipleUploads</code> to <code>allowMultipleUploadBatches</code></h3><p><a href="/uppy/docs/uppy/#allowMultipleUploadBatches-true"><code>allowMultipleUploadBatches</code></a> means allowing several calls to <a href="/uppy/docs/uppy/#uppy-upload"><code>.upload()</code></a>, in other words, a user can add more files after already having uploaded some.</p>
+<!--retext-simplify ignore multiple-->
+
+<p>We have renamed this to be more intention revealing that this is about uploads, and not whether a user can choose multiple files for one upload.</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="token keyword">const</span> uppy <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Uppy</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  <span class="token literal-property property">allowMultipleUploadBatches</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span></pre></td></tr></table></figure>
+<h3 id="New-default-limits-for-uppy-xhr-upload-and-uppy-tus"><a href="#New-default-limits-for-uppy-xhr-upload-and-uppy-tus" class="headerlink" title="New default limits for @uppy/xhr-upload and @uppy/tus"></a>New default limits for <a href="/docs/xhr-upload/"><code>@uppy/xhr-upload</code></a> and <a href="/docs/tus/"><code>@uppy/tus</code></a></h3><p>The default limit has been changed from <code>0</code> to <code>5</code>. Setting this to <code>0</code> means no limit on concurrent uploads.</p>
+<p>You can change the limit on the Tus and XHR plugin options.</p>
+<figure class="highlight js"><table><tr><td class="code"><pre>uppy<span class="token punctuation">.</span><span class="token method function property-access">use</span><span class="token punctuation">(</span><span class="token maybe-class-name">Tus</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  <span class="token comment">// ...</span>
+  <span class="token literal-property property">limit</span><span class="token operator">:</span> <span class="token number">10</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre>uppy<span class="token punctuation">.</span><span class="token method function property-access">use</span><span class="token punctuation">(</span><span class="token maybe-class-name">XHRUpload</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  <span class="token comment">// ...</span>
+  <span class="token literal-property property">limit</span><span class="token operator">:</span> <span class="token number">10</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span></pre></td></tr></table></figure>
+<h3 id="TypeScript-changes"><a href="#TypeScript-changes" class="headerlink" title="TypeScript changes"></a>TypeScript changes</h3><p>Uppy used to have loose types by default and strict types as an opt-in. The default export was a function that returned the <code>Uppy</code> class, and the types came bundled with the default export (<code>Uppy.SomeType</code>).</p>
+<figure class="highlight ts"><table><tr><td class="code"><pre><span class="token keyword">import</span> Uppy <span class="token keyword">from</span> <span class="token string">'@uppy/core'</span>
+<span class="token keyword">import</span> Tus <span class="token keyword">from</span> <span class="token string">'@uppy/tus'</span>
+
+<span class="token keyword">const</span> uppy <span class="token operator">=</span> <span class="token generic-function"><span class="token function">Uppy</span><span class="token generic class-name"><span class="token operator">&lt;</span>Uppy<span class="token punctuation">.</span>StrictTypes<span class="token operator">></span></span></span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+uppy<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>Tus<span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  invalidOption<span class="token operator">:</span> <span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token comment">// this will make the compilation fail!</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span></pre></td></tr></table></figure>
+<p>Uppy is now strictly typed by default and loose types have been removed.</p>
+<figure class="highlight ts"><table><tr><td class="code"><pre><span class="token comment">// ...</span>
+
+<span class="token keyword">const</span> uppy <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Uppy</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+uppy<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>Tus<span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  invalidOption<span class="token operator">:</span> <span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token comment">// this will make the compilation fail!</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span></pre></td></tr></table></figure>
+<p>Uppy types are now individual exports and should be imported separately.</p>
+<!-- eslint-disable @typescript-eslint/no-unused-vars -->
+
+<figure class="highlight ts"><table><tr><td class="code"><pre><span class="token keyword">import</span> <span class="token keyword">type</span> <span class="token punctuation">{</span> PluginOptions<span class="token punctuation">,</span> UIPlugin<span class="token punctuation">,</span> PluginTarget <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'@uppy/core'</span></pre></td></tr></table></figure>
+<h4 id="Event-types"><a href="#Event-types" class="headerlink" title="Event types"></a>Event types</h4><p><a href="/docs/uppy/"><code>@uppy/core</code></a> provides an <a href="/docs/uppy/#uppy-on-39-event-39-action"><code>.on</code></a> method to listen to <a href="/docs/uppy/#Events">events</a>. The types for these events were loose and allowed for invalid events to be passed, such as <code>uppy.on('upload-errrOOOoooOOOOOrrrr')</code>.</p>
+<!-- eslint-disable @typescript-eslint/no-unused-vars -->
+
+<figure class="highlight ts"><table><tr><td class="code"><pre><span class="token comment">// Before:</span>
+
+<span class="token keyword">type</span> <span class="token class-name">Meta</span> <span class="token operator">=</span> <span class="token punctuation">{</span> myCustomMetadata<span class="token operator">:</span> <span class="token builtin">string</span> <span class="token punctuation">}</span>
+
+<span class="token comment">// Invalid event</span>
+uppy<span class="token punctuation">.</span><span class="token generic-function"><span class="token function">on</span><span class="token generic class-name"><span class="token operator">&lt;</span>Meta<span class="token operator">></span></span></span><span class="token punctuation">(</span><span class="token string">'upload-errrOOOoooOOOOOrrrr'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+  <span class="token comment">// ...</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token comment">// After:</span>
+
+<span class="token comment">// Normal event signature</span>
+uppy<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'complete'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>result<span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> successResults <span class="token operator">=</span> result<span class="token punctuation">.</span>successful
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token comment">// Custom signature</span>
+<span class="token keyword">type</span> <span class="token class-name">Meta</span> <span class="token operator">=</span> <span class="token punctuation">{</span> myCustomMetadata<span class="token operator">:</span> <span class="token builtin">string</span> <span class="token punctuation">}</span>
+
+<span class="token comment">// Notice how the custom type has now become the second argument</span>
+uppy<span class="token punctuation">.</span><span class="token generic-function"><span class="token function">on</span><span class="token generic class-name"><span class="token operator">&lt;</span><span class="token string">'complete'</span><span class="token punctuation">,</span> Meta<span class="token operator">></span></span></span><span class="token punctuation">(</span><span class="token string">'complete'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>result<span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+  <span class="token comment">// The passed type is now merged into the `meta` types.</span>
+  <span class="token keyword">const</span> meta <span class="token operator">=</span> result<span class="token punctuation">.</span>successful<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>meta<span class="token punctuation">.</span>myCustomMetadata
+<span class="token punctuation">}</span><span class="token punctuation">)</span></pre></td></tr></table></figure>
+<p>Plugins that add their own events can merge with existing ones in <code>@uppy/core</code> with <code>declare module '@uppy/core' { ... }</code>. This is a TypeScript pattern called <a href="https://www.typescriptlang.org/docs/handbook/declaration-merging.html#module-augmentation" target="_blank" rel="noopener">module augmentation</a>. For instance, when using <a href="/docs/dashboard/"><code>@uppy/dashboard</code></a>:</p>
+<!-- eslint-disable @typescript-eslint/no-unused-vars -->
+
+<figure class="highlight ts"><table><tr><td class="code"><pre>uppy<span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'dashboard:file-edit-start'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span>file<span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> fileName <span class="token operator">=</span> file<span class="token punctuation">.</span>name
+<span class="token punctuation">}</span><span class="token punctuation">)</span></pre></td></tr></table></figure>
+<h3 id="Changes-to-pre-signing-URLs-for-uppy-aws-s3-multipart"><a href="#Changes-to-pre-signing-URLs-for-uppy-aws-s3-multipart" class="headerlink" title="Changes to pre-signing URLs for @uppy/aws-s3-multipart"></a>Changes to pre-signing URLs for <a href="/docs/aws-s3-multipart/"><code>@uppy/aws-s3-multipart</code></a></h3><p>See the Uppy 2.0.0 announcement post about the batch <a href="/uppy/blog/2021/08/2.0/#Batch-pre-signing-URLs-for-AWS-S3-Multipart">pre-signing URLs change</a>.</p>
+<p><code>prepareUploadPart</code> has been renamed to <a href="/uppy/docs/aws-s3-multipart/#prepareUploadParts-file-partData"><code>prepareUploadParts</code></a> (plural). See the documentation link on how to use this function.</p>
+<h3 id="Removed-the-run-method-from-uppy-core"><a href="#Removed-the-run-method-from-uppy-core" class="headerlink" title="Removed the .run method from @uppy/core"></a>Removed the <code>.run</code> method from <a href="/docs/uppy/"><code>@uppy/core</code></a></h3><p>The <code>.run</code> method on the <code>Uppy</code> instance has been removed. This method was already obsolete and only logged a warning. As of this major version, it no longer exists.</p>
+<h3 id="Removed-resume-and-removeFingerprintOnSuccess-options-from-uppy-tus"><a href="#Removed-resume-and-removeFingerprintOnSuccess-options-from-uppy-tus" class="headerlink" title="Removed resume and removeFingerprintOnSuccess options from @uppy/tus"></a>Removed <code>resume</code> and <code>removeFingerprintOnSuccess</code> options from <a href="/docs/tus/"><code>@uppy/tus</code></a></h3><p>Tus will now by default try to resume uploads if the upload has been started in the past.</p>
+<p>This also means tus will store some data in localStorage for each upload, which will automatically be removed on success. Making <code>removeFingerprintOnSuccess</code> obsolete too.</p>
+<h3 id="That’s-it"><a href="#That’s-it" class="headerlink" title="That’s it!"></a>That’s it!</h3><p>Uppy 1.0 will continue to receive bug fixes for three more months (until <time datetime="2021-12-01">1 December 2021</time>), security fixes for one more year (until <time datetime="2022-09-01">1 September 2022</time>), but no more new features after today. Exceptions are unlikely, but <em>can</em> be made – to accommodate those with commercial support contracts, for example.</p>
+<p>We hope you’ll waste no time in taking Uppy 2.0 out for a walk. When you do, please let us know what you thought of it on <a href="https://www.reddit.com/r/javascript/comments/penbr7/uppy_file_uploader_20_smaller_and_faster_modular/" target="_blank" rel="noopener">Reddit</a>, <a href="https://news.ycombinator.com/item?id=28359287" target="_blank" rel="noopener">HN</a>, ProductHunt, or <a href="https://twitter.com/uppy_io/status/1432399270846603264" target="_blank" rel="noopener">Twitter</a>. We’re howling at the moon to hear from you!</p>
+<h2 id="Migrate-from-Companion-1-x-to-2-x"><a href="#Migrate-from-Companion-1-x-to-2-x" class="headerlink" title="Migrate from Companion 1.x to 2.x"></a>Migrate from Companion 1.x to 2.x</h2><h3 id="Prerequisite"><a href="#Prerequisite" class="headerlink" title="Prerequisite"></a>Prerequisite</h3><p>Since v2, you now need to be running <code>node.js &gt;= v10.20.1</code> to use Companion.</p>
+<h3 id="ProviderOptions"><a href="#ProviderOptions" class="headerlink" title="ProviderOptions"></a>ProviderOptions</h3><p>In v2 the <code>google</code> and <code>microsoft</code> <a href="/uppy/docs/companion/#Options">providerOptions</a> have been changed to <code>drive</code> and <code>onedrive</code> respectively.</p>
+<h3 id="OAuth-Redirect-URIs"><a href="#OAuth-Redirect-URIs" class="headerlink" title="OAuth Redirect URIs"></a>OAuth Redirect URIs</h3><p>On your Providers’ respective developer platforms, the OAuth redirect URIs that you should supply has now changed from:</p>
+<p><code>http(s)://$COMPANION_HOST_NAME/connect/$AUTH_PROVIDER/callback</code> in v1</p>
+<p>to:</p>
+<p><code>http(s)://$COMPANION_HOST_NAME/$PROVIDER_NAME/redirect</code> in v2</p>
+<h4 id="New-Redirect-URIs"><a href="#New-Redirect-URIs" class="headerlink" title="New Redirect URIs"></a>New Redirect URIs</h4><div class="table-responsive">
+
+<table>
+<thead>
+<tr>
+<th>Provider</th>
+<th>New Redirect URI</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Dropbox</td>
+<td><code>https://$COMPANION_HOST_NAME/dropbox/redirect</code></td>
+</tr>
+<tr>
+<td>Google Drive</td>
+<td><code>https://$COMPANION_HOST_NAME/drive/redirect</code></td>
+</tr>
+<tr>
+<td>OneDrive</td>
+<td><code>https://$COMPANION_HOST_NAME/onedrive/redirect</code></td>
+</tr>
+<tr>
+<td>Box</td>
+<td><code>https://$YOUR_COMPANION_HOST_NAME/box/redirect</code></td>
+</tr>
+<tr>
+<td>Facebook</td>
+<td><code>https://$COMPANION_HOST_NAME/facebook/redirect</code></td>
+</tr>
+<tr>
+<td>Instagram</td>
+<td><code>https://$COMPANION_HOST_NAME/instagram/redirect</code></td>
+</tr>
+</tbody></table>
+</div>
+
+<!-- definitions -->
+
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script></body></html>
+    
+    
+
+    
+    <div class="footer">Caught a mistake or want to contribute to the documentation?
+       <a href="https://github.com/transloadit/uppy/blob/main/website/src/docs/migration-guides.md" rel="noreferrer noopener" target="_blank">Edit/fork this page directly on Github</a>!
+    </div>
+</div>
+
+        
+      </main>
+
+      <script defer data-domain="transloadit.github.io" src="https://analytics.transloadit.com/js/plausible.js"></script>
+
+
+      
+        <script src="/uppy/js/smooth-scroll.min.js"></script>
+        <!-- Place this tag in your head or just before your close body tag. -->
+        <script async defer src="https://buttons.github.io/buttons.js"></script>
+      
+      <script src="/uppy/js/common.js"></script>
+
+      <!-- Twitter follow button script -->
+      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+    </div>
+  </body>
+</html>

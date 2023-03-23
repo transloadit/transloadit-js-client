@@ -1,0 +1,353 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>The Golden Retriever: Making uploads survive browser crashes — Uppy</title>
+    <meta charset="utf-8">
+    <meta name="title" content="The Golden Retriever: Making uploads survive browser crashes — Uppy">
+    <meta name="description" content="TL;DR: We’re on a mission to improve file uploading on the web. We released tus: the open protocol for resumable file uploads, as well as Uppy: the next open source file uploader for web browsers. Uppy uses tus, which makes it resilient to poor network conditions and crashing servers. Today we’re launching an Uppy feature that also makes it resilient to browser crashes, which we believe is an indu">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@uppy_io">
+    <meta name="twitter:creator" content="@uppy_io">
+    <meta property="og:url" content="https://transloadit.github.io/uppy/blog/2017/07/golden-retriever/index.html">
+    <meta property="og:title" content="The Golden Retriever: Making uploads survive browser crashes — Uppy">
+    <meta name="twitter:title" content="The Golden Retriever: Making uploads survive browser crashes — Uppy">
+    <meta name="twitter:description" content="TL;DR: We’re on a mission to improve file uploading on the web. We released tus: the open protocol for resumable file uploads, as well as Uppy: the next open source file uploader for web browsers. Uppy uses tus, which makes it resilient to poor network conditions and crashing servers. Today we’re launching an Uppy feature that also makes it resilient to browser crashes, which we believe is an indu">
+    <meta property="og:image" content="http://uppy.io/uppy/images/blog/golden-retriever/uppy-team-kong.jpg">
+    <meta name="twitter:image" content="http://uppy.io/uppy/images/blog/golden-retriever/uppy-team-kong.jpg">
+
+    <meta name="google-site-verification" content="JxARoHXoCI8bD07pLV_u3z6xpuWNcSIZIcHEytyCkUc" />
+
+    <link rel="icon" href="/uppy/images/logos/uppy-dog-head-arrow.png" type="image/x-icon">
+    <link rel="alternate" type="application/rss+xml" title="Uppy" href="/atom.xml">
+
+    <script>
+      window.PAGE_TYPE = ""
+    </script>
+    
+<link rel="stylesheet" href="/uppy/css/main.css?version=2">
+
+    <!-- ^ poor man's solution to css cache busting. bump the version when there's something new we really want users to see -->
+  <meta name="generator" content="Hexo 4.2.1"></head>
+  <body class="page-inner ">
+    <div class="page">
+      <div class="TransloaditBar js-TransloaditBar">
+        <div class="TransloaditBar-about">
+          <!-- <a class="TransloaditBar-logo" href="https://transloadit.com/" target="_blank" rel="noopener">
+            <img class="TransloaditBar-logoImg" src="/uppy/images/transloadit-white-glyph.svg" width="20" height="20" alt="Transloadit">
+          </a> -->
+          <!-- <span>Uppy is an open source project by <a class="TransloaditBar-link" href="https://transloadit.com/" target="_blank">Transloadit</a></span> -->
+          This website is no longer maintained, please visit <a href="//uppy.io" target="_blank" rel="noopener" style="color:inherit">uppy.io</a> to get up-to-date info about Uppy.
+        </div>
+      </div>
+
+      <header id="header" class="MainHeader js-MainHeader">
+        <button class="MainHeader-menuBtn js-MenuBtn"></button>
+
+        <span id="logo" class="MainLogo">
+          <a class="MainLogo-link" href="/uppy/">Uppy</a>
+          <!-- Was used for 1.0, we can re-use for 2.0 or major announcements -->
+          <!-- <a class="MainLogo-announcement" href="/blog/2019/04/1.0/">
+            1.0
+            <span class="MainLogo-emoji">
+              <img src="/uppy/images/party-popper.png" srcset="/uppy/images/party-popper@2x.png 2x" alt="🎉">
+            </span>
+          </a> -->
+        </span>
+
+        <nav>
+          <ul id="nav" class="MainMenu">
+            <!-- @todo uncomment search input when we get our own swifttype -->
+<!-- <li>
+  <form id="search-form" class="MainMenu-search">
+    <input type="text" id="search-query" class="MainMenu-searchQuery st-default-search-input">
+  </form>
+</li> -->
+<!--li><a href="/uppy/guide/" class="nav-link">Guide</a></li-->
+<li><a href="/uppy/docs/" class="nav-link">Docs</a></li>
+<li><a href="/uppy/examples/dashboard/" class="nav-link">Examples</a></li>
+<!--li><a href="/uppy/stats/" class="nav-link">Stats</a></li-->
+<li><a href="/uppy/blog/" class="nav-link current">Blog</a></li>
+<li><a href="/uppy/support/" class="nav-link">Support</a></li>
+<li><a href="https://github.com/transloadit/uppy" target="_blank" rel="noopener" class="nav-link">GitHub</a></li>
+
+          </ul>
+        </nav>
+
+        <div class="MainHeader-tagline">
+          The file uploader that <span class="MainHeader-taglinePart js-MainHeader-taglinePart is-visible">loves to play fetch</span>
+        </div>
+
+        <ul class="MainHeader-taglineList js-MainHeader-taglineList">
+          
+          <li>won’t chew on your shoes</li>
+          
+          <li>is fully housebroken</li>
+          
+          <li>just wants to play with you</li>
+          
+          <li>doesn’t hump your leg</li>
+          
+          <li>also accepts cat pictures</li>
+          
+          <li>loves you unconditionally</li>
+          
+          <li>you don’t have to keep on a leash</li>
+          
+          <li>won’t pee on your rug</li>
+          
+          <li>loves to play fetch</li>
+          
+          <li>doesn’t bite (hard)</li>
+          
+          <li>won’t bark at the mailman</li>
+          
+          <li>is great with the kids</li>
+          
+          <li>can digest anything, even chocolate cake</li>
+          
+          <li>is always happy to see you</li>
+          
+          <li>isn’t afraid of fireworks</li>
+          
+          <li>is allowed everywhere</li>
+          
+        </ul>
+      </header>
+
+      <main class="MainContent js-MainContent" id="main">
+        
+          <div class="Sidebar js-Sidebar is-blog">
+    <ul class="main-menu">
+        <!-- @todo uncomment search input when we get our own swifttype -->
+<!-- <li>
+  <form id="search-form" class="MainMenu-search">
+    <input type="text" id="search-query" class="MainMenu-searchQuery st-default-search-input">
+  </form>
+</li> -->
+<!--li><a href="/uppy/guide/" class="nav-link">Guide</a></li-->
+<li><a href="/uppy/docs/" class="nav-link">Docs</a></li>
+<li><a href="/uppy/examples/dashboard/" class="nav-link">Examples</a></li>
+<!--li><a href="/uppy/stats/" class="nav-link">Stats</a></li-->
+<li><a href="/uppy/blog/" class="nav-link current">Blog</a></li>
+<li><a href="/uppy/support/" class="nav-link">Support</a></li>
+<li><a href="https://github.com/transloadit/uppy" target="_blank" rel="noopener" class="nav-link">GitHub</a></li>
+
+    </ul>
+    <div class="list">
+        <h2>
+            Recent Posts
+            <a href="/atom.xml" rel="noreferrer noopener" target="_blank" style="vertical-align: middle; margin-left: 5px">
+                <img src="/uppy/images/feed.png" style="width:15px;height:15px">
+            </a>
+        </h2>
+
+        <ul>
+  
+  <li>
+    <a href="/blog/2022/12/3.3/" class="sidebar-link">🎄 Uppy 3.1-3.3: Improved AWS S3 Multipart, Single File Mode</a>
+  </li>
+  
+  <li>
+    <a href="/blog/2022/09/3.0/" class="sidebar-link">Uppy 3.0: Future-proof, conveniently easy, stable as ever</a>
+  </li>
+  
+  <li>
+    <a href="/blog/2022/03/2.4-2.7/" class="sidebar-link">Uppy 2.4-2.7: Image Compressor, Transloadit Rate Limiting, ESM</a>
+  </li>
+  
+  <li>
+    <a href="/blog/2021/12/2.1-2.3/" class="sidebar-link">🎄 Uppy 2.1-2.3: Audio plugin, fast and efficient streaming for Companion, production-ready Unsplash, and more</a>
+  </li>
+  
+  <li>
+    <a href="/blog/2021/08/2.0/" class="sidebar-link">Uppy 2.0.0: smaller, faster, modular plugins, Preact X, stricter types, and much more</a>
+  </li>
+  
+  <li>
+    <a href="/blog/2021/07/1.30/" class="sidebar-link">Uppy 1.30: Angular integration, granular image rotation, Google Drive shortcuts</a>
+  </li>
+  
+  <li>
+    <a href="/blog/2021/05/1.29/" class="sidebar-link">Uppy 1.29: Golden Retriever, disableLocalFiles, Webcam previews, uppy.logout</a>
+  </li>
+  
+  <li>
+    <a href="/blog/2021/04/1.27/" class="sidebar-link">Uppy 1.27: Drop Target plugin, Vue 3 support, Dashboard dynamic meta fields, “Shared with me” in Google Drive</a>
+  </li>
+  
+  <li>
+    <a href="/blog/2021/02/1.26/" class="sidebar-link">Uppy 1.26: Dashboard “disabled”, per-file headers</a>
+  </li>
+  
+  <li>
+    <a href="/blog/2021/01/1.25/" class="sidebar-link">Uppy 1.25: right-to-left scripts, Ukrainian translation, Companion improvements</a>
+  </li>
+  
+  <li>
+    <a href="/blog/2020/12/1.24/" class="sidebar-link">Uppy 1.24: 🎅 Happy Holidays — Svelte, React hook, Auto Open Image Editor</a>
+  </li>
+  
+</ul>
+        <ul class="Social">
+  <li><a href="https://twitter.com/uppy_io" target="_blank" rel="noopener" class="twitter-follow-button" data-show-count="false" data-dnt="true">Follow @uppy_io</a></li>
+  <li><iframe src="https://ghbtns.com/github-btn.html?user=transloadit&repo=uppy&type=watch&count=true"
+allowtransparency="true" frameborder="0" scrolling="0" width="100" height="20"></iframe></li>
+  <!-- to regenerate you can use this link: https://img.shields.io/badge/community-forum-d8006a.svg -->
+  <li><a href="https://community.transloadit.com/c/uppy" target="_blank" rel="noopener"><img src="/uppy/images/community-forum-d8006a.svg" /> </a></li>
+  <li class="BuildBadge">
+   <span class="wrapper">
+     <a href="https://github.com/transloadit/uppy/actions" target="_blank" rel="noopener"><img src="https://github.com/transloadit/uppy/workflows/End-to-end%20tests/badge.svg" alt="Build Status"></a>
+   </span>
+  </li>
+</ul>
+
+    </div>
+</div>
+
+
+<div class="Content js-Content with-sidebar">
+    
+  <h1>The Golden Retriever: Making uploads survive browser crashes</h1>
+  <div class="post-date">Monday Jul 31, 2017</div>
+    
+    <html><head></head><body><p><strong>TL;DR:</strong> We’re on a mission to improve file uploading on the web. We released <a href="https://tus.io" target="_blank" rel="noopener">tus</a>: the open protocol for resumable file uploads, as well as Uppy: the next open source file uploader for web browsers. Uppy uses tus, which makes it resilient to poor network conditions and crashing servers. Today we’re launching an Uppy feature that also makes it resilient to browser crashes, which we believe is an industry first. We’re sharing a quick <a href="/blog/2017/07/golden-retriever/#demo">demo</a> video, a bit of <a href="/blog/2017/07/golden-retriever/#uppy">background</a>, <a href="/blog/2017/07/golden-retriever/#how">how</a> exactly we achieved this, and how you can <a href="/blog/2017/07/golden-retriever/#try">try</a> it yourself.</p>
+<p>***</p>
+<p>Don’t you just hate it when you’re about to share the perfect photos from your trip to Iceland, and halfway through, your cat jumps on the keyboard and trashes your browser? Or the battery in your laptop dies? Or you accidentally close the tab or navigate away? We hate that too!</p>
+<p>If action games have had checkpoints since 1687 — why can’t file uploaders? Well, as it turns out, they can! We found a way to get those Iceland pics into the hands of your loved ones with near-zero levels of frustration, even after a dreaded Blue Screen of Death! (if that is still a thing ;)</p>
+<a id="more"></a>
+
+<p><a name="demo"></a></p>
+<h2 id="Demo"><a href="#Demo" class="headerlink" title="Demo"></a>Demo</h2><p>First off, let’s show you a demo 📹 of Uppy surviving a browser crash and picking up right where we left it:</p>
+<figure class="wide"><video alt="Demo video showing the Golden Retriever file restoring plugin in action" controls=""><source src="/uppy/images/blog/golden-retriever/uppy-golden-retriever-crash-demo-2.mp4" type="video/mp4">Your browser does not support the video tag, you can <a href="/uppy/images/blog/golden-retriever/uppy-golden-retriever-crash-demo-2.mp4">download the video</a> to watch it.</video></figure>
+
+<p><a name="uppy"></a></p>
+<h2 id="Uppy"><a href="#Uppy" class="headerlink" title="Uppy?"></a>Uppy?</h2><p>For those of you who are new here, Uppy is the next-gen open source file uploader for the web. It is made by Transloadit and thus it works great with their uploading &amp; encoding platform — but it also works great without! Simply add Uppy JavaScript to your website, deploy your own tusd/Node.js/Apache/Nginx server, and be on your way. Add <a href="https://github.com/transloadit/uppy-server" target="_blank" rel="noopener">uppy-server</a>, and your users will be able to pick files from remote sources like Dropbox and Instagram. Uppy’s focus is on the modern web, and we go through extreme lengths to achieve the smoothest of user experiences, and the most durable of reliabilities. 🙃</p>
+<h2 id="Hacking-trip"><a href="#Hacking-trip" class="headerlink" title="Hacking trip"></a>Hacking trip</h2><p>Our core team is spread across three continents and five cities, and most of us have never met in person, with the majority of communication happening in GitHub and Slack. Just last week, we got together in Berlin for a crazy week of pink limo rides, Indian food and Mario Kart 64. More on that on the <a href="https://transloadit.com/blog/2017/08/team-meetup-2017/" target="_blank" rel="noopener">Transloadit blog</a>.</p>
+<figure class="wide"><img src="/uppy/images/blog/golden-retriever/uppy-team-kong.jpg"></figure>
+
+<p>While enjoying some world-famous-in-Germany “Flammkuchen”, we were thinking about even more ways to make file uploading better (yes, we really can’t stop thinking about that). We then sat together in one room for a few days of hacking and came up with something neat. </p>
+<h2 id="The-Golden-Retriever"><a href="#The-Golden-Retriever" class="headerlink" title="The Golden Retriever"></a>The Golden Retriever</h2><p>Uppy has a new friend to play with. Meet the Golden Retriever, our file recovery plugin:</p>
+<center><img src="/uppy/images/blog/golden-retriever/catch-fail-2.gif" alt="Golden Retriever failing to catch something" title="Good try, girl!"></center>
+
+<p>As you can see, we’re not yet fully done with training her, but we’re getting there! 😄</p>
+<p>But wait, we can hear you think, didn’t <a href="https://tus.io" target="_blank" rel="noopener">tus.io</a> already make resumable uploads possible? Yes indeed, and it does an awesome job at recovering from poor network conditions. However, if your browser suddenly decided to crash, Uppy would have no idea about what it was doing before, and you would have to re-select and edit your files all over. </p>
+<center><img src="/uppy/images/blog/golden-retriever/no-idea-dog-3.gif" alt="Dog has no idea what he is doing" title="Keep trying, buddy!"></center>
+
+<p>For those cases, our Golden Retriever now comes to the rescue! It saves Uppy’s memory (state) in browser cache with every move you make. This means that when Uppy suddenly crashes for whatever reason, our plugin will be able to retrieve this memory upon restart, and offer to resume where you left off. Sounds simple enough right? So why hasn’t anybody attempted this before?</p>
+<p>As it turns out, it’s tricky. For one thing, no other competing file uploader uses tus, and resuming uploads without standardized and scrutinized components is really leaving you with more problems than you’re trying to solve in the first place. But with tus, we are standing on the shoulders of a giant and need not worry about the resumability aspect of the transmission.</p>
+<p>So then it becomes all about remembering what was going on with file selection and uploading right before the crash. One of the big issues here is that because of security reasons, Uppy is no longer allowed to access the selected files on your disk after a crash. Reasonable of course, but this meant that we had to deploy a number of workarounds that — while it may cause our inner purist some upset - combined, now amount to a pretty sweet user experience for the majority of cases. And in the end, that is what Uppy is all about: pleasing and delighting its users.</p>
+<p><a name="how"></a></p>
+<h2 id="👻-How-it-works"><a href="#👻-How-it-works" class="headerlink" title="👻 How it works"></a>👻 How it works</h2><p>If you really want to know…</p>
+<p>Because we cannot access the files that we were uploading from disk, we cache them inside the browser.</p>
+<p>It all started with <a href="https://github.com/transloadit/uppy/issues/237" target="_blank" rel="noopener">a prototype</a> by <a href="https://github.com/richardwillars" target="_blank" rel="noopener">Richard Willars</a>, which used a Service Worker to store files and states. Service Workers are great for when you close a tab, but when the browser dies, so does the Service Worker (in most cases). Also: iOS does not support it yet. So, we looked at Local Storage, which is almost universally available and <em>can</em> survive a browser crash, but can’t be used to store blobs. We also considered IndexedDB, which <em>can</em> store blobs, but is less available and has severe limits on how much you can or should store in it.</p>
+<p>Since all of these technologies came with specific drawbacks, which one should we pick?</p>
+<p>Why, all of them, of course! By combining the three, they cover each other’s disadvantages with their own advantages. Here’s what goes where: </p>
+<ul>
+<li>Local Storage stores all files state, without blobs (the actual data of the file), and restores this meta information on boot.</li>
+<li>Service Worker stores references to all file blobs in memory. This should persist when navigating away from a page or closing the browser tab, but will likely get destroyed after a browser crash / quit.</li>
+<li>IndexedDB stores all files that can reasonably be stored there, up to 10 MB per file and 300 MB in total (we are still debating reasonable limits). This persists until either the browser or Uppy decides to do a cleanup.</li>
+</ul>
+<p>Now when Uppy starts, we restore all meta information from Local Storage to get an idea of what was going on. For the blobs, we try to recover data from both the Service Worker and IndexedDB. This goes a long way into supporting many disastrous scenarios out there. </p>
+<p>In some cases (very large files or a complete browser crash), we won’t be able to recover the file, but we do have valuable information about it, such as the name and a preview.</p>
+<p>Our current idea is that we could present the user with “ghost files” for these edge cases, and ask them to re-add such files. Here’s an early mockup, but we would love more feedback on this:</p>
+<img src="/uppy/images/blog/golden-retriever/desktop-ghost.png" alt="Design mockup with ghosts" title="Design mockup with ghosts">
+
+<p>For the remaining cases, if an upload was already in progress before the crash/refresh, and especially if it was resumable (via <a href="https://tus.io" target="_blank" rel="noopener">tus</a>, for example), Golden Retriever just picks up from where it all went south. Our Golden Retriever will also clean up after herself: when files are successfully uploaded, or you decide to delete them, they will be removed from all “permanent” storages.</p>
+<p><a name="try"></a></p>
+<h2 id="🚦-Give-it-a-try-in-alpha"><a href="#🚦-Give-it-a-try-in-alpha" class="headerlink" title="🚦 Give it a try in alpha"></a>🚦 Give it a try in alpha</h2><p>Golden Retriever already works — tail awagging — and feels like magic :sparkles:, but it is also unstable, and hasn’t been tested on all the different devices yet. We encourage you to try it out though:</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="token function">git</span> clone https://github.com/transloadit/uppy.git
+<span class="token function">git</span> checkout feature/restore-files
+<span class="token function">npm</span> <span class="token function">install</span>
+<span class="token function">npm</span> run dev</pre></td></tr></table></figure>
+<p>A new browser tab with Uppy + Golden Retriever should open in a moment after the last command from above. The app entry point is in <code>examples/bundled-example/main.js</code>, it rebuilds on change. Enjoy! And please give your feedback in the <a href="https://github.com/transloadit/uppy/pull/268" target="_blank" rel="noopener">#268</a> PR 🎉</p>
+<p>The Uppy Team</p>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script></body></html>
+
+    <center>
+        <br />
+        <a class="github-button" href="https://github.com/transloadit/uppy" data-icon="octicon-star" data-size="large"
+        data-show-count="true" aria-label="Star transloadit/uppy on GitHub">Star</a>
+    </center>
+
+    <div class="PostAuthors">
+        
+            <div class="PostAuthor">
+                <a class="PostAuthor-link" href="https://transloadit.com/about/#artur" target="_blank" rel="noopener">
+                    <img class="PostAuthor-img" src="https://www.gravatar.com/avatar/6ddfaa9427d64ba52bbe021ea5e2ffef?s=200">
+                    <h4 class="PostAuthor-name">Artur Paikin</h4>
+                    <div class="PostAuthor-tagline">Developer</div>
+                </a>
+            </div>
+        
+    </div>
+  <br />
+    <!-- <ul class="Social">
+        <li><iframe src="https://ghbtns.com/github-btn.html?user=transloadit&repo=uppy&type=watch&count=true"
+                allowtransparency="true" frameborder="0" scrolling="0" width="100" height="20"></iframe></li>
+    </ul> -->
+  <!-- <div id="disqus_thread"></div>
+<script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+
+var disqus_config = function () {
+this.page.url = 'https://uppy.io/blog/2017/07/golden-retriever/';  // Replace PAGE_URL with your page's canonical URL variable
+// this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://uppy.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" target="_blank" rel="noopener">comments powered by Disqus.</a></noscript>
+                             -->
+</div>
+
+        
+      </main>
+
+      <script defer data-domain="transloadit.github.io" src="https://analytics.transloadit.com/js/plausible.js"></script>
+
+
+      
+        <script src="/uppy/js/smooth-scroll.min.js"></script>
+        <!-- Place this tag in your head or just before your close body tag. -->
+        <script async defer src="https://buttons.github.io/buttons.js"></script>
+      
+      <script src="/uppy/js/common.js"></script>
+
+      <!-- Twitter follow button script -->
+      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,838 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>XHR Upload — Uppy</title>
+    <meta charset="utf-8">
+    <meta name="title" content="XHR Upload — Uppy">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@uppy_io">
+    <meta name="twitter:creator" content="@uppy_io">
+    <meta property="og:url" content="https://transloadit.github.io/uppy/docs/xhr-upload/index.html">
+    <meta property="og:title" content="XHR Upload — Uppy">
+    <meta name="twitter:title" content="XHR Upload — Uppy">
+    <meta name="twitter:description" content="">
+    <meta property="og:image" content="http://transloadit.github.io/uppy/images/uppy-social-pink.png">
+    <meta name="twitter:image" content="http://transloadit.github.io/uppy/images/uppy-social-pink.png">
+
+    <meta name="google-site-verification" content="JxARoHXoCI8bD07pLV_u3z6xpuWNcSIZIcHEytyCkUc" />
+
+    <link rel="icon" href="/uppy/images/logos/uppy-dog-head-arrow.png" type="image/x-icon">
+    <link rel="alternate" type="application/rss+xml" title="Uppy" href="/atom.xml">
+
+    <script>
+      window.PAGE_TYPE = "docs"
+    </script>
+    
+<link rel="stylesheet" href="/uppy/css/main.css?version=2">
+
+    <!-- ^ poor man's solution to css cache busting. bump the version when there's something new we really want users to see -->
+  <meta name="generator" content="Hexo 4.2.1"></head>
+  <body class="page-inner ">
+    <div class="page">
+      <div class="TransloaditBar js-TransloaditBar">
+        <div class="TransloaditBar-about">
+          <!-- <a class="TransloaditBar-logo" href="https://transloadit.com/" target="_blank" rel="noopener">
+            <img class="TransloaditBar-logoImg" src="/uppy/images/transloadit-white-glyph.svg" width="20" height="20" alt="Transloadit">
+          </a> -->
+          <!-- <span>Uppy is an open source project by <a class="TransloaditBar-link" href="https://transloadit.com/" target="_blank">Transloadit</a></span> -->
+          This website is no longer maintained, please visit <a href="//uppy.io" target="_blank" rel="noopener" style="color:inherit">uppy.io</a> to get up-to-date info about Uppy.
+        </div>
+      </div>
+
+      <header id="header" class="MainHeader js-MainHeader">
+        <button class="MainHeader-menuBtn js-MenuBtn"></button>
+
+        <span id="logo" class="MainLogo">
+          <a class="MainLogo-link" href="/uppy/">Uppy</a>
+          <!-- Was used for 1.0, we can re-use for 2.0 or major announcements -->
+          <!-- <a class="MainLogo-announcement" href="/blog/2019/04/1.0/">
+            1.0
+            <span class="MainLogo-emoji">
+              <img src="/uppy/images/party-popper.png" srcset="/uppy/images/party-popper@2x.png 2x" alt="🎉">
+            </span>
+          </a> -->
+        </span>
+
+        <nav>
+          <ul id="nav" class="MainMenu">
+            <!-- @todo uncomment search input when we get our own swifttype -->
+<!-- <li>
+  <form id="search-form" class="MainMenu-search">
+    <input type="text" id="search-query" class="MainMenu-searchQuery st-default-search-input">
+  </form>
+</li> -->
+<!--li><a href="/uppy/guide/" class="nav-link">Guide</a></li-->
+<li><a href="/uppy/docs/" class="nav-link current">Docs</a></li>
+<li><a href="/uppy/examples/dashboard/" class="nav-link">Examples</a></li>
+<!--li><a href="/uppy/stats/" class="nav-link">Stats</a></li-->
+<li><a href="/uppy/blog/" class="nav-link">Blog</a></li>
+<li><a href="/uppy/support/" class="nav-link">Support</a></li>
+<li><a href="https://github.com/transloadit/uppy" target="_blank" rel="noopener" class="nav-link">GitHub</a></li>
+
+          </ul>
+        </nav>
+
+        <div class="MainHeader-tagline">
+          The file uploader that <span class="MainHeader-taglinePart js-MainHeader-taglinePart is-visible">loves to play fetch</span>
+        </div>
+
+        <ul class="MainHeader-taglineList js-MainHeader-taglineList">
+          
+          <li>won’t chew on your shoes</li>
+          
+          <li>is fully housebroken</li>
+          
+          <li>just wants to play with you</li>
+          
+          <li>doesn’t hump your leg</li>
+          
+          <li>also accepts cat pictures</li>
+          
+          <li>loves you unconditionally</li>
+          
+          <li>you don’t have to keep on a leash</li>
+          
+          <li>won’t pee on your rug</li>
+          
+          <li>loves to play fetch</li>
+          
+          <li>doesn’t bite (hard)</li>
+          
+          <li>won’t bark at the mailman</li>
+          
+          <li>is great with the kids</li>
+          
+          <li>can digest anything, even chocolate cake</li>
+          
+          <li>is always happy to see you</li>
+          
+          <li>isn’t afraid of fireworks</li>
+          
+          <li>is allowed everywhere</li>
+          
+        </ul>
+      </header>
+
+      <main class="MainContent js-MainContent" id="main">
+        
+          
+    <div class="Sidebar js-Sidebar">
+  <ul class="main-menu">
+    <!-- @todo uncomment search input when we get our own swifttype -->
+<!-- <li>
+  <form id="search-form" class="MainMenu-search">
+    <input type="text" id="search-query" class="MainMenu-searchQuery st-default-search-input">
+  </form>
+</li> -->
+<!--li><a href="/uppy/guide/" class="nav-link">Guide</a></li-->
+<li><a href="/uppy/docs/" class="nav-link current">Docs</a></li>
+<li><a href="/uppy/examples/dashboard/" class="nav-link">Examples</a></li>
+<!--li><a href="/uppy/stats/" class="nav-link">Stats</a></li-->
+<li><a href="/uppy/blog/" class="nav-link">Blog</a></li>
+<li><a href="/uppy/support/" class="nav-link">Support</a></li>
+<li><a href="https://github.com/transloadit/uppy" target="_blank" rel="noopener" class="nav-link">GitHub</a></li>
+
+  </ul>
+  
+  
+  <div class="list">
+    <h2>
+      <a href="/uppy/docs">Docs</a>
+    </h2>
+      
+    <div class="menu-root">
+      
+
+    
+    
+    
+    <ul>
+      
+        
+        
+        <li key="p-0-docs/index.html">
+          <a href="/docs/" class="sidebar-link">Getting Started</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-1-docs/uppy/index.html">
+          <a href="/docs/uppy/" class="sidebar-link">Uppy</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-2-docs/companion/index.html">
+          <a href="/docs/companion/" class="sidebar-link">Companion</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-3-docs/plugins/index.html">
+          <a href="/docs/plugins/" class="sidebar-link">List of Plugins</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-4-docs/plugin-options/index.html">
+          <a href="/docs/plugin-options/" class="sidebar-link">Common Plugin Options</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-5-docs/stores/index.html">
+          <a href="/docs/stores/" class="sidebar-link">Custom Stores</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-6-docs/community-projects/index.html">
+          <a href="/docs/community-projects/" class="sidebar-link">Community Projects</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-7-docs/locales/index.html">
+          <a href="/docs/locales/" class="sidebar-link">Locale Packs</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-8-docs/migration-guides.html">
+          <a href="/docs/migration-guides.html" class="sidebar-link">Migration guides</a>
+          
+        </li>
+      
+    </ul>
+
+    
+    
+    
+        
+        <h3 id="" key="category-1-UI Elements" data-scroll="no">UI Elements</h3>
+        
+    
+    <ul>
+      
+        
+        
+        <li key="p-0-docs/dashboard/index.html">
+          <a href="/docs/dashboard/" class="sidebar-link">Dashboard</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-1-docs/status-bar/index.html">
+          <a href="/docs/status-bar/" class="sidebar-link">Status Bar</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-2-docs/progress-bar/index.html">
+          <a href="/docs/progress-bar/" class="sidebar-link">Progress Bar</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-3-docs/informer/index.html">
+          <a href="/docs/informer/" class="sidebar-link">Informer</a>
+          
+        </li>
+      
+    </ul>
+
+    
+    
+    
+        
+        <h3 id="" key="category-2-Sources" data-scroll="no">Sources</h3>
+        
+    
+    <ul>
+      
+        
+        
+        <li key="p-0-docs/drag-drop/index.html">
+          <a href="/docs/drag-drop/" class="sidebar-link">Drag & Drop</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-1-docs/drop-target/index.html">
+          <a href="/docs/drop-target/" class="sidebar-link">Drop Target</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-2-docs/file-input/index.html">
+          <a href="/docs/file-input/" class="sidebar-link">File Input</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-3-docs/audio/index.html">
+          <a href="/docs/audio/" class="sidebar-link">Audio</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-4-docs/webcam/index.html">
+          <a href="/docs/webcam/" class="sidebar-link">Webcam</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-5-docs/screen-capture/index.html">
+          <a href="/docs/screen-capture/" class="sidebar-link">Screen capture</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-6-docs/providers/index.html">
+          <a href="/docs/providers/" class="sidebar-link">Provider Plugins</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-7-docs/box/index.html">
+          <span title='Requires Companion'>ⓒ </span><a href="/docs/box/" class="sidebar-link">Box</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-8-docs/dropbox/index.html">
+          <span title='Requires Companion'>ⓒ </span><a href="/docs/dropbox/" class="sidebar-link">Dropbox</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-9-docs/google-drive/index.html">
+          <span title='Requires Companion'>ⓒ </span><a href="/docs/google-drive/" class="sidebar-link">Google Drive</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-10-docs/instagram/index.html">
+          <span title='Requires Companion'>ⓒ </span><a href="/docs/instagram/" class="sidebar-link">Instagram</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-11-docs/onedrive/index.html">
+          <span title='Requires Companion'>ⓒ </span><a href="/docs/onedrive/" class="sidebar-link">OneDrive</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-12-docs/zoom/index.html">
+          <span title='Requires Companion'>ⓒ </span><a href="/docs/zoom/" class="sidebar-link">Zoom</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-13-docs/facebook/index.html">
+          <span title='Requires Companion'>ⓒ </span><a href="/docs/facebook/" class="sidebar-link">Facebook</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-14-docs/unsplash/index.html">
+          <span title='Requires Companion'>ⓒ </span><a href="/docs/unsplash/" class="sidebar-link">Unsplash</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-15-docs/url/index.html">
+          <span title='Requires Companion'>ⓒ </span><a href="/docs/url/" class="sidebar-link">Import From URL</a>
+          
+        </li>
+      
+    </ul>
+
+    
+    
+    
+        
+        <h3 id="" key="category-3-Destinations" data-scroll="no">Destinations</h3>
+        
+    
+    <ul>
+      
+        
+        
+        <li key="p-0-docs/tus/index.html">
+          <a href="/docs/tus/" class="sidebar-link">Tus</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-1-docs/xhr-upload/index.html">
+          <a href="/docs/xhr-upload/" class="sidebar-link current">XHR</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-2-docs/aws-s3/index.html">
+          <a href="/docs/aws-s3/" class="sidebar-link">AWS S3</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-3-docs/aws-s3-multipart/index.html">
+          <a href="/docs/aws-s3-multipart/" class="sidebar-link">AWS S3 Multipart</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-4-docs/transloadit/index.html">
+          <a href="/docs/transloadit/" class="sidebar-link">Transloadit</a>
+          
+        </li>
+      
+    </ul>
+
+    
+    
+    
+        
+        <h3 id="" key="category-4-Miscellaneous" data-scroll="no">Miscellaneous</h3>
+        
+    
+    <ul>
+      
+        
+        
+        <li key="p-0-docs/form/index.html">
+          <a href="/docs/form/" class="sidebar-link">Form</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-1-docs/golden-retriever/index.html">
+          <a href="/docs/golden-retriever/" class="sidebar-link">Golden Retriever</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-2-docs/image-editor/index.html">
+          <a href="/docs/image-editor/" class="sidebar-link">Image Editor</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-3-docs/thumbnail-generator/index.html">
+          <a href="/docs/thumbnail-generator/" class="sidebar-link">Thumbnail Generator</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-4-docs/redux/index.html">
+          <a href="/docs/redux/" class="sidebar-link">Redux</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-5-docs/compressor/index.html">
+          <a href="/docs/compressor/" class="sidebar-link">Compressor</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-6-docs/remote-sources/index.html">
+          <a href="/docs/remote-sources/" class="sidebar-link">Remote Sources</a>
+          
+        </li>
+      
+    </ul>
+
+    
+    
+    
+    <ul>
+      
+    </ul>
+
+    
+    
+    
+        
+        <h3 id="" key="category-6-React" data-scroll="no"><a href="/docs/react/">React</a></h3>
+        
+    
+    <ul>
+      
+        
+        
+        <li key="p-0-docs/react/index.html">
+          <a href="/docs/react/" class="sidebar-link">Introduction</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-1-docs/react/status-bar/index.html">
+          <a href="/docs/react/status-bar/" class="sidebar-link">&lt;StatusBar /></a>
+          
+        </li>
+      
+        
+        
+        <li key="p-2-docs/react/drag-drop/index.html">
+          <a href="/docs/react/drag-drop/" class="sidebar-link">&lt;DragDrop /></a>
+          
+        </li>
+      
+        
+        
+        <li key="p-3-docs/react/file-input/index.html">
+          <a href="/docs/react/file-input/" class="sidebar-link">&lt;FileInput /></a>
+          
+        </li>
+      
+        
+        
+        <li key="p-4-docs/react/progress-bar/index.html">
+          <a href="/docs/react/progress-bar/" class="sidebar-link">&lt;ProgressBar /></a>
+          
+        </li>
+      
+        
+        
+        <li key="p-5-docs/react/dashboard/index.html">
+          <a href="/docs/react/dashboard/" class="sidebar-link">&lt;Dashboard /></a>
+          
+        </li>
+      
+        
+        
+        <li key="p-6-docs/react/dashboard-modal/index.html">
+          <a href="/docs/react/dashboard-modal/" class="sidebar-link">&lt;DashboardModal /></a>
+          
+        </li>
+      
+        
+        
+        <li key="p-7-docs/react/native/index.html">
+          <a href="/docs/react/native/" class="sidebar-link">React Native</a>
+          
+        </li>
+      
+    </ul>
+
+    
+    
+    
+        
+        <h3 id="" key="category-7-Other Integrations" data-scroll="no"><a href="/docs/vue/">Other Integrations</a></h3>
+        
+    
+    <ul>
+      
+        
+        
+        <li key="p-0-docs/angular/index.html">
+          <a href="/docs/angular/" class="sidebar-link">Angular</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-1-docs/vue/index.html">
+          <a href="/docs/vue/" class="sidebar-link">Vue</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-2-docs/svelte/index.html">
+          <a href="/docs/svelte/" class="sidebar-link">Svelte</a>
+          
+        </li>
+      
+    </ul>
+
+    
+    
+    
+        
+        <h3 id="" key="category-8-Contributing" data-scroll="no"><a href="/docs/contributing.html">Contributing</a></h3>
+        
+    
+    <ul>
+      
+        
+        
+        <li key="p-0-docs/contributing.html">
+          <a href="/docs/contributing.html" class="sidebar-link">Contributing</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-1-docs/writing-plugins/index.html">
+          <a href="/docs/writing-plugins/" class="sidebar-link">Writing Plugins</a>
+          
+        </li>
+      
+    </ul>
+
+
+    </div>
+
+    <ul class="Social">
+  <li><a href="https://twitter.com/uppy_io" target="_blank" rel="noopener" class="twitter-follow-button" data-show-count="false" data-dnt="true">Follow @uppy_io</a></li>
+  <li><iframe src="https://ghbtns.com/github-btn.html?user=transloadit&repo=uppy&type=watch&count=true"
+allowtransparency="true" frameborder="0" scrolling="0" width="100" height="20"></iframe></li>
+  <!-- to regenerate you can use this link: https://img.shields.io/badge/community-forum-d8006a.svg -->
+  <li><a href="https://community.transloadit.com/c/uppy" target="_blank" rel="noopener"><img src="/uppy/images/community-forum-d8006a.svg" /> </a></li>
+  <li class="BuildBadge">
+   <span class="wrapper">
+     <a href="https://github.com/transloadit/uppy/actions" target="_blank" rel="noopener"><img src="https://github.com/transloadit/uppy/workflows/End-to-end%20tests/badge.svg" alt="Build Status"></a>
+   </span>
+  </li>
+</ul>
+
+    </div>
+  
+</div>
+
+
+
+<div class="Content js-Content docs with-sidebar">
+    <h1>XHR Upload</h1>
+    <html><head></head><body><p>The <code>@uppy/xhr-upload</code> plugin handles classic HTML multipart form uploads, as well as uploads using the HTTP <code>PUT</code> method.</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="token keyword module">import</span> <span class="token imports"><span class="token maybe-class-name">XHRUpload</span></span> <span class="token keyword module">from</span> <span class="token string">'@uppy/xhr-upload'</span>
+
+uppy<span class="token punctuation">.</span><span class="token method function property-access">use</span><span class="token punctuation">(</span><span class="token maybe-class-name">XHRUpload</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  <span class="token literal-property property">endpoint</span><span class="token operator">:</span> <span class="token string">'http://my-website.org/upload'</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span></pre></td></tr></table></figure>
+<p><a class="TryButton" href="/examples/xhrupload/">Try it live</a></p>
+<h2 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h2><p>This plugin is published as the <code>@uppy/xhr-upload</code> package.</p>
+<p>Install from NPM:</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="token function">npm</span> <span class="token function">install</span> @uppy/xhr-upload</pre></td></tr></table></figure>
+<p>In the <a href="/docs/#With-a-script-tag">CDN package</a>, the plugin class is available on the <code>Uppy</code> global object:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="token keyword">const</span> <span class="token punctuation">{</span> <span class="token maybe-class-name">XHRUpload</span> <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token maybe-class-name">Uppy</span></pre></td></tr></table></figure>
+<h2 id="Options"><a href="#Options" class="headerlink" title="Options"></a>Options</h2><p>The <code>@uppy/xhr-upload</code> plugin has the following configurable options:</p>
+<h3 id="id-39-XHRUpload-39"><a href="#id-39-XHRUpload-39" class="headerlink" title="id: 'XHRUpload'"></a><code>id: 'XHRUpload'</code></h3><p>A unique identifier for this plugin. It defaults to <code>'XHRUpload'</code>.</p>
+<h3 id="endpoint-39-39"><a href="#endpoint-39-39" class="headerlink" title="endpoint: ''"></a><code>endpoint: ''</code></h3><p>The destination URL for your uploads.</p>
+<h3 id="method-39-post-39"><a href="#method-39-post-39" class="headerlink" title="method: 'post'"></a><code>method: 'post'</code></h3><p>Configures which HTTP method to use for the upload.</p>
+<h3 id="formData-true"><a href="#formData-true" class="headerlink" title="formData: true"></a><code>formData: true</code></h3><p>Configures whether to use a multipart form upload, using <a href="https://developer.mozilla.org/en-US/docs/Web/API/FormData" target="_blank" rel="noopener">FormData</a>.<br>This works similarly to using a <code>&lt;form&gt;</code> element with an <code>&lt;input type="file"&gt;</code> for uploads.<br>When set to <code>true</code>, file metadata is also sent to the endpoint as separate form fields.<br>When set to <code>false</code>, only the file contents are sent.</p>
+<h3 id="fieldName-39-file-39"><a href="#fieldName-39-file-39" class="headerlink" title="fieldName: 'file'"></a><code>fieldName: 'file'</code></h3><p>When <a href="#formData-true"><code>formData</code></a> is set to true, this is used as the form field<br>name for the file to be uploaded. It defaults to <code>'files[]'</code> if <code>bundle</code> option<br>is set to <code>true</code>, otherwise it defaults to <code>'file'</code>.</p>
+<h3 id="allowedMetaFields-null"><a href="#allowedMetaFields-null" class="headerlink" title="allowedMetaFields: null"></a><code>allowedMetaFields: null</code></h3><p>Pass an array of field names to limit the metadata fields that will be added to upload.</p>
+<ul>
+<li>Set this to an empty array <code>[]</code> to not send any fields.</li>
+<li>Set this to <code>['name']</code> to only send the <code>name</code> field.</li>
+<li>Set this to <code>null</code> (the default) to send <em>all</em> metadata fields.</li>
+</ul>
+<p>If the <a href="#formData-true"><code>formData</code></a> option is set to false, <code>metaFields</code> is ignored.</p>
+<h3 id="headers"><a href="#headers" class="headerlink" title="headers: {}"></a><code>headers: {}</code></h3><p>An object containing HTTP headers to use for the upload request.<br>Keys are header names, values are header values.</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="token keyword">const</span> headers <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token literal-property property">authorization</span><span class="token operator">:</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Bearer </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token dom variable">window</span><span class="token punctuation">.</span><span class="token method function property-access">getCurrentUserToken</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span></pre></td></tr></table></figure>
+<p>Header values can also be derived from file data by providing a function. The function receives a <a href="/docs/uppy/#File-Objects">File Object</a> and must return an object where the keys are header names, and values are header values.</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="token keyword">const</span> <span class="token function-variable function">headers</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">file</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token punctuation">{</span>
+  <span class="token keyword control-flow">return</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">authorization</span><span class="token operator">:</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">Bearer </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token dom variable">window</span><span class="token punctuation">.</span><span class="token method function property-access">getCurrentUserToken</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span>
+    <span class="token literal-property property">expires</span><span class="token operator">:</span> file<span class="token punctuation">.</span><span class="token property-access">meta</span><span class="token punctuation">.</span><span class="token property-access">expires</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></pre></td></tr></table></figure>
+<blockquote>
+<p>⚠️ The function syntax is not available when the <a href="#bundle-false"><code>bundle: true</code></a> option is set.</p>
+</blockquote>
+<h3 id="bundle-false"><a href="#bundle-false" class="headerlink" title="bundle: false"></a><code>bundle: false</code></h3><p>Send all files in a single multipart request. When <code>bundle</code> is set to <code>true</code>, <a href="#formData-true"><code>formData</code></a> must also be set to <code>true</code>.</p>
+<p>⚠️ Only use <code>bundle: true</code> with local uploads (drag-drop, browse, webcam), Uppy won’t be able to bundle remote files (from Google Drive or Instagram), and will throw an error in this case.</p>
+<blockquote>
+<p>Note: When <code>bundle</code> is set to <code>true</code>, only <a href="/uppy/docs/uppy/#meta">global uppy metadata</a>, the one set via <code>meta</code> options property, is sent to the endpoint. Individual per-file metadata is ignored.</p>
+</blockquote>
+<p>All files will be appended to the provided <code>fieldName</code> field in the request. To upload files on different fields, use <a href="/docs/uppy#uppy-setFileState-fileID-state"><code>uppy.setFileState()</code></a> to set the <code>xhrUpload.fieldName</code> property on the file:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre>uppy<span class="token punctuation">.</span><span class="token method function property-access">setFileState</span><span class="token punctuation">(</span>fileID<span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  <span class="token literal-property property">xhrUpload</span><span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token literal-property property">fieldName</span><span class="token operator">:</span> <span class="token string">'pic0'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+uppy<span class="token punctuation">.</span><span class="token method function property-access">setFileState</span><span class="token punctuation">(</span>otherFileID<span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  <span class="token literal-property property">xhrUpload</span><span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token literal-property property">fieldName</span><span class="token operator">:</span> <span class="token string">'pic1'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span></pre></td></tr></table></figure>
+<h3 id="validateStatus-statusCode-responseText-response"><a href="#validateStatus-statusCode-responseText-response" class="headerlink" title="validateStatus(statusCode, responseText, response)"></a><code>validateStatus(statusCode, responseText, response)</code></h3><blockquote>
+<p>This option is only used for <strong>local</strong> uploads. Uploads from remote providers like Google Drive or Instagram do not support this and will always use the default.</p>
+</blockquote>
+<p>Check if the response from the upload endpoint indicates that the upload was successful. By default, responses with a 2xx HTTP status code are considered successful.</p>
+<h4 id="Return-value"><a href="#Return-value" class="headerlink" title="Return value"></a>Return value</h4><p>Return <code>true</code> if the response indicates success. Then, <a href="#getResponseData-responseText-response"><code>getResponseData()</code></a> will be called and the upload will be marked as successful.</p>
+<p>Return <code>false</code> if the response indicates failure. Then, both <a href="#getResponseData-responseText-response"><code>getResponseData()</code></a> and <a href="#getResponseError-responseText-response"><code>getResponseError()</code></a> will be called and the upload will be marked as unsuccessful.</p>
+<h4 id="Parameters"><a href="#Parameters" class="headerlink" title="Parameters"></a>Parameters</h4><p>The <code>statusCode</code> is the numeric HTTP status code returned by the endpoint.</p>
+<p>The <code>responseText</code> is the XHR endpoint response as a string.</p>
+<p><code>response</code> is the <a href="https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest" target="_blank" rel="noopener">XMLHttpRequest</a> object.</p>
+<h3 id="getResponseData-responseText-response"><a href="#getResponseData-responseText-response" class="headerlink" title="getResponseData(responseText, response)"></a><code>getResponseData(responseText, response)</code></h3><p>When an upload has completed, Uppy will extract response data from the upload endpoint. This response data will be available on the file’s <code>.response</code> property, and be emitted in the <a href="/docs/uppy/#upload-success"><code>upload-success</code></a> event:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="token keyword">const</span> responseData <span class="token operator">=</span> uppy<span class="token punctuation">.</span><span class="token method function property-access">getFile</span><span class="token punctuation">(</span>fileID<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token property-access">response</span>
+<span class="token comment">// { status: HTTP status code,</span>
+<span class="token comment">//   body: extracted response data }</span>
+
+uppy<span class="token punctuation">.</span><span class="token method function property-access">on</span><span class="token punctuation">(</span><span class="token string">'upload-success'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">file<span class="token punctuation">,</span> response</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> httpStatus <span class="token operator">=</span> response<span class="token punctuation">.</span><span class="token property-access">status</span> <span class="token comment">// HTTP status code</span>
+  <span class="token keyword">const</span> httpBody <span class="token operator">=</span> response<span class="token punctuation">.</span><span class="token property-access">body</span>   <span class="token comment">// extracted response data</span>
+
+  <span class="token comment">// do something with file and response</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span></pre></td></tr></table></figure>
+<p>By default, Uppy assumes the endpoint will return JSON. So, if <code>POST /upload</code> responds with:</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="token punctuation">{</span>
+  <span class="token property">"url"</span><span class="token operator">:</span> <span class="token string">"https://public.url/to/file"</span><span class="token punctuation">,</span>
+  <span class="token property">"whatever"</span><span class="token operator">:</span> <span class="token string">"beep boop"</span>
+<span class="token punctuation">}</span></pre></td></tr></table></figure>
+<p>That object will be the value of <code>response.body</code>. Not all endpoints respond with JSON. Providing a <code>getResponseData</code> function overrides this behavior. The <code>response</code> parameter is the <a href="https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest" target="_blank" rel="noopener"><code>XMLHttpRequest</code></a> instance used to upload the file.</p>
+<p>For example, an endpoint that responds with an XML document:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="token keyword">function</span> <span class="token function">getResponseData</span> <span class="token punctuation">(</span><span class="token parameter">responseText<span class="token punctuation">,</span> response</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword control-flow">return</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">url</span><span class="token operator">:</span> responseText<span class="token punctuation">.</span><span class="token method function property-access">match</span><span class="token punctuation">(</span><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">&lt;Location><span class="token group punctuation">(</span><span class="token char-set class-name">.</span><span class="token quantifier number">*?</span><span class="token group punctuation">)</span>&lt;<span class="token escape">\/</span>Location></span><span class="token regex-delimiter">/</span></span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></pre></td></tr></table></figure>
+<h4 id="Parameters-1"><a href="#Parameters-1" class="headerlink" title="Parameters"></a>Parameters</h4><p>The <code>responseText</code> is the XHR endpoint response as a string.</p>
+<p>For uploads from the user’s device, <code>response</code> is the <a href="https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest" target="_blank" rel="noopener">XMLHttpRequest</a> object.</p>
+<p>When uploading files from remote providers such as Dropbox or Instagram, Companion sends upload response data to the client. This is made available in the <code>getResponseData()</code> function as well. The <code>response</code> object from Companion has some properties named after their <a href="https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest" target="_blank" rel="noopener">XMLHttpRequest</a> counterparts:</p>
+<ul>
+<li><code>response.responseText</code> - the XHR endpoint response as a string;</li>
+<li><code>response.status</code> - the HTTP status code;</li>
+<li><code>response.statusText</code> - the HTTP status text;</li>
+<li><code>response.headers</code> - an object mapping lowercase header names to their values.</li>
+</ul>
+<h3 id="getResponseError-responseText-response"><a href="#getResponseError-responseText-response" class="headerlink" title="getResponseError(responseText, response)"></a><code>getResponseError(responseText, response)</code></h3><p>If the upload endpoint responds with a non-2xx status code, the upload is assumed to have failed. The endpoint might have responded with some information about the error, though.</p>
+<p>Pass in a <code>getResponseError</code> function to extract error data from the <a href="https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest" target="_blank" rel="noopener"><code>XMLHttpRequest</code></a> instance used for the upload.</p>
+<p>For example, if the endpoint responds with a JSON object containing a <code>{ message }</code> property, this would show that message to the user:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="token keyword">function</span> <span class="token function">getResponseError</span> <span class="token punctuation">(</span><span class="token parameter">responseText<span class="token punctuation">,</span> response</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword control-flow">return</span> <span class="token keyword">new</span> <span class="token class-name">Error</span><span class="token punctuation">(</span><span class="token known-class-name class-name">JSON</span><span class="token punctuation">.</span><span class="token method function property-access">parse</span><span class="token punctuation">(</span>responseText<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token property-access">message</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span></pre></td></tr></table></figure>
+<h3 id="responseUrlFieldName-39-url-39"><a href="#responseUrlFieldName-39-url-39" class="headerlink" title="responseUrlFieldName: 'url'"></a><code>responseUrlFieldName: 'url'</code></h3><p>The field name containing a publically accessible location of the uploaded file in the response data returned by <a href="#getResponseData-responseText-response"><code>getResponseData()</code></a>.</p>
+<h3 id="timeout-30-000"><a href="#timeout-30-000" class="headerlink" title="timeout: 30_000"></a><code>timeout: 30_000</code></h3><p>When no upload progress events have been received for this amount of milliseconds, send a <code>'upload-stalled'</code> event.<br>Note that unlike the <a href="https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/timeout" target="_blank" rel="noopener"><code>XMLHttpRequest.timeout</code></a> property, this is a timer between progress events: the total upload can take longer than this value.<br>Set to <code>0</code> to disable this check.</p>
+<p>The default for the timeout is 30 seconds.</p>
+<h3 id="limit-5"><a href="#limit-5" class="headerlink" title="limit: 5"></a><code>limit: 5</code></h3><p>Limit the amount of uploads going on at the same time. Setting this option to <code>0</code> means no limit on concurrent uploads.</p>
+<h3 id="responseType-39-39"><a href="#responseType-39-39" class="headerlink" title="responseType: ''"></a><code>responseType: ''</code></h3><p>The response type expected from the server, determining how the <code>xhr.response</code> property should be filled. The <code>xhr.response</code> property can be accessed in a custom <a href="#getResponseData-responseText-response"><code>getResponseData()</code></a> callback. This option sets the <a href="https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/responseType" target="_blank" rel="noopener"><code>XMLHttpRequest.responseType</code></a> property. Only <code>''</code>, <code>'text'</code>, <code>'arraybuffer'</code>, <code>'blob'</code> and <code>'document'</code> are widely supported by browsers, so it’s recommended to use one of those. The default is the empty string, which is equivalent to <code>'text'</code> for the <code>xhr.response</code> property.</p>
+<h3 id="withCredentials-false"><a href="#withCredentials-false" class="headerlink" title="withCredentials: false"></a><code>withCredentials: false</code></h3><p>Indicates whether cross-site Access-Control requests should be made using credentials.</p>
+<h3 id="locale"><a href="#locale" class="headerlink" title="locale: {}"></a><code>locale: {}</code></h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="token keyword module">export</span> <span class="token keyword module">default</span> <span class="token punctuation">{</span>
+  <span class="token literal-property property">strings</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token comment">// Shown in the Informer if an upload is being canceled because it stalled for too long.</span>
+    <span class="token literal-property property">uploadStalled</span><span class="token operator">:</span> <span class="token string">'Upload has not made any progress for %{seconds} seconds. You may want to retry it.'</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span></pre></td></tr></table></figure>
+<h2 id="POST-Parameters-Form-Fields"><a href="#POST-Parameters-Form-Fields" class="headerlink" title="POST Parameters / Form Fields"></a>POST Parameters / Form Fields</h2><p>When using XHRUpload with <a href="#formData-true"><code>formData: true</code></a>, file metadata is sent along with each upload request. You can set metadata for a file using <a href="/docs/uppy#uppy-setFileMeta-fileID-data"><code>uppy.setFileMeta(fileID, data)</code></a>, or for all files simultaneously using <a href="/docs/uppy#uppy-setMeta-data"><code>uppy.setMeta(data)</code></a>.</p>
+<p>It may be useful to set metadata depending on some file properties, such as the size. You can use the <a href="/docs/uppy/#file-added"><code>file-added</code></a> event and  the <a href="/docs/uppy#uppy-setFileMeta-fileID-data"><code>uppy.setFileMeta(fileID, data)</code></a> method to do this:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre>uppy<span class="token punctuation">.</span><span class="token method function property-access">on</span><span class="token punctuation">(</span><span class="token string">'file-added'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">file</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token punctuation">{</span>
+  uppy<span class="token punctuation">.</span><span class="token method function property-access">setFileMeta</span><span class="token punctuation">(</span>file<span class="token punctuation">.</span><span class="token property-access">id</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">size</span><span class="token operator">:</span> file<span class="token punctuation">.</span><span class="token property-access">size</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span></pre></td></tr></table></figure>
+<p>Now, a form field named <code>size</code> will be sent along to the <a href="#endpoint-39-39"><code>endpoint</code></a> once the upload starts.</p>
+<p>By default, all metadata is sent, including Uppy’s default <code>name</code> and <code>type</code> metadata. If you do not want the <code>name</code> and <code>type</code> metadata properties to be sent to your upload endpoint, you can use the <a href="#metaFields-null"><code>metaFields</code></a> option to restrict the field names that should be sent.</p>
+<figure class="highlight js"><table><tr><td class="code"><pre>uppy<span class="token punctuation">.</span><span class="token method function property-access">use</span><span class="token punctuation">(</span><span class="token maybe-class-name">XHRUpload</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  <span class="token comment">// Only send our own `size` metadata field.</span>
+  <span class="token literal-property property">allowedMetaFields</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'size'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span></pre></td></tr></table></figure>
+<h2 id="Uploading-to-a-PHP-Server"><a href="#Uploading-to-a-PHP-Server" class="headerlink" title="Uploading to a PHP Server"></a>Uploading to a PHP Server</h2><p>The XHRUpload plugin works similarly to a <code>&lt;form&gt;</code> upload. You can use the <code>$_FILES</code> variable on the server to work with uploaded files. See the PHP documentation on <a href="https://secure.php.net/manual/en/features.file-upload.php" target="_blank" rel="noopener">Handling file uploads</a>.</p>
+<!--retext-simplify ignore multiple-->
+
+<p>The default form field for file uploads is <code>files[]</code>, which means you have to access the <code>$_FILES</code> array as described in <a href="https://secure.php.net/manual/en/features.file-upload.multiple.php" target="_blank" rel="noopener">Uploading multiple files</a>:</p>
+<figure class="highlight php"><table><tr><td class="code"><pre><span class="token delimiter important">&lt;?php</span>
+<span class="token comment">// upload.php</span>
+<span class="token variable">$files</span> <span class="token operator">=</span> <span class="token global">$_FILES</span><span class="token punctuation">[</span><span class="token string single-quoted-string">'files'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token variable">$file_path</span> <span class="token operator">=</span> <span class="token variable">$files</span><span class="token punctuation">[</span><span class="token string single-quoted-string">'tmp_name'</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">// temporary upload path of the first file</span>
+<span class="token variable">$file_name</span> <span class="token operator">=</span> <span class="token global">$_POST</span><span class="token punctuation">[</span><span class="token string single-quoted-string">'name'</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">// desired name of the file</span>
+<span class="token function">move_uploaded_file</span><span class="token punctuation">(</span><span class="token variable">$file_path</span><span class="token punctuation">,</span> <span class="token string single-quoted-string">'./img/'</span> <span class="token operator">.</span> <span class="token function">basename</span><span class="token punctuation">(</span><span class="token variable">$file_name</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// save the file in `img/`</span></pre></td></tr></table></figure>
+<p>Note how we are using <code>$_POST['name']</code> instead of <code>$my_file['name']</code>. <code>$my_file['name']</code> has the original name of the file on the user’s device. <code>$_POST['name']</code> has the <code>name</code> metadata value for the uploaded file, which can be edited by the user using the <a href="/docs/dashboard">Dashboard</a>.</p>
+<p>Set a custom <code>fieldName</code> to make working with the <code>$_FILES</code> array a bit less convoluted:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="token comment">// app.js</span>
+uppy<span class="token punctuation">.</span><span class="token method function property-access">use</span><span class="token punctuation">(</span><span class="token maybe-class-name">XHRUpload</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  <span class="token literal-property property">endpoint</span><span class="token operator">:</span> <span class="token string">'/upload.php'</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">fieldName</span><span class="token operator">:</span> <span class="token string">'my_file'</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span></pre></td></tr></table></figure>
+<figure class="highlight php"><table><tr><td class="code"><pre><span class="token delimiter important">&lt;?php</span>
+<span class="token comment">// upload.php</span>
+<span class="token variable">$my_file</span> <span class="token operator">=</span> <span class="token global">$_FILES</span><span class="token punctuation">[</span><span class="token string single-quoted-string">'my_file'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token variable">$file_path</span> <span class="token operator">=</span> <span class="token variable">$my_file</span><span class="token punctuation">[</span><span class="token string single-quoted-string">'tmp_name'</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">// temporary upload path of the file</span>
+<span class="token variable">$file_name</span> <span class="token operator">=</span> <span class="token global">$_POST</span><span class="token punctuation">[</span><span class="token string single-quoted-string">'name'</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">// desired name of the file</span>
+<span class="token function">move_uploaded_file</span><span class="token punctuation">(</span><span class="token variable">$file_path</span><span class="token punctuation">,</span> <span class="token global">$_SERVER</span><span class="token punctuation">[</span><span class="token string single-quoted-string">'DOCUMENT_ROOT'</span><span class="token punctuation">]</span> <span class="token operator">.</span> <span class="token string single-quoted-string">'/img/'</span> <span class="token operator">.</span> <span class="token function">basename</span><span class="token punctuation">(</span><span class="token variable">$file_name</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// save the file at `img/FILE_NAME`</span></pre></td></tr></table></figure>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script></body></html>
+    
+    
+
+    
+    <div class="footer">Caught a mistake or want to contribute to the documentation?
+       <a href="https://github.com/transloadit/uppy/blob/main/website/src/docs/xhr-upload.md" rel="noreferrer noopener" target="_blank">Edit/fork this page directly on Github</a>!
+    </div>
+</div>
+
+        
+      </main>
+
+      <script defer data-domain="transloadit.github.io" src="https://analytics.transloadit.com/js/plausible.js"></script>
+
+
+      
+        <script src="/uppy/js/smooth-scroll.min.js"></script>
+        <!-- Place this tag in your head or just before your close body tag. -->
+        <script async defer src="https://buttons.github.io/buttons.js"></script>
+      
+      <script src="/uppy/js/common.js"></script>
+
+      <!-- Twitter follow button script -->
+      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+    </div>
+  </body>
+</html>

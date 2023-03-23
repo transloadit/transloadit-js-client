@@ -1,0 +1,449 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Uppy 0.23: Import from Url, refactored thumbnail generation, XHR bundle — Uppy</title>
+    <meta charset="utf-8">
+    <meta name="title" content="Uppy 0.23: Import from Url, refactored thumbnail generation, XHR bundle — Uppy">
+    <meta name="description" content="Hi all! We are back from holidays with a shiny new 0.23.0 release for you! It’s packed with a new Url plugin (imports files from urls), refactored ThumbnailGenerator, Webcam improvements and more.
+Import from UrlMeet our new “Provider” plugin, Url. It’s simple, yet powerful: paste a link to any file on the web, and Uppy with Uppy Server will upload it wherever you need.
+uppy.use(Url, { target: Das">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@uppy_io">
+    <meta name="twitter:creator" content="@uppy_io">
+    <meta property="og:url" content="https://transloadit.github.io/uppy/blog/2018/02/0.23/index.html">
+    <meta property="og:title" content="Uppy 0.23: Import from Url, refactored thumbnail generation, XHR bundle — Uppy">
+    <meta name="twitter:title" content="Uppy 0.23: Import from Url, refactored thumbnail generation, XHR bundle — Uppy">
+    <meta name="twitter:description" content="Hi all! We are back from holidays with a shiny new 0.23.0 release for you! It’s packed with a new Url plugin (imports files from urls), refactored ThumbnailGenerator, Webcam improvements and more.
+Import from UrlMeet our new “Provider” plugin, Url. It’s simple, yet powerful: paste a link to any file on the web, and Uppy with Uppy Server will upload it wherever you need.
+uppy.use(Url, { target: Das">
+    <meta property="og:image" content="http://transloadit.github.io/uppy/images/uppy-social-pink.png">
+    <meta name="twitter:image" content="http://transloadit.github.io/uppy/images/uppy-social-pink.png">
+
+    <meta name="google-site-verification" content="JxARoHXoCI8bD07pLV_u3z6xpuWNcSIZIcHEytyCkUc" />
+
+    <link rel="icon" href="/uppy/images/logos/uppy-dog-head-arrow.png" type="image/x-icon">
+    <link rel="alternate" type="application/rss+xml" title="Uppy" href="/atom.xml">
+
+    <script>
+      window.PAGE_TYPE = ""
+    </script>
+    
+<link rel="stylesheet" href="/uppy/css/main.css?version=2">
+
+    <!-- ^ poor man's solution to css cache busting. bump the version when there's something new we really want users to see -->
+  <meta name="generator" content="Hexo 4.2.1"></head>
+  <body class="page-inner ">
+    <div class="page">
+      <div class="TransloaditBar js-TransloaditBar">
+        <div class="TransloaditBar-about">
+          <!-- <a class="TransloaditBar-logo" href="https://transloadit.com/" target="_blank" rel="noopener">
+            <img class="TransloaditBar-logoImg" src="/uppy/images/transloadit-white-glyph.svg" width="20" height="20" alt="Transloadit">
+          </a> -->
+          <!-- <span>Uppy is an open source project by <a class="TransloaditBar-link" href="https://transloadit.com/" target="_blank">Transloadit</a></span> -->
+          This website is no longer maintained, please visit <a href="//uppy.io" target="_blank" rel="noopener" style="color:inherit">uppy.io</a> to get up-to-date info about Uppy.
+        </div>
+      </div>
+
+      <header id="header" class="MainHeader js-MainHeader">
+        <button class="MainHeader-menuBtn js-MenuBtn"></button>
+
+        <span id="logo" class="MainLogo">
+          <a class="MainLogo-link" href="/uppy/">Uppy</a>
+          <!-- Was used for 1.0, we can re-use for 2.0 or major announcements -->
+          <!-- <a class="MainLogo-announcement" href="/blog/2019/04/1.0/">
+            1.0
+            <span class="MainLogo-emoji">
+              <img src="/uppy/images/party-popper.png" srcset="/uppy/images/party-popper@2x.png 2x" alt="🎉">
+            </span>
+          </a> -->
+        </span>
+
+        <nav>
+          <ul id="nav" class="MainMenu">
+            <!-- @todo uncomment search input when we get our own swifttype -->
+<!-- <li>
+  <form id="search-form" class="MainMenu-search">
+    <input type="text" id="search-query" class="MainMenu-searchQuery st-default-search-input">
+  </form>
+</li> -->
+<!--li><a href="/uppy/guide/" class="nav-link">Guide</a></li-->
+<li><a href="/uppy/docs/" class="nav-link">Docs</a></li>
+<li><a href="/uppy/examples/dashboard/" class="nav-link">Examples</a></li>
+<!--li><a href="/uppy/stats/" class="nav-link">Stats</a></li-->
+<li><a href="/uppy/blog/" class="nav-link current">Blog</a></li>
+<li><a href="/uppy/support/" class="nav-link">Support</a></li>
+<li><a href="https://github.com/transloadit/uppy" target="_blank" rel="noopener" class="nav-link">GitHub</a></li>
+
+          </ul>
+        </nav>
+
+        <div class="MainHeader-tagline">
+          The file uploader that <span class="MainHeader-taglinePart js-MainHeader-taglinePart is-visible">loves to play fetch</span>
+        </div>
+
+        <ul class="MainHeader-taglineList js-MainHeader-taglineList">
+          
+          <li>won’t chew on your shoes</li>
+          
+          <li>is fully housebroken</li>
+          
+          <li>just wants to play with you</li>
+          
+          <li>doesn’t hump your leg</li>
+          
+          <li>also accepts cat pictures</li>
+          
+          <li>loves you unconditionally</li>
+          
+          <li>you don’t have to keep on a leash</li>
+          
+          <li>won’t pee on your rug</li>
+          
+          <li>loves to play fetch</li>
+          
+          <li>doesn’t bite (hard)</li>
+          
+          <li>won’t bark at the mailman</li>
+          
+          <li>is great with the kids</li>
+          
+          <li>can digest anything, even chocolate cake</li>
+          
+          <li>is always happy to see you</li>
+          
+          <li>isn’t afraid of fireworks</li>
+          
+          <li>is allowed everywhere</li>
+          
+        </ul>
+      </header>
+
+      <main class="MainContent js-MainContent" id="main">
+        
+          <div class="Sidebar js-Sidebar is-blog">
+    <ul class="main-menu">
+        <!-- @todo uncomment search input when we get our own swifttype -->
+<!-- <li>
+  <form id="search-form" class="MainMenu-search">
+    <input type="text" id="search-query" class="MainMenu-searchQuery st-default-search-input">
+  </form>
+</li> -->
+<!--li><a href="/uppy/guide/" class="nav-link">Guide</a></li-->
+<li><a href="/uppy/docs/" class="nav-link">Docs</a></li>
+<li><a href="/uppy/examples/dashboard/" class="nav-link">Examples</a></li>
+<!--li><a href="/uppy/stats/" class="nav-link">Stats</a></li-->
+<li><a href="/uppy/blog/" class="nav-link current">Blog</a></li>
+<li><a href="/uppy/support/" class="nav-link">Support</a></li>
+<li><a href="https://github.com/transloadit/uppy" target="_blank" rel="noopener" class="nav-link">GitHub</a></li>
+
+    </ul>
+    <div class="list">
+        <h2>
+            Recent Posts
+            <a href="/atom.xml" rel="noreferrer noopener" target="_blank" style="vertical-align: middle; margin-left: 5px">
+                <img src="/uppy/images/feed.png" style="width:15px;height:15px">
+            </a>
+        </h2>
+
+        <ul>
+  
+  <li>
+    <a href="/blog/2022/12/3.3/" class="sidebar-link">🎄 Uppy 3.1-3.3: Improved AWS S3 Multipart, Single File Mode</a>
+  </li>
+  
+  <li>
+    <a href="/blog/2022/09/3.0/" class="sidebar-link">Uppy 3.0: Future-proof, conveniently easy, stable as ever</a>
+  </li>
+  
+  <li>
+    <a href="/blog/2022/03/2.4-2.7/" class="sidebar-link">Uppy 2.4-2.7: Image Compressor, Transloadit Rate Limiting, ESM</a>
+  </li>
+  
+  <li>
+    <a href="/blog/2021/12/2.1-2.3/" class="sidebar-link">🎄 Uppy 2.1-2.3: Audio plugin, fast and efficient streaming for Companion, production-ready Unsplash, and more</a>
+  </li>
+  
+  <li>
+    <a href="/blog/2021/08/2.0/" class="sidebar-link">Uppy 2.0.0: smaller, faster, modular plugins, Preact X, stricter types, and much more</a>
+  </li>
+  
+  <li>
+    <a href="/blog/2021/07/1.30/" class="sidebar-link">Uppy 1.30: Angular integration, granular image rotation, Google Drive shortcuts</a>
+  </li>
+  
+  <li>
+    <a href="/blog/2021/05/1.29/" class="sidebar-link">Uppy 1.29: Golden Retriever, disableLocalFiles, Webcam previews, uppy.logout</a>
+  </li>
+  
+  <li>
+    <a href="/blog/2021/04/1.27/" class="sidebar-link">Uppy 1.27: Drop Target plugin, Vue 3 support, Dashboard dynamic meta fields, “Shared with me” in Google Drive</a>
+  </li>
+  
+  <li>
+    <a href="/blog/2021/02/1.26/" class="sidebar-link">Uppy 1.26: Dashboard “disabled”, per-file headers</a>
+  </li>
+  
+  <li>
+    <a href="/blog/2021/01/1.25/" class="sidebar-link">Uppy 1.25: right-to-left scripts, Ukrainian translation, Companion improvements</a>
+  </li>
+  
+  <li>
+    <a href="/blog/2020/12/1.24/" class="sidebar-link">Uppy 1.24: 🎅 Happy Holidays — Svelte, React hook, Auto Open Image Editor</a>
+  </li>
+  
+</ul>
+        <ul class="Social">
+  <li><a href="https://twitter.com/uppy_io" target="_blank" rel="noopener" class="twitter-follow-button" data-show-count="false" data-dnt="true">Follow @uppy_io</a></li>
+  <li><iframe src="https://ghbtns.com/github-btn.html?user=transloadit&repo=uppy&type=watch&count=true"
+allowtransparency="true" frameborder="0" scrolling="0" width="100" height="20"></iframe></li>
+  <!-- to regenerate you can use this link: https://img.shields.io/badge/community-forum-d8006a.svg -->
+  <li><a href="https://community.transloadit.com/c/uppy" target="_blank" rel="noopener"><img src="/uppy/images/community-forum-d8006a.svg" /> </a></li>
+  <li class="BuildBadge">
+   <span class="wrapper">
+     <a href="https://github.com/transloadit/uppy/actions" target="_blank" rel="noopener"><img src="https://github.com/transloadit/uppy/workflows/End-to-end%20tests/badge.svg" alt="Build Status"></a>
+   </span>
+  </li>
+</ul>
+
+    </div>
+</div>
+
+
+<div class="Content js-Content with-sidebar">
+    
+  <h1>Uppy 0.23: Import from Url, refactored thumbnail generation, XHR bundle</h1>
+  <div class="post-date">Monday Feb 12, 2018</div>
+    
+    <html><head></head><body><p>Hi all! We are back from holidays with a shiny new <code>0.23.0</code> release for you! It’s packed with a new <code>Url</code> plugin (imports files from urls), refactored <code>ThumbnailGenerator</code>, <code>Webcam</code> improvements and more.</p>
+<h2 id="Import-from-Url"><a href="#Import-from-Url" class="headerlink" title="Import from Url"></a>Import from Url</h2><p>Meet our new “Provider” plugin, <code>Url</code>. It’s simple, yet powerful: paste a link to any file on the web, and Uppy with Uppy Server will upload it wherever you need.</p>
+<figure class="highlight js"><table><tr><td class="code"><pre>uppy<span class="token punctuation">.</span><span class="token method function property-access">use</span><span class="token punctuation">(</span><span class="token maybe-class-name">Url</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token literal-property property">target</span><span class="token operator">:</span> <span class="token maybe-class-name">Dashboard</span><span class="token punctuation">,</span> <span class="token literal-property property">host</span><span class="token operator">:</span> <span class="token constant">YOUR_UPPY_SERVER_URL</span> <span class="token punctuation">}</span><span class="token punctuation">)</span></pre></td></tr></table></figure>
+<figure class="wide"><video alt="Demo video showing Uppy with Url plugin that imports files from urls" controls="" autoplay=""><source src="/uppy/images/blog/0.23/uppy-url-demo.mp4" type="video/mp4">Your browser does not support the video tag, you can <a href="/uppy/images/blog/0.23/uppy-url-demo.mp4">download the video</a> to watch it.</video></figure>
+
+<a id="more"></a>
+
+<h2 id="ThumbnailGenerator"><a href="#ThumbnailGenerator" class="headerlink" title="ThumbnailGenerator"></a>ThumbnailGenerator</h2><p>Thumbnail generation has been refactored to a separate <code>ThumbnailGenerator</code> plugin, thanks to the PR from <a href="https://github.com/richardwillars" target="_blank" rel="noopener">@richardwillars</a>. So Uppy Core is now more lightweight, if you don’t need previews.</p>
+<p><code>ThumbnailGenerator</code> is still bundled with our most feature complete <code>Dashboard</code> plugin though, so you don’t have to change anything if you were using that.</p>
+<p>We’ve also fixed previews in Safari and tweaked the code slightly after reading the excellent <a href="https://blog.uploadcare.com/image-resize-in-browsers-is-broken-e38eed08df01" target="_blank" rel="noopener">Image resize in browsers is broken</a> post by Uploadcare 👌.</p>
+<h2 id="Processing-results"><a href="#Processing-results" class="headerlink" title="Processing results"></a>Processing results</h2><p>Processing results from encoding plugins like <a href="/uppy/docs/transloadit/"><code>Transloadit</code></a>, are now added to <code>complete</code> event:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre>uppy<span class="token punctuation">.</span><span class="token method function property-access">on</span><span class="token punctuation">(</span><span class="token string">'complete'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">result</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token punctuation">{</span>
+  <span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span>
+  <span class="token comment">// result: {</span>
+  <span class="token comment">//   failed: [...],</span>
+  <span class="token comment">//   successful: [...],</span>
+  <span class="token comment">//   transloadit: [...],</span>
+  <span class="token comment">//   uploadID: "cjdnzj2zy0000c___iewu9m5y"</span>
+  <span class="token comment">// }</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span></pre></td></tr></table></figure>
+<p>And to <code>uppy.upload()</code> promise result too:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre>uppy<span class="token punctuation">.</span><span class="token method function property-access">upload</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token method function property-access">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">result</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token punctuation">{</span>
+  <span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span></pre></td></tr></table></figure>
+<p>You can still use events like <a href="/uppy/docs/transloadit/#transloadit-result"><code>transloadit:result</code></a>, its just easier when things are in the same place. Plugins can use the new <code>uppy.addResultData()</code> API to add data to the <code>result</code>, like so:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre>uppy<span class="token punctuation">.</span><span class="token method function property-access">addResultData</span><span class="token punctuation">(</span>uploadID<span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token literal-property property">transloadit</span><span class="token operator">:</span> assemblies <span class="token punctuation">}</span><span class="token punctuation">)</span></pre></td></tr></table></figure>
+<h2 id="Webcam"><a href="#Webcam" class="headerlink" title="Webcam"></a>Webcam</h2><p>The Webcam plugin now mirrors image previews by default, so when you are making a selfie and wave with your right hand, you see that right hand in the Webcam preview, just like in the mirror. This option can be disabled via <code>uppy.use(Webcam, { mirror: false }</code>. Note that the resulting image will not be mirrored, so your hand will actually be waving on the left. This mimics the behaviour of smarphone selfie cameras.</p>
+<p>We’ve also added an option to select which camera will be used to capture pictures or video: <a href="/uppy/docs/webcam/#facingMode-39-user-39">facingMode</a>, set to <code>user</code> (front camera) by default.</p>
+<h2 id="Server"><a href="#Server" class="headerlink" title="Server"></a>Server</h2><ul>
+<li>You can now specify a config path when starting the standalone Uppy Server like so <code>uppy-server --config /path/to/uppyconf.json</code>. The config file is expected to be a JSON file with the same schema as the <a href="/uppy/docs/server/#Options">Uppy Server options</a>.</li>
+<li>A periodic cleanup job has been added to Uppy Server, to delete stale upload files from the specified <code>filePath</code>. Even though we’d rarely expect uploaded files to go undeleted immediately, there could be cases where an error occurs during an upload, and so Uppy Server leaves the file undeleted to give room for upload retries. With the cleanup job in place, we can ensure that this file would eventually be deleted after the file upload is done.</li>
+<li>Responses from Multipart uploads are now relayed to Uppy Client as they are received from the target server. With this in place, you can now handle responses from local and remote XHRUpload in nearly the same way.</li>
+</ul>
+<h2 id="Other-Improvements-and-Additions"><a href="#Other-Improvements-and-Additions" class="headerlink" title="Other Improvements and Additions"></a>Other Improvements and Additions</h2><ul>
+<li>Added new option to hide ProgressBar and StatusBar after upload finish (#485 / @wilkoklak)</li>
+<li>Chaining API has been improved, you can now use <code>.on</code> and <code>.off</code> anywhere: <code>uppy.use(Dashboard).use(Tus).on('complete', handleComplete).run()</code></li>
+<li>The Transloadit plugin now has a new <code>transloadit:assembly-executing</code> event and passes Assembly results to the <code>complete</code> callback (#547, #527 / @goto-bus-stop)</li>
+<li>We’ve added a <code>bundle</code> option to the <code>XHRUpload</code> plugin to send multiple files in one request (#442 / @goto-bus-stop)</li>
+<li>Uppy releases are now hosted on Edgly CDN by Transloadit</li>
+<li>A Third-party extension for integrating the Ngrx Angular state management library with Uppy has been released, <a href="https://github.com/rimlin/uppy-store-ngrx/" target="_blank" rel="noopener">uppy-store-ngrx</a> by @rimlin</li>
+</ul>
+<h2 id="Other-Fixes"><a href="#Other-Fixes" class="headerlink" title="Other Fixes"></a>Other Fixes</h2><ul>
+<li>Fixed blank preview thumbnails for images in Safari; use slightly different step scaling (#458, #584 / @arturi)</li>
+<li>We now log in console and show an Informer message, not error in console, when file cannot be added due to restrictions (#604, #492 / @goto-bus-stop).</li>
+<li>Unused files have been removed from published package, saving many many precious megabytes :) (#586 / @goto-bus-stop)</li>
+<li>Use empty input value so same file can be selected multiple times (@arturi / #534)</li>
+<li>Fix modal and page scroll (#564 / @arturi)</li>
+<li>Refactor provider views (#554 / @arturi)</li>
+<li>Lots of documentation fixes, thanks to all our contributors!</li>
+</ul>
+<h2 id="Press"><a href="#Press" class="headerlink" title="Press"></a>Press</h2><p>Uppy has made some appearances on the internet recently.</p>
+<p>1. <strong><a href="https://janko.io/better-file-uploads-with-shrine-direct-uploads/" target="_blank" rel="noopener">Better File Uploads with Shrine: Direct Uploads</a></strong>:</p>
+<p>On how to set up Uppy with <a href="http://shrinerb.com/" target="_blank" rel="noopener">Shrine</a>, a file attachment toolkit for Ruby applications. It starts off with an example of a plain <code>&lt;form&gt;</code> upload and builds up to a more advanced experience:</p>
+<blockquote>
+<ul>
+<li>When the user submits the form with selected files, there is no indicator telling them when the upload will finish.</li>
+<li>When the user is uploading multiple files at once and the request happens to get aborted, it’s not possible to keep the files that were uploaded so far, because all files are sent in a single request. In other words, multiple uploads are all-or-nothing.</li>
+<li>Files are validated only after they have been uploaded, which means the user needs to wait until the upload finishes before they can know whether their file was even valid.</li>
+</ul>
+<p>We can improve that by asynchronously starting to upload files on the client side as soon as they’re selected. This also gives users the ability to continue filling in other fields while files are being uploaded, because the UI isn’t blocked during the upload.</p>
+<p>There are many popular JavaScript file upload libraries out there – jQuery-File-Upload, Dropzone.js, FineUploader etc. – but the one you should use with Shrine is definitely Uppy 🐶. Uppy is a modular library that knows how to upload files to a custom endpoint on your app, to Amazon S3, or even to a resumable endpoint, providing progress bars, drag &amp; drop functionality, image previews, file validations etc, all while making as few assumptions as possible.</p>
+</blockquote>
+<p>2. <strong>Featured <a href="https://twitter.com/JavaScriptDaily/status/950348390268919809" target="_blank" rel="noopener">in Javascript Daily</a></strong>:</p>
+<blockquote>
+<p>Uppy: A Powerful, Modular JavaScript File Uploader</p>
+</blockquote>
+<p><cite>— JavaScript Daily</cite></p>
+<p>3. <strong><a href="https://twitter.com/uppy_io/status/946485101541683201" target="_blank" rel="noopener">#1 Trending on GitHub</a> accross all languages</strong>:</p>
+<blockquote>
+<p>Today our open source efforts are outpacing those of MSFT GOOG FB combined :D</p>
+</blockquote>
+<p><cite>— kvz, transloadit</cite></p>
+<p>4. <strong><a href="https://www.producthunt.com/posts/uppy-io" target="_blank" rel="noopener">#2 Product of the Week</a> on ProductHunt</strong>:</p>
+<blockquote>
+<p>You literally solved my biggest problem, thank you for developing such a great project.</p>
+</blockquote>
+<p><cite>— Chetan Menaria</cite></p>
+<blockquote>
+<p>Writing file upload functionality is always a pain in the arse. I’ll be checking this out today and integrating into SongBox if it’s good.</p>
+</blockquote>
+<p><cite>— Mick</cite></p>
+<p>5. <strong><a href="https://stackshare.io/posts/top-developer-tools-2017" target="_blank" rel="noopener">#2 New Tool of The Year</a> on Stackshare</strong>:</p>
+<blockquote>
+<p>Uppy closed out the year as the #1 trending GitHub JavaScript project, so we think it’s only getting started.</p>
+</blockquote>
+<h2 id="Full-Changelog"><a href="#Full-Changelog" class="headerlink" title="Full Changelog"></a>Full Changelog</h2><p>Here is the full list of changes for version <code>0.23.0</code> (and patches <code>0.22.1</code>—<code>0.22.5</code>):</p>
+<ul>
+<li>core: Allow plugins to add data to result object. Return <code>processing</code> results among with <code>upload</code> results in <code>complete</code> event and <code>upload()</code> promise (#527 / @goto-bus-stop)</li>
+<li>core: Move limiting to different point, to fix StatusBar and other UI issues #468 (#524, #526 / @goto-bus-stop)</li>
+<li>core: Add uploadID to complete event (#569 / @richardwillars)</li>
+<li>core: Allow chanining after .on() and .off() to improve ergonomics (#597 / @arturi)</li>
+<li>core: Allow user to override sass variables (#555 / @chao)</li>
+<li>core: Move preview generation to separate plugin, add queuing (#431 / @richardwillars)</li>
+<li>core: Third-party extension, uppy-store-ngrx <a href="https://github.com/rimlin/uppy-store-ngrx/" target="_blank" rel="noopener">https://github.com/rimlin/uppy-store-ngrx/</a> (#532 / @rimlin)</li>
+<li>core: Warn, not error, when file cannot be added due to restrictions? (#604, #492 / @goto-bus-stop)</li>
+<li>dashboard: Add more i18n strings (#565 / @arturi)</li>
+<li>dashboard: Fix modal and page scroll (#564 / @arturi)</li>
+<li>dashboard: Refactor provider views (#554 / @arturi)</li>
+<li>dashboard: Restore focus after modal has been closed (#536 / @arturi)</li>
+<li>dashboard: Use empty input value so same file can be selected multiple times (@arturi / #534)</li>
+<li>dashboard: Use more accessible tip lib microtip (#536 / @arturi)</li>
+<li>docs: Add PHP snippets to XHRUpload docs (#567 / @goto-bus-stop)</li>
+<li>meta: Added instruction to fork the repo first (#512 / muhammadInam)</li>
+<li>meta: Automatically host releases on edgly and use that as our main CDN (#558 / @kvz)</li>
+<li>meta: Dependency version updates (#523 / @goto-bus-stop)</li>
+<li>meta: Remove unused files from published package (#586 / @goto-bus-stop)</li>
+<li>s3: Respect <code>limit</code> option for upload parameter requests too; fix isXml() check when no content-type is available (#545, #544, #528 / @goto-bus-stop)</li>
+<li>statusbar: Fix status text still showing when statusbar is hidden (#525 / @goto-bus-stop)</li>
+<li>test: Alter jest testPathPattern to current dir, add chai (#583 / @arturi)</li>
+<li>thumbnail: Add thumbnail generation plugin (#461 / @richardwillars)</li>
+<li>thumbnail: Fix blank preview thumbnails for images in Safari; use slightly different stap scaling (#458, #584 / @arturi)</li>
+<li>transloadit: Add <code>transloadit:assembly-executing</code> event (#547 / @goto-bus-stop)</li>
+<li>transloadit: Add assembly results to to the <code>complete</code> callback (#527 / @goto-bus-stop)</li>
+<li>transloadit: Easily pass form fields (#593 / @goto-bus-stop)</li>
+<li>tus: <code>resume: false</code> — don’t store url (@arturi / #507)</li>
+<li>uppy-server: Detect file upload size from the server (@ifedapoolarewaju)</li>
+<li>uppy-server: Fix circular json stringify error (@ifedapoolarewaju)</li>
+<li>uppy-server: Load standalone server options via config path (@ifedapoolarewaju)</li>
+<li>uppy-server: Pass response from uppy-server upload’s endpoint (#591 / @ifedapoolarewaju)</li>
+<li>uppy-server: Schedule job to delete stale upload files (@ifedapoolarewaju)</li>
+<li>uppy-server: Security audit, ask @acconut</li>
+<li>uppy-server: Support localhost urls as endpoints (@ifedapoolarewaju)</li>
+<li>url: New plugin that imports files from urls (#588 / @arturi, @ifedapoolarewaju)</li>
+<li>webcam: Font styling for Webcam option (#509 / @muhammadInam)</li>
+<li>webcam: Mirror image preview, add option to select which camera is used to capture, try filling the whole Dashboard with webcam preview image, remove URL.createObjectURL() (#574 / @arturi, @nqst)</li>
+<li>website: Add Transloadit example to website (#603 / @arturi)</li>
+<li>website: Doc fixes (#563 / @arturi)</li>
+<li>website: Improve the Contributing guide (#578 / @arturi)</li>
+<li>xhrupload: Add bundle option to send multiple files in one request (#442 / @goto-bus-stop)</li>
+<li>xhrupload: Prevent files from being uploaded multiple times in separate uploads (#552 / @richardwillars)</li>
+<li>xhrupload: Refactor response and error handling (#591 / @goto-bus-stop, @arturi, @ifedapoolarewaju)</li>
+<li>core: Fix remote uploads (#474 / @arturi)</li>
+<li>statusbar, progressbar: Add option to hide progress bar after upload finish (#485 / @wilkoklak)</li>
+<li>s3: Allow passing on XHRUpload options, such as “limit” to AwsS3 Plugin (#471 / @ogtfaber)</li>
+<li>XHRUpload: Fix progress with <code>limit</code>ed XHRUploads (#505 / @goto-bus-stop)</li>
+<li>core: fix error when <code>file.type === null</code>, shouldn’t pass that to match (@arturi)</li>
+<li>dashboard: input hidden=”true” should not be focusable too (@arturi)</li>
+<li>webcam: Font styling for Webcam option (#509 / @muhammadInam)</li>
+<li>docs: fix reference to incorrect width/height options (#475 / @xhocquet)</li>
+<li>docs: Documentation fixes and improvements (#463 / @janko-m)</li>
+<li>docs: Fixed several typos in docs/server and docs/uppy (#484 / @martiuslim)</li>
+</ul>
+<p>The Uppy Team</p>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script></body></html>
+
+    <center>
+        <br />
+        <a class="github-button" href="https://github.com/transloadit/uppy" data-icon="octicon-star" data-size="large"
+        data-show-count="true" aria-label="Star transloadit/uppy on GitHub">Star</a>
+    </center>
+
+    <div class="PostAuthors">
+        
+            <div class="PostAuthor">
+                <a class="PostAuthor-link" href="https://transloadit.com/about/#artur" target="_blank" rel="noopener">
+                    <img class="PostAuthor-img" src="https://www.gravatar.com/avatar/6ddfaa9427d64ba52bbe021ea5e2ffef?s=200">
+                    <h4 class="PostAuthor-name">Artur Paikin</h4>
+                    <div class="PostAuthor-tagline">Developer</div>
+                </a>
+            </div>
+        
+    </div>
+  <br />
+    <!-- <ul class="Social">
+        <li><iframe src="https://ghbtns.com/github-btn.html?user=transloadit&repo=uppy&type=watch&count=true"
+                allowtransparency="true" frameborder="0" scrolling="0" width="100" height="20"></iframe></li>
+    </ul> -->
+  <!-- <div id="disqus_thread"></div>
+<script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+
+var disqus_config = function () {
+this.page.url = 'https://uppy.io/blog/2018/02/0.23/';  // Replace PAGE_URL with your page's canonical URL variable
+// this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://uppy.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" target="_blank" rel="noopener">comments powered by Disqus.</a></noscript>
+                             -->
+</div>
+
+        
+      </main>
+
+      <script defer data-domain="transloadit.github.io" src="https://analytics.transloadit.com/js/plausible.js"></script>
+
+
+      
+        <script src="/uppy/js/smooth-scroll.min.js"></script>
+        <!-- Place this tag in your head or just before your close body tag. -->
+        <script async defer src="https://buttons.github.io/buttons.js"></script>
+      
+      <script src="/uppy/js/common.js"></script>
+
+      <!-- Twitter follow button script -->
+      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+    </div>
+  </body>
+</html>

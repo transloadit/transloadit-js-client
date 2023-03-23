@@ -1,0 +1,19 @@
+<html><head></head><body>{"ar_SA":"Arabic (Saudi Arabia)","bg_BG":"Bulgarian (Bulgaria)","cs_CZ":"Czech (Czechia)","da_DK":"Danish (Denmark)","de_DE":"German (Germany)","el_GR":"Greek (Greece)","en_US":"English (United States)","es_ES":"Spanish (Spain)","fa_IR":"Persian (Iran)","fi_FI":"Finnish (Finland)","fr_FR":"French (France)","gl_ES":"Galician (Spain)","he_IL":"Hebrew (Israel)","hr_HR":"Croatian (Croatia)","hu_HU":"Hungarian (Hungary)","id_ID":"Indonesian (Indonesia)","is_IS":"Icelandic (Iceland)","it_IT":"Italian (Italy)","ja_JP":"Japanese (Japan)","ko_KR":"Korean (South Korea)","nb_NO":"Norwegian Bokmål (Norway)","nl_NL":"Dutch (Netherlands)","pl_PL":"Polish (Poland)","pt_BR":"Portuguese (Brazil)","pt_PT":"Portuguese (Portugal)","ro_RO":"Romanian (Romania)","ru_RU":"Russian (Russia)","sk_SK":"Slovak (Slovakia)","sr_RS_Cyrillic":"Serbian (Serbia, Cyrillic)","sr_RS_Latin":"Serbian (Serbia, Latin)","sv_SE":"Swedish (Sweden)","th_TH":"Thai (Thailand)","tr_TR":"Turkish (Turkey)","uk_UA":"Ukrainian (Ukraine)","uz_UZ":"Uzbek (Uzbekistan)","vi_VN":"Vietnamese (Vietnam)","zh_CN":"Chinese (China)","zh_TW":"Chinese (Taiwan)"}<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script></body></html>

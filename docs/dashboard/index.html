@@ -1,0 +1,1011 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Dashboard — Uppy</title>
+    <meta charset="utf-8">
+    <meta name="title" content="Dashboard — Uppy">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@uppy_io">
+    <meta name="twitter:creator" content="@uppy_io">
+    <meta property="og:url" content="https://transloadit.github.io/uppy/docs/dashboard/index.html">
+    <meta property="og:title" content="Dashboard — Uppy">
+    <meta name="twitter:title" content="Dashboard — Uppy">
+    <meta name="twitter:description" content="">
+    <meta property="og:image" content="http://transloadit.github.io/uppy/images/uppy-social-pink.png">
+    <meta name="twitter:image" content="http://transloadit.github.io/uppy/images/uppy-social-pink.png">
+
+    <meta name="google-site-verification" content="JxARoHXoCI8bD07pLV_u3z6xpuWNcSIZIcHEytyCkUc" />
+
+    <link rel="icon" href="/uppy/images/logos/uppy-dog-head-arrow.png" type="image/x-icon">
+    <link rel="alternate" type="application/rss+xml" title="Uppy" href="/atom.xml">
+
+    <script>
+      window.PAGE_TYPE = "docs"
+    </script>
+    
+<link rel="stylesheet" href="/uppy/css/main.css?version=2">
+
+    <!-- ^ poor man's solution to css cache busting. bump the version when there's something new we really want users to see -->
+  <meta name="generator" content="Hexo 4.2.1"></head>
+  <body class="page-inner ">
+    <div class="page">
+      <div class="TransloaditBar js-TransloaditBar">
+        <div class="TransloaditBar-about">
+          <!-- <a class="TransloaditBar-logo" href="https://transloadit.com/" target="_blank" rel="noopener">
+            <img class="TransloaditBar-logoImg" src="/uppy/images/transloadit-white-glyph.svg" width="20" height="20" alt="Transloadit">
+          </a> -->
+          <!-- <span>Uppy is an open source project by <a class="TransloaditBar-link" href="https://transloadit.com/" target="_blank">Transloadit</a></span> -->
+          This website is no longer maintained, please visit <a href="//uppy.io" target="_blank" rel="noopener" style="color:inherit">uppy.io</a> to get up-to-date info about Uppy.
+        </div>
+      </div>
+
+      <header id="header" class="MainHeader js-MainHeader">
+        <button class="MainHeader-menuBtn js-MenuBtn"></button>
+
+        <span id="logo" class="MainLogo">
+          <a class="MainLogo-link" href="/uppy/">Uppy</a>
+          <!-- Was used for 1.0, we can re-use for 2.0 or major announcements -->
+          <!-- <a class="MainLogo-announcement" href="/blog/2019/04/1.0/">
+            1.0
+            <span class="MainLogo-emoji">
+              <img src="/uppy/images/party-popper.png" srcset="/uppy/images/party-popper@2x.png 2x" alt="🎉">
+            </span>
+          </a> -->
+        </span>
+
+        <nav>
+          <ul id="nav" class="MainMenu">
+            <!-- @todo uncomment search input when we get our own swifttype -->
+<!-- <li>
+  <form id="search-form" class="MainMenu-search">
+    <input type="text" id="search-query" class="MainMenu-searchQuery st-default-search-input">
+  </form>
+</li> -->
+<!--li><a href="/uppy/guide/" class="nav-link">Guide</a></li-->
+<li><a href="/uppy/docs/" class="nav-link current">Docs</a></li>
+<li><a href="/uppy/examples/dashboard/" class="nav-link">Examples</a></li>
+<!--li><a href="/uppy/stats/" class="nav-link">Stats</a></li-->
+<li><a href="/uppy/blog/" class="nav-link">Blog</a></li>
+<li><a href="/uppy/support/" class="nav-link">Support</a></li>
+<li><a href="https://github.com/transloadit/uppy" target="_blank" rel="noopener" class="nav-link">GitHub</a></li>
+
+          </ul>
+        </nav>
+
+        <div class="MainHeader-tagline">
+          The file uploader that <span class="MainHeader-taglinePart js-MainHeader-taglinePart is-visible">loves to play fetch</span>
+        </div>
+
+        <ul class="MainHeader-taglineList js-MainHeader-taglineList">
+          
+          <li>won’t chew on your shoes</li>
+          
+          <li>is fully housebroken</li>
+          
+          <li>just wants to play with you</li>
+          
+          <li>doesn’t hump your leg</li>
+          
+          <li>also accepts cat pictures</li>
+          
+          <li>loves you unconditionally</li>
+          
+          <li>you don’t have to keep on a leash</li>
+          
+          <li>won’t pee on your rug</li>
+          
+          <li>loves to play fetch</li>
+          
+          <li>doesn’t bite (hard)</li>
+          
+          <li>won’t bark at the mailman</li>
+          
+          <li>is great with the kids</li>
+          
+          <li>can digest anything, even chocolate cake</li>
+          
+          <li>is always happy to see you</li>
+          
+          <li>isn’t afraid of fireworks</li>
+          
+          <li>is allowed everywhere</li>
+          
+        </ul>
+      </header>
+
+      <main class="MainContent js-MainContent" id="main">
+        
+          
+    <div class="Sidebar js-Sidebar">
+  <ul class="main-menu">
+    <!-- @todo uncomment search input when we get our own swifttype -->
+<!-- <li>
+  <form id="search-form" class="MainMenu-search">
+    <input type="text" id="search-query" class="MainMenu-searchQuery st-default-search-input">
+  </form>
+</li> -->
+<!--li><a href="/uppy/guide/" class="nav-link">Guide</a></li-->
+<li><a href="/uppy/docs/" class="nav-link current">Docs</a></li>
+<li><a href="/uppy/examples/dashboard/" class="nav-link">Examples</a></li>
+<!--li><a href="/uppy/stats/" class="nav-link">Stats</a></li-->
+<li><a href="/uppy/blog/" class="nav-link">Blog</a></li>
+<li><a href="/uppy/support/" class="nav-link">Support</a></li>
+<li><a href="https://github.com/transloadit/uppy" target="_blank" rel="noopener" class="nav-link">GitHub</a></li>
+
+  </ul>
+  
+  
+  <div class="list">
+    <h2>
+      <a href="/uppy/docs">Docs</a>
+    </h2>
+      
+    <div class="menu-root">
+      
+
+    
+    
+    
+    <ul>
+      
+        
+        
+        <li key="p-0-docs/index.html">
+          <a href="/docs/" class="sidebar-link">Getting Started</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-1-docs/uppy/index.html">
+          <a href="/docs/uppy/" class="sidebar-link">Uppy</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-2-docs/companion/index.html">
+          <a href="/docs/companion/" class="sidebar-link">Companion</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-3-docs/plugins/index.html">
+          <a href="/docs/plugins/" class="sidebar-link">List of Plugins</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-4-docs/plugin-options/index.html">
+          <a href="/docs/plugin-options/" class="sidebar-link">Common Plugin Options</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-5-docs/stores/index.html">
+          <a href="/docs/stores/" class="sidebar-link">Custom Stores</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-6-docs/community-projects/index.html">
+          <a href="/docs/community-projects/" class="sidebar-link">Community Projects</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-7-docs/locales/index.html">
+          <a href="/docs/locales/" class="sidebar-link">Locale Packs</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-8-docs/migration-guides.html">
+          <a href="/docs/migration-guides.html" class="sidebar-link">Migration guides</a>
+          
+        </li>
+      
+    </ul>
+
+    
+    
+    
+        
+        <h3 id="" key="category-1-UI Elements" data-scroll="no">UI Elements</h3>
+        
+    
+    <ul>
+      
+        
+        
+        <li key="p-0-docs/dashboard/index.html">
+          <a href="/docs/dashboard/" class="sidebar-link current">Dashboard</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-1-docs/status-bar/index.html">
+          <a href="/docs/status-bar/" class="sidebar-link">Status Bar</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-2-docs/progress-bar/index.html">
+          <a href="/docs/progress-bar/" class="sidebar-link">Progress Bar</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-3-docs/informer/index.html">
+          <a href="/docs/informer/" class="sidebar-link">Informer</a>
+          
+        </li>
+      
+    </ul>
+
+    
+    
+    
+        
+        <h3 id="" key="category-2-Sources" data-scroll="no">Sources</h3>
+        
+    
+    <ul>
+      
+        
+        
+        <li key="p-0-docs/drag-drop/index.html">
+          <a href="/docs/drag-drop/" class="sidebar-link">Drag & Drop</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-1-docs/drop-target/index.html">
+          <a href="/docs/drop-target/" class="sidebar-link">Drop Target</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-2-docs/file-input/index.html">
+          <a href="/docs/file-input/" class="sidebar-link">File Input</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-3-docs/audio/index.html">
+          <a href="/docs/audio/" class="sidebar-link">Audio</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-4-docs/webcam/index.html">
+          <a href="/docs/webcam/" class="sidebar-link">Webcam</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-5-docs/screen-capture/index.html">
+          <a href="/docs/screen-capture/" class="sidebar-link">Screen capture</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-6-docs/providers/index.html">
+          <a href="/docs/providers/" class="sidebar-link">Provider Plugins</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-7-docs/box/index.html">
+          <span title='Requires Companion'>ⓒ </span><a href="/docs/box/" class="sidebar-link">Box</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-8-docs/dropbox/index.html">
+          <span title='Requires Companion'>ⓒ </span><a href="/docs/dropbox/" class="sidebar-link">Dropbox</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-9-docs/google-drive/index.html">
+          <span title='Requires Companion'>ⓒ </span><a href="/docs/google-drive/" class="sidebar-link">Google Drive</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-10-docs/instagram/index.html">
+          <span title='Requires Companion'>ⓒ </span><a href="/docs/instagram/" class="sidebar-link">Instagram</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-11-docs/onedrive/index.html">
+          <span title='Requires Companion'>ⓒ </span><a href="/docs/onedrive/" class="sidebar-link">OneDrive</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-12-docs/zoom/index.html">
+          <span title='Requires Companion'>ⓒ </span><a href="/docs/zoom/" class="sidebar-link">Zoom</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-13-docs/facebook/index.html">
+          <span title='Requires Companion'>ⓒ </span><a href="/docs/facebook/" class="sidebar-link">Facebook</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-14-docs/unsplash/index.html">
+          <span title='Requires Companion'>ⓒ </span><a href="/docs/unsplash/" class="sidebar-link">Unsplash</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-15-docs/url/index.html">
+          <span title='Requires Companion'>ⓒ </span><a href="/docs/url/" class="sidebar-link">Import From URL</a>
+          
+        </li>
+      
+    </ul>
+
+    
+    
+    
+        
+        <h3 id="" key="category-3-Destinations" data-scroll="no">Destinations</h3>
+        
+    
+    <ul>
+      
+        
+        
+        <li key="p-0-docs/tus/index.html">
+          <a href="/docs/tus/" class="sidebar-link">Tus</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-1-docs/xhr-upload/index.html">
+          <a href="/docs/xhr-upload/" class="sidebar-link">XHR</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-2-docs/aws-s3/index.html">
+          <a href="/docs/aws-s3/" class="sidebar-link">AWS S3</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-3-docs/aws-s3-multipart/index.html">
+          <a href="/docs/aws-s3-multipart/" class="sidebar-link">AWS S3 Multipart</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-4-docs/transloadit/index.html">
+          <a href="/docs/transloadit/" class="sidebar-link">Transloadit</a>
+          
+        </li>
+      
+    </ul>
+
+    
+    
+    
+        
+        <h3 id="" key="category-4-Miscellaneous" data-scroll="no">Miscellaneous</h3>
+        
+    
+    <ul>
+      
+        
+        
+        <li key="p-0-docs/form/index.html">
+          <a href="/docs/form/" class="sidebar-link">Form</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-1-docs/golden-retriever/index.html">
+          <a href="/docs/golden-retriever/" class="sidebar-link">Golden Retriever</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-2-docs/image-editor/index.html">
+          <a href="/docs/image-editor/" class="sidebar-link">Image Editor</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-3-docs/thumbnail-generator/index.html">
+          <a href="/docs/thumbnail-generator/" class="sidebar-link">Thumbnail Generator</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-4-docs/redux/index.html">
+          <a href="/docs/redux/" class="sidebar-link">Redux</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-5-docs/compressor/index.html">
+          <a href="/docs/compressor/" class="sidebar-link">Compressor</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-6-docs/remote-sources/index.html">
+          <a href="/docs/remote-sources/" class="sidebar-link">Remote Sources</a>
+          
+        </li>
+      
+    </ul>
+
+    
+    
+    
+    <ul>
+      
+    </ul>
+
+    
+    
+    
+        
+        <h3 id="" key="category-6-React" data-scroll="no"><a href="/docs/react/">React</a></h3>
+        
+    
+    <ul>
+      
+        
+        
+        <li key="p-0-docs/react/index.html">
+          <a href="/docs/react/" class="sidebar-link">Introduction</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-1-docs/react/status-bar/index.html">
+          <a href="/docs/react/status-bar/" class="sidebar-link">&lt;StatusBar /></a>
+          
+        </li>
+      
+        
+        
+        <li key="p-2-docs/react/drag-drop/index.html">
+          <a href="/docs/react/drag-drop/" class="sidebar-link">&lt;DragDrop /></a>
+          
+        </li>
+      
+        
+        
+        <li key="p-3-docs/react/file-input/index.html">
+          <a href="/docs/react/file-input/" class="sidebar-link">&lt;FileInput /></a>
+          
+        </li>
+      
+        
+        
+        <li key="p-4-docs/react/progress-bar/index.html">
+          <a href="/docs/react/progress-bar/" class="sidebar-link">&lt;ProgressBar /></a>
+          
+        </li>
+      
+        
+        
+        <li key="p-5-docs/react/dashboard/index.html">
+          <a href="/docs/react/dashboard/" class="sidebar-link">&lt;Dashboard /></a>
+          
+        </li>
+      
+        
+        
+        <li key="p-6-docs/react/dashboard-modal/index.html">
+          <a href="/docs/react/dashboard-modal/" class="sidebar-link">&lt;DashboardModal /></a>
+          
+        </li>
+      
+        
+        
+        <li key="p-7-docs/react/native/index.html">
+          <a href="/docs/react/native/" class="sidebar-link">React Native</a>
+          
+        </li>
+      
+    </ul>
+
+    
+    
+    
+        
+        <h3 id="" key="category-7-Other Integrations" data-scroll="no"><a href="/docs/vue/">Other Integrations</a></h3>
+        
+    
+    <ul>
+      
+        
+        
+        <li key="p-0-docs/angular/index.html">
+          <a href="/docs/angular/" class="sidebar-link">Angular</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-1-docs/vue/index.html">
+          <a href="/docs/vue/" class="sidebar-link">Vue</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-2-docs/svelte/index.html">
+          <a href="/docs/svelte/" class="sidebar-link">Svelte</a>
+          
+        </li>
+      
+    </ul>
+
+    
+    
+    
+        
+        <h3 id="" key="category-8-Contributing" data-scroll="no"><a href="/docs/contributing.html">Contributing</a></h3>
+        
+    
+    <ul>
+      
+        
+        
+        <li key="p-0-docs/contributing.html">
+          <a href="/docs/contributing.html" class="sidebar-link">Contributing</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-1-docs/writing-plugins/index.html">
+          <a href="/docs/writing-plugins/" class="sidebar-link">Writing Plugins</a>
+          
+        </li>
+      
+    </ul>
+
+
+    </div>
+
+    <ul class="Social">
+  <li><a href="https://twitter.com/uppy_io" target="_blank" rel="noopener" class="twitter-follow-button" data-show-count="false" data-dnt="true">Follow @uppy_io</a></li>
+  <li><iframe src="https://ghbtns.com/github-btn.html?user=transloadit&repo=uppy&type=watch&count=true"
+allowtransparency="true" frameborder="0" scrolling="0" width="100" height="20"></iframe></li>
+  <!-- to regenerate you can use this link: https://img.shields.io/badge/community-forum-d8006a.svg -->
+  <li><a href="https://community.transloadit.com/c/uppy" target="_blank" rel="noopener"><img src="/uppy/images/community-forum-d8006a.svg" /> </a></li>
+  <li class="BuildBadge">
+   <span class="wrapper">
+     <a href="https://github.com/transloadit/uppy/actions" target="_blank" rel="noopener"><img src="https://github.com/transloadit/uppy/workflows/End-to-end%20tests/badge.svg" alt="Build Status"></a>
+   </span>
+  </li>
+</ul>
+
+    </div>
+  
+</div>
+
+
+
+<div class="Content js-Content docs with-sidebar">
+    <h1>Dashboard</h1>
+    <html><head></head><body><p><code>@uppy/dashboard</code> is a universal UI plugin for Uppy, offering several useful features:</p>
+<ul>
+<li>Drag and drop, paste, select from local disk / my device</li>
+<li>UI for the Webcam plugin and remote sources, such as Google Drive, Dropbox, Instagram, Facebook and OneDrive (all optional, added via plugins)</li>
+<li>Image previews</li>
+<li>Metadata editor</li>
+<li>Upload progress</li>
+<li>Ability to pause or cancel (depending on the uploader plugin) uploads</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="token keyword module">import</span> <span class="token imports"><span class="token maybe-class-name">Dashboard</span></span> <span class="token keyword module">from</span> <span class="token string">'@uppy/dashboard'</span>
+
+uppy<span class="token punctuation">.</span><span class="token method function property-access">use</span><span class="token punctuation">(</span><span class="token maybe-class-name">Dashboard</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  <span class="token comment">// Options</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span></pre></td></tr></table></figure>
+<p><a class="TryButton" href="/examples/dashboard/">Try it live</a></p>
+<h2 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h2><p>This plugin is published as the <code>@uppy/dashboard</code> package.</p>
+<p>Install from NPM:</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="token function">npm</span> <span class="token function">install</span> @uppy/dashboard</pre></td></tr></table></figure>
+<p>In the <a href="/docs/#With-a-script-tag">CDN package</a>, the plugin class is available on the <code>Uppy</code> global object:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="token keyword">const</span> <span class="token punctuation">{</span> <span class="token maybe-class-name">Dashboard</span> <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token maybe-class-name">Uppy</span></pre></td></tr></table></figure>
+<h2 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h2><p>The <code>@uppy/dashboard</code> plugin requires the following CSS for styling:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="token keyword module">import</span> <span class="token string">'@uppy/core/dist/style.css'</span>
+<span class="token keyword module">import</span> <span class="token string">'@uppy/dashboard/dist/style.css'</span></pre></td></tr></table></figure>
+<p>Import general Core styles from <code>@uppy/core/dist/style.css</code> first, then add the Dashboard styles from <code>@uppy/dashboard/dist/style.css</code>. A minified version is also available as <code>style.min.css</code> at the same path. The way to do import depends on your build system.</p>
+<p>⚠️ The <code>@uppy/dashboard</code> plugin includes CSS for the Dashboard itself, and the various plugins used by the Dashboard, such as (<a href="/docs/status-bar"><code>@uppy/status-bar</code></a> and <a href="/docs/informer"><code>@uppy/informer</code></a>). If you also use the <code>@uppy/status-bar</code> or <code>@uppy/informer</code> plugin directly, you should not include their CSS files, but instead only use the one from the <code>@uppy/dashboard</code> plugin.</p>
+<p>Styles for Provider plugins, like Google Drive and Instagram, are also bundled with Dashboard styles. Styles for other plugins, such as <code>@uppy/url</code> and <code>@uppy/webcam</code>, are not included. If you are using those, please see their docs and make sure to include styles for them as well.</p>
+<h2 id="Options"><a href="#Options" class="headerlink" title="Options"></a>Options</h2><p>The Dashboard can be extensively customized by configuring the options below to your liking:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre>uppy<span class="token punctuation">.</span><span class="token method function property-access">use</span><span class="token punctuation">(</span><span class="token maybe-class-name">Dashboard</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  <span class="token literal-property property">id</span><span class="token operator">:</span> <span class="token string">'Dashboard'</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">target</span><span class="token operator">:</span> <span class="token string">'body'</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">metaFields</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">trigger</span><span class="token operator">:</span> <span class="token keyword null nil">null</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">inline</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">width</span><span class="token operator">:</span> <span class="token number">750</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">height</span><span class="token operator">:</span> <span class="token number">550</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">thumbnailWidth</span><span class="token operator">:</span> <span class="token number">280</span><span class="token punctuation">,</span>
+  defaultTabIcon<span class="token punctuation">,</span>
+  <span class="token literal-property property">showLinkToFileUploadResult</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">showProgressDetails</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">hideUploadButton</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">hideRetryButton</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">hidePauseResumeButton</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">hideCancelButton</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">hideProgressAfterFinish</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+  <span class="token function-variable function">doneButtonHandler</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">uppy</span><span class="token punctuation">.</span><span class="token method function property-access">cancelAll</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token method function property-access">requestCloseModal</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">note</span><span class="token operator">:</span> <span class="token keyword null nil">null</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">closeModalOnClickOutside</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">closeAfterFinish</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">disableStatusBar</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">disableInformer</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">disableThumbnailGenerator</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">disablePageScrollWhenModalOpen</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">animateOpenClose</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">fileManagerSelectionType</span><span class="token operator">:</span> <span class="token string">'files'</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">proudlyDisplayPoweredByUppy</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+  <span class="token function-variable function">onRequestCloseModal</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token method function property-access">closeModal</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">showSelectedFiles</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">showRemoveButtonAfterComplete</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">showNativePhotoCameraButton</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">showNativeVideoCameraButton</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">locale</span><span class="token operator">:</span> defaultLocale<span class="token punctuation">,</span>
+  <span class="token literal-property property">browserBackButtonClose</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">theme</span><span class="token operator">:</span> <span class="token string">'light'</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">autoOpenFileEditor</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">disableLocalFiles</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span></pre></td></tr></table></figure>
+<h3 id="id-39-Dashboard-39"><a href="#id-39-Dashboard-39" class="headerlink" title="id: 'Dashboard'"></a><code>id: 'Dashboard'</code></h3><p>A unique identifier for this plugin. It defaults to <code>'Dashboard'</code>, but you can change this if you need several Dashboard instances.<br>Plugins that are added by the Dashboard get unique IDs based on this ID, like <code>'Dashboard:StatusBar'</code> and <code>'Dashboard:Informer'</code>.</p>
+<h3 id="target-39-body-39"><a href="#target-39-body-39" class="headerlink" title="target: 'body'"></a><code>target: 'body'</code></h3><p>Dashboard is rendered into <code>body</code>, because it’s hidden by default and only opened as a modal when <code>trigger</code> is clicked.</p>
+<h3 id="inline-false"><a href="#inline-false" class="headerlink" title="inline: false"></a><code>inline: false</code></h3><p>By default, Dashboard will be rendered as a modal, which is opened by clicking on <code>trigger</code>. If <code>inline: true</code>, Dashboard will be rendered into <code>target</code> and fit right in.</p>
+<h3 id="trigger-null"><a href="#trigger-null" class="headerlink" title="trigger: null"></a><code>trigger: null</code></h3><p>String with a CSS selector for a button that will trigger opening the Dashboard modal. Several buttons or links can be used, as long as they are selected using a class selector (<code>.select-file-button</code>, for example).</p>
+<h3 id="plugins"><a href="#plugins" class="headerlink" title="plugins: []"></a><code>plugins: []</code></h3><p>List of plugin IDs that should be shown in the Dashboard’s top bar. For example, to show the Webcam plugin:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre>uppy<span class="token punctuation">.</span><span class="token method function property-access">use</span><span class="token punctuation">(</span><span class="token maybe-class-name">Webcam</span><span class="token punctuation">)</span>
+uppy<span class="token punctuation">.</span><span class="token method function property-access">use</span><span class="token punctuation">(</span><span class="token maybe-class-name">Dashboard</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  <span class="token literal-property property">plugins</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'Webcam'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span></pre></td></tr></table></figure>
+<p>You could also use the <code>target</code> option in the Webcam plugin to achieve this, but that does not work with the React components. The <code>target</code> option may be changed in the future to only accept DOM elements, so it’s recommended to use this <code>plugins</code> array instead.</p>
+<h3 id="width-750"><a href="#width-750" class="headerlink" title="width: 750"></a><code>width: 750</code></h3><p>Width of the Dashboard in pixels. Used when <code>inline: true</code>.</p>
+<h3 id="height-550"><a href="#height-550" class="headerlink" title="height: 550"></a><code>height: 550</code></h3><p>Height of the Dashboard in pixels. Used when <code>inline: true</code>.</p>
+<h3 id="waitForThumbnailsBeforeUpload-false"><a href="#waitForThumbnailsBeforeUpload-false" class="headerlink" title="waitForThumbnailsBeforeUpload: false"></a><code>waitForThumbnailsBeforeUpload: false</code></h3><p>Whether to wait for all thumbnails from <code>@uppy/thumbnail-generator</code> to be ready before starting the upload. If set to <code>true</code>, Thumbnail Generator will envoke Uppy’s internal processing stage, displaying “Generating thumbnails…” message, and wait for <code>thumbnail:all-generated</code> event, before proceeding to the uploading stage.</p>
+<p>This is useful because Thumbnail Generator also adds EXIF data to images, and if we wait until it’s done processing, this data will be avilable on the server after the upload.</p>
+<h3 id="showLinkToFileUploadResult-false"><a href="#showLinkToFileUploadResult-false" class="headerlink" title="showLinkToFileUploadResult: false"></a><code>showLinkToFileUploadResult: false</code></h3><p>Turn the file icon and thumbnail in the Dashboard into a link to the uploaded file. Please make sure to return the <code>url</code> key (or the one set via <code>responseUrlFieldName</code>) from your server.</p>
+<h3 id="showProgressDetails-false"><a href="#showProgressDetails-false" class="headerlink" title="showProgressDetails: false"></a><code>showProgressDetails: false</code></h3><p>Passed to the Status Bar plugin used in the Dashboard.</p>
+<p>By default, progress in Status Bar is shown as a percentage. If you would like to also display remaining upload size and time, set this to <code>true</code>.</p>
+<p><code>showProgressDetails: false</code>: Uploading: 45%<br><code>showProgressDetails: true</code>: Uploading: 45%・43 MB of 101 MB・8s left</p>
+<h3 id="hideUploadButton-false"><a href="#hideUploadButton-false" class="headerlink" title="hideUploadButton: false"></a><code>hideUploadButton: false</code></h3><p>Passed to the Status Bar plugin used in the Dashboard.</p>
+<p>Hide the upload button. Use this if you are providing a custom upload button somewhere, and using the <code>uppy.upload()</code> API.</p>
+<h3 id="hideRetryButton-false"><a href="#hideRetryButton-false" class="headerlink" title="hideRetryButton: false"></a><code>hideRetryButton: false</code></h3><p>Hide the retry button in StatusBar (the progress bar below the file list) and on each individual file.</p>
+<p>Use this if you are providing a custom retry button somewhere, and using the <code>uppy.retryAll()</code> or <code>uppy.retryUpload(fileID)</code> API.</p>
+<h3 id="hidePauseResumeButton-false"><a href="#hidePauseResumeButton-false" class="headerlink" title="hidePauseResumeButton: false"></a><code>hidePauseResumeButton: false</code></h3><p>Hide the pause/resume button (for resumable uploads, via <a href="http://tus.io" target="_blank" rel="noopener">tus</a>, for example) in StatusBar and on each individual file.</p>
+<p>Use this if you are providing custom cancel or pause/resume buttons somewhere, and using the <code>uppy.pauseResume(fileID)</code> or <code>uppy.removeFile(fileID)</code> API.</p>
+<h3 id="hideCancelButton-false"><a href="#hideCancelButton-false" class="headerlink" title="hideCancelButton: false"></a><code>hideCancelButton: false</code></h3><p>Hide the cancel button in StatusBar and on each individual file.</p>
+<p>Use this if you are providing a custom retry button somewhere, and using the <code>uppy.cancelAll()</code> API.</p>
+<h3 id="hideProgressAfterFinish-false"><a href="#hideProgressAfterFinish-false" class="headerlink" title="hideProgressAfterFinish: false"></a><code>hideProgressAfterFinish: false</code></h3><p>Hide Status Bar after the upload has finished.</p>
+<h3 id="doneButtonHandler"><a href="#doneButtonHandler" class="headerlink" title="doneButtonHandler"></a><code>doneButtonHandler</code></h3><p>This option is passed to the StatusBar, and will render a “Done” button in place of pause/resume/cancel buttons, once the upload/encoding is done. The behaviour of this “Done” button is defined by the handler function — can be used to close file picker modals or clear the upload state. This is what the Dashboard sets by default:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="token keyword">const</span> <span class="token function-variable function">doneButtonHandler</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token punctuation">{</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">uppy</span><span class="token punctuation">.</span><span class="token method function property-access">cancelAll</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token method function property-access">requestCloseModal</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span></pre></td></tr></table></figure>
+<p>Set to <code>null</code> to disable the “Done” button.</p>
+<h3 id="showSelectedFiles-true"><a href="#showSelectedFiles-true" class="headerlink" title="showSelectedFiles: true"></a><code>showSelectedFiles: true</code></h3><p>Show the list (grid) of selected files with preview and file name. In case you are showing selected files in your own app’s UI and want the Uppy Dashboard to only be a picker, the list can be hidden with this option.</p>
+<p>See also <code>disableStatusBar</code> option, which can hide the progress and upload button.</p>
+<h3 id="showRemoveButtonAfterComplete-false"><a href="#showRemoveButtonAfterComplete-false" class="headerlink" title="showRemoveButtonAfterComplete: false"></a><code>showRemoveButtonAfterComplete: false</code></h3><p>Sometimes you might want to let users remove an uploaded file. Enabling this option only shows the remove <code>X</code> button in the Dashboard UI, but to actually send a request you should listen to <a href="/uppy/docs/uppy/#file-removed"><code>file-removed</code></a> event and add your logic there.</p>
+<figure class="highlight js"><table><tr><td class="code"><pre>uppy<span class="token punctuation">.</span><span class="token method function property-access">on</span><span class="token punctuation">(</span><span class="token string">'file-removed'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">file<span class="token punctuation">,</span> reason</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token punctuation">{</span>
+  <span class="token keyword control-flow">if</span> <span class="token punctuation">(</span>reason <span class="token operator">===</span> <span class="token string">'removed-by-user'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">sendDeleteRequestForFile</span><span class="token punctuation">(</span>file<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span></pre></td></tr></table></figure>
+<p>For an implementation example, please see <a href="https://github.com/transloadit/uppy/issues/2301#issue-628931176" target="_blank" rel="noopener">#2301</a>).</p>
+<h3 id="note-null"><a href="#note-null" class="headerlink" title="note: null"></a><code>note: null</code></h3><p>Optionally, specify a string of text that explains something about the upload for the user. This is a place to explain any <code>restrictions</code> that are put in place. For example: <code>'Images and video only, 2–3 files, up to 1 MB'</code>.</p>
+<h3 id="metaFields"><a href="#metaFields" class="headerlink" title="metaFields: []"></a><code>metaFields: []</code></h3><p>An array of UI field objects, or a function that takes a <a href="/uppy/docs/uppy/#File-Objects">File Object</a> and returns an array of UI field objects, that will be shown when a user clicks the “edit” button on that file. Configuring this enables the “edit” button on file cards. Each object requires:</p>
+<ul>
+<li><code>id</code>, the name of the meta field. Note: this will also be used in CSS/HTML as part of the <code>id</code> attribute, so it’s better to <a href="https://stackoverflow.com/a/79022" target="_blank" rel="noopener">avoid using characters like periods, semicolons, etc</a>.</li>
+<li><code>name</code>, the label shown in the interface.</li>
+<li><code>placeholder</code>, the text shown when no value is set in the field. (Not needed when a custom render function is provided)</li>
+</ul>
+<p>Optionally, you can specify <code>render: ({value, onChange, required, form}, h) =&gt; void</code>, a function for rendering a custom form element.<br>It gets passed <code>({value, onChange, required, form}, h)</code> where <code>value</code> is the current value of the meta field, <code>required</code> is a boolean that’s true if the field <code>id</code> is in the <code>restrictedMetaFields</code> restriction, <code>form</code> is the <code>id</code> of the associated <code>&lt;form&gt;</code> element, and <code>onChange: (newVal) =&gt; void</code> is a function saving the new value and <code>h</code> is the <code>createElement</code> function from <a href="https://preactjs.com/guide/v10/api-reference#h--createelement" target="_blank" rel="noopener">preact</a>.<br><code>h</code> can be useful when using uppy from plain JavaScript, where you cannot write JSX.</p>
+<figure class="highlight js"><table><tr><td class="code"><pre>uppy<span class="token punctuation">.</span><span class="token method function property-access">use</span><span class="token punctuation">(</span><span class="token maybe-class-name">Dashboard</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  <span class="token literal-property property">trigger</span><span class="token operator">:</span> <span class="token string">'#pick-files'</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">metaFields</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span> <span class="token literal-property property">id</span><span class="token operator">:</span> <span class="token string">'name'</span><span class="token punctuation">,</span> <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'Name'</span><span class="token punctuation">,</span> <span class="token literal-property property">placeholder</span><span class="token operator">:</span> <span class="token string">'file name'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span> <span class="token literal-property property">id</span><span class="token operator">:</span> <span class="token string">'license'</span><span class="token punctuation">,</span> <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'License'</span><span class="token punctuation">,</span> <span class="token literal-property property">placeholder</span><span class="token operator">:</span> <span class="token string">'specify license'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span> <span class="token literal-property property">id</span><span class="token operator">:</span> <span class="token string">'caption'</span><span class="token punctuation">,</span> <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'Caption'</span><span class="token punctuation">,</span> <span class="token literal-property property">placeholder</span><span class="token operator">:</span> <span class="token string">'describe what the image is about'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>
+      <span class="token literal-property property">id</span><span class="token operator">:</span> <span class="token string">'public'</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'Public'</span><span class="token punctuation">,</span>
+      <span class="token function">render</span> <span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">{</span> value<span class="token punctuation">,</span> onChange<span class="token punctuation">,</span> required<span class="token punctuation">,</span> form <span class="token punctuation">}</span><span class="token punctuation">,</span> h</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword control-flow">return</span> <span class="token function">h</span><span class="token punctuation">(</span><span class="token string">'input'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">'checkbox'</span><span class="token punctuation">,</span> required<span class="token punctuation">,</span> form<span class="token punctuation">,</span> <span class="token function-variable function">onChange</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token parameter">ev</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token function">onChange</span><span class="token punctuation">(</span>ev<span class="token punctuation">.</span><span class="token property-access">target</span><span class="token punctuation">.</span><span class="token property-access">checked</span> <span class="token operator">?</span> <span class="token string">'on'</span> <span class="token operator">:</span> <span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token literal-property property">defaultChecked</span><span class="token operator">:</span> value <span class="token operator">===</span> <span class="token string">'on'</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span></pre></td></tr></table></figure>
+<p>If you’d like the meta fields to be dynamically assigned depending on, for instance, the file type, pass a function:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre>uppy<span class="token punctuation">.</span><span class="token method function property-access">use</span><span class="token punctuation">(</span><span class="token maybe-class-name">Dashboard</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  <span class="token literal-property property">trigger</span><span class="token operator">:</span> <span class="token string">'#pick-files'</span><span class="token punctuation">,</span>
+  <span class="token function-variable function">metaFields</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token parameter">file</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> fields <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">{</span> <span class="token literal-property property">id</span><span class="token operator">:</span> <span class="token string">'name'</span><span class="token punctuation">,</span> <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'File name'</span> <span class="token punctuation">}</span><span class="token punctuation">]</span>
+    <span class="token keyword control-flow">if</span> <span class="token punctuation">(</span>file<span class="token punctuation">.</span><span class="token property-access">type</span><span class="token punctuation">.</span><span class="token method function property-access">startsWith</span><span class="token punctuation">(</span><span class="token string">'image/'</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      fields<span class="token punctuation">.</span><span class="token method function property-access">push</span><span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token literal-property property">id</span><span class="token operator">:</span> <span class="token string">'location'</span><span class="token punctuation">,</span> <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'Photo Location'</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+      fields<span class="token punctuation">.</span><span class="token method function property-access">push</span><span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token literal-property property">id</span><span class="token operator">:</span> <span class="token string">'alt'</span><span class="token punctuation">,</span> <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'Alt text'</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+      fields<span class="token punctuation">.</span><span class="token method function property-access">push</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        <span class="token literal-property property">id</span><span class="token operator">:</span> <span class="token string">'public'</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'Public'</span><span class="token punctuation">,</span>
+        <span class="token function-variable function">render</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">{</span> value<span class="token punctuation">,</span> onChange<span class="token punctuation">,</span> required<span class="token punctuation">,</span> form <span class="token punctuation">}</span><span class="token punctuation">,</span> h</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token punctuation">{</span>
+          <span class="token keyword control-flow">return</span> <span class="token function">h</span><span class="token punctuation">(</span><span class="token string">'input'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+            <span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">'checkbox'</span><span class="token punctuation">,</span>
+            <span class="token function-variable function">onChange</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token parameter">ev</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token function">onChange</span><span class="token punctuation">(</span>ev<span class="token punctuation">.</span><span class="token property-access">target</span><span class="token punctuation">.</span><span class="token property-access">checked</span> <span class="token operator">?</span> <span class="token string">'on'</span> <span class="token operator">:</span> <span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+            <span class="token literal-property property">defaultChecked</span><span class="token operator">:</span> value <span class="token operator">===</span> <span class="token string">'on'</span><span class="token punctuation">,</span>
+            required<span class="token punctuation">,</span>
+            form<span class="token punctuation">,</span>
+          <span class="token punctuation">}</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword control-flow">return</span> fields
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span></pre></td></tr></table></figure>
+<p><img src="/uppy/images/uppy-dashboard-meta-fields.jpg" alt=""></p>
+<p>Note that this metadata will only be set on a file object if it’s entered by the user. If the user doesn’t edit a file’s metadata, it will not have default values; instead everything will be <code>undefined</code>. If you want to set a certain meta field to each file regardless of user actions, set <a href="/docs/uppy/#meta"><code>meta</code> in the Uppy constructor options</a>.</p>
+<h3 id="closeModalOnClickOutside-false"><a href="#closeModalOnClickOutside-false" class="headerlink" title="closeModalOnClickOutside: false"></a><code>closeModalOnClickOutside: false</code></h3><p>Set to true to automatically close the modal when the user clicks outside of it.</p>
+<h3 id="closeAfterFinish-false"><a href="#closeAfterFinish-false" class="headerlink" title="closeAfterFinish: false"></a><code>closeAfterFinish: false</code></h3><p>Set to true to automatically close the modal when all current uploads are complete. You can use this together with the <a href="/docs/uppy#allowMultipleUploads-true"><code>allowMultipleUploads: false</code></a> option in Uppy Core to create a smooth experience when uploading a single (batch of) file(s).</p>
+<p>With this option, the modal is only automatically closed when uploads are complete <em>and successful</em>. If some uploads failed, the modal stays open so the user can retry failed uploads or cancel the current batch and upload an entirely different set of files instead.</p>
+<blockquote>
+<p>Setting <a href="/docs/uppy#allowMultipleUploads-true"><code>allowMultipleUploads: false</code></a> is <strong>strongly</strong> recommended when using this option. With several upload batches, the auto-closing behavior can be quite confusing for users.</p>
+</blockquote>
+<h3 id="disablePageScrollWhenModalOpen-true"><a href="#disablePageScrollWhenModalOpen-true" class="headerlink" title="disablePageScrollWhenModalOpen: true"></a><code>disablePageScrollWhenModalOpen: true</code></h3><p>Page scrolling is disabled by default when the Dashboard modal is open, so when you scroll a list of files in Uppy, the website in the background stays still. Set to false to override this behaviour and leave page scrolling intact.</p>
+<h3 id="animateOpenClose-true"><a href="#animateOpenClose-true" class="headerlink" title="animateOpenClose: true"></a><code>animateOpenClose: true</code></h3><p>Add light animations when the modal dialog is opened or closed, for a more satisfying user experience.</p>
+<h3 id="fileManagerSelectionType-39-files-39"><a href="#fileManagerSelectionType-39-files-39" class="headerlink" title="fileManagerSelectionType: 'files'"></a><code>fileManagerSelectionType: 'files'</code></h3><p>Configure the type of selections allowed when browsing your file system via the file manager selection window. May be either <code>'files'</code>, <code>'folders'</code>, or <code>'both'</code>. Selecting entire folders for upload may not be supported on all <a href="https://caniuse.com/#feat=input-file-directory" target="_blank" rel="noopener">browsers</a>.</p>
+<h3 id="proudlyDisplayPoweredByUppy-true"><a href="#proudlyDisplayPoweredByUppy-true" class="headerlink" title="proudlyDisplayPoweredByUppy: true"></a><code>proudlyDisplayPoweredByUppy: true</code></h3><p>Uppy is provided to the world for free by the team behind <a href="https://transloadit.com" target="_blank" rel="noopener">Transloadit</a>. In return, we ask that you consider keeping a tiny Uppy logo at the bottom of the Dashboard, so that more people can discover and use Uppy.</p>
+<p>Set this option to <code>false</code> if you do not wish to display the Uppy logo.</p>
+<h3 id="disableStatusBar-false"><a href="#disableStatusBar-false" class="headerlink" title="disableStatusBar: false"></a><code>disableStatusBar: false</code></h3><p>Dashboard ships with the <code>StatusBar</code> plugin that shows upload progress and pause/resume/cancel buttons. If you want, you can disable the StatusBar to provide your own custom solution.</p>
+<h3 id="disableInformer-false"><a href="#disableInformer-false" class="headerlink" title="disableInformer: false"></a><code>disableInformer: false</code></h3><p>Dashboard ships with the <code>Informer</code> plugin that notifies when the browser is offline, or when it’s time to say cheese if <code>Webcam</code> is taking a picture. If you want, you can disable the Informer and/or provide your own custom solution.</p>
+<h3 id="disableThumbnailGenerator-false"><a href="#disableThumbnailGenerator-false" class="headerlink" title="disableThumbnailGenerator: false"></a><code>disableThumbnailGenerator: false</code></h3><p>Dashboard ships with the <code>ThumbnailGenerator</code> plugin that adds small resized image thumbnails to images, for preview purposes only. If you want, you can disable the <code>ThumbnailGenerator</code> and/or provide your own custom solution.</p>
+<h3 id="locale"><a href="#locale" class="headerlink" title="locale: {}"></a><code>locale: {}</code></h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="token keyword module">export</span> <span class="token keyword module">default</span> <span class="token punctuation">{</span>
+  <span class="token literal-property property">strings</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token comment">// When `inline: false`, used as the screen reader label for the button that closes the modal.</span>
+    <span class="token literal-property property">closeModal</span><span class="token operator">:</span> <span class="token string">'Close Modal'</span><span class="token punctuation">,</span>
+    <span class="token comment">// Used as the screen reader label for the plus (+) button that shows the “Add more files” screen</span>
+    <span class="token literal-property property">addMoreFiles</span><span class="token operator">:</span> <span class="token string">'Add more files'</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">addingMoreFiles</span><span class="token operator">:</span> <span class="token string">'Adding more files'</span><span class="token punctuation">,</span>
+    <span class="token comment">// Used as the header for import panels, e.g., “Import from Google Drive”.</span>
+    <span class="token literal-property property">importFrom</span><span class="token operator">:</span> <span class="token string">'Import from %{name}'</span><span class="token punctuation">,</span>
+    <span class="token comment">// When `inline: false`, used as the screen reader label for the dashboard modal.</span>
+    <span class="token literal-property property">dashboardWindowTitle</span><span class="token operator">:</span> <span class="token string">'Uppy Dashboard Window (Press escape to close)'</span><span class="token punctuation">,</span>
+    <span class="token comment">// When `inline: true`, used as the screen reader label for the dashboard area.</span>
+    <span class="token literal-property property">dashboardTitle</span><span class="token operator">:</span> <span class="token string">'Uppy Dashboard'</span><span class="token punctuation">,</span>
+    <span class="token comment">// Shown in the Informer when a link to a file was copied to the clipboard.</span>
+    <span class="token literal-property property">copyLinkToClipboardSuccess</span><span class="token operator">:</span> <span class="token string">'Link copied to clipboard.'</span><span class="token punctuation">,</span>
+    <span class="token comment">// Used when a link cannot be copied automatically — the user has to select the text from the</span>
+    <span class="token comment">// input element below this string.</span>
+    <span class="token literal-property property">copyLinkToClipboardFallback</span><span class="token operator">:</span> <span class="token string">'Copy the URL below'</span><span class="token punctuation">,</span>
+    <span class="token comment">// Used as the hover title and screen reader label for buttons that copy a file link.</span>
+    <span class="token literal-property property">copyLink</span><span class="token operator">:</span> <span class="token string">'Copy link'</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">back</span><span class="token operator">:</span> <span class="token string">'Back'</span><span class="token punctuation">,</span>
+    <span class="token comment">// Used as the screen reader label for buttons that remove a file.</span>
+    <span class="token literal-property property">removeFile</span><span class="token operator">:</span> <span class="token string">'Remove file'</span><span class="token punctuation">,</span>
+    <span class="token comment">// Used as the screen reader label for buttons that open the metadata editor panel for a file.</span>
+    <span class="token literal-property property">editFile</span><span class="token operator">:</span> <span class="token string">'Edit file'</span><span class="token punctuation">,</span>
+    <span class="token comment">// Shown in the panel header for the metadata editor. Rendered as “Editing image.png”.</span>
+    <span class="token literal-property property">editing</span><span class="token operator">:</span> <span class="token string">'Editing %{file}'</span><span class="token punctuation">,</span>
+    <span class="token comment">// Used as the screen reader label for the button that saves metadata edits and returns to the</span>
+    <span class="token comment">// file list view.</span>
+    <span class="token literal-property property">finishEditingFile</span><span class="token operator">:</span> <span class="token string">'Finish editing file'</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">saveChanges</span><span class="token operator">:</span> <span class="token string">'Save changes'</span><span class="token punctuation">,</span>
+    <span class="token comment">// Used as the label for the tab button that opens the system file selection dialog.</span>
+    <span class="token literal-property property">myDevice</span><span class="token operator">:</span> <span class="token string">'My Device'</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">dropHint</span><span class="token operator">:</span> <span class="token string">'Drop your files here'</span><span class="token punctuation">,</span>
+    <span class="token comment">// Used as the hover text and screen reader label for file progress indicators when</span>
+    <span class="token comment">// they have been fully uploaded.</span>
+    <span class="token literal-property property">uploadComplete</span><span class="token operator">:</span> <span class="token string">'Upload complete'</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">uploadPaused</span><span class="token operator">:</span> <span class="token string">'Upload paused'</span><span class="token punctuation">,</span>
+    <span class="token comment">// Used as the hover text and screen reader label for the buttons to resume paused uploads.</span>
+    <span class="token literal-property property">resumeUpload</span><span class="token operator">:</span> <span class="token string">'Resume upload'</span><span class="token punctuation">,</span>
+    <span class="token comment">// Used as the hover text and screen reader label for the buttons to pause uploads.</span>
+    <span class="token literal-property property">pauseUpload</span><span class="token operator">:</span> <span class="token string">'Pause upload'</span><span class="token punctuation">,</span>
+    <span class="token comment">// Used as the hover text and screen reader label for the buttons to retry failed uploads.</span>
+    <span class="token literal-property property">retryUpload</span><span class="token operator">:</span> <span class="token string">'Retry upload'</span><span class="token punctuation">,</span>
+    <span class="token comment">// Used as the hover text and screen reader label for the buttons to cancel uploads.</span>
+    <span class="token literal-property property">cancelUpload</span><span class="token operator">:</span> <span class="token string">'Cancel upload'</span><span class="token punctuation">,</span>
+    <span class="token comment">// Used in a title, how many files are currently selected</span>
+    <span class="token literal-property property">xFilesSelected</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token number">0</span><span class="token operator">:</span> <span class="token string">'%{smart_count} file selected'</span><span class="token punctuation">,</span>
+      <span class="token number">1</span><span class="token operator">:</span> <span class="token string">'%{smart_count} files selected'</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">uploadingXFiles</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token number">0</span><span class="token operator">:</span> <span class="token string">'Uploading %{smart_count} file'</span><span class="token punctuation">,</span>
+      <span class="token number">1</span><span class="token operator">:</span> <span class="token string">'Uploading %{smart_count} files'</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">processingXFiles</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token number">0</span><span class="token operator">:</span> <span class="token string">'Processing %{smart_count} file'</span><span class="token punctuation">,</span>
+      <span class="token number">1</span><span class="token operator">:</span> <span class="token string">'Processing %{smart_count} files'</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token comment">// The "powered by Uppy" link at the bottom of the Dashboard.</span>
+    <span class="token literal-property property">poweredBy</span><span class="token operator">:</span> <span class="token string">'Powered by %{uppy}'</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">addMore</span><span class="token operator">:</span> <span class="token string">'Add more'</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">editFileWithFilename</span><span class="token operator">:</span> <span class="token string">'Edit file %{file}'</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">save</span><span class="token operator">:</span> <span class="token string">'Save'</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">cancel</span><span class="token operator">:</span> <span class="token string">'Cancel'</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">dropPasteFiles</span><span class="token operator">:</span> <span class="token string">'Drop files here or %{browseFiles}'</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">dropPasteFolders</span><span class="token operator">:</span> <span class="token string">'Drop files here or %{browseFolders}'</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">dropPasteBoth</span><span class="token operator">:</span> <span class="token string">'Drop files here, %{browseFiles} or %{browseFolders}'</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">dropPasteImportFiles</span><span class="token operator">:</span> <span class="token string">'Drop files here, %{browseFiles} or import from:'</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">dropPasteImportFolders</span><span class="token operator">:</span> <span class="token string">'Drop files here, %{browseFolders} or import from:'</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">dropPasteImportBoth</span><span class="token operator">:</span>
+      <span class="token string">'Drop files here, %{browseFiles}, %{browseFolders} or import from:'</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">importFiles</span><span class="token operator">:</span> <span class="token string">'Import files from:'</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">browseFiles</span><span class="token operator">:</span> <span class="token string">'browse files'</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">browseFolders</span><span class="token operator">:</span> <span class="token string">'browse folders'</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">recoveredXFiles</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token number">0</span><span class="token operator">:</span> <span class="token string">'We could not fully recover 1 file. Please re-select it and resume the upload.'</span><span class="token punctuation">,</span>
+      <span class="token number">1</span><span class="token operator">:</span> <span class="token string">'We could not fully recover %{smart_count} files. Please re-select them and resume the upload.'</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">recoveredAllFiles</span><span class="token operator">:</span> <span class="token string">'We restored all files. You can now resume the upload.'</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">sessionRestored</span><span class="token operator">:</span> <span class="token string">'Session restored'</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">reSelect</span><span class="token operator">:</span> <span class="token string">'Re-select'</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">missingRequiredMetaFields</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token number">0</span><span class="token operator">:</span> <span class="token string">'Missing required meta field: %{fields}.'</span><span class="token punctuation">,</span>
+      <span class="token number">1</span><span class="token operator">:</span> <span class="token string">'Missing required meta fields: %{fields}.'</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token comment">// Used for native device camera buttons on mobile</span>
+    <span class="token literal-property property">takePictureBtn</span><span class="token operator">:</span> <span class="token string">'Take Picture'</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">recordVideoBtn</span><span class="token operator">:</span> <span class="token string">'Record Video'</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span></pre></td></tr></table></figure>
+<h3 id="theme-39-light-39"><a href="#theme-39-light-39" class="headerlink" title="theme: 'light'"></a><code>theme: 'light'</code></h3><p>Uppy Dashboard supports “Dark Mode”. You can try it live on <a href="/uppy/examples/dashboard/">the Dashboard example page</a>.</p>
+<p>It supports the following values:</p>
+<ul>
+<li><code>light</code> — the default</li>
+<li><code>dark</code></li>
+<li><code>auto</code> — will respect the user’s system settings and switch automatically</li>
+</ul>
+<p><img src="/uppy/images/uppy-dashboard-dark-mar-2020.png" alt="Uppy dark mode screenshot"></p>
+<h3 id="autoOpenFileEditor-false"><a href="#autoOpenFileEditor-false" class="headerlink" title="autoOpenFileEditor: false"></a><code>autoOpenFileEditor: false</code></h3><p>Automatically open file editor (see <a href="/docs/image-editor/"><code>@uppy/image-editor</code></a>) for the first file in a batch. If one file is added, editor opens for that file, if 10 files are added — editor opens for the first file.</p>
+<p>Use case: user adds an image — Uppy opens Image Editor right away — user crops / adjusts the image — upload.</p>
+<h3 id="disabled-false"><a href="#disabled-false" class="headerlink" title="disabled: false"></a><code>disabled: false</code></h3><p>Enabling this option makes the Dashboard grayed-out and non-interactive. Users won’t be able to click on buttons or drop files.</p>
+<p>Useful when you need to conditionally enable/disable file uploading or manipulation, based on a condition in your app. Can be set on init or via API:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="token keyword">const</span> dashboard <span class="token operator">=</span> uppy<span class="token punctuation">.</span><span class="token method function property-access">getPlugin</span><span class="token punctuation">(</span><span class="token string">'Dashboard'</span><span class="token punctuation">)</span>
+dashboard<span class="token punctuation">.</span><span class="token method function property-access">setOptions</span><span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token literal-property property">disabled</span><span class="token operator">:</span> <span class="token boolean">true</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+userNameInput<span class="token punctuation">.</span><span class="token method function property-access">addEventListener</span><span class="token punctuation">(</span><span class="token string">'change'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token punctuation">{</span>
+  dashboard<span class="token punctuation">.</span><span class="token method function property-access">setOptions</span><span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token literal-property property">disabled</span><span class="token operator">:</span> <span class="token boolean">false</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span></pre></td></tr></table></figure>
+<h3 id="disableLocalFiles-false"><a href="#disableLocalFiles-false" class="headerlink" title="disableLocalFiles: false"></a><code>disableLocalFiles: false</code></h3><p>Enabling this option will disable drag &amp; drop, hide the “browse” and “My Device” button, allowing only uploads from plugins, such as Webcam, Screen Capture, Google Drive, Instagram.</p>
+<h2 id="Methods"><a href="#Methods" class="headerlink" title="Methods"></a>Methods</h2><h3 id="openModal"><a href="#openModal" class="headerlink" title="openModal()"></a><code>openModal()</code></h3><p>Shows the Dashboard modal. Use it like this:</p>
+<p><code>uppy.getPlugin('Dashboard').openModal()</code></p>
+<h3 id="closeModal"><a href="#closeModal" class="headerlink" title="closeModal()"></a><code>closeModal()</code></h3><p>Hides the Dashboard modal. Use it like this:</p>
+<p><code>uppy.getPlugin('Dashboard').closeModal()</code></p>
+<h3 id="isModalOpen"><a href="#isModalOpen" class="headerlink" title="isModalOpen()"></a><code>isModalOpen()</code></h3><p>Returns <code>true</code> if the Dashboard modal is open, <code>false</code> otherwise.</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="token keyword">const</span> dashboard <span class="token operator">=</span> uppy<span class="token punctuation">.</span><span class="token method function property-access">getPlugin</span><span class="token punctuation">(</span><span class="token string">'Dashboard'</span><span class="token punctuation">)</span>
+<span class="token keyword control-flow">if</span> <span class="token punctuation">(</span>dashboard<span class="token punctuation">.</span><span class="token method function property-access">isModalOpen</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  dashboard<span class="token punctuation">.</span><span class="token method function property-access">closeModal</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span></pre></td></tr></table></figure>
+<h2 id="Events"><a href="#Events" class="headerlink" title="Events"></a>Events</h2><h3 id="dashboard-modal-open"><a href="#dashboard-modal-open" class="headerlink" title="dashboard:modal-open"></a><code>dashboard:modal-open</code></h3><p>Fired when the Dashboard modal is open.</p>
+<figure class="highlight js"><table><tr><td class="code"><pre>uppy<span class="token punctuation">.</span><span class="token method function property-access">on</span><span class="token punctuation">(</span><span class="token string">'dashboard:modal-open'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token punctuation">{</span>
+  <span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span><span class="token string">'Modal is open'</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span></pre></td></tr></table></figure>
+<h3 id="dashboard-modal-closed"><a href="#dashboard-modal-closed" class="headerlink" title="dashboard:modal-closed"></a><code>dashboard:modal-closed</code></h3><p>Fired when the Dashboard modal is closed.</p>
+<h3 id="dashboard-show-panel"><a href="#dashboard-show-panel" class="headerlink" title="dashboard:show-panel"></a><code>dashboard:show-panel</code></h3><p><strong>Parameters:</strong></p>
+<ul>
+<li><code>id</code> — The unique identifier of the plugin that is being shown</li>
+</ul>
+<p>Fired when a user clicks on a source plugin, such as Webcam or Google Drive, in the Dashboard.</p>
+<h3 id="dashboard-file-edit-start"><a href="#dashboard-file-edit-start" class="headerlink" title="dashboard:file-edit-start"></a><code>dashboard:file-edit-start</code></h3><p><strong>Parameters:</strong></p>
+<ul>
+<li><code>file</code> — The <a href="/uppy/docs/uppy/#File-Objects">File Object</a> representing the file that was opened for editing.</li>
+</ul>
+<p>Fired when the user clicks “edit” icon next to a file in the Dashboard. The FileCard panel is then open with file metadata available for editing.</p>
+<h3 id="dashboard-file-edit-complete"><a href="#dashboard-file-edit-complete" class="headerlink" title="dashboard:file-edit-complete"></a><code>dashboard:file-edit-complete</code></h3><p><strong>Parameters:</strong></p>
+<ul>
+<li><code>file</code> — The <a href="/uppy/docs/uppy/#File-Objects">File Object</a> representing the file that was edited.</li>
+</ul>
+<p>Fired when the user finished editing the file metadata.</p>
+<h3 id="onDragOver-event"><a href="#onDragOver-event" class="headerlink" title="onDragOver(event)"></a><code>onDragOver(event)</code></h3><p>Callback for the <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/ondragover" target="_blank" rel="noopener"><code>ondragover</code></a> event handler.</p>
+<h3 id="onDrop-event"><a href="#onDrop-event" class="headerlink" title="onDrop(event)"></a><code>onDrop(event)</code></h3><p>Callback for the <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/ondrop" target="_blank" rel="noopener"><code>ondrop</code></a> event handler.</p>
+<h3 id="onDragLeave-event"><a href="#onDragLeave-event" class="headerlink" title="onDragLeave(event)"></a><code>onDragLeave(event)</code></h3><p>Callback for the <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/ondragleave" target="_blank" rel="noopener"><code>ondragleave</code></a> event handler.</p>
+<!-- definitions -->
+
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script></body></html>
+    
+    
+
+    
+    <div class="footer">Caught a mistake or want to contribute to the documentation?
+       <a href="https://github.com/transloadit/uppy/blob/main/website/src/docs/dashboard.md" rel="noreferrer noopener" target="_blank">Edit/fork this page directly on Github</a>!
+    </div>
+</div>
+
+        
+      </main>
+
+      <script defer data-domain="transloadit.github.io" src="https://analytics.transloadit.com/js/plausible.js"></script>
+
+
+      
+        <script src="/uppy/js/smooth-scroll.min.js"></script>
+        <!-- Place this tag in your head or just before your close body tag. -->
+        <script async defer src="https://buttons.github.io/buttons.js"></script>
+      
+      <script src="/uppy/js/common.js"></script>
+
+      <!-- Twitter follow button script -->
+      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+    </div>
+  </body>
+</html>

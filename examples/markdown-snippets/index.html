@@ -1,0 +1,627 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Transloadit Markdown Snippets — Uppy</title>
+    <meta charset="utf-8">
+    <meta name="title" content="Transloadit Markdown Snippets — Uppy">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@uppy_io">
+    <meta name="twitter:creator" content="@uppy_io">
+    <meta property="og:url" content="https://transloadit.github.io/uppy/examples/markdown-snippets/index.html">
+    <meta property="og:title" content="Transloadit Markdown Snippets — Uppy">
+    <meta name="twitter:title" content="Transloadit Markdown Snippets — Uppy">
+    <meta name="twitter:description" content="">
+    <meta property="og:image" content="http://transloadit.github.io/uppy/images/uppy-social-pink.png">
+    <meta name="twitter:image" content="http://transloadit.github.io/uppy/images/uppy-social-pink.png">
+
+    <meta name="google-site-verification" content="JxARoHXoCI8bD07pLV_u3z6xpuWNcSIZIcHEytyCkUc" />
+
+    <link rel="icon" href="/uppy/images/logos/uppy-dog-head-arrow.png" type="image/x-icon">
+    <link rel="alternate" type="application/rss+xml" title="Uppy" href="/atom.xml">
+
+    <script>
+      window.PAGE_TYPE = "examples"
+    </script>
+    
+<link rel="stylesheet" href="/uppy/css/main.css?version=2">
+
+    <!-- ^ poor man's solution to css cache busting. bump the version when there's something new we really want users to see -->
+  <meta name="generator" content="Hexo 4.2.1"></head>
+  <body class="page-inner ">
+    <div class="page">
+      <div class="TransloaditBar js-TransloaditBar">
+        <div class="TransloaditBar-about">
+          <!-- <a class="TransloaditBar-logo" href="https://transloadit.com/" target="_blank" rel="noopener">
+            <img class="TransloaditBar-logoImg" src="/uppy/images/transloadit-white-glyph.svg" width="20" height="20" alt="Transloadit">
+          </a> -->
+          <!-- <span>Uppy is an open source project by <a class="TransloaditBar-link" href="https://transloadit.com/" target="_blank">Transloadit</a></span> -->
+          This website is no longer maintained, please visit <a href="//uppy.io" target="_blank" rel="noopener" style="color:inherit">uppy.io</a> to get up-to-date info about Uppy.
+        </div>
+      </div>
+
+      <header id="header" class="MainHeader js-MainHeader">
+        <button class="MainHeader-menuBtn js-MenuBtn"></button>
+
+        <span id="logo" class="MainLogo">
+          <a class="MainLogo-link" href="/uppy/">Uppy</a>
+          <!-- Was used for 1.0, we can re-use for 2.0 or major announcements -->
+          <!-- <a class="MainLogo-announcement" href="/blog/2019/04/1.0/">
+            1.0
+            <span class="MainLogo-emoji">
+              <img src="/uppy/images/party-popper.png" srcset="/uppy/images/party-popper@2x.png 2x" alt="🎉">
+            </span>
+          </a> -->
+        </span>
+
+        <nav>
+          <ul id="nav" class="MainMenu">
+            <!-- @todo uncomment search input when we get our own swifttype -->
+<!-- <li>
+  <form id="search-form" class="MainMenu-search">
+    <input type="text" id="search-query" class="MainMenu-searchQuery st-default-search-input">
+  </form>
+</li> -->
+<!--li><a href="/uppy/guide/" class="nav-link">Guide</a></li-->
+<li><a href="/uppy/docs/" class="nav-link">Docs</a></li>
+<li><a href="/uppy/examples/dashboard/" class="nav-link current">Examples</a></li>
+<!--li><a href="/uppy/stats/" class="nav-link">Stats</a></li-->
+<li><a href="/uppy/blog/" class="nav-link">Blog</a></li>
+<li><a href="/uppy/support/" class="nav-link">Support</a></li>
+<li><a href="https://github.com/transloadit/uppy" target="_blank" rel="noopener" class="nav-link">GitHub</a></li>
+
+          </ul>
+        </nav>
+
+        <div class="MainHeader-tagline">
+          The file uploader that <span class="MainHeader-taglinePart js-MainHeader-taglinePart is-visible">loves to play fetch</span>
+        </div>
+
+        <ul class="MainHeader-taglineList js-MainHeader-taglineList">
+          
+          <li>won’t chew on your shoes</li>
+          
+          <li>is fully housebroken</li>
+          
+          <li>just wants to play with you</li>
+          
+          <li>doesn’t hump your leg</li>
+          
+          <li>also accepts cat pictures</li>
+          
+          <li>loves you unconditionally</li>
+          
+          <li>you don’t have to keep on a leash</li>
+          
+          <li>won’t pee on your rug</li>
+          
+          <li>loves to play fetch</li>
+          
+          <li>doesn’t bite (hard)</li>
+          
+          <li>won’t bark at the mailman</li>
+          
+          <li>is great with the kids</li>
+          
+          <li>can digest anything, even chocolate cake</li>
+          
+          <li>is always happy to see you</li>
+          
+          <li>isn’t afraid of fireworks</li>
+          
+          <li>is allowed everywhere</li>
+          
+        </ul>
+      </header>
+
+      <main class="MainContent js-MainContent" id="main">
+        
+          <div class="Sidebar js-Sidebar">
+  <ul class="main-menu">
+    <!-- @todo uncomment search input when we get our own swifttype -->
+<!-- <li>
+  <form id="search-form" class="MainMenu-search">
+    <input type="text" id="search-query" class="MainMenu-searchQuery st-default-search-input">
+  </form>
+</li> -->
+<!--li><a href="/uppy/guide/" class="nav-link">Guide</a></li-->
+<li><a href="/uppy/docs/" class="nav-link">Docs</a></li>
+<li><a href="/uppy/examples/dashboard/" class="nav-link current">Examples</a></li>
+<!--li><a href="/uppy/stats/" class="nav-link">Stats</a></li-->
+<li><a href="/uppy/blog/" class="nav-link">Blog</a></li>
+<li><a href="/uppy/support/" class="nav-link">Support</a></li>
+<li><a href="https://github.com/transloadit/uppy" target="_blank" rel="noopener" class="nav-link">GitHub</a></li>
+
+  </ul>
+  
+  
+  <div class="list">
+    <h2>
+      <a href="/uppy/examples">Examples</a>
+    </h2>
+      
+    <div class="menu-root">
+      
+
+    
+    
+    
+    <ul>
+      
+        
+        
+        <li key="p-0-examples/dashboard/index.html">
+          <a href="/examples/dashboard/" class="sidebar-link">Dashboard</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-1-examples/dragdrop/index.html">
+          <a href="/examples/dragdrop/" class="sidebar-link">Drag and Drop</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-2-examples/xhrupload/index.html">
+          <a href="/examples/xhrupload/" class="sidebar-link">XHR Upload</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-3-examples/i18n/index.html">
+          <a href="/examples/i18n/" class="sidebar-link">CDN & Locales</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-4-examples/statusbar/index.html">
+          <a href="/examples/statusbar/" class="sidebar-link">Status Bar</a>
+          
+        </li>
+      
+    </ul>
+
+    
+    
+    
+        
+        <h3 id="" key="category-1-File Processing" data-scroll="no"><a href="/examples/markdown-snippets/">File Processing</a></h3>
+        
+    
+    <ul>
+      
+        
+        
+        <li key="p-0-examples/markdown-snippets/index.html">
+          <a href="/examples/markdown-snippets/" class="sidebar-link current">Transloadit Markdown Snippets</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-1-examples/transloadit/index.html">
+          <a href="/examples/transloadit/" class="sidebar-link">Transloadit</a>
+          
+        </li>
+      
+    </ul>
+
+
+    </div>
+
+    <ul class="Social">
+  <li><a href="https://twitter.com/uppy_io" target="_blank" rel="noopener" class="twitter-follow-button" data-show-count="false" data-dnt="true">Follow @uppy_io</a></li>
+  <li><iframe src="https://ghbtns.com/github-btn.html?user=transloadit&repo=uppy&type=watch&count=true"
+allowtransparency="true" frameborder="0" scrolling="0" width="100" height="20"></iframe></li>
+  <!-- to regenerate you can use this link: https://img.shields.io/badge/community-forum-d8006a.svg -->
+  <li><a href="https://community.transloadit.com/c/uppy" target="_blank" rel="noopener"><img src="/uppy/images/community-forum-d8006a.svg" /> </a></li>
+  <li class="BuildBadge">
+   <span class="wrapper">
+     <a href="https://github.com/transloadit/uppy/actions" target="_blank" rel="noopener"><img src="https://github.com/transloadit/uppy/workflows/End-to-end%20tests/badge.svg" alt="Build Status"></a>
+   </span>
+  </li>
+</ul>
+
+    </div>
+  
+</div>
+
+
+<div class="Content js-Content examples with-sidebar">
+  <h1>Transloadit Markdown Snippets Example</h1>
+
+  <html><head></head><body><blockquote><p>This is a demo app that works a bit like Github Gists or Pastebin. You can add markdown snippets, and add file attachments to each snippet.</p>
+<p>Uppy <a href="/docs/remote-sources/">Remote Sources plugin</a> (using <a href="https://transloadit.com" target="_blank" rel="noopener">Transloadit</a> internally) generates an inline preview image for images, videos, and audio files.</p>
+<p>You can view the <a target="_blank" href="https://github.com/transloadit/uppy/blob/main/examples/transloadit-textarea/template.json">Transloadit Assembly Template</a> and the <a href="#snippet-example-code">code for this demo</a>.</p>
+</blockquote>
+
+<p>
+
+</p>
+
+<p>
+⚠️ For this demo, snippets are stored locally in your browser. Attachments are stored in Transloadit’s temporary storage and <em>expire</em> after about 24 hours. In a real app, you can easily <a target="_blank" href="https://transloadit.com/docs/#17-saving-conversion-results">export files to a permanent storage solution</a>, like Amazon S3 or Google Cloud.
+</p>
+
+<link rel="stylesheet" href="app.css">
+<!-- Add Uppy styles. It is advisable to install Uppy from npm/yarn.
+  But for experimenting, you can use also Transloadit’s CDN, Edgly:
+  <link rel="stylesheet" href="https://releases.transloadit.com/uppy/v3.6.1/uppy.min.css"> -->
+  <link rel="stylesheet" href="/uppy/uppy/uppy.min.css">
+  <form id="new" class="form-snippet">
+    <h2>Create a new snippet</h2>
+    <label class="form-snippetTitle">
+      <div class="form-snippetLabel">Snippet Title</div>
+      <input class="form-snippetTitle-input" type="text" name="title" placeholder="Enter snippet title">
+    </label>
+    <label class="form-snippetText">
+      <div class="form-snippetLabel">Snippet Content</div>
+      <textarea class="form-textarea" name="snippet" placeholder="Enter snippet content"></textarea>
+    </label>
+    <button class="form-createSnippet" type="submit">
+      Create
+    </button>
+  </form>
+
+  <h2>Previous snippets</h2>
+
+  <div id="snippets"></div>
+
+<template id="snippet">
+  <div class="snippet">
+    <h3 class="snippet-title"></h3>
+    <div class="snippet-content"></div>
+  </div>
+</template>
+
+<script src="app.js"></script>
+
+<hr>
+
+<p id="console-wrapper">
+  Console output: <br>
+</p>
+
+<p id="snippet-example-code">
+  On this page we're using the following HTML snippet:
+</p>
+<figure class="highlight html"><table><tbody><tr><td class="code"><pre><span class="token comment">&lt;!-- Add Uppy styles. It is advisable to install Uppy from npm/yarn.
+  But for experimenting, you can use also Transloadit’s CDN, Edgly:
+  &lt;link rel="stylesheet" href="https://releases.transloadit.com/uppy/v3.6.1/uppy.min.css"&gt; --&gt;</span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/uppy/uppy/uppy.min.css<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>new<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>form-snippet<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span><span class="token punctuation">&gt;</span></span>Create a new snippet<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>form-snippetTitle<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>form-snippetLabel<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Snippet Title<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>form-snippetTitle-input<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>title<span class="token punctuation">"</span></span> <span class="token attr-name">placeholder</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Enter snippet title<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>form-snippetText<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>form-snippetLabel<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Snippet Content<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+      <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>textarea</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>form-textarea<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>snippet<span class="token punctuation">"</span></span> <span class="token attr-name">placeholder</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Enter snippet content<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>textarea</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>form-createSnippet<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>submit<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+      Create
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">&gt;</span></span>
+
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h2</span><span class="token punctuation">&gt;</span></span>Previous snippets<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h2</span><span class="token punctuation">&gt;</span></span>
+
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>snippets<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>main</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>template</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>snippet<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>snippet<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h3</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>snippet-title<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h3</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>snippet-content<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>template</span><span class="token punctuation">&gt;</span></span></pre></td></tr></tbody></table></figure>
+
+<p>
+  Along with this JavaScript:
+</p>
+<figure class="highlight js"><table><tbody><tr><td class="code"><pre><span class="token comment">/* eslint-env browser */</span>
+<span class="token keyword module">import</span> <span class="token imports">marked</span> <span class="token keyword module">from</span> <span class="token string">'marked'</span>
+<span class="token keyword module">import</span> <span class="token imports">dragdrop</span> <span class="token keyword module">from</span> <span class="token string">'drag-drop'</span>
+<span class="token keyword module">import</span> <span class="token imports"><span class="token maybe-class-name">Uppy</span></span> <span class="token keyword module">from</span> <span class="token string">'@uppy/core'</span>
+<span class="token keyword module">import</span> <span class="token imports"><span class="token maybe-class-name">Dashboard</span></span> <span class="token keyword module">from</span> <span class="token string">'@uppy/dashboard'</span>
+<span class="token keyword module">import</span> <span class="token imports"><span class="token maybe-class-name">Transloadit</span></span> <span class="token keyword module">from</span> <span class="token string">'@uppy/transloadit'</span>
+<span class="token keyword module">import</span> <span class="token imports"><span class="token maybe-class-name">RemoteSources</span></span> <span class="token keyword module">from</span> <span class="token string">'@uppy/remote-sources'</span>
+<span class="token keyword module">import</span> <span class="token imports"><span class="token maybe-class-name">Webcam</span></span> <span class="token keyword module">from</span> <span class="token string">'@uppy/webcam'</span>
+<span class="token keyword module">import</span> <span class="token imports"><span class="token maybe-class-name">ImageEditor</span></span> <span class="token keyword module">from</span> <span class="token string">'@uppy/image-editor'</span>
+
+<span class="token keyword">const</span> <span class="token constant">TRANSLOADIT_EXAMPLE_KEY</span> <span class="token operator">=</span> <span class="token string">'35c1aed03f5011e982b6afe82599b6a0'</span>
+<span class="token keyword">const</span> <span class="token constant">TRANSLOADIT_EXAMPLE_TEMPLATE</span> <span class="token operator">=</span> <span class="token string">'0b2ee2bc25dc43619700c2ce0a75164a'</span>
+
+<span class="token keyword">function</span> <span class="token function">matchFilesAndThumbs</span> <span class="token punctuation">(</span><span class="token parameter">results</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> filesById <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+  <span class="token keyword">const</span> thumbsById <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+
+  <span class="token keyword control-flow">for</span> <span class="token punctuation">(</span><span class="token keyword">const</span> <span class="token punctuation">[</span>stepName<span class="token punctuation">,</span> result<span class="token punctuation">]</span> <span class="token keyword">of</span> <span class="token known-class-name class-name">Object</span><span class="token punctuation">.</span><span class="token method function property-access">entries</span><span class="token punctuation">(</span>results<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// eslint-disable-next-line no-shadow</span>
+    result<span class="token punctuation">.</span><span class="token method function property-access">forEach</span><span class="token punctuation">(</span><span class="token parameter">result</span> <span class="token arrow operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token keyword control-flow">if</span> <span class="token punctuation">(</span>stepName <span class="token operator">===</span> <span class="token string">'thumbnails'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        thumbsById<span class="token punctuation">[</span>result<span class="token punctuation">.</span><span class="token property-access">original_id</span><span class="token punctuation">]</span> <span class="token operator">=</span> result
+      <span class="token punctuation">}</span> <span class="token keyword control-flow">else</span> <span class="token punctuation">{</span>
+        filesById<span class="token punctuation">[</span>result<span class="token punctuation">.</span><span class="token property-access">original_id</span><span class="token punctuation">]</span> <span class="token operator">=</span> result
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword control-flow">return</span> <span class="token known-class-name class-name">Object</span><span class="token punctuation">.</span><span class="token method function property-access">keys</span><span class="token punctuation">(</span>filesById<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token method function property-access">map</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">key</span><span class="token punctuation">)</span> <span class="token arrow operator">=&gt;</span> <span class="token punctuation">(</span><span class="token punctuation">{</span>
+    <span class="token literal-property property">file</span><span class="token operator">:</span> filesById<span class="token punctuation">[</span>key<span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">thumb</span><span class="token operator">:</span> thumbsById<span class="token punctuation">[</span>key<span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token doc-comment comment">/**
+ * A textarea for markdown text, with support for file attachments.
+ */</span>
+<span class="token keyword">class</span> <span class="token class-name">MarkdownTextarea</span> <span class="token punctuation">{</span>
+  <span class="token function">constructor</span> <span class="token punctuation">(</span><span class="token parameter">element</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">element</span> <span class="token operator">=</span> element
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">controls</span> <span class="token operator">=</span> <span class="token dom variable">document</span><span class="token punctuation">.</span><span class="token method function property-access">createElement</span><span class="token punctuation">(</span><span class="token string">'div'</span><span class="token punctuation">)</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">controls</span><span class="token punctuation">.</span><span class="token property-access">classList</span><span class="token punctuation">.</span><span class="token method function property-access">add</span><span class="token punctuation">(</span><span class="token string">'mdtxt-controls'</span><span class="token punctuation">)</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">uploadLine</span> <span class="token operator">=</span> <span class="token dom variable">document</span><span class="token punctuation">.</span><span class="token method function property-access">createElement</span><span class="token punctuation">(</span><span class="token string">'button'</span><span class="token punctuation">)</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">uploadLine</span><span class="token punctuation">.</span><span class="token method function property-access">setAttribute</span><span class="token punctuation">(</span><span class="token string">'type'</span><span class="token punctuation">,</span> <span class="token string">'button'</span><span class="token punctuation">)</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">uploadLine</span><span class="token punctuation">.</span><span class="token property-access">classList</span><span class="token punctuation">.</span><span class="token method function property-access">add</span><span class="token punctuation">(</span><span class="token string">'form-upload'</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">uploadLine</span><span class="token punctuation">.</span><span class="token method function property-access">appendChild</span><span class="token punctuation">(</span>
+      <span class="token dom variable">document</span><span class="token punctuation">.</span><span class="token method function property-access">createTextNode</span><span class="token punctuation">(</span><span class="token string">'Tap here to upload an attachment'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token function">install</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> <span class="token punctuation">{</span> element <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token keyword">this</span>
+    <span class="token keyword">const</span> wrapper <span class="token operator">=</span> <span class="token dom variable">document</span><span class="token punctuation">.</span><span class="token method function property-access">createElement</span><span class="token punctuation">(</span><span class="token string">'div'</span><span class="token punctuation">)</span>
+    wrapper<span class="token punctuation">.</span><span class="token property-access">classList</span><span class="token punctuation">.</span><span class="token method function property-access">add</span><span class="token punctuation">(</span><span class="token string">'mdtxt'</span><span class="token punctuation">)</span>
+    element<span class="token punctuation">.</span><span class="token property-access">parentNode</span><span class="token punctuation">.</span><span class="token method function property-access">replaceChild</span><span class="token punctuation">(</span>wrapper<span class="token punctuation">,</span> element<span class="token punctuation">)</span>
+    wrapper<span class="token punctuation">.</span><span class="token method function property-access">appendChild</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">controls</span><span class="token punctuation">)</span>
+    wrapper<span class="token punctuation">.</span><span class="token method function property-access">appendChild</span><span class="token punctuation">(</span>element<span class="token punctuation">)</span>
+    wrapper<span class="token punctuation">.</span><span class="token method function property-access">appendChild</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">uploadLine</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token method function property-access">setupTextareaDrop</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token method function property-access">setupUppy</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token function-variable function">setupUppy</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token arrow operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">uppy</span> <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Uppy</span><span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token literal-property property">autoProceed</span><span class="token operator">:</span> <span class="token boolean">true</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+      <span class="token punctuation">.</span><span class="token method function property-access">use</span><span class="token punctuation">(</span><span class="token maybe-class-name">Transloadit</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+        <span class="token literal-property property">waitForEncoding</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">params</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+          <span class="token literal-property property">auth</span><span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token literal-property property">key</span><span class="token operator">:</span> <span class="token constant">TRANSLOADIT_EXAMPLE_KEY</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token literal-property property">template_id</span><span class="token operator">:</span> <span class="token constant">TRANSLOADIT_EXAMPLE_TEMPLATE</span><span class="token punctuation">,</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+      <span class="token punctuation">.</span><span class="token method function property-access">use</span><span class="token punctuation">(</span><span class="token maybe-class-name">Dashboard</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token literal-property property">closeAfterFinish</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token literal-property property">trigger</span><span class="token operator">:</span> <span class="token string">'.form-upload'</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+      <span class="token punctuation">.</span><span class="token method function property-access">use</span><span class="token punctuation">(</span><span class="token maybe-class-name">ImageEditor</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token literal-property property">target</span><span class="token operator">:</span> <span class="token maybe-class-name">Dashboard</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+      <span class="token punctuation">.</span><span class="token method function property-access">use</span><span class="token punctuation">(</span><span class="token maybe-class-name">Webcam</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token literal-property property">target</span><span class="token operator">:</span> <span class="token maybe-class-name">Dashboard</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+      <span class="token punctuation">.</span><span class="token method function property-access">use</span><span class="token punctuation">(</span><span class="token maybe-class-name">RemoteSources</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+        <span class="token literal-property property">companionUrl</span><span class="token operator">:</span> <span class="token string">'https://api2.transloadit.com/companion'</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">uppy</span><span class="token punctuation">.</span><span class="token method function property-access">on</span><span class="token punctuation">(</span><span class="token string">'complete'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">result</span><span class="token punctuation">)</span> <span class="token arrow operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token keyword">const</span> <span class="token punctuation">{</span> successful<span class="token punctuation">,</span> failed<span class="token punctuation">,</span> transloadit <span class="token punctuation">}</span> <span class="token operator">=</span> result
+      <span class="token keyword control-flow">if</span> <span class="token punctuation">(</span>successful<span class="token punctuation">.</span><span class="token property-access">length</span> <span class="token operator">!==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token method function property-access">insertAttachments</span><span class="token punctuation">(</span>
+          <span class="token function">matchFilesAndThumbs</span><span class="token punctuation">(</span>transloadit<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token property-access">results</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+        <span class="token punctuation">)</span>
+      <span class="token punctuation">}</span> <span class="token keyword control-flow">else</span> <span class="token punctuation">{</span>
+        failed<span class="token punctuation">.</span><span class="token method function property-access">forEach</span><span class="token punctuation">(</span><span class="token parameter">error</span> <span class="token arrow operator">=&gt;</span> <span class="token punctuation">{</span>
+          <span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">error</span><span class="token punctuation">(</span>error<span class="token punctuation">)</span>
+          <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token method function property-access">reportUploadError</span><span class="token punctuation">(</span>error<span class="token punctuation">)</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">uppy</span><span class="token punctuation">.</span><span class="token method function property-access">cancelAll</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token function">setupTextareaDrop</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">dragdrop</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">element</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">files</span><span class="token punctuation">)</span> <span class="token arrow operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token method function property-access">uploadFiles</span><span class="token punctuation">(</span>files<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token function">reportUploadError</span> <span class="token punctuation">(</span><span class="token parameter">err</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">uploadLine</span><span class="token punctuation">.</span><span class="token property-access">classList</span><span class="token punctuation">.</span><span class="token method function property-access">add</span><span class="token punctuation">(</span><span class="token string">'error'</span><span class="token punctuation">)</span>
+    <span class="token keyword">const</span> message <span class="token operator">=</span> <span class="token dom variable">document</span><span class="token punctuation">.</span><span class="token method function property-access">createElement</span><span class="token punctuation">(</span><span class="token string">'span'</span><span class="token punctuation">)</span>
+    message<span class="token punctuation">.</span><span class="token method function property-access">appendChild</span><span class="token punctuation">(</span><span class="token dom variable">document</span><span class="token punctuation">.</span><span class="token method function property-access">createTextNode</span><span class="token punctuation">(</span>err<span class="token punctuation">.</span><span class="token property-access">message</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">uploadLine</span><span class="token punctuation">.</span><span class="token method function property-access">insertChild</span><span class="token punctuation">(</span>message<span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">uploadLine</span><span class="token punctuation">.</span><span class="token property-access">firstChild</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token function">unreportUploadError</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">uploadLine</span><span class="token punctuation">.</span><span class="token property-access">classList</span><span class="token punctuation">.</span><span class="token method function property-access">remove</span><span class="token punctuation">(</span><span class="token string">'error'</span><span class="token punctuation">)</span>
+    <span class="token keyword">const</span> message <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">uploadLine</span><span class="token punctuation">.</span><span class="token method function property-access">querySelector</span><span class="token punctuation">(</span><span class="token string">'message'</span><span class="token punctuation">)</span>
+    <span class="token keyword control-flow">if</span> <span class="token punctuation">(</span>message<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">uploadLine</span><span class="token punctuation">.</span><span class="token method function property-access">removeChild</span><span class="token punctuation">(</span>message<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token function">insertAttachments</span> <span class="token punctuation">(</span><span class="token parameter">attachments</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    attachments<span class="token punctuation">.</span><span class="token method function property-access">forEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">attachment</span><span class="token punctuation">)</span> <span class="token arrow operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token keyword">const</span> <span class="token punctuation">{</span> file<span class="token punctuation">,</span> thumb <span class="token punctuation">}</span> <span class="token operator">=</span> attachment
+      <span class="token keyword">const</span> link <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">\n[LABEL](</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>file<span class="token punctuation">.</span><span class="token property-access">ssl_url</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">)\n</span><span class="token template-punctuation string">`</span></span>
+      <span class="token keyword">const</span> labelText <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">View File </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>file<span class="token punctuation">.</span><span class="token property-access">basename</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span>
+      <span class="token keyword control-flow">if</span> <span class="token punctuation">(</span>thumb<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">element</span><span class="token punctuation">.</span><span class="token property-access">value</span> <span class="token operator">+=</span> link<span class="token punctuation">.</span><span class="token method function property-access">replace</span><span class="token punctuation">(</span><span class="token string">'LABEL'</span><span class="token punctuation">,</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">![</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>labelText<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">](</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>thumb<span class="token punctuation">.</span><span class="token property-access">ssl_url</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">)</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span> <span class="token keyword control-flow">else</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">element</span><span class="token punctuation">.</span><span class="token property-access">value</span> <span class="token operator">+=</span> link<span class="token punctuation">.</span><span class="token method function property-access">replace</span><span class="token punctuation">(</span><span class="token string">'LABEL'</span><span class="token punctuation">,</span> labelText<span class="token punctuation">)</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token function-variable function">uploadFiles</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">files</span><span class="token punctuation">)</span> <span class="token arrow operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> filesForUppy <span class="token operator">=</span> files<span class="token punctuation">.</span><span class="token method function property-access">map</span><span class="token punctuation">(</span><span class="token parameter">file</span> <span class="token arrow operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token keyword control-flow">return</span> <span class="token punctuation">{</span>
+        <span class="token literal-property property">data</span><span class="token operator">:</span> file<span class="token punctuation">,</span>
+        <span class="token literal-property property">type</span><span class="token operator">:</span> file<span class="token punctuation">.</span><span class="token property-access">type</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">name</span><span class="token operator">:</span> file<span class="token punctuation">.</span><span class="token property-access">name</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">meta</span><span class="token operator">:</span> file<span class="token punctuation">.</span><span class="token property-access">meta</span> <span class="token operator">||</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">uppy</span><span class="token punctuation">.</span><span class="token method function property-access">addFiles</span><span class="token punctuation">(</span>filesForUppy<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">const</span> textarea <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">MarkdownTextarea</span><span class="token punctuation">(</span><span class="token dom variable">document</span><span class="token punctuation">.</span><span class="token method function property-access">querySelector</span><span class="token punctuation">(</span><span class="token string">'#new textarea'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+textarea<span class="token punctuation">.</span><span class="token method function property-access">install</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token keyword">function</span> <span class="token function">renderSnippet</span> <span class="token punctuation">(</span><span class="token parameter">title<span class="token punctuation">,</span> text</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> template <span class="token operator">=</span> <span class="token dom variable">document</span><span class="token punctuation">.</span><span class="token method function property-access">querySelector</span><span class="token punctuation">(</span><span class="token string">'#snippet'</span><span class="token punctuation">)</span>
+  <span class="token keyword">const</span> newSnippet <span class="token operator">=</span> <span class="token dom variable">document</span><span class="token punctuation">.</span><span class="token method function property-access">importNode</span><span class="token punctuation">(</span>template<span class="token punctuation">.</span><span class="token property-access">content</span><span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">)</span>
+  <span class="token keyword">const</span> titleEl <span class="token operator">=</span> newSnippet<span class="token punctuation">.</span><span class="token method function property-access">querySelector</span><span class="token punctuation">(</span><span class="token string">'.snippet-title'</span><span class="token punctuation">)</span>
+  <span class="token keyword">const</span> contentEl <span class="token operator">=</span> newSnippet<span class="token punctuation">.</span><span class="token method function property-access">querySelector</span><span class="token punctuation">(</span><span class="token string">'.snippet-content'</span><span class="token punctuation">)</span>
+
+  titleEl<span class="token punctuation">.</span><span class="token method function property-access">appendChild</span><span class="token punctuation">(</span><span class="token dom variable">document</span><span class="token punctuation">.</span><span class="token method function property-access">createTextNode</span><span class="token punctuation">(</span>title<span class="token punctuation">)</span><span class="token punctuation">)</span>
+  contentEl<span class="token punctuation">.</span><span class="token property-access">innerHTML</span> <span class="token operator">=</span> <span class="token function">marked</span><span class="token punctuation">(</span>text<span class="token punctuation">)</span>
+
+  <span class="token keyword">const</span> list <span class="token operator">=</span> <span class="token dom variable">document</span><span class="token punctuation">.</span><span class="token method function property-access">querySelector</span><span class="token punctuation">(</span><span class="token string">'#snippets'</span><span class="token punctuation">)</span>
+  list<span class="token punctuation">.</span><span class="token method function property-access">insertBefore</span><span class="token punctuation">(</span>newSnippet<span class="token punctuation">,</span> list<span class="token punctuation">.</span><span class="token property-access">firstChild</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">saveSnippet</span> <span class="token punctuation">(</span><span class="token parameter">title<span class="token punctuation">,</span> text</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> id <span class="token operator">=</span> <span class="token function">parseInt</span><span class="token punctuation">(</span><span class="token dom variable">localStorage</span><span class="token punctuation">.</span><span class="token property-access">numSnippets</span> <span class="token operator">||</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span>
+  <span class="token dom variable">localStorage</span><span class="token punctuation">[</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">snippet_</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>id<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token known-class-name class-name">JSON</span><span class="token punctuation">.</span><span class="token method function property-access">stringify</span><span class="token punctuation">(</span><span class="token punctuation">{</span> title<span class="token punctuation">,</span> text <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token dom variable">localStorage</span><span class="token punctuation">.</span><span class="token property-access">numSnippets</span> <span class="token operator">=</span> id <span class="token operator">+</span> <span class="token number">1</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">loadSnippets</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword control-flow">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> id <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> <span class="token dom variable">localStorage</span><span class="token punctuation">[</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">snippet_</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>id<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">]</span> <span class="token operator">!=</span> <span class="token keyword null nil">null</span><span class="token punctuation">;</span> id <span class="token operator">+=</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> <span class="token punctuation">{</span> title<span class="token punctuation">,</span> text <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token known-class-name class-name">JSON</span><span class="token punctuation">.</span><span class="token method function property-access">parse</span><span class="token punctuation">(</span><span class="token dom variable">localStorage</span><span class="token punctuation">[</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">snippet_</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>id<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+    <span class="token function">renderSnippet</span><span class="token punctuation">(</span>title<span class="token punctuation">,</span> text<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token dom variable">document</span><span class="token punctuation">.</span><span class="token method function property-access">querySelector</span><span class="token punctuation">(</span><span class="token string">'#new'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token method function property-access">addEventListener</span><span class="token punctuation">(</span><span class="token string">'submit'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">event</span><span class="token punctuation">)</span> <span class="token arrow operator">=&gt;</span> <span class="token punctuation">{</span>
+  event<span class="token punctuation">.</span><span class="token method function property-access">preventDefault</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+  <span class="token keyword">const</span> title <span class="token operator">=</span> event<span class="token punctuation">.</span><span class="token property-access">target</span><span class="token punctuation">.</span><span class="token property-access">elements</span><span class="token punctuation">[</span><span class="token string">'title'</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token property-access">value</span>
+    <span class="token operator">||</span> <span class="token string">'Unnamed Snippet'</span>
+  <span class="token keyword">const</span> text <span class="token operator">=</span> textarea<span class="token punctuation">.</span><span class="token property-access">element</span><span class="token punctuation">.</span><span class="token property-access">value</span>
+
+  <span class="token function">saveSnippet</span><span class="token punctuation">(</span>title<span class="token punctuation">,</span> text<span class="token punctuation">)</span>
+  <span class="token function">renderSnippet</span><span class="token punctuation">(</span>title<span class="token punctuation">,</span> text<span class="token punctuation">)</span>
+
+  <span class="token comment">// eslint-disable-next-line no-param-reassign</span>
+  event<span class="token punctuation">.</span><span class="token property-access">target</span><span class="token punctuation">.</span><span class="token method function property-access">querySelector</span><span class="token punctuation">(</span><span class="token string">'input'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token property-access">value</span> <span class="token operator">=</span> <span class="token string">''</span>
+  <span class="token comment">// eslint-disable-next-line no-param-reassign</span>
+  event<span class="token punctuation">.</span><span class="token property-access">target</span><span class="token punctuation">.</span><span class="token method function property-access">querySelector</span><span class="token punctuation">(</span><span class="token string">'textarea'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token property-access">value</span> <span class="token operator">=</span> <span class="token string">''</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token dom variable">window</span><span class="token punctuation">.</span><span class="token method function property-access">addEventListener</span><span class="token punctuation">(</span><span class="token string">'DOMContentLoaded'</span><span class="token punctuation">,</span> loadSnippets<span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token literal-property property">once</span><span class="token operator">:</span> <span class="token boolean">true</span> <span class="token punctuation">}</span><span class="token punctuation">)</span></pre></td></tr></tbody></table></figure>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script></body></html>
+
+  <p>Please see <a href="/uppy/docs/">documentation</a> for details.</p>
+
+  <hr>
+
+  <p>Hey there stranger! Uppy <img src="/uppy/images/emojis/dog.png" width="14" align="absmiddle">
+    is actively developed and the example section
+    is our playground. Things might not work, but we're working hard to improve.</p>
+  <p>We're on a monthly release cycle and our latest version is
+    <a href="https://github.com/transloadit/uppy/blob/main/CHANGELOG.md#361" target="_blank" rel="noopener">v3.6.1</a>,
+    but the example pages reflect the latest work in our main branch. Here's
+    <a href="https://github.com/transloadit/uppy/compare/uppy@3.6.1...main" target="_blank" rel="noopener">what changed in main since v3.6.1</a>
+    in terms of commits, while the CHANGELOG
+    provides a higher level view of the things planned for our
+    <a href="https://github.com/transloadit/uppy/blob/main/CHANGELOG.md#next" target="_blank" rel="noopener">next release</a>.</p>
+
+  <!-- Add textarea already so it's available immediately for logging.
+  It is later made visible, and moved into the #console-wrapper to position it in layout how
+  you see fit. -->
+
+  <blockquote>Files from the examples are uploaded to our test servers and deleted every 24-72 hours.</blockquote>
+
+  <textarea id="console-log" class="Console"></textarea>
+  <script>
+    function customLog (log, container) {
+      return function () {
+        var text = [];
+        // loop through `arguments`, because console.log accepts multiple
+        var args = Array.prototype.slice.call(arguments);
+        args.forEach(function (arg) {
+          if (arg !== (arg + '')) {
+            // try/catch to prevent TypeError: cyclic object value
+            try {
+              arg = JSON.stringify(arg);
+            } catch (err) {}
+          }
+          text.push(arg);
+        })
+
+        text = text.join(' ');
+
+        log(text);
+
+        container.value += text + '\n';
+        container.scrollTop = container.scrollHeight;
+      };
+    }
+
+    // IE 10 doesn’t support console.debug
+    var consoleDebug = console.debug || console.log
+
+    console.log = customLog(console.log.bind(console), document.getElementById("console-log"));
+    console.debug = customLog(consoleDebug.bind(console), document.getElementById("console-log"));
+    console.warn = customLog(console.warn.bind(console), document.getElementById("console-log"));
+    console.error = customLog(console.error.bind(console), document.getElementById("console-log"));
+  </script>
+
+  <script>
+    // #console-log textarea is declared earlier so it's available immediately for logging.
+    // Here it is made visible, and moved into the #console-wrapper, so you can position it in the layout how
+    // you see fit.
+    document.getElementById('console-wrapper').appendChild(document.getElementById('console-log'));
+    document.getElementById('console-log').style.display = 'block';
+  </script>
+
+  <div class="footer">Caught a mistake or want to contribute to the documentation?
+     <a href="https://github.com/transloadit/uppy/blob/main/website/src/examples/markdown-snippets/index.ejs" rel="noreferrer noopener" target="_blank">Edit/fork this page directly on Github</a>!
+  </div>
+</div>
+
+        
+      </main>
+
+      <script defer data-domain="transloadit.github.io" src="https://analytics.transloadit.com/js/plausible.js"></script>
+
+
+      
+        <script src="/uppy/js/smooth-scroll.min.js"></script>
+        <!-- Place this tag in your head or just before your close body tag. -->
+        <script async defer src="https://buttons.github.io/buttons.js"></script>
+      
+      <script src="/uppy/js/common.js"></script>
+
+      <!-- Twitter follow button script -->
+      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+    </div>
+  </body>
+</html>

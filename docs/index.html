@@ -1,0 +1,798 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Getting Started — Uppy</title>
+    <meta charset="utf-8">
+    <meta name="title" content="Getting Started — Uppy">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@uppy_io">
+    <meta name="twitter:creator" content="@uppy_io">
+    <meta property="og:url" content="https://transloadit.github.io/uppy/docs/index.html">
+    <meta property="og:title" content="Getting Started — Uppy">
+    <meta name="twitter:title" content="Getting Started — Uppy">
+    <meta name="twitter:description" content="">
+    <meta property="og:image" content="http://transloadit.github.io/uppy/images/uppy-social-pink.png">
+    <meta name="twitter:image" content="http://transloadit.github.io/uppy/images/uppy-social-pink.png">
+
+    <meta name="google-site-verification" content="JxARoHXoCI8bD07pLV_u3z6xpuWNcSIZIcHEytyCkUc" />
+
+    <link rel="icon" href="/uppy/images/logos/uppy-dog-head-arrow.png" type="image/x-icon">
+    <link rel="alternate" type="application/rss+xml" title="Uppy" href="/atom.xml">
+
+    <script>
+      window.PAGE_TYPE = "docs"
+    </script>
+    
+<link rel="stylesheet" href="/uppy/css/main.css?version=2">
+
+    <!-- ^ poor man's solution to css cache busting. bump the version when there's something new we really want users to see -->
+  <meta name="generator" content="Hexo 4.2.1"></head>
+  <body class="page-inner ">
+    <div class="page">
+      <div class="TransloaditBar js-TransloaditBar">
+        <div class="TransloaditBar-about">
+          <!-- <a class="TransloaditBar-logo" href="https://transloadit.com/" target="_blank" rel="noopener">
+            <img class="TransloaditBar-logoImg" src="/uppy/images/transloadit-white-glyph.svg" width="20" height="20" alt="Transloadit">
+          </a> -->
+          <!-- <span>Uppy is an open source project by <a class="TransloaditBar-link" href="https://transloadit.com/" target="_blank">Transloadit</a></span> -->
+          This website is no longer maintained, please visit <a href="//uppy.io" target="_blank" rel="noopener" style="color:inherit">uppy.io</a> to get up-to-date info about Uppy.
+        </div>
+      </div>
+
+      <header id="header" class="MainHeader js-MainHeader">
+        <button class="MainHeader-menuBtn js-MenuBtn"></button>
+
+        <span id="logo" class="MainLogo">
+          <a class="MainLogo-link" href="/uppy/">Uppy</a>
+          <!-- Was used for 1.0, we can re-use for 2.0 or major announcements -->
+          <!-- <a class="MainLogo-announcement" href="/blog/2019/04/1.0/">
+            1.0
+            <span class="MainLogo-emoji">
+              <img src="/uppy/images/party-popper.png" srcset="/uppy/images/party-popper@2x.png 2x" alt="🎉">
+            </span>
+          </a> -->
+        </span>
+
+        <nav>
+          <ul id="nav" class="MainMenu">
+            <!-- @todo uncomment search input when we get our own swifttype -->
+<!-- <li>
+  <form id="search-form" class="MainMenu-search">
+    <input type="text" id="search-query" class="MainMenu-searchQuery st-default-search-input">
+  </form>
+</li> -->
+<!--li><a href="/uppy/guide/" class="nav-link">Guide</a></li-->
+<li><a href="/uppy/docs/" class="nav-link current">Docs</a></li>
+<li><a href="/uppy/examples/dashboard/" class="nav-link">Examples</a></li>
+<!--li><a href="/uppy/stats/" class="nav-link">Stats</a></li-->
+<li><a href="/uppy/blog/" class="nav-link">Blog</a></li>
+<li><a href="/uppy/support/" class="nav-link">Support</a></li>
+<li><a href="https://github.com/transloadit/uppy" target="_blank" rel="noopener" class="nav-link">GitHub</a></li>
+
+          </ul>
+        </nav>
+
+        <div class="MainHeader-tagline">
+          The file uploader that <span class="MainHeader-taglinePart js-MainHeader-taglinePart is-visible">loves to play fetch</span>
+        </div>
+
+        <ul class="MainHeader-taglineList js-MainHeader-taglineList">
+          
+          <li>won’t chew on your shoes</li>
+          
+          <li>is fully housebroken</li>
+          
+          <li>just wants to play with you</li>
+          
+          <li>doesn’t hump your leg</li>
+          
+          <li>also accepts cat pictures</li>
+          
+          <li>loves you unconditionally</li>
+          
+          <li>you don’t have to keep on a leash</li>
+          
+          <li>won’t pee on your rug</li>
+          
+          <li>loves to play fetch</li>
+          
+          <li>doesn’t bite (hard)</li>
+          
+          <li>won’t bark at the mailman</li>
+          
+          <li>is great with the kids</li>
+          
+          <li>can digest anything, even chocolate cake</li>
+          
+          <li>is always happy to see you</li>
+          
+          <li>isn’t afraid of fireworks</li>
+          
+          <li>is allowed everywhere</li>
+          
+        </ul>
+      </header>
+
+      <main class="MainContent js-MainContent" id="main">
+        
+          
+    <div class="Sidebar js-Sidebar">
+  <ul class="main-menu">
+    <!-- @todo uncomment search input when we get our own swifttype -->
+<!-- <li>
+  <form id="search-form" class="MainMenu-search">
+    <input type="text" id="search-query" class="MainMenu-searchQuery st-default-search-input">
+  </form>
+</li> -->
+<!--li><a href="/uppy/guide/" class="nav-link">Guide</a></li-->
+<li><a href="/uppy/docs/" class="nav-link current">Docs</a></li>
+<li><a href="/uppy/examples/dashboard/" class="nav-link">Examples</a></li>
+<!--li><a href="/uppy/stats/" class="nav-link">Stats</a></li-->
+<li><a href="/uppy/blog/" class="nav-link">Blog</a></li>
+<li><a href="/uppy/support/" class="nav-link">Support</a></li>
+<li><a href="https://github.com/transloadit/uppy" target="_blank" rel="noopener" class="nav-link">GitHub</a></li>
+
+  </ul>
+  
+  
+  <div class="list">
+    <h2>
+      <a href="/uppy/docs">Docs</a>
+    </h2>
+      
+    <div class="menu-root">
+      
+
+    
+    
+    
+    <ul>
+      
+        
+        
+        <li key="p-0-docs/index.html">
+          <a href="/docs/" class="sidebar-link current">Getting Started</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-1-docs/uppy/index.html">
+          <a href="/docs/uppy/" class="sidebar-link">Uppy</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-2-docs/companion/index.html">
+          <a href="/docs/companion/" class="sidebar-link">Companion</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-3-docs/plugins/index.html">
+          <a href="/docs/plugins/" class="sidebar-link">List of Plugins</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-4-docs/plugin-options/index.html">
+          <a href="/docs/plugin-options/" class="sidebar-link">Common Plugin Options</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-5-docs/stores/index.html">
+          <a href="/docs/stores/" class="sidebar-link">Custom Stores</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-6-docs/community-projects/index.html">
+          <a href="/docs/community-projects/" class="sidebar-link">Community Projects</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-7-docs/locales/index.html">
+          <a href="/docs/locales/" class="sidebar-link">Locale Packs</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-8-docs/migration-guides.html">
+          <a href="/docs/migration-guides.html" class="sidebar-link">Migration guides</a>
+          
+        </li>
+      
+    </ul>
+
+    
+    
+    
+        
+        <h3 id="" key="category-1-UI Elements" data-scroll="no">UI Elements</h3>
+        
+    
+    <ul>
+      
+        
+        
+        <li key="p-0-docs/dashboard/index.html">
+          <a href="/docs/dashboard/" class="sidebar-link">Dashboard</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-1-docs/status-bar/index.html">
+          <a href="/docs/status-bar/" class="sidebar-link">Status Bar</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-2-docs/progress-bar/index.html">
+          <a href="/docs/progress-bar/" class="sidebar-link">Progress Bar</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-3-docs/informer/index.html">
+          <a href="/docs/informer/" class="sidebar-link">Informer</a>
+          
+        </li>
+      
+    </ul>
+
+    
+    
+    
+        
+        <h3 id="" key="category-2-Sources" data-scroll="no">Sources</h3>
+        
+    
+    <ul>
+      
+        
+        
+        <li key="p-0-docs/drag-drop/index.html">
+          <a href="/docs/drag-drop/" class="sidebar-link">Drag & Drop</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-1-docs/drop-target/index.html">
+          <a href="/docs/drop-target/" class="sidebar-link">Drop Target</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-2-docs/file-input/index.html">
+          <a href="/docs/file-input/" class="sidebar-link">File Input</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-3-docs/audio/index.html">
+          <a href="/docs/audio/" class="sidebar-link">Audio</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-4-docs/webcam/index.html">
+          <a href="/docs/webcam/" class="sidebar-link">Webcam</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-5-docs/screen-capture/index.html">
+          <a href="/docs/screen-capture/" class="sidebar-link">Screen capture</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-6-docs/providers/index.html">
+          <a href="/docs/providers/" class="sidebar-link">Provider Plugins</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-7-docs/box/index.html">
+          <span title='Requires Companion'>ⓒ </span><a href="/docs/box/" class="sidebar-link">Box</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-8-docs/dropbox/index.html">
+          <span title='Requires Companion'>ⓒ </span><a href="/docs/dropbox/" class="sidebar-link">Dropbox</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-9-docs/google-drive/index.html">
+          <span title='Requires Companion'>ⓒ </span><a href="/docs/google-drive/" class="sidebar-link">Google Drive</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-10-docs/instagram/index.html">
+          <span title='Requires Companion'>ⓒ </span><a href="/docs/instagram/" class="sidebar-link">Instagram</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-11-docs/onedrive/index.html">
+          <span title='Requires Companion'>ⓒ </span><a href="/docs/onedrive/" class="sidebar-link">OneDrive</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-12-docs/zoom/index.html">
+          <span title='Requires Companion'>ⓒ </span><a href="/docs/zoom/" class="sidebar-link">Zoom</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-13-docs/facebook/index.html">
+          <span title='Requires Companion'>ⓒ </span><a href="/docs/facebook/" class="sidebar-link">Facebook</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-14-docs/unsplash/index.html">
+          <span title='Requires Companion'>ⓒ </span><a href="/docs/unsplash/" class="sidebar-link">Unsplash</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-15-docs/url/index.html">
+          <span title='Requires Companion'>ⓒ </span><a href="/docs/url/" class="sidebar-link">Import From URL</a>
+          
+        </li>
+      
+    </ul>
+
+    
+    
+    
+        
+        <h3 id="" key="category-3-Destinations" data-scroll="no">Destinations</h3>
+        
+    
+    <ul>
+      
+        
+        
+        <li key="p-0-docs/tus/index.html">
+          <a href="/docs/tus/" class="sidebar-link">Tus</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-1-docs/xhr-upload/index.html">
+          <a href="/docs/xhr-upload/" class="sidebar-link">XHR</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-2-docs/aws-s3/index.html">
+          <a href="/docs/aws-s3/" class="sidebar-link">AWS S3</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-3-docs/aws-s3-multipart/index.html">
+          <a href="/docs/aws-s3-multipart/" class="sidebar-link">AWS S3 Multipart</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-4-docs/transloadit/index.html">
+          <a href="/docs/transloadit/" class="sidebar-link">Transloadit</a>
+          
+        </li>
+      
+    </ul>
+
+    
+    
+    
+        
+        <h3 id="" key="category-4-Miscellaneous" data-scroll="no">Miscellaneous</h3>
+        
+    
+    <ul>
+      
+        
+        
+        <li key="p-0-docs/form/index.html">
+          <a href="/docs/form/" class="sidebar-link">Form</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-1-docs/golden-retriever/index.html">
+          <a href="/docs/golden-retriever/" class="sidebar-link">Golden Retriever</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-2-docs/image-editor/index.html">
+          <a href="/docs/image-editor/" class="sidebar-link">Image Editor</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-3-docs/thumbnail-generator/index.html">
+          <a href="/docs/thumbnail-generator/" class="sidebar-link">Thumbnail Generator</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-4-docs/redux/index.html">
+          <a href="/docs/redux/" class="sidebar-link">Redux</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-5-docs/compressor/index.html">
+          <a href="/docs/compressor/" class="sidebar-link">Compressor</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-6-docs/remote-sources/index.html">
+          <a href="/docs/remote-sources/" class="sidebar-link">Remote Sources</a>
+          
+        </li>
+      
+    </ul>
+
+    
+    
+    
+    <ul>
+      
+    </ul>
+
+    
+    
+    
+        
+        <h3 id="" key="category-6-React" data-scroll="no"><a href="/docs/react/">React</a></h3>
+        
+    
+    <ul>
+      
+        
+        
+        <li key="p-0-docs/react/index.html">
+          <a href="/docs/react/" class="sidebar-link">Introduction</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-1-docs/react/status-bar/index.html">
+          <a href="/docs/react/status-bar/" class="sidebar-link">&lt;StatusBar /></a>
+          
+        </li>
+      
+        
+        
+        <li key="p-2-docs/react/drag-drop/index.html">
+          <a href="/docs/react/drag-drop/" class="sidebar-link">&lt;DragDrop /></a>
+          
+        </li>
+      
+        
+        
+        <li key="p-3-docs/react/file-input/index.html">
+          <a href="/docs/react/file-input/" class="sidebar-link">&lt;FileInput /></a>
+          
+        </li>
+      
+        
+        
+        <li key="p-4-docs/react/progress-bar/index.html">
+          <a href="/docs/react/progress-bar/" class="sidebar-link">&lt;ProgressBar /></a>
+          
+        </li>
+      
+        
+        
+        <li key="p-5-docs/react/dashboard/index.html">
+          <a href="/docs/react/dashboard/" class="sidebar-link">&lt;Dashboard /></a>
+          
+        </li>
+      
+        
+        
+        <li key="p-6-docs/react/dashboard-modal/index.html">
+          <a href="/docs/react/dashboard-modal/" class="sidebar-link">&lt;DashboardModal /></a>
+          
+        </li>
+      
+        
+        
+        <li key="p-7-docs/react/native/index.html">
+          <a href="/docs/react/native/" class="sidebar-link">React Native</a>
+          
+        </li>
+      
+    </ul>
+
+    
+    
+    
+        
+        <h3 id="" key="category-7-Other Integrations" data-scroll="no"><a href="/docs/vue/">Other Integrations</a></h3>
+        
+    
+    <ul>
+      
+        
+        
+        <li key="p-0-docs/angular/index.html">
+          <a href="/docs/angular/" class="sidebar-link">Angular</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-1-docs/vue/index.html">
+          <a href="/docs/vue/" class="sidebar-link">Vue</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-2-docs/svelte/index.html">
+          <a href="/docs/svelte/" class="sidebar-link">Svelte</a>
+          
+        </li>
+      
+    </ul>
+
+    
+    
+    
+        
+        <h3 id="" key="category-8-Contributing" data-scroll="no"><a href="/docs/contributing.html">Contributing</a></h3>
+        
+    
+    <ul>
+      
+        
+        
+        <li key="p-0-docs/contributing.html">
+          <a href="/docs/contributing.html" class="sidebar-link">Contributing</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-1-docs/writing-plugins/index.html">
+          <a href="/docs/writing-plugins/" class="sidebar-link">Writing Plugins</a>
+          
+        </li>
+      
+    </ul>
+
+
+    </div>
+
+    <ul class="Social">
+  <li><a href="https://twitter.com/uppy_io" target="_blank" rel="noopener" class="twitter-follow-button" data-show-count="false" data-dnt="true">Follow @uppy_io</a></li>
+  <li><iframe src="https://ghbtns.com/github-btn.html?user=transloadit&repo=uppy&type=watch&count=true"
+allowtransparency="true" frameborder="0" scrolling="0" width="100" height="20"></iframe></li>
+  <!-- to regenerate you can use this link: https://img.shields.io/badge/community-forum-d8006a.svg -->
+  <li><a href="https://community.transloadit.com/c/uppy" target="_blank" rel="noopener"><img src="/uppy/images/community-forum-d8006a.svg" /> </a></li>
+  <li class="BuildBadge">
+   <span class="wrapper">
+     <a href="https://github.com/transloadit/uppy/actions" target="_blank" rel="noopener"><img src="https://github.com/transloadit/uppy/workflows/End-to-end%20tests/badge.svg" alt="Build Status"></a>
+   </span>
+  </li>
+</ul>
+
+    </div>
+  
+</div>
+
+
+
+<div class="Content js-Content docs with-sidebar">
+    <h1>Getting Started</h1>
+    <html><head></head><body><p>Uppy is a sleek and modular file uploader. It fetches files from local disk, Google Drive, Instagram, remote urls, cameras etc, and then uploads them to the final destination. It’s fast, has a comprehensible API and lets you worry about more important problems than building a file uploader.</p>
+<p>Uppy consists of a core module and <a href="/docs/plugins/">various plugins</a> for selecting, manipulating and uploading files.</p>
+<p>Here’s the simplest example html page with Uppy (it uses a CDN bundle, while we recommend to use a bundler, see <a href="#Installation">Installation</a>):</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">doctype</span> <span class="token name">html</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>utf-8<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span>Uppy<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://releases.transloadit.com/uppy/v3.6.1/uppy.min.css<span class="token punctuation">"</span></span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>drag-drop-area<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>module<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"><span class="token language-javascript">
+      <span class="token keyword module">import</span> <span class="token imports"><span class="token punctuation">{</span><span class="token maybe-class-name">Uppy</span><span class="token punctuation">,</span> <span class="token maybe-class-name">Dashboard</span><span class="token punctuation">,</span> <span class="token maybe-class-name">Tus</span><span class="token punctuation">}</span></span> <span class="token keyword module">from</span> <span class="token string">"https://releases.transloadit.com/uppy/v3.6.1/uppy.min.mjs"</span>
+      <span class="token keyword">var</span> uppy <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Uppy</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token method function property-access">use</span><span class="token punctuation">(</span><span class="token maybe-class-name">Dashboard</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+          <span class="token literal-property property">inline</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+          <span class="token literal-property property">target</span><span class="token operator">:</span> <span class="token string">'#drag-drop-area'</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token method function property-access">use</span><span class="token punctuation">(</span><span class="token maybe-class-name">Tus</span><span class="token punctuation">,</span> <span class="token punctuation">{</span><span class="token literal-property property">endpoint</span><span class="token operator">:</span> <span class="token string">'https://tusd.tusdemo.net/files/'</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+      uppy<span class="token punctuation">.</span><span class="token method function property-access">on</span><span class="token punctuation">(</span><span class="token string">'complete'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">result</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token punctuation">{</span>
+        <span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span><span class="token string">'Upload complete! We’ve uploaded these files:'</span><span class="token punctuation">,</span> result<span class="token punctuation">.</span><span class="token property-access">successful</span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span></pre></td></tr></table></figure>
+<p><a class="TryButton" href="/examples/dashboard/">Try it live</a></p>
+<p>Drag and drop, webcam, basic file manipulation (adding metadata), uploading via tus-resumable uploads or XHR/Multipart is all possible using the Uppy client module.</p>
+<p>Adding <a href="/docs/companion/">Companion</a> to the mix enables remote sources such as Instagram, Google Drive, Dropbox, and remote URLs. Uploads from remote sources are handled server-to-server, so a 5 GB video won’t be eating into your mobile data plan. Files are removed from Companion after an upload is complete, or after a reasonable timeout. Access tokens also don’t stick around for long, for security reasons.</p>
+<h2 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h2><p>Uppy can be used with a module bundler such as <a href="https://vitejs.dev/" target="_blank" rel="noopener">Vite</a>, <a href="https://parceljs.org/" target="_blank" rel="noopener">Parcel</a>, or <a href="https://rollupjs.org" target="_blank" rel="noopener">Rollup</a>, or by including it in a script tag.</p>
+<blockquote>
+<p>You may need polyfills if your application supports Internet Explorer or other older browsers. See <a href="#Browser-Support">Browser Support</a>.</p>
+</blockquote>
+<h3 id="With-a-module-bundler"><a href="#With-a-module-bundler" class="headerlink" title="With a module bundler"></a>With a module bundler</h3><p>Install the <code>@uppy/core</code> package from npm:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre>$ <span class="token function">npm</span> <span class="token function">install</span> @uppy/core</pre></td></tr></table></figure>
+<p>And install the plugins you need separately. The documentation pages for plugins in the sidebar show the necessary <code>npm install</code> commands. You can then import Uppy like so:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="token function">npm</span> <span class="token function">install</span> @uppy/core @uppy/xhr-upload @uppy/dashboard</pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="token comment">// Import the plugins</span>
+<span class="token keyword module">import</span> <span class="token imports"><span class="token maybe-class-name">Uppy</span></span> <span class="token keyword module">from</span> <span class="token string">'@uppy/core'</span>
+<span class="token keyword module">import</span> <span class="token imports"><span class="token maybe-class-name">XHRUpload</span></span> <span class="token keyword module">from</span> <span class="token string">'@uppy/xhr-upload'</span>
+<span class="token keyword module">import</span> <span class="token imports"><span class="token maybe-class-name">Dashboard</span></span> <span class="token keyword module">from</span> <span class="token string">'@uppy/dashboard'</span>
+
+<span class="token comment">// And their styles (for UI plugins)</span>
+<span class="token comment">// With webpack and `style-loader`, you can import them like this:</span>
+<span class="token keyword module">import</span> <span class="token string">'@uppy/core/dist/style.css'</span>
+<span class="token keyword module">import</span> <span class="token string">'@uppy/dashboard/dist/style.css'</span>
+
+<span class="token keyword">const</span> uppy <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Uppy</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token method function property-access">use</span><span class="token punctuation">(</span><span class="token maybe-class-name">Dashboard</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">trigger</span><span class="token operator">:</span> <span class="token string">'#select-files'</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token method function property-access">use</span><span class="token punctuation">(</span><span class="token maybe-class-name">XHRUpload</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token literal-property property">endpoint</span><span class="token operator">:</span> <span class="token string">'https://api2.transloadit.com'</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+uppy<span class="token punctuation">.</span><span class="token method function property-access">on</span><span class="token punctuation">(</span><span class="token string">'complete'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">result</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token punctuation">{</span>
+  <span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span><span class="token string">'Upload complete! We’ve uploaded these files:'</span><span class="token punctuation">,</span> result<span class="token punctuation">.</span><span class="token property-access">successful</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span></pre></td></tr></table></figure>
+<p>Many plugins include a CSS file for the necessary styles in their <code>dist/</code> folder. The plugin documentation pages will tell you which to use and when. When using several plugin CSS files, some code is duplicated. A CSS minifier like <a href="https://www.npmjs.com/package/clean-css" target="_blank" rel="noopener">clean-css</a> is recommended to remove the duplicate selectors.</p>
+<p>You can also use the joint <code>uppy</code> package, which includes all plugins that are maintained by the Uppy team. Only use it if you have tree-shaking set up in your module bundler, otherwise you may end up sending a lot of unused code to your users.</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre>$ <span class="token function">npm</span> <span class="token function">install</span> uppy</pre></td></tr></table></figure>
+<p>Then you can import Uppy and plugins like so:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="token keyword module">import</span> <span class="token imports"><span class="token maybe-class-name">Uppy</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token maybe-class-name">XHRUpload</span><span class="token punctuation">,</span> <span class="token maybe-class-name">DragDrop</span> <span class="token punctuation">}</span></span> <span class="token keyword module">from</span> <span class="token string">'uppy'</span></pre></td></tr></table></figure>
+<p>And add the <code>uppy/dist/uppy.min.css</code> file to your page.</p>
+<h4 id="SCSS"><a href="#SCSS" class="headerlink" title="SCSS"></a>SCSS</h4><p>If you are using SCSS in your project, you can include the Uppy SCSS source files, instead of using our prebuilt CSS. Uppy’s SCSS files do assume Node.js-style resolution for <code>@import</code>s, so you may need to <a href="https://github.com/transloadit/uppy/issues/2296#issuecomment-640649513" target="_blank" rel="noopener">configure a resolver</a>.</p>
+<h3 id="With-a-script-tag"><a href="#With-a-script-tag" class="headerlink" title="With a script tag"></a>With a script tag</h3><p>You can also use a pre-built bundle from Transloadit’s CDN: Edgly. <code>Uppy</code> will attach itself to the global <code>window.Uppy</code> object.</p>
+<blockquote>
+<p>⚠️ The bundle consists of all plugins maintained by the Uppy team. This method is thus not recommended for production, as your users will have to download all plugins, even if you are only using a few of them.</p>
+</blockquote>
+<p>1. Add a script at the bottom of the closing <code>&lt;/body&gt;</code> tag:</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://releases.transloadit.com/uppy/v3.6.1/uppy.min.js<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span></pre></td></tr></table></figure>
+<p>2. Add CSS to <code>&lt;head&gt;</code>:</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://releases.transloadit.com/uppy/v3.6.1/uppy.min.css<span class="token punctuation">"</span></span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span><span class="token punctuation">></span></span></pre></td></tr></table></figure>
+<p>3. Initialize at the bottom of the closing <code>&lt;/body&gt;</code> tag:</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script"><span class="token language-javascript">
+  <span class="token keyword">var</span> uppy <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Uppy<span class="token punctuation">.</span>Uppy</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  uppy<span class="token punctuation">.</span><span class="token method function property-access">use</span><span class="token punctuation">(</span><span class="token maybe-class-name">Uppy</span><span class="token punctuation">.</span><span class="token property-access"><span class="token maybe-class-name">DragDrop</span></span><span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token literal-property property">target</span><span class="token operator">:</span> <span class="token string">'#drag-drop-area'</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  uppy<span class="token punctuation">.</span><span class="token method function property-access">use</span><span class="token punctuation">(</span><span class="token maybe-class-name">Uppy</span><span class="token punctuation">.</span><span class="token property-access"><span class="token maybe-class-name">Tus</span></span><span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token literal-property property">endpoint</span><span class="token operator">:</span> <span class="token string">'https://tusd.tusdemo.net/files/'</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span></pre></td></tr></table></figure>
+<h2 id="Documentation"><a href="#Documentation" class="headerlink" title="Documentation"></a>Documentation</h2><ul>
+<li><a href="/docs/uppy/">Uppy</a> — full list of options, methods and events.</li>
+<li><a href="/docs/plugins/">Plugins</a> — list of Uppy plugins and their options.</li>
+<li><a href="/docs/companion/">Server</a> — setting up and running a Companion instance, which adds support for Instagram, Dropbox, Google Drive, direct links, and other remote sources.</li>
+<li><a href="/docs/react/">React</a> — components to integrate Uppy UI plugins with React apps.</li>
+<li><a href="/docs/writing-plugins">Writing Plugins</a> — how to write a plugin for Uppy (documentation in progress).</li>
+</ul>
+<h2 id="Browser-Support"><a href="#Browser-Support" class="headerlink" title="Browser Support"></a>Browser Support</h2><p>We aim to support recent versions of Chrome, Firefox, Safari and Edge.</p>
+<p>We still provide a bundle which should work on IE11, but we are not running tests on it.</p>
+<h3 id="Polyfills"><a href="#Polyfills" class="headerlink" title="Polyfills"></a>Polyfills</h3><p>Uppy heavily uses Promises. If your target environment <a href="https://caniuse.com/#feat=promises" target="_blank" rel="noopener">does not support Promises</a>, use a polyfill like <code>core-js</code> before initialising Uppy.</p>
+<p>When using remote providers like Google Drive or Dropbox, the Fetch API is used. If your target environment does not support the <a href="https://caniuse.com/#feat=fetch" target="_blank" rel="noopener">Fetch API</a>, use a polyfill like <code>whatwg-fetch</code> before initialising Uppy. The Fetch API polyfill must be loaded <em>after</em> the Promises polyfill, because Fetch uses Promises.</p>
+<p>With a module bundler, you can use the required polyfills like so:</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="token function">npm</span> <span class="token function">install</span> core-js whatwg-fetch abortcontroller-polyfill md-gum-polyfill resize-observer-polyfill</pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="token keyword module">import</span> <span class="token string">'core-js'</span>
+<span class="token keyword module">import</span> <span class="token string">'whatwg-fetch'</span>
+<span class="token keyword module">import</span> <span class="token string">'abortcontroller-polyfill/dist/polyfill-patch-fetch'</span>
+<span class="token comment">// Order matters: AbortController needs fetch which needs Promise (provided by core-js).</span>
+
+<span class="token keyword module">import</span> <span class="token string">'md-gum-polyfill'</span>
+<span class="token keyword module">import</span> <span class="token imports"><span class="token maybe-class-name">ResizeObserver</span></span> <span class="token keyword module">from</span> <span class="token string">'resize-observer-polyfill'</span>
+
+<span class="token dom variable">window</span><span class="token punctuation">.</span><span class="token property-access"><span class="token maybe-class-name">ResizeObserver</span></span> <span class="token operator">??=</span> <span class="token maybe-class-name">ResizeObserver</span>
+
+<span class="token keyword module">export</span> <span class="token exports"><span class="token punctuation">{</span> <span class="token keyword module">default</span> <span class="token punctuation">}</span></span> <span class="token keyword module">from</span> <span class="token string">'@uppy/core'</span>
+<span class="token keyword module">export</span> <span class="token exports"><span class="token operator">*</span></span> <span class="token keyword module">from</span> <span class="token string">'@uppy/core'</span></pre></td></tr></table></figure>
+<p>If you’re using Uppy from CDN, those polyfills are already included in the bundle, no need to include anything additionally:</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://releases.transloadit.com/uppy/v3.6.1/uppy.min.js<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span></pre></td></tr></table></figure>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script></body></html>
+    
+    
+
+    
+    <div class="footer">Caught a mistake or want to contribute to the documentation?
+       <a href="https://github.com/transloadit/uppy/blob/main/website/src/docs/index.md" rel="noreferrer noopener" target="_blank">Edit/fork this page directly on Github</a>!
+    </div>
+</div>
+
+        
+      </main>
+
+      <script defer data-domain="transloadit.github.io" src="https://analytics.transloadit.com/js/plausible.js"></script>
+
+
+      
+        <script src="/uppy/js/smooth-scroll.min.js"></script>
+        <!-- Place this tag in your head or just before your close body tag. -->
+        <script async defer src="https://buttons.github.io/buttons.js"></script>
+      
+      <script src="/uppy/js/common.js"></script>
+
+      <!-- Twitter follow button script -->
+      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+    </div>
+  </body>
+</html>

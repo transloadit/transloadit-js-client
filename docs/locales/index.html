@@ -1,0 +1,983 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Locale Packs — Uppy</title>
+    <meta charset="utf-8">
+    <meta name="title" content="Locale Packs — Uppy">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@uppy_io">
+    <meta name="twitter:creator" content="@uppy_io">
+    <meta property="og:url" content="https://transloadit.github.io/uppy/docs/locales/index.html">
+    <meta property="og:title" content="Locale Packs — Uppy">
+    <meta name="twitter:title" content="Locale Packs — Uppy">
+    <meta name="twitter:description" content="">
+    <meta property="og:image" content="http://transloadit.github.io/uppy/images/uppy-social-pink.png">
+    <meta name="twitter:image" content="http://transloadit.github.io/uppy/images/uppy-social-pink.png">
+
+    <meta name="google-site-verification" content="JxARoHXoCI8bD07pLV_u3z6xpuWNcSIZIcHEytyCkUc" />
+
+    <link rel="icon" href="/uppy/images/logos/uppy-dog-head-arrow.png" type="image/x-icon">
+    <link rel="alternate" type="application/rss+xml" title="Uppy" href="/atom.xml">
+
+    <script>
+      window.PAGE_TYPE = "docs"
+    </script>
+    
+<link rel="stylesheet" href="/uppy/css/main.css?version=2">
+
+    <!-- ^ poor man's solution to css cache busting. bump the version when there's something new we really want users to see -->
+  <meta name="generator" content="Hexo 4.2.1"></head>
+  <body class="page-inner page-docs-locales">
+    <div class="page">
+      <div class="TransloaditBar js-TransloaditBar">
+        <div class="TransloaditBar-about">
+          <!-- <a class="TransloaditBar-logo" href="https://transloadit.com/" target="_blank" rel="noopener">
+            <img class="TransloaditBar-logoImg" src="/uppy/images/transloadit-white-glyph.svg" width="20" height="20" alt="Transloadit">
+          </a> -->
+          <!-- <span>Uppy is an open source project by <a class="TransloaditBar-link" href="https://transloadit.com/" target="_blank">Transloadit</a></span> -->
+          This website is no longer maintained, please visit <a href="//uppy.io" target="_blank" rel="noopener" style="color:inherit">uppy.io</a> to get up-to-date info about Uppy.
+        </div>
+      </div>
+
+      <header id="header" class="MainHeader js-MainHeader">
+        <button class="MainHeader-menuBtn js-MenuBtn"></button>
+
+        <span id="logo" class="MainLogo">
+          <a class="MainLogo-link" href="/uppy/">Uppy</a>
+          <!-- Was used for 1.0, we can re-use for 2.0 or major announcements -->
+          <!-- <a class="MainLogo-announcement" href="/blog/2019/04/1.0/">
+            1.0
+            <span class="MainLogo-emoji">
+              <img src="/uppy/images/party-popper.png" srcset="/uppy/images/party-popper@2x.png 2x" alt="🎉">
+            </span>
+          </a> -->
+        </span>
+
+        <nav>
+          <ul id="nav" class="MainMenu">
+            <!-- @todo uncomment search input when we get our own swifttype -->
+<!-- <li>
+  <form id="search-form" class="MainMenu-search">
+    <input type="text" id="search-query" class="MainMenu-searchQuery st-default-search-input">
+  </form>
+</li> -->
+<!--li><a href="/uppy/guide/" class="nav-link">Guide</a></li-->
+<li><a href="/uppy/docs/" class="nav-link current">Docs</a></li>
+<li><a href="/uppy/examples/dashboard/" class="nav-link">Examples</a></li>
+<!--li><a href="/uppy/stats/" class="nav-link">Stats</a></li-->
+<li><a href="/uppy/blog/" class="nav-link">Blog</a></li>
+<li><a href="/uppy/support/" class="nav-link">Support</a></li>
+<li><a href="https://github.com/transloadit/uppy" target="_blank" rel="noopener" class="nav-link">GitHub</a></li>
+
+          </ul>
+        </nav>
+
+        <div class="MainHeader-tagline">
+          The file uploader that <span class="MainHeader-taglinePart js-MainHeader-taglinePart is-visible">loves to play fetch</span>
+        </div>
+
+        <ul class="MainHeader-taglineList js-MainHeader-taglineList">
+          
+          <li>won’t chew on your shoes</li>
+          
+          <li>is fully housebroken</li>
+          
+          <li>just wants to play with you</li>
+          
+          <li>doesn’t hump your leg</li>
+          
+          <li>also accepts cat pictures</li>
+          
+          <li>loves you unconditionally</li>
+          
+          <li>you don’t have to keep on a leash</li>
+          
+          <li>won’t pee on your rug</li>
+          
+          <li>loves to play fetch</li>
+          
+          <li>doesn’t bite (hard)</li>
+          
+          <li>won’t bark at the mailman</li>
+          
+          <li>is great with the kids</li>
+          
+          <li>can digest anything, even chocolate cake</li>
+          
+          <li>is always happy to see you</li>
+          
+          <li>isn’t afraid of fireworks</li>
+          
+          <li>is allowed everywhere</li>
+          
+        </ul>
+      </header>
+
+      <main class="MainContent js-MainContent" id="main">
+        
+          
+    <div class="Sidebar js-Sidebar">
+  <ul class="main-menu">
+    <!-- @todo uncomment search input when we get our own swifttype -->
+<!-- <li>
+  <form id="search-form" class="MainMenu-search">
+    <input type="text" id="search-query" class="MainMenu-searchQuery st-default-search-input">
+  </form>
+</li> -->
+<!--li><a href="/uppy/guide/" class="nav-link">Guide</a></li-->
+<li><a href="/uppy/docs/" class="nav-link current">Docs</a></li>
+<li><a href="/uppy/examples/dashboard/" class="nav-link">Examples</a></li>
+<!--li><a href="/uppy/stats/" class="nav-link">Stats</a></li-->
+<li><a href="/uppy/blog/" class="nav-link">Blog</a></li>
+<li><a href="/uppy/support/" class="nav-link">Support</a></li>
+<li><a href="https://github.com/transloadit/uppy" target="_blank" rel="noopener" class="nav-link">GitHub</a></li>
+
+  </ul>
+  
+  
+  <div class="list">
+    <h2>
+      <a href="/uppy/docs">Docs</a>
+    </h2>
+      
+    <div class="menu-root">
+      
+
+    
+    
+    
+    <ul>
+      
+        
+        
+        <li key="p-0-docs/index.html">
+          <a href="/docs/" class="sidebar-link">Getting Started</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-1-docs/uppy/index.html">
+          <a href="/docs/uppy/" class="sidebar-link">Uppy</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-2-docs/companion/index.html">
+          <a href="/docs/companion/" class="sidebar-link">Companion</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-3-docs/plugins/index.html">
+          <a href="/docs/plugins/" class="sidebar-link">List of Plugins</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-4-docs/plugin-options/index.html">
+          <a href="/docs/plugin-options/" class="sidebar-link">Common Plugin Options</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-5-docs/stores/index.html">
+          <a href="/docs/stores/" class="sidebar-link">Custom Stores</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-6-docs/community-projects/index.html">
+          <a href="/docs/community-projects/" class="sidebar-link">Community Projects</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-7-docs/locales/index.html">
+          <a href="/docs/locales/" class="sidebar-link current">Locale Packs</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-8-docs/migration-guides.html">
+          <a href="/docs/migration-guides.html" class="sidebar-link">Migration guides</a>
+          
+        </li>
+      
+    </ul>
+
+    
+    
+    
+        
+        <h3 id="" key="category-1-UI Elements" data-scroll="no">UI Elements</h3>
+        
+    
+    <ul>
+      
+        
+        
+        <li key="p-0-docs/dashboard/index.html">
+          <a href="/docs/dashboard/" class="sidebar-link">Dashboard</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-1-docs/status-bar/index.html">
+          <a href="/docs/status-bar/" class="sidebar-link">Status Bar</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-2-docs/progress-bar/index.html">
+          <a href="/docs/progress-bar/" class="sidebar-link">Progress Bar</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-3-docs/informer/index.html">
+          <a href="/docs/informer/" class="sidebar-link">Informer</a>
+          
+        </li>
+      
+    </ul>
+
+    
+    
+    
+        
+        <h3 id="" key="category-2-Sources" data-scroll="no">Sources</h3>
+        
+    
+    <ul>
+      
+        
+        
+        <li key="p-0-docs/drag-drop/index.html">
+          <a href="/docs/drag-drop/" class="sidebar-link">Drag & Drop</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-1-docs/drop-target/index.html">
+          <a href="/docs/drop-target/" class="sidebar-link">Drop Target</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-2-docs/file-input/index.html">
+          <a href="/docs/file-input/" class="sidebar-link">File Input</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-3-docs/audio/index.html">
+          <a href="/docs/audio/" class="sidebar-link">Audio</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-4-docs/webcam/index.html">
+          <a href="/docs/webcam/" class="sidebar-link">Webcam</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-5-docs/screen-capture/index.html">
+          <a href="/docs/screen-capture/" class="sidebar-link">Screen capture</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-6-docs/providers/index.html">
+          <a href="/docs/providers/" class="sidebar-link">Provider Plugins</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-7-docs/box/index.html">
+          <span title='Requires Companion'>ⓒ </span><a href="/docs/box/" class="sidebar-link">Box</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-8-docs/dropbox/index.html">
+          <span title='Requires Companion'>ⓒ </span><a href="/docs/dropbox/" class="sidebar-link">Dropbox</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-9-docs/google-drive/index.html">
+          <span title='Requires Companion'>ⓒ </span><a href="/docs/google-drive/" class="sidebar-link">Google Drive</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-10-docs/instagram/index.html">
+          <span title='Requires Companion'>ⓒ </span><a href="/docs/instagram/" class="sidebar-link">Instagram</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-11-docs/onedrive/index.html">
+          <span title='Requires Companion'>ⓒ </span><a href="/docs/onedrive/" class="sidebar-link">OneDrive</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-12-docs/zoom/index.html">
+          <span title='Requires Companion'>ⓒ </span><a href="/docs/zoom/" class="sidebar-link">Zoom</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-13-docs/facebook/index.html">
+          <span title='Requires Companion'>ⓒ </span><a href="/docs/facebook/" class="sidebar-link">Facebook</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-14-docs/unsplash/index.html">
+          <span title='Requires Companion'>ⓒ </span><a href="/docs/unsplash/" class="sidebar-link">Unsplash</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-15-docs/url/index.html">
+          <span title='Requires Companion'>ⓒ </span><a href="/docs/url/" class="sidebar-link">Import From URL</a>
+          
+        </li>
+      
+    </ul>
+
+    
+    
+    
+        
+        <h3 id="" key="category-3-Destinations" data-scroll="no">Destinations</h3>
+        
+    
+    <ul>
+      
+        
+        
+        <li key="p-0-docs/tus/index.html">
+          <a href="/docs/tus/" class="sidebar-link">Tus</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-1-docs/xhr-upload/index.html">
+          <a href="/docs/xhr-upload/" class="sidebar-link">XHR</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-2-docs/aws-s3/index.html">
+          <a href="/docs/aws-s3/" class="sidebar-link">AWS S3</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-3-docs/aws-s3-multipart/index.html">
+          <a href="/docs/aws-s3-multipart/" class="sidebar-link">AWS S3 Multipart</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-4-docs/transloadit/index.html">
+          <a href="/docs/transloadit/" class="sidebar-link">Transloadit</a>
+          
+        </li>
+      
+    </ul>
+
+    
+    
+    
+        
+        <h3 id="" key="category-4-Miscellaneous" data-scroll="no">Miscellaneous</h3>
+        
+    
+    <ul>
+      
+        
+        
+        <li key="p-0-docs/form/index.html">
+          <a href="/docs/form/" class="sidebar-link">Form</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-1-docs/golden-retriever/index.html">
+          <a href="/docs/golden-retriever/" class="sidebar-link">Golden Retriever</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-2-docs/image-editor/index.html">
+          <a href="/docs/image-editor/" class="sidebar-link">Image Editor</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-3-docs/thumbnail-generator/index.html">
+          <a href="/docs/thumbnail-generator/" class="sidebar-link">Thumbnail Generator</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-4-docs/redux/index.html">
+          <a href="/docs/redux/" class="sidebar-link">Redux</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-5-docs/compressor/index.html">
+          <a href="/docs/compressor/" class="sidebar-link">Compressor</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-6-docs/remote-sources/index.html">
+          <a href="/docs/remote-sources/" class="sidebar-link">Remote Sources</a>
+          
+        </li>
+      
+    </ul>
+
+    
+    
+    
+    <ul>
+      
+    </ul>
+
+    
+    
+    
+        
+        <h3 id="" key="category-6-React" data-scroll="no"><a href="/docs/react/">React</a></h3>
+        
+    
+    <ul>
+      
+        
+        
+        <li key="p-0-docs/react/index.html">
+          <a href="/docs/react/" class="sidebar-link">Introduction</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-1-docs/react/status-bar/index.html">
+          <a href="/docs/react/status-bar/" class="sidebar-link">&lt;StatusBar /></a>
+          
+        </li>
+      
+        
+        
+        <li key="p-2-docs/react/drag-drop/index.html">
+          <a href="/docs/react/drag-drop/" class="sidebar-link">&lt;DragDrop /></a>
+          
+        </li>
+      
+        
+        
+        <li key="p-3-docs/react/file-input/index.html">
+          <a href="/docs/react/file-input/" class="sidebar-link">&lt;FileInput /></a>
+          
+        </li>
+      
+        
+        
+        <li key="p-4-docs/react/progress-bar/index.html">
+          <a href="/docs/react/progress-bar/" class="sidebar-link">&lt;ProgressBar /></a>
+          
+        </li>
+      
+        
+        
+        <li key="p-5-docs/react/dashboard/index.html">
+          <a href="/docs/react/dashboard/" class="sidebar-link">&lt;Dashboard /></a>
+          
+        </li>
+      
+        
+        
+        <li key="p-6-docs/react/dashboard-modal/index.html">
+          <a href="/docs/react/dashboard-modal/" class="sidebar-link">&lt;DashboardModal /></a>
+          
+        </li>
+      
+        
+        
+        <li key="p-7-docs/react/native/index.html">
+          <a href="/docs/react/native/" class="sidebar-link">React Native</a>
+          
+        </li>
+      
+    </ul>
+
+    
+    
+    
+        
+        <h3 id="" key="category-7-Other Integrations" data-scroll="no"><a href="/docs/vue/">Other Integrations</a></h3>
+        
+    
+    <ul>
+      
+        
+        
+        <li key="p-0-docs/angular/index.html">
+          <a href="/docs/angular/" class="sidebar-link">Angular</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-1-docs/vue/index.html">
+          <a href="/docs/vue/" class="sidebar-link">Vue</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-2-docs/svelte/index.html">
+          <a href="/docs/svelte/" class="sidebar-link">Svelte</a>
+          
+        </li>
+      
+    </ul>
+
+    
+    
+    
+        
+        <h3 id="" key="category-8-Contributing" data-scroll="no"><a href="/docs/contributing.html">Contributing</a></h3>
+        
+    
+    <ul>
+      
+        
+        
+        <li key="p-0-docs/contributing.html">
+          <a href="/docs/contributing.html" class="sidebar-link">Contributing</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-1-docs/writing-plugins/index.html">
+          <a href="/docs/writing-plugins/" class="sidebar-link">Writing Plugins</a>
+          
+        </li>
+      
+    </ul>
+
+
+    </div>
+
+    <ul class="Social">
+  <li><a href="https://twitter.com/uppy_io" target="_blank" rel="noopener" class="twitter-follow-button" data-show-count="false" data-dnt="true">Follow @uppy_io</a></li>
+  <li><iframe src="https://ghbtns.com/github-btn.html?user=transloadit&repo=uppy&type=watch&count=true"
+allowtransparency="true" frameborder="0" scrolling="0" width="100" height="20"></iframe></li>
+  <!-- to regenerate you can use this link: https://img.shields.io/badge/community-forum-d8006a.svg -->
+  <li><a href="https://community.transloadit.com/c/uppy" target="_blank" rel="noopener"><img src="/uppy/images/community-forum-d8006a.svg" /> </a></li>
+  <li class="BuildBadge">
+   <span class="wrapper">
+     <a href="https://github.com/transloadit/uppy/actions" target="_blank" rel="noopener"><img src="https://github.com/transloadit/uppy/workflows/End-to-end%20tests/badge.svg" alt="Build Status"></a>
+   </span>
+  </li>
+</ul>
+
+    </div>
+  
+</div>
+
+
+
+<div class="Content js-Content docs with-sidebar">
+    <h1>Locale Packs</h1>
+    <html><head></head><body><p>Uppy speaks many languages, English being the default. You can use a locale pack to translate Uppy into your language of choice.</p>
+<p><a href="#List-of-locale-packs">List of our locale packs</a></p>
+<h2 id="Using-a-locale-pack-from-npm"><a href="#Using-a-locale-pack-from-npm" class="headerlink" title="Using a locale pack from npm"></a>Using a locale pack from npm</h2><p>This is the recommded way. Install <code>@uppy/locales</code> package from npm, then <a href="#List-of-locale-packs">choose the locale</a> you’d like to use: <code>@uppy/locales/lib/LANGUAGE_CODE</code>.</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="token function">npm</span> i @uppy/core @uppy/locales</pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="token keyword module">import</span> <span class="token imports"><span class="token maybe-class-name">Uppy</span></span> <span class="token keyword module">from</span> <span class="token string">'@uppy/core'</span>
+<span class="token keyword module">import</span> <span class="token imports"><span class="token maybe-class-name">German</span></span> <span class="token keyword module">from</span> <span class="token string">'@uppy/locales/lib/de_DE'</span>
+<span class="token comment">// see below for the full list of locales</span>
+<span class="token keyword">const</span> uppy <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Uppy</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  <span class="token literal-property property">debug</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">locale</span><span class="token operator">:</span> <span class="token maybe-class-name">German</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span></pre></td></tr></table></figure>
+<h2 id="Using-a-locale-pack-from-CDN"><a href="#Using-a-locale-pack-from-CDN" class="headerlink" title="Using a locale pack from CDN"></a>Using a locale pack from CDN</h2><p>Add a <code>&lt;script&gt;</code> tag with Uppy bundle and the locale pack you’d like to use. You can copy/paste the link from the CDN column in the <a href="#List-of-locale-packs">locales table</a>. The locale will attach itself to the <code>Uppy.locales</code> object.</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://releases.transloadit.com/uppy/v3.6.1/uppy.min.js<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://releases.transloadit.com/uppy/locales/v3.0.7/de_DE.min.js<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script"><span class="token language-javascript">
+<span class="token keyword">var</span> uppy <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Uppy<span class="token punctuation">.</span>Uppy</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  <span class="token literal-property property">debug</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">locale</span><span class="token operator">:</span> <span class="token maybe-class-name">Uppy</span><span class="token punctuation">.</span><span class="token property-access">locales</span><span class="token punctuation">.</span><span class="token property-access">de_DE</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span></pre></td></tr></table></figure>
+<h2 id="Overriding-locale-strings-for-a-specific-plugin"><a href="#Overriding-locale-strings-for-a-specific-plugin" class="headerlink" title="Overriding locale strings for a specific plugin"></a>Overriding locale strings for a specific plugin</h2><p>Many plugins come with their own locale strings, and the packs we provide consist of most of those strings. You can, however, override a locale string for a specific plugin, regardless of whether you are using locale pack or not. See the plugin documentation for the list of locale strings it uses (for example, <a href="/uppy/docs/dashboard/#locale">here’s how to use it with the Dashboard UI</a>).</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="token keyword module">import</span> <span class="token imports"><span class="token maybe-class-name">Uppy</span></span> <span class="token keyword module">from</span> <span class="token string">'@uppy/core'</span>
+<span class="token keyword module">import</span> <span class="token imports"><span class="token maybe-class-name">DragDrop</span></span> <span class="token keyword module">from</span> <span class="token string">'@uppy/drag-drop'</span>
+<span class="token keyword module">import</span> <span class="token imports"><span class="token maybe-class-name">Russian</span></span> <span class="token keyword module">from</span> <span class="token string">'@uppy/locales/lib/ru_RU'</span>
+
+<span class="token keyword">const</span> uppy <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Uppy</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  <span class="token literal-property property">debug</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">autoProceed</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">locale</span><span class="token operator">:</span> <span class="token maybe-class-name">Russian</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+uppy<span class="token punctuation">.</span><span class="token method function property-access">use</span><span class="token punctuation">(</span><span class="token maybe-class-name">DragDrop</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  <span class="token literal-property property">target</span><span class="token operator">:</span> <span class="token string">'.UppyDragDrop'</span><span class="token punctuation">,</span>
+  <span class="token comment">// We are using the ru_RU locale pack (set above in Uppy options),</span>
+  <span class="token comment">// but you can also override specific strings like so:</span>
+  <span class="token literal-property property">locale</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">strings</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token literal-property property">browse</span><span class="token operator">:</span> <span class="token string">'выберите ;-)'</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span></pre></td></tr></table></figure>
+<h2 id="List-of-locale-packs"><a href="#List-of-locale-packs" class="headerlink" title="List of locale packs"></a>List of locale packs</h2><!-- WARNING! This file was automatically injected. Please run "inject.js" to re-generate -->
+
+
+<table>
+<thead>
+<tr>
+<th>38 Locales</th>
+<th>NPM</th>
+<th>CDN</th>
+<th>Source on GitHub</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Arabic<br> <small>Saudi Arabia</small></td>
+<td><code class="raw"><a href="https://www.npmjs.com/package/@uppy/locales" target="_blank" rel="noopener">@uppy/locales</a>/lib/ar_SA</code></td>
+<td><a href="https://releases.transloadit.com/uppy/locales/v3.0.7/ar_SA.min.js" target="_blank" rel="noopener"><code>ar_SA.min.js</code></a></td>
+<td>✏️ <a href="https://github.com/transloadit/uppy/blob/main/packages/%40uppy/locales/src/ar_SA.js" target="_blank" rel="noopener"><code>ar_SA.js</code></a></td>
+</tr>
+<tr>
+<td>Bulgarian<br> <small>Bulgaria</small></td>
+<td><code class="raw"><a href="https://www.npmjs.com/package/@uppy/locales" target="_blank" rel="noopener">@uppy/locales</a>/lib/bg_BG</code></td>
+<td><a href="https://releases.transloadit.com/uppy/locales/v3.0.7/bg_BG.min.js" target="_blank" rel="noopener"><code>bg_BG.min.js</code></a></td>
+<td>✏️ <a href="https://github.com/transloadit/uppy/blob/main/packages/%40uppy/locales/src/bg_BG.js" target="_blank" rel="noopener"><code>bg_BG.js</code></a></td>
+</tr>
+<tr>
+<td>Chinese<br> <small>China</small></td>
+<td><code class="raw"><a href="https://www.npmjs.com/package/@uppy/locales" target="_blank" rel="noopener">@uppy/locales</a>/lib/zh_CN</code></td>
+<td><a href="https://releases.transloadit.com/uppy/locales/v3.0.7/zh_CN.min.js" target="_blank" rel="noopener"><code>zh_CN.min.js</code></a></td>
+<td>✏️ <a href="https://github.com/transloadit/uppy/blob/main/packages/%40uppy/locales/src/zh_CN.js" target="_blank" rel="noopener"><code>zh_CN.js</code></a></td>
+</tr>
+<tr>
+<td>Chinese<br> <small>Taiwan</small></td>
+<td><code class="raw"><a href="https://www.npmjs.com/package/@uppy/locales" target="_blank" rel="noopener">@uppy/locales</a>/lib/zh_TW</code></td>
+<td><a href="https://releases.transloadit.com/uppy/locales/v3.0.7/zh_TW.min.js" target="_blank" rel="noopener"><code>zh_TW.min.js</code></a></td>
+<td>✏️ <a href="https://github.com/transloadit/uppy/blob/main/packages/%40uppy/locales/src/zh_TW.js" target="_blank" rel="noopener"><code>zh_TW.js</code></a></td>
+</tr>
+<tr>
+<td>Croatian<br> <small>Croatia</small></td>
+<td><code class="raw"><a href="https://www.npmjs.com/package/@uppy/locales" target="_blank" rel="noopener">@uppy/locales</a>/lib/hr_HR</code></td>
+<td><a href="https://releases.transloadit.com/uppy/locales/v3.0.7/hr_HR.min.js" target="_blank" rel="noopener"><code>hr_HR.min.js</code></a></td>
+<td>✏️ <a href="https://github.com/transloadit/uppy/blob/main/packages/%40uppy/locales/src/hr_HR.js" target="_blank" rel="noopener"><code>hr_HR.js</code></a></td>
+</tr>
+<tr>
+<td>Czech<br> <small>Czechia</small></td>
+<td><code class="raw"><a href="https://www.npmjs.com/package/@uppy/locales" target="_blank" rel="noopener">@uppy/locales</a>/lib/cs_CZ</code></td>
+<td><a href="https://releases.transloadit.com/uppy/locales/v3.0.7/cs_CZ.min.js" target="_blank" rel="noopener"><code>cs_CZ.min.js</code></a></td>
+<td>✏️ <a href="https://github.com/transloadit/uppy/blob/main/packages/%40uppy/locales/src/cs_CZ.js" target="_blank" rel="noopener"><code>cs_CZ.js</code></a></td>
+</tr>
+<tr>
+<td>Danish<br> <small>Denmark</small></td>
+<td><code class="raw"><a href="https://www.npmjs.com/package/@uppy/locales" target="_blank" rel="noopener">@uppy/locales</a>/lib/da_DK</code></td>
+<td><a href="https://releases.transloadit.com/uppy/locales/v3.0.7/da_DK.min.js" target="_blank" rel="noopener"><code>da_DK.min.js</code></a></td>
+<td>✏️ <a href="https://github.com/transloadit/uppy/blob/main/packages/%40uppy/locales/src/da_DK.js" target="_blank" rel="noopener"><code>da_DK.js</code></a></td>
+</tr>
+<tr>
+<td>Dutch<br> <small>Netherlands</small></td>
+<td><code class="raw"><a href="https://www.npmjs.com/package/@uppy/locales" target="_blank" rel="noopener">@uppy/locales</a>/lib/nl_NL</code></td>
+<td><a href="https://releases.transloadit.com/uppy/locales/v3.0.7/nl_NL.min.js" target="_blank" rel="noopener"><code>nl_NL.min.js</code></a></td>
+<td>✏️ <a href="https://github.com/transloadit/uppy/blob/main/packages/%40uppy/locales/src/nl_NL.js" target="_blank" rel="noopener"><code>nl_NL.js</code></a></td>
+</tr>
+<tr>
+<td>English<br> <small>United States</small></td>
+<td><code class="raw"><a href="https://www.npmjs.com/package/@uppy/locales" target="_blank" rel="noopener">@uppy/locales</a>/lib/en_US</code></td>
+<td><a href="https://releases.transloadit.com/uppy/locales/v3.0.7/en_US.min.js" target="_blank" rel="noopener"><code>en_US.min.js</code></a></td>
+<td>✏️ <a href="https://github.com/transloadit/uppy/blob/main/packages/%40uppy/locales/src/en_US.js" target="_blank" rel="noopener"><code>en_US.js</code></a></td>
+</tr>
+<tr>
+<td>Finnish<br> <small>Finland</small></td>
+<td><code class="raw"><a href="https://www.npmjs.com/package/@uppy/locales" target="_blank" rel="noopener">@uppy/locales</a>/lib/fi_FI</code></td>
+<td><a href="https://releases.transloadit.com/uppy/locales/v3.0.7/fi_FI.min.js" target="_blank" rel="noopener"><code>fi_FI.min.js</code></a></td>
+<td>✏️ <a href="https://github.com/transloadit/uppy/blob/main/packages/%40uppy/locales/src/fi_FI.js" target="_blank" rel="noopener"><code>fi_FI.js</code></a></td>
+</tr>
+<tr>
+<td>French<br> <small>France</small></td>
+<td><code class="raw"><a href="https://www.npmjs.com/package/@uppy/locales" target="_blank" rel="noopener">@uppy/locales</a>/lib/fr_FR</code></td>
+<td><a href="https://releases.transloadit.com/uppy/locales/v3.0.7/fr_FR.min.js" target="_blank" rel="noopener"><code>fr_FR.min.js</code></a></td>
+<td>✏️ <a href="https://github.com/transloadit/uppy/blob/main/packages/%40uppy/locales/src/fr_FR.js" target="_blank" rel="noopener"><code>fr_FR.js</code></a></td>
+</tr>
+<tr>
+<td>Galician<br> <small>Spain</small></td>
+<td><code class="raw"><a href="https://www.npmjs.com/package/@uppy/locales" target="_blank" rel="noopener">@uppy/locales</a>/lib/gl_ES</code></td>
+<td><a href="https://releases.transloadit.com/uppy/locales/v3.0.7/gl_ES.min.js" target="_blank" rel="noopener"><code>gl_ES.min.js</code></a></td>
+<td>✏️ <a href="https://github.com/transloadit/uppy/blob/main/packages/%40uppy/locales/src/gl_ES.js" target="_blank" rel="noopener"><code>gl_ES.js</code></a></td>
+</tr>
+<tr>
+<td>German<br> <small>Germany</small></td>
+<td><code class="raw"><a href="https://www.npmjs.com/package/@uppy/locales" target="_blank" rel="noopener">@uppy/locales</a>/lib/de_DE</code></td>
+<td><a href="https://releases.transloadit.com/uppy/locales/v3.0.7/de_DE.min.js" target="_blank" rel="noopener"><code>de_DE.min.js</code></a></td>
+<td>✏️ <a href="https://github.com/transloadit/uppy/blob/main/packages/%40uppy/locales/src/de_DE.js" target="_blank" rel="noopener"><code>de_DE.js</code></a></td>
+</tr>
+<tr>
+<td>Greek<br> <small>Greece</small></td>
+<td><code class="raw"><a href="https://www.npmjs.com/package/@uppy/locales" target="_blank" rel="noopener">@uppy/locales</a>/lib/el_GR</code></td>
+<td><a href="https://releases.transloadit.com/uppy/locales/v3.0.7/el_GR.min.js" target="_blank" rel="noopener"><code>el_GR.min.js</code></a></td>
+<td>✏️ <a href="https://github.com/transloadit/uppy/blob/main/packages/%40uppy/locales/src/el_GR.js" target="_blank" rel="noopener"><code>el_GR.js</code></a></td>
+</tr>
+<tr>
+<td>Hebrew<br> <small>Israel</small></td>
+<td><code class="raw"><a href="https://www.npmjs.com/package/@uppy/locales" target="_blank" rel="noopener">@uppy/locales</a>/lib/he_IL</code></td>
+<td><a href="https://releases.transloadit.com/uppy/locales/v3.0.7/he_IL.min.js" target="_blank" rel="noopener"><code>he_IL.min.js</code></a></td>
+<td>✏️ <a href="https://github.com/transloadit/uppy/blob/main/packages/%40uppy/locales/src/he_IL.js" target="_blank" rel="noopener"><code>he_IL.js</code></a></td>
+</tr>
+<tr>
+<td>Hungarian<br> <small>Hungary</small></td>
+<td><code class="raw"><a href="https://www.npmjs.com/package/@uppy/locales" target="_blank" rel="noopener">@uppy/locales</a>/lib/hu_HU</code></td>
+<td><a href="https://releases.transloadit.com/uppy/locales/v3.0.7/hu_HU.min.js" target="_blank" rel="noopener"><code>hu_HU.min.js</code></a></td>
+<td>✏️ <a href="https://github.com/transloadit/uppy/blob/main/packages/%40uppy/locales/src/hu_HU.js" target="_blank" rel="noopener"><code>hu_HU.js</code></a></td>
+</tr>
+<tr>
+<td>Icelandic<br> <small>Iceland</small></td>
+<td><code class="raw"><a href="https://www.npmjs.com/package/@uppy/locales" target="_blank" rel="noopener">@uppy/locales</a>/lib/is_IS</code></td>
+<td><a href="https://releases.transloadit.com/uppy/locales/v3.0.7/is_IS.min.js" target="_blank" rel="noopener"><code>is_IS.min.js</code></a></td>
+<td>✏️ <a href="https://github.com/transloadit/uppy/blob/main/packages/%40uppy/locales/src/is_IS.js" target="_blank" rel="noopener"><code>is_IS.js</code></a></td>
+</tr>
+<tr>
+<td>Indonesian<br> <small>Indonesia</small></td>
+<td><code class="raw"><a href="https://www.npmjs.com/package/@uppy/locales" target="_blank" rel="noopener">@uppy/locales</a>/lib/id_ID</code></td>
+<td><a href="https://releases.transloadit.com/uppy/locales/v3.0.7/id_ID.min.js" target="_blank" rel="noopener"><code>id_ID.min.js</code></a></td>
+<td>✏️ <a href="https://github.com/transloadit/uppy/blob/main/packages/%40uppy/locales/src/id_ID.js" target="_blank" rel="noopener"><code>id_ID.js</code></a></td>
+</tr>
+<tr>
+<td>Italian<br> <small>Italy</small></td>
+<td><code class="raw"><a href="https://www.npmjs.com/package/@uppy/locales" target="_blank" rel="noopener">@uppy/locales</a>/lib/it_IT</code></td>
+<td><a href="https://releases.transloadit.com/uppy/locales/v3.0.7/it_IT.min.js" target="_blank" rel="noopener"><code>it_IT.min.js</code></a></td>
+<td>✏️ <a href="https://github.com/transloadit/uppy/blob/main/packages/%40uppy/locales/src/it_IT.js" target="_blank" rel="noopener"><code>it_IT.js</code></a></td>
+</tr>
+<tr>
+<td>Japanese<br> <small>Japan</small></td>
+<td><code class="raw"><a href="https://www.npmjs.com/package/@uppy/locales" target="_blank" rel="noopener">@uppy/locales</a>/lib/ja_JP</code></td>
+<td><a href="https://releases.transloadit.com/uppy/locales/v3.0.7/ja_JP.min.js" target="_blank" rel="noopener"><code>ja_JP.min.js</code></a></td>
+<td>✏️ <a href="https://github.com/transloadit/uppy/blob/main/packages/%40uppy/locales/src/ja_JP.js" target="_blank" rel="noopener"><code>ja_JP.js</code></a></td>
+</tr>
+<tr>
+<td>Korean<br> <small>South Korea</small></td>
+<td><code class="raw"><a href="https://www.npmjs.com/package/@uppy/locales" target="_blank" rel="noopener">@uppy/locales</a>/lib/ko_KR</code></td>
+<td><a href="https://releases.transloadit.com/uppy/locales/v3.0.7/ko_KR.min.js" target="_blank" rel="noopener"><code>ko_KR.min.js</code></a></td>
+<td>✏️ <a href="https://github.com/transloadit/uppy/blob/main/packages/%40uppy/locales/src/ko_KR.js" target="_blank" rel="noopener"><code>ko_KR.js</code></a></td>
+</tr>
+<tr>
+<td>Norwegian Bokmål<br> <small>Norway</small></td>
+<td><code class="raw"><a href="https://www.npmjs.com/package/@uppy/locales" target="_blank" rel="noopener">@uppy/locales</a>/lib/nb_NO</code></td>
+<td><a href="https://releases.transloadit.com/uppy/locales/v3.0.7/nb_NO.min.js" target="_blank" rel="noopener"><code>nb_NO.min.js</code></a></td>
+<td>✏️ <a href="https://github.com/transloadit/uppy/blob/main/packages/%40uppy/locales/src/nb_NO.js" target="_blank" rel="noopener"><code>nb_NO.js</code></a></td>
+</tr>
+<tr>
+<td>Persian<br> <small>Iran</small></td>
+<td><code class="raw"><a href="https://www.npmjs.com/package/@uppy/locales" target="_blank" rel="noopener">@uppy/locales</a>/lib/fa_IR</code></td>
+<td><a href="https://releases.transloadit.com/uppy/locales/v3.0.7/fa_IR.min.js" target="_blank" rel="noopener"><code>fa_IR.min.js</code></a></td>
+<td>✏️ <a href="https://github.com/transloadit/uppy/blob/main/packages/%40uppy/locales/src/fa_IR.js" target="_blank" rel="noopener"><code>fa_IR.js</code></a></td>
+</tr>
+<tr>
+<td>Polish<br> <small>Poland</small></td>
+<td><code class="raw"><a href="https://www.npmjs.com/package/@uppy/locales" target="_blank" rel="noopener">@uppy/locales</a>/lib/pl_PL</code></td>
+<td><a href="https://releases.transloadit.com/uppy/locales/v3.0.7/pl_PL.min.js" target="_blank" rel="noopener"><code>pl_PL.min.js</code></a></td>
+<td>✏️ <a href="https://github.com/transloadit/uppy/blob/main/packages/%40uppy/locales/src/pl_PL.js" target="_blank" rel="noopener"><code>pl_PL.js</code></a></td>
+</tr>
+<tr>
+<td>Portuguese<br> <small>Brazil</small></td>
+<td><code class="raw"><a href="https://www.npmjs.com/package/@uppy/locales" target="_blank" rel="noopener">@uppy/locales</a>/lib/pt_BR</code></td>
+<td><a href="https://releases.transloadit.com/uppy/locales/v3.0.7/pt_BR.min.js" target="_blank" rel="noopener"><code>pt_BR.min.js</code></a></td>
+<td>✏️ <a href="https://github.com/transloadit/uppy/blob/main/packages/%40uppy/locales/src/pt_BR.js" target="_blank" rel="noopener"><code>pt_BR.js</code></a></td>
+</tr>
+<tr>
+<td>Portuguese<br> <small>Portugal</small></td>
+<td><code class="raw"><a href="https://www.npmjs.com/package/@uppy/locales" target="_blank" rel="noopener">@uppy/locales</a>/lib/pt_PT</code></td>
+<td><a href="https://releases.transloadit.com/uppy/locales/v3.0.7/pt_PT.min.js" target="_blank" rel="noopener"><code>pt_PT.min.js</code></a></td>
+<td>✏️ <a href="https://github.com/transloadit/uppy/blob/main/packages/%40uppy/locales/src/pt_PT.js" target="_blank" rel="noopener"><code>pt_PT.js</code></a></td>
+</tr>
+<tr>
+<td>Romanian<br> <small>Romania</small></td>
+<td><code class="raw"><a href="https://www.npmjs.com/package/@uppy/locales" target="_blank" rel="noopener">@uppy/locales</a>/lib/ro_RO</code></td>
+<td><a href="https://releases.transloadit.com/uppy/locales/v3.0.7/ro_RO.min.js" target="_blank" rel="noopener"><code>ro_RO.min.js</code></a></td>
+<td>✏️ <a href="https://github.com/transloadit/uppy/blob/main/packages/%40uppy/locales/src/ro_RO.js" target="_blank" rel="noopener"><code>ro_RO.js</code></a></td>
+</tr>
+<tr>
+<td>Russian<br> <small>Russia</small></td>
+<td><code class="raw"><a href="https://www.npmjs.com/package/@uppy/locales" target="_blank" rel="noopener">@uppy/locales</a>/lib/ru_RU</code></td>
+<td><a href="https://releases.transloadit.com/uppy/locales/v3.0.7/ru_RU.min.js" target="_blank" rel="noopener"><code>ru_RU.min.js</code></a></td>
+<td>✏️ <a href="https://github.com/transloadit/uppy/blob/main/packages/%40uppy/locales/src/ru_RU.js" target="_blank" rel="noopener"><code>ru_RU.js</code></a></td>
+</tr>
+<tr>
+<td>Serbian<br> <small>Serbia</small><br><small>(Cyrillic)</small></td>
+<td><code class="raw"><a href="https://www.npmjs.com/package/@uppy/locales" target="_blank" rel="noopener">@uppy/locales</a>/lib/sr_RS_Cyrillic</code></td>
+<td><a href="https://releases.transloadit.com/uppy/locales/v3.0.7/sr_RS_Cyrillic.min.js" target="_blank" rel="noopener"><code>sr_RS_Cyrillic.min.js</code></a></td>
+<td>✏️ <a href="https://github.com/transloadit/uppy/blob/main/packages/%40uppy/locales/src/sr_RS_Cyrillic.js" target="_blank" rel="noopener"><code>sr_RS_Cyrillic.js</code></a></td>
+</tr>
+<tr>
+<td>Serbian<br> <small>Serbia</small><br><small>(Latin)</small></td>
+<td><code class="raw"><a href="https://www.npmjs.com/package/@uppy/locales" target="_blank" rel="noopener">@uppy/locales</a>/lib/sr_RS_Latin</code></td>
+<td><a href="https://releases.transloadit.com/uppy/locales/v3.0.7/sr_RS_Latin.min.js" target="_blank" rel="noopener"><code>sr_RS_Latin.min.js</code></a></td>
+<td>✏️ <a href="https://github.com/transloadit/uppy/blob/main/packages/%40uppy/locales/src/sr_RS_Latin.js" target="_blank" rel="noopener"><code>sr_RS_Latin.js</code></a></td>
+</tr>
+<tr>
+<td>Slovak<br> <small>Slovakia</small></td>
+<td><code class="raw"><a href="https://www.npmjs.com/package/@uppy/locales" target="_blank" rel="noopener">@uppy/locales</a>/lib/sk_SK</code></td>
+<td><a href="https://releases.transloadit.com/uppy/locales/v3.0.7/sk_SK.min.js" target="_blank" rel="noopener"><code>sk_SK.min.js</code></a></td>
+<td>✏️ <a href="https://github.com/transloadit/uppy/blob/main/packages/%40uppy/locales/src/sk_SK.js" target="_blank" rel="noopener"><code>sk_SK.js</code></a></td>
+</tr>
+<tr>
+<td>Spanish<br> <small>Spain</small></td>
+<td><code class="raw"><a href="https://www.npmjs.com/package/@uppy/locales" target="_blank" rel="noopener">@uppy/locales</a>/lib/es_ES</code></td>
+<td><a href="https://releases.transloadit.com/uppy/locales/v3.0.7/es_ES.min.js" target="_blank" rel="noopener"><code>es_ES.min.js</code></a></td>
+<td>✏️ <a href="https://github.com/transloadit/uppy/blob/main/packages/%40uppy/locales/src/es_ES.js" target="_blank" rel="noopener"><code>es_ES.js</code></a></td>
+</tr>
+<tr>
+<td>Swedish<br> <small>Sweden</small></td>
+<td><code class="raw"><a href="https://www.npmjs.com/package/@uppy/locales" target="_blank" rel="noopener">@uppy/locales</a>/lib/sv_SE</code></td>
+<td><a href="https://releases.transloadit.com/uppy/locales/v3.0.7/sv_SE.min.js" target="_blank" rel="noopener"><code>sv_SE.min.js</code></a></td>
+<td>✏️ <a href="https://github.com/transloadit/uppy/blob/main/packages/%40uppy/locales/src/sv_SE.js" target="_blank" rel="noopener"><code>sv_SE.js</code></a></td>
+</tr>
+<tr>
+<td>Thai<br> <small>Thailand</small></td>
+<td><code class="raw"><a href="https://www.npmjs.com/package/@uppy/locales" target="_blank" rel="noopener">@uppy/locales</a>/lib/th_TH</code></td>
+<td><a href="https://releases.transloadit.com/uppy/locales/v3.0.7/th_TH.min.js" target="_blank" rel="noopener"><code>th_TH.min.js</code></a></td>
+<td>✏️ <a href="https://github.com/transloadit/uppy/blob/main/packages/%40uppy/locales/src/th_TH.js" target="_blank" rel="noopener"><code>th_TH.js</code></a></td>
+</tr>
+<tr>
+<td>Turkish<br> <small>Turkey</small></td>
+<td><code class="raw"><a href="https://www.npmjs.com/package/@uppy/locales" target="_blank" rel="noopener">@uppy/locales</a>/lib/tr_TR</code></td>
+<td><a href="https://releases.transloadit.com/uppy/locales/v3.0.7/tr_TR.min.js" target="_blank" rel="noopener"><code>tr_TR.min.js</code></a></td>
+<td>✏️ <a href="https://github.com/transloadit/uppy/blob/main/packages/%40uppy/locales/src/tr_TR.js" target="_blank" rel="noopener"><code>tr_TR.js</code></a></td>
+</tr>
+<tr>
+<td>Ukrainian<br> <small>Ukraine</small></td>
+<td><code class="raw"><a href="https://www.npmjs.com/package/@uppy/locales" target="_blank" rel="noopener">@uppy/locales</a>/lib/uk_UA</code></td>
+<td><a href="https://releases.transloadit.com/uppy/locales/v3.0.7/uk_UA.min.js" target="_blank" rel="noopener"><code>uk_UA.min.js</code></a></td>
+<td>✏️ <a href="https://github.com/transloadit/uppy/blob/main/packages/%40uppy/locales/src/uk_UA.js" target="_blank" rel="noopener"><code>uk_UA.js</code></a></td>
+</tr>
+<tr>
+<td>Uzbek<br> <small>Uzbekistan</small></td>
+<td><code class="raw"><a href="https://www.npmjs.com/package/@uppy/locales" target="_blank" rel="noopener">@uppy/locales</a>/lib/uz_UZ</code></td>
+<td><a href="https://releases.transloadit.com/uppy/locales/v3.0.7/uz_UZ.min.js" target="_blank" rel="noopener"><code>uz_UZ.min.js</code></a></td>
+<td>✏️ <a href="https://github.com/transloadit/uppy/blob/main/packages/%40uppy/locales/src/uz_UZ.js" target="_blank" rel="noopener"><code>uz_UZ.js</code></a></td>
+</tr>
+<tr>
+<td>Vietnamese<br> <small>Vietnam</small></td>
+<td><code class="raw"><a href="https://www.npmjs.com/package/@uppy/locales" target="_blank" rel="noopener">@uppy/locales</a>/lib/vi_VN</code></td>
+<td><a href="https://releases.transloadit.com/uppy/locales/v3.0.7/vi_VN.min.js" target="_blank" rel="noopener"><code>vi_VN.min.js</code></a></td>
+<td>✏️ <a href="https://github.com/transloadit/uppy/blob/main/packages/%40uppy/locales/src/vi_VN.js" target="_blank" rel="noopener"><code>vi_VN.js</code></a></td>
+</tr>
+</tbody></table>
+<h2 id="Contributing-a-new-language"><a href="#Contributing-a-new-language" class="headerlink" title="Contributing a new language"></a>Contributing a new language</h2><p>If you speak a language we don’t yet support, you can contribute! Here’s how you do it:</p>
+<ol>
+<li>Go to the <a href="https://github.com/transloadit/uppy/tree/main/packages/%40uppy/locales/src" target="_blank" rel="noopener">uppy/locales</a> directory in the Uppy GitHub repo.</li>
+<li>Go to <code>en_US.js</code> and copy its contents, as English is the most up-to-date locale.</li>
+<li>Press “Create new file”, name it according to the <a href="http://www.i18nguy.com/unicode/language-identifiers.html" target="_blank" rel="noopener"><code>language_COUNTRY</code> format</a>, make sure to use underscore <code>_</code> as a divider. Examples: <code>en_US</code>, <code>en_GB</code>, <code>ru_RU</code>, <code>ar_AE</code>. Variants should be trailing, for example <code>sr_RS_Latin</code> for Serbian Latin vs Cyrillic.</li>
+<li>If your language has different pluralization rules than English, update the <code>pluralize</code> implementation. If you are unsure how to do this, please ask us for help in a <a href="https://github.com/transloadit/uppy/issues/new" target="_blank" rel="noopener">GitHub issue</a>.</li>
+<li>Paste what you’ve copied from <code>en_US.js</code> and use it as a starting point to translate strings into your language.</li>
+<li>When you are ready, save the file — this should create a PR that we’ll then review 🎉 Thanks!</li>
+</ol>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script></body></html>
+    
+    
+
+    
+    <div class="footer">Caught a mistake or want to contribute to the documentation?
+       <a href="https://github.com/transloadit/uppy/blob/main/website/src/docs/locales.md" rel="noreferrer noopener" target="_blank">Edit/fork this page directly on Github</a>!
+    </div>
+</div>
+
+        
+      </main>
+
+      <script defer data-domain="transloadit.github.io" src="https://analytics.transloadit.com/js/plausible.js"></script>
+
+
+      
+        <script src="/uppy/js/smooth-scroll.min.js"></script>
+        <!-- Place this tag in your head or just before your close body tag. -->
+        <script async defer src="https://buttons.github.io/buttons.js"></script>
+      
+      <script src="/uppy/js/common.js"></script>
+
+      <!-- Twitter follow button script -->
+      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+    </div>
+  </body>
+</html>

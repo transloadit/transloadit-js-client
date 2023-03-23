@@ -1,0 +1,795 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Webcam — Uppy</title>
+    <meta charset="utf-8">
+    <meta name="title" content="Webcam — Uppy">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@uppy_io">
+    <meta name="twitter:creator" content="@uppy_io">
+    <meta property="og:url" content="https://transloadit.github.io/uppy/docs/webcam/index.html">
+    <meta property="og:title" content="Webcam — Uppy">
+    <meta name="twitter:title" content="Webcam — Uppy">
+    <meta name="twitter:description" content="">
+    <meta property="og:image" content="http://transloadit.github.io/uppy/images/uppy-social-pink.png">
+    <meta name="twitter:image" content="http://transloadit.github.io/uppy/images/uppy-social-pink.png">
+
+    <meta name="google-site-verification" content="JxARoHXoCI8bD07pLV_u3z6xpuWNcSIZIcHEytyCkUc" />
+
+    <link rel="icon" href="/uppy/images/logos/uppy-dog-head-arrow.png" type="image/x-icon">
+    <link rel="alternate" type="application/rss+xml" title="Uppy" href="/atom.xml">
+
+    <script>
+      window.PAGE_TYPE = "docs"
+    </script>
+    
+<link rel="stylesheet" href="/uppy/css/main.css?version=2">
+
+    <!-- ^ poor man's solution to css cache busting. bump the version when there's something new we really want users to see -->
+  <meta name="generator" content="Hexo 4.2.1"></head>
+  <body class="page-inner ">
+    <div class="page">
+      <div class="TransloaditBar js-TransloaditBar">
+        <div class="TransloaditBar-about">
+          <!-- <a class="TransloaditBar-logo" href="https://transloadit.com/" target="_blank" rel="noopener">
+            <img class="TransloaditBar-logoImg" src="/uppy/images/transloadit-white-glyph.svg" width="20" height="20" alt="Transloadit">
+          </a> -->
+          <!-- <span>Uppy is an open source project by <a class="TransloaditBar-link" href="https://transloadit.com/" target="_blank">Transloadit</a></span> -->
+          This website is no longer maintained, please visit <a href="//uppy.io" target="_blank" rel="noopener" style="color:inherit">uppy.io</a> to get up-to-date info about Uppy.
+        </div>
+      </div>
+
+      <header id="header" class="MainHeader js-MainHeader">
+        <button class="MainHeader-menuBtn js-MenuBtn"></button>
+
+        <span id="logo" class="MainLogo">
+          <a class="MainLogo-link" href="/uppy/">Uppy</a>
+          <!-- Was used for 1.0, we can re-use for 2.0 or major announcements -->
+          <!-- <a class="MainLogo-announcement" href="/blog/2019/04/1.0/">
+            1.0
+            <span class="MainLogo-emoji">
+              <img src="/uppy/images/party-popper.png" srcset="/uppy/images/party-popper@2x.png 2x" alt="🎉">
+            </span>
+          </a> -->
+        </span>
+
+        <nav>
+          <ul id="nav" class="MainMenu">
+            <!-- @todo uncomment search input when we get our own swifttype -->
+<!-- <li>
+  <form id="search-form" class="MainMenu-search">
+    <input type="text" id="search-query" class="MainMenu-searchQuery st-default-search-input">
+  </form>
+</li> -->
+<!--li><a href="/uppy/guide/" class="nav-link">Guide</a></li-->
+<li><a href="/uppy/docs/" class="nav-link current">Docs</a></li>
+<li><a href="/uppy/examples/dashboard/" class="nav-link">Examples</a></li>
+<!--li><a href="/uppy/stats/" class="nav-link">Stats</a></li-->
+<li><a href="/uppy/blog/" class="nav-link">Blog</a></li>
+<li><a href="/uppy/support/" class="nav-link">Support</a></li>
+<li><a href="https://github.com/transloadit/uppy" target="_blank" rel="noopener" class="nav-link">GitHub</a></li>
+
+          </ul>
+        </nav>
+
+        <div class="MainHeader-tagline">
+          The file uploader that <span class="MainHeader-taglinePart js-MainHeader-taglinePart is-visible">loves to play fetch</span>
+        </div>
+
+        <ul class="MainHeader-taglineList js-MainHeader-taglineList">
+          
+          <li>won’t chew on your shoes</li>
+          
+          <li>is fully housebroken</li>
+          
+          <li>just wants to play with you</li>
+          
+          <li>doesn’t hump your leg</li>
+          
+          <li>also accepts cat pictures</li>
+          
+          <li>loves you unconditionally</li>
+          
+          <li>you don’t have to keep on a leash</li>
+          
+          <li>won’t pee on your rug</li>
+          
+          <li>loves to play fetch</li>
+          
+          <li>doesn’t bite (hard)</li>
+          
+          <li>won’t bark at the mailman</li>
+          
+          <li>is great with the kids</li>
+          
+          <li>can digest anything, even chocolate cake</li>
+          
+          <li>is always happy to see you</li>
+          
+          <li>isn’t afraid of fireworks</li>
+          
+          <li>is allowed everywhere</li>
+          
+        </ul>
+      </header>
+
+      <main class="MainContent js-MainContent" id="main">
+        
+          
+    <div class="Sidebar js-Sidebar">
+  <ul class="main-menu">
+    <!-- @todo uncomment search input when we get our own swifttype -->
+<!-- <li>
+  <form id="search-form" class="MainMenu-search">
+    <input type="text" id="search-query" class="MainMenu-searchQuery st-default-search-input">
+  </form>
+</li> -->
+<!--li><a href="/uppy/guide/" class="nav-link">Guide</a></li-->
+<li><a href="/uppy/docs/" class="nav-link current">Docs</a></li>
+<li><a href="/uppy/examples/dashboard/" class="nav-link">Examples</a></li>
+<!--li><a href="/uppy/stats/" class="nav-link">Stats</a></li-->
+<li><a href="/uppy/blog/" class="nav-link">Blog</a></li>
+<li><a href="/uppy/support/" class="nav-link">Support</a></li>
+<li><a href="https://github.com/transloadit/uppy" target="_blank" rel="noopener" class="nav-link">GitHub</a></li>
+
+  </ul>
+  
+  
+  <div class="list">
+    <h2>
+      <a href="/uppy/docs">Docs</a>
+    </h2>
+      
+    <div class="menu-root">
+      
+
+    
+    
+    
+    <ul>
+      
+        
+        
+        <li key="p-0-docs/index.html">
+          <a href="/docs/" class="sidebar-link">Getting Started</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-1-docs/uppy/index.html">
+          <a href="/docs/uppy/" class="sidebar-link">Uppy</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-2-docs/companion/index.html">
+          <a href="/docs/companion/" class="sidebar-link">Companion</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-3-docs/plugins/index.html">
+          <a href="/docs/plugins/" class="sidebar-link">List of Plugins</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-4-docs/plugin-options/index.html">
+          <a href="/docs/plugin-options/" class="sidebar-link">Common Plugin Options</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-5-docs/stores/index.html">
+          <a href="/docs/stores/" class="sidebar-link">Custom Stores</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-6-docs/community-projects/index.html">
+          <a href="/docs/community-projects/" class="sidebar-link">Community Projects</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-7-docs/locales/index.html">
+          <a href="/docs/locales/" class="sidebar-link">Locale Packs</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-8-docs/migration-guides.html">
+          <a href="/docs/migration-guides.html" class="sidebar-link">Migration guides</a>
+          
+        </li>
+      
+    </ul>
+
+    
+    
+    
+        
+        <h3 id="" key="category-1-UI Elements" data-scroll="no">UI Elements</h3>
+        
+    
+    <ul>
+      
+        
+        
+        <li key="p-0-docs/dashboard/index.html">
+          <a href="/docs/dashboard/" class="sidebar-link">Dashboard</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-1-docs/status-bar/index.html">
+          <a href="/docs/status-bar/" class="sidebar-link">Status Bar</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-2-docs/progress-bar/index.html">
+          <a href="/docs/progress-bar/" class="sidebar-link">Progress Bar</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-3-docs/informer/index.html">
+          <a href="/docs/informer/" class="sidebar-link">Informer</a>
+          
+        </li>
+      
+    </ul>
+
+    
+    
+    
+        
+        <h3 id="" key="category-2-Sources" data-scroll="no">Sources</h3>
+        
+    
+    <ul>
+      
+        
+        
+        <li key="p-0-docs/drag-drop/index.html">
+          <a href="/docs/drag-drop/" class="sidebar-link">Drag & Drop</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-1-docs/drop-target/index.html">
+          <a href="/docs/drop-target/" class="sidebar-link">Drop Target</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-2-docs/file-input/index.html">
+          <a href="/docs/file-input/" class="sidebar-link">File Input</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-3-docs/audio/index.html">
+          <a href="/docs/audio/" class="sidebar-link">Audio</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-4-docs/webcam/index.html">
+          <a href="/docs/webcam/" class="sidebar-link current">Webcam</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-5-docs/screen-capture/index.html">
+          <a href="/docs/screen-capture/" class="sidebar-link">Screen capture</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-6-docs/providers/index.html">
+          <a href="/docs/providers/" class="sidebar-link">Provider Plugins</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-7-docs/box/index.html">
+          <span title='Requires Companion'>ⓒ </span><a href="/docs/box/" class="sidebar-link">Box</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-8-docs/dropbox/index.html">
+          <span title='Requires Companion'>ⓒ </span><a href="/docs/dropbox/" class="sidebar-link">Dropbox</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-9-docs/google-drive/index.html">
+          <span title='Requires Companion'>ⓒ </span><a href="/docs/google-drive/" class="sidebar-link">Google Drive</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-10-docs/instagram/index.html">
+          <span title='Requires Companion'>ⓒ </span><a href="/docs/instagram/" class="sidebar-link">Instagram</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-11-docs/onedrive/index.html">
+          <span title='Requires Companion'>ⓒ </span><a href="/docs/onedrive/" class="sidebar-link">OneDrive</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-12-docs/zoom/index.html">
+          <span title='Requires Companion'>ⓒ </span><a href="/docs/zoom/" class="sidebar-link">Zoom</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-13-docs/facebook/index.html">
+          <span title='Requires Companion'>ⓒ </span><a href="/docs/facebook/" class="sidebar-link">Facebook</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-14-docs/unsplash/index.html">
+          <span title='Requires Companion'>ⓒ </span><a href="/docs/unsplash/" class="sidebar-link">Unsplash</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-15-docs/url/index.html">
+          <span title='Requires Companion'>ⓒ </span><a href="/docs/url/" class="sidebar-link">Import From URL</a>
+          
+        </li>
+      
+    </ul>
+
+    
+    
+    
+        
+        <h3 id="" key="category-3-Destinations" data-scroll="no">Destinations</h3>
+        
+    
+    <ul>
+      
+        
+        
+        <li key="p-0-docs/tus/index.html">
+          <a href="/docs/tus/" class="sidebar-link">Tus</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-1-docs/xhr-upload/index.html">
+          <a href="/docs/xhr-upload/" class="sidebar-link">XHR</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-2-docs/aws-s3/index.html">
+          <a href="/docs/aws-s3/" class="sidebar-link">AWS S3</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-3-docs/aws-s3-multipart/index.html">
+          <a href="/docs/aws-s3-multipart/" class="sidebar-link">AWS S3 Multipart</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-4-docs/transloadit/index.html">
+          <a href="/docs/transloadit/" class="sidebar-link">Transloadit</a>
+          
+        </li>
+      
+    </ul>
+
+    
+    
+    
+        
+        <h3 id="" key="category-4-Miscellaneous" data-scroll="no">Miscellaneous</h3>
+        
+    
+    <ul>
+      
+        
+        
+        <li key="p-0-docs/form/index.html">
+          <a href="/docs/form/" class="sidebar-link">Form</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-1-docs/golden-retriever/index.html">
+          <a href="/docs/golden-retriever/" class="sidebar-link">Golden Retriever</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-2-docs/image-editor/index.html">
+          <a href="/docs/image-editor/" class="sidebar-link">Image Editor</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-3-docs/thumbnail-generator/index.html">
+          <a href="/docs/thumbnail-generator/" class="sidebar-link">Thumbnail Generator</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-4-docs/redux/index.html">
+          <a href="/docs/redux/" class="sidebar-link">Redux</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-5-docs/compressor/index.html">
+          <a href="/docs/compressor/" class="sidebar-link">Compressor</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-6-docs/remote-sources/index.html">
+          <a href="/docs/remote-sources/" class="sidebar-link">Remote Sources</a>
+          
+        </li>
+      
+    </ul>
+
+    
+    
+    
+    <ul>
+      
+    </ul>
+
+    
+    
+    
+        
+        <h3 id="" key="category-6-React" data-scroll="no"><a href="/docs/react/">React</a></h3>
+        
+    
+    <ul>
+      
+        
+        
+        <li key="p-0-docs/react/index.html">
+          <a href="/docs/react/" class="sidebar-link">Introduction</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-1-docs/react/status-bar/index.html">
+          <a href="/docs/react/status-bar/" class="sidebar-link">&lt;StatusBar /></a>
+          
+        </li>
+      
+        
+        
+        <li key="p-2-docs/react/drag-drop/index.html">
+          <a href="/docs/react/drag-drop/" class="sidebar-link">&lt;DragDrop /></a>
+          
+        </li>
+      
+        
+        
+        <li key="p-3-docs/react/file-input/index.html">
+          <a href="/docs/react/file-input/" class="sidebar-link">&lt;FileInput /></a>
+          
+        </li>
+      
+        
+        
+        <li key="p-4-docs/react/progress-bar/index.html">
+          <a href="/docs/react/progress-bar/" class="sidebar-link">&lt;ProgressBar /></a>
+          
+        </li>
+      
+        
+        
+        <li key="p-5-docs/react/dashboard/index.html">
+          <a href="/docs/react/dashboard/" class="sidebar-link">&lt;Dashboard /></a>
+          
+        </li>
+      
+        
+        
+        <li key="p-6-docs/react/dashboard-modal/index.html">
+          <a href="/docs/react/dashboard-modal/" class="sidebar-link">&lt;DashboardModal /></a>
+          
+        </li>
+      
+        
+        
+        <li key="p-7-docs/react/native/index.html">
+          <a href="/docs/react/native/" class="sidebar-link">React Native</a>
+          
+        </li>
+      
+    </ul>
+
+    
+    
+    
+        
+        <h3 id="" key="category-7-Other Integrations" data-scroll="no"><a href="/docs/vue/">Other Integrations</a></h3>
+        
+    
+    <ul>
+      
+        
+        
+        <li key="p-0-docs/angular/index.html">
+          <a href="/docs/angular/" class="sidebar-link">Angular</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-1-docs/vue/index.html">
+          <a href="/docs/vue/" class="sidebar-link">Vue</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-2-docs/svelte/index.html">
+          <a href="/docs/svelte/" class="sidebar-link">Svelte</a>
+          
+        </li>
+      
+    </ul>
+
+    
+    
+    
+        
+        <h3 id="" key="category-8-Contributing" data-scroll="no"><a href="/docs/contributing.html">Contributing</a></h3>
+        
+    
+    <ul>
+      
+        
+        
+        <li key="p-0-docs/contributing.html">
+          <a href="/docs/contributing.html" class="sidebar-link">Contributing</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-1-docs/writing-plugins/index.html">
+          <a href="/docs/writing-plugins/" class="sidebar-link">Writing Plugins</a>
+          
+        </li>
+      
+    </ul>
+
+
+    </div>
+
+    <ul class="Social">
+  <li><a href="https://twitter.com/uppy_io" target="_blank" rel="noopener" class="twitter-follow-button" data-show-count="false" data-dnt="true">Follow @uppy_io</a></li>
+  <li><iframe src="https://ghbtns.com/github-btn.html?user=transloadit&repo=uppy&type=watch&count=true"
+allowtransparency="true" frameborder="0" scrolling="0" width="100" height="20"></iframe></li>
+  <!-- to regenerate you can use this link: https://img.shields.io/badge/community-forum-d8006a.svg -->
+  <li><a href="https://community.transloadit.com/c/uppy" target="_blank" rel="noopener"><img src="/uppy/images/community-forum-d8006a.svg" /> </a></li>
+  <li class="BuildBadge">
+   <span class="wrapper">
+     <a href="https://github.com/transloadit/uppy/actions" target="_blank" rel="noopener"><img src="https://github.com/transloadit/uppy/workflows/End-to-end%20tests/badge.svg" alt="Build Status"></a>
+   </span>
+  </li>
+</ul>
+
+    </div>
+  
+</div>
+
+
+
+<div class="Content js-Content docs with-sidebar">
+    <h1>Webcam</h1>
+    <html><head></head><body><p>The <code>@uppy/webcam</code> plugin lets you take photos and record videos with a built-in camera on desktop and mobile devices.</p>
+<blockquote>
+<p>To use the Webcam plugin in Chrome, <a href="https://developers.google.com/web/updates/2015/10/chrome-47-webrtc#public_service_announcements" target="_blank" rel="noopener">your site must be served over https</a>. This restriction does not apply on <code>localhost</code>, so you don’t have to jump through many hoops during development.</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="token keyword module">import</span> <span class="token imports"><span class="token maybe-class-name">Webcam</span></span> <span class="token keyword module">from</span> <span class="token string">'@uppy/webcam'</span>
+
+uppy<span class="token punctuation">.</span><span class="token method function property-access">use</span><span class="token punctuation">(</span><span class="token maybe-class-name">Webcam</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  <span class="token comment">// Options</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span></pre></td></tr></table></figure>
+<p><a class="TryButton" href="/examples/dashboard/">Try it live</a></p>
+<h2 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h2><p>This plugin is published as the <code>@uppy/webcam</code> package.</p>
+<p>Install from NPM:</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="token function">npm</span> <span class="token function">install</span> @uppy/webcam</pre></td></tr></table></figure>
+<p>In the <a href="/docs/#With-a-script-tag">CDN package</a>, the plugin class is available on the <code>Uppy</code> global object:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="token keyword">const</span> <span class="token punctuation">{</span> <span class="token maybe-class-name">Webcam</span> <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token maybe-class-name">Uppy</span></pre></td></tr></table></figure>
+<h2 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h2><p>The <code>@uppy/webcam</code> plugin requires the following CSS for styling:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="token keyword module">import</span> <span class="token string">'@uppy/core/dist/style.css'</span>
+<span class="token keyword module">import</span> <span class="token string">'@uppy/webcam/dist/style.css'</span></pre></td></tr></table></figure>
+<p>Import general Core styles from <code>@uppy/core/dist/style.css</code> first, then add the Webcam styles from <code>@uppy/webcam/dist/style.css</code>. A minified version is also available as <code>style.min.css</code> at the same path. The way to do import depends on your build system.</p>
+<h2 id="Options"><a href="#Options" class="headerlink" title="Options"></a>Options</h2><p>The <code>@uppy/webcam</code> plugin has the following configurable options:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre>uppy<span class="token punctuation">.</span><span class="token method function property-access">use</span><span class="token punctuation">(</span><span class="token maybe-class-name">Webcam</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  <span class="token function-variable function">onBeforeSnapshot</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token known-class-name class-name">Promise</span><span class="token punctuation">.</span><span class="token method function property-access">resolve</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">countdown</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">modes</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token string">'video-audio'</span><span class="token punctuation">,</span>
+    <span class="token string">'video-only'</span><span class="token punctuation">,</span>
+    <span class="token string">'audio-only'</span><span class="token punctuation">,</span>
+    <span class="token string">'picture'</span><span class="token punctuation">,</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">mirror</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">showVideoSourceDropdown</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+  <span class="token doc-comment comment">/** <span class="token keyword">@deprecated</span> Use `videoConstraints.facingMode` instead. */</span>
+  <span class="token literal-property property">facingMode</span><span class="token operator">:</span> <span class="token string">'user'</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">videoConstraints</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">facingMode</span><span class="token operator">:</span> <span class="token string">'user'</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">preferredImageMimeType</span><span class="token operator">:</span> <span class="token keyword null nil">null</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">preferredVideoMimeType</span><span class="token operator">:</span> <span class="token keyword null nil">null</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">showRecordingLength</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">mobileNativeCamera</span><span class="token operator">:</span> <span class="token function">isMobile</span><span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token literal-property property">tablet</span><span class="token operator">:</span> <span class="token boolean">true</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">locale</span><span class="token operator">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span></pre></td></tr></table></figure>
+<h3 id="id-39-Webcam-39"><a href="#id-39-Webcam-39" class="headerlink" title="id: 'Webcam'"></a><code>id: 'Webcam'</code></h3><p>A unique identifier for this plugin. It defaults to <code>'Webcam'</code>.</p>
+<h3 id="title-39-Camera-39"><a href="#title-39-Camera-39" class="headerlink" title="title: 'Camera'"></a><code>title: 'Camera'</code></h3><p>Configures the title / name shown in the UI, for instance, on Dashboard tabs. It defaults to <code>'Camera'</code>.</p>
+<h3 id="target-null"><a href="#target-null" class="headerlink" title="target: null"></a><code>target: null</code></h3><p>DOM element, CSS selector, or plugin to mount Webcam into.</p>
+<h3 id="countdown-false"><a href="#countdown-false" class="headerlink" title="countdown: false"></a><code>countdown: false</code></h3><p>When taking a picture: the amount of seconds to wait before actually taking a snapshot. If set to <code>false</code> or 0, the snapshot is taken right away. This also shows a <code>Smile!</code> message through the <a href="/docs/informer">Informer</a> before the picture is taken.</p>
+<h3 id="onBeforeSnapshot-gt-Promise-resolve"><a href="#onBeforeSnapshot-gt-Promise-resolve" class="headerlink" title="onBeforeSnapshot: () => Promise.resolve()"></a><code>onBeforeSnapshot: () =&gt; Promise.resolve()</code></h3><p>A hook function to call before a snapshot is taken. The Webcam plugin will wait for the returned Promise to resolve before taking the snapshot. This can be used to carry out variations on the <code>countdown</code> option for example.</p>
+<h3 id="modes"><a href="#modes" class="headerlink" title="modes: []"></a><code>modes: []</code></h3><p>The types of recording modes to allow.</p>
+<ul>
+<li><code>video-audio</code> - Record a video file, capturing both audio and video.</li>
+<li><code>video-only</code> - Record a video file with the webcam, but don’t record audio.</li>
+<li><code>audio-only</code> - Record an audio file with the user’s microphone.</li>
+<li><code>picture</code> - Take a picture with the webcam.</li>
+</ul>
+<p>By default, all modes are allowed, and the Webcam plugin will show controls for recording video as well as taking pictures.</p>
+<h3 id="mirror-true"><a href="#mirror-true" class="headerlink" title="mirror: true"></a><code>mirror: true</code></h3><p>Configures whether to mirror preview image from the camera. This option is useful when taking a selfie with a front camera: when you wave your right hand, you will see your hand on the right on the preview screen, like in the mirror. But when you actually take a picture, it will not be mirrored. This is how smartphone selfie cameras behave.</p>
+<h3 id="videoConstraints"><a href="#videoConstraints" class="headerlink" title="videoConstraints: {}"></a><code>videoConstraints: {}</code></h3><p>Configure the kind of video stream you would like to record. Takes an object with properties from the <a href="https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackConstraints#Properties_of_video_tracks" target="_blank" rel="noopener">MediaTrackConstraints</a> interface.</p>
+<p>You can specify acceptable ranges for the resolution of the video stream using the <a href="https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackConstraints/aspectRatio" target="_blank" rel="noopener"><code>aspectRatio</code></a>, <a href="https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackConstraints/width" target="_blank" rel="noopener"><code>width</code></a>, and <a href="https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackConstraints/height" target="_blank" rel="noopener"><code>height</code></a> properties. Each property takes an object with <code>{ min, ideal, max }</code> properties. For example, use <code>width: { min: 720, max: 1920, ideal: 1920 }</code> to allow any width between 720 and 1920 pixels wide, while preferring the highest resolution.</p>
+<p>Devices sometimes have several cameras, front and back, for example. <a href="https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackConstraints/facingMode" target="_blank" rel="noopener"><code>facingMode</code></a> lets you specify which should be used:</p>
+<ul>
+<li><code>user</code>: The video source is facing toward the user; this includes, for example, the front-facing camera on a smartphone.</li>
+<li><code>environment</code>:  The video source is facing away from the user, thereby viewing their environment. This is the back camera on a smartphone.</li>
+<li><code>left</code>: The video source is facing toward the user but to their left, such as a camera aimed toward the user but over their left shoulder.</li>
+<li><code>right</code>: The video source is facing toward the user but to their right, such as a camera aimed toward the user but over their right shoulder.</li>
+</ul>
+<p>For a full list of available properties, check out MDN documentation for <a href="https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackConstraints#Properties_of_video_tracks" target="_blank" rel="noopener">MediaTrackConstraints</a>.</p>
+<h3 id="showVideoSourceDropdown-false"><a href="#showVideoSourceDropdown-false" class="headerlink" title="showVideoSourceDropdown: false"></a><code>showVideoSourceDropdown: false</code></h3><p>Configures whether to show a dropdown which enables to choose the video device to use. This option will have priority over <code>facingMode</code> if enabled. The default is <code>false</code>.</p>
+<h3 id="showRecordingLength-false"><a href="#showRecordingLength-false" class="headerlink" title="showRecordingLength: false"></a><code>showRecordingLength: false</code></h3><p>Configures whether to show the length of the recording while the recording is in progress. The default is <code>false</code>.</p>
+<h3 id="preferredVideoMimeType-null"><a href="#preferredVideoMimeType-null" class="headerlink" title="preferredVideoMimeType: null"></a><code>preferredVideoMimeType: null</code></h3><p>Set the preferred mime type for video recordings, for example <code>'video/webm'</code>. If the browser supports the given mime type, the video will be recorded in this format. If the browser does not support it, it will use the browser default.</p>
+<p>If no preferred video mime type is given, the Webcam plugin will prefer types listed in the <a href="/docs/uppy/#restrictions"><code>allowedFileTypes</code> restriction</a>, if any.</p>
+<h3 id="preferredImageMimeType-null"><a href="#preferredImageMimeType-null" class="headerlink" title="preferredImageMimeType: null"></a><code>preferredImageMimeType: null</code></h3><p>Set the preferred mime type for images, for example <code>'image/png'</code>. If the browser supports rendering the given mime type, the image will be stored in this format. Else <code>image/jpeg</code> is used by default.</p>
+<p>If no preferred image mime type is given, the Webcam plugin will prefer types listed in the <a href="/docs/uppy/#restrictions"><code>allowedFileTypes</code> restriction</a>, if any.</p>
+<h3 id="mobileNativeCamera"><a href="#mobileNativeCamera" class="headerlink" title="mobileNativeCamera"></a><code>mobileNativeCamera</code></h3><p>Replaces Uppy’s custom camera UI on mobile and tablet with the native device camera (<code>Function: boolean</code> || <code>boolean</code>, default: <code>isMobile()</code>).</p>
+<p>This will show the “Take Picture” and / or “Record Video” buttons, which ones show depends on the <a href="#modes"><code>modes</code></a> option.</p>
+<p>You can set a boolean to forcefully enable / disable this feature, or a function which returns a boolean. By default we use the <a href="https://github.com/juliangruber/is-mobile" target="_blank" rel="noopener"><code>is-mobile</code></a> package.</p>
+<h3 id="locale"><a href="#locale" class="headerlink" title="locale: {}"></a><code>locale: {}</code></h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="token keyword module">export</span> <span class="token keyword module">default</span> <span class="token punctuation">{</span>
+  <span class="token literal-property property">strings</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">pluginNameCamera</span><span class="token operator">:</span> <span class="token string">'Camera'</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">noCameraTitle</span><span class="token operator">:</span> <span class="token string">'Camera Not Available'</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">noCameraDescription</span><span class="token operator">:</span> <span class="token string">'In order to take pictures or record video, please connect a camera device'</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">recordingStoppedMaxSize</span><span class="token operator">:</span> <span class="token string">'Recording stopped because the file size is about to exceed the limit'</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">submitRecordedFile</span><span class="token operator">:</span> <span class="token string">'Submit recorded file'</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">discardRecordedFile</span><span class="token operator">:</span> <span class="token string">'Discard recorded file'</span><span class="token punctuation">,</span>
+    <span class="token comment">// Shown before a picture is taken when the `countdown` option is set.</span>
+    <span class="token literal-property property">smile</span><span class="token operator">:</span> <span class="token string">'Smile!'</span><span class="token punctuation">,</span>
+    <span class="token comment">// Used as the label for the button that takes a picture.</span>
+    <span class="token comment">// This is not visibly rendered but is picked up by screen readers.</span>
+    <span class="token literal-property property">takePicture</span><span class="token operator">:</span> <span class="token string">'Take a picture'</span><span class="token punctuation">,</span>
+    <span class="token comment">// Used as the label for the button that starts a video recording.</span>
+    <span class="token comment">// This is not visibly rendered but is picked up by screen readers.</span>
+    <span class="token literal-property property">startRecording</span><span class="token operator">:</span> <span class="token string">'Begin video recording'</span><span class="token punctuation">,</span>
+    <span class="token comment">// Used as the label for the button that stops a video recording.</span>
+    <span class="token comment">// This is not visibly rendered but is picked up by screen readers.</span>
+    <span class="token literal-property property">stopRecording</span><span class="token operator">:</span> <span class="token string">'Stop video recording'</span><span class="token punctuation">,</span>
+    <span class="token comment">// Used as the label for the recording length counter. See the showRecordingLength option.</span>
+    <span class="token comment">// This is not visibly rendered but is picked up by screen readers.</span>
+    <span class="token literal-property property">recordingLength</span><span class="token operator">:</span> <span class="token string">'Recording length %{recording_length}'</span><span class="token punctuation">,</span>
+    <span class="token comment">// Title on the “allow access” screen</span>
+    <span class="token literal-property property">allowAccessTitle</span><span class="token operator">:</span> <span class="token string">'Please allow access to your camera'</span><span class="token punctuation">,</span>
+    <span class="token comment">// Description on the “allow access” screen</span>
+    <span class="token literal-property property">allowAccessDescription</span><span class="token operator">:</span> <span class="token string">'In order to take pictures or record video with your camera, please allow camera access for this site.'</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span></pre></td></tr></table></figure>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script></body></html>
+    
+    
+
+    
+    <div class="footer">Caught a mistake or want to contribute to the documentation?
+       <a href="https://github.com/transloadit/uppy/blob/main/website/src/docs/webcam.md" rel="noreferrer noopener" target="_blank">Edit/fork this page directly on Github</a>!
+    </div>
+</div>
+
+        
+      </main>
+
+      <script defer data-domain="transloadit.github.io" src="https://analytics.transloadit.com/js/plausible.js"></script>
+
+
+      
+        <script src="/uppy/js/smooth-scroll.min.js"></script>
+        <!-- Place this tag in your head or just before your close body tag. -->
+        <script async defer src="https://buttons.github.io/buttons.js"></script>
+      
+      <script src="/uppy/js/common.js"></script>
+
+      <!-- Twitter follow button script -->
+      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+    </div>
+  </body>
+</html>

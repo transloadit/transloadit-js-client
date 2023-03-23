@@ -1,0 +1,960 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Uppy</title>
+    <meta charset="utf-8">
+    <meta name="title" content="Uppy">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@uppy_io">
+    <meta name="twitter:creator" content="@uppy_io">
+    <meta property="og:url" content="https://transloadit.github.io/uppy/blog/index.html">
+    <meta property="og:title" content="Uppy">
+    <meta name="twitter:title" content="Uppy">
+    <meta name="twitter:description" content="">
+    <meta property="og:image" content="http://transloadit.github.io/uppy/images/uppy-social-pink.png">
+    <meta name="twitter:image" content="http://transloadit.github.io/uppy/images/uppy-social-pink.png">
+
+    <meta name="google-site-verification" content="JxARoHXoCI8bD07pLV_u3z6xpuWNcSIZIcHEytyCkUc" />
+
+    <link rel="icon" href="/uppy/images/logos/uppy-dog-head-arrow.png" type="image/x-icon">
+    <link rel="alternate" type="application/rss+xml" title="Uppy" href="/atom.xml">
+
+    <script>
+      window.PAGE_TYPE = ""
+    </script>
+    
+<link rel="stylesheet" href="/uppy/css/main.css?version=2">
+
+    <!-- ^ poor man's solution to css cache busting. bump the version when there's something new we really want users to see -->
+  <meta name="generator" content="Hexo 4.2.1"></head>
+  <body class="page-inner ">
+    <div class="page">
+      <div class="TransloaditBar js-TransloaditBar">
+        <div class="TransloaditBar-about">
+          <!-- <a class="TransloaditBar-logo" href="https://transloadit.com/" target="_blank" rel="noopener">
+            <img class="TransloaditBar-logoImg" src="/uppy/images/transloadit-white-glyph.svg" width="20" height="20" alt="Transloadit">
+          </a> -->
+          <!-- <span>Uppy is an open source project by <a class="TransloaditBar-link" href="https://transloadit.com/" target="_blank">Transloadit</a></span> -->
+          This website is no longer maintained, please visit <a href="//uppy.io" target="_blank" rel="noopener" style="color:inherit">uppy.io</a> to get up-to-date info about Uppy.
+        </div>
+      </div>
+
+      <header id="header" class="MainHeader js-MainHeader">
+        <button class="MainHeader-menuBtn js-MenuBtn"></button>
+
+        <span id="logo" class="MainLogo">
+          <a class="MainLogo-link" href="/uppy/">Uppy</a>
+          <!-- Was used for 1.0, we can re-use for 2.0 or major announcements -->
+          <!-- <a class="MainLogo-announcement" href="/blog/2019/04/1.0/">
+            1.0
+            <span class="MainLogo-emoji">
+              <img src="/uppy/images/party-popper.png" srcset="/uppy/images/party-popper@2x.png 2x" alt="🎉">
+            </span>
+          </a> -->
+        </span>
+
+        <nav>
+          <ul id="nav" class="MainMenu">
+            <!-- @todo uncomment search input when we get our own swifttype -->
+<!-- <li>
+  <form id="search-form" class="MainMenu-search">
+    <input type="text" id="search-query" class="MainMenu-searchQuery st-default-search-input">
+  </form>
+</li> -->
+<!--li><a href="/uppy/guide/" class="nav-link">Guide</a></li-->
+<li><a href="/uppy/docs/" class="nav-link">Docs</a></li>
+<li><a href="/uppy/examples/dashboard/" class="nav-link">Examples</a></li>
+<!--li><a href="/uppy/stats/" class="nav-link">Stats</a></li-->
+<li><a href="/uppy/blog/" class="nav-link current">Blog</a></li>
+<li><a href="/uppy/support/" class="nav-link">Support</a></li>
+<li><a href="https://github.com/transloadit/uppy" target="_blank" rel="noopener" class="nav-link">GitHub</a></li>
+
+          </ul>
+        </nav>
+
+        <div class="MainHeader-tagline">
+          The file uploader that <span class="MainHeader-taglinePart js-MainHeader-taglinePart is-visible">loves to play fetch</span>
+        </div>
+
+        <ul class="MainHeader-taglineList js-MainHeader-taglineList">
+          
+          <li>won’t chew on your shoes</li>
+          
+          <li>is fully housebroken</li>
+          
+          <li>just wants to play with you</li>
+          
+          <li>doesn’t hump your leg</li>
+          
+          <li>also accepts cat pictures</li>
+          
+          <li>loves you unconditionally</li>
+          
+          <li>you don’t have to keep on a leash</li>
+          
+          <li>won’t pee on your rug</li>
+          
+          <li>loves to play fetch</li>
+          
+          <li>doesn’t bite (hard)</li>
+          
+          <li>won’t bark at the mailman</li>
+          
+          <li>is great with the kids</li>
+          
+          <li>can digest anything, even chocolate cake</li>
+          
+          <li>is always happy to see you</li>
+          
+          <li>isn’t afraid of fireworks</li>
+          
+          <li>is allowed everywhere</li>
+          
+        </ul>
+      </header>
+
+      <main class="MainContent js-MainContent" id="main">
+        
+          <div class="Sidebar js-Sidebar is-blog">
+  <ul class="main-menu">
+      <!-- @todo uncomment search input when we get our own swifttype -->
+<!-- <li>
+  <form id="search-form" class="MainMenu-search">
+    <input type="text" id="search-query" class="MainMenu-searchQuery st-default-search-input">
+  </form>
+</li> -->
+<!--li><a href="/uppy/guide/" class="nav-link">Guide</a></li-->
+<li><a href="/uppy/docs/" class="nav-link">Docs</a></li>
+<li><a href="/uppy/examples/dashboard/" class="nav-link">Examples</a></li>
+<!--li><a href="/uppy/stats/" class="nav-link">Stats</a></li-->
+<li><a href="/uppy/blog/" class="nav-link current">Blog</a></li>
+<li><a href="/uppy/support/" class="nav-link">Support</a></li>
+<li><a href="https://github.com/transloadit/uppy" target="_blank" rel="noopener" class="nav-link">GitHub</a></li>
+
+  </ul>
+  <div class="list">
+      <h2>
+          Recent Posts
+          <a href="/atom.xml" rel="noreferrer noopener" target="_blank" style="vertical-align: middle; margin-left: 5px">
+              <img src="/uppy/images/feed.png" style="width:15px;height:15px">
+          </a>
+      </h2>
+      <ul>
+        
+          <li>
+              <a href="/blog/2022/12/3.3/" class="sidebar-link">🎄 Uppy 3.1-3.3: Improved AWS S3 Multipart, Single File Mode</a>
+          </li>
+      
+          <li>
+              <a href="/blog/2022/09/3.0/" class="sidebar-link">Uppy 3.0: Future-proof, conveniently easy, stable as ever</a>
+          </li>
+      
+          <li>
+              <a href="/blog/2022/03/2.4-2.7/" class="sidebar-link">Uppy 2.4-2.7: Image Compressor, Transloadit Rate Limiting, ESM</a>
+          </li>
+      
+          <li>
+              <a href="/blog/2021/12/2.1-2.3/" class="sidebar-link">🎄 Uppy 2.1-2.3: Audio plugin, fast and efficient streaming for Companion, production-ready Unsplash, and more</a>
+          </li>
+      
+          <li>
+              <a href="/blog/2021/08/2.0/" class="sidebar-link">Uppy 2.0.0: smaller, faster, modular plugins, Preact X, stricter types, and much more</a>
+          </li>
+      
+          <li>
+              <a href="/blog/2021/07/1.30/" class="sidebar-link">Uppy 1.30: Angular integration, granular image rotation, Google Drive shortcuts</a>
+          </li>
+      
+          <li>
+              <a href="/blog/2021/05/1.29/" class="sidebar-link">Uppy 1.29: Golden Retriever, disableLocalFiles, Webcam previews, uppy.logout</a>
+          </li>
+      
+          <li>
+              <a href="/blog/2021/04/1.27/" class="sidebar-link">Uppy 1.27: Drop Target plugin, Vue 3 support, Dashboard dynamic meta fields, “Shared with me” in Google Drive</a>
+          </li>
+      
+          <li>
+              <a href="/blog/2021/02/1.26/" class="sidebar-link">Uppy 1.26: Dashboard “disabled”, per-file headers</a>
+          </li>
+      
+          <li>
+              <a href="/blog/2021/01/1.25/" class="sidebar-link">Uppy 1.25: right-to-left scripts, Ukrainian translation, Companion improvements</a>
+          </li>
+      
+          <li>
+              <a href="/blog/2020/12/1.24/" class="sidebar-link">Uppy 1.24: 🎅 Happy Holidays — Svelte, React hook, Auto Open Image Editor</a>
+          </li>
+      
+      </ul>
+      <ul class="Social">
+  <li><a href="https://twitter.com/uppy_io" target="_blank" rel="noopener" class="twitter-follow-button" data-show-count="false" data-dnt="true">Follow @uppy_io</a></li>
+  <li><iframe src="https://ghbtns.com/github-btn.html?user=transloadit&repo=uppy&type=watch&count=true"
+allowtransparency="true" frameborder="0" scrolling="0" width="100" height="20"></iframe></li>
+  <!-- to regenerate you can use this link: https://img.shields.io/badge/community-forum-d8006a.svg -->
+  <li><a href="https://community.transloadit.com/c/uppy" target="_blank" rel="noopener"><img src="/uppy/images/community-forum-d8006a.svg" /> </a></li>
+  <li class="BuildBadge">
+   <span class="wrapper">
+     <a href="https://github.com/transloadit/uppy/actions" target="_blank" rel="noopener"><img src="https://github.com/transloadit/uppy/workflows/End-to-end%20tests/badge.svg" alt="Build Status"></a>
+   </span>
+  </li>
+</ul>
+
+  </div>
+</div>
+
+<div class="Content js-Content with-sidebar">
+  <h1>The Uppy Blog</h1>
+  
+    <div class="post">
+      <h2><a href="/blog/2022/12/3.3/">🎄 Uppy 3.1-3.3: Improved AWS S3 Multipart, Single File Mode</a></h2>
+      <div class="post-date">Friday Dec 23, 2022</div>
+      <div><html><head></head><body><p><img src="/uppy/images/blog/3.1-3.3/dashboard-christmas.jpg" alt=""></p>
+<p>🎅🐶 Ho-ho-ho, we are about to wrap up another year for Uppy! Three <code>minor</code> releases ago we’ve introduced Uppy 3.0. It’s time to give you an update on what’s been cooking in the Uppy-Transloadit headquarters (besides cranberry sauce) for the past couple of months.</p>
+<p>In short: AWS S3 Multipart stability improvements, Single File Mode for the Dashboard, more tests and bugfixes, new locales.</p></body></html></div>
+      <div class="continue-reading"><a href="/blog/2022/12/3.3/">Continue reading ›</a></div>
+    </div>
+  
+    <div class="post">
+      <h2><a href="/blog/2022/09/3.0/">Uppy 3.0: Future-proof, conveniently easy, stable as ever</a></h2>
+      <div class="post-date">Tuesday Sep 13, 2022</div>
+      <div><html><head></head><body><p><img src="/uppy/images/blog/3.0/uppy-3-0.jpg" alt="Screenshot of Uppy 3.0.0 UI"></p>
+<blockquote>
+<p>For those new to Uppy, coming from Reddit, Hacker News and Product Hunt today: Uppy is a popular open source file uploader for the browser. Pick files from local disk or camera, remote sources like Instagram, Unsplash, Dropbox etc, record audio and screencasts. Crop and tweak images with the image editor plugin. Supports resumable uploads to a tus.io server, AWS S3 (and many others with similar API like DigitalOcean), multipart. <a href="/uppy/examples/dashboard">Try it</a>!</p>
+</blockquote>
+<p>Uppy is turning three! When you’re counting in <a href="https://www.akc.org/expert-advice/health/how-to-calculate-dog-years-to-human-years/" target="_blank" rel="noopener">dog years</a> – which we most certainly are – that’s 29 already. An age like that signifies proper adulthood. For Uppy, this means it’s ready to stay loyal, but without the silly mistakes (read: bugs). Uppy also underwent (ESM) surgery to keep it strolling by your side in the current ecosystem, and received other behavioral improvements 🐶</p></body></html></div>
+      <div class="continue-reading"><a href="/blog/2022/09/3.0/">Continue reading ›</a></div>
+    </div>
+  
+    <div class="post">
+      <h2><a href="/blog/2022/03/2.4-2.7/">Uppy 2.4-2.7: Image Compressor, Transloadit Rate Limiting, ESM</a></h2>
+      <div class="post-date">Friday Mar 11, 2022</div>
+      <div><html><head></head><body><p>We’re always looking for opportunities to teach Uppy cool new tricks, and the past few months have been no exception. Since our <a href="/uppy/blog/2021/12/2.1-2.3/">most recent post</a> in December, Uppy has continued to receive a steady stream of updates. This post covers all the improvements made in Uppy versions 2.4 through 2.7. Changes and additions include: image compression, improved Transloadit rate limiting and a lighter Dashboard plugin. We’ve also moved our end-to-end tests to Cypress, and are slowly converting plugins to ES modules (ESM).</p>
+<img class="border" alt="Uppy Compressor plugin showing compressed images notification" src="/uppy/images/blog/2.4-2.7/compressor.jpg"></body></html></div>
+      <div class="continue-reading"><a href="/blog/2022/03/2.4-2.7/">Continue reading ›</a></div>
+    </div>
+  
+    <div class="post">
+      <h2><a href="/blog/2021/12/2.1-2.3/">🎄 Uppy 2.1-2.3: Audio plugin, fast and efficient streaming for Companion, production-ready Unsplash, and more</a></h2>
+      <div class="post-date">Wednesday Dec 15, 2021</div>
+      <div><!--retext-simplify ignore very--><html><head></head><body><p>Last Christmas, we gave you <a href="/uppy/blog/2020/12/1.24/">Uppy 1.24</a>, but this very next year, we’ll take it away (since it’s outdated by now) and give you a brand-new Uppy 2.3 🎁!</p>
+<p>After the <a href="/uppy/blog/2021/08/2.0/">release</a> of our latest major version, 2.0.0, we’ve been busy with many things. First of all is the long-awaited Audio plugin to record and upload live audio directly. We then worked on adding a fast and efficient streaming interface to Companion and made Unsplash production ready. Housekeeping was also part of the job: we made Status Bar improvements, moved from npm to Yarn 3, did some refactoring, and updated dependencies.</p>
+<p>Last but not least, we got the issue count down from around 110 since 2.0.0 to around 45 now.</p></body></html></div>
+      <div class="continue-reading"><a href="/blog/2021/12/2.1-2.3/">Continue reading ›</a></div>
+    </div>
+  
+    <div class="post">
+      <h2><a href="/blog/2021/08/2.0/">Uppy 2.0.0: smaller, faster, modular plugins, Preact X, stricter types, and much more</a></h2>
+      <div class="post-date">Monday Aug 30, 2021</div>
+      <div><html><head></head><body><p>Today, our tails are positively wagging with excitement about the release of Uppy 2.0! This latest version is on average 25% smaller and up to a thousand times faster, thanks to dropping support for IE11 and a lot of refactoring work. We’ve upgraded many dependencies, most notably Preact 8 to Preact X, greatly improved TypeScript support and screen reader accessibility, paid technical debt, and added support for multiple messages in the Informer plugin.</p>
+<p>Chow down on all the juicy bits and pieces inside! And make sure to <a href="/uppy/examples/dashboard/">try Uppy live demo</a>.</p>
+<p><img src="/uppy/images/blog/2.0/uppy-2-0-cover.jpg" alt="Uppy 2.0 cover banner"></p></body></html></div>
+      <div class="continue-reading"><a href="/blog/2021/08/2.0/">Continue reading ›</a></div>
+    </div>
+  
+    <div class="post">
+      <h2><a href="/blog/2021/07/1.30/">Uppy 1.30: Angular integration, granular image rotation, Google Drive shortcuts</a></h2>
+      <div class="post-date">Friday Jul 2, 2021</div>
+      <div><html><head></head><body><p>Uppy 1.30 introduces the long-awaited Angular integration (beta), granular image rotation and Google Drive shortcuts.</p></body></html></div>
+      <div class="continue-reading"><a href="/blog/2021/07/1.30/">Continue reading ›</a></div>
+    </div>
+  
+    <div class="post">
+      <h2><a href="/blog/2021/05/1.29/">Uppy 1.29: Golden Retriever, disableLocalFiles, Webcam previews, uppy.logout</a></h2>
+      <div class="post-date">Monday May 31, 2021</div>
+      <div><html><head></head><body><p>In Uppy 1.29, we’ve revamped the Golden Retriever plugin with support for partially recovered “ghost” files, added a <code>disableLocalFiles</code> option to the Dashboard, enabled the ability to preview webcam videos before submitting and provided an <code>uppy.logout()</code> method, along with an assortment of Companion improvements.</p>
+<video alt="Demo of Uppy Golden Retriever file restore plugin in action" muted="" autoplay="" loop="">
+  <source src="/uppy/images/blog/1.29/ghosts-demo.mp4" type="video/mp4">
+  Your browser does not support the video tag: /uppy/uppy/images/blog/1.29/ghosts-demo.mp4
+</video></body></html></div>
+      <div class="continue-reading"><a href="/blog/2021/05/1.29/">Continue reading ›</a></div>
+    </div>
+  
+    <div class="post">
+      <h2><a href="/blog/2021/04/1.27/">Uppy 1.27: Drop Target plugin, Vue 3 support, Dashboard dynamic meta fields, “Shared with me” in Google Drive</a></h2>
+      <div class="post-date">Monday Apr 5, 2021</div>
+      <div><html><head></head><body><p>In Uppy 1.27 we’ve added a new <code>@uppy/drop-target</code> plugin, enabled support for Vue 3, introduced dynamic <code>metaFields</code> option for Dashboard, Google Drive now lists documents that have been shared with you.</p>
+<video alt="Demo video showing Uppy with Drop Target plugin which allows accepting drag and drop anywhere on a page" poster="/uppy/images/blog/1.26/dashboard-disabled.jpg" muted="" autoplay="" loop="">
+  <source src="/uppy/images/blog/1.27/drop-target.mp4" type="video/mp4">
+  Your browser does not support the video tag: /uppy/uppy/images/blog/1.27/drop-target.mp4
+</video></body></html></div>
+      <div class="continue-reading"><a href="/blog/2021/04/1.27/">Continue reading ›</a></div>
+    </div>
+  
+    <div class="post">
+      <h2><a href="/blog/2021/02/1.26/">Uppy 1.26: Dashboard “disabled”, per-file headers</a></h2>
+      <div class="post-date">Friday Feb 26, 2021</div>
+      <div><html><head></head><body><p>Uppy 1.26 brings a new <code>disabled</code> option for the Dashboad, ability to set headers per file with XHR Upload, and fixes for the Transloadit plugin.</p>
+<p><img src="/uppy/images/blog/1.26/dashboard-disabled.jpg" alt="Uppy Dashboard UI with disabled state"></p></body></html></div>
+      <div class="continue-reading"><a href="/blog/2021/02/1.26/">Continue reading ›</a></div>
+    </div>
+  
+    <div class="post">
+      <h2><a href="/blog/2021/01/1.25/">Uppy 1.25: right-to-left scripts, Ukrainian translation, Companion improvements</a></h2>
+      <div class="post-date">Friday Jan 29, 2021</div>
+      <div><html><head></head><body><p>Uppy 1.25 adds support for right-to-left scripts, Ukrainian translation and various improvements for Companion.</p>
+<p>Just see how cool this looks, and read further for a video demo and some behind the scenes implementation sorcery:</p>
+<p><img src="/uppy/images/blog/1.25/right-to-left.jpg" alt="Uppy Dashboard UI flipped for right-to-left Arabic language"></p></body></html></div>
+      <div class="continue-reading"><a href="/blog/2021/01/1.25/">Continue reading ›</a></div>
+    </div>
+  
+    <div class="post">
+      <h2><a href="/blog/2020/12/1.24/">Uppy 1.24: 🎅 Happy Holidays — Svelte, React hook, Auto Open Image Editor</a></h2>
+      <div class="post-date">Thursday Dec 24, 2020</div>
+      <div><html><head></head><body><p>Uppy 1.24 adds an experimental Svelte integration, additional React components, <code>autoOpenFileEditor</code> option for Dashboard, and a Norwegian (bokmål) translation!</p>
+<p><img src="/uppy/images/blog/1.24/uppy-svelte.png" alt=""></p></body></html></div>
+      <div class="continue-reading"><a href="/blog/2020/12/1.24/">Continue reading ›</a></div>
+    </div>
+  
+    <div class="post">
+      <h2><a href="/blog/2020/11/1.23/">Uppy 1.23: Vue.js, Box, Done button and cloud file restrictions</a></h2>
+      <div class="post-date">Monday Nov 30, 2020</div>
+      <div><html><head></head><body><p>Uppy 1.23 brings Vue.js components 💥, Box file service support, a “Done” button for the Status Bar + Dashboard, and a better cloud file restrictions UI.</p>
+<p><img src="/uppy/images/blog/1.23/vue-code-cover.png" alt="Vue.js Uppy code sample"></p></body></html></div>
+      <div class="continue-reading"><a href="/blog/2020/11/1.23/">Continue reading ›</a></div>
+    </div>
+  
+    <div class="post">
+      <h2><a href="/blog/2020/10/1.22/">🎃 Uppy 1.22: Webcam camera source, Unsplash and maxTotalFileSize</a></h2>
+      <div class="post-date">Friday Oct 30, 2020</div>
+      <div><html><head></head><body><p>Uppy 1.22 (the spooky Halloween edition) adds a new Unsplash provider, Webcam camera selector dropdown and a <code>maxTotalFileSize</code> restriction.</p></body></html></div>
+      <div class="continue-reading"><a href="/blog/2020/10/1.22/">Continue reading ›</a></div>
+    </div>
+  
+    <div class="post">
+      <h2><a href="/blog/2020/09/companion-2.0/">Companion 2.0 is here</a></h2>
+      <div class="post-date">Wednesday Sep 9, 2020</div>
+      <div><html><head></head><body><p>We are happy to announce version 2.0 of Companion! 🎉 After maintaining and improving the 1.x series for over a year, we’re now releasing a major version bump on the Companion package. The drive on this release is mainly towards fixing some terminology inconsistencies and aligning with Node.js LTS to ease the maintenance burden.</p></body></html></div>
+      <div class="continue-reading"><a href="/blog/2020/09/companion-2.0/">Continue reading ›</a></div>
+    </div>
+  
+    <div class="post">
+      <h2><a href="/blog/2020/07/1.18-image-editor/">Image Editor 🌈</a></h2>
+      <div class="post-date">Tuesday Jul 21, 2020</div>
+      <div><html><head></head><body><p>One of the most-requested Uppy features, the <a href="/docs/image-editor/">Image Editor</a>, has landed (as beta) in 1.18.</p>
+<video alt="Demo video showing Uppy with Image Editor plugin — cropping, rotating and resizing images" poster="/uppy/uppy/images/blog/1.18-image-editor/image-editor-dashboard.jpg" muted="" autoplay="" loop="">
+  <source src="/uppy/images/blog/1.18-image-editor/image-editor-demo.mp4" type="video/mp4">
+  Your browser does not support the video tag: /uppy/uppy/images/blog/1.18-image-editor/image-editor-demo.mp4
+</video></body></html></div>
+      <div class="continue-reading"><a href="/blog/2020/07/1.18-image-editor/">Continue reading ›</a></div>
+    </div>
+  
+    <div class="post">
+      <h2><a href="/blog/2020/04/1.13/">Uppy 1.11 — 1.13: Dark Mode, custom meta fields and Google Docs in Companion</a></h2>
+      <div class="post-date">Monday Apr 20, 2020</div>
+      <div><html><head></head><body><p>Releases 1.11 through 1.13 introduced a bunch of major new features and bugfixes. Let’s go through the main ones!</p>
+<h2 id="Dark-mode"><a href="#Dark-mode" class="headerlink" title="Dark mode"></a>Dark mode</h2><p>A little while ago we’ve <a href="https://mobile.twitter.com/uppy_io/status/1221070643543838721" target="_blank" rel="noopener">announced work in progress</a> on Dark Mode for the Dashboard. We’re happy to tell you it’s live now! You can try it out on <a href="/examples/dashboard/">the Dashboard example page</a>.</p>
+<video alt="Demo video showing Uppy Dark Mode" muted="" autoplay="" loop="">
+  <source src="/uppy/images/blog/1.13/dark-mode-auto.webm" type="video/webm">
+  <source src="/uppy/images/blog/1.13/dark-mode-auto.mp4" type="video/mp4">
+</video>
+
+<p>There are three options available:</p>
+<ul>
+<li><code>light</code> — the default</li>
+<li><code>dark</code></li>
+<li><code>auto</code> — will respect the user’s system settings and switch automatically</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre>uppy<span class="token punctuation">.</span><span class="token method function property-access">use</span><span class="token punctuation">(</span><span class="token maybe-class-name">Dashboard</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  <span class="token literal-property property">theme</span><span class="token operator">:</span> <span class="token string">'dark'</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span></pre></td></tr></table></figure>
+<p><img src="/uppy/images/blog/1.13/uppy-dashboard-dark-mar-2020.png" alt=""></p></body></html></div>
+      <div class="continue-reading"><a href="/blog/2020/04/1.13/">Continue reading ›</a></div>
+    </div>
+  
+    <div class="post">
+      <h2><a href="/blog/2020/04/1.10/">Uppy 1.10.1: Facebook and OneDrive</a></h2>
+      <div class="post-date">Friday Apr 3, 2020</div>
+      <div><html><head></head><body><p>Uppy <code>1.10.1</code> adds long-awaited support for <a href="/docs/facebook/">Facebook</a> and <a href="/docs/onedrive/">OneDrive</a> 🎉</p>
+<p><img src="/uppy/images/blog/1.10/uppy-facebook-onedrive.png" alt="Screenshot showing Uppy file uploader with Facebook and OneDrive options"></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="token keyword">const</span> uppy <span class="token operator">=</span> <span class="token function"><span class="token maybe-class-name">Uppy</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+uppy<span class="token punctuation">.</span><span class="token method function property-access">use</span><span class="token punctuation">(</span><span class="token maybe-class-name">Dashboard</span><span class="token punctuation">)</span>
+uppy<span class="token punctuation">.</span><span class="token method function property-access">use</span><span class="token punctuation">(</span><span class="token maybe-class-name">Facebook</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token literal-property property">target</span><span class="token operator">:</span> <span class="token maybe-class-name">Dashboard</span><span class="token punctuation">,</span> <span class="token literal-property property">companionUrl</span><span class="token operator">:</span> <span class="token string">'https://companion.uppy.io/'</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+uppy<span class="token punctuation">.</span><span class="token method function property-access">use</span><span class="token punctuation">(</span><span class="token maybe-class-name">OneDrive</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token literal-property property">target</span><span class="token operator">:</span> <span class="token maybe-class-name">Dashboard</span><span class="token punctuation">,</span> <span class="token literal-property property">companionUrl</span><span class="token operator">:</span> <span class="token string">'https://companion.uppy.io/'</span> <span class="token punctuation">}</span><span class="token punctuation">)</span></pre></td></tr></table></figure>
+<p>Try the live demos on <a href="https://transloadit.com" target="_blank" rel="noopener">Transloadit.com</a>: import your files from Facebook or OneDrive, and then:</p>
+<ul>
+<li><a href="https://transloadit.com/demos/image-manipulation/text-watermarking/" target="_blank" rel="noopener">Apply a watermark to an image</a></li>
+<li><a href="https://transloadit.com/demos/image-manipulation/convert-to-webp/" target="_blank" rel="noopener">Convert an image to WebP</a></li>
+<li><a href="https://transloadit.com/demos/file-exporting/store-encoding-and-thumbnails-on-s3/" target="_blank" rel="noopener">Encode a video, extract 8 thumbnails and store everything in an S3 bucket</a></li>
+<li><a href="https://transloadit.com/demos/video-encoding/encode-for-apple-iphone-11-pro-max/" target="_blank" rel="noopener">Encode video for iPhone</a></li>
+<li><a href="https://transloadit.com/demos/file-compressing/create-one-zip-file-containing-all-uploaded-files/" target="_blank" rel="noopener">Create a single Zip file containing all uploaded files</a></li>
+</ul>
+<p>(Uppy demos are below the description and steps, under “Live Demo. See for yourself” ;-)</p>
+<p>You can also play with an interactive demo, enabling different Uppy options and providers on the fly: &lt;/uppy/examples/dashboard&gt;</p>
+<p>OneDrive:</p>
+<p><img src="/uppy/images/blog/1.10/uppy-onedrive.png" alt="Screenshot showing Uppy file uploader with OneDrive file list"></p>
+<p>Facebook:</p>
+<p><img src="/uppy/images/blog/1.10/uppy-facebook.png" alt="Screenshot showing Uppy file uploader with Facebook file list"></p></body></html></div>
+      <div class="continue-reading"><a href="/blog/2020/04/1.10/">Continue reading ›</a></div>
+    </div>
+  
+    <div class="post">
+      <h2><a href="/blog/2020/03/1.9/">Uppy 1.8 and 1.9: security, error handling and better types</a></h2>
+      <div class="post-date">Monday Mar 9, 2020</div>
+      <div><html><head></head><body><p>Uppy 1.8, 1.9 and a few important security patches are out! Here are the highlights:</p></body></html></div>
+      <div class="continue-reading"><a href="/blog/2020/03/1.9/">Continue reading ›</a></div>
+    </div>
+  
+    <div class="post">
+      <h2><a href="/blog/2020/01/1.7/">Uppy 1.7: A Small One</a></h2>
+      <div class="post-date">Friday Jan 10, 2020</div>
+      <div><html><head></head><body><p>Uppy 1.7 was released last December! This release added Hebrew translations, a recording length timer for the <code>@uppy/webcam</code> plugin, and a collection of improvements to Companion.</p></body></html></div>
+      <div class="continue-reading"><a href="/blog/2020/01/1.7/">Continue reading ›</a></div>
+    </div>
+  
+    <div class="post">
+      <h2><a href="/blog/2019/11/1.6/">Uppy 1.6: setOptions(), Icelandic and Thai</a></h2>
+      <div class="post-date">Wednesday Nov 13, 2019</div>
+      <div><html><head></head><body><p>This release adds a long-awaited <code>uppy.setOptions()</code> API, allowing you to update options of Uppy and its plugins on the fly. It also includes locales for the Icelandic and Thai languages!</p></body></html></div>
+      <div class="continue-reading"><a href="/blog/2019/11/1.6/">Continue reading ›</a></div>
+    </div>
+  
+    <div class="post">
+      <h2><a href="/blog/2019/10/1.5/">Uppy 1.5: Facebook and OneDrive (beta) support, upload cancellation</a></h2>
+      <div class="post-date">Friday Oct 11, 2019</div>
+      <div><html><head></head><body><p>In the past two months, we have halved our open issue count and worked on a much more robust approach to upload cancellation. Members of the community also contributed a bunch of new localizations: Czech, Danish, Greek, Indonesian, and Swedish!</p>
+<p>We are also releasing beta versions of new remote providers for Facebook and OneDrive. Please try them out!</p></body></html></div>
+      <div class="continue-reading"><a href="/blog/2019/10/1.5/">Continue reading ›</a></div>
+    </div>
+  
+    <div class="post">
+      <h2><a href="/blog/2019/08/1.3/">Uppy 1.3: Accessibility and performance, new languages</a></h2>
+      <div class="post-date">Monday Aug 5, 2019</div>
+      <div><html><head></head><body><p>Hi there! We are back after a period of silence following the <a href="/uppy/blog/2019/04/1.0/">Uppy 1.0 release</a> in the end of April. It was pretty well received by the commnunity and press: we hit the front pages of Hacker News, <a href="https://www.producthunt.com/posts/uppy-1-0/" target="_blank" rel="noopener">Product Hunt</a> and <a href="https://www.reddit.com/r/javascript/comments/bhkx5k/uppy_10_your_best_friend_in_file_uploading/" target="_blank" rel="noopener">Reddit</a>. We then started trending and gained over 20,000 stargazers on GitHub, got mentioned by <a href="https://mobile.twitter.com/smashingmag/status/1097870169043546112" target="_blank" rel="noopener">Smashing Magazine</a>, <a href="https://twitter.com/JavaScriptDaily/status/1122935583603556352" target="_blank" rel="noopener">JavaScript Daily</a> and <a href="https://javascriptweekly.com/issues/434" target="_blank" rel="noopener">JavaScript Weekly</a>. It’s been a crazy ride! We’d like to thank all our contributors and users for their continued support.</p>
+<p>It was not all self reflection and celebrations, though, in Uppy Remote Headquaters™ following the <code>1.0</code> launch. After some vacation time, we quickly got back to work, releasing Uppy <code>1.1</code>, <code>1.2</code> and <code>1.3</code>. These updates address a lot of issues raised by the community and the team.</p>
+<p>This post highlights the most important and exciting changes from those releases: accessibility and performance, thumbnails rotatation, new logger, progress and uploader improvements, Robodog and Companion updates, new languages and more.</p></body></html></div>
+      <div class="continue-reading"><a href="/blog/2019/08/1.3/">Continue reading ›</a></div>
+    </div>
+  
+    <div class="post">
+      <h2><a href="/blog/2019/04/1.0/">Uppy 1.0: Your best friend in file uploading</a></h2>
+      <div class="post-date">Thursday Apr 25, 2019</div>
+      <div><html><head></head><body><p>Today, after three years of development, we are launching version 1.0 of Uppy, our file uploader for web browsers.</p>
+<img src="/uppy/images/blog/1.0/uppy-dashboard-1.png">
+
+<h2 id="A-little-history"><a href="#A-little-history" class="headerlink" title="A little history"></a>A little history</h2><p>Three years ago, Transloadit was ready to replace their jQuery-based file uploading &amp; processing plugin for browsers with something more modern. They posted a <a href="https://transloadit.com/jobs/2015-10-front-end-developer/" target="_blank" rel="noopener">job ad</a> in search for people to build it:</p>
+<blockquote>
+<p>In general, we’re looking for polished, well tested, carefully crafted products that are delightful to work with and use. So for this job it’s not only important that you know JavaScript, but also how to make things look stunning and work well for end users.</p>
+<p>At your disposal are time, focus, and the core team ready to provide feedback, guidance, and anything else you need.</p>
+</blockquote>
+<p>Shortly after, I saw a retweet of this vacancy come across my time line and I decided to apply. That, in a nutshell, is how I got involved with Uppy in the earliest stages of the project.</p>
+<p>Initially, the idea was to build a proprietary uploader that would work exclusively with Transloadit’s commercial service, but we quickly turned around on it. We felt our version of a file uploader could have a real impact if we made it more widely available. So, just like Transloadit had done before with <a href="https://tus.io/" target="_blank" rel="noopener">Tus</a>, we decided to make Uppy an open source solution — free for anyone to use and hack on. Transloadit support became an optional plugin.</p>
+<p>Three years, <a href="https://github.com/transloadit/uppy/stargazers" target="_blank" rel="noopener">16.000 stargazers</a>, getting featured on <a href="https://www.smashingmagazine.com/the-smashing-newsletter/smashing-newsletter-issue-197/" target="_blank" rel="noopener">Smashing Magazine</a>, <a href="https://twitter.com/JavaScriptDaily/status/950348390268919809" target="_blank" rel="noopener">JavaScript Daily</a>, <a href="https://www.producthunt.com/posts/uppy-io" target="_blank" rel="noopener">Product Hunt</a>, and <a href="https://survivejs.com/blog/uppy-interview/" target="_blank" rel="noopener">SurviveJS</a>, and a thriving community later — and we could not be happier to finally launch Uppy 1.0!</p></body></html></div>
+      <div class="continue-reading"><a href="/blog/2019/04/1.0/">Continue reading ›</a></div>
+    </div>
+  
+    <div class="post">
+      <h2><a href="/blog/2019/04/liftoff-30/">30 Days to Liftoff: Day 30</a></h2>
+      <div class="post-date">Wednesday Apr 24, 2019</div>
+      <div><html><head></head><body><p>And then there were none! Zero days left in our thirty-day blog post challenge. I can’t believe this is already the final day of our push to get Uppy to 1.0. There’s still a bunch of things that we’d like to finish before shipping, so let’s dive right in.</p>
+<center><br><img width="400" src="/uppy/images/blog/30daystoliftoff/day30.jpg"><br><br></center></body></html></div>
+      <div class="continue-reading"><a href="/blog/2019/04/liftoff-30/">Continue reading ›</a></div>
+    </div>
+  
+    <div class="post">
+      <h2><a href="/blog/2019/04/liftoff-29/">30 Days to Liftoff: Day 29</a></h2>
+      <div class="post-date">Tuesday Apr 23, 2019</div>
+      <div><html><head></head><body><p>With Easter behind us, only two days remain before the <strong>Uppy 1.0 release!</strong>. We hope you’re anticipating the launch as much as we are looking forward to being out from under the pressure of geting everything done in time!</p>
+<p>In terms of progress and completed features, things are looking good. We don’t have the entire team present today due to personal holidays and other commitments, but there’s no slowing down as we approach our deadline! This afternoon, we’re having our final Uppy 1.0 call where we’ll make final decisions on what we will — and won’t — get done before Thursday.</p>
+<center><br><img width="400" src="/uppy/images/blog/30daystoliftoff/day-29.jpg"><br><br></center></body></html></div>
+      <div class="continue-reading"><a href="/blog/2019/04/liftoff-29/">Continue reading ›</a></div>
+    </div>
+  
+    <div class="post">
+      <h2><a href="/blog/2019/04/liftoff-28/">30 Days to Liftoff: Day 28</a></h2>
+      <div class="post-date">Monday Apr 22, 2019</div>
+      <div><html><head></head><body><p>Happy second day of Easter! Just three days left before we launch Uppy 1.0 on the 25th! <span class="github-emoji" style="color: transparent;background:no-repeat url(https://github.githubassets.com/images/icons/emoji/unicode/1f631.png?v8) center/contain" data-src="https://github.githubassets.com/images/icons/emoji/unicode/1f631.png?v8">😱</span> It’s gonna be a few busy days for us, so we want to spend today getting rested up and ready to go. </p>
+<p>Here’s an 80’s-style montage of GIFs to give you an idea of what we’re doing to get all pumped up and ready for the final sprint!</p></body></html></div>
+      <div class="continue-reading"><a href="/blog/2019/04/liftoff-28/">Continue reading ›</a></div>
+    </div>
+  
+    <div class="post">
+      <h2><a href="/blog/2019/04/liftoff-27/">30 Days to Liftoff: Day 27</a></h2>
+      <div class="post-date">Sunday Apr 21, 2019</div>
+      <div><html><head></head><body><p>Happy Easter everyone! <span class="github-emoji" style="color: transparent;background:no-repeat url(https://github.githubassets.com/images/icons/emoji/unicode/1f95a.png?v8) center/contain" data-src="https://github.githubassets.com/images/icons/emoji/unicode/1f95a.png?v8">🥚</span><span class="github-emoji" style="color: transparent;background:no-repeat url(https://github.githubassets.com/images/icons/emoji/unicode/1f430.png?v8) center/contain" data-src="https://github.githubassets.com/images/icons/emoji/unicode/1f430.png?v8">🐰</span> It’s like a regular Sunday, but with a cherry on top! Spring is also in the air, so we wish you all some nice weather to enjoy with friends and family. Since we are also spending today egg hunting rather than bug chasing, we’ll keep it short. So, once more, from us — and this lovely Roomba-riding pup: </p>
+<center><img width="400" src="https://media.giphy.com/media/OdL7yHj11i3Xa/giphy.gif"><br><br></center></body></html></div>
+      <div class="continue-reading"><a href="/blog/2019/04/liftoff-27/">Continue reading ›</a></div>
+    </div>
+  
+    <div class="post">
+      <h2><a href="/blog/2019/04/liftoff-26/">30 Days to Liftoff: Day 26</a></h2>
+      <div class="post-date">Saturday Apr 20, 2019</div>
+      <div><html><head></head><body><p>‘Twas the night before Easter, when all through the house. Not a creature was stirring, not even a… pup? </p>
+<center><img width="400" src="https://media.giphy.com/media/hKBwl3S9hQaas/giphy.gif"><br><br></center></body></html></div>
+      <div class="continue-reading"><a href="/blog/2019/04/liftoff-26/">Continue reading ›</a></div>
+    </div>
+  
+    <div class="post">
+      <h2><a href="/blog/2019/04/liftoff-25/">30 Days to Liftoff: Day 25</a></h2>
+      <div class="post-date">Friday Apr 19, 2019</div>
+      <div><html><head></head><body><p>Why have a Good Friday when you can have a Great Friday instead!? Today is the beginning of an extra-long weekend, which most of the Uppy crew will spend by staying away from computers and catching up on some naptime:</p>
+<center><img width="400" src="https://media.giphy.com/media/aeu60CPZd8zw4/giphy.gif"><br><br></center></body></html></div>
+      <div class="continue-reading"><a href="/blog/2019/04/liftoff-25/">Continue reading ›</a></div>
+    </div>
+  
+    <div class="post">
+      <h2><a href="/blog/2019/04/liftoff-24/">30 Days to Liftoff: Day 24</a></h2>
+      <div class="post-date">Thursday Apr 18, 2019</div>
+      <div><html><head></head><body><p>Only six days remain in our ‘30 Days to Liftoff’ blog post challenge toward <strong>releasing Uppy 1.0 on April 25</strong>. Technically, it’s even less than that, seeing as Easter is coming up and we won’t be doing much work during the holidays. So, with just three working days left, we are starting to feel the heat. <span class="github-emoji" style="color: transparent;background:no-repeat url(https://github.githubassets.com/images/icons/emoji/unicode/1f525.png?v8) center/contain" data-src="https://github.githubassets.com/images/icons/emoji/unicode/1f525.png?v8">🔥</span> </p>
+<p>Luckily, we’re also very close to reaching all of our release goals. Let’s take a look at where we are now!</p>
+<center><br><img width="400" src="/uppy/images/blog/30daystoliftoff/day24.gif"><br><br></center></body></html></div>
+      <div class="continue-reading"><a href="/blog/2019/04/liftoff-24/">Continue reading ›</a></div>
+    </div>
+  
+    <div class="post">
+      <h2><a href="/blog/2019/04/liftoff-23/">30 Days to Liftoff: Day 23</a></h2>
+      <div class="post-date">Wednesday Apr 17, 2019</div>
+      <div><html><head></head><body><p>Hello and welcome to Day 23 of our ‘30 Days to Liftoff’ blog post challenge. The launch date for <strong>Uppy 1.0</strong> is still set for <strong>April the 25th</strong> and a lot of work is ongoing to make it happen. Let’s take a look at the updates for today!</p>
+<center><br><img width="400" src="/uppy/images/blog/30daystoliftoff/day23.png"><br><br></center></body></html></div>
+      <div class="continue-reading"><a href="/blog/2019/04/liftoff-23/">Continue reading ›</a></div>
+    </div>
+  
+    <div class="post">
+      <h2><a href="/blog/2019/04/liftoff-22/">30 Days to Liftoff: Day 22</a></h2>
+      <div class="post-date">Tuesday Apr 16, 2019</div>
+      <div><html><head></head><body><p>We will launch <strong>Uppy 1.0 on April 25</strong> and this is our ‘30 Days to Liftoff’ blog post challenge where we share updates on our progress each day! Let’s see what happened on Day 22.</p>
+<center><br><img width="400" src="/uppy/images/blog/30daystoliftoff/day22.png"><br><br></center></body></html></div>
+      <div class="continue-reading"><a href="/blog/2019/04/liftoff-22/">Continue reading ›</a></div>
+    </div>
+  
+    <div class="post">
+      <h2><a href="/blog/2019/04/liftoff-21/">30 Days to Liftoff: Day 21</a></h2>
+      <div class="post-date">Monday Apr 15, 2019</div>
+      <div><html><head></head><body><p>We’re reaching the final stretch of our ‘30 Days to Liftoff’ blog post challenge. After a refreshing weekend, the entire team is ready to give it their all over the next ten days to ensure that <strong>Uppy 1.0 reaches its April 25</strong> release date.</p>
+<center><br><img width="400" src="/uppy/images/blog/30daystoliftoff/day21.jpg"><br><br></center>
+
+<p>Since we’re starting the week strong and prepared, let’s take a quick glance at how our Uppy dashboard is looking.</p></body></html></div>
+      <div class="continue-reading"><a href="/blog/2019/04/liftoff-21/">Continue reading ›</a></div>
+    </div>
+  
+    <div class="post">
+      <h2><a href="/blog/2019/04/liftoff-20/">30 Days to Liftoff: Day 20</a></h2>
+      <div class="post-date">Sunday Apr 14, 2019</div>
+      <div><html><head></head><body><p>And on the seventh day, Uppy rested <span class="github-emoji" style="color: transparent;background:no-repeat url(https://github.githubassets.com/images/icons/emoji/unicode/1f47c.png?v8) center/contain" data-src="https://github.githubassets.com/images/icons/emoji/unicode/1f47c.png?v8">👼</span> We, too, will be spending this day in quiet contemplation (and most certainly not by sleeping off yesterday’s escapades). So if there isn’t anything else you need us for, we’ll be grabbing our blankets and heading back to bed:</p></body></html></div>
+      <div class="continue-reading"><a href="/blog/2019/04/liftoff-20/">Continue reading ›</a></div>
+    </div>
+  
+    <div class="post">
+      <h2><a href="/blog/2019/04/liftoff-19/">30 Days to Liftoff: Day 19</a></h2>
+      <div class="post-date">Saturday Apr 13, 2019</div>
+      <div><html><head></head><body><p>Hey DJ, turn the music Uppy! We’re taking a few well-deserved days off from chasing tasks and issues (and cats, of course) to get our feet up on the dance floor and enjoy a drink or two. We hope you are doing the same! Here’s a record-breaking Wiener to get you in the mood:</p></body></html></div>
+      <div class="continue-reading"><a href="/blog/2019/04/liftoff-19/">Continue reading ›</a></div>
+    </div>
+  
+    <div class="post">
+      <h2><a href="/blog/2019/04/liftoff-18/">30 Days to Liftoff: Day 18</a></h2>
+      <div class="post-date">Friday Apr 12, 2019</div>
+      <div><html><head></head><body><p>Hi! You’re reading our ‘30 Days to Liftoff’ blog post challenge about the <strong>launch of Uppy 1.0 on April 25</strong>. Here’s what we’ve been up to since yesterday’s progress update.  </p>
+<center><br><img width="400" src="/uppy/images/blog/30daystoliftoff/day18.jpg"><br><br></center></body></html></div>
+      <div class="continue-reading"><a href="/blog/2019/04/liftoff-18/">Continue reading ›</a></div>
+    </div>
+  
+    <div class="post">
+      <h2><a href="/blog/2019/04/liftoff-17/">30 Days to Liftoff: Day 17</a></h2>
+      <div class="post-date">Thursday Apr 11, 2019</div>
+      <div><html><head></head><body><p>It’s day 17 already of our ‘30 Days to Liftoff’ blog post challenge and the <strong>launch of Uppy 1.0 on April 25</strong> is coming closer by the day. The Uppy team is dealing with the big tasks now, so the updates might seem a little scant!</p>
+<center><br><img width="400" src="/uppy/images/blog/30daystoliftoff/day17.jpg"><br><br></center></body></html></div>
+      <div class="continue-reading"><a href="/blog/2019/04/liftoff-17/">Continue reading ›</a></div>
+    </div>
+  
+    <div class="post">
+      <h2><a href="/blog/2019/04/liftoff-16/">30 Days to Liftoff: Day 16</a></h2>
+      <div class="post-date">Wednesday Apr 10, 2019</div>
+      <div><html><head></head><body><p>Two weeks left in our ‘30 Days to Liftoff’! We’re starting to home in on <strong>Uppy 1.0’s release on April 25</strong>. Being in the middle of the week gives us a great opportunity to see how hard the team is working. Let’s take a look at the new features, bug fixes and milestones that have been completed! <span class="github-emoji" style="color: transparent;background:no-repeat url(https://github.githubassets.com/images/icons/emoji/unicode/1f436.png?v8) center/contain" data-src="https://github.githubassets.com/images/icons/emoji/unicode/1f436.png?v8">🐶</span></p>
+<center><br><img width="400" src="/uppy/images/blog/30daystoliftoff/day16.gif"><br><br></center>
+
+<p>Reminder: you can keep up with our <a href="https://github.com/transloadit/uppy/blob/master/CHANGELOG.md" target="_blank" rel="noopener">CHANGELOG</a> to see everything else we intend to complete for the official Uppy 1.0 release.</p></body></html></div>
+      <div class="continue-reading"><a href="/blog/2019/04/liftoff-16/">Continue reading ›</a></div>
+    </div>
+  
+    <div class="post">
+      <h2><a href="/blog/2019/04/liftoff-15/">30 Days to Liftoff: Day 15</a></h2>
+      <div class="post-date">Tuesday Apr 9, 2019</div>
+      <div><html><head></head><body><p><span class="github-emoji" style="color: transparent;background:no-repeat url(https://github.githubassets.com/images/icons/emoji/unicode/1f3b5.png?v8) center/contain" data-src="https://github.githubassets.com/images/icons/emoji/unicode/1f3b5.png?v8">🎵</span> Woah, we’re halfway there! Take our paw, we’ll make it we swear! <span class="github-emoji" style="color: transparent;background:no-repeat url(https://github.githubassets.com/images/icons/emoji/unicode/1f3b6.png?v8) center/contain" data-src="https://github.githubassets.com/images/icons/emoji/unicode/1f3b6.png?v8">🎶</span> That’s fifteen down and fifteen more to go. Great to have you along for the ride as we move ever closer towards <strong>launching Uppy 1.0 on April 25</strong>. </p>
+<p>Let’s see what is Uppy today!</p>
+<center><br><img width="400" src="/uppy/images/blog/30daystoliftoff/rockdog.jpg"><br></center></body></html></div>
+      <div class="continue-reading"><a href="/blog/2019/04/liftoff-15/">Continue reading ›</a></div>
+    </div>
+  
+    <div class="post">
+      <h2><a href="/blog/2019/04/liftoff-14/">30 Days to Liftoff: Day 14</a></h2>
+      <div class="post-date">Monday Apr 8, 2019</div>
+      <div><html><head></head><body><p>Today marks the fourteenth day in our ‘30 Days to Liftoff’ blog post challenge, working our way towards <strong>launching Uppy 1.0 on April 25</strong>. It’s the beginning of a new week and there is much to be done. The Uppy team is already firing on all cylinders and we also have some developments to share from before the weekend.</p></body></html></div>
+      <div class="continue-reading"><a href="/blog/2019/04/liftoff-14/">Continue reading ›</a></div>
+    </div>
+  
+    <div class="post">
+      <h2><a href="/blog/2019/04/liftoff-13/">30 Days to Liftoff: Day 13</a></h2>
+      <div class="post-date">Sunday Apr 7, 2019</div>
+      <div><html><head></head><body><p>Shh, it’s Sunday, Uppy is sleeping in today <span class="github-emoji" style="color: transparent;background:no-repeat url(https://github.githubassets.com/images/icons/emoji/unicode/1f634.png?v8) center/contain" data-src="https://github.githubassets.com/images/icons/emoji/unicode/1f634.png?v8">😴</span> We’ll be taking the day off as well, as we gear up to go full throttle again in the morning. There’s still a lot to do before the <strong>Uppy 1.0 launch on April 25</strong>. In the meantime, why don’t you join us in letting sleeping dogs lie.</p></body></html></div>
+      <div class="continue-reading"><a href="/blog/2019/04/liftoff-13/">Continue reading ›</a></div>
+    </div>
+  
+    <div class="post">
+      <h2><a href="/blog/2019/04/liftoff-12/">30 Days to Liftoff: Day 12</a></h2>
+      <div class="post-date">Saturday Apr 6, 2019</div>
+      <div><html><head></head><body><p>Hey guys! How is your Saturday treating you so far? We are focusing today on meeting friends and having fun, and taking our minds off all Uppy-related things for just a few days. To give you an idea of what we’re up to tonight, check out this groovy GIF:</p></body></html></div>
+      <div class="continue-reading"><a href="/blog/2019/04/liftoff-12/">Continue reading ›</a></div>
+    </div>
+  
+    <div class="post">
+      <h2><a href="/blog/2019/04/liftoff-11/">30 Days to Liftoff: Day 11</a></h2>
+      <div class="post-date">Friday Apr 5, 2019</div>
+      <div><html><head></head><body><p>And another week bites the dust! With the weekend right around the corner, we’re busy getting as much as possible done before heading off for some well-deserved rest &amp; relaxation. Here is what we’ve been up to!   </p>
+<center><img width="400" src="/uppy/images/blog/30daystoliftoff/day11.jpg"><br></center></body></html></div>
+      <div class="continue-reading"><a href="/blog/2019/04/liftoff-11/">Continue reading ›</a></div>
+    </div>
+  
+    <div class="post">
+      <h2><a href="/blog/2019/04/liftoff-10/">30 Days to Liftoff: Day 10</a></h2>
+      <div class="post-date">Thursday Apr 4, 2019</div>
+      <div><html><head></head><body><p>Today marks the tenth day in our 30 Days to Liftoff! <strong>April 25</strong> is still in our sights as we work towards the <strong>Uppy 1.0</strong> release. The end of the working week is almost upon us, but there’s no sign of slowing down yet.  </p>
+<center><img width="400" src="/uppy/images/blog/30daystoliftoff/day10.jpg"><br></center>
+
+<p>Things are looking up(py) on our project board as the team has been working on tasks at a steady pace. A quick status update will give us a little insight into how things are going concerning all things Uppy.</p></body></html></div>
+      <div class="continue-reading"><a href="/blog/2019/04/liftoff-10/">Continue reading ›</a></div>
+    </div>
+  
+    <div class="post">
+      <h2><a href="/blog/2019/04/liftoff-09/">30 Days to Liftoff: Day 9</a></h2>
+      <div class="post-date">Wednesday Apr 3, 2019</div>
+      <div><!--lint disable no-undefined-references--><html><head></head><body><p>The entire team is starting to get into its groove as the Uppy channel in our Slack workspace is looking livelier than ever. Let’s dive straight into Day 9 of our 30 Days to Liftoff!</p>
+<center><img width="400" src="/uppy/images/blog/30daystoliftoff/day09.jpg"><br><br></center>
+
+<p>Everyone is moving at a comfortable pace, working on the various <em>In Progress</em> cards sitting neatly on our Uppy board, so here’s a quick update on the progress towards <strong>Uppy 1.0, coming April 25</strong>!</p></body></html></div>
+      <div class="continue-reading"><a href="/blog/2019/04/liftoff-09/">Continue reading ›</a></div>
+    </div>
+  
+    <div class="post">
+      <h2><a href="/blog/2019/04/liftoff-08/">30 Days to Liftoff: Day 8</a></h2>
+      <div class="post-date">Tuesday Apr 2, 2019</div>
+      <div><html><head></head><body><p>Welcome to Day 8 of our ongoing thirty-day blog post challenge toward the <strong>Uppy 1.0 release on April 25</strong>! Yesterday was the 1st of April, but we had no time for fooling around! The entire team was present for our weekly call, which was again fully dedicated to discussing Uppy progress.</p>
+<center><img width="400" src="/uppy/images/blog/30daystoliftoff/day08.jpg"><br><br></center>
+
+<p>During the call, a lot of cards were moved from the <em>To Do</em> lane into the <em>In Progress</em> lane — and some are even already <em>Done</em>. We also added a few <em>New</em> tasks mostly related to language packs for Uppy, where we’ll be asking our own team members to update a locale of their own language. We hope other languages will be picked up by the community! </p></body></html></div>
+      <div class="continue-reading"><a href="/blog/2019/04/liftoff-08/">Continue reading ›</a></div>
+    </div>
+  
+    <div class="post">
+      <h2><a href="/blog/2019/04/liftoff-07/">30 Days to Liftoff: Day 7</a></h2>
+      <div class="post-date">Monday Apr 1, 2019</div>
+      <div><html><head></head><body><p>Welcome to Day 7 of our ongoing thirty-day blog post challenge toward the <strong>Uppy 1.0 release on April 25</strong>! With the weekend behind us and all batteries fully recharged, we’re ready to start hacking away again at the forest of To Do’s that lies in front of us.</p>
+<p>We still have some updates from the end of last week to share with you, and our team is already working hard today on fixing issues and making improvements. So let’s jump into it!</p></body></html></div>
+      <div class="continue-reading"><a href="/blog/2019/04/liftoff-07/">Continue reading ›</a></div>
+    </div>
+  
+    <div class="post">
+      <h2><a href="/blog/2019/03/liftoff-06/">30 Days to Liftoff: Day 6</a></h2>
+      <div class="post-date">Sunday Mar 31, 2019</div>
+      <div><html><head></head><body><p>Shh, it’s Sunday, Uppy is sleeping in today <span class="github-emoji" style="color: transparent;background:no-repeat url(https://github.githubassets.com/images/icons/emoji/unicode/1f634.png?v8) center/contain" data-src="https://github.githubassets.com/images/icons/emoji/unicode/1f634.png?v8">😴</span> We’ll be taking the day off as well, as we gear up to go full throttle again in the morning. There’s still a lot to do before the <strong>Uppy 1.0 launch on April 25</strong>! In the meantime, why don’t you join us in letting sleeping dogs lie.</p></body></html></div>
+      <div class="continue-reading"><a href="/blog/2019/03/liftoff-06/">Continue reading ›</a></div>
+    </div>
+  
+    <div class="post">
+      <h2><a href="/blog/2019/03/liftoff-05/">30 Days to Liftoff: Day 5</a></h2>
+      <div class="post-date">Saturday Mar 30, 2019</div>
+      <div><html><head></head><body><p>Work hard, play hard! It’s Saturday, so it’s time for us to wind down and take some time for ourself. Seeing as we won’t have much to share over the weekend in terms of progress updates, we thought we’d try to distract you a bit. Sit back, relax, and enjoy this nice GIF, handpicked by our crew:</p></body></html></div>
+      <div class="continue-reading"><a href="/blog/2019/03/liftoff-05/">Continue reading ›</a></div>
+    </div>
+  
+    <div class="post">
+      <h2><a href="/blog/2019/03/liftoff-04/">30 Days to Liftoff: Day 4</a></h2>
+      <div class="post-date">Friday Mar 29, 2019</div>
+      <div><html><head></head><body><p>Today marks the fourth day of our ongoing thirty-day blog post challenge, giving you an overview of all the progress building up to our <strong>Uppy 1.0 release on April 25!</strong></p></body></html></div>
+      <div class="continue-reading"><a href="/blog/2019/03/liftoff-04/">Continue reading ›</a></div>
+    </div>
+  
+    <div class="post">
+      <h2><a href="/blog/2019/03/liftoff-03/">30 Days to Liftoff: Day 3</a></h2>
+      <div class="post-date">Thursday Mar 28, 2019</div>
+      <div><html><head></head><body><p>Two days ago, we announced the <strong>upcoming launch of Uppy 1.0 on April 25</strong>, kicking off our thirty-day blog post challenge to keep you updated on everything that is going on. Here’s day three for you!</p></body></html></div>
+      <div class="continue-reading"><a href="/blog/2019/03/liftoff-03/">Continue reading ›</a></div>
+    </div>
+  
+    <div class="post">
+      <h2><a href="/blog/2019/03/liftoff-02/">30 Days to Liftoff: Day 2</a></h2>
+      <div class="post-date">Wednesday Mar 27, 2019</div>
+      <div><html><head></head><body><p>Yesterday, marked the beginning of our thirty-day blog post challenge to keep you updated on our preparations for <strong>releasing Uppy 1.0 on April 25</strong>. So here we are again already!</p></body></html></div>
+      <div class="continue-reading"><a href="/blog/2019/03/liftoff-02/">Continue reading ›</a></div>
+    </div>
+  
+    <div class="post">
+      <h2><a href="/blog/2019/03/liftoff-01/">30 Days to Liftoff: Day 1</a></h2>
+      <div class="post-date">Tuesday Mar 26, 2019</div>
+      <div><html><head></head><body><p>When we <a href="/blog/2016/07/uppy-begins/">started working on Uppy</a> back in early 2016, all we had was an idea and the shared desire to launch file uploading into a new age. We had already been laying the groundwork with the development of <a href="https://tus.io/" target="_blank" rel="noopener">tus.io</a> and felt that its robust back-end deserved a front-end just as robust, modern and user-friendly.</p></body></html></div>
+      <div class="continue-reading"><a href="/blog/2019/03/liftoff-01/">Continue reading ›</a></div>
+    </div>
+  
+    <div class="post">
+      <h2><a href="/blog/2019/03/0.30/">Uppy 0.30: Introducing Robodog</a></h2>
+      <div class="post-date">Wednesday Mar 6, 2019</div>
+      <div><html><head></head><body><p>In <code>0.30</code>, we are introducing a new friend for Uppy — the Robodog.</p>
+<img src="/uppy/images/blog/0.30/robodog-assemble.jpg">
+<small>Robodog: easy to assemble</small></body></html></div>
+      <div class="continue-reading"><a href="/blog/2019/03/0.30/">Continue reading ›</a></div>
+    </div>
+  
+    <div class="post">
+      <h2><a href="/blog/2018/12/0.29/">Uppy 0.29: separate Core and Plugin styles, React Native in tus-js-client</a></h2>
+      <div class="post-date">Tuesday Dec 11, 2018</div>
+      <div><html><head></head><body><img src="/uppy/images/blog/0.29/uppy-core-plugins-separate-styles.jpg">
+
+<p><code>0.29</code> brings bug fixes and improvements, while we are busy working on Uppy React Native support (which first had to <a href="https://github.com/tus/tus-js-client#react-native-support" target="_blank" rel="noopener">land in the js client for our resumable file upload protocol: tus.io</a>) and a Preset (still debating the name) which will make it easier to leverage Transloadit’s encoding platform, and offer a smooth migration path for users not yet on Uppy. The highlights of this release are: separating Core and Plugin styles, more accurate progress reporting by factoring in sizes across files, adding a <code>responseType</code> option for XHR Upload, and fixing visual Webcam bugs.</p></body></html></div>
+      <div class="continue-reading"><a href="/blog/2018/12/0.29/">Continue reading ›</a></div>
+    </div>
+  
+    <div class="post">
+      <h2><a href="/blog/2018/11/0.28/">Uppy 0.28: A look behind the scenes</a></h2>
+      <div class="post-date">Monday Nov 5, 2018</div>
+      <div><html><head></head><body><img class="border" src="/uppy/images/blog/0.28/dashboard-uploading.jpg">
+
+<p>In <code>0.28</code>, we are introducing a new “Single Upload” mode, improving on the Status Bar plugin with a spinner and different pause/resume/cancel buttons. We’ll also share some progress on bringing back unified locale packs and a Transloadit Preset 🍁</p></body></html></div>
+      <div class="continue-reading"><a href="/blog/2018/11/0.28/">Continue reading ›</a></div>
+    </div>
+  
+    <div class="post">
+      <h2><a href="/blog/2018/08/0.27/">Uppy 0.27: First Swing at React Native Support</a></h2>
+      <div class="post-date">Thursday Aug 23, 2018</div>
+      <div><html><head></head><body><img src="/uppy/images/blog/0.27/uppy-add-initial.jpg">
+
+<p>In <code>0.27</code>, we have some more iterations on the Dashboard UI for you in store again. We are getting rid of the permanent tab bar and made tons of other improvements!</p></body></html></div>
+      <div class="continue-reading"><a href="/blog/2018/08/0.27/">Continue reading ›</a></div>
+    </div>
+  
+    <div class="post">
+      <h2><a href="/blog/2018/07/0.26/">Uppy 0.26: Lerna</a></h2>
+      <div class="post-date">Thursday Jul 12, 2018</div>
+      <div><html><head></head><body><p>Uppy 0.26 replaces the monolithic Uppy package with a separate npm package for every plugin.</p>
+<img width="448" src="/uppy/images/blog/0.26/uppy-multiple-packages.png"></body></html></div>
+      <div class="continue-reading"><a href="/blog/2018/07/0.26/">Continue reading ›</a></div>
+    </div>
+  
+    <div class="post">
+      <h2><a href="/blog/2018/06/0.25/">Uppy 0.25: Drag & Drop Links Urls & Images, Improved File Selecting in Providers, Interactive Components In i18n</a></h2>
+      <div class="post-date">Thursday Jun 7, 2018</div>
+      <div><html><head></head><body><p>Uppy 0.25 comes with a couple of new features, like drag-and-dropping URLs and images with the Url plugin, Dashboard modal animation and interactive components in i18n strings, as well as a ton of under the hood fixes and improvements.</p></body></html></div>
+      <div class="continue-reading"><a href="/blog/2018/06/0.25/">Continue reading ›</a></div>
+    </div>
+  
+    <div class="post">
+      <h2><a href="/blog/2018/04/0.24/">Uppy 0.24: Refreshed Dashboard, StatusBar and Provider UI, revamped XHR Response Handling</a></h2>
+      <div class="post-date">Tuesday Apr 17, 2018</div>
+      <div><html><head></head><body><p>Uppy 0.24.2 brings a refreshed UI in the Dashboard and StatusBar plugins, a synchronous <code>addFile()</code> method, a cancel button, style protections, documentation on writing your own Uppy plugin, revamped XHR response handling and tons of bugfixes.</p></body></html></div>
+      <div class="continue-reading"><a href="/blog/2018/04/0.24/">Continue reading ›</a></div>
+    </div>
+  
+    <div class="post">
+      <h2><a href="/blog/2018/02/0.23/">Uppy 0.23: Import from Url, refactored thumbnail generation, XHR bundle</a></h2>
+      <div class="post-date">Monday Feb 12, 2018</div>
+      <div><html><head></head><body><p>Hi all! We are back from holidays with a shiny new <code>0.23.0</code> release for you! It’s packed with a new <code>Url</code> plugin (imports files from urls), refactored <code>ThumbnailGenerator</code>, <code>Webcam</code> improvements and more.</p>
+<h2 id="Import-from-Url"><a href="#Import-from-Url" class="headerlink" title="Import from Url"></a>Import from Url</h2><p>Meet our new “Provider” plugin, <code>Url</code>. It’s simple, yet powerful: paste a link to any file on the web, and Uppy with Uppy Server will upload it wherever you need.</p>
+<figure class="highlight js"><table><tr><td class="code"><pre>uppy<span class="token punctuation">.</span><span class="token method function property-access">use</span><span class="token punctuation">(</span><span class="token maybe-class-name">Url</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token literal-property property">target</span><span class="token operator">:</span> <span class="token maybe-class-name">Dashboard</span><span class="token punctuation">,</span> <span class="token literal-property property">host</span><span class="token operator">:</span> <span class="token constant">YOUR_UPPY_SERVER_URL</span> <span class="token punctuation">}</span><span class="token punctuation">)</span></pre></td></tr></table></figure>
+<figure class="wide"><video alt="Demo video showing Uppy with Url plugin that imports files from urls" controls="" autoplay=""><source src="/uppy/images/blog/0.23/uppy-url-demo.mp4" type="video/mp4">Your browser does not support the video tag, you can <a href="/uppy/images/blog/0.23/uppy-url-demo.mp4">download the video</a> to watch it.</video></figure></body></html></div>
+      <div class="continue-reading"><a href="/blog/2018/02/0.23/">Continue reading ›</a></div>
+    </div>
+  
+    <div class="post">
+      <h2><a href="/blog/2017/12/0.22/">Uppy 0.22: Preact, Form, Improved Dashboard, Custom Stores</a></h2>
+      <div class="post-date">Saturday Dec 23, 2017</div>
+      <div><html><head></head><body><p><strong>Uppy is <a href="https://www.producthunt.com/posts/uppy-io" target="_blank" rel="noopener">featured on Product Hunt</a>! To our fellow hunters: welcome! Quick intro: Uppy is the next open source file uploader for web browsers. We’re very close to launching 1.0 and would love to get your feedback in, leave your thoughts on Product Hunt or start a discussion below.</strong></p>
+<p>Hi all! It’s New Year and Christmas time, and this year Santa is brining you Uppy <code>0.22</code> 🎁 This release packs a lot of neat stuff, but it also breaks things in quite a few places, so please read on.</p>
+<p>And, if you are celebrating, happy holidays from the Uppy Team! 🎄</p></body></html></div>
+      <div class="continue-reading"><a href="/blog/2017/12/0.22/">Continue reading ›</a></div>
+    </div>
+  
+    <div class="post">
+      <h2><a href="/blog/2017/11/0.21/">Uppy 0.21: End to End Tests, Accessibility, Additional Security for Uppy Server</a></h2>
+      <div class="post-date">Friday Nov 24, 2017</div>
+      <div><html><head></head><body><p>Hi all! We’ve been busy with Halloween, but also another release, so here is Uppy <code>0.21</code>! This one improves accessibility, features new end-to-end tests and improved security in Uppy Server.</p></body></html></div>
+      <div class="continue-reading"><a href="/blog/2017/11/0.21/">Continue reading ›</a></div>
+    </div>
+  
+    <div class="post">
+      <h2><a href="/blog/2017/10/0.20/">Uppy 0.20: React, Retry & Time Travel</a></h2>
+      <div class="post-date">Thursday Oct 5, 2017</div>
+      <div><html><head></head><body><p>We are proud to present Uppy <code>0.20</code>. This one focuses on React and Redux support, adding storage expirations to <code>GoldenRetriever</code> and upload retries. Enjoy!</p>
+<h2 id="Uppy-React-components"><a href="#Uppy-React-components" class="headerlink" title="Uppy React components"></a>Uppy React components</h2><p>Uppy now ships with React components! We’ve been exploring different approaches to React components for several months, so we’re excited to finally have them in ✨ There are components for each of Uppy’s UI elements, like the Dashboard and the StatusBar.</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="token keyword">const</span> uppy <span class="token operator">=</span> <span class="token function"><span class="token maybe-class-name">Uppy</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+uppy<span class="token punctuation">.</span><span class="token method function property-access">use</span><span class="token punctuation">(</span><span class="token maybe-class-name">Tus10</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token literal-property property">endpoint</span><span class="token operator">:</span> <span class="token string">'/upload'</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token keyword">const</span> <span class="token maybe-class-name">Dashboard</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'uppy/lib/react/Dashboard'</span><span class="token punctuation">)</span>
+
+<span class="token keyword">const</span> <span class="token function-variable function"><span class="token maybe-class-name">Uploader</span></span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token punctuation">(</span>
+  <span class="token operator">&lt;</span><span class="token maybe-class-name">Dashboard</span>
+    uppy<span class="token operator">=</span><span class="token punctuation">{</span>uppy<span class="token punctuation">}</span>
+    note<span class="token operator">=</span><span class="token string">"Hey! It's a React component!"</span>
+  <span class="token operator">/</span><span class="token operator">></span>
+<span class="token punctuation">)</span>
+
+<span class="token maybe-class-name">ReactDOM</span><span class="token punctuation">.</span><span class="token method function property-access">render</span><span class="token punctuation">(</span><span class="token operator">&lt;</span><span class="token maybe-class-name">Uploader</span> <span class="token operator">/</span><span class="token operator">></span><span class="token punctuation">,</span> <span class="token dom variable">document</span><span class="token punctuation">.</span><span class="token method function property-access">querySelector</span><span class="token punctuation">(</span><span class="token string">'#uploader'</span><span class="token punctuation">)</span><span class="token punctuation">)</span></pre></td></tr></table></figure></body></html></div>
+      <div class="continue-reading"><a href="/blog/2017/10/0.20/">Continue reading ›</a></div>
+    </div>
+  
+    <div class="post">
+      <h2><a href="/blog/2017/09/0.19/">Uppy 0.19: Tests, Informer details and better APIs</a></h2>
+      <div class="post-date">Thursday Sep 21, 2017</div>
+      <div><html><head></head><body><p>Hello! The <code>0.19</code> release is about internal fixes, optimizations and refactoring, as well as some work on PRs that we’ll hopefully tell you about soon!</p>
+<h2 id="Jest-tests"><a href="#Jest-tests" class="headerlink" title="Jest tests"></a>Jest tests</h2><p>Thanks to our contributer, <a href="https://github.com/richardwillars" target="_blank" rel="noopener">@richardwillars</a>, and following the example set by Uppy Server, we’ve <a href="https://github.com/transloadit/uppy/pull/310" target="_blank" rel="noopener">switched to Jest</a> for Uppy’s unit tests, and added a bunch of new tests as well. And even more are being <a href="https://github.com/transloadit/uppy/pull/346" target="_blank" rel="noopener">added</a> as we speak!</p>
+<p>We’re also happy to report that <a href="https://github.com/transloadit/uppy-server/compare/3341a9592d0723fd9b58ec77d8c762f20b434704...d3c6f5b409d08f588d1704b77181e5c0342ca322" target="_blank" rel="noopener">more tests</a> have been added for Uppy Server.</p>
+<h2 id="Dashboard-APIs"><a href="#Dashboard-APIs" class="headerlink" title="Dashboard APIs"></a>Dashboard APIs</h2><p>We’ve exposed <code>show/hide/isOpen</code> APIs for the Dashboard UI plugin. Now you can open and close the modal dialog programmatically:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="token keyword">const</span> modal <span class="token operator">=</span> uppy<span class="token punctuation">.</span><span class="token method function property-access">getPlugin</span><span class="token punctuation">(</span><span class="token string">'Dashboard'</span><span class="token punctuation">)</span>
+modal<span class="token punctuation">.</span><span class="token method function property-access">show</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment">// ...</span>
+
+button<span class="token punctuation">.</span><span class="token method function property-access">addEventListener</span><span class="token punctuation">(</span><span class="token string">'click'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token punctuation">{</span>
+  <span class="token keyword control-flow">if</span> <span class="token punctuation">(</span>modal<span class="token punctuation">.</span><span class="token method function property-access">isOpen</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    modal<span class="token punctuation">.</span><span class="token method function property-access">hide</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span> <span class="token keyword control-flow">else</span> <span class="token punctuation">{</span>
+    modal<span class="token punctuation">.</span><span class="token method function property-access">show</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span></pre></td></tr></table></figure>
+<p>Check out <a href="/uppy/docs/dashboard/#Methods">the docs</a>.</p></body></html></div>
+      <div class="continue-reading"><a href="/blog/2017/09/0.19/">Continue reading ›</a></div>
+    </div>
+  
+    <div class="post">
+      <h2><a href="/blog/2017/09/0.18/">Uppy 0.18: Dogumentation and The GoldenRetriever</a></h2>
+      <div class="post-date">Friday Sep 15, 2017</div>
+      <div><html><head></head><body><p>Hi! Another month — a new Uppy release 🎉</p>
+<p><em>Note: current latest release is actually <code>0.19</code>, but this post got delayed, so we are publishing it first. <code>0.19</code> post is coming next.</em></p>
+<h2 id="New-documentation"><a href="#New-documentation" class="headerlink" title="New documentation"></a>New documentation</h2><p>Documentation for Uppy has been re-written, and now features chapters on Uppy’s settings and API, using various plugins, and running Uppy Server. Check it out: &lt;/uppy/docs/&gt;. More chapters to come!</p>
+<h2 id="The-GoldenRetriever"><a href="#The-GoldenRetriever" class="headerlink" title="The GoldenRetriever"></a>The GoldenRetriever</h2><p>The GoldenRetriever has been released as a public beta. For details, please refer to the previous post, <a href="/uppy/blog/2017/07/golden-retriever/">The GoldenRetriever: Making uploads survive browser crashes</a>, but the gist is: when enabled, this plugin will save uppy-state to localStorage on every change, and then if your browser crashes, or you accidentaly navigate away from a tab,later when you return, your uploads will resume like nothing happened. Spoiler: it uses Service Workers and IndexedDB.</p>
+<img class="border" src="/uppy/images/blog/0.18/golden-retriever.jpg"></body></html></div>
+      <div class="continue-reading"><a href="/blog/2017/09/0.18/">Continue reading ›</a></div>
+    </div>
+  
+    <div class="post">
+      <h2><a href="/blog/2017/07/golden-retriever/">The Golden Retriever: Making uploads survive browser crashes</a></h2>
+      <div class="post-date">Monday Jul 31, 2017</div>
+      <div><html><head></head><body><p><strong>TL;DR:</strong> We’re on a mission to improve file uploading on the web. We released <a href="https://tus.io" target="_blank" rel="noopener">tus</a>: the open protocol for resumable file uploads, as well as Uppy: the next open source file uploader for web browsers. Uppy uses tus, which makes it resilient to poor network conditions and crashing servers. Today we’re launching an Uppy feature that also makes it resilient to browser crashes, which we believe is an industry first. We’re sharing a quick <a href="/blog/2017/07/golden-retriever/#demo">demo</a> video, a bit of <a href="/blog/2017/07/golden-retriever/#uppy">background</a>, <a href="/blog/2017/07/golden-retriever/#how">how</a> exactly we achieved this, and how you can <a href="/blog/2017/07/golden-retriever/#try">try</a> it yourself.</p>
+<p>***</p>
+<p>Don’t you just hate it when you’re about to share the perfect photos from your trip to Iceland, and halfway through, your cat jumps on the keyboard and trashes your browser? Or the battery in your laptop dies? Or you accidentally close the tab or navigate away? We hate that too!</p>
+<p>If action games have had checkpoints since 1687 — why can’t file uploaders? Well, as it turns out, they can! We found a way to get those Iceland pics into the hands of your loved ones with near-zero levels of frustration, even after a dreaded Blue Screen of Death! (if that is still a thing ;)</p></body></html></div>
+      <div class="continue-reading"><a href="/blog/2017/07/golden-retriever/">Continue reading ›</a></div>
+    </div>
+  
+    <div class="post">
+      <h2><a href="/blog/2017/07/0.17/">Uppy 0.17: Restrictions</a></h2>
+      <div class="post-date">Tuesday Jul 11, 2017</div>
+      <div><html><head></head><body><p>Hi! We are back with yet another Uppy release that contains some often requested features such as file restrictions and better file type detection, alongside a brand new Instagram plugin, UI improvements and more!</p></body></html></div>
+      <div class="continue-reading"><a href="/blog/2017/07/0.17/">Continue reading ›</a></div>
+    </div>
+  
+    <div class="post">
+      <h2><a href="/blog/2017/05/0.16/">Uppy 0.16: Transloadit!</a></h2>
+      <div class="post-date">Wednesday May 24, 2017</div>
+      <div><html><head></head><body><p>Hello there! Missed us much? :) We’re chomping at the bits, at least, to tell you about our latest release. This one has been in the works longer than usual, but then again, it’s also way cooler than usual, so let’s get right to it.</p></body></html></div>
+      <div class="continue-reading"><a href="/blog/2017/05/0.16/">Continue reading ›</a></div>
+    </div>
+  
+    <div class="post">
+      <h2><a href="/blog/2017/03/0.15/">Uppy 0.15: Spring cleanup</a></h2>
+      <div class="post-date">Wednesday Mar 15, 2017</div>
+      <div><html><head></head><body><p>Spring is in the air and Uppy is feeling particularly full of life. In this post about Uppy 0.15, we have some exciting stories about <code>babel-plugin-yo-yoify</code>, progress event throttling, and new friends.</p></body></html></div>
+      <div class="continue-reading"><a href="/blog/2017/03/0.15/">Continue reading ›</a></div>
+    </div>
+  
+    <div class="post">
+      <h2><a href="/blog/2017/02/0.14/">Uppy 0.14: Responsive Dashboard, Standalone & Pluggable Server, Dropbox</a></h2>
+      <div class="post-date">Monday Feb 13, 2017</div>
+      <div><html><head></head><body><p>Hi! Hope y’all have had great holidays! 🎄 Which reminds us, we still have a gift for you — and we even wrapped it in a package (npm). Look inside and you’ll find that Uppy 0.14!</p>
+<p>“But wait”, you might ask, “where is the 0.13 release that we have been waiting for?”</p>
+<p>Well, let’s just say we are superstitious like that. You won’t see us coding under any ladders either! And we were also in the middle of the holiday season, so we decided to call 0.13 “The Release That Wasn’t” and skip it.</p>
+<p>Let’s take a look at what Uppy 0.14 has in store for you.</p></body></html></div>
+      <div class="continue-reading"><a href="/blog/2017/02/0.14/">Continue reading ›</a></div>
+    </div>
+  
+    <div class="post">
+      <h2><a href="/blog/2016/12/0.12/">Uppy 0.12: Responsive. Cancel. Feedback. Refreshed ES6 server</a></h2>
+      <div class="post-date">Wednesday Dec 7, 2016</div>
+      <div><html><head></head><body><p>Hello! Here’s what’s new in Uppy 0.12.</p>
+<h2 id="Dashboard-local-mode-and-multipart-uploads-support-in-UI"><a href="#Dashboard-local-mode-and-multipart-uploads-support-in-UI" class="headerlink" title="Dashboard: local mode and multipart uploads support in UI"></a>Dashboard: local mode and multipart uploads support in UI</h2><p>Prior to this release, we’ve optimized the Dashboard for usage with multiple “acquire plugins”, say Webcam + Google Drive. But sometimes all you need is “local disk” with drag &amp; drop support, nice file previews and progress. And now the Dashboard UI works great with that use case out of the box. When you don’t add (.use) any acquire plugins, it looks like this:</p>
+<figure class="wide"><img src="/uppy/images/blog/0.12/uppy-dashboard-local.jpg"></figure>
+
+<p>Also (prior to this release), we’ve built the Dashboard to work well with <a href="http://tus.io" target="_blank" rel="noopener">tus resumable uploads</a>. That’s why you can pause and resume individual uploads, as well as all at once. But if you use an endpoint that is not yet ready for the future and upload resumability (here’s <a href="https://github.com/tus/tus-node-server" target="_blank" rel="noopener">how</a> to <a href="https://github.com/tus/tusd" target="_blank" rel="noopener">fix that</a>, by the way), the Dashboard UI will show regular “cancel” buttons instead of pause/resume.</p>
+<p>Dashboard is gradually becoming more mobile friendly too, but we’ll be saving some of that stuff for the next release.</p>
+<h2 id="Server"><a href="#Server" class="headerlink" title="Server"></a>Server</h2><p>Uppy server has undergone a quite a few changes, including the build setup:</p>
+<ul>
+<li>We are using ES2015, transpiling to ES5 with Babel.</li>
+<li>Added linting, lint-staged, pre-commit all that good stuff.</li>
+<li>Added <code>npm run release</code> command that publishes releases for us.</li>
+<li>Google Drive is working again on the Uppy Server side.</li>
+<li>Refactoring, error handling and more minor improvements.</li>
+</ul></body></html></div>
+      <div class="continue-reading"><a href="/blog/2016/12/0.12/">Continue reading ›</a></div>
+    </div>
+  
+    <div class="post">
+      <h2><a href="/blog/2016/11/0.11/">Uppy 0.11: StatusBar, research, https and API docs</a></h2>
+      <div class="post-date">Tuesday Nov 15, 2016</div>
+      <div><html><head></head><body><p>Hey everyone! It has been a while since we last shared some news about our progress and we can’t wait to let you know what’s up(py)!</p>
+<p>In October, we have been working hard to get Uppy 0.11 ready for release. This entailed, among other things, doing a write-up of our general architecture, bringing in a friend to look at what we’ve been up to, experimenting with Redux, and updating the Dashboard UI and website example.</p>
+<p>Here’s what we have been up to, in some more detail.</p></body></html></div>
+      <div class="continue-reading"><a href="/blog/2016/11/0.11/">Continue reading ›</a></div>
+    </div>
+  
+    <div class="post">
+      <h2><a href="/blog/2016/09/0.10/">Uppy 0.10: Getting together, the future, Google Drive UI, exposed events</a></h2>
+      <div class="post-date">Wednesday Sep 28, 2016</div>
+      <div><html><head></head><body><p>Hi! Another month has passed and we have just released a new version of Uppy. Here’s what we’ve been up to.</p>
+<h2 id="Thinking-about-the-future-🔮"><a href="#Thinking-about-the-future-🔮" class="headerlink" title="Thinking about the future 🔮"></a>Thinking about the future 🔮</h2><p>We have been spending quite a lot of time thinking about Uppy’s future and the direction in which we would like to take this project.  Our primary concern is making Uppy as flexible as possible as well as compatible with popular libraries, such as React and React Native.  We also want to make it easy to port Uppy to any environments or ecosystems that are not officially supported.</p>
+<p>We have done a lot of research. We created <a href="https://github.com/hedgerh/uppy-react" target="_blank" rel="noopener">prototypes of Uppy React components</a> and  we also created a new module that we like to call “Uppy Base.” <a href="https://github.com/hedgerh/uppy-base" target="_blank" rel="noopener"><code>uppy-base</code></a> is a thin module containing reusable functionality from some of our plugins that can be used in any ecosystem or environment, without being opinionated about the UI.</p></body></html></div>
+      <div class="continue-reading"><a href="/blog/2016/09/0.10/">Continue reading ›</a></div>
+    </div>
+  
+    <div class="post">
+      <h2><a href="/blog/2016/08/0.9.0/">Uppy 0.9: Making Progress, then pause & resume. Remote file uploads, Informer.</a></h2>
+      <div class="post-date">Friday Aug 26, 2016</div>
+      <div><html><head></head><body><p>We have just released Uppy 0.9.0. This release features some changes that we think you will be very excited about.  Let’s see what’s new!</p></body></html></div>
+      <div class="continue-reading"><a href="/blog/2016/08/0.9.0/">Continue reading ›</a></div>
+    </div>
+  
+    <div class="post">
+      <h2><a href="/blog/2016/08/0.8.0/">Uppy version 0.8 released: The Webcam Edition and Meta Data</a></h2>
+      <div class="post-date">Wednesday Aug 17, 2016</div>
+      <div><html><head></head><body><p>We have just released Uppy 0.8.0 and we can’t wait to tell you more about it. Along with various under-the-hood improvements, this release also contains some very visible upgrades. You can read below for further details.</p>
+<h2 id="Including-Meta-Data"><a href="#Including-Meta-Data" class="headerlink" title="Including Meta Data"></a>Including Meta Data</h2><p>While fetching your files, Uppy is now also able to supply some custom metadata to go along with them. So far, there are three components in place for that: Core API (<code>core:update-meta</code> event), <code>MetaData</code> plugin, and a new panel in Dashboard UI called File Card, which looks like this:</p>
+<img alt="metadata dashboard UI, editing file name, future size and adding description" src="/uppy/images/blog/0.8/metadata-dashboard.jpg" class="border"></body></html></div>
+      <div class="continue-reading"><a href="/blog/2016/08/0.8.0/">Continue reading ›</a></div>
+    </div>
+  
+    <div class="post">
+      <h2><a href="/blog/2016/07/uppy-begins/">Uppy: let’s teach an old dog some new tricks</a></h2>
+      <div class="post-date">Friday Jul 15, 2016</div>
+      <div><html><head></head><body><p>For the past six months, we have been working hard on uppy.io. We feel that it is high time we gave you a look behind the scenes: what are we working on, and why.</p>
+<img src="/uppy/images/blog/uppy-begins/uppy-dashboard.jpg">
+
+<p>The way uploading works has not changed in a meaningful way since the days of our trusty old 56 kbit/s modems. Of course, files have gotten bigger and speeds have increased, but that is more or less all there is to say. If it were up to us – and we hope it is – that is all about to change.</p>
+<p>We at <a href="https://transloadit.com/" target="_blank" rel="noopener">Transloadit</a> are on a mission to change the way the world does uploading. To accomplish this, our first step has been to develop an open protocol for resumable file uploads, called <a href="http://tus.io/" target="_blank" rel="noopener">‘tus’</a>. Finally, that 2GB video upload from your smartphone doesn’t have to start over when your train passes through a tunnel! The protocol got <a href="https://news.ycombinator.com/item?id=10591348" target="_blank" rel="noopener">Hacker News excited</a> on several occasions and is being deployed by, among others, our friends at Vimeo. Now that a stable version 1.0 of ‘tus’ has been released, it is time to put it to the test. A protocol without real-world applications is nothing more than a meaningless document, after all.</p>
+<p>We are therefore excited to tell you about Uppy: the file uploader that will certainly fetch more than just your newspaper.</p></body></html></div>
+      <div class="continue-reading"><a href="/blog/2016/07/uppy-begins/">Continue reading ›</a></div>
+    </div>
+  
+</div>
+
+        
+      </main>
+
+      <script defer data-domain="transloadit.github.io" src="https://analytics.transloadit.com/js/plausible.js"></script>
+
+
+      
+        <script src="/uppy/js/smooth-scroll.min.js"></script>
+        <!-- Place this tag in your head or just before your close body tag. -->
+        <script async defer src="https://buttons.github.io/buttons.js"></script>
+      
+      <script src="/uppy/js/common.js"></script>
+
+      <!-- Twitter follow button script -->
+      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+    </div>
+  </body>
+</html>

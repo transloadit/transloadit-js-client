@@ -1,0 +1,412 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Uppy 1.5: Facebook and OneDrive (beta) support, upload cancellation — Uppy</title>
+    <meta charset="utf-8">
+    <meta name="title" content="Uppy 1.5: Facebook and OneDrive (beta) support, upload cancellation — Uppy">
+    <meta name="description" content="In the past two months, we have halved our open issue count and worked on a much more robust approach to upload cancellation. Members of the community also contributed a bunch of new localizations: Czech, Danish, Greek, Indonesian, and Swedish!
+We are also releasing beta versions of new remote providers for Facebook and OneDrive. Please try them out!">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@uppy_io">
+    <meta name="twitter:creator" content="@uppy_io">
+    <meta property="og:url" content="https://transloadit.github.io/uppy/blog/2019/10/1.5/index.html">
+    <meta property="og:title" content="Uppy 1.5: Facebook and OneDrive (beta) support, upload cancellation — Uppy">
+    <meta name="twitter:title" content="Uppy 1.5: Facebook and OneDrive (beta) support, upload cancellation — Uppy">
+    <meta name="twitter:description" content="In the past two months, we have halved our open issue count and worked on a much more robust approach to upload cancellation. Members of the community also contributed a bunch of new localizations: Czech, Danish, Greek, Indonesian, and Swedish!
+We are also releasing beta versions of new remote providers for Facebook and OneDrive. Please try them out!">
+    <meta property="og:image" content="http://transloadit.github.io/uppy/images/uppy-social-pink.png">
+    <meta name="twitter:image" content="http://transloadit.github.io/uppy/images/uppy-social-pink.png">
+
+    <meta name="google-site-verification" content="JxARoHXoCI8bD07pLV_u3z6xpuWNcSIZIcHEytyCkUc" />
+
+    <link rel="icon" href="/uppy/images/logos/uppy-dog-head-arrow.png" type="image/x-icon">
+    <link rel="alternate" type="application/rss+xml" title="Uppy" href="/atom.xml">
+
+    <script>
+      window.PAGE_TYPE = ""
+    </script>
+    
+<link rel="stylesheet" href="/uppy/css/main.css?version=2">
+
+    <!-- ^ poor man's solution to css cache busting. bump the version when there's something new we really want users to see -->
+  <meta name="generator" content="Hexo 4.2.1"></head>
+  <body class="page-inner ">
+    <div class="page">
+      <div class="TransloaditBar js-TransloaditBar">
+        <div class="TransloaditBar-about">
+          <!-- <a class="TransloaditBar-logo" href="https://transloadit.com/" target="_blank" rel="noopener">
+            <img class="TransloaditBar-logoImg" src="/uppy/images/transloadit-white-glyph.svg" width="20" height="20" alt="Transloadit">
+          </a> -->
+          <!-- <span>Uppy is an open source project by <a class="TransloaditBar-link" href="https://transloadit.com/" target="_blank">Transloadit</a></span> -->
+          This website is no longer maintained, please visit <a href="//uppy.io" target="_blank" rel="noopener" style="color:inherit">uppy.io</a> to get up-to-date info about Uppy.
+        </div>
+      </div>
+
+      <header id="header" class="MainHeader js-MainHeader">
+        <button class="MainHeader-menuBtn js-MenuBtn"></button>
+
+        <span id="logo" class="MainLogo">
+          <a class="MainLogo-link" href="/uppy/">Uppy</a>
+          <!-- Was used for 1.0, we can re-use for 2.0 or major announcements -->
+          <!-- <a class="MainLogo-announcement" href="/blog/2019/04/1.0/">
+            1.0
+            <span class="MainLogo-emoji">
+              <img src="/uppy/images/party-popper.png" srcset="/uppy/images/party-popper@2x.png 2x" alt="🎉">
+            </span>
+          </a> -->
+        </span>
+
+        <nav>
+          <ul id="nav" class="MainMenu">
+            <!-- @todo uncomment search input when we get our own swifttype -->
+<!-- <li>
+  <form id="search-form" class="MainMenu-search">
+    <input type="text" id="search-query" class="MainMenu-searchQuery st-default-search-input">
+  </form>
+</li> -->
+<!--li><a href="/uppy/guide/" class="nav-link">Guide</a></li-->
+<li><a href="/uppy/docs/" class="nav-link">Docs</a></li>
+<li><a href="/uppy/examples/dashboard/" class="nav-link">Examples</a></li>
+<!--li><a href="/uppy/stats/" class="nav-link">Stats</a></li-->
+<li><a href="/uppy/blog/" class="nav-link current">Blog</a></li>
+<li><a href="/uppy/support/" class="nav-link">Support</a></li>
+<li><a href="https://github.com/transloadit/uppy" target="_blank" rel="noopener" class="nav-link">GitHub</a></li>
+
+          </ul>
+        </nav>
+
+        <div class="MainHeader-tagline">
+          The file uploader that <span class="MainHeader-taglinePart js-MainHeader-taglinePart is-visible">loves to play fetch</span>
+        </div>
+
+        <ul class="MainHeader-taglineList js-MainHeader-taglineList">
+          
+          <li>won’t chew on your shoes</li>
+          
+          <li>is fully housebroken</li>
+          
+          <li>just wants to play with you</li>
+          
+          <li>doesn’t hump your leg</li>
+          
+          <li>also accepts cat pictures</li>
+          
+          <li>loves you unconditionally</li>
+          
+          <li>you don’t have to keep on a leash</li>
+          
+          <li>won’t pee on your rug</li>
+          
+          <li>loves to play fetch</li>
+          
+          <li>doesn’t bite (hard)</li>
+          
+          <li>won’t bark at the mailman</li>
+          
+          <li>is great with the kids</li>
+          
+          <li>can digest anything, even chocolate cake</li>
+          
+          <li>is always happy to see you</li>
+          
+          <li>isn’t afraid of fireworks</li>
+          
+          <li>is allowed everywhere</li>
+          
+        </ul>
+      </header>
+
+      <main class="MainContent js-MainContent" id="main">
+        
+          <div class="Sidebar js-Sidebar is-blog">
+    <ul class="main-menu">
+        <!-- @todo uncomment search input when we get our own swifttype -->
+<!-- <li>
+  <form id="search-form" class="MainMenu-search">
+    <input type="text" id="search-query" class="MainMenu-searchQuery st-default-search-input">
+  </form>
+</li> -->
+<!--li><a href="/uppy/guide/" class="nav-link">Guide</a></li-->
+<li><a href="/uppy/docs/" class="nav-link">Docs</a></li>
+<li><a href="/uppy/examples/dashboard/" class="nav-link">Examples</a></li>
+<!--li><a href="/uppy/stats/" class="nav-link">Stats</a></li-->
+<li><a href="/uppy/blog/" class="nav-link current">Blog</a></li>
+<li><a href="/uppy/support/" class="nav-link">Support</a></li>
+<li><a href="https://github.com/transloadit/uppy" target="_blank" rel="noopener" class="nav-link">GitHub</a></li>
+
+    </ul>
+    <div class="list">
+        <h2>
+            Recent Posts
+            <a href="/atom.xml" rel="noreferrer noopener" target="_blank" style="vertical-align: middle; margin-left: 5px">
+                <img src="/uppy/images/feed.png" style="width:15px;height:15px">
+            </a>
+        </h2>
+
+        <ul>
+  
+  <li>
+    <a href="/blog/2022/12/3.3/" class="sidebar-link">🎄 Uppy 3.1-3.3: Improved AWS S3 Multipart, Single File Mode</a>
+  </li>
+  
+  <li>
+    <a href="/blog/2022/09/3.0/" class="sidebar-link">Uppy 3.0: Future-proof, conveniently easy, stable as ever</a>
+  </li>
+  
+  <li>
+    <a href="/blog/2022/03/2.4-2.7/" class="sidebar-link">Uppy 2.4-2.7: Image Compressor, Transloadit Rate Limiting, ESM</a>
+  </li>
+  
+  <li>
+    <a href="/blog/2021/12/2.1-2.3/" class="sidebar-link">🎄 Uppy 2.1-2.3: Audio plugin, fast and efficient streaming for Companion, production-ready Unsplash, and more</a>
+  </li>
+  
+  <li>
+    <a href="/blog/2021/08/2.0/" class="sidebar-link">Uppy 2.0.0: smaller, faster, modular plugins, Preact X, stricter types, and much more</a>
+  </li>
+  
+  <li>
+    <a href="/blog/2021/07/1.30/" class="sidebar-link">Uppy 1.30: Angular integration, granular image rotation, Google Drive shortcuts</a>
+  </li>
+  
+  <li>
+    <a href="/blog/2021/05/1.29/" class="sidebar-link">Uppy 1.29: Golden Retriever, disableLocalFiles, Webcam previews, uppy.logout</a>
+  </li>
+  
+  <li>
+    <a href="/blog/2021/04/1.27/" class="sidebar-link">Uppy 1.27: Drop Target plugin, Vue 3 support, Dashboard dynamic meta fields, “Shared with me” in Google Drive</a>
+  </li>
+  
+  <li>
+    <a href="/blog/2021/02/1.26/" class="sidebar-link">Uppy 1.26: Dashboard “disabled”, per-file headers</a>
+  </li>
+  
+  <li>
+    <a href="/blog/2021/01/1.25/" class="sidebar-link">Uppy 1.25: right-to-left scripts, Ukrainian translation, Companion improvements</a>
+  </li>
+  
+  <li>
+    <a href="/blog/2020/12/1.24/" class="sidebar-link">Uppy 1.24: 🎅 Happy Holidays — Svelte, React hook, Auto Open Image Editor</a>
+  </li>
+  
+</ul>
+        <ul class="Social">
+  <li><a href="https://twitter.com/uppy_io" target="_blank" rel="noopener" class="twitter-follow-button" data-show-count="false" data-dnt="true">Follow @uppy_io</a></li>
+  <li><iframe src="https://ghbtns.com/github-btn.html?user=transloadit&repo=uppy&type=watch&count=true"
+allowtransparency="true" frameborder="0" scrolling="0" width="100" height="20"></iframe></li>
+  <!-- to regenerate you can use this link: https://img.shields.io/badge/community-forum-d8006a.svg -->
+  <li><a href="https://community.transloadit.com/c/uppy" target="_blank" rel="noopener"><img src="/uppy/images/community-forum-d8006a.svg" /> </a></li>
+  <li class="BuildBadge">
+   <span class="wrapper">
+     <a href="https://github.com/transloadit/uppy/actions" target="_blank" rel="noopener"><img src="https://github.com/transloadit/uppy/workflows/End-to-end%20tests/badge.svg" alt="Build Status"></a>
+   </span>
+  </li>
+</ul>
+
+    </div>
+</div>
+
+
+<div class="Content js-Content with-sidebar">
+    
+  <h1>Uppy 1.5: Facebook and OneDrive (beta) support, upload cancellation</h1>
+  <div class="post-date">Friday Oct 11, 2019</div>
+    
+    <html><head></head><body><p>In the past two months, we have halved our open issue count and worked on a much more robust approach to upload cancellation. Members of the community also contributed a bunch of new localizations: Czech, Danish, Greek, Indonesian, and Swedish!</p>
+<p>We are also releasing beta versions of new remote providers for Facebook and OneDrive. Please try them out!</p>
+<a id="more"></a>
+
+<h2 id="Issue-busting"><a href="#Issue-busting" class="headerlink" title="Issue busting"></a>Issue busting</h2><p>Our issue tracker was getting pretty full over the past year, topping out at about 120 open issues. Some had been open for months without any reply! Issues were being opened at such a rate that it was almost too much for our small team to handle. So, we sat down to go through everything together and started setting up a process to make sure our issue list doesn’t get out of hand again in the future.</p>
+<p>When opening a new issue, we now ask you to mark it as a bug or a feature request. The issue will also get a “Triage” label, indicating that an Uppy team member needs to sort it. If there are many “Triage” issues open at any point, we will discuss them in our weekly team call. New issues will also be assigned to a specific team member as soon as possible, so each of us has a much smaller and more manageable list of issues to keep track of.</p>
+<p>To keep the issue tracker focused on Uppy features and bugs, detailed support questions should go to Transloadit’s <a href="https://community.transloadit.com/" target="_blank" rel="noopener">community forum</a>.</p>
+<h2 id="Duplicate-files"><a href="#Duplicate-files" class="headerlink" title="Duplicate files"></a>Duplicate files</h2><p>Up until now, if you added a file that had been already added to Uppy some time before — i.e., a file with the same <code>name</code>/<code>type</code>/<code>modifiedDate</code> etc. — the old file would be silently replaced with a new one. This changes with v1.5:</p>
+<ol>
+<li>Uppy now throws a warning if a file with the same <code>file.id</code> already exist. The new file will not be added and the old file will not be replaced.</li>
+<li>We are adding the <code>file.meta.relativePath</code> to <code>file.id</code>. <code>relativePath</code> exists on files that have been dropped together with a folder. This means that if you drop a folder with <code>folder/a.jpg</code> and <code>folder/subfolder/a.jpg</code>, both <code>a.jpg</code>s will be added, since they come from different folders and this kind of duplication might be intended.</li>
+</ol>
+<p>See PR <a href="https://github.com/transloadit/uppy/pull/1767" target="_blank" rel="noopener">#1767</a> for details.</p>
+<h2 id="Dashboard"><a href="#Dashboard" class="headerlink" title="Dashboard"></a>Dashboard</h2><p>Files in the Dashboard no longer have an icon indicating where they came from (local device, GDrive, etc.). We think it’s nice for developers to see, but not that useful for most end users. If you want to re-enable it, you can add the following CSS to your app:</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="token selector"><span class="token class">.uppy-DashboardItem-sourceIcon</span></span> <span class="token punctuation">{</span> <span class="token property">display</span><span class="token punctuation">:</span> inline-block<span class="token punctuation">;</span> <span class="token punctuation">}</span></pre></td></tr></table></figure>
+<p>The difference is very small. The icons used to be next to the file size, as seen here in Uppy v1.3:<br><img src="/uppy/images/blog/1.5/with-source-icon.png" alt="Uppy Dashboard v1.3, with file source icon"></p>
+<p>Now, in v1.5, they’re gone:<br><img src="/uppy/images/blog/1.5/without-source-icon.png" alt="Uppy Dashboard v1.5, without file source icon"></p>
+<p>Additionally:</p>
+<ul>
+<li>Editing a file now fires <code>dashboard:file-edit-start</code> and <code>dashboard:file-edit-complete</code> events (<a href="https://github.com/transloadit/uppy/pull/1776" target="_blank" rel="noopener">#1776</a>)</li>
+<li>Excessive debug logging is reduced (<a href="https://github.com/transloadit/uppy/pull/1747" target="_blank" rel="noopener">#1747</a>)</li>
+<li>Fixes to the TypeScript typings were submitted by @mrbatista and @MatthiasKunnen</li>
+</ul>
+<h2 id="Cancellation"><a href="#Cancellation" class="headerlink" title="Cancellation"></a>Cancellation</h2><p>Our old approach to limiting the amount of simultaneous uploads had some problems. Uploads were queued by chaining Promises, but they did not respect cancellation. So, if you cancelled an upload while some files were still waiting to start, those files would actually start uploading even though they had already been removed. Obviously, that’s pretty bad!</p>
+<p>PR <a href="https://github.com/transloadit/uppy/pull/1736" target="_blank" rel="noopener">#1736</a> addresses this by ripping out the old limiting code and replacing it with a new, cancellation-aware upload queue. We’ve also added a browser test to make sure that this thing stays resilient:</p>
+<video alt="Demo video showing an automated Chaos Monkey session with Uppy" muted="" autoplay="" loop="">
+  <source src="/uppy/images/blog/1.5/chaos-monkey.webm" type="video/webm">
+  <source src="/uppy/images/blog/1.5/chaos-monkey.mp4" type="video/mp4">
+</video>
+
+<h2 id="Lerna-lerna-lerna"><a href="#Lerna-lerna-lerna" class="headerlink" title="Lerna lerna lerna"></a>Lerna lerna lerna</h2><p>In August, we bit the bullet and used Lerna’s <code>lerna link convert</code> feature. Now, all the packages in our monorepo depend on each other, using <code>file:../packagename/</code> paths instead of version numbers. The entire repository is one big dependency tree in npm’s view. Npm can install the entire thing on its own, without <code>lerna bootstrap</code>’s help! Since npm manages the entire tree, the <code>package-lock.json</code> file in the repository root contains everything we need. We can now use the faster <code>npm ci</code> install command on CI, saving more than sixty seconds on every run :tada:</p>
+<p>As part of this effort, we also added all our examples to the lerna-managed tree, so you no longer have to do <code>npm install</code> in example folders to use them.</p>
+<p>This change makes working on the repository much easier, since dependencies are handled in the same way as in any other repository, simply by doing:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="token function">npm</span> <span class="token function">install</span></pre></td></tr></table></figure>
+<h2 id="Localization"><a href="#Localization" class="headerlink" title="Localization"></a>Localization</h2><p>Thanks to multiple contributors, Uppy now knows Czech, Danish, Greek, Indonesian, and Swedish, on top of the nineteen languages that were already supported! The Serbian locale is now available in both the Cyrillic and Latin scripts. Big thanks to @achmiral, @arggh, @czj, @jukakoski, @marcusforberg, @nndevstudio, @Pzoco, @Tashows, and @tvaliasek for their efforts ✨</p>
+<p>New translations are rolling in every month, but there are plenty more languages out there that Uppy would love to learn. Please consider <a href="/docs/locales/#Contributing-a-new-language">contributing your language</a> as well!</p>
+<h2 id="Facebook-and-OneDrive"><a href="#Facebook-and-OneDrive" class="headerlink" title="Facebook and OneDrive"></a>Facebook and OneDrive</h2><p>This release adds two experimental new remote providers: Facebook and OneDrive. For now, they are not available through the <code>uppy</code> package. To use them, install <code>@uppy/facebook</code> or <code>@uppy/onedrive</code>:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="token function">npm</span> <span class="token function">install</span> @uppy/facebook
+<span class="token function">npm</span> <span class="token function">install</span> @uppy/onedrive</pre></td></tr></table></figure>
+<p>Configure Companion to access the Facebook and OneDrive APIs, using environment variables or the JS API:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="token builtin class-name">export</span> <span class="token assign-left variable">COMPANION_FACEBOOK_KEY</span><span class="token operator">=</span><span class="token string">"***"</span>
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">COMPANION_FACEBOOK_SECRET</span><span class="token operator">=</span><span class="token string">"***"</span>
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">COMPANION_ONEDRIVE_KEY</span><span class="token operator">=</span><span class="token string">"***"</span>
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">COMPANION_ONEDRIVE_SECRET</span><span class="token operator">=</span><span class="token string">"***"</span></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="token literal-property property">providerOptions</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+  <span class="token literal-property property">facebook</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">key</span><span class="token operator">:</span> <span class="token string">''</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">secret</span><span class="token operator">:</span> <span class="token string">''</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token comment">// For OneDrive’s key &amp; secret pair, please use `microsoft` option key</span>
+  <span class="token literal-property property">microsoft</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">key</span><span class="token operator">:</span> <span class="token string">''</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">secret</span><span class="token operator">:</span> <span class="token string">''</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></pre></td></tr></table></figure>
+<p>Then use them like the existing providers:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="token keyword">const</span> <span class="token maybe-class-name">Facebook</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'@uppy/facebook'</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> <span class="token maybe-class-name">OneDrive</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'@uppy/onedrive'</span><span class="token punctuation">)</span>
+
+uppy<span class="token punctuation">.</span><span class="token method function property-access">use</span><span class="token punctuation">(</span><span class="token maybe-class-name">Facebook</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token literal-property property">companionUrl</span><span class="token operator">:</span> <span class="token constant">YOUR_COMPANION_URL</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+uppy<span class="token punctuation">.</span><span class="token method function property-access">use</span><span class="token punctuation">(</span><span class="token maybe-class-name">OneDrive</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token literal-property property">companionUrl</span><span class="token operator">:</span> <span class="token constant">YOUR_COMPANION_URL</span> <span class="token punctuation">}</span><span class="token punctuation">)</span></pre></td></tr></table></figure>
+<p>We’re still waiting for our developer keys to be approved, so we don’t have working examples on the website yet! We’ll let you know on <a href="https://twitter.com/uppy_io" target="_blank" rel="noopener">Twitter</a> when they’re live.</p>
+<p>Once these new providers have been tested for a while, we will release them as 1.0 and include them in the main Uppy and Robodog bundles.</p>
+<h2 id="Revoke-Companion’s-Provider-access-on-logout"><a href="#Revoke-Companion’s-Provider-access-on-logout" class="headerlink" title="Revoke Companion’s Provider access on logout"></a>Revoke Companion’s Provider access on logout</h2><p>Up until now, when users clicked “logout” after using a remote Provider, such as Google Drive or Dropbox, Uppy would destroy the access token. But on the Provider’s side, Uppy was still allowed access. Should the user click “Connect to Google Drive” again, no extra confirmation was required.</p>
+<p>After a discussion in <a href="https://github.com/transloadit/uppy/issues/1563" target="_blank" rel="noopener">#1563</a>, we are expanding the logout process. Now, when users log out of remote Providers through Uppy, Companion will destroy the token as before, but also attempt to revoke the access from the corresponding Provider. In the event that the Provider doesn’t support access revoke via it’s API, Uppy will display a helpful message informing users how they can revoke the permissions manually.</p>
+<p>See <a href="https://github.com/transloadit/uppy/pull/1843" target="_blank" rel="noopener">#1843</a> for details.</p>
+<h2 id="Misc"><a href="#Misc" class="headerlink" title="Misc"></a>Misc</h2><ul>
+<li>@uppy/aws-s3-multipart: fix queueing behaviors, especially interaction with cancellation (@goto-bus-stop, #1855)</li>
+<li>@uppy/aws-s3: replace browser-only resolve-url by isomorphic url-parse (@goto-bus-stop, #1854)</li>
+<li>@uppy/companion-client: rename serverHeaders to companionHeaders (@goto-bus-stop, #1861)</li>
+<li>@uppy/companion: Fix S3 uploads for URL plugins (#1784 / @@ifedapoolarewaju)</li>
+<li>@uppy/companion: bump lodash.merge to 4.6.2 to fix audit warning (#1796 / @rettgerst)</li>
+<li>@uppy/companion: set allowed HTTP methods internally (#1754 / @ifedapoolarewaju)</li>
+<li>@uppy/companion: whenever an error is returned from Companion: the auth screen will be displayed if the user was never authenticated; if the user is authenticated, the last screen on display before the error will be displayed (#1743 / @ifedapoolarewaju)</li>
+<li>@uppy/core: Made sure we can upload new files if we cancel last file (allowMultipleUploads: false) (#1764 / @lakesare)</li>
+<li>@uppy/core: fix “Cannot read property ‘log’ of undefined” (#1785 / @theJoeBiz)</li>
+<li>@uppy/core: use setFileState inside retryUpload (#1759 / @goto-bus-stop)</li>
+<li>@uppy/dashboard, @uppy/drag-drop: getDroppedFiles.js: handle exceptions better (#1797 / @lakesare)</li>
+<li>@uppy/form: try/catch parsing, set updatedResult to an empty array when not an array (#1800 / @arturi)</li>
+<li>@uppy/locales: Finnish semantics improved and fixed some typos (#1744 / @jukakoski)</li>
+<li>@uppy/locales: Update sr_RS_Latin.js (#1749 / @nndevstudio)</li>
+<li>@uppy/locales: correct some fr_FR localization strings (#1807 / @czj)</li>
+<li>@uppy/locales: fix typo in Persian locale (@uxitten, #1865)</li>
+<li>@uppy/locales: improve Swedish translation (@marcusforberg, #1859)</li>
+<li>@uppy/thumbnail-generator: add waitForThumbnailsBeforeUpload option, false by default (@arturi, #1803)</li>
+<li>@uppy/transloadit: add limit option, warn about using limit when it’s set to 0. In Uppy 2.0 we’ll set the limit to something sensible (like 10 files) by default. (#1789 / @arturi)</li>
+<li>@uppy/transloadit: pin socket.io version to ES5 compatible one (@goto-bus-stop, <a href="https://github.com/transloadit/uppy/commit/5839b655f093edaa778d49b719f7dda063ef79cb" target="_blank" rel="noopener">https://github.com/transloadit/uppy/commit/5839b655f093edaa778d49b719f7dda063ef79cb</a>)</li>
+<li>@uppy/xhr-upload: Throw an error when trying to upload a remote file with <code>bundle: true</code> (#1769 / @arturi)</li>
+<li>build: Fix statefulset update: statefulsets image only should be updated. (#1821 / @kiloreux)</li>
+<li>build: Update eslint to v6 (#1777 / @goto-bus-stop)</li>
+<li>build: ci: tweak job run order (#1740 / @goto-bus-stop)</li>
+<li>core: Made addFile return the file id (#1739 / @eliOcs)</li>
+<li>docs: Link to Transloadit plugin from Robodog Form page (#1810 / @janko)</li>
+<li>docs: Talk about using a custom-file input, instead of the file-input plugin (#1765 / @arturi)</li>
+<li>docs: add “force metafield” to docs and changelog (ab053e7ab266d3a4838069ed23675bb9211e4d1a / @arturi)</li>
+<li>docs: explicitly document supported tus-js-client options (#1755 / @goto-bus-stop)</li>
+<li>docs: fix typo (@leftdevel, #1852)</li>
+<li>docs: redux - mentioned that we can’t persist Uppy state (#1793 / @lakesare)</li>
+<li>docs: remove pre-1.0 notice from changelog (@mskelton, #1858)</li>
+<li>docs: talk about marking some files as “already uploaded” (c345cbd58992f7bea9525629c28d38420c6b36a3 / @arturi)</li>
+<li>test: add end-to-end test with retries (@ifedapoolarewaju, #1766)</li>
+<li>tests: e2e: reintroduce e2e test for providers locally (#1706 / @ifedapoolarewaju)</li>
+<li>website: /examples/dragdrop - added more obvious ‘file was uploaded’ indicator (#1750 / @lakesare)</li>
+<li>website: /examples/xhrupload - more obvious UI, added a list of uploaded files (#1768 / @lakesare)</li>
+<li>website: add new version of hexo-filter-github-emojis (#1783 / @lakesare)</li>
+<li>website: fix docs/locales code escaping and css overflow (5a0055c15d04d97e8a0feb784daa7abe8da1d72d / @arturi)</li>
+</ul>
+<p>As always, you can find the full list of changes and package versions, as well as future plans, in our <a href="https://github.com/transloadit/uppy/blob/master/CHANGELOG.md" target="_blank" rel="noopener">changelog</a>.</p>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script></body></html>
+
+    <center>
+        <br />
+        <a class="github-button" href="https://github.com/transloadit/uppy" data-icon="octicon-star" data-size="large"
+        data-show-count="true" aria-label="Star transloadit/uppy on GitHub">Star</a>
+    </center>
+
+    <div class="PostAuthors">
+        
+            <div class="PostAuthor">
+                <a class="PostAuthor-link" href="https://transloadit.com/about/#renee" target="_blank" rel="noopener">
+                    <img class="PostAuthor-img" src="https://www.gravatar.com/avatar/2873ddbfdaa1440797750ba605c231ac?s=200">
+                    <h4 class="PostAuthor-name">Renée Kooi</h4>
+                    <div class="PostAuthor-tagline">Developer</div>
+                </a>
+            </div>
+        
+    </div>
+  <br />
+    <!-- <ul class="Social">
+        <li><iframe src="https://ghbtns.com/github-btn.html?user=transloadit&repo=uppy&type=watch&count=true"
+                allowtransparency="true" frameborder="0" scrolling="0" width="100" height="20"></iframe></li>
+    </ul> -->
+  <!-- <div id="disqus_thread"></div>
+<script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+
+var disqus_config = function () {
+this.page.url = 'https://uppy.io/blog/2019/10/1.5/';  // Replace PAGE_URL with your page's canonical URL variable
+// this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://uppy.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" target="_blank" rel="noopener">comments powered by Disqus.</a></noscript>
+                             -->
+</div>
+
+        
+      </main>
+
+      <script defer data-domain="transloadit.github.io" src="https://analytics.transloadit.com/js/plausible.js"></script>
+
+
+      
+        <script src="/uppy/js/smooth-scroll.min.js"></script>
+        <!-- Place this tag in your head or just before your close body tag. -->
+        <script async defer src="https://buttons.github.io/buttons.js"></script>
+      
+      <script src="/uppy/js/common.js"></script>
+
+      <!-- Twitter follow button script -->
+      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+    </div>
+  </body>
+</html>

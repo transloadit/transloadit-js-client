@@ -1,0 +1,413 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Uppy 3.0: Future-proof, conveniently easy, stable as ever — Uppy</title>
+    <meta charset="utf-8">
+    <meta name="title" content="Uppy 3.0: Future-proof, conveniently easy, stable as ever — Uppy">
+    <meta name="description" content="
+
+For those new to Uppy, coming from Reddit, Hacker News and Product Hunt today: Uppy is a popular open source file uploader for the browser. Pick files from local disk or camera, remote sources like Instagram, Unsplash, Dropbox etc, record audio and screencasts. Crop and tweak images with the image editor plugin. Supports resumable uploads to a tus.io server, AWS S3 (and many others with similar ">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@uppy_io">
+    <meta name="twitter:creator" content="@uppy_io">
+    <meta property="og:url" content="https://transloadit.github.io/uppy/blog/2022/09/3.0/index.html">
+    <meta property="og:title" content="Uppy 3.0: Future-proof, conveniently easy, stable as ever — Uppy">
+    <meta name="twitter:title" content="Uppy 3.0: Future-proof, conveniently easy, stable as ever — Uppy">
+    <meta name="twitter:description" content="
+
+For those new to Uppy, coming from Reddit, Hacker News and Product Hunt today: Uppy is a popular open source file uploader for the browser. Pick files from local disk or camera, remote sources like Instagram, Unsplash, Dropbox etc, record audio and screencasts. Crop and tweak images with the image editor plugin. Supports resumable uploads to a tus.io server, AWS S3 (and many others with similar ">
+    <meta property="og:image" content="/uppy/uppy/images/blog/3.0/uppy-3-0.jpg">
+    <meta name="twitter:image" content="/uppy/uppy/images/blog/3.0/uppy-3-0.jpg">
+
+    <meta name="google-site-verification" content="JxARoHXoCI8bD07pLV_u3z6xpuWNcSIZIcHEytyCkUc" />
+
+    <link rel="icon" href="/uppy/images/logos/uppy-dog-head-arrow.png" type="image/x-icon">
+    <link rel="alternate" type="application/rss+xml" title="Uppy" href="/atom.xml">
+
+    <script>
+      window.PAGE_TYPE = ""
+    </script>
+    
+<link rel="stylesheet" href="/uppy/css/main.css?version=2">
+
+    <!-- ^ poor man's solution to css cache busting. bump the version when there's something new we really want users to see -->
+  <meta name="generator" content="Hexo 4.2.1"></head>
+  <body class="page-inner ">
+    <div class="page">
+      <div class="TransloaditBar js-TransloaditBar">
+        <div class="TransloaditBar-about">
+          <!-- <a class="TransloaditBar-logo" href="https://transloadit.com/" target="_blank" rel="noopener">
+            <img class="TransloaditBar-logoImg" src="/uppy/images/transloadit-white-glyph.svg" width="20" height="20" alt="Transloadit">
+          </a> -->
+          <!-- <span>Uppy is an open source project by <a class="TransloaditBar-link" href="https://transloadit.com/" target="_blank">Transloadit</a></span> -->
+          This website is no longer maintained, please visit <a href="//uppy.io" target="_blank" rel="noopener" style="color:inherit">uppy.io</a> to get up-to-date info about Uppy.
+        </div>
+      </div>
+
+      <header id="header" class="MainHeader js-MainHeader">
+        <button class="MainHeader-menuBtn js-MenuBtn"></button>
+
+        <span id="logo" class="MainLogo">
+          <a class="MainLogo-link" href="/uppy/">Uppy</a>
+          <!-- Was used for 1.0, we can re-use for 2.0 or major announcements -->
+          <!-- <a class="MainLogo-announcement" href="/blog/2019/04/1.0/">
+            1.0
+            <span class="MainLogo-emoji">
+              <img src="/uppy/images/party-popper.png" srcset="/uppy/images/party-popper@2x.png 2x" alt="🎉">
+            </span>
+          </a> -->
+        </span>
+
+        <nav>
+          <ul id="nav" class="MainMenu">
+            <!-- @todo uncomment search input when we get our own swifttype -->
+<!-- <li>
+  <form id="search-form" class="MainMenu-search">
+    <input type="text" id="search-query" class="MainMenu-searchQuery st-default-search-input">
+  </form>
+</li> -->
+<!--li><a href="/uppy/guide/" class="nav-link">Guide</a></li-->
+<li><a href="/uppy/docs/" class="nav-link">Docs</a></li>
+<li><a href="/uppy/examples/dashboard/" class="nav-link">Examples</a></li>
+<!--li><a href="/uppy/stats/" class="nav-link">Stats</a></li-->
+<li><a href="/uppy/blog/" class="nav-link current">Blog</a></li>
+<li><a href="/uppy/support/" class="nav-link">Support</a></li>
+<li><a href="https://github.com/transloadit/uppy" target="_blank" rel="noopener" class="nav-link">GitHub</a></li>
+
+          </ul>
+        </nav>
+
+        <div class="MainHeader-tagline">
+          The file uploader that <span class="MainHeader-taglinePart js-MainHeader-taglinePart is-visible">loves to play fetch</span>
+        </div>
+
+        <ul class="MainHeader-taglineList js-MainHeader-taglineList">
+          
+          <li>won’t chew on your shoes</li>
+          
+          <li>is fully housebroken</li>
+          
+          <li>just wants to play with you</li>
+          
+          <li>doesn’t hump your leg</li>
+          
+          <li>also accepts cat pictures</li>
+          
+          <li>loves you unconditionally</li>
+          
+          <li>you don’t have to keep on a leash</li>
+          
+          <li>won’t pee on your rug</li>
+          
+          <li>loves to play fetch</li>
+          
+          <li>doesn’t bite (hard)</li>
+          
+          <li>won’t bark at the mailman</li>
+          
+          <li>is great with the kids</li>
+          
+          <li>can digest anything, even chocolate cake</li>
+          
+          <li>is always happy to see you</li>
+          
+          <li>isn’t afraid of fireworks</li>
+          
+          <li>is allowed everywhere</li>
+          
+        </ul>
+      </header>
+
+      <main class="MainContent js-MainContent" id="main">
+        
+          <div class="Sidebar js-Sidebar is-blog">
+    <ul class="main-menu">
+        <!-- @todo uncomment search input when we get our own swifttype -->
+<!-- <li>
+  <form id="search-form" class="MainMenu-search">
+    <input type="text" id="search-query" class="MainMenu-searchQuery st-default-search-input">
+  </form>
+</li> -->
+<!--li><a href="/uppy/guide/" class="nav-link">Guide</a></li-->
+<li><a href="/uppy/docs/" class="nav-link">Docs</a></li>
+<li><a href="/uppy/examples/dashboard/" class="nav-link">Examples</a></li>
+<!--li><a href="/uppy/stats/" class="nav-link">Stats</a></li-->
+<li><a href="/uppy/blog/" class="nav-link current">Blog</a></li>
+<li><a href="/uppy/support/" class="nav-link">Support</a></li>
+<li><a href="https://github.com/transloadit/uppy" target="_blank" rel="noopener" class="nav-link">GitHub</a></li>
+
+    </ul>
+    <div class="list">
+        <h2>
+            Recent Posts
+            <a href="/atom.xml" rel="noreferrer noopener" target="_blank" style="vertical-align: middle; margin-left: 5px">
+                <img src="/uppy/images/feed.png" style="width:15px;height:15px">
+            </a>
+        </h2>
+
+        <ul>
+  
+  <li>
+    <a href="/blog/2022/12/3.3/" class="sidebar-link">🎄 Uppy 3.1-3.3: Improved AWS S3 Multipart, Single File Mode</a>
+  </li>
+  
+  <li>
+    <a href="/blog/2022/09/3.0/" class="sidebar-link current">Uppy 3.0: Future-proof, conveniently easy, stable as ever</a>
+  </li>
+  
+  <li>
+    <a href="/blog/2022/03/2.4-2.7/" class="sidebar-link">Uppy 2.4-2.7: Image Compressor, Transloadit Rate Limiting, ESM</a>
+  </li>
+  
+  <li>
+    <a href="/blog/2021/12/2.1-2.3/" class="sidebar-link">🎄 Uppy 2.1-2.3: Audio plugin, fast and efficient streaming for Companion, production-ready Unsplash, and more</a>
+  </li>
+  
+  <li>
+    <a href="/blog/2021/08/2.0/" class="sidebar-link">Uppy 2.0.0: smaller, faster, modular plugins, Preact X, stricter types, and much more</a>
+  </li>
+  
+  <li>
+    <a href="/blog/2021/07/1.30/" class="sidebar-link">Uppy 1.30: Angular integration, granular image rotation, Google Drive shortcuts</a>
+  </li>
+  
+  <li>
+    <a href="/blog/2021/05/1.29/" class="sidebar-link">Uppy 1.29: Golden Retriever, disableLocalFiles, Webcam previews, uppy.logout</a>
+  </li>
+  
+  <li>
+    <a href="/blog/2021/04/1.27/" class="sidebar-link">Uppy 1.27: Drop Target plugin, Vue 3 support, Dashboard dynamic meta fields, “Shared with me” in Google Drive</a>
+  </li>
+  
+  <li>
+    <a href="/blog/2021/02/1.26/" class="sidebar-link">Uppy 1.26: Dashboard “disabled”, per-file headers</a>
+  </li>
+  
+  <li>
+    <a href="/blog/2021/01/1.25/" class="sidebar-link">Uppy 1.25: right-to-left scripts, Ukrainian translation, Companion improvements</a>
+  </li>
+  
+  <li>
+    <a href="/blog/2020/12/1.24/" class="sidebar-link">Uppy 1.24: 🎅 Happy Holidays — Svelte, React hook, Auto Open Image Editor</a>
+  </li>
+  
+</ul>
+        <ul class="Social">
+  <li><a href="https://twitter.com/uppy_io" target="_blank" rel="noopener" class="twitter-follow-button" data-show-count="false" data-dnt="true">Follow @uppy_io</a></li>
+  <li><iframe src="https://ghbtns.com/github-btn.html?user=transloadit&repo=uppy&type=watch&count=true"
+allowtransparency="true" frameborder="0" scrolling="0" width="100" height="20"></iframe></li>
+  <!-- to regenerate you can use this link: https://img.shields.io/badge/community-forum-d8006a.svg -->
+  <li><a href="https://community.transloadit.com/c/uppy" target="_blank" rel="noopener"><img src="/uppy/images/community-forum-d8006a.svg" /> </a></li>
+  <li class="BuildBadge">
+   <span class="wrapper">
+     <a href="https://github.com/transloadit/uppy/actions" target="_blank" rel="noopener"><img src="https://github.com/transloadit/uppy/workflows/End-to-end%20tests/badge.svg" alt="Build Status"></a>
+   </span>
+  </li>
+</ul>
+
+    </div>
+</div>
+
+
+<div class="Content js-Content with-sidebar">
+    
+  <h1>Uppy 3.0: Future-proof, conveniently easy, stable as ever</h1>
+  <div class="post-date">Tuesday Sep 13, 2022</div>
+    
+    <html><head></head><body><p><img src="/uppy/images/blog/3.0/uppy-3-0.jpg" alt="Screenshot of Uppy 3.0.0 UI"></p>
+<blockquote>
+<p>For those new to Uppy, coming from Reddit, Hacker News and Product Hunt today: Uppy is a popular open source file uploader for the browser. Pick files from local disk or camera, remote sources like Instagram, Unsplash, Dropbox etc, record audio and screencasts. Crop and tweak images with the image editor plugin. Supports resumable uploads to a tus.io server, AWS S3 (and many others with similar API like DigitalOcean), multipart. <a href="/uppy/examples/dashboard">Try it</a>!</p>
+</blockquote>
+<p>Uppy is turning three! When you’re counting in <a href="https://www.akc.org/expert-advice/health/how-to-calculate-dog-years-to-human-years/" target="_blank" rel="noopener">dog years</a> – which we most certainly are – that’s 29 already. An age like that signifies proper adulthood. For Uppy, this means it’s ready to stay loyal, but without the silly mistakes (read: bugs). Uppy also underwent (ESM) surgery to keep it strolling by your side in the current ecosystem, and received other behavioral improvements 🐶</p>
+<a id="more"></a>
+
+<p>TL;DR: ESM transition, native mobile camera, new Remote Sources plugin, sweeping Companion rewrite and streaming support, <code>async</code>/<code>await</code> everything, React 18 and Vue 3 support, all examples rewritten.</p>
+<h2 id="ESM-surgery"><a href="#ESM-surgery" class="headerlink" title="ESM surgery"></a>ESM surgery</h2><p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules" target="_blank" rel="noopener">ECMAScript Modules</a> (ESM) are the future and we’re ready to adopt it. Benefits over CommonJS include: improved security, better tree shaking, and a syntax that can be understood natively by browsers, which can greatly improve the DX if the tools are configured to take advantage of that.</p>
+<p>Following in the footsteps of many other packages, we now only ship Uppy core and its plugins as ESM. For Uppy 2.x, we were shipping CommonJS.</p>
+<p>If you are already using ESM or the CDN builds, nothing changes for you! If you are using CommonJS, you may have to add extra tooling for everything to work, or consider refactoring your codebase to ESM. Please refer to the <a href="https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c" target="_blank" rel="noopener">Pure ESM package gist</a> for more information and help on how to do that.</p>
+<h2 id="Less-integration-code-with-the-new-remote-sources-preset"><a href="#Less-integration-code-with-the-new-remote-sources-preset" class="headerlink" title="Less integration code with the new remote sources preset"></a>Less integration code with the new remote sources preset</h2><p>We’ve introduced a new Uppy preset plugin, <a href="/docs/remote-sources"><code>@uppy/remote-sources</code></a>, which combines Instagram, Facebook, Google Drive, Box, Unsplash, Dropbox, One Drive, Zoom and any other remote cloud sources that Uppy will support in the future. The plugin only works with Dashboard and allows you to enable all the above sources in a single line.</p>
+<p>Before, you had to manually include every cloud provider / remote source:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre>uppy
+  <span class="token punctuation">.</span><span class="token method function property-access">use</span><span class="token punctuation">(</span><span class="token maybe-class-name">Instagram</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token literal-property property">companionUrl</span><span class="token operator">:</span> <span class="token constant">COMPANION_URL</span><span class="token punctuation">,</span> <span class="token literal-property property">companionAllowedHosts</span><span class="token operator">:</span> <span class="token constant">COMPANION_ALLOWED_HOSTS</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token method function property-access">use</span><span class="token punctuation">(</span><span class="token maybe-class-name">GoogleDrive</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token literal-property property">companionUrl</span><span class="token operator">:</span> <span class="token constant">COMPANION_URL</span><span class="token punctuation">,</span> <span class="token literal-property property">companionAllowedHosts</span><span class="token operator">:</span> <span class="token constant">COMPANION_ALLOWED_HOSTS</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token method function property-access">use</span><span class="token punctuation">(</span><span class="token maybe-class-name">OneDrive</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token literal-property property">companionUrl</span><span class="token operator">:</span> <span class="token constant">COMPANION_URL</span><span class="token punctuation">,</span> <span class="token literal-property property">companionAllowedHosts</span><span class="token operator">:</span> <span class="token constant">COMPANION_ALLOWED_HOSTS</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token method function property-access">use</span><span class="token punctuation">(</span><span class="token maybe-class-name">Instagram</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token literal-property property">companionUrl</span><span class="token operator">:</span> <span class="token constant">COMPANION_URL</span><span class="token punctuation">,</span> <span class="token literal-property property">companionAllowedHosts</span><span class="token operator">:</span> <span class="token constant">COMPANION_ALLOWED_HOSTS</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token method function property-access">use</span><span class="token punctuation">(</span><span class="token maybe-class-name">Facebook</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token literal-property property">companionUrl</span><span class="token operator">:</span> <span class="token constant">COMPANION_URL</span><span class="token punctuation">,</span> <span class="token literal-property property">companionAllowedHosts</span><span class="token operator">:</span> <span class="token constant">COMPANION_ALLOWED_HOSTS</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token method function property-access">use</span><span class="token punctuation">(</span><span class="token maybe-class-name">Unsplash</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token literal-property property">companionUrl</span><span class="token operator">:</span> <span class="token constant">COMPANION_URL</span><span class="token punctuation">,</span> <span class="token literal-property property">companionAllowedHosts</span><span class="token operator">:</span> <span class="token constant">COMPANION_ALLOWED_HOSTS</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token comment">// ...</span></pre></td></tr></table></figure>
+<p>After:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre>uppy<span class="token punctuation">.</span><span class="token method function property-access">use</span><span class="token punctuation">(</span><span class="token maybe-class-name">RemoteSources</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token literal-property property">companionUrl</span><span class="token operator">:</span> <span class="token constant">COMPANION_URL</span> <span class="token punctuation">}</span><span class="token punctuation">)</span></pre></td></tr></table></figure>
+<p>To get started, check out the <a href="/docs/remote-sources"><code>RemoteSources</code> docs</a>.</p>
+<h2 id="Robodog-ends-its-service"><a href="#Robodog-ends-its-service" class="headerlink" title="Robodog ends its service"></a>Robodog ends its service</h2><p>Uppy is flexible and extensible through plugins, but the integration code could sometimes prove daunting. This is what brought <a href="/docs/robodog/">Robodog</a> to life. It served as an alternative with the same features, but with a more ergonomic and minimal API.</p>
+<p>It did, however, come with its own set of new problems:</p>
+<ul>
+<li>Robodog tries to do the exact same thing as Uppy, but looks like an entirely different product.</li>
+<li>Users are faced with a confusing choice between using Robodog or using Uppy directly.</li>
+<li>Robodog is more ergonomic because it’s limited. When hitting such a limit, the user has to refactor everything to Uppy using plugins.</li>
+</ul>
+<p>This has now led us to deprecating Robodog and embracing Uppy for its strong suits: modularity and flexibility. At the same time, we’re also introducing something to take away some of the repetitive integration code: <a href="/docs/remote-sources"><code>@uppy/remote-sources</code></a>.</p>
+<p>Are you using Robodog in your code base? You can check out the <a href="/uppy/docs/migration-guides.html#Migrate-from-Robodog-to-Uppy-plugins">migration guide</a> to see how you can transition to Uppy plugins without losing functionality. We have committed ourselves to extending Robodog support for one year to give our users more time to migrate.</p>
+<h2 id="Native-mobile-camera"><a href="#Native-mobile-camera" class="headerlink" title="Native mobile camera"></a>Native mobile camera</h2><p>As you are probably aware, Uppy’s Webcam plugin provides a nice UI for desktop devices to take pictures and record videos. Up until 3.0, the same UI was utilized on mobile as well.</p>
+<p>Since most mobile devices have a system UI for taking pictures and recording videos – which is usually better than any custom solution we can offer – we’ve introduced a new option called <code>mobileNativeCamera</code> for the Webcam plugin:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre>uppy<span class="token punctuation">.</span><span class="token method function property-access">use</span><span class="token punctuation">(</span><span class="token maybe-class-name">Webcam</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  <span class="token literal-property property">mobileNativeCamera</span><span class="token operator">:</span> <span class="token function">isMobile</span><span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token literal-property property">tablet</span><span class="token operator">:</span> <span class="token boolean">true</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span></pre></td></tr></table></figure>
+<p>By default, it uses the <a href="https://github.com/juliangruber/is-mobile" target="_blank" rel="noopener"><code>is-mobile</code></a> package to detect mobile devices, like smartphones and tablets, but you can manually set this option to <code>true</code> or <code>false</code> if you wish. When enabled, instead of the usual Camera/Webcam Uppy UI, users will be presented with buttons that open their device’s native camera interface:</p>
+<p><img src="/uppy/images/blog/3.0/native-camera.jpg" alt="Uppy native camera UI"></p>
+<p><a href="/docs/webcam/#videoConstraints"><code>videoConstraints.facingMode</code></a> is also supported by this option via the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/capture" target="_blank" rel="noopener"><code>capture</code></a> attribute (in the browsers and devices that respect it).</p>
+<figure class="highlight js"><table><tr><td class="code"><pre>uppy<span class="token punctuation">.</span><span class="token method function property-access">use</span><span class="token punctuation">(</span><span class="token maybe-class-name">Webcam</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  <span class="token literal-property property">videoConstraints</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">facingMode</span><span class="token operator">:</span> <span class="token string">'user'</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span></pre></td></tr></table></figure>
+<p>The same applies to <a href="/docs/webcam/#modes"><code>modes</code></a>, allowing you to enable only video or only photos.</p>
+<h2 id="Devotedly-stable"><a href="#Devotedly-stable" class="headerlink" title="Devotedly stable"></a>Devotedly stable</h2><p>Since the Uppy 2.7.0 release, <strong>we’ve fixed over 95 bugs!</strong> This includes fixes to bugs that made uploading less stable, documentation corrections, and dependency upgrades.</p>
+<h2 id="Companion-turns-4-0"><a href="#Companion-turns-4-0" class="headerlink" title="Companion turns 4.0"></a>Companion turns 4.0</h2><p>Everyone’s favorite Companion also received some love.</p>
+<h3 id="Streaming-upload"><a href="#Streaming-upload" class="headerlink" title="Streaming upload"></a>Streaming upload</h3><p>Streaming upload can now also be enabled in Companion when using Tus. This comes with greatly improved upload speeds and allows uploading up to hundreds of gigabytes without needing a large server storage. We found that this improves speeds by about 37% for a Google Drive upload of a 1 GB file (<a href="https://github.com/transloadit/uppy/pull/4046#issuecomment-1235697937" target="_blank" rel="noopener">source</a>). This feature was also available before Companion 4.0, but it didn’t work with Tus until now.</p>
+<p>With streaming upload disabled (default), the whole file will be downloaded first. The upload will then start when the download has completely finished.</p>
+<p>When streaming upload is enabled, Companion will start downloading the file from the provider (such as Google Drive), while at the same time starting the upload to the destination (such as Tus), and sending every chunk of data consecutively.</p>
+<p>For more information, see the <a href="/docs/companion/">Companion docs</a>.</p>
+<h3 id="Event-emitter"><a href="#Event-emitter" class="headerlink" title="Event emitter"></a>Event emitter</h3><p>Companion now has a server-side event emitter that can be used to detect when uploads start, finish and fail, without having to depend on the client (so it works even when users have closed their browser).</p>
+<p>Example code:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="token keyword">const</span> <span class="token punctuation">{</span> app<span class="token punctuation">,</span> emitter <span class="token punctuation">}</span> <span class="token operator">=</span> companion<span class="token punctuation">.</span><span class="token method function property-access">app</span><span class="token punctuation">(</span>options<span class="token punctuation">)</span>
+
+emitter<span class="token punctuation">.</span><span class="token method function property-access">on</span><span class="token punctuation">(</span><span class="token string">'upload-start'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">{</span> token <span class="token punctuation">}</span></span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token punctuation">{</span>
+  <span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span><span class="token string">'Upload started'</span><span class="token punctuation">,</span> token<span class="token punctuation">)</span>
+
+  <span class="token keyword">function</span> <span class="token function">onUploadEvent</span> <span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">{</span> action<span class="token punctuation">,</span> payload <span class="token punctuation">}</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword control-flow">if</span> <span class="token punctuation">(</span>action <span class="token operator">===</span> <span class="token string">'success'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      emitter<span class="token punctuation">.</span><span class="token method function property-access">off</span><span class="token punctuation">(</span>token<span class="token punctuation">,</span> onUploadEvent<span class="token punctuation">)</span> <span class="token comment">// avoid listener leak</span>
+      <span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span><span class="token string">'Upload finished'</span><span class="token punctuation">,</span> token<span class="token punctuation">,</span> payload<span class="token punctuation">.</span><span class="token property-access">url</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span> <span class="token keyword control-flow">else</span> <span class="token keyword control-flow">if</span> <span class="token punctuation">(</span>action <span class="token operator">===</span> <span class="token string">'error'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      emitter<span class="token punctuation">.</span><span class="token method function property-access">off</span><span class="token punctuation">(</span>token<span class="token punctuation">,</span> onUploadEvent<span class="token punctuation">)</span> <span class="token comment">// avoid listener leak</span>
+      <span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">error</span><span class="token punctuation">(</span><span class="token string">'Upload failed'</span><span class="token punctuation">,</span> payload<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+  emitter<span class="token punctuation">.</span><span class="token method function property-access">on</span><span class="token punctuation">(</span>token<span class="token punctuation">,</span> onUploadEvent<span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span></pre></td></tr></table></figure>
+<h3 id="Internal-improvements"><a href="#Internal-improvements" class="headerlink" title="Internal improvements"></a>Internal improvements</h3><p>Companion’s internal request code and Providers have been rewritten to <code>async</code>/<code>await</code>, which has greatly simplified and reduced the amount of code. This will lead to less bugs and security issues, and make it easier to implement new custom Providers.</p>
+<p>We have also replaced the deprecated <a href="https://github.com/request/request" target="_blank" rel="noopener"><code>request</code></a> library with <a href="https://github.com/sindresorhus/got" target="_blank" rel="noopener"><code>got</code></a>. This also removed the need for <a href="https://github.com/simov/purest" target="_blank" rel="noopener"><code>purest</code></a>.</p>
+<h3 id="And-more"><a href="#And-more" class="headerlink" title="And more!"></a>And more!</h3><ul>
+<li><a href="/docs/compressor">Compressor</a> is officially stable. The Compressor plugin for Uppy optimizes images (JPEG, PNG), saving on average up to 60% in size. It has proven itself through extensive battle testing.</li>
+<li><a href="/docs/aws-s3-multipart">AWS S3 Multipart</a> also became more stable this release, as a result of us hammering out some of the last edge cases with lots of files and/or huge files.</li>
+<li>React 18 is now supported in <a href="/docs/react"><code>@uppy/react</code></a>, Vue 3 is supported for <a href="/docs/vue"><code>@uppy/vue</code></a>, and Angular 14 for <a href="/docs/angular"><code>@uppy/angular</code></a>.</li>
+<li>Our <a href="https://github.com/transloadit/uppy/tree/main/examples" target="_blank" rel="noopener">examples</a> have received a fresh round of updates to keep them relevant.</li>
+</ul>
+<hr>
+<p><img src="/uppy/images/blog/3.0/dog-enjoys.gif" alt="Animate picture of a visibly happy dog getting a head massage"></p>
+<p>For more details, see the full <a href="https://github.com/transloadit/uppy/blob/HEAD/CHANGELOG.md#1300" target="_blank" rel="noopener">changelog</a> and the <a href="/docs/migration-guides.html">migration guide</a>.</p>
+<p>That’s it from us for now! As you can see, Uppy may be slowly turning into an old dog, but we’re still committed to keep teaching it new tricks. We hope you’ll enjoy this latest major release, and all the features and improvements it includes. We can’t wait to hear your thoughts about it on <a href="https://twitter.com/uppy_io" target="_blank" rel="noopener">Twitter</a>!</p>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script></body></html>
+
+    <center>
+        <br />
+        <a class="github-button" href="https://github.com/transloadit/uppy" data-icon="octicon-star" data-size="large"
+        data-show-count="true" aria-label="Star transloadit/uppy on GitHub">Star</a>
+    </center>
+
+    <div class="PostAuthors">
+        
+            <div class="PostAuthor">
+                <a class="PostAuthor-link" href="https://transloadit.com/about/#aduh95" target="_blank" rel="noopener">
+                    <img class="PostAuthor-img" src="https://www.gravatar.com/avatar/1ef7117c7b7a0caa172d567665dc8524?s=200">
+                    <h4 class="PostAuthor-name">Antoine du Hamel</h4>
+                    <div class="PostAuthor-tagline">Developer</div>
+                </a>
+            </div>
+        
+            <div class="PostAuthor">
+                <a class="PostAuthor-link" href="https://transloadit.com/about/#artur" target="_blank" rel="noopener">
+                    <img class="PostAuthor-img" src="https://www.gravatar.com/avatar/6ddfaa9427d64ba52bbe021ea5e2ffef?s=200">
+                    <h4 class="PostAuthor-name">Artur Paikin</h4>
+                    <div class="PostAuthor-tagline">Developer</div>
+                </a>
+            </div>
+        
+            <div class="PostAuthor">
+                <a class="PostAuthor-link" href="https://transloadit.com/about/#mikael" target="_blank" rel="noopener">
+                    <img class="PostAuthor-img" src="https://www.gravatar.com/avatar/b32426186bf182de99cfa12adbd22761?s=200">
+                    <h4 class="PostAuthor-name">Mikael Finstad</h4>
+                    <div class="PostAuthor-tagline">Developer</div>
+                </a>
+            </div>
+        
+            <div class="PostAuthor">
+                <a class="PostAuthor-link" href="https://transloadit.com/about/#merlijn" target="_blank" rel="noopener">
+                    <img class="PostAuthor-img" src="https://www.gravatar.com/avatar/26363b11ef0d2c8070c3e4aa628e84c4?s=200">
+                    <h4 class="PostAuthor-name">Merlijn Vos</h4>
+                    <div class="PostAuthor-tagline">Developer</div>
+                </a>
+            </div>
+        
+    </div>
+  <br />
+    <!-- <ul class="Social">
+        <li><iframe src="https://ghbtns.com/github-btn.html?user=transloadit&repo=uppy&type=watch&count=true"
+                allowtransparency="true" frameborder="0" scrolling="0" width="100" height="20"></iframe></li>
+    </ul> -->
+  <!-- <div id="disqus_thread"></div>
+<script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+
+var disqus_config = function () {
+this.page.url = 'https://uppy.io/blog/2022/09/3.0/';  // Replace PAGE_URL with your page's canonical URL variable
+// this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://uppy.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" target="_blank" rel="noopener">comments powered by Disqus.</a></noscript>
+                             -->
+</div>
+
+        
+      </main>
+
+      <script defer data-domain="transloadit.github.io" src="https://analytics.transloadit.com/js/plausible.js"></script>
+
+
+      
+        <script src="/uppy/js/smooth-scroll.min.js"></script>
+        <!-- Place this tag in your head or just before your close body tag. -->
+        <script async defer src="https://buttons.github.io/buttons.js"></script>
+      
+      <script src="/uppy/js/common.js"></script>
+
+      <!-- Twitter follow button script -->
+      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+    </div>
+  </body>
+</html>

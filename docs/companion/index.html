@@ -1,0 +1,1182 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Companion — Uppy</title>
+    <meta charset="utf-8">
+    <meta name="title" content="Companion — Uppy">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@uppy_io">
+    <meta name="twitter:creator" content="@uppy_io">
+    <meta property="og:url" content="https://transloadit.github.io/uppy/docs/companion/index.html">
+    <meta property="og:title" content="Companion — Uppy">
+    <meta name="twitter:title" content="Companion — Uppy">
+    <meta name="twitter:description" content="">
+    <meta property="og:image" content="http://transloadit.github.io/uppy/images/uppy-social-pink.png">
+    <meta name="twitter:image" content="http://transloadit.github.io/uppy/images/uppy-social-pink.png">
+
+    <meta name="google-site-verification" content="JxARoHXoCI8bD07pLV_u3z6xpuWNcSIZIcHEytyCkUc" />
+
+    <link rel="icon" href="/uppy/images/logos/uppy-dog-head-arrow.png" type="image/x-icon">
+    <link rel="alternate" type="application/rss+xml" title="Uppy" href="/atom.xml">
+
+    <script>
+      window.PAGE_TYPE = "docs"
+    </script>
+    
+<link rel="stylesheet" href="/uppy/css/main.css?version=2">
+
+    <!-- ^ poor man's solution to css cache busting. bump the version when there's something new we really want users to see -->
+  <meta name="generator" content="Hexo 4.2.1"></head>
+  <body class="page-inner ">
+    <div class="page">
+      <div class="TransloaditBar js-TransloaditBar">
+        <div class="TransloaditBar-about">
+          <!-- <a class="TransloaditBar-logo" href="https://transloadit.com/" target="_blank" rel="noopener">
+            <img class="TransloaditBar-logoImg" src="/uppy/images/transloadit-white-glyph.svg" width="20" height="20" alt="Transloadit">
+          </a> -->
+          <!-- <span>Uppy is an open source project by <a class="TransloaditBar-link" href="https://transloadit.com/" target="_blank">Transloadit</a></span> -->
+          This website is no longer maintained, please visit <a href="//uppy.io" target="_blank" rel="noopener" style="color:inherit">uppy.io</a> to get up-to-date info about Uppy.
+        </div>
+      </div>
+
+      <header id="header" class="MainHeader js-MainHeader">
+        <button class="MainHeader-menuBtn js-MenuBtn"></button>
+
+        <span id="logo" class="MainLogo">
+          <a class="MainLogo-link" href="/uppy/">Uppy</a>
+          <!-- Was used for 1.0, we can re-use for 2.0 or major announcements -->
+          <!-- <a class="MainLogo-announcement" href="/blog/2019/04/1.0/">
+            1.0
+            <span class="MainLogo-emoji">
+              <img src="/uppy/images/party-popper.png" srcset="/uppy/images/party-popper@2x.png 2x" alt="🎉">
+            </span>
+          </a> -->
+        </span>
+
+        <nav>
+          <ul id="nav" class="MainMenu">
+            <!-- @todo uncomment search input when we get our own swifttype -->
+<!-- <li>
+  <form id="search-form" class="MainMenu-search">
+    <input type="text" id="search-query" class="MainMenu-searchQuery st-default-search-input">
+  </form>
+</li> -->
+<!--li><a href="/uppy/guide/" class="nav-link">Guide</a></li-->
+<li><a href="/uppy/docs/" class="nav-link current">Docs</a></li>
+<li><a href="/uppy/examples/dashboard/" class="nav-link">Examples</a></li>
+<!--li><a href="/uppy/stats/" class="nav-link">Stats</a></li-->
+<li><a href="/uppy/blog/" class="nav-link">Blog</a></li>
+<li><a href="/uppy/support/" class="nav-link">Support</a></li>
+<li><a href="https://github.com/transloadit/uppy" target="_blank" rel="noopener" class="nav-link">GitHub</a></li>
+
+          </ul>
+        </nav>
+
+        <div class="MainHeader-tagline">
+          The file uploader that <span class="MainHeader-taglinePart js-MainHeader-taglinePart is-visible">loves to play fetch</span>
+        </div>
+
+        <ul class="MainHeader-taglineList js-MainHeader-taglineList">
+          
+          <li>won’t chew on your shoes</li>
+          
+          <li>is fully housebroken</li>
+          
+          <li>just wants to play with you</li>
+          
+          <li>doesn’t hump your leg</li>
+          
+          <li>also accepts cat pictures</li>
+          
+          <li>loves you unconditionally</li>
+          
+          <li>you don’t have to keep on a leash</li>
+          
+          <li>won’t pee on your rug</li>
+          
+          <li>loves to play fetch</li>
+          
+          <li>doesn’t bite (hard)</li>
+          
+          <li>won’t bark at the mailman</li>
+          
+          <li>is great with the kids</li>
+          
+          <li>can digest anything, even chocolate cake</li>
+          
+          <li>is always happy to see you</li>
+          
+          <li>isn’t afraid of fireworks</li>
+          
+          <li>is allowed everywhere</li>
+          
+        </ul>
+      </header>
+
+      <main class="MainContent js-MainContent" id="main">
+        
+          
+    <div class="Sidebar js-Sidebar">
+  <ul class="main-menu">
+    <!-- @todo uncomment search input when we get our own swifttype -->
+<!-- <li>
+  <form id="search-form" class="MainMenu-search">
+    <input type="text" id="search-query" class="MainMenu-searchQuery st-default-search-input">
+  </form>
+</li> -->
+<!--li><a href="/uppy/guide/" class="nav-link">Guide</a></li-->
+<li><a href="/uppy/docs/" class="nav-link current">Docs</a></li>
+<li><a href="/uppy/examples/dashboard/" class="nav-link">Examples</a></li>
+<!--li><a href="/uppy/stats/" class="nav-link">Stats</a></li-->
+<li><a href="/uppy/blog/" class="nav-link">Blog</a></li>
+<li><a href="/uppy/support/" class="nav-link">Support</a></li>
+<li><a href="https://github.com/transloadit/uppy" target="_blank" rel="noopener" class="nav-link">GitHub</a></li>
+
+  </ul>
+  
+  
+  <div class="list">
+    <h2>
+      <a href="/uppy/docs">Docs</a>
+    </h2>
+      
+    <div class="menu-root">
+      
+
+    
+    
+    
+    <ul>
+      
+        
+        
+        <li key="p-0-docs/index.html">
+          <a href="/docs/" class="sidebar-link">Getting Started</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-1-docs/uppy/index.html">
+          <a href="/docs/uppy/" class="sidebar-link">Uppy</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-2-docs/companion/index.html">
+          <a href="/docs/companion/" class="sidebar-link current">Companion</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-3-docs/plugins/index.html">
+          <a href="/docs/plugins/" class="sidebar-link">List of Plugins</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-4-docs/plugin-options/index.html">
+          <a href="/docs/plugin-options/" class="sidebar-link">Common Plugin Options</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-5-docs/stores/index.html">
+          <a href="/docs/stores/" class="sidebar-link">Custom Stores</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-6-docs/community-projects/index.html">
+          <a href="/docs/community-projects/" class="sidebar-link">Community Projects</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-7-docs/locales/index.html">
+          <a href="/docs/locales/" class="sidebar-link">Locale Packs</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-8-docs/migration-guides.html">
+          <a href="/docs/migration-guides.html" class="sidebar-link">Migration guides</a>
+          
+        </li>
+      
+    </ul>
+
+    
+    
+    
+        
+        <h3 id="" key="category-1-UI Elements" data-scroll="no">UI Elements</h3>
+        
+    
+    <ul>
+      
+        
+        
+        <li key="p-0-docs/dashboard/index.html">
+          <a href="/docs/dashboard/" class="sidebar-link">Dashboard</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-1-docs/status-bar/index.html">
+          <a href="/docs/status-bar/" class="sidebar-link">Status Bar</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-2-docs/progress-bar/index.html">
+          <a href="/docs/progress-bar/" class="sidebar-link">Progress Bar</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-3-docs/informer/index.html">
+          <a href="/docs/informer/" class="sidebar-link">Informer</a>
+          
+        </li>
+      
+    </ul>
+
+    
+    
+    
+        
+        <h3 id="" key="category-2-Sources" data-scroll="no">Sources</h3>
+        
+    
+    <ul>
+      
+        
+        
+        <li key="p-0-docs/drag-drop/index.html">
+          <a href="/docs/drag-drop/" class="sidebar-link">Drag & Drop</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-1-docs/drop-target/index.html">
+          <a href="/docs/drop-target/" class="sidebar-link">Drop Target</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-2-docs/file-input/index.html">
+          <a href="/docs/file-input/" class="sidebar-link">File Input</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-3-docs/audio/index.html">
+          <a href="/docs/audio/" class="sidebar-link">Audio</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-4-docs/webcam/index.html">
+          <a href="/docs/webcam/" class="sidebar-link">Webcam</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-5-docs/screen-capture/index.html">
+          <a href="/docs/screen-capture/" class="sidebar-link">Screen capture</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-6-docs/providers/index.html">
+          <a href="/docs/providers/" class="sidebar-link">Provider Plugins</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-7-docs/box/index.html">
+          <span title='Requires Companion'>ⓒ </span><a href="/docs/box/" class="sidebar-link">Box</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-8-docs/dropbox/index.html">
+          <span title='Requires Companion'>ⓒ </span><a href="/docs/dropbox/" class="sidebar-link">Dropbox</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-9-docs/google-drive/index.html">
+          <span title='Requires Companion'>ⓒ </span><a href="/docs/google-drive/" class="sidebar-link">Google Drive</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-10-docs/instagram/index.html">
+          <span title='Requires Companion'>ⓒ </span><a href="/docs/instagram/" class="sidebar-link">Instagram</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-11-docs/onedrive/index.html">
+          <span title='Requires Companion'>ⓒ </span><a href="/docs/onedrive/" class="sidebar-link">OneDrive</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-12-docs/zoom/index.html">
+          <span title='Requires Companion'>ⓒ </span><a href="/docs/zoom/" class="sidebar-link">Zoom</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-13-docs/facebook/index.html">
+          <span title='Requires Companion'>ⓒ </span><a href="/docs/facebook/" class="sidebar-link">Facebook</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-14-docs/unsplash/index.html">
+          <span title='Requires Companion'>ⓒ </span><a href="/docs/unsplash/" class="sidebar-link">Unsplash</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-15-docs/url/index.html">
+          <span title='Requires Companion'>ⓒ </span><a href="/docs/url/" class="sidebar-link">Import From URL</a>
+          
+        </li>
+      
+    </ul>
+
+    
+    
+    
+        
+        <h3 id="" key="category-3-Destinations" data-scroll="no">Destinations</h3>
+        
+    
+    <ul>
+      
+        
+        
+        <li key="p-0-docs/tus/index.html">
+          <a href="/docs/tus/" class="sidebar-link">Tus</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-1-docs/xhr-upload/index.html">
+          <a href="/docs/xhr-upload/" class="sidebar-link">XHR</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-2-docs/aws-s3/index.html">
+          <a href="/docs/aws-s3/" class="sidebar-link">AWS S3</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-3-docs/aws-s3-multipart/index.html">
+          <a href="/docs/aws-s3-multipart/" class="sidebar-link">AWS S3 Multipart</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-4-docs/transloadit/index.html">
+          <a href="/docs/transloadit/" class="sidebar-link">Transloadit</a>
+          
+        </li>
+      
+    </ul>
+
+    
+    
+    
+        
+        <h3 id="" key="category-4-Miscellaneous" data-scroll="no">Miscellaneous</h3>
+        
+    
+    <ul>
+      
+        
+        
+        <li key="p-0-docs/form/index.html">
+          <a href="/docs/form/" class="sidebar-link">Form</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-1-docs/golden-retriever/index.html">
+          <a href="/docs/golden-retriever/" class="sidebar-link">Golden Retriever</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-2-docs/image-editor/index.html">
+          <a href="/docs/image-editor/" class="sidebar-link">Image Editor</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-3-docs/thumbnail-generator/index.html">
+          <a href="/docs/thumbnail-generator/" class="sidebar-link">Thumbnail Generator</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-4-docs/redux/index.html">
+          <a href="/docs/redux/" class="sidebar-link">Redux</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-5-docs/compressor/index.html">
+          <a href="/docs/compressor/" class="sidebar-link">Compressor</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-6-docs/remote-sources/index.html">
+          <a href="/docs/remote-sources/" class="sidebar-link">Remote Sources</a>
+          
+        </li>
+      
+    </ul>
+
+    
+    
+    
+    <ul>
+      
+    </ul>
+
+    
+    
+    
+        
+        <h3 id="" key="category-6-React" data-scroll="no"><a href="/docs/react/">React</a></h3>
+        
+    
+    <ul>
+      
+        
+        
+        <li key="p-0-docs/react/index.html">
+          <a href="/docs/react/" class="sidebar-link">Introduction</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-1-docs/react/status-bar/index.html">
+          <a href="/docs/react/status-bar/" class="sidebar-link">&lt;StatusBar /></a>
+          
+        </li>
+      
+        
+        
+        <li key="p-2-docs/react/drag-drop/index.html">
+          <a href="/docs/react/drag-drop/" class="sidebar-link">&lt;DragDrop /></a>
+          
+        </li>
+      
+        
+        
+        <li key="p-3-docs/react/file-input/index.html">
+          <a href="/docs/react/file-input/" class="sidebar-link">&lt;FileInput /></a>
+          
+        </li>
+      
+        
+        
+        <li key="p-4-docs/react/progress-bar/index.html">
+          <a href="/docs/react/progress-bar/" class="sidebar-link">&lt;ProgressBar /></a>
+          
+        </li>
+      
+        
+        
+        <li key="p-5-docs/react/dashboard/index.html">
+          <a href="/docs/react/dashboard/" class="sidebar-link">&lt;Dashboard /></a>
+          
+        </li>
+      
+        
+        
+        <li key="p-6-docs/react/dashboard-modal/index.html">
+          <a href="/docs/react/dashboard-modal/" class="sidebar-link">&lt;DashboardModal /></a>
+          
+        </li>
+      
+        
+        
+        <li key="p-7-docs/react/native/index.html">
+          <a href="/docs/react/native/" class="sidebar-link">React Native</a>
+          
+        </li>
+      
+    </ul>
+
+    
+    
+    
+        
+        <h3 id="" key="category-7-Other Integrations" data-scroll="no"><a href="/docs/vue/">Other Integrations</a></h3>
+        
+    
+    <ul>
+      
+        
+        
+        <li key="p-0-docs/angular/index.html">
+          <a href="/docs/angular/" class="sidebar-link">Angular</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-1-docs/vue/index.html">
+          <a href="/docs/vue/" class="sidebar-link">Vue</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-2-docs/svelte/index.html">
+          <a href="/docs/svelte/" class="sidebar-link">Svelte</a>
+          
+        </li>
+      
+    </ul>
+
+    
+    
+    
+        
+        <h3 id="" key="category-8-Contributing" data-scroll="no"><a href="/docs/contributing.html">Contributing</a></h3>
+        
+    
+    <ul>
+      
+        
+        
+        <li key="p-0-docs/contributing.html">
+          <a href="/docs/contributing.html" class="sidebar-link">Contributing</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-1-docs/writing-plugins/index.html">
+          <a href="/docs/writing-plugins/" class="sidebar-link">Writing Plugins</a>
+          
+        </li>
+      
+    </ul>
+
+
+    </div>
+
+    <ul class="Social">
+  <li><a href="https://twitter.com/uppy_io" target="_blank" rel="noopener" class="twitter-follow-button" data-show-count="false" data-dnt="true">Follow @uppy_io</a></li>
+  <li><iframe src="https://ghbtns.com/github-btn.html?user=transloadit&repo=uppy&type=watch&count=true"
+allowtransparency="true" frameborder="0" scrolling="0" width="100" height="20"></iframe></li>
+  <!-- to regenerate you can use this link: https://img.shields.io/badge/community-forum-d8006a.svg -->
+  <li><a href="https://community.transloadit.com/c/uppy" target="_blank" rel="noopener"><img src="/uppy/images/community-forum-d8006a.svg" /> </a></li>
+  <li class="BuildBadge">
+   <span class="wrapper">
+     <a href="https://github.com/transloadit/uppy/actions" target="_blank" rel="noopener"><img src="https://github.com/transloadit/uppy/workflows/End-to-end%20tests/badge.svg" alt="Build Status"></a>
+   </span>
+  </li>
+</ul>
+
+    </div>
+  
+</div>
+
+
+
+<div class="Content js-Content docs with-sidebar">
+    <h1>Companion</h1>
+    <html><head></head><body><p>Drag and drop, webcam, basic file manipulation (adding metadata, for example) and uploading via tus-resumable uploads or XHR/Multipart are all possible using only the Uppy client module.</p>
+<!--retext-simplify ignore however-->
+
+<p>However, if you add <a href="https://github.com/transloadit/uppy/tree/main/packages/@uppy/companion" target="_blank" rel="noopener">Companion</a> to the mix, your users will be able to select files from remote sources, such as Instagram, Google Drive and Dropbox, bypassing the client (so a 5 GB video isn’t eating into your users’ data plans), and then uploaded to the final destination. Files are removed from Companion after an upload is complete, or after a reasonable timeout. Access tokens also don’t stick around for long, for security reasons.</p>
+<p>Companion handles the server-to-server communication between your server and file storage providers such as Google Drive, Dropbox, Instagram, etc. Note that you can <strong>not</strong> upload files <strong>to</strong> Companion, it only handles the third party integrations.</p>
+<h2 id="Supported-providers"><a href="#Supported-providers" class="headerlink" title="Supported providers"></a>Supported providers</h2><p>As of now, Companion is integrated to work with:</p>
+<ul>
+<li>Google Drive (name <code>drive</code>) - <a href="/docs/google-drive/#Setting-Up">Set up instructions</a></li>
+<li>Dropbox (name <code>dropbox</code>) - <a href="/docs/dropbox/#Setting-Up">Set up instructions</a></li>
+<li>Box (name <code>box</code>) - <a href="/docs/box/#Setting-Up">Set up instructions</a></li>
+<li>Instagram (name <code>instagram</code>)</li>
+<li>Facebook (name <code>facebook</code>)</li>
+<li>OneDrive (name <code>onedrive</code>)</li>
+<li>Remote URLs (name <code>url</code>)</li>
+<li>Amazon S3 (name <code>s3</code>)</li>
+</ul>
+<h2 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h2><p>Install from NPM:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="token function">npm</span> <span class="token function">install</span> @uppy/companion</pre></td></tr></table></figure>
+<p>If you don’t have a Node.js project with a <code>package.json</code> you might want to install/run Companion globally like so: <code>npm install -g @uppy/companion</code>.</p>
+<h3 id="Prerequisite"><a href="#Prerequisite" class="headerlink" title="Prerequisite"></a>Prerequisite</h3><p>Since v4.0.0, you now need to be running Node.js &gt;= v14.19.0 to use Companion.</p>
+<p>Unfortunately, Windows is not a supported platform right now. It may work, and we’re happy to accept improvements in this area, but we can’t provide support.</p>
+<h2 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h2><!--retext-simplify ignore already-existing-->
+
+<p>Companion may either be used as a pluggable express app, which you plug into your already existing server, or it may also be run as a standalone server:</p>
+<h3 id="Plugging-into-an-existing-express-server"><a href="#Plugging-into-an-existing-express-server" class="headerlink" title="Plugging into an existing express server"></a>Plugging into an existing express server</h3><p>To plug Companion into an existing server, call its <code>.app()</code> method, passing in an <a href="#Options">options</a> object as a parameter. This returns an object with an <code>app</code> property which is a server instance that you can mount on a subpath in your Express or app.</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="token keyword module">import</span> <span class="token imports">express</span> <span class="token keyword module">from</span> <span class="token string">'express'</span>
+<span class="token keyword module">import</span> <span class="token imports">bodyParser</span> <span class="token keyword module">from</span> <span class="token string">'body-parser'</span>
+<span class="token keyword module">import</span> <span class="token imports">session</span> <span class="token keyword module">from</span> <span class="token string">'express-session'</span>
+<span class="token keyword module">import</span> <span class="token imports">companion</span> <span class="token keyword module">from</span> <span class="token string">'@uppy/companion'</span>
+
+<span class="token keyword">const</span> app <span class="token operator">=</span> <span class="token function">express</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment">// Companion requires body-parser and express-session middleware.</span>
+<span class="token comment">// You can add it like this if you use those throughout your app.</span>
+<span class="token comment">//</span>
+<span class="token comment">// If you are using something else in your app, you can add these</span>
+<span class="token comment">// middlewares in the same subpath as Companion instead.</span>
+app<span class="token punctuation">.</span><span class="token method function property-access">use</span><span class="token punctuation">(</span>bodyParser<span class="token punctuation">.</span><span class="token method function property-access">json</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+app<span class="token punctuation">.</span><span class="token method function property-access">use</span><span class="token punctuation">(</span><span class="token function">session</span><span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token literal-property property">secret</span><span class="token operator">:</span> <span class="token string">'some secrety secret'</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token keyword">const</span> options <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token literal-property property">providerOptions</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">drive</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token literal-property property">key</span><span class="token operator">:</span> <span class="token string">'GOOGLE_DRIVE_KEY'</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">secret</span><span class="token operator">:</span> <span class="token string">'GOOGLE_DRIVE_SECRET'</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">server</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">host</span><span class="token operator">:</span> <span class="token string">'localhost:3020'</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">protocol</span><span class="token operator">:</span> <span class="token string">'http'</span><span class="token punctuation">,</span>
+    <span class="token comment">// This MUST match the path you specify in `app.use()` below:</span>
+    <span class="token literal-property property">path</span><span class="token operator">:</span> <span class="token string">'/companion'</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">filePath</span><span class="token operator">:</span> <span class="token string">'/path/to/folder/'</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">const</span> <span class="token punctuation">{</span> <span class="token literal-property property">app</span><span class="token operator">:</span> companionApp <span class="token punctuation">}</span> <span class="token operator">=</span> companion<span class="token punctuation">.</span><span class="token method function property-access">app</span><span class="token punctuation">(</span>options<span class="token punctuation">)</span>
+
+app<span class="token punctuation">.</span><span class="token method function property-access">use</span><span class="token punctuation">(</span><span class="token string">'/companion'</span><span class="token punctuation">,</span> companionApp<span class="token punctuation">)</span></pre></td></tr></table></figure>
+<p>See <a href="#Options">Options</a> for valid configuration options.</p>
+<p>Then, add the Companion WebSocket server for realtime upload progress, using the <code>companion.socket</code> function:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="token keyword">const</span> server <span class="token operator">=</span> app<span class="token punctuation">.</span><span class="token method function property-access">listen</span><span class="token punctuation">(</span><span class="token constant">PORT</span><span class="token punctuation">)</span>
+
+companion<span class="token punctuation">.</span><span class="token method function property-access">socket</span><span class="token punctuation">(</span>server<span class="token punctuation">)</span></pre></td></tr></table></figure>
+<p>This takes your <code>server</code> instance as an argument.</p>
+<h4 id="Events"><a href="#Events" class="headerlink" title="Events"></a>Events</h4><p>The object returned by <code>companion.app()</code> also has a property <code>emitter</code> which is an <code>EventEmitter</code> that emits the following events:</p>
+<ul>
+<li><code>upload-start</code> - When an upload starts, this event is emitted with an object containing the property <code>token</code>, which is a unique ID for the upload.</li>
+<li><strong>token</strong> - The event name is the token from <code>upload-start</code>. The event has an object with the following properties:<ul>
+<li><code>action</code> - One of the following strings:<ul>
+<li><code>success</code> - When the upload succeeds.</li>
+<li><code>error</code> - When the upload fails with an error.</li>
+</ul>
+</li>
+<li><code>payload</code> - the error or success payload.</li>
+</ul>
+</li>
+</ul>
+<p>Example code for using the <code>EventEmitter</code> to handle a finished file upload:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="token keyword">const</span> <span class="token punctuation">{</span> app<span class="token punctuation">,</span> emitter <span class="token punctuation">}</span> <span class="token operator">=</span> companion<span class="token punctuation">.</span><span class="token method function property-access">app</span><span class="token punctuation">(</span>options<span class="token punctuation">)</span>
+
+emitter<span class="token punctuation">.</span><span class="token method function property-access">on</span><span class="token punctuation">(</span><span class="token string">'upload-start'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">{</span> token <span class="token punctuation">}</span></span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token punctuation">{</span>
+  <span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span><span class="token string">'Upload started'</span><span class="token punctuation">,</span> token<span class="token punctuation">)</span>
+
+  <span class="token keyword">function</span> <span class="token function">onUploadEvent</span> <span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">{</span> action<span class="token punctuation">,</span> payload <span class="token punctuation">}</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword control-flow">if</span> <span class="token punctuation">(</span>action <span class="token operator">===</span> <span class="token string">'success'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      emitter<span class="token punctuation">.</span><span class="token method function property-access">off</span><span class="token punctuation">(</span>token<span class="token punctuation">,</span> onUploadEvent<span class="token punctuation">)</span> <span class="token comment">// avoid listener leak</span>
+      <span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span><span class="token string">'Upload finished'</span><span class="token punctuation">,</span> token<span class="token punctuation">,</span> payload<span class="token punctuation">.</span><span class="token property-access">url</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span> <span class="token keyword control-flow">else</span> <span class="token keyword control-flow">if</span> <span class="token punctuation">(</span>action <span class="token operator">===</span> <span class="token string">'error'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      emitter<span class="token punctuation">.</span><span class="token method function property-access">off</span><span class="token punctuation">(</span>token<span class="token punctuation">,</span> onUploadEvent<span class="token punctuation">)</span> <span class="token comment">// avoid listener leak</span>
+      <span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">error</span><span class="token punctuation">(</span><span class="token string">'Upload failed'</span><span class="token punctuation">,</span> payload<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+  emitter<span class="token punctuation">.</span><span class="token method function property-access">on</span><span class="token punctuation">(</span>token<span class="token punctuation">,</span> onUploadEvent<span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span></pre></td></tr></table></figure>
+<h3 id="Running-as-a-standalone-server"><a href="#Running-as-a-standalone-server" class="headerlink" title="Running as a standalone server"></a>Running as a standalone server</h3><blockquote>
+<p>Please make sure that the required environment variables are set before running/using Companion as a standalone server. See <a href="#Configuring-a-standalone-server">Configure Standalone</a> for the variables required.</p>
+</blockquote>
+<p>Set environment variables first:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="token builtin class-name">export</span> <span class="token assign-left variable">COMPANION_SECRET</span><span class="token operator">=</span><span class="token string">"shh!Issa Secret!"</span>
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">COMPANION_DOMAIN</span><span class="token operator">=</span><span class="token string">"YOUR SERVER DOMAIN"</span>
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">COMPANION_DATADIR</span><span class="token operator">=</span><span class="token string">"PATH/TO/DOWNLOAD/DIRECTORY"</span></pre></td></tr></table></figure>
+<p>And then run:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre>companion</pre></td></tr></table></figure>
+<p>You can also pass in the path to your JSON config file, like so:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre>companion <span class="token parameter variable">--config</span> /path/to/uppyconf.json</pre></td></tr></table></figure>
+<p>Please see <a href="#Options">Options</a> for possible options.</p>
+<h4 id="Configuring-a-standalone-server"><a href="#Configuring-a-standalone-server" class="headerlink" title="Configuring a standalone server"></a>Configuring a standalone server</h4><p>To run Companion as a standalone server, you are required to set your Uppy <a href="#Options">Options</a> via environment variables:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="token comment">####### Mandatory variables ###########</span>
+
+<span class="token comment"># any long set of random characters for the server session</span>
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">COMPANION_SECRET</span><span class="token operator">=</span><span class="token string">"shh!Issa Secret!"</span>
+<span class="token comment"># specifying a secret file will override a directly set secret</span>
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">COMPANION_SECRET_FILE</span><span class="token operator">=</span><span class="token string">"PATH/TO/COMPANION/SECRET/FILE"</span>
+<span class="token comment"># corresponds to the server.host option</span>
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">COMPANION_DOMAIN</span><span class="token operator">=</span><span class="token string">"YOUR SERVER DOMAIN"</span>
+<span class="token comment"># corresponds to the filePath option</span>
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">COMPANION_DATADIR</span><span class="token operator">=</span><span class="token string">"PATH/TO/DOWNLOAD/DIRECTORY"</span>
+
+<span class="token comment">###### Optional variables ##########</span>
+
+<span class="token comment"># corresponds to the server.protocol option, defaults to http</span>
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">COMPANION_PROTOCOL</span><span class="token operator">=</span><span class="token string">"YOUR SERVER PROTOCOL"</span>
+<span class="token comment"># the port on which to start the server, defaults to 3020</span>
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">COMPANION_PORT</span><span class="token operator">=</span><span class="token string">"YOUR SERVER PORT"</span>
+<span class="token comment"># corresponds to the server.path option, defaults to ''</span>
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">COMPANION_PATH</span><span class="token operator">=</span><span class="token string">"/SERVER/PATH/TO/WHERE/COMPANION/LIVES"</span>
+<span class="token comment"># disables the welcome page, defaults to false</span>
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">COMPANION_HIDE_WELCOME</span><span class="token operator">=</span><span class="token string">"true"</span>
+<span class="token comment"># disables the metrics page, defaults to false</span>
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">COMPANION_HIDE_METRICS</span><span class="token operator">=</span><span class="token string">"true"</span>
+<span class="token comment"># prefix all log entries with this value - useful for multiple instances</span>
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">COMPANION_LOGGER_PROCESS_NAME</span><span class="token operator">=</span><span class="token string">"companion"</span>
+
+<span class="token comment"># use this in place of COMPANION_PATH if the server path should not be</span>
+<span class="token comment"># handled by the express.js app, but maybe by an external server configuration</span>
+<span class="token comment"># instead (e.g Nginx).</span>
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">COMPANION_IMPLICIT_PATH</span><span class="token operator">=</span><span class="token string">"/SERVER/PATH/TO/WHERE/UPPY/SERVER/LIVES"</span>
+
+<span class="token comment"># corresponds to the corsOrigins option, but can contain a comma-separated list of String values.</span>
+<span class="token comment"># if neither this or COMPANION_CLIENT_ORIGINS_REGEX specified, the server would allow any host</span>
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">COMPANION_CLIENT_ORIGINS</span><span class="token operator">=</span><span class="token string">"http://localhost:3452,https://uppy.io"</span>
+
+<span class="token comment"># Like COMPANION_CLIENT_ORIGINS, but allows a single regex instead</span>
+<span class="token comment"># (COMPANION_CLIENT_ORIGINS will be ignored if this is used and vice versa)</span>
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">COMPANION_CLIENT_ORIGINS_REGEX</span><span class="token operator">=</span><span class="token string">"https://.*\.example\.(com|eu)$"</span>
+
+<span class="token comment"># corresponds to the redisUrl option</span>
+<span class="token comment"># this also enables Redis session storage if set</span>
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">COMPANION_REDIS_URL</span><span class="token operator">=</span><span class="token string">"REDIS URL"</span>
+
+<span class="token comment"># to enable Dropbox</span>
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">COMPANION_DROPBOX_KEY</span><span class="token operator">=</span><span class="token string">"YOUR DROPBOX KEY"</span>
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">COMPANION_DROPBOX_SECRET</span><span class="token operator">=</span><span class="token string">"YOUR DROPBOX SECRET"</span>
+<span class="token comment"># specifying a secret file will override a directly set secret</span>
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">COMPANION_DROPBOX_SECRET_FILE</span><span class="token operator">=</span><span class="token string">"PATH/TO/DROPBOX/SECRET/FILE"</span>
+
+<span class="token comment"># to enable Box</span>
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">COMPANION_BOX_KEY</span><span class="token operator">=</span><span class="token string">"YOUR BOX KEY"</span>
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">COMPANION_BOX_SECRET</span><span class="token operator">=</span><span class="token string">"YOUR BOX SECRET"</span>
+<span class="token comment"># specifying a secret file will override a directly set secret</span>
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">COMPANION_BOX_SECRET_FILE</span><span class="token operator">=</span><span class="token string">"PATH/TO/BOX/SECRET/FILE"</span>
+
+<span class="token comment"># to enable Google Drive</span>
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">COMPANION_GOOGLE_KEY</span><span class="token operator">=</span><span class="token string">"YOUR GOOGLE DRIVE KEY"</span>
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">COMPANION_GOOGLE_SECRET</span><span class="token operator">=</span><span class="token string">"YOUR GOOGLE DRIVE SECRET"</span>
+<span class="token comment"># specifying a secret file will override a directly set secret</span>
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">COMPANION_GOOGLE_SECRET_FILE</span><span class="token operator">=</span><span class="token string">"PATH/TO/GOOGLEDRIVE/SECRET/FILE"</span>
+
+<span class="token comment"># to enable Instagram</span>
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">COMPANION_INSTAGRAM_KEY</span><span class="token operator">=</span><span class="token string">"YOUR INSTAGRAM KEY"</span>
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">COMPANION_INSTAGRAM_SECRET</span><span class="token operator">=</span><span class="token string">"YOUR INSTAGRAM SECRET"</span>
+<span class="token comment"># specifying a secret file will override a directly set secret</span>
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">COMPANION_INSTAGRAM_SECRET_FILE</span><span class="token operator">=</span><span class="token string">"PATH/TO/INSTAGRAM/SECRET/FILE"</span>
+
+<span class="token comment"># to enable Facebook</span>
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">COMPANION_FACEBOOK_KEY</span><span class="token operator">=</span><span class="token string">"YOUR FACEBOOK KEY"</span>
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">COMPANION_FACEBOOK_SECRET</span><span class="token operator">=</span><span class="token string">"YOUR FACEBOOK SECRET"</span>
+<span class="token comment"># specifying a secret file will override a directly set secret</span>
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">COMPANION_FACEBOOK_SECRET_FILE</span><span class="token operator">=</span><span class="token string">"PATH/TO/FACEBOOK/SECRET/FILE"</span>
+
+<span class="token comment"># to enable Onedrive</span>
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">COMPANION_ONEDRIVE_KEY</span><span class="token operator">=</span><span class="token string">"YOUR ONEDRIVE KEY"</span>
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">COMPANION_ONEDRIVE_SECRET</span><span class="token operator">=</span><span class="token string">"YOUR ONEDRIVE SECRET"</span>
+<span class="token comment"># specifying a secret file will override a directly set secret</span>
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">COMPANION_ONEDRIVE_SECRET_FILE</span><span class="token operator">=</span><span class="token string">"PATH/TO/ONEDRIVE/SECRET/FILE"</span>
+
+<span class="token comment"># to enable Zoom</span>
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">COMPANION_ZOOM_KEY</span><span class="token operator">=</span><span class="token string">"YOUR ZOOM KEY"</span>
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">COMPANION_ZOOM_SECRET</span><span class="token operator">=</span><span class="token string">"YOUR ZOOM SECRET"</span>
+<span class="token comment"># specifying a secret file will override a directly set secret</span>
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">COMPANION_ZOOM_SECRET_FILE</span><span class="token operator">=</span><span class="token string">"PATH/TO/ZOOM/SECRET/FILE"</span>
+
+<span class="token comment"># to enable S3</span>
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">COMPANION_AWS_KEY</span><span class="token operator">=</span><span class="token string">"YOUR AWS KEY"</span>
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">COMPANION_AWS_SECRET</span><span class="token operator">=</span><span class="token string">"YOUR AWS SECRET"</span>
+<span class="token comment"># specifying a secret file will override a directly set secret</span>
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">COMPANION_AWS_SECRET_FILE</span><span class="token operator">=</span><span class="token string">"PATH/TO/AWS/SECRET/FILE"</span>
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">COMPANION_AWS_BUCKET</span><span class="token operator">=</span><span class="token string">"YOUR AWS S3 BUCKET"</span>
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">COMPANION_AWS_REGION</span><span class="token operator">=</span><span class="token string">"AWS REGION"</span>
+<span class="token comment"># to enable S3 Transfer Acceleration (default: false)</span>
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">COMPANION_AWS_USE_ACCELERATE_ENDPOINT</span><span class="token operator">=</span><span class="token string">"false"</span>
+<span class="token comment"># to set X-Amz-Expires query param in presigned urls (in seconds, default: 800)</span>
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">COMPANION_AWS_EXPIRES</span><span class="token operator">=</span><span class="token string">"800"</span>
+<span class="token comment"># to set a canned ACL for uploaded objects: https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl</span>
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">COMPANION_AWS_ACL</span><span class="token operator">=</span><span class="token string">"private"</span>
+<span class="token comment"># to set an optional prefix for all uploaded keys</span>
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">COMPANION_AWS_PREFIX</span><span class="token operator">=</span><span class="token string">"optional/prefix/"</span>
+
+<span class="token comment"># corresponds to the server.oauthDomain option</span>
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">COMPANION_OAUTH_DOMAIN</span><span class="token operator">=</span><span class="token string">"sub.domain.com"</span>
+<span class="token comment"># corresponds to the server.validHosts option</span>
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">COMPANION_DOMAINS</span><span class="token operator">=</span><span class="token string">"sub1.domain.com,sub2.domain.com,sub3.domain.com"</span>
+
+<span class="token comment"># corresponds to the sendSelfEndpoint option</span>
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">COMPANION_SELF_ENDPOINT</span><span class="token operator">=</span><span class="token string">"THIS SHOULD BE SAME AS YOUR DOMAIN + PATH"</span>
+
+<span class="token comment"># comma-separated URLs</span>
+<span class="token comment"># corresponds to the uploadUrls option (comma-separated)</span>
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">COMPANION_UPLOAD_URLS</span><span class="token operator">=</span><span class="token string">"http://tusd.tusdemo.net/files/,https://tusd.tusdemo.net/files/"</span>
+
+<span class="token comment"># corresponds to the streamingUpload option</span>
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">COMPANION_STREAMING_UPLOAD</span><span class="token operator">=</span>true
+
+<span class="token comment"># corresponds to the allowLocalUrls option</span>
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">COMPANION_ALLOW_LOCAL_URLS</span><span class="token operator">=</span>false
+
+<span class="token comment"># corresponds to the maxFileSize option</span>
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">COMPANION_MAX_FILE_SIZE</span><span class="token operator">=</span><span class="token string">"100000000"</span>
+
+<span class="token comment"># corresponds to the chunkSize option</span>
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">COMPANION_CHUNK_SIZE</span><span class="token operator">=</span><span class="token string">"50000000"</span>
+
+<span class="token comment"># corresponds to the periodicPingUrls option (CSV string converted to array)</span>
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">COMPANION_PERIODIC_PING_URLS</span><span class="token operator">=</span><span class="token string">"https://example.com/ping1,https://example.com/ping2"</span>
+<span class="token comment"># corresponds to the periodicPingInterval option</span>
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">COMPANION_PERIODIC_PING_INTERVAL</span><span class="token operator">=</span><span class="token number">60000</span>
+<span class="token comment"># corresponds to the periodicPingStaticPayload option (JSON string)</span>
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">COMPANION_PERIODIC_PING_STATIC_JSON_PAYLOAD</span><span class="token operator">=</span><span class="token string">"{<span class="token entity" title="\&quot;">\"</span>static<span class="token entity" title="\&quot;">\"</span>:<span class="token entity" title="\&quot;">\"</span>data<span class="token entity" title="\&quot;">\"</span>}"</span>
+
+<span class="token comment"># Set a custom prefix for redis keys created by [connect-redis](https://github.com/tj/connect-redis). Defaults to `sess:`. Sessions are used for storing authentication state and for allowing thumbnails to be loaded by the browser via Companion. You might want to change this because if you run a redis with many different apps in the same redis server, it's hard to know where `sess:` comes from and it might collide with other apps. **Note:** in the future ,we plan and changing the default to `companion:` and possibly remove this option.</span>
+<span class="token builtin class-name">export</span> <span class="token assign-left variable">COMPANION_REDIS_EXPRESS_SESSION_PREFIX</span><span class="token operator">=</span><span class="token string">"sess:"</span>
+
+<span class="token comment"># If you need to use `companionKeysParams` (custom OAuth credentials at request time),</span>
+<span class="token comment"># set this variable to a strong randomly generated secret.</span>
+<span class="token comment"># See also https://github.com/transloadit/uppy/pull/2622</span>
+<span class="token assign-left variable">COMPANION_PREAUTH_SECRET</span><span class="token operator">=</span><span class="token string">"preauth secret"</span></pre></td></tr></table></figure>
+<p>See <a href="https://github.com/transloadit/uppy/blob/main/.env.example" target="_blank" rel="noopener"><code>.env.example</code></a> for an example environment configuration file.</p>
+<h3 id="Options"><a href="#Options" class="headerlink" title="Options"></a>Options</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="token keyword">const</span> options <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token literal-property property">providerOptions</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">drive</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token literal-property property">key</span><span class="token operator">:</span> <span class="token string">'***'</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">secret</span><span class="token operator">:</span> <span class="token string">'***'</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">dropbox</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token literal-property property">key</span><span class="token operator">:</span> <span class="token string">'***'</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">secret</span><span class="token operator">:</span> <span class="token string">'***'</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">instagram</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token literal-property property">key</span><span class="token operator">:</span> <span class="token string">'***'</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">secret</span><span class="token operator">:</span> <span class="token string">'***'</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">facebook</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token literal-property property">key</span><span class="token operator">:</span> <span class="token string">'***'</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">secret</span><span class="token operator">:</span> <span class="token string">'***'</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">onedrive</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token literal-property property">key</span><span class="token operator">:</span> <span class="token string">'***'</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">secret</span><span class="token operator">:</span> <span class="token string">'***'</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">s3</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token function-variable function">getKey</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> filename<span class="token punctuation">,</span> metadata</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>crypto<span class="token punctuation">.</span><span class="token method function property-access">randomUUID</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">-</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>filename<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span>
+    <span class="token literal-property property">key</span><span class="token operator">:</span> <span class="token string">'***'</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">secret</span><span class="token operator">:</span> <span class="token string">'***'</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">bucket</span><span class="token operator">:</span> <span class="token string">'bucket-name'</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">region</span><span class="token operator">:</span> <span class="token string">'us-east-1'</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">useAccelerateEndpoint</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token comment">// default: false,</span>
+    <span class="token literal-property property">expires</span><span class="token operator">:</span> <span class="token number">3600</span><span class="token punctuation">,</span> <span class="token comment">// default: 300 (5 minutes)</span>
+    <span class="token literal-property property">acl</span><span class="token operator">:</span> <span class="token string">'private'</span><span class="token punctuation">,</span> <span class="token comment">// default: none</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">server</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">host</span><span class="token operator">:</span> <span class="token string">'localhost:3020'</span><span class="token punctuation">,</span> <span class="token comment">// or yourdomain.com</span>
+    <span class="token literal-property property">protocol</span><span class="token operator">:</span> <span class="token string">'http'</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">filePath</span><span class="token operator">:</span> <span class="token string">'path/to/download/folder'</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">sendSelfEndpoint</span><span class="token operator">:</span> <span class="token string">'localhost:3020'</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">secret</span><span class="token operator">:</span> <span class="token string">'mysecret'</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">uploadUrls</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'https://myuploadurl.com'</span><span class="token punctuation">,</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex"><span class="token anchor function">^</span>http:<span class="token escape">\/</span><span class="token escape">\/</span>myuploadurl2<span class="token char-set class-name">.</span>com<span class="token escape">\/</span></span><span class="token regex-delimiter">/</span></span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">debug</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">metrics</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">streamingUpload</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">allowLocalUrls</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">maxFileSize</span><span class="token operator">:</span> <span class="token number">100000000</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">periodicPingUrls</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">periodicPingInterval</span><span class="token operator">:</span> <span class="token number">60000</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">periodicPingStaticPayload</span><span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token keyword">static</span><span class="token operator">:</span> <span class="token string">'payload'</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">corsOrigins</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span></pre></td></tr></table></figure>
+<ol>
+<li><p><strong>filePath(required)</strong> - Full path to the directory to which provider files will be downloaded temporarily.</p>
+</li>
+<li><p><strong>uploadUrls(required)</strong> - An allowlist (array) of strings (exact URLs) or regular expressions. Companion will only accept uploads to these URLs. This ensures that your Companion instance is only allowed to upload to your trusted servers and prevents <a href="https://en.wikipedia.org/wiki/Server-side_request_forgery" target="_blank" rel="noopener">SSRF</a> attacks.</p>
+</li>
+<li><p><strong>secret(recommended)</strong> - A secret string which Companion uses to generate authorization tokens. You should generate a long random string for this.</p>
+</li>
+<li><p><strong>streamingUpload(recommended)</strong> - A boolean flag to tell Companion whether to enable streaming uploads. If enabled, it will lead to <em>faster uploads</em> because companion will start uploading at the same time as downloading using <code>stream.pipe</code>. If <code>false</code>, files will be fully downloaded first, then uploaded. Defaults to <code>false</code>, but we recommended enabling it, especially if you’re expecting to upload large files. In future versions the default might change to <code>true</code>.</p>
+</li>
+<li><p><strong>redisUrl(optional)</strong> - URL to running Redis server. If this is set, the state of uploads would be stored temporarily. This helps for resumed uploads after a browser crash from the client. The stored upload would be sent back to the client on reconnection.</p>
+</li>
+<li><p><strong>redisOptions(optional)</strong> - An object of <a href="https://www.npmjs.com/package/redis#options-object-properties" target="_blank" rel="noopener">options supported by redis client</a>. This option can be used in place of <code>redisUrl</code>.</p>
+</li>
+<li><p><strong>redisPubSubScope(optional)</strong> - Use a scope for the companion events at the Redis server. Setting this option will prefix all events with the name provided and a colon.</p>
+</li>
+<li><p><strong>server(optional)</strong> - An object with details, mainly used to carry out oauth authentication from any of the enabled providers above. Though it’s optional, it’s required if you would be enabling any of the supported providers. The following are the server options you may set:</p>
+</li>
+</ol>
+<ul>
+<li><code>protocol</code> - <code>http | https</code> - even though companion itself always runs as http, you may want to set this to <code>https</code> if you are running a reverse https proxy in front of companion.</li>
+<li><code>host</code> (required) - your server’s publically facing hostname (for example <code>example.com</code>).</li>
+<li><code>oauthDomain</code> - if you have several instances of Companion with different (and perhaps dynamic) subdomains, you can set a single fixed subdomain and server (e.g <code>sub1.example.com</code>) to handle your OAuth authentication for you. This would then redirect back to the correct instance with the required credentials on completion. This way you only need to configure a single callback URL for OAuth providers.</li>
+<li><code>path</code> - the server path to where the Uppy app is sitting (e.g if Companion is at <code>example.com/companion</code>, then the path would be <code>/companion</code>).</li>
+<li><code>implicitPath</code> - if the URL’s path in your reverse proxy is different from your Companion path in your express app, then you need to set this path as <code>implicitPath</code>. So if your Companion URL is <code>example.com/mypath/companion</code>. Where the path <code>/mypath</code> is defined in your NGINX server, while <code>/companion</code> is set in your express app. Then you need to set the option <code>implicitPath</code> to <code>/mypath</code>, and set the <code>path</code> option to <code>/companion</code>.</li>
+<li><code>validHosts</code> - if you are setting an <code>oauthDomain</code>, you need to set a list of valid hosts, so the oauth handler can validate the host of the Uppy instance requesting the authentication. This is essentially a list of valid domains running your Companion instances. The list may also contain regex patterns. e.g <code>['sub2.example.com', 'sub3.example.com', '(\\w+).example.com']</code></li>
+</ul>
+<ol start="9">
+<li><p><strong>sendSelfEndpoint(optional)</strong> - This is essentially the same as the <code>server.host + server.path</code> attributes. The major reason for this attribute is that, when set, it adds the value as the <code>i-am</code> header of every request response.</p>
+</li>
+<li><p><strong>providerOptions(optional)</strong> - An object containing credentials (<code>key</code> and <code>secret</code>) for each provider you would like to enable. Please see <a href="#Supported-providers">the list of supported providers</a>.</p>
+</li>
+<li><p><strong>customProviders(optional)</strong> - This option enables you to add custom providers along with the already supported providers. See <a href="#Adding-custom-providers">Adding Custom Providers</a> for more information.</p>
+</li>
+<li><p><strong>debug(optional)</strong> - A boolean flag to tell Companion whether to log useful debug information while running.</p>
+</li>
+<li><p><strong>logClientVersion(optional)</strong> - A boolean flag to tell Companion whether to log its version upon startup.</p>
+</li>
+<li><p><strong>metrics(optional)</strong> - A boolean flag to tell Companion whether to provide an endpoint <code>/metrics</code> with Prometheus metrics.</p>
+</li>
+<li><p><strong>maxFileSize(optional)</strong> - If this value is set, companion will limit the maximum file size to process. If unset, it will process files without any size limit (this is the default).</p>
+</li>
+<li><p><strong>periodicPingUrls(optional)</strong> - If this value is set, companion will periodically send POST requests to the specified URLs. Useful for keeping track of companion instances as a keep-alive.</p>
+</li>
+<li><p><strong>periodicPingInterval(optional)</strong> - Interval for periodic ping requests (in ms).</p>
+</li>
+<li><p><strong>periodicPingStaticPayload(optional)</strong> - A <code>JSON.stringify</code>-able JavaScript Object that will be sent as part of the JSON body in the period ping requests.</p>
+</li>
+<li><p><strong>allowLocalUrls(optional)</strong> - A boolean flag to tell Companion whether to allow requesting local URLs. Note: Only enable this in development. <strong>Enabling it in production is a security risk.</strong></p>
+</li>
+<li><p><strong>corsOrigins(optional)</strong> - Allowed CORS Origins (default <code>true</code>. Passed as the <code>origin</code> option in <a href="https://github.com/expressjs/cors#configuration-options" target="_blank" rel="noopener">cors</a>)</p>
+</li>
+</ol>
+<h3 id="Provider-Redirect-URIs"><a href="#Provider-Redirect-URIs" class="headerlink" title="Provider Redirect URIs"></a>Provider Redirect URIs</h3><p>When generating your provider API keys on their corresponding developer platforms (e.g <a href="https://console.developers.google.com/" target="_blank" rel="noopener">Google Developer Console</a>), you’d need to provide a <code>redirect URI</code> for the OAuth authorization process. In general the redirect URI for each provider takes the format:</p>
+<p><code>http(s)://$YOUR_COMPANION_HOST_NAME/$PROVIDER_NAME/redirect</code></p>
+<p>For example, if your Companion server is hosted on <code>https://my.companion.server.com</code>, then the redirect URI you would supply for your OneDrive provider would be:</p>
+<p><code>https://my.companion.server.com/onedrive/redirect</code></p>
+<p>Please see <a href="/uppy/docs/companion/#Supported-providers">Supported Providers</a> for a list of all Providers and their corresponding names.</p>
+<h3 id="S3-options"><a href="#S3-options" class="headerlink" title="S3 options"></a>S3 options</h3><p>Companion comes with signature endpoints for AWS S3. These can be used by the Uppy client to sign requests to upload files directly to S3, without exposing secret S3 keys in the browser. Companion also supports uploading files from providers like Dropbox and Instagram directly into S3.</p>
+<p>The S3 features can be configured using the <code>s3</code> property.</p>
+<h4 id="s3-key"><a href="#s3-key" class="headerlink" title="s3.key"></a><code>s3.key</code></h4><p>The S3 access key ID. The standalone Companion server populates this with the value of the <code>COMPANION_AWS_KEY</code> environment variable by default.</p>
+<h4 id="s3-secret"><a href="#s3-secret" class="headerlink" title="s3.secret"></a><code>s3.secret</code></h4><p>The S3 secret access key. The standalone Companion server populates this with the value of the <code>COMPANION_AWS_SECRET</code> environment variable by default.</p>
+<h4 id="s3-bucket"><a href="#s3-bucket" class="headerlink" title="s3.bucket"></a><code>s3.bucket</code></h4><p>The name of the bucket to store uploaded files in. The standalone Companion server populates this with the value of the <code>COMPANION_AWS_BUCKET</code> environment variable by default.</p>
+<h4 id="s3-region"><a href="#s3-region" class="headerlink" title="s3.region"></a><code>s3.region</code></h4><p>The datacenter region where the target bucket is located. The standalone Companion server populates this with the value of the <code>COMPANION_AWS_REGION</code> environment variable by default.</p>
+<h4 id="s3-awsClientOptions"><a href="#s3-awsClientOptions" class="headerlink" title="s3.awsClientOptions"></a><code>s3.awsClientOptions</code></h4><p>You can supply any <a href="https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/S3.html#constructor-property" target="_blank" rel="noopener">S3 option supported by the AWS SDK</a> in the <code>s3.awsClientOptions</code> object, <em>except for</em> the below:</p>
+<ul>
+<li><code>accessKeyId</code>. Instead, use the <code>s3.key</code> property. This is to make configuration names consistent between different Companion features.</li>
+<li><code>secretAccessKey</code>. Instead, use the <code>s3.secret</code> property. This is to make configuration names consistent between different Companion features.</li>
+</ul>
+<p>Be aware that some options may cause wrong behaviour if they conflict with Companion’s assumptions. If you find that a particular option does not work as expected, please <a href="https://github.com/transloadit/uppy/issues/new" target="_blank" rel="noopener">open an issue on the Uppy repository</a> so we can document it here.</p>
+<h4 id="s3-getKey-req-filename-metadata"><a href="#s3-getKey-req-filename-metadata" class="headerlink" title="s3.getKey(req, filename, metadata)"></a><code>s3.getKey(req, filename, metadata)</code></h4><p>Get the key name for a file. The key is the file path to which the file will be uploaded in your bucket. This option should be a function receiving three arguments:</p>
+<ul>
+<li><code>req</code>, the HTTP request, for <em>regular</em> S3 uploads using the <code>@uppy/aws-s3</code> plugin. This parameter is <em>not</em> available for multipart uploads using the <code>@uppy/aws-s3-multipart</code> plugin;</li>
+<li><code>filename</code>, the original name of the uploaded file;</li>
+<li><code>metadata</code>, user-provided metadata for the file. See the <a href="/uppy/docs/aws-s3/#metaFields"><code>@uppy/aws-s3</code></a> docs. The <code>@uppy/aws-s3-multipart</code> plugin unconditionally sends all metadata fields, so they all are available here.</li>
+</ul>
+<p>If your bucket is public, you should include a cryptographically random token in the uploaded name for security (hence the default <code>crypto.randomUUID()</code>).</p>
+<p>This function should return a string <code>key</code>. The <code>req</code> parameter can be used to upload to a user-specific folder in your bucket, for example:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre>app<span class="token punctuation">.</span><span class="token method function property-access">use</span><span class="token punctuation">(</span>authenticationMiddleware<span class="token punctuation">)</span>
+app<span class="token punctuation">.</span><span class="token method function property-access">use</span><span class="token punctuation">(</span>companion<span class="token punctuation">.</span><span class="token method function property-access">app</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  <span class="token literal-property property">s3</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token function-variable function">getKey</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> filename<span class="token punctuation">,</span> metadata</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>req<span class="token punctuation">.</span><span class="token property-access">user</span><span class="token punctuation">.</span><span class="token property-access">id</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">/</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>crypto<span class="token punctuation">.</span><span class="token method function property-access">randomUUID</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">-</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>filename<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span>
+    <span class="token comment">/* auth options */</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span></pre></td></tr></table></figure>
+<p>The default implementation uploads all files to the root of the bucket as their original file name, prefixed with a random UUID.</p>
+<figure class="highlight js"><table><tr><td class="code"><pre>app<span class="token punctuation">.</span><span class="token method function property-access">use</span><span class="token punctuation">(</span>companion<span class="token punctuation">.</span><span class="token method function property-access">app</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  <span class="token literal-property property">s3</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token function-variable function">getKey</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> filename<span class="token punctuation">,</span> metadata</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>crypto<span class="token punctuation">.</span><span class="token method function property-access">randomUUID</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">-</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>filename<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span></pre></td></tr></table></figure>
+<h3 id="Running-in-Kubernetes"><a href="#Running-in-Kubernetes" class="headerlink" title="Running in Kubernetes"></a>Running in Kubernetes</h3><p>We have <a href="https://github.com/transloadit/uppy/blob/main/packages/%40uppy/companion/KUBERNETES.md" target="_blank" rel="noopener">a detailed guide on running Companion in Kubernetes</a> for you, that’s how we run our example server at <a href="https://companion.uppy.io" target="_blank" rel="noopener">https://companion.uppy.io</a>.</p>
+<h3 id="Running-many-instances"><a href="#Running-many-instances" class="headerlink" title="Running many instances"></a>Running many instances</h3><p>We recommend running at least two instances in production, so that if the Node.js event loop gets blocked by one or more requests (due to a bug or spike in traffic), it doesn’t also block or slow down all other requests as well (as Node.js is single threaded).</p>
+<p>As an example for scale, one enterprise customer of Transloadit, who self-hosts Companion to power an education service that is used by many universities globally, deploys 7 Companion instances. Their earlier solution ran on 35 instances. In our general experience Companion will saturate network interface cards before other resources on commodity virtual servers (<code>c5d.2xlarge</code> for instance).</p>
+<p>Your mileage may vary, so we recommend to add observability. You can let Prometheus crawl the <code>/metrics</code> endpoint and graph that with Grafana for instance.</p>
+<h4 id="Using-unique-endpoints"><a href="#Using-unique-endpoints" class="headerlink" title="Using unique endpoints"></a>Using unique endpoints</h4><p>One option is to run many instances with each instance having its own unique endpoint. This could be on separate ports, (sub)domain names, or IPs. With this setup, you can either</p>
+<ol>
+<li>Implement your own logic that will direct each upload to a specific Companion endpoint by setting the <code>companionUrl</code> option</li>
+<li>Setting the Companion option <code>COMPANION_SELF_ENDPOINT</code>. This option will cause Companion to respond with a <code>i-am</code> HTTP header containing the value from <code>COMPANION_SELF_ENDPOINT</code>. When Uppy’s sees this header, it will pin all requests for the upload to this endpoint.</li>
+</ol>
+<p>In either case, you would then also typically configure a single Companion instance (one endpoint) to handle all OAuth authentication requests, so that you only need to specify a single OAuth callback URL. See also <code>oauthDomain</code> and <code>validHosts</code>.</p>
+<h4 id="Using-a-load-balancer"><a href="#Using-a-load-balancer" class="headerlink" title="Using a load balancer"></a>Using a load balancer</h4><p>The other option is to set up a load balancer in front of many Companion instances. Then Uppy will only see a single endpoint and send all requests to the associated load balancer, which will then distribute them between Companion instances. The companion instances coordinate their messages and events over Redis so that any instance can serve the client’s requests. Note that sticky sessions are <strong>not</strong> needed with this setup. Here are the requirements for this setup:</p>
+<ul>
+<li>The instances need to be connected to the same Redis server.</li>
+<li>You need to set <code>COMPANION_SECRET</code> to the same value on both servers.</li>
+<li>if you use the <code>companionKeysParams</code> feature (Transloadit), you also need <code>COMPANION_PREAUTH_SECRET</code> to be the same on each instance.</li>
+<li>All other configuration needs to be the same, except if you’re running many instances on the same machine, then <code>COMPANION_PORT</code> should be different for each instance.</li>
+</ul>
+<h3 id="Adding-custom-providers"><a href="#Adding-custom-providers" class="headerlink" title="Adding custom providers"></a>Adding custom providers</h3><p>As of now, Companion supports the <a href="/uppy/docs/companion/#Supported-providers">providers listed here</a> out of the box, but you may also choose to add your own custom providers. You can do this by passing the <code>customProviders</code> option when calling the Uppy <code>app</code> method. The custom provider is expected to support Oauth 1 or 2 for authentication/authorization.</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="token keyword module">import</span> <span class="token imports">providerModule</span> <span class="token keyword module">from</span> <span class="token string">'./path/to/provider/module'</span>
+
+<span class="token keyword">const</span> options <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token literal-property property">customProviders</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">myprovidername</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token literal-property property">config</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token literal-property property">authorize_url</span><span class="token operator">:</span> <span class="token string">'https://mywebsite.com/authorize'</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">access_url</span><span class="token operator">:</span> <span class="token string">'https://mywebsite.com/token'</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">oauth</span><span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">key</span><span class="token operator">:</span> <span class="token string">'***'</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">secret</span><span class="token operator">:</span> <span class="token string">'***'</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">scope</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'read'</span><span class="token punctuation">,</span> <span class="token string">'write'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">module</span><span class="token operator">:</span> providerModule<span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+
+uppy<span class="token punctuation">.</span><span class="token method function property-access">app</span><span class="token punctuation">(</span>options<span class="token punctuation">)</span></pre></td></tr></table></figure>
+<p>The <code>customProviders</code> option should be an object containing each custom provider. Each custom provider would, in turn, be an object with two keys, <code>config</code> and <code>module</code>. The <code>config</code> option would contain Oauth API settings, while the <code>module</code> would point to the provider module.</p>
+<p>To work well with Companion, the <strong>module</strong> must be a class with the following methods. Note that the methods must be <code>async</code>, return a <code>Promise</code> or reject with an <code>Error</code>):</p>
+<ol>
+<li><code>async list ({ token, directory, query })</code> - Returns a object containing a list of user files (such as a list of all the files in a particular directory). See <a href="#list-data">example returned list data structure</a>.<br><code>token</code> - authorization token (retrieved from oauth process) to send along with your request<ul>
+<li><code>directory</code> - the id/name of the directory from which data is to be retrieved. This may be ignored if it doesn’t apply to your provider</li>
+<li><code>query</code> - expressjs query params object received by the server (in case some data you need in there).</li>
+</ul>
+</li>
+<li><code>async download ({ token, id, query })</code> - Downloads a particular file from the provider. Returns an object with a single property <code>{ stream }</code> - a <a href="https://nodejs.org/api/stream.html#stream_class_stream_readable" target="_blank" rel="noopener"><code>stream.Readable</code></a>, which will be read from and uploaded to the destination. To prevent memory leaks, make sure you release your stream if you reject this method with an error.<ul>
+<li><code>token</code> - authorization token (retrieved from oauth process) to send along with your request.</li>
+<li><code>id</code> - ID of the file being downloaded.</li>
+<li><code>query</code> - expressjs query params object received by the server (in case some data you need in there).</li>
+</ul>
+</li>
+<li><code>async size ({ token, id, query })</code> - Returns the byte size of the file that needs to be downloaded as a <code>Number</code>. If the size of the object is not known, <code>null</code> may be returned.<ul>
+<li><code>token</code> - authorization token (retrieved from oauth process) to send along with your request.</li>
+<li><code>id</code> - ID of the file being downloaded.</li>
+<li><code>query</code> - expressjs query params object received by the server (in case some data you need in there).</li>
+</ul>
+</li>
+</ol>
+<p>The class must also have:</p>
+<ul>
+<li>A unique <code>authProvider</code> string property - a lowercased value which typically indicates the name of the provider (e.g “dropbox”).</li>
+</ul>
+<p>See also <a href="https://github.com/transloadit/uppy/blob/main/examples/custom-provider/server" target="_blank" rel="noopener">example code with a custom provider</a>.</p>
+<h4 id="list-data"><a href="#list-data" class="headerlink" title="list data"></a>list data</h4><figure class="highlight json"><table><tr><td class="code"><pre><span class="token punctuation">{</span>
+  <span class="token comment">// username or email of the user whose provider account is being accessed</span>
+  <span class="token property">"username"</span><span class="token operator">:</span> <span class="token string">"johndoe"</span><span class="token punctuation">,</span>
+  <span class="token comment">// list of files and folders in the directory. An item is considered a folder</span>
+  <span class="token comment">//  if it mainly exists as a collection to contain sub-items</span>
+  <span class="token property">"items"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span>
+      <span class="token comment">// boolean value of whether or NOT it's a folder</span>
+      <span class="token property">"isFolder"</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+      <span class="token comment">// icon image URL</span>
+      <span class="token property">"icon"</span><span class="token operator">:</span> <span class="token string">"https://random-api.url.com/fileicon.jpg"</span><span class="token punctuation">,</span>
+      <span class="token comment">// name of the item</span>
+      <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"myfile.jpg"</span><span class="token punctuation">,</span>
+      <span class="token comment">// the mime type of the item. Only relevant if the item is NOT a folder</span>
+      <span class="token property">"mimeType"</span><span class="token operator">:</span> <span class="token string">"image/jpg"</span><span class="token punctuation">,</span>
+      <span class="token comment">// the id (in string) of the item</span>
+      <span class="token property">"id"</span><span class="token operator">:</span> <span class="token string">"uniqueitemid"</span><span class="token punctuation">,</span>
+      <span class="token comment">// thumbnail image URL. Only relevant if the item is NOT a folder</span>
+      <span class="token property">"thumbnail"</span><span class="token operator">:</span> <span class="token string">"https://random-api.url.com/filethumbnail.jpg"</span><span class="token punctuation">,</span>
+      <span class="token comment">// for folders this is typically the value that will be passed as "directory" in the list(...) method.</span>
+      <span class="token comment">// For files, this is the value that will be passed as id in the download(...) method.</span>
+      <span class="token property">"requestPath"</span><span class="token operator">:</span> <span class="token string">"file-or-folder-requestpath"</span><span class="token punctuation">,</span>
+      <span class="token comment">// datetime string (in ISO 8601 format) of when this item was last modified</span>
+      <span class="token property">"modifiedDate"</span><span class="token operator">:</span> <span class="token string">"2020-06-29T19:59:58Z"</span><span class="token punctuation">,</span>
+      <span class="token comment">// the size in bytes of the item. Only relevant if the item is NOT a folder</span>
+      <span class="token property">"size"</span><span class="token operator">:</span> <span class="token number">278940</span><span class="token punctuation">,</span>
+      <span class="token property">"custom"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token comment">// an object that may contain some more custom fields that you may need to send to the client. Only add this object if you have a need for it.</span>
+        <span class="token property">"customData1"</span><span class="token operator">:</span> <span class="token string">"the value"</span><span class="token punctuation">,</span>
+        <span class="token property">"customData2"</span><span class="token operator">:</span> <span class="token string">"the value"</span>
+      <span class="token punctuation">}</span>
+      <span class="token comment">// more items here</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token comment">// if the "items" list is paginated, this is the request path needed to fetch the next page.</span>
+  <span class="token property">"nextPagePath"</span><span class="token operator">:</span> <span class="token string">"directory-name?cursor=cursor-to-next-page"</span>
+<span class="token punctuation">}</span></pre></td></tr></table></figure>
+<h2 id="Development"><a href="#Development" class="headerlink" title="Development"></a>Development</h2><p>See <a href="/docs/contributing.html#Companion">CONTRIBUTING.md</a></p>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script></body></html>
+    
+    
+
+    
+    <div class="footer">Caught a mistake or want to contribute to the documentation?
+       <a href="https://github.com/transloadit/uppy/blob/main/website/src/docs/companion.md" rel="noreferrer noopener" target="_blank">Edit/fork this page directly on Github</a>!
+    </div>
+</div>
+
+        
+      </main>
+
+      <script defer data-domain="transloadit.github.io" src="https://analytics.transloadit.com/js/plausible.js"></script>
+
+
+      
+        <script src="/uppy/js/smooth-scroll.min.js"></script>
+        <!-- Place this tag in your head or just before your close body tag. -->
+        <script async defer src="https://buttons.github.io/buttons.js"></script>
+      
+      <script src="/uppy/js/common.js"></script>
+
+      <!-- Twitter follow button script -->
+      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+    </div>
+  </body>
+</html>

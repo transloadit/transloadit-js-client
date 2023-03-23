@@ -1,0 +1,370 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Uppy 1.8 and 1.9: security, error handling and better types — Uppy</title>
+    <meta charset="utf-8">
+    <meta name="title" content="Uppy 1.8 and 1.9: security, error handling and better types — Uppy">
+    <meta name="description" content="Uppy 1.8, 1.9 and a few important security patches are out! Here are the highlights:">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@uppy_io">
+    <meta name="twitter:creator" content="@uppy_io">
+    <meta property="og:url" content="https://transloadit.github.io/uppy/blog/2020/03/1.9/index.html">
+    <meta property="og:title" content="Uppy 1.8 and 1.9: security, error handling and better types — Uppy">
+    <meta name="twitter:title" content="Uppy 1.8 and 1.9: security, error handling and better types — Uppy">
+    <meta name="twitter:description" content="Uppy 1.8, 1.9 and a few important security patches are out! Here are the highlights:">
+    <meta property="og:image" content="http://transloadit.github.io/uppy/images/uppy-social-pink.png">
+    <meta name="twitter:image" content="http://transloadit.github.io/uppy/images/uppy-social-pink.png">
+
+    <meta name="google-site-verification" content="JxARoHXoCI8bD07pLV_u3z6xpuWNcSIZIcHEytyCkUc" />
+
+    <link rel="icon" href="/uppy/images/logos/uppy-dog-head-arrow.png" type="image/x-icon">
+    <link rel="alternate" type="application/rss+xml" title="Uppy" href="/atom.xml">
+
+    <script>
+      window.PAGE_TYPE = ""
+    </script>
+    
+<link rel="stylesheet" href="/uppy/css/main.css?version=2">
+
+    <!-- ^ poor man's solution to css cache busting. bump the version when there's something new we really want users to see -->
+  <meta name="generator" content="Hexo 4.2.1"></head>
+  <body class="page-inner ">
+    <div class="page">
+      <div class="TransloaditBar js-TransloaditBar">
+        <div class="TransloaditBar-about">
+          <!-- <a class="TransloaditBar-logo" href="https://transloadit.com/" target="_blank" rel="noopener">
+            <img class="TransloaditBar-logoImg" src="/uppy/images/transloadit-white-glyph.svg" width="20" height="20" alt="Transloadit">
+          </a> -->
+          <!-- <span>Uppy is an open source project by <a class="TransloaditBar-link" href="https://transloadit.com/" target="_blank">Transloadit</a></span> -->
+          This website is no longer maintained, please visit <a href="//uppy.io" target="_blank" rel="noopener" style="color:inherit">uppy.io</a> to get up-to-date info about Uppy.
+        </div>
+      </div>
+
+      <header id="header" class="MainHeader js-MainHeader">
+        <button class="MainHeader-menuBtn js-MenuBtn"></button>
+
+        <span id="logo" class="MainLogo">
+          <a class="MainLogo-link" href="/uppy/">Uppy</a>
+          <!-- Was used for 1.0, we can re-use for 2.0 or major announcements -->
+          <!-- <a class="MainLogo-announcement" href="/blog/2019/04/1.0/">
+            1.0
+            <span class="MainLogo-emoji">
+              <img src="/uppy/images/party-popper.png" srcset="/uppy/images/party-popper@2x.png 2x" alt="🎉">
+            </span>
+          </a> -->
+        </span>
+
+        <nav>
+          <ul id="nav" class="MainMenu">
+            <!-- @todo uncomment search input when we get our own swifttype -->
+<!-- <li>
+  <form id="search-form" class="MainMenu-search">
+    <input type="text" id="search-query" class="MainMenu-searchQuery st-default-search-input">
+  </form>
+</li> -->
+<!--li><a href="/uppy/guide/" class="nav-link">Guide</a></li-->
+<li><a href="/uppy/docs/" class="nav-link">Docs</a></li>
+<li><a href="/uppy/examples/dashboard/" class="nav-link">Examples</a></li>
+<!--li><a href="/uppy/stats/" class="nav-link">Stats</a></li-->
+<li><a href="/uppy/blog/" class="nav-link current">Blog</a></li>
+<li><a href="/uppy/support/" class="nav-link">Support</a></li>
+<li><a href="https://github.com/transloadit/uppy" target="_blank" rel="noopener" class="nav-link">GitHub</a></li>
+
+          </ul>
+        </nav>
+
+        <div class="MainHeader-tagline">
+          The file uploader that <span class="MainHeader-taglinePart js-MainHeader-taglinePart is-visible">loves to play fetch</span>
+        </div>
+
+        <ul class="MainHeader-taglineList js-MainHeader-taglineList">
+          
+          <li>won’t chew on your shoes</li>
+          
+          <li>is fully housebroken</li>
+          
+          <li>just wants to play with you</li>
+          
+          <li>doesn’t hump your leg</li>
+          
+          <li>also accepts cat pictures</li>
+          
+          <li>loves you unconditionally</li>
+          
+          <li>you don’t have to keep on a leash</li>
+          
+          <li>won’t pee on your rug</li>
+          
+          <li>loves to play fetch</li>
+          
+          <li>doesn’t bite (hard)</li>
+          
+          <li>won’t bark at the mailman</li>
+          
+          <li>is great with the kids</li>
+          
+          <li>can digest anything, even chocolate cake</li>
+          
+          <li>is always happy to see you</li>
+          
+          <li>isn’t afraid of fireworks</li>
+          
+          <li>is allowed everywhere</li>
+          
+        </ul>
+      </header>
+
+      <main class="MainContent js-MainContent" id="main">
+        
+          <div class="Sidebar js-Sidebar is-blog">
+    <ul class="main-menu">
+        <!-- @todo uncomment search input when we get our own swifttype -->
+<!-- <li>
+  <form id="search-form" class="MainMenu-search">
+    <input type="text" id="search-query" class="MainMenu-searchQuery st-default-search-input">
+  </form>
+</li> -->
+<!--li><a href="/uppy/guide/" class="nav-link">Guide</a></li-->
+<li><a href="/uppy/docs/" class="nav-link">Docs</a></li>
+<li><a href="/uppy/examples/dashboard/" class="nav-link">Examples</a></li>
+<!--li><a href="/uppy/stats/" class="nav-link">Stats</a></li-->
+<li><a href="/uppy/blog/" class="nav-link current">Blog</a></li>
+<li><a href="/uppy/support/" class="nav-link">Support</a></li>
+<li><a href="https://github.com/transloadit/uppy" target="_blank" rel="noopener" class="nav-link">GitHub</a></li>
+
+    </ul>
+    <div class="list">
+        <h2>
+            Recent Posts
+            <a href="/atom.xml" rel="noreferrer noopener" target="_blank" style="vertical-align: middle; margin-left: 5px">
+                <img src="/uppy/images/feed.png" style="width:15px;height:15px">
+            </a>
+        </h2>
+
+        <ul>
+  
+  <li>
+    <a href="/blog/2022/12/3.3/" class="sidebar-link">🎄 Uppy 3.1-3.3: Improved AWS S3 Multipart, Single File Mode</a>
+  </li>
+  
+  <li>
+    <a href="/blog/2022/09/3.0/" class="sidebar-link">Uppy 3.0: Future-proof, conveniently easy, stable as ever</a>
+  </li>
+  
+  <li>
+    <a href="/blog/2022/03/2.4-2.7/" class="sidebar-link">Uppy 2.4-2.7: Image Compressor, Transloadit Rate Limiting, ESM</a>
+  </li>
+  
+  <li>
+    <a href="/blog/2021/12/2.1-2.3/" class="sidebar-link">🎄 Uppy 2.1-2.3: Audio plugin, fast and efficient streaming for Companion, production-ready Unsplash, and more</a>
+  </li>
+  
+  <li>
+    <a href="/blog/2021/08/2.0/" class="sidebar-link">Uppy 2.0.0: smaller, faster, modular plugins, Preact X, stricter types, and much more</a>
+  </li>
+  
+  <li>
+    <a href="/blog/2021/07/1.30/" class="sidebar-link">Uppy 1.30: Angular integration, granular image rotation, Google Drive shortcuts</a>
+  </li>
+  
+  <li>
+    <a href="/blog/2021/05/1.29/" class="sidebar-link">Uppy 1.29: Golden Retriever, disableLocalFiles, Webcam previews, uppy.logout</a>
+  </li>
+  
+  <li>
+    <a href="/blog/2021/04/1.27/" class="sidebar-link">Uppy 1.27: Drop Target plugin, Vue 3 support, Dashboard dynamic meta fields, “Shared with me” in Google Drive</a>
+  </li>
+  
+  <li>
+    <a href="/blog/2021/02/1.26/" class="sidebar-link">Uppy 1.26: Dashboard “disabled”, per-file headers</a>
+  </li>
+  
+  <li>
+    <a href="/blog/2021/01/1.25/" class="sidebar-link">Uppy 1.25: right-to-left scripts, Ukrainian translation, Companion improvements</a>
+  </li>
+  
+  <li>
+    <a href="/blog/2020/12/1.24/" class="sidebar-link">Uppy 1.24: 🎅 Happy Holidays — Svelte, React hook, Auto Open Image Editor</a>
+  </li>
+  
+</ul>
+        <ul class="Social">
+  <li><a href="https://twitter.com/uppy_io" target="_blank" rel="noopener" class="twitter-follow-button" data-show-count="false" data-dnt="true">Follow @uppy_io</a></li>
+  <li><iframe src="https://ghbtns.com/github-btn.html?user=transloadit&repo=uppy&type=watch&count=true"
+allowtransparency="true" frameborder="0" scrolling="0" width="100" height="20"></iframe></li>
+  <!-- to regenerate you can use this link: https://img.shields.io/badge/community-forum-d8006a.svg -->
+  <li><a href="https://community.transloadit.com/c/uppy" target="_blank" rel="noopener"><img src="/uppy/images/community-forum-d8006a.svg" /> </a></li>
+  <li class="BuildBadge">
+   <span class="wrapper">
+     <a href="https://github.com/transloadit/uppy/actions" target="_blank" rel="noopener"><img src="https://github.com/transloadit/uppy/workflows/End-to-end%20tests/badge.svg" alt="Build Status"></a>
+   </span>
+  </li>
+</ul>
+
+    </div>
+</div>
+
+
+<div class="Content js-Content with-sidebar">
+    
+  <h1>Uppy 1.8 and 1.9: security, error handling and better types</h1>
+  <div class="post-date">Monday Mar 9, 2020</div>
+    
+    <html><head></head><body><p>Uppy 1.8, 1.9 and a few important security patches are out! Here are the highlights:</p>
+<a id="more"></a>
+
+<h2 id="Companion-security-patches-and-new-Instagram-API"><a href="#Companion-security-patches-and-new-Instagram-API" class="headerlink" title="Companion: security patches and new Instagram API"></a>Companion: security patches and new Instagram API</h2><ul>
+<li>We released a patch to an SSRF vulnerability affecting <code>@uppy/companion</code> and the <code>@uppy/url</code> plugin. Many thanks to the parties involved in <a href="https://hackerone.com/reports/786956" target="_blank" rel="noopener">reporting and disclosing</a> this vulnerability to the Uppy team. The patch is available in <a href="https://github.com/transloadit/uppy/blob/master/CHANGELOG.md#194" target="_blank" rel="noopener">@uppy/companion version 1.9.5</a>.</li>
+<li>As the Instagram Legacy API will soon no longer be available, we have now added support for the new Instagram Graph API. As far as using this on <code>@uppy/companion</code> goes, not much has changed. The only difference is that you will now be retrieving your Instagram credentials from the <a href="https://developers.facebook.com/" target="_blank" rel="noopener">Facebook Developer Platform</a>, and no longer from the <a href="https://www.instagram.com/developer/" target="_blank" rel="noopener">Instagram Developer Platform</a>.</li>
+</ul>
+<h2 id="Error-handling"><a href="#Error-handling" class="headerlink" title="Error handling"></a>Error handling</h2><ul>
+<li>We’ve significantly improved error handling and retries in <code>@uppy/core</code>, <code>@uppy/transloadit</code> and <code>@uppy/dashboard</code>. The retry button on the Status Bar, which was broken in some edge cases, now works as expected.</li>
+<li>Errors from Transloadit assemblies now include Assembly ID, as well as the full assembly object, for easier debugging.</li>
+<li>You can now click on the question mark (?) icon on the Informer or Dashboard error message, and get a browser alert with error details — much easier for the users to copy-paste the text this way. The Informer now also conveniently stays on screen, as long as you hover over the question mark.</li>
+</ul>
+<h2 id="Dashboard"><a href="#Dashboard" class="headerlink" title="Dashboard"></a>Dashboard</h2><p>The Dashboard plugin has gained new file type icons: for images — useful before the preview is generated, or when there’s no preview at all, like with images from the Url plugin — and for archives.</p>
+<p><img src="/uppy/images/blog/1.9/file-type-icons.png" alt=""></p>
+<h2 id="Types"><a href="#Types" class="headerlink" title="Types"></a>Types</h2><p>Our typings got a significant upgrade: plugin options can now be type-checked! In the past, we did have typings for plugin options, but the <code>uppy.use()</code> function had a fallback that would accept <em>any</em> object as options. If your plugin options were wrong, typescript would just use the fallback and not tell you about it!</p>
+<p>Stricter typings normally mean that old code may no longer type-check. So, although this is a bugfix, you have to opt into the new types. In 2.0, the old way will be removed and only the strict types will be available.</p>
+<p>You can opt in by specifying the <code>StrictTypes</code> type parameter to the <code>Uppy</code> type:</p>
+<figure class="highlight typescript"><table><tr><td class="code"><pre><span class="token keyword">import</span> Uppy <span class="token operator">=</span> <span class="token keyword">require</span><span class="token punctuation">(</span><span class="token string">'@uppy/core'</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> uppy <span class="token operator">=</span> <span class="token generic-function"><span class="token function">Uppy</span><span class="token generic class-name"><span class="token operator">&lt;</span>Uppy<span class="token punctuation">.</span>StrictTypes<span class="token operator">></span></span></span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  <span class="token comment">// options here</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span></pre></td></tr></table></figure>
+<p>This type parameter must also be specified if you are storing the <code>uppy</code> instance anywhere. For example, inside a class:</p>
+<figure class="highlight typescript"><table><tr><td class="code"><pre><span class="token keyword">class</span> <span class="token class-name">UppyProvider</span> <span class="token keyword">extends</span> <span class="token class-name">React</span><span class="token punctuation">.</span>Component <span class="token punctuation">{</span>
+  <span class="token keyword">private</span> uppy<span class="token operator">:</span> Uppy<span class="token operator">&lt;</span>Uppy<span class="token punctuation">.</span>StrictTypes<span class="token operator">></span>
+  <span class="token function">constructor</span> <span class="token punctuation">(</span>props<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">super</span><span class="token punctuation">(</span>props<span class="token punctuation">)</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>uppy <span class="token operator">=</span> <span class="token generic-function"><span class="token function">Uppy</span><span class="token generic class-name"><span class="token operator">&lt;</span>Uppy<span class="token punctuation">.</span>StrictTypes<span class="token operator">></span></span></span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      <span class="token comment">// etc</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></pre></td></tr></table></figure>
+<p>If you do not specify the <code>StrictTypes</code> parameter, the old fallback for the <code>uppy.use()</code> method remains available.</p>
+<p>The typings for <code>@uppy/react</code> component props are now derived from plugin options types, so they will no longer get out of sync, as they occasionally did in the past. For example, in version 1.7, the <code>@uppy/drag-drop</code> plugin supported a <code>note</code> option to add some text to the drop area. The React typings didn’t include that option, so you couldn’t use it from typescript! That is now permanently fixed:</p>
+<figure class="highlight typescript"><table><tr><td class="code"><pre><span class="token keyword">import</span> components <span class="token operator">=</span> <span class="token keyword">require</span><span class="token punctuation">(</span><span class="token string">'@uppy/react'</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> <span class="token punctuation">{</span> DragDrop <span class="token punctuation">}</span> <span class="token operator">=</span> components
+
+<span class="token comment">// assuming some `uppy` variable already exists</span>
+<span class="token keyword">declare</span> <span class="token keyword">var</span> uppy<span class="token operator">:</span> Uppy<span class="token operator">&lt;</span>Uppy<span class="token punctuation">.</span>StrictTypes<span class="token operator">></span>
+
+<span class="token keyword">function</span> <span class="token function">MyComponent</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token punctuation">(</span>
+    <span class="token operator">&lt;</span>DragDrop
+      uppy<span class="token operator">=</span><span class="token punctuation">{</span>uppy<span class="token punctuation">}</span>
+      note<span class="token operator">=</span><span class="token string">'This prop is now supported!'</span>
+    <span class="token operator">/</span><span class="token operator">></span>
+  <span class="token punctuation">)</span>
+<span class="token punctuation">}</span></pre></td></tr></table></figure>
+<p>Finally, the <code>locale</code> options and React props now have full typings. Your editor should now be able to provide autocompletion for language keys!</p>
+<p><img src="/uppy/images/blog/1.9/locale-type.png" alt="Screenshot showing VS Code autocompletion for a language key."></p>
+<p>We now also use <code>tsd</code>, so our typings are actually tested.</p>
+<p>See <a href="https://github.com/transloadit/uppy/pull/1918" target="_blank" rel="noopener">PR #1918</a> for all the details.</p>
+<h2 id="Downloadable-ZIP-archives-of-Uppy-releases"><a href="#Downloadable-ZIP-archives-of-Uppy-releases" class="headerlink" title="Downloadable ZIP archives of Uppy releases"></a>Downloadable ZIP archives of Uppy releases</h2><p>Uppy is now available as a downloadable ZIP archive from the Transloadit CDN! NPM down? Don’t like build tools? Looking for a quick way to play around with Uppy? We’ve got you covered:</p>
+<pre><code>https://releases.transloadit.com/uppy/v1.9.3/uppy-v1.9.3.zip</code></pre><h2 id="Locales"><a href="#Locales" class="headerlink" title="Locales"></a>Locales</h2><ul>
+<li>Uppy now speaks Korean and Vietnamese.</li>
+<li>The French, German and Chinese (zh_TW) translations have been improved.</li>
+</ul>
+<h2 id="Misc"><a href="#Misc" class="headerlink" title="Misc"></a>Misc</h2><ul>
+<li>@uppy/core: core: setState(modifiedFiles) in onBeforeUpload (#2028 / @arturi)</li>
+<li>@uppy/core: always log errors (#2029 / @arturi)</li>
+<li>@uppy/core: fix mime type checking bug (#2004 / @shahimclt)</li>
+<li>@uppy/core: add .tsv and .tab: text/tab-separated-values (#2056 / @arturi)</li>
+<li>@uppy/onedrive: make encryption shorter + enable onedrive on website (#2034 / @ifedapoolarewaju)</li>
+<li>@uppy/react: use <code>componentDidUpdate</code> instead of <code>componentWillReceiveProps</code> (@cryptic022, #1999)</li>
+<li>@uppy/xhr-upload: free item from rate limit queue when upload times out (@rtaieb, #2018)</li>
+<li>@uppy/aws-s3-multipart: add optional headers for signed url (@ardeois, #1985)</li>
+<li>@uppy/aws-s3: fix crash when S3 response does not have a Content-Type header (@roenschg, #2012)</li>
+</ul>
+<p>As always, you can find the full list of changes and package versions, as well as future plans, in our <a href="https://github.com/transloadit/uppy/blob/master/CHANGELOG.md" target="_blank" rel="noopener">changelog</a>.</p>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script></body></html>
+
+    <center>
+        <br />
+        <a class="github-button" href="https://github.com/transloadit/uppy" data-icon="octicon-star" data-size="large"
+        data-show-count="true" aria-label="Star transloadit/uppy on GitHub">Star</a>
+    </center>
+
+    <div class="PostAuthors">
+        
+            <div class="PostAuthor">
+                <a class="PostAuthor-link" href="https://transloadit.com/about/#artur" target="_blank" rel="noopener">
+                    <img class="PostAuthor-img" src="https://www.gravatar.com/avatar/6ddfaa9427d64ba52bbe021ea5e2ffef?s=200">
+                    <h4 class="PostAuthor-name">Artur Paikin</h4>
+                    <div class="PostAuthor-tagline">Developer</div>
+                </a>
+            </div>
+        
+    </div>
+  <br />
+    <!-- <ul class="Social">
+        <li><iframe src="https://ghbtns.com/github-btn.html?user=transloadit&repo=uppy&type=watch&count=true"
+                allowtransparency="true" frameborder="0" scrolling="0" width="100" height="20"></iframe></li>
+    </ul> -->
+  <!-- <div id="disqus_thread"></div>
+<script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+
+var disqus_config = function () {
+this.page.url = 'https://uppy.io/blog/2020/03/1.9/';  // Replace PAGE_URL with your page's canonical URL variable
+// this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://uppy.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" target="_blank" rel="noopener">comments powered by Disqus.</a></noscript>
+                             -->
+</div>
+
+        
+      </main>
+
+      <script defer data-domain="transloadit.github.io" src="https://analytics.transloadit.com/js/plausible.js"></script>
+
+
+      
+        <script src="/uppy/js/smooth-scroll.min.js"></script>
+        <!-- Place this tag in your head or just before your close body tag. -->
+        <script async defer src="https://buttons.github.io/buttons.js"></script>
+      
+      <script src="/uppy/js/common.js"></script>
+
+      <!-- Twitter follow button script -->
+      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+    </div>
+  </body>
+</html>

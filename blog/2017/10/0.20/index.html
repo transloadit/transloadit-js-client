@@ -1,0 +1,422 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Uppy 0.20: React, Retry & Time Travel — Uppy</title>
+    <meta charset="utf-8">
+    <meta name="title" content="Uppy 0.20: React, Retry &amp; Time Travel — Uppy">
+    <meta name="description" content="We are proud to present Uppy 0.20. This one focuses on React and Redux support, adding storage expirations to GoldenRetriever and upload retries. Enjoy!
+Uppy React componentsUppy now ships with React components! We’ve been exploring different approaches to React components for several months, so we’re excited to finally have them in ✨ There are components for each of Uppy’s UI elements, like the D">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@uppy_io">
+    <meta name="twitter:creator" content="@uppy_io">
+    <meta property="og:url" content="https://transloadit.github.io/uppy/blog/2017/10/0.20/index.html">
+    <meta property="og:title" content="Uppy 0.20: React, Retry & Time Travel — Uppy">
+    <meta name="twitter:title" content="Uppy 0.20: React, Retry & Time Travel — Uppy">
+    <meta name="twitter:description" content="We are proud to present Uppy 0.20. This one focuses on React and Redux support, adding storage expirations to GoldenRetriever and upload retries. Enjoy!
+Uppy React componentsUppy now ships with React components! We’ve been exploring different approaches to React components for several months, so we’re excited to finally have them in ✨ There are components for each of Uppy’s UI elements, like the D">
+    <meta property="og:image" content="/uppy/uppy/images/blog/0.20/dnd-gray.jpg">
+    <meta name="twitter:image" content="/uppy/uppy/images/blog/0.20/dnd-gray.jpg">
+
+    <meta name="google-site-verification" content="JxARoHXoCI8bD07pLV_u3z6xpuWNcSIZIcHEytyCkUc" />
+
+    <link rel="icon" href="/uppy/images/logos/uppy-dog-head-arrow.png" type="image/x-icon">
+    <link rel="alternate" type="application/rss+xml" title="Uppy" href="/atom.xml">
+
+    <script>
+      window.PAGE_TYPE = ""
+    </script>
+    
+<link rel="stylesheet" href="/uppy/css/main.css?version=2">
+
+    <!-- ^ poor man's solution to css cache busting. bump the version when there's something new we really want users to see -->
+  <meta name="generator" content="Hexo 4.2.1"></head>
+  <body class="page-inner ">
+    <div class="page">
+      <div class="TransloaditBar js-TransloaditBar">
+        <div class="TransloaditBar-about">
+          <!-- <a class="TransloaditBar-logo" href="https://transloadit.com/" target="_blank" rel="noopener">
+            <img class="TransloaditBar-logoImg" src="/uppy/images/transloadit-white-glyph.svg" width="20" height="20" alt="Transloadit">
+          </a> -->
+          <!-- <span>Uppy is an open source project by <a class="TransloaditBar-link" href="https://transloadit.com/" target="_blank">Transloadit</a></span> -->
+          This website is no longer maintained, please visit <a href="//uppy.io" target="_blank" rel="noopener" style="color:inherit">uppy.io</a> to get up-to-date info about Uppy.
+        </div>
+      </div>
+
+      <header id="header" class="MainHeader js-MainHeader">
+        <button class="MainHeader-menuBtn js-MenuBtn"></button>
+
+        <span id="logo" class="MainLogo">
+          <a class="MainLogo-link" href="/uppy/">Uppy</a>
+          <!-- Was used for 1.0, we can re-use for 2.0 or major announcements -->
+          <!-- <a class="MainLogo-announcement" href="/blog/2019/04/1.0/">
+            1.0
+            <span class="MainLogo-emoji">
+              <img src="/uppy/images/party-popper.png" srcset="/uppy/images/party-popper@2x.png 2x" alt="🎉">
+            </span>
+          </a> -->
+        </span>
+
+        <nav>
+          <ul id="nav" class="MainMenu">
+            <!-- @todo uncomment search input when we get our own swifttype -->
+<!-- <li>
+  <form id="search-form" class="MainMenu-search">
+    <input type="text" id="search-query" class="MainMenu-searchQuery st-default-search-input">
+  </form>
+</li> -->
+<!--li><a href="/uppy/guide/" class="nav-link">Guide</a></li-->
+<li><a href="/uppy/docs/" class="nav-link">Docs</a></li>
+<li><a href="/uppy/examples/dashboard/" class="nav-link">Examples</a></li>
+<!--li><a href="/uppy/stats/" class="nav-link">Stats</a></li-->
+<li><a href="/uppy/blog/" class="nav-link current">Blog</a></li>
+<li><a href="/uppy/support/" class="nav-link">Support</a></li>
+<li><a href="https://github.com/transloadit/uppy" target="_blank" rel="noopener" class="nav-link">GitHub</a></li>
+
+          </ul>
+        </nav>
+
+        <div class="MainHeader-tagline">
+          The file uploader that <span class="MainHeader-taglinePart js-MainHeader-taglinePart is-visible">loves to play fetch</span>
+        </div>
+
+        <ul class="MainHeader-taglineList js-MainHeader-taglineList">
+          
+          <li>won’t chew on your shoes</li>
+          
+          <li>is fully housebroken</li>
+          
+          <li>just wants to play with you</li>
+          
+          <li>doesn’t hump your leg</li>
+          
+          <li>also accepts cat pictures</li>
+          
+          <li>loves you unconditionally</li>
+          
+          <li>you don’t have to keep on a leash</li>
+          
+          <li>won’t pee on your rug</li>
+          
+          <li>loves to play fetch</li>
+          
+          <li>doesn’t bite (hard)</li>
+          
+          <li>won’t bark at the mailman</li>
+          
+          <li>is great with the kids</li>
+          
+          <li>can digest anything, even chocolate cake</li>
+          
+          <li>is always happy to see you</li>
+          
+          <li>isn’t afraid of fireworks</li>
+          
+          <li>is allowed everywhere</li>
+          
+        </ul>
+      </header>
+
+      <main class="MainContent js-MainContent" id="main">
+        
+          <div class="Sidebar js-Sidebar is-blog">
+    <ul class="main-menu">
+        <!-- @todo uncomment search input when we get our own swifttype -->
+<!-- <li>
+  <form id="search-form" class="MainMenu-search">
+    <input type="text" id="search-query" class="MainMenu-searchQuery st-default-search-input">
+  </form>
+</li> -->
+<!--li><a href="/uppy/guide/" class="nav-link">Guide</a></li-->
+<li><a href="/uppy/docs/" class="nav-link">Docs</a></li>
+<li><a href="/uppy/examples/dashboard/" class="nav-link">Examples</a></li>
+<!--li><a href="/uppy/stats/" class="nav-link">Stats</a></li-->
+<li><a href="/uppy/blog/" class="nav-link current">Blog</a></li>
+<li><a href="/uppy/support/" class="nav-link">Support</a></li>
+<li><a href="https://github.com/transloadit/uppy" target="_blank" rel="noopener" class="nav-link">GitHub</a></li>
+
+    </ul>
+    <div class="list">
+        <h2>
+            Recent Posts
+            <a href="/atom.xml" rel="noreferrer noopener" target="_blank" style="vertical-align: middle; margin-left: 5px">
+                <img src="/uppy/images/feed.png" style="width:15px;height:15px">
+            </a>
+        </h2>
+
+        <ul>
+  
+  <li>
+    <a href="/blog/2022/12/3.3/" class="sidebar-link">🎄 Uppy 3.1-3.3: Improved AWS S3 Multipart, Single File Mode</a>
+  </li>
+  
+  <li>
+    <a href="/blog/2022/09/3.0/" class="sidebar-link">Uppy 3.0: Future-proof, conveniently easy, stable as ever</a>
+  </li>
+  
+  <li>
+    <a href="/blog/2022/03/2.4-2.7/" class="sidebar-link">Uppy 2.4-2.7: Image Compressor, Transloadit Rate Limiting, ESM</a>
+  </li>
+  
+  <li>
+    <a href="/blog/2021/12/2.1-2.3/" class="sidebar-link">🎄 Uppy 2.1-2.3: Audio plugin, fast and efficient streaming for Companion, production-ready Unsplash, and more</a>
+  </li>
+  
+  <li>
+    <a href="/blog/2021/08/2.0/" class="sidebar-link">Uppy 2.0.0: smaller, faster, modular plugins, Preact X, stricter types, and much more</a>
+  </li>
+  
+  <li>
+    <a href="/blog/2021/07/1.30/" class="sidebar-link">Uppy 1.30: Angular integration, granular image rotation, Google Drive shortcuts</a>
+  </li>
+  
+  <li>
+    <a href="/blog/2021/05/1.29/" class="sidebar-link">Uppy 1.29: Golden Retriever, disableLocalFiles, Webcam previews, uppy.logout</a>
+  </li>
+  
+  <li>
+    <a href="/blog/2021/04/1.27/" class="sidebar-link">Uppy 1.27: Drop Target plugin, Vue 3 support, Dashboard dynamic meta fields, “Shared with me” in Google Drive</a>
+  </li>
+  
+  <li>
+    <a href="/blog/2021/02/1.26/" class="sidebar-link">Uppy 1.26: Dashboard “disabled”, per-file headers</a>
+  </li>
+  
+  <li>
+    <a href="/blog/2021/01/1.25/" class="sidebar-link">Uppy 1.25: right-to-left scripts, Ukrainian translation, Companion improvements</a>
+  </li>
+  
+  <li>
+    <a href="/blog/2020/12/1.24/" class="sidebar-link">Uppy 1.24: 🎅 Happy Holidays — Svelte, React hook, Auto Open Image Editor</a>
+  </li>
+  
+</ul>
+        <ul class="Social">
+  <li><a href="https://twitter.com/uppy_io" target="_blank" rel="noopener" class="twitter-follow-button" data-show-count="false" data-dnt="true">Follow @uppy_io</a></li>
+  <li><iframe src="https://ghbtns.com/github-btn.html?user=transloadit&repo=uppy&type=watch&count=true"
+allowtransparency="true" frameborder="0" scrolling="0" width="100" height="20"></iframe></li>
+  <!-- to regenerate you can use this link: https://img.shields.io/badge/community-forum-d8006a.svg -->
+  <li><a href="https://community.transloadit.com/c/uppy" target="_blank" rel="noopener"><img src="/uppy/images/community-forum-d8006a.svg" /> </a></li>
+  <li class="BuildBadge">
+   <span class="wrapper">
+     <a href="https://github.com/transloadit/uppy/actions" target="_blank" rel="noopener"><img src="https://github.com/transloadit/uppy/workflows/End-to-end%20tests/badge.svg" alt="Build Status"></a>
+   </span>
+  </li>
+</ul>
+
+    </div>
+</div>
+
+
+<div class="Content js-Content with-sidebar">
+    
+  <h1>Uppy 0.20: React, Retry & Time Travel</h1>
+  <div class="post-date">Thursday Oct 5, 2017</div>
+    
+    <html><head></head><body><p>We are proud to present Uppy <code>0.20</code>. This one focuses on React and Redux support, adding storage expirations to <code>GoldenRetriever</code> and upload retries. Enjoy!</p>
+<h2 id="Uppy-React-components"><a href="#Uppy-React-components" class="headerlink" title="Uppy React components"></a>Uppy React components</h2><p>Uppy now ships with React components! We’ve been exploring different approaches to React components for several months, so we’re excited to finally have them in ✨ There are components for each of Uppy’s UI elements, like the Dashboard and the StatusBar.</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="token keyword">const</span> uppy <span class="token operator">=</span> <span class="token function"><span class="token maybe-class-name">Uppy</span></span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+uppy<span class="token punctuation">.</span><span class="token method function property-access">use</span><span class="token punctuation">(</span><span class="token maybe-class-name">Tus10</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token literal-property property">endpoint</span><span class="token operator">:</span> <span class="token string">'/upload'</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token keyword">const</span> <span class="token maybe-class-name">Dashboard</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'uppy/lib/react/Dashboard'</span><span class="token punctuation">)</span>
+
+<span class="token keyword">const</span> <span class="token function-variable function"><span class="token maybe-class-name">Uploader</span></span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token punctuation">(</span>
+  <span class="token operator">&lt;</span><span class="token maybe-class-name">Dashboard</span>
+    uppy<span class="token operator">=</span><span class="token punctuation">{</span>uppy<span class="token punctuation">}</span>
+    note<span class="token operator">=</span><span class="token string">"Hey! It's a React component!"</span>
+  <span class="token operator">/</span><span class="token operator">></span>
+<span class="token punctuation">)</span>
+
+<span class="token maybe-class-name">ReactDOM</span><span class="token punctuation">.</span><span class="token method function property-access">render</span><span class="token punctuation">(</span><span class="token operator">&lt;</span><span class="token maybe-class-name">Uploader</span> <span class="token operator">/</span><span class="token operator">></span><span class="token punctuation">,</span> <span class="token dom variable">document</span><span class="token punctuation">.</span><span class="token method function property-access">querySelector</span><span class="token punctuation">(</span><span class="token string">'#uploader'</span><span class="token punctuation">)</span><span class="token punctuation">)</span></pre></td></tr></table></figure>
+<a id="more"></a>
+
+<p><a href="/docs/react/">Check out the docs for more!</a></p>
+<h2 id="Redux"><a href="#Redux" class="headerlink" title="Redux"></a>Redux</h2><p><a href="https://github.com/richardwillars" target="_blank" rel="noopener">@richardwillars</a> contributed a plugin that will sync Uppy’s internal state with an existing Redux store.<br>To use it, define a Redux action and reducer:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="token comment">// The action creator receives 3 parameters:</span>
+<span class="token comment">// - The previous state</span>
+<span class="token comment">// - The new state</span>
+<span class="token comment">// - The change set</span>
+<span class="token keyword">const</span> <span class="token function-variable function">uppyStateUpdate</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">previous<span class="token punctuation">,</span> next<span class="token punctuation">,</span> patch</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token punctuation">(</span><span class="token punctuation">{</span>
+  <span class="token literal-property property">type</span><span class="token operator">:</span> <span class="token string">'UPPY_STATE_UPDATE'</span><span class="token punctuation">,</span>
+  previous<span class="token punctuation">,</span>
+  next<span class="token punctuation">,</span>
+  patch<span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token keyword">function</span> <span class="token function">reduce</span> <span class="token punctuation">(</span><span class="token parameter">state <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span> action</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword control-flow">if</span> <span class="token punctuation">(</span>action<span class="token punctuation">.</span><span class="token property-access">type</span> <span class="token operator">===</span> <span class="token string">'UPPY_STATE_UPDATE'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword control-flow">return</span> <span class="token punctuation">{</span>
+      <span class="token spread operator">...</span>state<span class="token punctuation">,</span>
+      <span class="token comment">// Merge in the changes.</span>
+      <span class="token spread operator">...</span>action<span class="token punctuation">.</span><span class="token property-access">patch</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></pre></td></tr></table></figure>
+<p>Then pass your Redux store’s <code>dispatch</code> function and the action creator to the Redux plugin:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="token keyword">const</span> <span class="token maybe-class-name">ReduxStore</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'uppy/lib/Redux'</span><span class="token punctuation">)</span>
+
+uppy<span class="token punctuation">.</span><span class="token method function property-access">use</span><span class="token punctuation">(</span><span class="token maybe-class-name">ReduxStore</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  <span class="token literal-property property">dispatch</span><span class="token operator">:</span> store<span class="token punctuation">.</span><span class="token property-access">dispatch</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">action</span><span class="token operator">:</span> uppyStateUpdate<span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span></pre></td></tr></table></figure>
+<p><a href="/docs/redux/">See the docs</a></p>
+<h2 id="Redux-DevTools"><a href="#Redux-DevTools" class="headerlink" title="Redux DevTools"></a>Redux DevTools</h2><p>Even if you’re not using Redux in your application, there’s some Redux-related news! Uppy now has a new plugin, <code>ReduxDevTools</code>, which adds debug support for Redux DevTools and allows you to time travel while debugging Uppy:</p>
+<figure class="wide"><video alt="Demo video showing Uppy with Redux Dev Tools and time traveling" controls="" autoplay=""><source src="/uppy/images/blog/0.20/uppy-reduxdevtools.mp4" type="video/mp4">Your browser does not support the video tag, you can <a href="/uppy/images/blog/0.20/uppy-reduxdevtools.mp4">download the video</a> to watch it.</video></figure>
+
+<p>To try it, add the plugin:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="token keyword">const</span> <span class="token maybe-class-name">ReduxDevTools</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'uppy/lib/plugins/ReduxDevTools'</span><span class="token punctuation">)</span>
+
+uppy<span class="token punctuation">.</span><span class="token method function property-access">use</span><span class="token punctuation">(</span><span class="token maybe-class-name">ReduxDevTools</span><span class="token punctuation">)</span></pre></td></tr></table></figure>
+<p>And then <a href="https://github.com/zalmoxisus/redux-devtools-extension" target="_blank" rel="noopener">activate the browser extension</a>.</p>
+<p>See <a href="https://github.com/transloadit/uppy/pull/373" target="_blank" rel="noopener">#373</a> for details and discussion.</p>
+<h2 id="Retries"><a href="#Retries" class="headerlink" title="Retries"></a>Retries</h2><p>We’ve added a retry UI to the <code>Dashboard</code>. If some of your uploads fail—maybe the network is down or the endpoint is unresponsive—you’ll see this:</p>
+<img alt="Uppy Dashboard retry UI with individual retry buttons and “retry all”" src="/uppy/images/blog/0.20/retry.jpg">
+
+<p>From here it’s easy to retry individual uploads or all at once. This feature currenty works best with <code>Tus10</code> plugin, and has basic <code>XHRUpload</code> support, but we’ll improve on the latter in the future releases.</p>
+<h2 id="Re-designed-Drag-and-Drop-plugin"><a href="#Re-designed-Drag-and-Drop-plugin" class="headerlink" title="Re-designed Drag and Drop plugin"></a>Re-designed Drag and Drop plugin</h2><p>The old trustly <code>DragDrop</code> plugin has been re-designed by <a href="https://github.com/arturi" target="_blank" rel="noopener">@arturi</a> and <a href="http://zaytsev.io" target="_blank" rel="noopener">@nqst</a>:</p>
+<ul>
+<li>Fresh simple design, arrow icon, white background;</li>
+<li>New sizing options: <code>width</code> and <code>height</code> (both <code>100%</code> by default to fill the entire container space);</li>
+<li>A <code>note</code> option, like in the <code>Dashboard</code>, to add info about restrictions or anything else you would like your users to know.</li>
+</ul>
+<img class="border" src="/uppy/images/blog/0.20/dnd-gray.jpg">
+
+<p><strong><a href="/examples/dragdrop/">Check it out</a></strong></p>
+<figure class="highlight js"><table><tr><td class="code"><pre>uppy<span class="token punctuation">.</span><span class="token method function property-access">use</span><span class="token punctuation">(</span><span class="token maybe-class-name">DragDrop</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  <span class="token literal-property property">target</span><span class="token operator">:</span> <span class="token string">'body'</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">width</span><span class="token operator">:</span> <span class="token string">'600px'</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">height</span><span class="token operator">:</span> <span class="token string">'300px'</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">note</span><span class="token operator">:</span> <span class="token string">'Videos only, up to 100 MB'</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span></pre></td></tr></table></figure>
+<h2 id="The-Golden-Retriever-cleans-up-after-itself"><a href="#The-Golden-Retriever-cleans-up-after-itself" class="headerlink" title="The Golden Retriever cleans up after itself"></a>The Golden Retriever cleans up after itself</h2><p>We recently released the <code>GoldenRetriever</code> plugin, which stores selected files on the client so that it can recover them after a browser crash. Previously, these stored files would stay around forever, and clog up the user’s disk space. As of 0.20.0, files will be removed from client-side storage when they have been uploaded. Files that have had nothing happen to them for longer than 24 hours will be cleaned up automatically. This timeframe can be configured using the new <code>expires</code> option:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="token keyword">const</span> ms <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'ms'</span><span class="token punctuation">)</span>
+
+uppy<span class="token punctuation">.</span><span class="token method function property-access">use</span><span class="token punctuation">(</span><span class="token maybe-class-name">GoldenRetriever</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  <span class="token literal-property property">expires</span><span class="token operator">:</span> <span class="token function">ms</span><span class="token punctuation">(</span><span class="token string">'4 hours'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span></pre></td></tr></table></figure>
+<p>(The <a href="https://npmjs.com/package/ms" target="_blank" rel="noopener"><code>ms</code></a> module is great for converting text durations to milliseconds!)</p>
+<p>This will clean up files when Uppy runs, but perhaps not every page of your app uses Uppy. If a user selected some files, but then never came back to that same page, files could still hang around for a long time. To aid this, there’s a new module that you can call to clean up Uppy’s cache without needing an Uppy instance:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="token keyword">const</span> cleanup <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'uppy/lib/plugins/GoldenRetriever/cleanup'</span><span class="token punctuation">)</span>
+
+<span class="token function">cleanup</span><span class="token punctuation">(</span><span class="token punctuation">)</span></pre></td></tr></table></figure>
+<p>We’ll hopefully make that require path easier to remember in the future :)</p>
+<h2 id="Misc-good-stuff"><a href="#Misc-good-stuff" class="headerlink" title="Misc good stuff"></a>Misc good stuff</h2><ul>
+<li>The GoldenRetriever now detects a serviceWorker registration automatically—it’s no longer necessary to emit an <code>core:sw-file-ready</code> event.</li>
+<li>Request headers are now configurable in the AWS S3 plugin.</li>
+<li>A new <code>setPluginState</code> allows plugins to set state scoped to the plugin.</li>
+<li>Some unused code was removed 🎉</li>
+<li>More tests were added! Thanks <a href="https://github.com/gavboulton" target="_blank" rel="noopener">@gavboulton</a> and <a href="https://github.com/richardwillars" target="_blank" rel="noopener">@richardwillars</a> 🎉</li>
+<li>Documentation for the <a href="/docs/statusbar">StatusBar</a>, <a href="/docs/xhrupload">XHRUpload</a> and <a href="/docs/tus">Tus</a> plugins.</li>
+</ul>
+<h2 id="Full-Changelog"><a href="#Full-Changelog" class="headerlink" title="Full Changelog"></a>Full Changelog</h2><p>Here is the full list of changes for version <code>0.20.0</code> (and patch <code>0.19.1</code>):</p>
+<ul>
+<li>core: retry/error when upload can’t start or fails (offline, connection lost, wrong endpoint); add error in file progress state, UI, question mark button (#307 / @arturi)</li>
+<li>core: support for retry in Tus plugin (#307 / @arturi)</li>
+<li>core: support for retry in XHRUpload plugin (#307 / @arturi)</li>
+<li>core: Add support for Redux DevTools via a plugin (#373 / @arturi)</li>
+<li>core: improve and merge the React PR (#170 / @goto-bus-stop, @arturi)</li>
+<li>core: improve core.log method, add timestamps (#372 / @arturi)</li>
+<li>dragdrop: redesign, add note, width/height options, arrow icon (#374 / @arturi)</li>
+<li>uploaders: upload resolution changes, followup to #323 (#347 / @goto-bus-stop)</li>
+<li>uploaders: issue warning when no uploading plugins are used (#372 / @arturi)</li>
+<li>core: fix <code>replaceTargetContent</code> and add tests for <code>Plugin</code> (#354 / @gavboulton)</li>
+<li>goldenretriever: Omit completed uploads from saved file state—previously, when an upload was finished and the user refreshed the page, all the finished files would still be there because we saved the entire list of files. Changed this to only store files that are part of an in-progress upload, or that have yet to be uploaded (#358, #324 / @goto-bus-stop)</li>
+<li>goldenretriever: Remove files from cache when upload finished—this uses the deleteBlobs function when core:success fires (#358, #324 / @goto-bus-stop)</li>
+<li>goldenretriever: add a timestamp to cached blobs, and to delete old blobs on boot (#358, #324 / @goto-bus-stop)</li>
+<li>s3: have some way to configure content-disposition for uploads, see #243 (@goto-bus-stop)</li>
+<li>core: move <code>setPluginState</code> and add <code>getPluginState</code> to <code>Plugin</code> class (#363 / @goto-bus-stop)</li>
+<li>goldenretriever: fix restorefiles with id (#351 / @arturi)</li>
+<li>goldenretriever: Clean up blobs that are not related to a file in state (#349 / @goto-bus-stop)</li>
+<li>core: set the newState before emiting <code>core:state-update</code> (#341 / @sunil-shrestha, @arturi)</li>
+<li>docs: Document StatusBar plugin (#350 / @goto-bus-stop)</li>
+</ul>
+<p>The Uppy Team</p>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script></body></html>
+
+    <center>
+        <br />
+        <a class="github-button" href="https://github.com/transloadit/uppy" data-icon="octicon-star" data-size="large"
+        data-show-count="true" aria-label="Star transloadit/uppy on GitHub">Star</a>
+    </center>
+
+    <div class="PostAuthors">
+        
+            <div class="PostAuthor">
+                <a class="PostAuthor-link" href="https://transloadit.com/about/#renee" target="_blank" rel="noopener">
+                    <img class="PostAuthor-img" src="https://www.gravatar.com/avatar/2873ddbfdaa1440797750ba605c231ac?s=200">
+                    <h4 class="PostAuthor-name">Renée Kooi</h4>
+                    <div class="PostAuthor-tagline">Developer</div>
+                </a>
+            </div>
+        
+    </div>
+  <br />
+    <!-- <ul class="Social">
+        <li><iframe src="https://ghbtns.com/github-btn.html?user=transloadit&repo=uppy&type=watch&count=true"
+                allowtransparency="true" frameborder="0" scrolling="0" width="100" height="20"></iframe></li>
+    </ul> -->
+  <!-- <div id="disqus_thread"></div>
+<script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+
+var disqus_config = function () {
+this.page.url = 'https://uppy.io/blog/2017/10/0.20/';  // Replace PAGE_URL with your page's canonical URL variable
+// this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://uppy.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" target="_blank" rel="noopener">comments powered by Disqus.</a></noscript>
+                             -->
+</div>
+
+        
+      </main>
+
+      <script defer data-domain="transloadit.github.io" src="https://analytics.transloadit.com/js/plausible.js"></script>
+
+
+      
+        <script src="/uppy/js/smooth-scroll.min.js"></script>
+        <!-- Place this tag in your head or just before your close body tag. -->
+        <script async defer src="https://buttons.github.io/buttons.js"></script>
+      
+      <script src="/uppy/js/common.js"></script>
+
+      <!-- Twitter follow button script -->
+      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+    </div>
+  </body>
+</html>

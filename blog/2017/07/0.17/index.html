@@ -1,0 +1,402 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Uppy 0.17: Restrictions — Uppy</title>
+    <meta charset="utf-8">
+    <meta name="title" content="Uppy 0.17: Restrictions — Uppy">
+    <meta name="description" content="Hi! We are back with yet another Uppy release that contains some often requested features such as file restrictions and better file type detection, alongside a brand new Instagram plugin, UI improvements and more!">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@uppy_io">
+    <meta name="twitter:creator" content="@uppy_io">
+    <meta property="og:url" content="https://transloadit.github.io/uppy/blog/2017/07/0.17/index.html">
+    <meta property="og:title" content="Uppy 0.17: Restrictions — Uppy">
+    <meta name="twitter:title" content="Uppy 0.17: Restrictions — Uppy">
+    <meta name="twitter:description" content="Hi! We are back with yet another Uppy release that contains some often requested features such as file restrictions and better file type detection, alongside a brand new Instagram plugin, UI improvements and more!">
+    <meta property="og:image" content="http://transloadit.github.io/uppy/images/uppy-social-pink.png">
+    <meta name="twitter:image" content="http://transloadit.github.io/uppy/images/uppy-social-pink.png">
+
+    <meta name="google-site-verification" content="JxARoHXoCI8bD07pLV_u3z6xpuWNcSIZIcHEytyCkUc" />
+
+    <link rel="icon" href="/uppy/images/logos/uppy-dog-head-arrow.png" type="image/x-icon">
+    <link rel="alternate" type="application/rss+xml" title="Uppy" href="/atom.xml">
+
+    <script>
+      window.PAGE_TYPE = ""
+    </script>
+    
+<link rel="stylesheet" href="/uppy/css/main.css?version=2">
+
+    <!-- ^ poor man's solution to css cache busting. bump the version when there's something new we really want users to see -->
+  <meta name="generator" content="Hexo 4.2.1"></head>
+  <body class="page-inner ">
+    <div class="page">
+      <div class="TransloaditBar js-TransloaditBar">
+        <div class="TransloaditBar-about">
+          <!-- <a class="TransloaditBar-logo" href="https://transloadit.com/" target="_blank" rel="noopener">
+            <img class="TransloaditBar-logoImg" src="/uppy/images/transloadit-white-glyph.svg" width="20" height="20" alt="Transloadit">
+          </a> -->
+          <!-- <span>Uppy is an open source project by <a class="TransloaditBar-link" href="https://transloadit.com/" target="_blank">Transloadit</a></span> -->
+          This website is no longer maintained, please visit <a href="//uppy.io" target="_blank" rel="noopener" style="color:inherit">uppy.io</a> to get up-to-date info about Uppy.
+        </div>
+      </div>
+
+      <header id="header" class="MainHeader js-MainHeader">
+        <button class="MainHeader-menuBtn js-MenuBtn"></button>
+
+        <span id="logo" class="MainLogo">
+          <a class="MainLogo-link" href="/uppy/">Uppy</a>
+          <!-- Was used for 1.0, we can re-use for 2.0 or major announcements -->
+          <!-- <a class="MainLogo-announcement" href="/blog/2019/04/1.0/">
+            1.0
+            <span class="MainLogo-emoji">
+              <img src="/uppy/images/party-popper.png" srcset="/uppy/images/party-popper@2x.png 2x" alt="🎉">
+            </span>
+          </a> -->
+        </span>
+
+        <nav>
+          <ul id="nav" class="MainMenu">
+            <!-- @todo uncomment search input when we get our own swifttype -->
+<!-- <li>
+  <form id="search-form" class="MainMenu-search">
+    <input type="text" id="search-query" class="MainMenu-searchQuery st-default-search-input">
+  </form>
+</li> -->
+<!--li><a href="/uppy/guide/" class="nav-link">Guide</a></li-->
+<li><a href="/uppy/docs/" class="nav-link">Docs</a></li>
+<li><a href="/uppy/examples/dashboard/" class="nav-link">Examples</a></li>
+<!--li><a href="/uppy/stats/" class="nav-link">Stats</a></li-->
+<li><a href="/uppy/blog/" class="nav-link current">Blog</a></li>
+<li><a href="/uppy/support/" class="nav-link">Support</a></li>
+<li><a href="https://github.com/transloadit/uppy" target="_blank" rel="noopener" class="nav-link">GitHub</a></li>
+
+          </ul>
+        </nav>
+
+        <div class="MainHeader-tagline">
+          The file uploader that <span class="MainHeader-taglinePart js-MainHeader-taglinePart is-visible">loves to play fetch</span>
+        </div>
+
+        <ul class="MainHeader-taglineList js-MainHeader-taglineList">
+          
+          <li>won’t chew on your shoes</li>
+          
+          <li>is fully housebroken</li>
+          
+          <li>just wants to play with you</li>
+          
+          <li>doesn’t hump your leg</li>
+          
+          <li>also accepts cat pictures</li>
+          
+          <li>loves you unconditionally</li>
+          
+          <li>you don’t have to keep on a leash</li>
+          
+          <li>won’t pee on your rug</li>
+          
+          <li>loves to play fetch</li>
+          
+          <li>doesn’t bite (hard)</li>
+          
+          <li>won’t bark at the mailman</li>
+          
+          <li>is great with the kids</li>
+          
+          <li>can digest anything, even chocolate cake</li>
+          
+          <li>is always happy to see you</li>
+          
+          <li>isn’t afraid of fireworks</li>
+          
+          <li>is allowed everywhere</li>
+          
+        </ul>
+      </header>
+
+      <main class="MainContent js-MainContent" id="main">
+        
+          <div class="Sidebar js-Sidebar is-blog">
+    <ul class="main-menu">
+        <!-- @todo uncomment search input when we get our own swifttype -->
+<!-- <li>
+  <form id="search-form" class="MainMenu-search">
+    <input type="text" id="search-query" class="MainMenu-searchQuery st-default-search-input">
+  </form>
+</li> -->
+<!--li><a href="/uppy/guide/" class="nav-link">Guide</a></li-->
+<li><a href="/uppy/docs/" class="nav-link">Docs</a></li>
+<li><a href="/uppy/examples/dashboard/" class="nav-link">Examples</a></li>
+<!--li><a href="/uppy/stats/" class="nav-link">Stats</a></li-->
+<li><a href="/uppy/blog/" class="nav-link current">Blog</a></li>
+<li><a href="/uppy/support/" class="nav-link">Support</a></li>
+<li><a href="https://github.com/transloadit/uppy" target="_blank" rel="noopener" class="nav-link">GitHub</a></li>
+
+    </ul>
+    <div class="list">
+        <h2>
+            Recent Posts
+            <a href="/atom.xml" rel="noreferrer noopener" target="_blank" style="vertical-align: middle; margin-left: 5px">
+                <img src="/uppy/images/feed.png" style="width:15px;height:15px">
+            </a>
+        </h2>
+
+        <ul>
+  
+  <li>
+    <a href="/blog/2022/12/3.3/" class="sidebar-link">🎄 Uppy 3.1-3.3: Improved AWS S3 Multipart, Single File Mode</a>
+  </li>
+  
+  <li>
+    <a href="/blog/2022/09/3.0/" class="sidebar-link">Uppy 3.0: Future-proof, conveniently easy, stable as ever</a>
+  </li>
+  
+  <li>
+    <a href="/blog/2022/03/2.4-2.7/" class="sidebar-link">Uppy 2.4-2.7: Image Compressor, Transloadit Rate Limiting, ESM</a>
+  </li>
+  
+  <li>
+    <a href="/blog/2021/12/2.1-2.3/" class="sidebar-link">🎄 Uppy 2.1-2.3: Audio plugin, fast and efficient streaming for Companion, production-ready Unsplash, and more</a>
+  </li>
+  
+  <li>
+    <a href="/blog/2021/08/2.0/" class="sidebar-link">Uppy 2.0.0: smaller, faster, modular plugins, Preact X, stricter types, and much more</a>
+  </li>
+  
+  <li>
+    <a href="/blog/2021/07/1.30/" class="sidebar-link">Uppy 1.30: Angular integration, granular image rotation, Google Drive shortcuts</a>
+  </li>
+  
+  <li>
+    <a href="/blog/2021/05/1.29/" class="sidebar-link">Uppy 1.29: Golden Retriever, disableLocalFiles, Webcam previews, uppy.logout</a>
+  </li>
+  
+  <li>
+    <a href="/blog/2021/04/1.27/" class="sidebar-link">Uppy 1.27: Drop Target plugin, Vue 3 support, Dashboard dynamic meta fields, “Shared with me” in Google Drive</a>
+  </li>
+  
+  <li>
+    <a href="/blog/2021/02/1.26/" class="sidebar-link">Uppy 1.26: Dashboard “disabled”, per-file headers</a>
+  </li>
+  
+  <li>
+    <a href="/blog/2021/01/1.25/" class="sidebar-link">Uppy 1.25: right-to-left scripts, Ukrainian translation, Companion improvements</a>
+  </li>
+  
+  <li>
+    <a href="/blog/2020/12/1.24/" class="sidebar-link">Uppy 1.24: 🎅 Happy Holidays — Svelte, React hook, Auto Open Image Editor</a>
+  </li>
+  
+</ul>
+        <ul class="Social">
+  <li><a href="https://twitter.com/uppy_io" target="_blank" rel="noopener" class="twitter-follow-button" data-show-count="false" data-dnt="true">Follow @uppy_io</a></li>
+  <li><iframe src="https://ghbtns.com/github-btn.html?user=transloadit&repo=uppy&type=watch&count=true"
+allowtransparency="true" frameborder="0" scrolling="0" width="100" height="20"></iframe></li>
+  <!-- to regenerate you can use this link: https://img.shields.io/badge/community-forum-d8006a.svg -->
+  <li><a href="https://community.transloadit.com/c/uppy" target="_blank" rel="noopener"><img src="/uppy/images/community-forum-d8006a.svg" /> </a></li>
+  <li class="BuildBadge">
+   <span class="wrapper">
+     <a href="https://github.com/transloadit/uppy/actions" target="_blank" rel="noopener"><img src="https://github.com/transloadit/uppy/workflows/End-to-end%20tests/badge.svg" alt="Build Status"></a>
+   </span>
+  </li>
+</ul>
+
+    </div>
+</div>
+
+
+<div class="Content js-Content with-sidebar">
+    
+  <h1>Uppy 0.17: Restrictions</h1>
+  <div class="post-date">Tuesday Jul 11, 2017</div>
+    
+    <html><head></head><body><p>Hi! We are back with yet another Uppy release that contains some often requested features such as file restrictions and better file type detection, alongside a brand new Instagram plugin, UI improvements and more!</p>
+<a id="more"></a>
+
+<h2 id="⚠️-File-Restrictions"><a href="#⚠️-File-Restrictions" class="headerlink" title="⚠️ File Restrictions"></a>⚠️ File Restrictions</h2><p>Something that a few of our biggest fans were asking for, is finally here! Here’s the gist of it:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="token function"><span class="token maybe-class-name">Uppy</span></span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  <span class="token literal-property property">debug</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">autoProceed</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">restrictions</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">maxFileSize</span><span class="token operator">:</span> <span class="token number">300000</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">maxNumberOfFiles</span><span class="token operator">:</span> <span class="token number">5</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">minNumberOfFiles</span><span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">allowedFileTypes</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'image/*'</span><span class="token punctuation">,</span> <span class="token string">'video/*'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token function-variable function">onBeforeFileAdded</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token parameter">currentFile<span class="token punctuation">,</span> files</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token punctuation">{</span>
+    <span class="token keyword control-flow">if</span> <span class="token punctuation">(</span>currentFile<span class="token punctuation">.</span><span class="token property-access">name</span> <span class="token operator">===</span> <span class="token string">'my-file.jpg'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword control-flow">return</span> <span class="token known-class-name class-name">Promise</span><span class="token punctuation">.</span><span class="token method function property-access">resolve</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword control-flow">return</span> <span class="token known-class-name class-name">Promise</span><span class="token punctuation">.</span><span class="token method function property-access">reject</span><span class="token punctuation">(</span><span class="token string">'This is not the file I was looking for'</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token function-variable function">onBeforeUpload</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token parameter">files</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token punctuation">{</span>
+    <span class="token keyword control-flow">if</span> <span class="token punctuation">(</span><span class="token known-class-name class-name">Object</span><span class="token punctuation">.</span><span class="token method function property-access">keys</span><span class="token punctuation">(</span>files<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token property-access">length</span> <span class="token operator">&lt;</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword control-flow">return</span> <span class="token known-class-name class-name">Promise</span><span class="token punctuation">.</span><span class="token method function property-access">reject</span><span class="token punctuation">(</span><span class="token string">'Too few files :('</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword control-flow">return</span> <span class="token known-class-name class-name">Promise</span><span class="token punctuation">.</span><span class="token method function property-access">resolve</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span></pre></td></tr></table></figure>
+<p>Basically, there are two ways to set restrictions:</p>
+<p>1. Using the <code>restrictions</code> object in Uppy’s core settings:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="token literal-property property">restrictions</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+  <span class="token literal-property property">maxFileSize</span><span class="token operator">:</span> <span class="token number">300000</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">maxNumberOfFiles</span><span class="token operator">:</span> <span class="token number">5</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">minNumberOfFiles</span><span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">allowedFileTypes</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'image/*'</span><span class="token punctuation">,</span> <span class="token string">'video/*'</span><span class="token punctuation">]</span>
+<span class="token punctuation">}</span></pre></td></tr></table></figure>
+<p>Translation: allow only images and videos of any type, a minimum of 2 and maximum of 5 files must be selected, 300kb or less.</p>
+<p><code>allowedFileTypes</code> must be an array of strings with supported file mime-types. Anything from <a href="https://www.iana.org/assignments/media-types/media-types.xhtml" target="_blank" rel="noopener">this list</a> should work, as long as Uppy is able to detect it (and Uppy promises to try real hard, see below for details). Both wildcards <code>video/*</code> and specicifc types <code>image/jpeg</code> are supported!</p>
+<p>2. Using the more advanced callbacks: <code>onBeforeFileAdded(currentFile, files)</code>, which fires before a file is added and allows you to run whatever checks you wish against either the single file that is about to be added or all files currently selected / uploaded, and <code>onBeforeUpload(files)</code>, where you are able to check stuff before proceeding with the upload.</p>
+<p>Basically, use the first option for the simple stuff such as limiting uploads to images or a maximum of three files. Use the second option for things like “we need users to upload 5 photos and an audio file, so we can make a short clip out of it”. Let us know if this suits your needs, we are all 👂ears👂!</p>
+<p>Also, a new <code>note</code> option has been added to the Dashboard, as a quick and easy way to inform users about the restrictions you choose to set up:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre>uppy<span class="token punctuation">.</span><span class="token method function property-access">use</span><span class="token punctuation">(</span><span class="token maybe-class-name">Dashboard</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  <span class="token literal-property property">note</span><span class="token operator">:</span> <span class="token string">'Images and video only, 300kb or less'</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span></pre></td></tr></table></figure>
+<img class="border" src="/uppy/images/blog/0.17/restrictions-note.jpg">
+
+<h2 id="📸-Instagram-plugin-and-UI-overhaul"><a href="#📸-Instagram-plugin-and-UI-overhaul" class="headerlink" title="📸 Instagram plugin and UI overhaul"></a>📸 Instagram plugin and UI overhaul</h2><p>Yes, Instagram is now supported in Uppy, so you can easily import all of your cat, dog and food pictures!</p>
+<figure class="wide">
+  <img class="border" src="/uppy/images/blog/0.17/instagram-ui.jpg">
+</figure>
+
+<p>You can try it live in the <a href="/uppy/examples/dashboard/">Dashboard example</a>.</p>
+<p>The UI for all “provider” plugins, which is the way we call Google Drive, Dropbox and other external services, have been revamped to make better use of the space.</p>
+<p>Files are now selected, or added, on click/tap, rather than double click, which is easier and also works on mobile. 🙀</p>
+<img class="border" src="/uppy/images/blog/0.17/provider-search.jpg">
+
+<h2 id="StatusBar"><a href="#StatusBar" class="headerlink" title="StatusBar"></a>StatusBar</h2><p>The Dashboard’s StatusBar has been improved. First of all, even though it still comes bundled with the Dashboard like before, it is now a separate plugin that can be used anywhere, like with the Drag and Drop plugin or your own custom thing. Furthermore, it now shows fatal upload errors in addition to the upload / processing / transcoding progress. 💪</p>
+<p>In the Dashboard, you can now disable the StatusBar and/or Informer if you don’t need them or want something custom, by setting <code>disableStatusBar: true</code> and <code>disableInformer: true</code>.</p>
+<p>Details: <a href="https://github.com/transloadit/uppy/pull/217" target="_blank" rel="noopener">#217</a></p>
+<h2 id="Better-file-type-detection"><a href="#Better-file-type-detection" class="headerlink" title="Better file type detection"></a>Better file type detection</h2><p>We’ve added a <a href="https://github.com/sindresorhus/file-type" target="_blank" rel="noopener"><code>file-type</code></a> module that helps with figuring out the file type by reading the first magic bytes of the file. If that doesn’t work, we try to use the mime-type provided by the system/browser, and if that is still a dead end, we attempt to figure it out by extension. All in all, this leads to a more robust file type detecting experience. Personally, I’m just happy my Sex and the City 🍸 <code>.avi</code> files are now recognized as <code>video</code> on a Mac!</p>
+<p>Further details can be found here: <a href="https://github.com/transloadit/uppy/pull/219" target="_blank" rel="noopener">#219</a></p>
+<h2 id="Extracting-metadata-from-lt-form-gt-inputs"><a href="#Extracting-metadata-from-lt-form-gt-inputs" class="headerlink" title="Extracting metadata from <form> inputs"></a>Extracting metadata from <code>&lt;form&gt;</code> inputs</h2><p>If a plugin’s <code>target</code> is a <code>form</code> element, we are going to try to extract all the data from that form’s inputs and add it as <code>meta</code> to Uppy’s state. That <code>meta</code> is then merged with file’s meta when it is being added.</p>
+<p>Uppy’s core options have received a new <code>meta</code> property, where you can define some metadata from the start, as well as a new <code>setMeta</code> method that can be called at any time.</p>
+<p>See here for more details: <a href="https://github.com/transloadit/uppy/pull/238" target="_blank" rel="noopener">#238</a></p>
+<h2 id="More"><a href="#More" class="headerlink" title="More"></a>More</h2><ul>
+<li>Added a <code>reset()</code> method that stops uploads, clears files and totalProgress, and restores things to the way they were on initialization, before user interactions <a href="https://github.com/transloadit/uppy/pull/226" target="_blank" rel="noopener">#226</a></li>
+<li>Support for headers in Multipart plugin <a href="https://github.com/transloadit/uppy/pull/224" target="_blank" rel="noopener">#224</a></li>
+<li>Set bytesUploaded/bytesTotal as soon as the file is added, fixes a <code>NaN</code> issue <a href="https://github.com/transloadit/uppy/pull/232" target="_blank" rel="noopener">#232</a></li>
+</ul>
+<h2 id="Release-Notes"><a href="#Release-Notes" class="headerlink" title="Release Notes"></a>Release Notes</h2><p>Here is the full list of changes for version 0.17:</p>
+<ul>
+<li>core: added restrictions — by file type, size, number of files (@arturi)</li>
+<li>provider: improved UI: improve overall look, breadcrumbs, more responsive (@arturi)</li>
+<li>core: css-in-js demos, try template-css (@arturi @goto-bus-stop #239)</li>
+<li>core: added <code>uppy.reset()</code> as discussed in #179 (@arturi)</li>
+<li>core: added nanoraf <a href="https://github.com/yoshuawuyts/choo/pull/135/files?diff=unified" target="_blank" rel="noopener">https://github.com/yoshuawuyts/choo/pull/135/files?diff=unified</a> (@goto-bus-stop, @arturi)</li>
+<li>core: file type detection: archives, markdown (possible modules: file-type, identify-filetype) example: <a href="http://requirebin.com/?gist=f9bea9602030f1320a227cf7f140c45f" target="_blank" rel="noopener">http://requirebin.com/?gist=f9bea9602030f1320a227cf7f140c45f</a>, <a href="http://stackoverflow.com/a/29672957" target="_blank" rel="noopener">http://stackoverflow.com/a/29672957</a> (@arturi)</li>
+<li>dashboard: made file icons prettier: &lt;/uppy/uppy/images/blog/0.16/service-logos.png&gt; (@arturi, @nqst / #215)</li>
+<li>fileinput: allow retrieving fields/options from form (@arturi #153)</li>
+<li>server: configurable server port (@ifedapoolarewaju)</li>
+<li>server: added support for custom providers (@ifedapoolarewaju)</li>
+<li>statusbar: also show major errors, add “error” state (@goto-bus-stop)</li>
+<li>statusbar: pre/postprocessing status updates in the StatusBar (@goto-bus-stop, #202)</li>
+<li>statusbar: show status “Upload started…” when the remote upload has begun, but no progress events received yet (@arturi)</li>
+<li>statusbar: work towards extracting StatusBar to a separate plugin, still bundle it with Dashboard (@goto-bus-stop, @arturi)</li>
+<li>tus/uppy-server: support metadata in remote tus uploads (@ifedapoolarewaju, @goto-bus-stop / #210)</li>
+<li>uploaders: added direct-to-s3 upload plugin and test it with the flow to then upload to transloadit, stage 1, WIP (@goto-bus-stop)</li>
+<li>uppy/uppy-server: Made a barely working Instagram Plugin (@ifedapoolarewaju / #21)</li>
+<li>uppy/uppy-server: allow google drive/dropbox non-tus (i.e multipart) remote uploads (@arturi, @ifedapoolarewaju / #205)</li>
+<li>uppy/uppy-server: do not show files that cannot be downloaded from Google Drive (@ifedapoolarewaju)</li>
+<li>uppy: fixed Google Drive uploads on mobile (double click issue) (@arturi)</li>
+<li>core: updated prettier-bytes to fix the IE support issue <a href="https://github.com/Flet/prettier-bytes/issues/3" target="_blank" rel="noopener">https://github.com/Flet/prettier-bytes/issues/3</a> (@arturi)</li>
+<li>core: use URL.createObjectURL instead of resizing thumbnails (@arturi, @goto-bus-stop / #199)</li>
+<li>dashboard: fixed ETA when multiple files are being uploaded (@goto-bus-stop, #197)</li>
+<li>transloadit: fixed receiving assembly results that are not related to an input file (@arturi, @goto-bus-stop / #201)</li>
+<li>transloadit: use the <code>tus_upload_url</code> to reliably link assembly results with their input files (@goto-bus-stop / #207)</li>
+<li>transloadit: moved user-facing strings into locale option (@goto-bus-stop / <a href="https://github.com/transloadit/uppy/commit/87a22e7ee37b6fa3754fa34868516a6700306b60" target="_blank" rel="noopener">https://github.com/transloadit/uppy/commit/87a22e7ee37b6fa3754fa34868516a6700306b60</a>)</li>
+<li>webcam: mute audio in realtime playback (@goto-bus-stop / #196)</li>
+<li>temporarily downgrade yo-yoify, until shama/yo-yoify#45 is resolved (@arturi / <a href="https://github.com/transloadit/uppy/commit/6292b96" target="_blank" rel="noopener">https://github.com/transloadit/uppy/commit/6292b96</a>)</li>
+</ul>
+<p>Enjoy!</p>
+<p>The Uppy Team</p>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script></body></html>
+
+    <center>
+        <br />
+        <a class="github-button" href="https://github.com/transloadit/uppy" data-icon="octicon-star" data-size="large"
+        data-show-count="true" aria-label="Star transloadit/uppy on GitHub">Star</a>
+    </center>
+
+    <div class="PostAuthors">
+        
+            <div class="PostAuthor">
+                <a class="PostAuthor-link" href="https://transloadit.com/about/#artur" target="_blank" rel="noopener">
+                    <img class="PostAuthor-img" src="https://www.gravatar.com/avatar/6ddfaa9427d64ba52bbe021ea5e2ffef?s=200">
+                    <h4 class="PostAuthor-name">Artur Paikin</h4>
+                    <div class="PostAuthor-tagline">Developer</div>
+                </a>
+            </div>
+        
+    </div>
+  <br />
+    <!-- <ul class="Social">
+        <li><iframe src="https://ghbtns.com/github-btn.html?user=transloadit&repo=uppy&type=watch&count=true"
+                allowtransparency="true" frameborder="0" scrolling="0" width="100" height="20"></iframe></li>
+    </ul> -->
+  <!-- <div id="disqus_thread"></div>
+<script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+
+var disqus_config = function () {
+this.page.url = 'https://uppy.io/blog/2017/07/0.17/';  // Replace PAGE_URL with your page's canonical URL variable
+// this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://uppy.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" target="_blank" rel="noopener">comments powered by Disqus.</a></noscript>
+                             -->
+</div>
+
+        
+      </main>
+
+      <script defer data-domain="transloadit.github.io" src="https://analytics.transloadit.com/js/plausible.js"></script>
+
+
+      
+        <script src="/uppy/js/smooth-scroll.min.js"></script>
+        <!-- Place this tag in your head or just before your close body tag. -->
+        <script async defer src="https://buttons.github.io/buttons.js"></script>
+      
+      <script src="/uppy/js/common.js"></script>
+
+      <!-- Twitter follow button script -->
+      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+    </div>
+  </body>
+</html>

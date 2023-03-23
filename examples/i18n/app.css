@@ -1,0 +1,19 @@
+<html><head></head><body>.for-ProgressBar{position:relative}.uploaded-files{background:#f0eeee59;border-radius:5px;margin-top:10px;padding:10px}.uploaded-files h5{color:#727272;font-size:15px;font-weight:500;margin:0}.uploaded-files ol{color:#373737;margin:0;padding-left:18px}.uploaded-files ol li{font-size:15px;padding-top:10px;word-break:break-all}.uploaded-files ol li a{color:#2275d7}.uploaded-files ol li a:hover{border-bottom:1px solid #2275d7;color:#2275d7}<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script></body></html>

@@ -1,0 +1,314 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Uppy</title>
+    <meta charset="utf-8">
+    <meta name="title" content="Uppy">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@uppy_io">
+    <meta name="twitter:creator" content="@uppy_io">
+    <meta property="og:url" content="https://transloadit.github.io/uppy/examples/dashboard/app.html">
+    <meta property="og:title" content="Uppy">
+    <meta name="twitter:title" content="Uppy">
+    <meta name="twitter:description" content="">
+    <meta property="og:image" content="http://transloadit.github.io/uppy/images/uppy-social-pink.png">
+    <meta name="twitter:image" content="http://transloadit.github.io/uppy/images/uppy-social-pink.png">
+
+    <meta name="google-site-verification" content="JxARoHXoCI8bD07pLV_u3z6xpuWNcSIZIcHEytyCkUc" />
+
+    <link rel="icon" href="/uppy/images/logos/uppy-dog-head-arrow.png" type="image/x-icon">
+    <link rel="alternate" type="application/rss+xml" title="Uppy" href="/atom.xml">
+
+    <script>
+      window.PAGE_TYPE = ""
+    </script>
+    
+<link rel="stylesheet" href="/uppy/css/main.css?version=2">
+
+    <!-- ^ poor man's solution to css cache busting. bump the version when there's something new we really want users to see -->
+  </head>
+  <body class="page-inner ">
+    <div class="page">
+      <div class="TransloaditBar js-TransloaditBar">
+        <div class="TransloaditBar-about">
+          <!-- <a class="TransloaditBar-logo" href="https://transloadit.com/" target="_blank" rel="noopener">
+            <img class="TransloaditBar-logoImg" src="/uppy/images/transloadit-white-glyph.svg" width="20" height="20" alt="Transloadit">
+          </a> -->
+          <!-- <span>Uppy is an open source project by <a class="TransloaditBar-link" href="https://transloadit.com/" target="_blank">Transloadit</a></span> -->
+          This website is no longer maintained, please visit <a href="//uppy.io" target="_blank" rel="noopener" style="color:inherit">uppy.io</a> to get up-to-date info about Uppy.
+        </div>
+      </div>
+
+      <header id="header" class="MainHeader js-MainHeader">
+        <button class="MainHeader-menuBtn js-MenuBtn"></button>
+
+        <span id="logo" class="MainLogo">
+          <a class="MainLogo-link" href="/uppy/">Uppy</a>
+          <!-- Was used for 1.0, we can re-use for 2.0 or major announcements -->
+          <!-- <a class="MainLogo-announcement" href="/blog/2019/04/1.0/">
+            1.0
+            <span class="MainLogo-emoji">
+              <img src="/uppy/images/party-popper.png" srcset="/uppy/images/party-popper@2x.png 2x" alt="🎉">
+            </span>
+          </a> -->
+        </span>
+
+        <nav>
+          <ul id="nav" class="MainMenu">
+            <!-- @todo uncomment search input when we get our own swifttype -->
+<!-- <li>
+  <form id="search-form" class="MainMenu-search">
+    <input type="text" id="search-query" class="MainMenu-searchQuery st-default-search-input">
+  </form>
+</li> -->
+<!--li><a href="/uppy/guide/" class="nav-link">Guide</a></li-->
+<li><a href="/uppy/docs/" class="nav-link">Docs</a></li>
+<li><a href="/uppy/examples/dashboard/" class="nav-link current">Examples</a></li>
+<!--li><a href="/uppy/stats/" class="nav-link">Stats</a></li-->
+<li><a href="/uppy/blog/" class="nav-link">Blog</a></li>
+<li><a href="/uppy/support/" class="nav-link">Support</a></li>
+<li><a href="https://github.com/transloadit/uppy" target="_blank" rel="noopener" class="nav-link">GitHub</a></li>
+
+          </ul>
+        </nav>
+
+        <div class="MainHeader-tagline">
+          The file uploader that <span class="MainHeader-taglinePart js-MainHeader-taglinePart is-visible">loves to play fetch</span>
+        </div>
+
+        <ul class="MainHeader-taglineList js-MainHeader-taglineList">
+          
+          <li>won’t chew on your shoes</li>
+          
+          <li>is fully housebroken</li>
+          
+          <li>just wants to play with you</li>
+          
+          <li>doesn’t hump your leg</li>
+          
+          <li>also accepts cat pictures</li>
+          
+          <li>loves you unconditionally</li>
+          
+          <li>you don’t have to keep on a leash</li>
+          
+          <li>won’t pee on your rug</li>
+          
+          <li>loves to play fetch</li>
+          
+          <li>doesn’t bite (hard)</li>
+          
+          <li>won’t bark at the mailman</li>
+          
+          <li>is great with the kids</li>
+          
+          <li>can digest anything, even chocolate cake</li>
+          
+          <li>is always happy to see you</li>
+          
+          <li>isn’t afraid of fireworks</li>
+          
+          <li>is allowed everywhere</li>
+          
+        </ul>
+      </header>
+
+      <main class="MainContent js-MainContent" id="main">
+        
+          
+<div class="Content js-Content ">
+    <h1></h1>
+    <!-- Basic Uppy styles --><html><head><link rel="stylesheet" href="/uppy/uppy/uppy.min.css">
+
+<meta name="generator" content="Hexo 4.2.1"><link rel="alternate" href="/uppy/atom.xml" title="Uppy" type="application/atom+xml">
+</head><body><div class="DashboardOptions">
+  <ul>
+    <li><label for="opts-DashboardInline"><input type="checkbox" id="opts-DashboardInline" checked=""> Display inline</label></li>
+    <li><label for="opts-autoProceed"><input type="checkbox" id="opts-autoProceed" checked=""> Autoproceed</label></li>
+    <li><label for="opts-restrictions"><input type="checkbox" id="opts-restrictions" checked=""> Restrictions</label></li>
+    <li><label for="opts-imageEditor"><input type="checkbox" id="opts-imageEditor" checked=""> Image Editor</label></li>
+    <li><label for="opts-darkMode"><input type="checkbox" id="opts-darkMode"> Dark Mode</label></li>
+    <li><label for="opts-disabled"><input type="checkbox" id="opts-disabled" checked=""> Disabled</label></li>
+    <li><label for="opts-GoldenRetriever"><input type="checkbox" id="opts-GoldenRetriever" checked=""> Recover incomplete uploads</label></li>
+    <li><label for="opts-Compressor"><input type="checkbox" id="opts-Compressor" checked=""> Compress images</label></li>
+  </ul>
+  <ul>
+    <li><label for="opts-Webcam"><input type="checkbox" id="opts-Webcam" checked=""> Webcam</label></li>
+    <li><label for="opts-Audio"><input type="checkbox" id="opts-Audio" checked=""> Audio</label></li>
+    <li><label for="opts-ScreenCapture"><input type="checkbox" id="opts-ScreenCapture" checked=""> Screen Capture</label></li>
+    <li><label for="opts-GoogleDrive"><input type="checkbox" id="opts-GoogleDrive" checked=""> Google Drive</label></li>
+    <li><label for="opts-Dropbox"><input type="checkbox" id="opts-Dropbox" checked="">&nbsp;Dropbox</label></li>
+    <li><label for="opts-Unsplash"><input type="checkbox" id="opts-Unsplash" checked="">&nbsp;Unsplash</label></li>
+    <li><label for="opts-Box"><input type="checkbox" id="opts-Box" checked=""> Box</label></li>
+    <li><label for="opts-Instagram"><input type="checkbox" id="opts-Instagram" checked=""> Instagram</label></li>
+    <li><label for="opts-Facebook"><input type="checkbox" id="opts-Facebook" checked=""> Facebook</label></li>
+    <li><label for="opts-OneDrive"><input type="checkbox" id="opts-OneDrive" checked=""> OneDrive</label></li>
+    <li id="zoom-checkbox"><label for="opts-Zoom"><input type="checkbox" id="opts-Zoom" checked=""> Zoom</label></li>
+    <li><label for="opts-Url"><input type="checkbox" id="opts-Url" checked=""> Url</label></li>
+    <li><label for="opts-DropTarget"><input type="checkbox" id="opts-DropTarget" checked=""> Drag &amp; Drop anywhere</label></li>
+  </ul>
+
+  <label for="localeList">Change locale:</label>
+  <select id="localeList" name="locale list">
+    <option value="en_US" selected="">English (US) — en_US</option>
+  </select>
+</div>
+
+<!-- Modal trigger -->
+<button class="UppyModalOpenerBtn">Open Uppy Dashboard Modal</button>
+
+<div class="DashboardContainer"></div>
+
+<script>
+  function isObjEmpty (obj) {
+    return Object.keys(obj).length === 0 && obj.constructor === Object
+  }
+
+  var optionInputs = {
+    DashboardInline: document.querySelector('#opts-DashboardInline'),
+    Webcam: document.querySelector('#opts-Webcam'),
+    Audio: document.querySelector('#opts-Audio'),
+    ScreenCapture: document.querySelector('#opts-ScreenCapture'),
+    GoogleDrive: document.querySelector('#opts-GoogleDrive'),
+    Dropbox: document.querySelector('#opts-Dropbox'),
+    Unsplash: document.querySelector('#opts-Unsplash'),
+    Box: document.querySelector('#opts-Box'),
+    Instagram: document.querySelector('#opts-Instagram'),
+    Facebook: document.querySelector('#opts-Facebook'),
+    OneDrive: document.querySelector('#opts-OneDrive'),
+    Zoom: document.querySelector('#opts-Zoom'),
+    Url: document.querySelector('#opts-Url'),
+    autoProceed: document.querySelector('#opts-autoProceed'),
+    restrictions: document.querySelector('#opts-restrictions'),
+    darkMode: document.querySelector('#opts-darkMode'),
+    imageEditor: document.querySelector('#opts-imageEditor'),
+    disabled: document.querySelector('#opts-disabled'),
+    DropTarget: document.querySelector('#opts-DropTarget'),
+    GoldenRetriever: document.querySelector('#opts-GoldenRetriever'),
+    Compressor: document.querySelector('#opts-Compressor'),
+  }
+
+  var defaultOpts = {
+    DashboardInline: true,
+    Webcam: true,
+    ScreenCapture: true,
+    GoogleDrive: true,
+    Instagram: true,
+    Dropbox: true,
+    Unsplash: true,
+    Box: true,
+    OneDrive: true,
+    Facebook: false,
+    Url: true,
+    autoProceed: false,
+    restrictions: false,
+    darkMode: false,
+    imageEditor: true,
+    disabled: false,
+    DropTarget: true,
+    GoldenRetriever: false,
+    Compressor: true,
+  }
+
+  // try to get options from localStorage, if its empty, set to defaultOpts
+  try {
+    window.uppyOptions = JSON.parse(localStorage.getItem('uppyOptions')) || {}
+  } catch (err) {
+    window.uppyOptions = {}
+  }
+
+  if (isObjEmpty(window.uppyOptions)) {
+    window.uppyOptions = defaultOpts
+    localStorage.setItem('uppyOptions', JSON.stringify(window.uppyOptions))
+  }
+
+  function toggleModalBtn () {
+    var btn = document.querySelector('.UppyModalOpenerBtn')
+    window.uppyOptions.DashboardInline
+      ? btn.style.display = 'none'
+      : btn.style.display = 'block'
+  }
+
+  // Map input state to options
+  Object.keys(optionInputs).forEach(function (item) {
+    optionInputs[item].checked = window.uppyOptions[item]
+  })
+
+  // When input value changes, update options
+  Object.keys(optionInputs).forEach(function (item) {
+    optionInputs[item].addEventListener('change', function () {
+      window.uppyOptions[item] = optionInputs[item].checked
+      localStorage.setItem('uppyOptions', JSON.stringify(window.uppyOptions))
+
+      toggleModalBtn()
+      if (item === 'DashboardInline') {
+        window.uppyInit()
+      }
+      window.uppySetOptions()
+    })
+  })
+
+  // temp hack to only show zoom when the url is:
+  // https://uppy.io/examples/dashboard/#enable-zoom
+  const zoomCheckbox = document.getElementById('zoom-checkbox')
+  zoomCheckbox.style.display = 'none'
+  if (document.location.hash === '#enable-zoom') {
+    zoomCheckbox.style.display = 'inline-block'
+  }
+
+  toggleModalBtn()
+</script>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script></body></html>
+    
+    
+
+    
+    <div class="footer">Caught a mistake or want to contribute to the documentation?
+       <a href="https://github.com/transloadit/uppy/blob/main/website/src/examples/dashboard/app.html" rel="noreferrer noopener" target="_blank">Edit/fork this page directly on Github</a>!
+    </div>
+</div>
+
+        
+      </main>
+
+      <script defer data-domain="transloadit.github.io" src="https://analytics.transloadit.com/js/plausible.js"></script>
+
+
+      
+        <script src="/uppy/js/smooth-scroll.min.js"></script>
+        <!-- Place this tag in your head or just before your close body tag. -->
+        <script async defer src="https://buttons.github.io/buttons.js"></script>
+      
+      <script src="/uppy/js/common.js"></script>
+
+      <!-- Twitter follow button script -->
+      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,469 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>CDN & Locales — Uppy</title>
+    <meta charset="utf-8">
+    <meta name="title" content="CDN &amp; Locales — Uppy">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@uppy_io">
+    <meta name="twitter:creator" content="@uppy_io">
+    <meta property="og:url" content="https://transloadit.github.io/uppy/examples/i18n/index.html">
+    <meta property="og:title" content="CDN & Locales — Uppy">
+    <meta name="twitter:title" content="CDN & Locales — Uppy">
+    <meta name="twitter:description" content="">
+    <meta property="og:image" content="http://transloadit.github.io/uppy/images/uppy-social-pink.png">
+    <meta name="twitter:image" content="http://transloadit.github.io/uppy/images/uppy-social-pink.png">
+
+    <meta name="google-site-verification" content="JxARoHXoCI8bD07pLV_u3z6xpuWNcSIZIcHEytyCkUc" />
+
+    <link rel="icon" href="/uppy/images/logos/uppy-dog-head-arrow.png" type="image/x-icon">
+    <link rel="alternate" type="application/rss+xml" title="Uppy" href="/atom.xml">
+
+    <script>
+      window.PAGE_TYPE = "examples"
+    </script>
+    
+<link rel="stylesheet" href="/uppy/css/main.css?version=2">
+
+    <!-- ^ poor man's solution to css cache busting. bump the version when there's something new we really want users to see -->
+  <meta name="generator" content="Hexo 4.2.1"></head>
+  <body class="page-inner ">
+    <div class="page">
+      <div class="TransloaditBar js-TransloaditBar">
+        <div class="TransloaditBar-about">
+          <!-- <a class="TransloaditBar-logo" href="https://transloadit.com/" target="_blank" rel="noopener">
+            <img class="TransloaditBar-logoImg" src="/uppy/images/transloadit-white-glyph.svg" width="20" height="20" alt="Transloadit">
+          </a> -->
+          <!-- <span>Uppy is an open source project by <a class="TransloaditBar-link" href="https://transloadit.com/" target="_blank">Transloadit</a></span> -->
+          This website is no longer maintained, please visit <a href="//uppy.io" target="_blank" rel="noopener" style="color:inherit">uppy.io</a> to get up-to-date info about Uppy.
+        </div>
+      </div>
+
+      <header id="header" class="MainHeader js-MainHeader">
+        <button class="MainHeader-menuBtn js-MenuBtn"></button>
+
+        <span id="logo" class="MainLogo">
+          <a class="MainLogo-link" href="/uppy/">Uppy</a>
+          <!-- Was used for 1.0, we can re-use for 2.0 or major announcements -->
+          <!-- <a class="MainLogo-announcement" href="/blog/2019/04/1.0/">
+            1.0
+            <span class="MainLogo-emoji">
+              <img src="/uppy/images/party-popper.png" srcset="/uppy/images/party-popper@2x.png 2x" alt="🎉">
+            </span>
+          </a> -->
+        </span>
+
+        <nav>
+          <ul id="nav" class="MainMenu">
+            <!-- @todo uncomment search input when we get our own swifttype -->
+<!-- <li>
+  <form id="search-form" class="MainMenu-search">
+    <input type="text" id="search-query" class="MainMenu-searchQuery st-default-search-input">
+  </form>
+</li> -->
+<!--li><a href="/uppy/guide/" class="nav-link">Guide</a></li-->
+<li><a href="/uppy/docs/" class="nav-link">Docs</a></li>
+<li><a href="/uppy/examples/dashboard/" class="nav-link current">Examples</a></li>
+<!--li><a href="/uppy/stats/" class="nav-link">Stats</a></li-->
+<li><a href="/uppy/blog/" class="nav-link">Blog</a></li>
+<li><a href="/uppy/support/" class="nav-link">Support</a></li>
+<li><a href="https://github.com/transloadit/uppy" target="_blank" rel="noopener" class="nav-link">GitHub</a></li>
+
+          </ul>
+        </nav>
+
+        <div class="MainHeader-tagline">
+          The file uploader that <span class="MainHeader-taglinePart js-MainHeader-taglinePart is-visible">loves to play fetch</span>
+        </div>
+
+        <ul class="MainHeader-taglineList js-MainHeader-taglineList">
+          
+          <li>won’t chew on your shoes</li>
+          
+          <li>is fully housebroken</li>
+          
+          <li>just wants to play with you</li>
+          
+          <li>doesn’t hump your leg</li>
+          
+          <li>also accepts cat pictures</li>
+          
+          <li>loves you unconditionally</li>
+          
+          <li>you don’t have to keep on a leash</li>
+          
+          <li>won’t pee on your rug</li>
+          
+          <li>loves to play fetch</li>
+          
+          <li>doesn’t bite (hard)</li>
+          
+          <li>won’t bark at the mailman</li>
+          
+          <li>is great with the kids</li>
+          
+          <li>can digest anything, even chocolate cake</li>
+          
+          <li>is always happy to see you</li>
+          
+          <li>isn’t afraid of fireworks</li>
+          
+          <li>is allowed everywhere</li>
+          
+        </ul>
+      </header>
+
+      <main class="MainContent js-MainContent" id="main">
+        
+          <div class="Sidebar js-Sidebar">
+  <ul class="main-menu">
+    <!-- @todo uncomment search input when we get our own swifttype -->
+<!-- <li>
+  <form id="search-form" class="MainMenu-search">
+    <input type="text" id="search-query" class="MainMenu-searchQuery st-default-search-input">
+  </form>
+</li> -->
+<!--li><a href="/uppy/guide/" class="nav-link">Guide</a></li-->
+<li><a href="/uppy/docs/" class="nav-link">Docs</a></li>
+<li><a href="/uppy/examples/dashboard/" class="nav-link current">Examples</a></li>
+<!--li><a href="/uppy/stats/" class="nav-link">Stats</a></li-->
+<li><a href="/uppy/blog/" class="nav-link">Blog</a></li>
+<li><a href="/uppy/support/" class="nav-link">Support</a></li>
+<li><a href="https://github.com/transloadit/uppy" target="_blank" rel="noopener" class="nav-link">GitHub</a></li>
+
+  </ul>
+  
+  
+  <div class="list">
+    <h2>
+      <a href="/uppy/examples">Examples</a>
+    </h2>
+      
+    <div class="menu-root">
+      
+
+    
+    
+    
+    <ul>
+      
+        
+        
+        <li key="p-0-examples/dashboard/index.html">
+          <a href="/examples/dashboard/" class="sidebar-link">Dashboard</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-1-examples/dragdrop/index.html">
+          <a href="/examples/dragdrop/" class="sidebar-link">Drag and Drop</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-2-examples/xhrupload/index.html">
+          <a href="/examples/xhrupload/" class="sidebar-link">XHR Upload</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-3-examples/i18n/index.html">
+          <a href="/examples/i18n/" class="sidebar-link current">CDN & Locales</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-4-examples/statusbar/index.html">
+          <a href="/examples/statusbar/" class="sidebar-link">Status Bar</a>
+          
+        </li>
+      
+    </ul>
+
+    
+    
+    
+        
+        <h3 id="" key="category-1-File Processing" data-scroll="no"><a href="/examples/markdown-snippets/">File Processing</a></h3>
+        
+    
+    <ul>
+      
+        
+        
+        <li key="p-0-examples/markdown-snippets/index.html">
+          <a href="/examples/markdown-snippets/" class="sidebar-link">Transloadit Markdown Snippets</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-1-examples/transloadit/index.html">
+          <a href="/examples/transloadit/" class="sidebar-link">Transloadit</a>
+          
+        </li>
+      
+    </ul>
+
+
+    </div>
+
+    <ul class="Social">
+  <li><a href="https://twitter.com/uppy_io" target="_blank" rel="noopener" class="twitter-follow-button" data-show-count="false" data-dnt="true">Follow @uppy_io</a></li>
+  <li><iframe src="https://ghbtns.com/github-btn.html?user=transloadit&repo=uppy&type=watch&count=true"
+allowtransparency="true" frameborder="0" scrolling="0" width="100" height="20"></iframe></li>
+  <!-- to regenerate you can use this link: https://img.shields.io/badge/community-forum-d8006a.svg -->
+  <li><a href="https://community.transloadit.com/c/uppy" target="_blank" rel="noopener"><img src="/uppy/images/community-forum-d8006a.svg" /> </a></li>
+  <li class="BuildBadge">
+   <span class="wrapper">
+     <a href="https://github.com/transloadit/uppy/actions" target="_blank" rel="noopener"><img src="https://github.com/transloadit/uppy/workflows/End-to-end%20tests/badge.svg" alt="Build Status"></a>
+   </span>
+  </li>
+</ul>
+
+    </div>
+  
+</div>
+
+
+<div class="Content js-Content examples with-sidebar">
+  <h1>CDN & Locales Example</h1>
+
+  <html><head></head><body><blockquote><p>Here you’ll see a demo of how you might use internationalization (i18n) in Uppy, as well as how to load Uppy using a pre-bundled version (CDN).</p>
+</blockquote>
+
+<link rel="stylesheet" href="app.css">
+<!-- Load Uppy CSS bundle. It is advisable to install Uppy
+  from npm/yarn instead, and pick and choose the plugins/styles you need.
+  But for experimenting, you can use Transloadit’s CDN, Edgly: -->
+<link rel="stylesheet" href="https://releases.transloadit.com/uppy/v3.6.1/uppy.min.css">
+
+<div class="UppyDragDrop"></div>
+<div class="for-ProgressBar"></div>
+
+<div class="uploaded-files">
+  <h5>Uploaded files:</h5>
+  <ol></ol>
+</div>
+
+<!-- Load Uppy JS bundle. -->
+<script src="https://releases.transloadit.com/uppy/v3.6.1/uppy.min.js" type="module"></script>
+<script src="https://releases.transloadit.com/uppy/v3.6.1/uppy.legacy.min.js" nomodule=""></script>
+<script src="https://releases.transloadit.com/uppy/locales/v3.0.7/ru_RU.min.js"></script>
+<script>
+window.addEventListener('DOMContentLoaded', function () {
+  'use strict';
+  var uppy = new Uppy.Uppy({
+    debug: true,
+    autoProceed: true,
+    locale: Uppy.locales.ru_RU
+  });
+  uppy.use(Uppy.DragDrop, {
+    target: '.UppyDragDrop',
+    // We are using the ru_RU locale pack (set above in Uppy class options),
+    // but you can also override specific strings like so:
+    locale: {
+      strings: {
+        browse: 'выберите ;-)'
+      }
+    }
+  });
+  uppy.use(Uppy.ProgressBar, {
+    target: '.for-ProgressBar',
+     hideAfterFinish: false
+  });
+  uppy.use(Uppy.Tus, { endpoint: 'https://tusd.tusdemo.net/files/' });
+  uppy.on('upload-success', function (file, response) {
+    var url = response.uploadURL
+    var fileName = file.name
+
+    document.querySelector('.uploaded-files ol').innerHTML +=
+      '<li><a href="' + url + '" target="_blank">' + fileName + '</a></li>'
+  });
+
+  console.log('--> Uppy pre-built version with Tus, DragDrop & Russian language pack has loaded');
+  window.uppy = uppy;
+});
+</script>
+
+
+<hr>
+
+<p id="console-wrapper">
+  Console output: <br>
+</p>
+
+<p>
+  To load the pre-built bundle (from a CDN) we’re using the following HTML and JavaScript:
+</p>
+<figure class="highlight html"><table><tbody><tr><td class="code"><pre><span class="token comment">&lt;!-- Load Uppy CSS bundle. It is advisable to install Uppy
+  from npm/yarn instead, and pick and choose the plugins/styles you need.
+  But for experimenting, you can use Transloadit’s CDN, Edgly: --&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://releases.transloadit.com/uppy/v3.6.1/uppy.min.css<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>UppyDragDrop<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>for-ProgressBar<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>uploaded-files<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h5</span><span class="token punctuation">&gt;</span></span>Uploaded files:<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h5</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ol</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>ol</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+
+<span class="token comment">&lt;!-- Load Uppy JS bundle. --&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://releases.transloadit.com/uppy/v3.6.1/uppy.min.js<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>module<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://releases.transloadit.com/uppy/v3.6.1/uppy.legacy.min.js<span class="token punctuation">"</span></span> <span class="token attr-name">nomodule</span><span class="token punctuation">&gt;</span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>https://releases.transloadit.com/uppy/locales/v3.0.7/ru_RU.min.js<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token script"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+<span class="token dom variable">window</span><span class="token punctuation">.</span><span class="token method function property-access">addEventListener</span><span class="token punctuation">(</span><span class="token string">'DOMContentLoaded'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token string">'use strict'</span><span class="token punctuation">;</span>
+  <span class="token keyword">var</span> uppy <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Uppy<span class="token punctuation">.</span>Uppy</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    <span class="token literal-property property">debug</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">autoProceed</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">locale</span><span class="token operator">:</span> <span class="token maybe-class-name">Uppy</span><span class="token punctuation">.</span><span class="token property-access">locales</span><span class="token punctuation">.</span><span class="token property-access">ru_RU</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  uppy<span class="token punctuation">.</span><span class="token method function property-access">use</span><span class="token punctuation">(</span><span class="token maybe-class-name">Uppy</span><span class="token punctuation">.</span><span class="token property-access"><span class="token maybe-class-name">DragDrop</span></span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">target</span><span class="token operator">:</span> <span class="token string">'.UppyDragDrop'</span><span class="token punctuation">,</span>
+    <span class="token comment">// We are using the ru_RU locale pack (set above in Uppy class options),</span>
+    <span class="token comment">// but you can also override specific strings like so:</span>
+    <span class="token literal-property property">locale</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token literal-property property">strings</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token literal-property property">browse</span><span class="token operator">:</span> <span class="token string">'выберите ;-)'</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  uppy<span class="token punctuation">.</span><span class="token method function property-access">use</span><span class="token punctuation">(</span><span class="token maybe-class-name">Uppy</span><span class="token punctuation">.</span><span class="token property-access"><span class="token maybe-class-name">ProgressBar</span></span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">target</span><span class="token operator">:</span> <span class="token string">'.for-ProgressBar'</span><span class="token punctuation">,</span>
+     <span class="token literal-property property">hideAfterFinish</span><span class="token operator">:</span> <span class="token boolean">false</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  uppy<span class="token punctuation">.</span><span class="token method function property-access">use</span><span class="token punctuation">(</span><span class="token maybe-class-name">Uppy</span><span class="token punctuation">.</span><span class="token property-access"><span class="token maybe-class-name">Tus</span></span><span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token literal-property property">endpoint</span><span class="token operator">:</span> <span class="token string">'https://tusd.tusdemo.net/files/'</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  uppy<span class="token punctuation">.</span><span class="token method function property-access">on</span><span class="token punctuation">(</span><span class="token string">'upload-success'</span><span class="token punctuation">,</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">file<span class="token punctuation">,</span> response</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> url <span class="token operator">=</span> response<span class="token punctuation">.</span><span class="token property-access">uploadURL</span>
+    <span class="token keyword">var</span> fileName <span class="token operator">=</span> file<span class="token punctuation">.</span><span class="token property-access">name</span>
+
+    <span class="token dom variable">document</span><span class="token punctuation">.</span><span class="token method function property-access">querySelector</span><span class="token punctuation">(</span><span class="token string">'.uploaded-files ol'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token property-access">innerHTML</span> <span class="token operator">+=</span>
+      <span class="token string">'&lt;li&gt;&lt;a href="'</span> <span class="token operator">+</span> url <span class="token operator">+</span> <span class="token string">'" target="_blank"&gt;'</span> <span class="token operator">+</span> fileName <span class="token operator">+</span> <span class="token string">'&lt;/a&gt;&lt;/li&gt;'</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span><span class="token string">'--&gt; Uppy pre-built version with Tus, DragDrop &amp; Russian language pack has loaded'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token dom variable">window</span><span class="token punctuation">.</span><span class="token property-access">uppy</span> <span class="token operator">=</span> uppy<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span></pre></td></tr></tbody></table></figure>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script></body></html>
+
+  <p>Please see <a href="/uppy/docs/">documentation</a> for details.</p>
+
+  <hr>
+
+  <p>Hey there stranger! Uppy <img src="/uppy/images/emojis/dog.png" width="14" align="absmiddle">
+    is actively developed and the example section
+    is our playground. Things might not work, but we're working hard to improve.</p>
+  <p>We're on a monthly release cycle and our latest version is
+    <a href="https://github.com/transloadit/uppy/blob/main/CHANGELOG.md#361" target="_blank" rel="noopener">v3.6.1</a>,
+    but the example pages reflect the latest work in our main branch. Here's
+    <a href="https://github.com/transloadit/uppy/compare/uppy@3.6.1...main" target="_blank" rel="noopener">what changed in main since v3.6.1</a>
+    in terms of commits, while the CHANGELOG
+    provides a higher level view of the things planned for our
+    <a href="https://github.com/transloadit/uppy/blob/main/CHANGELOG.md#next" target="_blank" rel="noopener">next release</a>.</p>
+
+  <!-- Add textarea already so it's available immediately for logging.
+  It is later made visible, and moved into the #console-wrapper to position it in layout how
+  you see fit. -->
+
+  <blockquote>Files from the examples are uploaded to our test servers and deleted every 24-72 hours.</blockquote>
+
+  <textarea id="console-log" class="Console"></textarea>
+  <script>
+    function customLog (log, container) {
+      return function () {
+        var text = [];
+        // loop through `arguments`, because console.log accepts multiple
+        var args = Array.prototype.slice.call(arguments);
+        args.forEach(function (arg) {
+          if (arg !== (arg + '')) {
+            // try/catch to prevent TypeError: cyclic object value
+            try {
+              arg = JSON.stringify(arg);
+            } catch (err) {}
+          }
+          text.push(arg);
+        })
+
+        text = text.join(' ');
+
+        log(text);
+
+        container.value += text + '\n';
+        container.scrollTop = container.scrollHeight;
+      };
+    }
+
+    // IE 10 doesn’t support console.debug
+    var consoleDebug = console.debug || console.log
+
+    console.log = customLog(console.log.bind(console), document.getElementById("console-log"));
+    console.debug = customLog(consoleDebug.bind(console), document.getElementById("console-log"));
+    console.warn = customLog(console.warn.bind(console), document.getElementById("console-log"));
+    console.error = customLog(console.error.bind(console), document.getElementById("console-log"));
+  </script>
+
+  <script>
+    // #console-log textarea is declared earlier so it's available immediately for logging.
+    // Here it is made visible, and moved into the #console-wrapper, so you can position it in the layout how
+    // you see fit.
+    document.getElementById('console-wrapper').appendChild(document.getElementById('console-log'));
+    document.getElementById('console-log').style.display = 'block';
+  </script>
+
+  <div class="footer">Caught a mistake or want to contribute to the documentation?
+     <a href="https://github.com/transloadit/uppy/blob/main/website/src/examples/i18n/index.ejs" rel="noreferrer noopener" target="_blank">Edit/fork this page directly on Github</a>!
+  </div>
+</div>
+
+        
+      </main>
+
+      <script defer data-domain="transloadit.github.io" src="https://analytics.transloadit.com/js/plausible.js"></script>
+
+
+      
+        <script src="/uppy/js/smooth-scroll.min.js"></script>
+        <!-- Place this tag in your head or just before your close body tag. -->
+        <script async defer src="https://buttons.github.io/buttons.js"></script>
+      
+      <script src="/uppy/js/common.js"></script>
+
+      <!-- Twitter follow button script -->
+      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+    </div>
+  </body>
+</html>

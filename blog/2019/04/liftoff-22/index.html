@@ -1,0 +1,340 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>30 Days to Liftoff: Day 22</title>
+    <meta charset="utf-8">
+    <meta name="title" content="30 Days to Liftoff: Day 22">
+    <meta name="description" content="We will launch Uppy 1.0 on April 25 and this is our ‘30 Days to Liftoff’ blog post challenge where we share updates on our progress each day! Let’s see what happened on Day 22.
+">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@uppy_io">
+    <meta name="twitter:creator" content="@uppy_io">
+    <meta property="og:url" content="https://transloadit.github.io/uppy/blog/2019/04/liftoff-22/index.html">
+    <meta property="og:title" content="30 Days to Liftoff: Day 22">
+    <meta name="twitter:title" content="30 Days to Liftoff: Day 22">
+    <meta name="twitter:description" content="We will launch Uppy 1.0 on April 25 and this is our ‘30 Days to Liftoff’ blog post challenge where we share updates on our progress each day! Let’s see what happened on Day 22.
+">
+    <meta property="og:image" content="/uppy/uppy/images/blog/30daystoliftoff/day22.png">
+    <meta name="twitter:image" content="/uppy/uppy/images/blog/30daystoliftoff/day22.png">
+
+    <meta name="google-site-verification" content="JxARoHXoCI8bD07pLV_u3z6xpuWNcSIZIcHEytyCkUc" />
+
+    <link rel="icon" href="/uppy/images/logos/uppy-dog-head-arrow.png" type="image/x-icon">
+    <link rel="alternate" type="application/rss+xml" title="Uppy" href="/atom.xml">
+
+    <script>
+      window.PAGE_TYPE = ""
+    </script>
+    
+<link rel="stylesheet" href="/uppy/css/main.css?version=2">
+
+    <!-- ^ poor man's solution to css cache busting. bump the version when there's something new we really want users to see -->
+  <meta name="generator" content="Hexo 4.2.1"></head>
+  <body class="page-inner ">
+    <div class="page">
+      <div class="TransloaditBar js-TransloaditBar">
+        <div class="TransloaditBar-about">
+          <!-- <a class="TransloaditBar-logo" href="https://transloadit.com/" target="_blank" rel="noopener">
+            <img class="TransloaditBar-logoImg" src="/uppy/images/transloadit-white-glyph.svg" width="20" height="20" alt="Transloadit">
+          </a> -->
+          <!-- <span>Uppy is an open source project by <a class="TransloaditBar-link" href="https://transloadit.com/" target="_blank">Transloadit</a></span> -->
+          This website is no longer maintained, please visit <a href="//uppy.io" target="_blank" rel="noopener" style="color:inherit">uppy.io</a> to get up-to-date info about Uppy.
+        </div>
+      </div>
+
+      <header id="header" class="MainHeader js-MainHeader">
+        <button class="MainHeader-menuBtn js-MenuBtn"></button>
+
+        <span id="logo" class="MainLogo">
+          <a class="MainLogo-link" href="/uppy/">Uppy</a>
+          <!-- Was used for 1.0, we can re-use for 2.0 or major announcements -->
+          <!-- <a class="MainLogo-announcement" href="/blog/2019/04/1.0/">
+            1.0
+            <span class="MainLogo-emoji">
+              <img src="/uppy/images/party-popper.png" srcset="/uppy/images/party-popper@2x.png 2x" alt="🎉">
+            </span>
+          </a> -->
+        </span>
+
+        <nav>
+          <ul id="nav" class="MainMenu">
+            <!-- @todo uncomment search input when we get our own swifttype -->
+<!-- <li>
+  <form id="search-form" class="MainMenu-search">
+    <input type="text" id="search-query" class="MainMenu-searchQuery st-default-search-input">
+  </form>
+</li> -->
+<!--li><a href="/uppy/guide/" class="nav-link">Guide</a></li-->
+<li><a href="/uppy/docs/" class="nav-link">Docs</a></li>
+<li><a href="/uppy/examples/dashboard/" class="nav-link">Examples</a></li>
+<!--li><a href="/uppy/stats/" class="nav-link">Stats</a></li-->
+<li><a href="/uppy/blog/" class="nav-link current">Blog</a></li>
+<li><a href="/uppy/support/" class="nav-link">Support</a></li>
+<li><a href="https://github.com/transloadit/uppy" target="_blank" rel="noopener" class="nav-link">GitHub</a></li>
+
+          </ul>
+        </nav>
+
+        <div class="MainHeader-tagline">
+          The file uploader that <span class="MainHeader-taglinePart js-MainHeader-taglinePart is-visible">loves to play fetch</span>
+        </div>
+
+        <ul class="MainHeader-taglineList js-MainHeader-taglineList">
+          
+          <li>won’t chew on your shoes</li>
+          
+          <li>is fully housebroken</li>
+          
+          <li>just wants to play with you</li>
+          
+          <li>doesn’t hump your leg</li>
+          
+          <li>also accepts cat pictures</li>
+          
+          <li>loves you unconditionally</li>
+          
+          <li>you don’t have to keep on a leash</li>
+          
+          <li>won’t pee on your rug</li>
+          
+          <li>loves to play fetch</li>
+          
+          <li>doesn’t bite (hard)</li>
+          
+          <li>won’t bark at the mailman</li>
+          
+          <li>is great with the kids</li>
+          
+          <li>can digest anything, even chocolate cake</li>
+          
+          <li>is always happy to see you</li>
+          
+          <li>isn’t afraid of fireworks</li>
+          
+          <li>is allowed everywhere</li>
+          
+        </ul>
+      </header>
+
+      <main class="MainContent js-MainContent" id="main">
+        
+          <div class="Sidebar js-Sidebar is-blog">
+    <ul class="main-menu">
+        <!-- @todo uncomment search input when we get our own swifttype -->
+<!-- <li>
+  <form id="search-form" class="MainMenu-search">
+    <input type="text" id="search-query" class="MainMenu-searchQuery st-default-search-input">
+  </form>
+</li> -->
+<!--li><a href="/uppy/guide/" class="nav-link">Guide</a></li-->
+<li><a href="/uppy/docs/" class="nav-link">Docs</a></li>
+<li><a href="/uppy/examples/dashboard/" class="nav-link">Examples</a></li>
+<!--li><a href="/uppy/stats/" class="nav-link">Stats</a></li-->
+<li><a href="/uppy/blog/" class="nav-link current">Blog</a></li>
+<li><a href="/uppy/support/" class="nav-link">Support</a></li>
+<li><a href="https://github.com/transloadit/uppy" target="_blank" rel="noopener" class="nav-link">GitHub</a></li>
+
+    </ul>
+    <div class="list">
+        <h2>
+            Recent Posts
+            <a href="/atom.xml" rel="noreferrer noopener" target="_blank" style="vertical-align: middle; margin-left: 5px">
+                <img src="/uppy/images/feed.png" style="width:15px;height:15px">
+            </a>
+        </h2>
+
+        <ul>
+  
+  <li>
+    <a href="/blog/2022/12/3.3/" class="sidebar-link">🎄 Uppy 3.1-3.3: Improved AWS S3 Multipart, Single File Mode</a>
+  </li>
+  
+  <li>
+    <a href="/blog/2022/09/3.0/" class="sidebar-link">Uppy 3.0: Future-proof, conveniently easy, stable as ever</a>
+  </li>
+  
+  <li>
+    <a href="/blog/2022/03/2.4-2.7/" class="sidebar-link">Uppy 2.4-2.7: Image Compressor, Transloadit Rate Limiting, ESM</a>
+  </li>
+  
+  <li>
+    <a href="/blog/2021/12/2.1-2.3/" class="sidebar-link">🎄 Uppy 2.1-2.3: Audio plugin, fast and efficient streaming for Companion, production-ready Unsplash, and more</a>
+  </li>
+  
+  <li>
+    <a href="/blog/2021/08/2.0/" class="sidebar-link">Uppy 2.0.0: smaller, faster, modular plugins, Preact X, stricter types, and much more</a>
+  </li>
+  
+  <li>
+    <a href="/blog/2021/07/1.30/" class="sidebar-link">Uppy 1.30: Angular integration, granular image rotation, Google Drive shortcuts</a>
+  </li>
+  
+  <li>
+    <a href="/blog/2021/05/1.29/" class="sidebar-link">Uppy 1.29: Golden Retriever, disableLocalFiles, Webcam previews, uppy.logout</a>
+  </li>
+  
+  <li>
+    <a href="/blog/2021/04/1.27/" class="sidebar-link">Uppy 1.27: Drop Target plugin, Vue 3 support, Dashboard dynamic meta fields, “Shared with me” in Google Drive</a>
+  </li>
+  
+  <li>
+    <a href="/blog/2021/02/1.26/" class="sidebar-link">Uppy 1.26: Dashboard “disabled”, per-file headers</a>
+  </li>
+  
+  <li>
+    <a href="/blog/2021/01/1.25/" class="sidebar-link">Uppy 1.25: right-to-left scripts, Ukrainian translation, Companion improvements</a>
+  </li>
+  
+  <li>
+    <a href="/blog/2020/12/1.24/" class="sidebar-link">Uppy 1.24: 🎅 Happy Holidays — Svelte, React hook, Auto Open Image Editor</a>
+  </li>
+  
+</ul>
+        <ul class="Social">
+  <li><a href="https://twitter.com/uppy_io" target="_blank" rel="noopener" class="twitter-follow-button" data-show-count="false" data-dnt="true">Follow @uppy_io</a></li>
+  <li><iframe src="https://ghbtns.com/github-btn.html?user=transloadit&repo=uppy&type=watch&count=true"
+allowtransparency="true" frameborder="0" scrolling="0" width="100" height="20"></iframe></li>
+  <!-- to regenerate you can use this link: https://img.shields.io/badge/community-forum-d8006a.svg -->
+  <li><a href="https://community.transloadit.com/c/uppy" target="_blank" rel="noopener"><img src="/uppy/images/community-forum-d8006a.svg" /> </a></li>
+  <li class="BuildBadge">
+   <span class="wrapper">
+     <a href="https://github.com/transloadit/uppy/actions" target="_blank" rel="noopener"><img src="https://github.com/transloadit/uppy/workflows/End-to-end%20tests/badge.svg" alt="Build Status"></a>
+   </span>
+  </li>
+</ul>
+
+    </div>
+</div>
+
+
+<div class="Content js-Content with-sidebar">
+    
+  <h1>30 Days to Liftoff: Day 22</h1>
+  <div class="post-date">Tuesday Apr 16, 2019</div>
+    
+    <div class="PostSeries">
+      🚀 In this series:
+      <select onchange="javascript:location.href = this.value;"><option value="/blog/2019/04/liftoff-30/">Day 30</option>,<option value="/blog/2019/04/liftoff-29/">Day 29</option>,<option value="/blog/2019/04/liftoff-28/">Day 28</option>,<option value="/blog/2019/04/liftoff-27/">Day 27</option>,<option value="/blog/2019/04/liftoff-26/">Day 26</option>,<option value="/blog/2019/04/liftoff-25/">Day 25</option>,<option value="/blog/2019/04/liftoff-24/">Day 24</option>,<option value="/blog/2019/04/liftoff-23/">Day 23</option>,<option value="/blog/2019/04/liftoff-22/" selected>Day 22</option>,<option value="/blog/2019/04/liftoff-21/">Day 21</option>,<option value="/blog/2019/04/liftoff-20/">Day 20</option>,<option value="/blog/2019/04/liftoff-19/">Day 19</option>,<option value="/blog/2019/04/liftoff-18/">Day 18</option>,<option value="/blog/2019/04/liftoff-17/">Day 17</option>,<option value="/blog/2019/04/liftoff-16/">Day 16</option>,<option value="/blog/2019/04/liftoff-15/">Day 15</option>,<option value="/blog/2019/04/liftoff-14/">Day 14</option>,<option value="/blog/2019/04/liftoff-13/">Day 13</option>,<option value="/blog/2019/04/liftoff-12/">Day 12</option>,<option value="/blog/2019/04/liftoff-11/">Day 11</option>,<option value="/blog/2019/04/liftoff-10/">Day 10</option>,<option value="/blog/2019/04/liftoff-09/">Day 9</option>,<option value="/blog/2019/04/liftoff-08/">Day 8</option>,<option value="/blog/2019/04/liftoff-07/">Day 7</option>,<option value="/blog/2019/03/liftoff-06/">Day 6</option>,<option value="/blog/2019/03/liftoff-05/">Day 5</option>,<option value="/blog/2019/03/liftoff-04/">Day 4</option>,<option value="/blog/2019/03/liftoff-03/">Day 3</option>,<option value="/blog/2019/03/liftoff-02/">Day 2</option>,<option value="/blog/2019/03/liftoff-01/">Day 1</option></select>
+      of 30
+    </div>
+    
+    <html><head></head><body><p>We will launch <strong>Uppy 1.0 on April 25</strong> and this is our ‘30 Days to Liftoff’ blog post challenge where we share updates on our progress each day! Let’s see what happened on Day 22.</p>
+<center><br><img width="400" src="/uppy/images/blog/30daystoliftoff/day22.png"><br><br></center>
+
+<a id="more"></a>
+
+<ul>
+<li><a href="https://github.com/arturi" target="_blank" rel="noopener">Artur</a> and <a href="https://github.com/kvz" target="_blank" rel="noopener">Kevin</a> have been pairing on <a href="https://github.com/transloadit/uppy/pull/1443" target="_blank" rel="noopener">language packs</a> and are nearly done with it. Très bien, magnifique!</li>
+</ul>
+<center><img src="/uppy/images/blog/30daystoliftoff/localetodos.png"><br><br></center>
+
+<p>After this, it will be just as easy to maintain language/locale packs as it will be to switch Uppy to your favorite language. Fun fact: we experimented a bit with Google Sheets and Google Translate to automatically create a first swing for a few of the languages we want to launch with.</p>
+<center><a rel="noreferrer noopener" target="_blank" href="/uppy/images/blog/30daystoliftoff/sheetstranslate.png"><img src="/uppy/images/blog/30daystoliftoff/sheetstranslate.png"></a></center>
+
+<p>It kinda worked! Google automatically translates to target languages in each column we add, for each change we make in the original! In the end, though, we decided this was not the way to go, as it really didn’t save us any time. As it turns out, starting from a good English version of the text is <em>way</em> easier than making sense of a broken Google translation. It was a fun experiment nonetheless and it’s cool to see where this is all heading!</p>
+<p>Artur will also be reviewing the many PRs that have been submitted by both Transloadians and outside contributors.</p>
+<ul>
+<li><a href="https://github.com/nqst" target="_blank" rel="noopener">Alex</a> finished his redesign for the new website:</li>
+</ul>
+<center><a rel="noreferrer noopener" target="_blank" href="/uppy/images/blog/30daystoliftoff/webdesign2.png"><img src="/uppy/images/blog/30daystoliftoff/webdesign2.png"></a></center>
+
+<p>..and will start implementing it today! He also worked on more <a href="https://github.com/transloadit/uppy/pull/1452" target="_blank" rel="noopener">design improvements for Uppy itself</a>.</p>
+<ul>
+<li><p><a href="https://github.com/ifedapoolarewaju" target="_blank" rel="noopener">Ife</a> is investigating incorrect progress reporting / uploads with XHR and Companion.</p>
+</li>
+<li><p><a href="https://github.com/goto-bus-stop" target="_blank" rel="noopener">Renée</a> finished work on making Robodog work with an <a href="https://github.com/transloadit/uppy/pull/1450" target="_blank" rel="noopener">inline dashboard</a>, as well as fix a bug in how we log to the console. Up next, Renée will work on error reporting for the Transloadit Plugin.</p>
+</li>
+<li><p><a href="https://github.com/lakesare" target="_blank" rel="noopener">Evgenia</a> finished her work on <a href="https://github.com/transloadit/uppy/pull/1440" target="_blank" rel="noopener">drag and drop improvements</a> and will continue working on accessibility improvements.</p>
+</li>
+</ul>
+<p>Stay current by following us on <a href="https://twitter.com/uppy_io" target="_blank" rel="noopener">Twitter</a> or subscribing to regular updates on <a href="/uppy/atom.xml">RSS</a>. See you tomorrow for <a href="/blog/2019/04/liftoff-23/">Day 23</a>!</p>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script></body></html>
+
+    <center>
+        <br />
+        <a class="github-button" href="https://github.com/transloadit/uppy" data-icon="octicon-star" data-size="large"
+        data-show-count="true" aria-label="Star transloadit/uppy on GitHub">Star</a>
+    </center>
+
+    <div class="PostAuthors">
+        
+            <div class="PostAuthor">
+                <a class="PostAuthor-link" href="https://transloadit.com/about/#kvz" target="_blank" rel="noopener">
+                    <img class="PostAuthor-img" src="https://www.gravatar.com/avatar/3667e5bc308bae6962586c6045b4fd30?s=200">
+                    <h4 class="PostAuthor-name">Kevin van Zonneveld</h4>
+                    <div class="PostAuthor-tagline">Transloadit co-founder</div>
+                </a>
+            </div>
+        
+    </div>
+  <br />
+    <!-- <ul class="Social">
+        <li><iframe src="https://ghbtns.com/github-btn.html?user=transloadit&repo=uppy&type=watch&count=true"
+                allowtransparency="true" frameborder="0" scrolling="0" width="100" height="20"></iframe></li>
+    </ul> -->
+  <!-- <div id="disqus_thread"></div>
+<script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+
+var disqus_config = function () {
+this.page.url = 'https://uppy.io/blog/2019/04/liftoff-22/';  // Replace PAGE_URL with your page's canonical URL variable
+// this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://uppy.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" target="_blank" rel="noopener">comments powered by Disqus.</a></noscript>
+                             -->
+</div>
+
+        
+      </main>
+
+      <script defer data-domain="transloadit.github.io" src="https://analytics.transloadit.com/js/plausible.js"></script>
+
+
+      
+        <script src="/uppy/js/smooth-scroll.min.js"></script>
+        <!-- Place this tag in your head or just before your close body tag. -->
+        <script async defer src="https://buttons.github.io/buttons.js"></script>
+      
+      <script src="/uppy/js/common.js"></script>
+
+      <!-- Twitter follow button script -->
+      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+    </div>
+  </body>
+</html>

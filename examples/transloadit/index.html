@@ -1,0 +1,607 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Transloadit — Uppy</title>
+    <meta charset="utf-8">
+    <meta name="title" content="Transloadit — Uppy">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@uppy_io">
+    <meta name="twitter:creator" content="@uppy_io">
+    <meta property="og:url" content="https://transloadit.github.io/uppy/examples/transloadit/index.html">
+    <meta property="og:title" content="Transloadit — Uppy">
+    <meta name="twitter:title" content="Transloadit — Uppy">
+    <meta name="twitter:description" content="">
+    <meta property="og:image" content="http://transloadit.github.io/uppy/images/uppy-social-pink.png">
+    <meta name="twitter:image" content="http://transloadit.github.io/uppy/images/uppy-social-pink.png">
+
+    <meta name="google-site-verification" content="JxARoHXoCI8bD07pLV_u3z6xpuWNcSIZIcHEytyCkUc" />
+
+    <link rel="icon" href="/uppy/images/logos/uppy-dog-head-arrow.png" type="image/x-icon">
+    <link rel="alternate" type="application/rss+xml" title="Uppy" href="/atom.xml">
+
+    <script>
+      window.PAGE_TYPE = "examples"
+    </script>
+    
+<link rel="stylesheet" href="/uppy/css/main.css?version=2">
+
+    <!-- ^ poor man's solution to css cache busting. bump the version when there's something new we really want users to see -->
+  <meta name="generator" content="Hexo 4.2.1"></head>
+  <body class="page-inner ">
+    <div class="page">
+      <div class="TransloaditBar js-TransloaditBar">
+        <div class="TransloaditBar-about">
+          <!-- <a class="TransloaditBar-logo" href="https://transloadit.com/" target="_blank" rel="noopener">
+            <img class="TransloaditBar-logoImg" src="/uppy/images/transloadit-white-glyph.svg" width="20" height="20" alt="Transloadit">
+          </a> -->
+          <!-- <span>Uppy is an open source project by <a class="TransloaditBar-link" href="https://transloadit.com/" target="_blank">Transloadit</a></span> -->
+          This website is no longer maintained, please visit <a href="//uppy.io" target="_blank" rel="noopener" style="color:inherit">uppy.io</a> to get up-to-date info about Uppy.
+        </div>
+      </div>
+
+      <header id="header" class="MainHeader js-MainHeader">
+        <button class="MainHeader-menuBtn js-MenuBtn"></button>
+
+        <span id="logo" class="MainLogo">
+          <a class="MainLogo-link" href="/uppy/">Uppy</a>
+          <!-- Was used for 1.0, we can re-use for 2.0 or major announcements -->
+          <!-- <a class="MainLogo-announcement" href="/blog/2019/04/1.0/">
+            1.0
+            <span class="MainLogo-emoji">
+              <img src="/uppy/images/party-popper.png" srcset="/uppy/images/party-popper@2x.png 2x" alt="🎉">
+            </span>
+          </a> -->
+        </span>
+
+        <nav>
+          <ul id="nav" class="MainMenu">
+            <!-- @todo uncomment search input when we get our own swifttype -->
+<!-- <li>
+  <form id="search-form" class="MainMenu-search">
+    <input type="text" id="search-query" class="MainMenu-searchQuery st-default-search-input">
+  </form>
+</li> -->
+<!--li><a href="/uppy/guide/" class="nav-link">Guide</a></li-->
+<li><a href="/uppy/docs/" class="nav-link">Docs</a></li>
+<li><a href="/uppy/examples/dashboard/" class="nav-link current">Examples</a></li>
+<!--li><a href="/uppy/stats/" class="nav-link">Stats</a></li-->
+<li><a href="/uppy/blog/" class="nav-link">Blog</a></li>
+<li><a href="/uppy/support/" class="nav-link">Support</a></li>
+<li><a href="https://github.com/transloadit/uppy" target="_blank" rel="noopener" class="nav-link">GitHub</a></li>
+
+          </ul>
+        </nav>
+
+        <div class="MainHeader-tagline">
+          The file uploader that <span class="MainHeader-taglinePart js-MainHeader-taglinePart is-visible">loves to play fetch</span>
+        </div>
+
+        <ul class="MainHeader-taglineList js-MainHeader-taglineList">
+          
+          <li>won’t chew on your shoes</li>
+          
+          <li>is fully housebroken</li>
+          
+          <li>just wants to play with you</li>
+          
+          <li>doesn’t hump your leg</li>
+          
+          <li>also accepts cat pictures</li>
+          
+          <li>loves you unconditionally</li>
+          
+          <li>you don’t have to keep on a leash</li>
+          
+          <li>won’t pee on your rug</li>
+          
+          <li>loves to play fetch</li>
+          
+          <li>doesn’t bite (hard)</li>
+          
+          <li>won’t bark at the mailman</li>
+          
+          <li>is great with the kids</li>
+          
+          <li>can digest anything, even chocolate cake</li>
+          
+          <li>is always happy to see you</li>
+          
+          <li>isn’t afraid of fireworks</li>
+          
+          <li>is allowed everywhere</li>
+          
+        </ul>
+      </header>
+
+      <main class="MainContent js-MainContent" id="main">
+        
+          <div class="Sidebar js-Sidebar">
+  <ul class="main-menu">
+    <!-- @todo uncomment search input when we get our own swifttype -->
+<!-- <li>
+  <form id="search-form" class="MainMenu-search">
+    <input type="text" id="search-query" class="MainMenu-searchQuery st-default-search-input">
+  </form>
+</li> -->
+<!--li><a href="/uppy/guide/" class="nav-link">Guide</a></li-->
+<li><a href="/uppy/docs/" class="nav-link">Docs</a></li>
+<li><a href="/uppy/examples/dashboard/" class="nav-link current">Examples</a></li>
+<!--li><a href="/uppy/stats/" class="nav-link">Stats</a></li-->
+<li><a href="/uppy/blog/" class="nav-link">Blog</a></li>
+<li><a href="/uppy/support/" class="nav-link">Support</a></li>
+<li><a href="https://github.com/transloadit/uppy" target="_blank" rel="noopener" class="nav-link">GitHub</a></li>
+
+  </ul>
+  
+  
+  <div class="list">
+    <h2>
+      <a href="/uppy/examples">Examples</a>
+    </h2>
+      
+    <div class="menu-root">
+      
+
+    
+    
+    
+    <ul>
+      
+        
+        
+        <li key="p-0-examples/dashboard/index.html">
+          <a href="/examples/dashboard/" class="sidebar-link">Dashboard</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-1-examples/dragdrop/index.html">
+          <a href="/examples/dragdrop/" class="sidebar-link">Drag and Drop</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-2-examples/xhrupload/index.html">
+          <a href="/examples/xhrupload/" class="sidebar-link">XHR Upload</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-3-examples/i18n/index.html">
+          <a href="/examples/i18n/" class="sidebar-link">CDN & Locales</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-4-examples/statusbar/index.html">
+          <a href="/examples/statusbar/" class="sidebar-link">Status Bar</a>
+          
+        </li>
+      
+    </ul>
+
+    
+    
+    
+        
+        <h3 id="" key="category-1-File Processing" data-scroll="no"><a href="/examples/markdown-snippets/">File Processing</a></h3>
+        
+    
+    <ul>
+      
+        
+        
+        <li key="p-0-examples/markdown-snippets/index.html">
+          <a href="/examples/markdown-snippets/" class="sidebar-link">Transloadit Markdown Snippets</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-1-examples/transloadit/index.html">
+          <a href="/examples/transloadit/" class="sidebar-link current">Transloadit</a>
+          
+        </li>
+      
+    </ul>
+
+
+    </div>
+
+    <ul class="Social">
+  <li><a href="https://twitter.com/uppy_io" target="_blank" rel="noopener" class="twitter-follow-button" data-show-count="false" data-dnt="true">Follow @uppy_io</a></li>
+  <li><iframe src="https://ghbtns.com/github-btn.html?user=transloadit&repo=uppy&type=watch&count=true"
+allowtransparency="true" frameborder="0" scrolling="0" width="100" height="20"></iframe></li>
+  <!-- to regenerate you can use this link: https://img.shields.io/badge/community-forum-d8006a.svg -->
+  <li><a href="https://community.transloadit.com/c/uppy" target="_blank" rel="noopener"><img src="/uppy/images/community-forum-d8006a.svg" /> </a></li>
+  <li class="BuildBadge">
+   <span class="wrapper">
+     <a href="https://github.com/transloadit/uppy/actions" target="_blank" rel="noopener"><img src="https://github.com/transloadit/uppy/workflows/End-to-end%20tests/badge.svg" alt="Build Status"></a>
+   </span>
+  </li>
+</ul>
+
+    </div>
+  
+</div>
+
+
+<div class="Content js-Content examples with-sidebar">
+  <h1>Transloadit Example</h1>
+
+  <html><head></head><body><blockquote><p>Transloadit is the inventor of <a href="https://tus.io" rel="noreferrer noopener" target="_blank">tus.io</a> and Uppy. Besides a robust encoding platform, Transloadit offers hosted versions of tusd and Companion. This means you can enjoy video encoding, watermarking, face detection, resumable file uploads, fetching from Instagram, etc — all without running a single server yourself.</p>
+<p>This example demonstrates how to unlock Transloadit’s features within Uppy.</p>
+</blockquote>
+
+<p>
+  In this particular example we take your images (from Instagram), resize them to 250px and add the copyright caption text: <code>© Transloadit.com</code> at the bottom right corner.
+</p>
+
+<p>
+  For this demo to work you'll need a (free) Transloadit account. To get one:
+</p>
+<ol>
+  <li>
+    <a href="https://transloadit.com/signup/" rel="noreferrer noopener" target="_blank">Claim your account</a>. It will activate instantly. You can also signup via GitHub to avoid password hassle.
+  </li>
+  <li>
+     Copy the API Key that you can find on
+    <a href="https://transloadit.com/accounts/credentials" rel="noreferrer noopener" target="_blank">this page</a> and paste it below.
+  </li>
+  <li>
+    Optionally, copy the secret key and paste it below. This will enable Signature Authentication. Make sure nobody's watching!
+  </li>
+  <li>
+    Happy encoding &amp; fetching from Instagram :)
+  </li>
+</ol>
+
+<p>
+  <label for="transloadit-api-key" style="display: block; font-size: 13px; text-transform: uppercase; font-weight: bold;">
+    Transloadit API Key:</label>
+  <input type="text" style="font-size: 15px; width: 300px; max-width: 100%; border: 0; border-bottom: 1px solid black; padding: 6px 8px; margin-bottom: 20px;" id="transloadit-api-key" placeholder="Your Transloadit API Key">
+</p>
+
+<p>
+  <label for="transloadit-secret-key" style="display: block; font-size: 13px; text-transform: uppercase; font-weight: bold;">
+    Transloadit secret Key:</label>
+  <input type="text" style="font-size: 15px; width: 300px; max-width: 100%; border: 0; border-bottom: 1px solid black; padding: 6px 8px; margin-bottom: 20px;" id="transloadit-secret-key" placeholder="Your Transloadit secret Key (optional)">
+</p>
+
+<link rel="stylesheet" href="app.css">
+<!-- Basic Uppy styles -->
+<link rel="stylesheet" href="/uppy/uppy/uppy.min.css">
+
+<div id="uppy-dashboard-container"></div>
+
+<h2>Results will appear here:</h2>
+
+<div id="uppy-transloadit-result"></div>
+
+
+<hr>
+
+<p id="console-wrapper">Console output:
+  <br>
+</p>
+
+<script src="app.js"></script>
+<script>
+  var apiKeyEl = document.getElementById('transloadit-api-key')
+  var secretKeyEl = document.getElementById('transloadit-secret-key')
+  var storedApiKey = localStorage.getItem('uppyTransloaditApiKey')
+
+  if (storedApiKey) {
+    apiKeyEl.value = storedApiKey
+    window.TRANSLOADIT_API_KEY = storedApiKey
+    initUppy({ secret: secretKeyEl.value })
+  }
+
+  function handleInputChange (ev) {
+    window.TRANSLOADIT_API_KEY = apiKeyEl.value
+    localStorage.setItem('uppyTransloaditApiKey', apiKeyEl.value)
+    initUppy({ secret: secretKeyEl.value })
+  }
+
+  apiKeyEl.addEventListener('input', handleInputChange)
+  secretKeyEl.addEventListener('input', handleInputChange)
+</script>
+
+<hr>
+
+<p>On this page we're using the following JavaScript:</p>
+<figure class="highlight js"><table><tbody><tr><td class="code"><pre><span class="token keyword module">import</span> <span class="token imports"><span class="token maybe-class-name">Uppy</span></span> <span class="token keyword module">from</span> <span class="token string">'@uppy/core'</span>
+<span class="token keyword module">import</span> <span class="token imports"><span class="token maybe-class-name">Dashboard</span></span> <span class="token keyword module">from</span> <span class="token string">'@uppy/dashboard'</span>
+<span class="token keyword module">import</span> <span class="token imports"><span class="token maybe-class-name">Webcam</span></span> <span class="token keyword module">from</span> <span class="token string">'@uppy/webcam'</span>
+<span class="token keyword module">import</span> <span class="token maybe-class-name">Transloadit</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token constant">COMPANION_ALLOWED_HOSTS</span><span class="token punctuation">,</span> <span class="token constant">COMPANION_URL</span> <span class="token punctuation">}</span> <span class="token keyword module">from</span> <span class="token string">'@uppy/transloadit'</span>
+<span class="token keyword module">import</span> <span class="token imports"><span class="token maybe-class-name">Instagram</span></span> <span class="token keyword module">from</span> <span class="token string">'@uppy/instagram'</span>
+<span class="token keyword module">import</span> <span class="token imports"><span class="token maybe-class-name">Facebook</span></span> <span class="token keyword module">from</span> <span class="token string">'@uppy/facebook'</span>
+<span class="token keyword module">import</span> <span class="token imports"><span class="token maybe-class-name">Zoom</span></span> <span class="token keyword module">from</span> <span class="token string">'@uppy/zoom'</span>
+
+<span class="token keyword">const</span> enc <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">TextEncoder</span><span class="token punctuation">(</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span>
+<span class="token keyword">async</span>  <span class="token keyword">function</span> <span class="token function">sha1</span> <span class="token punctuation">(</span><span class="token parameter">secret<span class="token punctuation">,</span> body</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> algorithm <span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token literal-property property">name</span><span class="token operator">:</span> <span class="token string">'HMAC'</span><span class="token punctuation">,</span> <span class="token literal-property property">hash</span><span class="token operator">:</span> <span class="token string">'SHA-1'</span> <span class="token punctuation">}</span>
+
+  <span class="token keyword">const</span> key <span class="token operator">=</span> <span class="token keyword control-flow">await</span> crypto<span class="token punctuation">.</span><span class="token property-access">subtle</span><span class="token punctuation">.</span><span class="token method function property-access">importKey</span><span class="token punctuation">(</span><span class="token string">'raw'</span><span class="token punctuation">,</span> enc<span class="token punctuation">.</span><span class="token method function property-access">encode</span><span class="token punctuation">(</span>secret<span class="token punctuation">)</span><span class="token punctuation">,</span> algorithm<span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">'sign'</span><span class="token punctuation">,</span> <span class="token string">'verify'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+  <span class="token keyword">const</span> signature <span class="token operator">=</span> <span class="token keyword control-flow">await</span> crypto<span class="token punctuation">.</span><span class="token property-access">subtle</span><span class="token punctuation">.</span><span class="token method function property-access">sign</span><span class="token punctuation">(</span>algorithm<span class="token punctuation">.</span><span class="token property-access">name</span><span class="token punctuation">,</span> key<span class="token punctuation">,</span> enc<span class="token punctuation">.</span><span class="token method function property-access">encode</span><span class="token punctuation">(</span>body<span class="token punctuation">)</span><span class="token punctuation">)</span>
+  <span class="token keyword control-flow">return</span> <span class="token known-class-name class-name">Array</span><span class="token punctuation">.</span><span class="token keyword module">from</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Uint8Array</span><span class="token punctuation">(</span>signature<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token parameter">x</span> <span class="token arrow operator">=&gt;</span> x<span class="token punctuation">.</span><span class="token method function property-access">toString</span><span class="token punctuation">(</span><span class="token number">16</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token method function property-access">padStart</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token string">'0'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token method function property-access">join</span><span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">function</span> <span class="token function">initUppy</span> <span class="token punctuation">(</span><span class="token parameter">opts <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span></span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword control-flow">if</span> <span class="token punctuation">(</span><span class="token dom variable">window</span><span class="token punctuation">.</span><span class="token property-access">uppy</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token dom variable">window</span><span class="token punctuation">.</span><span class="token property-access">uppy</span><span class="token punctuation">.</span><span class="token method function property-access">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">const</span> zoomMode <span class="token operator">=</span> <span class="token dom variable">document</span><span class="token punctuation">.</span><span class="token property-access">location</span><span class="token punctuation">.</span><span class="token property-access">hash</span> <span class="token operator">===</span> <span class="token string">'#enable-zoom'</span>
+  <span class="token keyword">const</span> allowedFileTypes <span class="token operator">=</span> zoomMode <span class="token operator">?</span> <span class="token punctuation">[</span><span class="token string">'video/*'</span><span class="token punctuation">]</span> <span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'image/*'</span><span class="token punctuation">]</span>
+  <span class="token keyword">const</span> uppy <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Uppy</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    <span class="token literal-property property">debug</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">autoProceed</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">restrictions</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token literal-property property">maxFileSize</span><span class="token operator">:</span> <span class="token number">1024</span> <span class="token operator">*</span> <span class="token number">1024</span> <span class="token operator">*</span> <span class="token number">1024</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">maxNumberOfFiles</span><span class="token operator">:</span> <span class="token number">2</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">minNumberOfFiles</span><span class="token operator">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+      allowedFileTypes<span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">locale</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token literal-property property">strings</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token literal-property property">youCanOnlyUploadFileTypes</span><span class="token operator">:</span> <span class="token string">'You can only upload images'</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+  <span class="token keyword">function</span> <span class="token function">getExpiration</span> <span class="token punctuation">(</span><span class="token parameter">future</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword control-flow">return</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token known-class-name class-name">Date</span><span class="token punctuation">.</span><span class="token method function property-access">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> future<span class="token punctuation">)</span>
+      <span class="token punctuation">.</span><span class="token method function property-access">toISOString</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+      <span class="token punctuation">.</span><span class="token method function property-access">replace</span><span class="token punctuation">(</span><span class="token string">'T'</span><span class="token punctuation">,</span> <span class="token string">' '</span><span class="token punctuation">)</span>
+      <span class="token punctuation">.</span><span class="token method function property-access">replace</span><span class="token punctuation">(</span><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex"><span class="token special-escape escape">\.</span><span class="token char-set class-name">\d</span><span class="token quantifier number">+</span>Z<span class="token anchor function">$</span></span><span class="token regex-delimiter">/</span></span><span class="token punctuation">,</span> <span class="token string">'+00:00'</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">async</span> <span class="token keyword">function</span> <span class="token function">getAssemblyOptions</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> hasSecret <span class="token operator">=</span> opts<span class="token punctuation">.</span><span class="token property-access">secret</span> <span class="token operator">!=</span> <span class="token keyword null nil">null</span>
+    <span class="token keyword">let</span> params <span class="token operator">=</span> <span class="token punctuation">{</span>
+      <span class="token literal-property property">auth</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token literal-property property">key</span><span class="token operator">:</span> <span class="token dom variable">window</span><span class="token punctuation">.</span><span class="token constant">TRANSLOADIT_API_KEY</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">expires</span><span class="token operator">:</span> hasSecret <span class="token operator">?</span> <span class="token function">getExpiration</span><span class="token punctuation">(</span><span class="token number">5</span> <span class="token operator">*</span> <span class="token number">60</span> <span class="token operator">*</span> <span class="token number">1000</span><span class="token punctuation">)</span> <span class="token operator">:</span> <span class="token keyword nil">undefined</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token comment">// It's more secure to use a template_id and enable</span>
+      <span class="token comment">// Signature Authentication</span>
+      <span class="token literal-property property">steps</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token literal-property property">resize</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+          <span class="token literal-property property">robot</span><span class="token operator">:</span> <span class="token string">'/image/resize'</span><span class="token punctuation">,</span>
+          <span class="token literal-property property">width</span><span class="token operator">:</span> <span class="token number">250</span><span class="token punctuation">,</span>
+          <span class="token literal-property property">height</span><span class="token operator">:</span> <span class="token number">250</span><span class="token punctuation">,</span>
+          <span class="token literal-property property">resize_strategy</span><span class="token operator">:</span> <span class="token string">'fit'</span><span class="token punctuation">,</span>
+          <span class="token literal-property property">text</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+            <span class="token punctuation">{</span>
+              <span class="token literal-property property">text</span><span class="token operator">:</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">© </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token method function property-access">getFullYear</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> Transloadit.com</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span>
+              <span class="token literal-property property">size</span><span class="token operator">:</span> <span class="token number">12</span><span class="token punctuation">,</span>
+              <span class="token literal-property property">font</span><span class="token operator">:</span> <span class="token string">'Ubuntu'</span><span class="token punctuation">,</span>
+              <span class="token literal-property property">color</span><span class="token operator">:</span> <span class="token string">'#eeeeee'</span><span class="token punctuation">,</span>
+              <span class="token literal-property property">valign</span><span class="token operator">:</span> <span class="token string">'bottom'</span><span class="token punctuation">,</span>
+              <span class="token literal-property property">align</span><span class="token operator">:</span> <span class="token string">'right'</span><span class="token punctuation">,</span>
+              <span class="token literal-property property">x_offset</span><span class="token operator">:</span> <span class="token number">16</span><span class="token punctuation">,</span>
+              <span class="token literal-property property">y_offset</span><span class="token operator">:</span> <span class="token operator">-</span><span class="token number">10</span><span class="token punctuation">,</span>
+            <span class="token punctuation">}</span><span class="token punctuation">,</span>
+          <span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword control-flow">if</span> <span class="token punctuation">(</span>zoomMode<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      params<span class="token punctuation">.</span><span class="token property-access">steps</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+        <span class="token literal-property property">resized</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+          <span class="token literal-property property">use</span><span class="token operator">:</span> <span class="token string">':original'</span><span class="token punctuation">,</span>
+          <span class="token literal-property property">robot</span><span class="token operator">:</span> <span class="token string">'/video/encode'</span><span class="token punctuation">,</span>
+          <span class="token literal-property property">result</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+          <span class="token literal-property property">ffmpeg_stack</span><span class="token operator">:</span> <span class="token string">'v3.3.3'</span><span class="token punctuation">,</span>
+          <span class="token literal-property property">preset</span><span class="token operator">:</span> <span class="token string">'ipad-high'</span><span class="token punctuation">,</span>
+          <span class="token literal-property property">resize_strategy</span><span class="token operator">:</span> <span class="token string">'fillcrop'</span><span class="token punctuation">,</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">watermarked</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+          <span class="token literal-property property">use</span><span class="token operator">:</span> <span class="token string">'resized'</span><span class="token punctuation">,</span>
+          <span class="token literal-property property">robot</span><span class="token operator">:</span> <span class="token string">'/video/encode'</span><span class="token punctuation">,</span>
+          <span class="token literal-property property">result</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+          <span class="token literal-property property">ffmpeg_stack</span><span class="token operator">:</span> <span class="token string">'v3.3.3'</span><span class="token punctuation">,</span>
+          <span class="token literal-property property">preset</span><span class="token operator">:</span> <span class="token string">'ipad-high'</span><span class="token punctuation">,</span>
+          <span class="token literal-property property">watermark_opacity</span><span class="token operator">:</span> <span class="token number">0.7</span><span class="token punctuation">,</span>
+          <span class="token literal-property property">watermark_position</span><span class="token operator">:</span> <span class="token string">'top-right'</span><span class="token punctuation">,</span>
+          <span class="token literal-property property">watermark_size</span><span class="token operator">:</span> <span class="token string">'25%'</span><span class="token punctuation">,</span>
+          <span class="token literal-property property">watermark_url</span><span class="token operator">:</span> <span class="token string">'https://demos.transloadit.com/inputs/transloadit-padded.png'</span><span class="token punctuation">,</span>
+          <span class="token literal-property property">watermark_x_offset</span><span class="token operator">:</span> <span class="token operator">-</span><span class="token number">10</span><span class="token punctuation">,</span>
+          <span class="token literal-property property">watermark_y_offset</span><span class="token operator">:</span> <span class="token number">10</span><span class="token punctuation">,</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">let</span> signature
+    <span class="token keyword control-flow">if</span> <span class="token punctuation">(</span>opts<span class="token punctuation">.</span><span class="token property-access">secret</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      params <span class="token operator">=</span> <span class="token known-class-name class-name">JSON</span><span class="token punctuation">.</span><span class="token method function property-access">stringify</span><span class="token punctuation">(</span>params<span class="token punctuation">)</span>
+      signature <span class="token operator">=</span> <span class="token keyword control-flow">await</span> <span class="token function">sha1</span><span class="token punctuation">(</span>opts<span class="token punctuation">.</span><span class="token property-access">secret</span><span class="token punctuation">,</span> params<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword control-flow">return</span> <span class="token punctuation">{</span> params<span class="token punctuation">,</span> signature <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+
+  uppy
+    <span class="token punctuation">.</span><span class="token method function property-access">use</span><span class="token punctuation">(</span><span class="token maybe-class-name">Transloadit</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+      getAssemblyOptions<span class="token punctuation">,</span>
+      <span class="token literal-property property">waitForEncoding</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token method function property-access">use</span><span class="token punctuation">(</span><span class="token maybe-class-name">Dashboard</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+      <span class="token literal-property property">inline</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">maxHeight</span><span class="token operator">:</span> <span class="token number">400</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">target</span><span class="token operator">:</span> <span class="token string">'#uppy-dashboard-container'</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">note</span><span class="token operator">:</span> <span class="token string">'Images only, 1–2 files, up to 1 MB'</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token method function property-access">use</span><span class="token punctuation">(</span><span class="token maybe-class-name">Instagram</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+      <span class="token literal-property property">target</span><span class="token operator">:</span> <span class="token maybe-class-name">Dashboard</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">companionUrl</span><span class="token operator">:</span> <span class="token constant">COMPANION_URL</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">companionAllowedHosts</span><span class="token operator">:</span> <span class="token constant">COMPANION_ALLOWED_HOSTS</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token method function property-access">use</span><span class="token punctuation">(</span><span class="token maybe-class-name">Facebook</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+      <span class="token literal-property property">target</span><span class="token operator">:</span> <span class="token maybe-class-name">Dashboard</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">companionUrl</span><span class="token operator">:</span> <span class="token constant">COMPANION_URL</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token method function property-access">use</span><span class="token punctuation">(</span><span class="token maybe-class-name">Webcam</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token literal-property property">target</span><span class="token operator">:</span> <span class="token maybe-class-name">Dashboard</span><span class="token punctuation">,</span> <span class="token literal-property property">modes</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">'picture'</span><span class="token punctuation">]</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+  <span class="token keyword control-flow">if</span> <span class="token punctuation">(</span>zoomMode<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    uppy<span class="token punctuation">.</span><span class="token method function property-access">use</span><span class="token punctuation">(</span><span class="token maybe-class-name">Zoom</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+      <span class="token literal-property property">target</span><span class="token operator">:</span> <span class="token maybe-class-name">Dashboard</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">companionUrl</span><span class="token operator">:</span> <span class="token constant">COMPANION_URL</span><span class="token punctuation">,</span>
+      <span class="token literal-property property">companionAllowedHosts</span><span class="token operator">:</span> <span class="token constant">COMPANION_ALLOWED_HOSTS</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  uppy
+    <span class="token punctuation">.</span><span class="token method function property-access">on</span><span class="token punctuation">(</span><span class="token string">'transloadit:result'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">stepName<span class="token punctuation">,</span> result</span><span class="token punctuation">)</span> <span class="token arrow operator">=&gt;</span> <span class="token punctuation">{</span>
+      <span class="token keyword">const</span> file <span class="token operator">=</span> uppy<span class="token punctuation">.</span><span class="token method function property-access">getFile</span><span class="token punctuation">(</span>result<span class="token punctuation">.</span><span class="token property-access">localId</span><span class="token punctuation">)</span>
+      <span class="token keyword">const</span> resultContainer <span class="token operator">=</span> <span class="token dom variable">document</span><span class="token punctuation">.</span><span class="token method function property-access">createElement</span><span class="token punctuation">(</span><span class="token string">'div'</span><span class="token punctuation">)</span>
+      <span class="token keyword control-flow">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>zoomMode<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        resultContainer<span class="token punctuation">.</span><span class="token property-access">innerHTML</span> <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token embedded-code html">
+          &lt;div&gt;
+            &lt;h3&gt;Name: ${file.name}&lt;/h3&gt;
+            &lt;img src="${result.ssl_url}" /&gt; &lt;br /&gt;
+            &lt;a href="${result.ssl_url}" target="_blank"&gt;View&lt;/a&gt;
+          &lt;/div&gt;
+        </span><span class="token template-punctuation string">`</span></span>
+      <span class="token punctuation">}</span>
+
+      <span class="token keyword control-flow">if</span> <span class="token punctuation">(</span>zoomMode <span class="token operator">&amp;&amp;</span> stepName <span class="token operator">===</span> <span class="token string">'watermarked'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        resultContainer<span class="token punctuation">.</span><span class="token property-access">innerHTML</span> <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token embedded-code html">
+          &lt;div&gt;
+            &lt;h3&gt;Name: ${file.name}&lt;/h3&gt;
+            &lt;video controls&gt;
+              &lt;source src="${result.ssl_url}"&gt;
+            &lt;/video&gt;
+             &lt;br /&gt;
+            &lt;a href="${result.ssl_url}" target="_blank"&gt;View&lt;/a&gt;
+          &lt;/div&gt;
+        </span><span class="token template-punctuation string">`</span></span>
+      <span class="token punctuation">}</span>
+      <span class="token dom variable">document</span>
+        <span class="token punctuation">.</span><span class="token method function property-access">getElementById</span><span class="token punctuation">(</span><span class="token string">'uppy-transloadit-result'</span><span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token method function property-access">appendChild</span><span class="token punctuation">(</span>resultContainer<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token dom variable">window</span><span class="token punctuation">.</span><span class="token property-access">initUppy</span> <span class="token operator">=</span> initUppy</pre></td></tr></tbody></table></figure>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script></body></html>
+
+  <p>Please see <a href="/uppy/docs/">documentation</a> for details.</p>
+
+  <hr>
+
+  <p>Hey there stranger! Uppy <img src="/uppy/images/emojis/dog.png" width="14" align="absmiddle">
+    is actively developed and the example section
+    is our playground. Things might not work, but we're working hard to improve.</p>
+  <p>We're on a monthly release cycle and our latest version is
+    <a href="https://github.com/transloadit/uppy/blob/main/CHANGELOG.md#361" target="_blank" rel="noopener">v3.6.1</a>,
+    but the example pages reflect the latest work in our main branch. Here's
+    <a href="https://github.com/transloadit/uppy/compare/uppy@3.6.1...main" target="_blank" rel="noopener">what changed in main since v3.6.1</a>
+    in terms of commits, while the CHANGELOG
+    provides a higher level view of the things planned for our
+    <a href="https://github.com/transloadit/uppy/blob/main/CHANGELOG.md#next" target="_blank" rel="noopener">next release</a>.</p>
+
+  <!-- Add textarea already so it's available immediately for logging.
+  It is later made visible, and moved into the #console-wrapper to position it in layout how
+  you see fit. -->
+
+  <blockquote>Files from the examples are uploaded to our test servers and deleted every 24-72 hours.</blockquote>
+
+  <textarea id="console-log" class="Console"></textarea>
+  <script>
+    function customLog (log, container) {
+      return function () {
+        var text = [];
+        // loop through `arguments`, because console.log accepts multiple
+        var args = Array.prototype.slice.call(arguments);
+        args.forEach(function (arg) {
+          if (arg !== (arg + '')) {
+            // try/catch to prevent TypeError: cyclic object value
+            try {
+              arg = JSON.stringify(arg);
+            } catch (err) {}
+          }
+          text.push(arg);
+        })
+
+        text = text.join(' ');
+
+        log(text);
+
+        container.value += text + '\n';
+        container.scrollTop = container.scrollHeight;
+      };
+    }
+
+    // IE 10 doesn’t support console.debug
+    var consoleDebug = console.debug || console.log
+
+    console.log = customLog(console.log.bind(console), document.getElementById("console-log"));
+    console.debug = customLog(consoleDebug.bind(console), document.getElementById("console-log"));
+    console.warn = customLog(console.warn.bind(console), document.getElementById("console-log"));
+    console.error = customLog(console.error.bind(console), document.getElementById("console-log"));
+  </script>
+
+  <script>
+    // #console-log textarea is declared earlier so it's available immediately for logging.
+    // Here it is made visible, and moved into the #console-wrapper, so you can position it in the layout how
+    // you see fit.
+    document.getElementById('console-wrapper').appendChild(document.getElementById('console-log'));
+    document.getElementById('console-log').style.display = 'block';
+  </script>
+
+  <div class="footer">Caught a mistake or want to contribute to the documentation?
+     <a href="https://github.com/transloadit/uppy/blob/main/website/src/examples/transloadit/index.ejs" rel="noreferrer noopener" target="_blank">Edit/fork this page directly on Github</a>!
+  </div>
+</div>
+
+        
+      </main>
+
+      <script defer data-domain="transloadit.github.io" src="https://analytics.transloadit.com/js/plausible.js"></script>
+
+
+      
+        <script src="/uppy/js/smooth-scroll.min.js"></script>
+        <!-- Place this tag in your head or just before your close body tag. -->
+        <script async defer src="https://buttons.github.io/buttons.js"></script>
+      
+      <script src="/uppy/js/common.js"></script>
+
+      <!-- Twitter follow button script -->
+      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+    </div>
+  </body>
+</html>

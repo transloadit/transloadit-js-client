@@ -1,0 +1,939 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Writing Plugins — Uppy</title>
+    <meta charset="utf-8">
+    <meta name="title" content="Writing Plugins — Uppy">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@uppy_io">
+    <meta name="twitter:creator" content="@uppy_io">
+    <meta property="og:url" content="https://transloadit.github.io/uppy/docs/writing-plugins/index.html">
+    <meta property="og:title" content="Writing Plugins — Uppy">
+    <meta name="twitter:title" content="Writing Plugins — Uppy">
+    <meta name="twitter:description" content="">
+    <meta property="og:image" content="http://transloadit.github.io/uppy/images/uppy-social-pink.png">
+    <meta name="twitter:image" content="http://transloadit.github.io/uppy/images/uppy-social-pink.png">
+
+    <meta name="google-site-verification" content="JxARoHXoCI8bD07pLV_u3z6xpuWNcSIZIcHEytyCkUc" />
+
+    <link rel="icon" href="/uppy/images/logos/uppy-dog-head-arrow.png" type="image/x-icon">
+    <link rel="alternate" type="application/rss+xml" title="Uppy" href="/atom.xml">
+
+    <script>
+      window.PAGE_TYPE = "docs"
+    </script>
+    
+<link rel="stylesheet" href="/uppy/css/main.css?version=2">
+
+    <!-- ^ poor man's solution to css cache busting. bump the version when there's something new we really want users to see -->
+  <meta name="generator" content="Hexo 4.2.1"></head>
+  <body class="page-inner ">
+    <div class="page">
+      <div class="TransloaditBar js-TransloaditBar">
+        <div class="TransloaditBar-about">
+          <!-- <a class="TransloaditBar-logo" href="https://transloadit.com/" target="_blank" rel="noopener">
+            <img class="TransloaditBar-logoImg" src="/uppy/images/transloadit-white-glyph.svg" width="20" height="20" alt="Transloadit">
+          </a> -->
+          <!-- <span>Uppy is an open source project by <a class="TransloaditBar-link" href="https://transloadit.com/" target="_blank">Transloadit</a></span> -->
+          This website is no longer maintained, please visit <a href="//uppy.io" target="_blank" rel="noopener" style="color:inherit">uppy.io</a> to get up-to-date info about Uppy.
+        </div>
+      </div>
+
+      <header id="header" class="MainHeader js-MainHeader">
+        <button class="MainHeader-menuBtn js-MenuBtn"></button>
+
+        <span id="logo" class="MainLogo">
+          <a class="MainLogo-link" href="/uppy/">Uppy</a>
+          <!-- Was used for 1.0, we can re-use for 2.0 or major announcements -->
+          <!-- <a class="MainLogo-announcement" href="/blog/2019/04/1.0/">
+            1.0
+            <span class="MainLogo-emoji">
+              <img src="/uppy/images/party-popper.png" srcset="/uppy/images/party-popper@2x.png 2x" alt="🎉">
+            </span>
+          </a> -->
+        </span>
+
+        <nav>
+          <ul id="nav" class="MainMenu">
+            <!-- @todo uncomment search input when we get our own swifttype -->
+<!-- <li>
+  <form id="search-form" class="MainMenu-search">
+    <input type="text" id="search-query" class="MainMenu-searchQuery st-default-search-input">
+  </form>
+</li> -->
+<!--li><a href="/uppy/guide/" class="nav-link">Guide</a></li-->
+<li><a href="/uppy/docs/" class="nav-link current">Docs</a></li>
+<li><a href="/uppy/examples/dashboard/" class="nav-link">Examples</a></li>
+<!--li><a href="/uppy/stats/" class="nav-link">Stats</a></li-->
+<li><a href="/uppy/blog/" class="nav-link">Blog</a></li>
+<li><a href="/uppy/support/" class="nav-link">Support</a></li>
+<li><a href="https://github.com/transloadit/uppy" target="_blank" rel="noopener" class="nav-link">GitHub</a></li>
+
+          </ul>
+        </nav>
+
+        <div class="MainHeader-tagline">
+          The file uploader that <span class="MainHeader-taglinePart js-MainHeader-taglinePart is-visible">loves to play fetch</span>
+        </div>
+
+        <ul class="MainHeader-taglineList js-MainHeader-taglineList">
+          
+          <li>won’t chew on your shoes</li>
+          
+          <li>is fully housebroken</li>
+          
+          <li>just wants to play with you</li>
+          
+          <li>doesn’t hump your leg</li>
+          
+          <li>also accepts cat pictures</li>
+          
+          <li>loves you unconditionally</li>
+          
+          <li>you don’t have to keep on a leash</li>
+          
+          <li>won’t pee on your rug</li>
+          
+          <li>loves to play fetch</li>
+          
+          <li>doesn’t bite (hard)</li>
+          
+          <li>won’t bark at the mailman</li>
+          
+          <li>is great with the kids</li>
+          
+          <li>can digest anything, even chocolate cake</li>
+          
+          <li>is always happy to see you</li>
+          
+          <li>isn’t afraid of fireworks</li>
+          
+          <li>is allowed everywhere</li>
+          
+        </ul>
+      </header>
+
+      <main class="MainContent js-MainContent" id="main">
+        
+          
+    <div class="Sidebar js-Sidebar">
+  <ul class="main-menu">
+    <!-- @todo uncomment search input when we get our own swifttype -->
+<!-- <li>
+  <form id="search-form" class="MainMenu-search">
+    <input type="text" id="search-query" class="MainMenu-searchQuery st-default-search-input">
+  </form>
+</li> -->
+<!--li><a href="/uppy/guide/" class="nav-link">Guide</a></li-->
+<li><a href="/uppy/docs/" class="nav-link current">Docs</a></li>
+<li><a href="/uppy/examples/dashboard/" class="nav-link">Examples</a></li>
+<!--li><a href="/uppy/stats/" class="nav-link">Stats</a></li-->
+<li><a href="/uppy/blog/" class="nav-link">Blog</a></li>
+<li><a href="/uppy/support/" class="nav-link">Support</a></li>
+<li><a href="https://github.com/transloadit/uppy" target="_blank" rel="noopener" class="nav-link">GitHub</a></li>
+
+  </ul>
+  
+  
+  <div class="list">
+    <h2>
+      <a href="/uppy/docs">Docs</a>
+    </h2>
+      
+    <div class="menu-root">
+      
+
+    
+    
+    
+    <ul>
+      
+        
+        
+        <li key="p-0-docs/index.html">
+          <a href="/docs/" class="sidebar-link">Getting Started</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-1-docs/uppy/index.html">
+          <a href="/docs/uppy/" class="sidebar-link">Uppy</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-2-docs/companion/index.html">
+          <a href="/docs/companion/" class="sidebar-link">Companion</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-3-docs/plugins/index.html">
+          <a href="/docs/plugins/" class="sidebar-link">List of Plugins</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-4-docs/plugin-options/index.html">
+          <a href="/docs/plugin-options/" class="sidebar-link">Common Plugin Options</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-5-docs/stores/index.html">
+          <a href="/docs/stores/" class="sidebar-link">Custom Stores</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-6-docs/community-projects/index.html">
+          <a href="/docs/community-projects/" class="sidebar-link">Community Projects</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-7-docs/locales/index.html">
+          <a href="/docs/locales/" class="sidebar-link">Locale Packs</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-8-docs/migration-guides.html">
+          <a href="/docs/migration-guides.html" class="sidebar-link">Migration guides</a>
+          
+        </li>
+      
+    </ul>
+
+    
+    
+    
+        
+        <h3 id="" key="category-1-UI Elements" data-scroll="no">UI Elements</h3>
+        
+    
+    <ul>
+      
+        
+        
+        <li key="p-0-docs/dashboard/index.html">
+          <a href="/docs/dashboard/" class="sidebar-link">Dashboard</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-1-docs/status-bar/index.html">
+          <a href="/docs/status-bar/" class="sidebar-link">Status Bar</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-2-docs/progress-bar/index.html">
+          <a href="/docs/progress-bar/" class="sidebar-link">Progress Bar</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-3-docs/informer/index.html">
+          <a href="/docs/informer/" class="sidebar-link">Informer</a>
+          
+        </li>
+      
+    </ul>
+
+    
+    
+    
+        
+        <h3 id="" key="category-2-Sources" data-scroll="no">Sources</h3>
+        
+    
+    <ul>
+      
+        
+        
+        <li key="p-0-docs/drag-drop/index.html">
+          <a href="/docs/drag-drop/" class="sidebar-link">Drag & Drop</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-1-docs/drop-target/index.html">
+          <a href="/docs/drop-target/" class="sidebar-link">Drop Target</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-2-docs/file-input/index.html">
+          <a href="/docs/file-input/" class="sidebar-link">File Input</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-3-docs/audio/index.html">
+          <a href="/docs/audio/" class="sidebar-link">Audio</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-4-docs/webcam/index.html">
+          <a href="/docs/webcam/" class="sidebar-link">Webcam</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-5-docs/screen-capture/index.html">
+          <a href="/docs/screen-capture/" class="sidebar-link">Screen capture</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-6-docs/providers/index.html">
+          <a href="/docs/providers/" class="sidebar-link">Provider Plugins</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-7-docs/box/index.html">
+          <span title='Requires Companion'>ⓒ </span><a href="/docs/box/" class="sidebar-link">Box</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-8-docs/dropbox/index.html">
+          <span title='Requires Companion'>ⓒ </span><a href="/docs/dropbox/" class="sidebar-link">Dropbox</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-9-docs/google-drive/index.html">
+          <span title='Requires Companion'>ⓒ </span><a href="/docs/google-drive/" class="sidebar-link">Google Drive</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-10-docs/instagram/index.html">
+          <span title='Requires Companion'>ⓒ </span><a href="/docs/instagram/" class="sidebar-link">Instagram</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-11-docs/onedrive/index.html">
+          <span title='Requires Companion'>ⓒ </span><a href="/docs/onedrive/" class="sidebar-link">OneDrive</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-12-docs/zoom/index.html">
+          <span title='Requires Companion'>ⓒ </span><a href="/docs/zoom/" class="sidebar-link">Zoom</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-13-docs/facebook/index.html">
+          <span title='Requires Companion'>ⓒ </span><a href="/docs/facebook/" class="sidebar-link">Facebook</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-14-docs/unsplash/index.html">
+          <span title='Requires Companion'>ⓒ </span><a href="/docs/unsplash/" class="sidebar-link">Unsplash</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-15-docs/url/index.html">
+          <span title='Requires Companion'>ⓒ </span><a href="/docs/url/" class="sidebar-link">Import From URL</a>
+          
+        </li>
+      
+    </ul>
+
+    
+    
+    
+        
+        <h3 id="" key="category-3-Destinations" data-scroll="no">Destinations</h3>
+        
+    
+    <ul>
+      
+        
+        
+        <li key="p-0-docs/tus/index.html">
+          <a href="/docs/tus/" class="sidebar-link">Tus</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-1-docs/xhr-upload/index.html">
+          <a href="/docs/xhr-upload/" class="sidebar-link">XHR</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-2-docs/aws-s3/index.html">
+          <a href="/docs/aws-s3/" class="sidebar-link">AWS S3</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-3-docs/aws-s3-multipart/index.html">
+          <a href="/docs/aws-s3-multipart/" class="sidebar-link">AWS S3 Multipart</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-4-docs/transloadit/index.html">
+          <a href="/docs/transloadit/" class="sidebar-link">Transloadit</a>
+          
+        </li>
+      
+    </ul>
+
+    
+    
+    
+        
+        <h3 id="" key="category-4-Miscellaneous" data-scroll="no">Miscellaneous</h3>
+        
+    
+    <ul>
+      
+        
+        
+        <li key="p-0-docs/form/index.html">
+          <a href="/docs/form/" class="sidebar-link">Form</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-1-docs/golden-retriever/index.html">
+          <a href="/docs/golden-retriever/" class="sidebar-link">Golden Retriever</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-2-docs/image-editor/index.html">
+          <a href="/docs/image-editor/" class="sidebar-link">Image Editor</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-3-docs/thumbnail-generator/index.html">
+          <a href="/docs/thumbnail-generator/" class="sidebar-link">Thumbnail Generator</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-4-docs/redux/index.html">
+          <a href="/docs/redux/" class="sidebar-link">Redux</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-5-docs/compressor/index.html">
+          <a href="/docs/compressor/" class="sidebar-link">Compressor</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-6-docs/remote-sources/index.html">
+          <a href="/docs/remote-sources/" class="sidebar-link">Remote Sources</a>
+          
+        </li>
+      
+    </ul>
+
+    
+    
+    
+    <ul>
+      
+    </ul>
+
+    
+    
+    
+        
+        <h3 id="" key="category-6-React" data-scroll="no"><a href="/docs/react/">React</a></h3>
+        
+    
+    <ul>
+      
+        
+        
+        <li key="p-0-docs/react/index.html">
+          <a href="/docs/react/" class="sidebar-link">Introduction</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-1-docs/react/status-bar/index.html">
+          <a href="/docs/react/status-bar/" class="sidebar-link">&lt;StatusBar /></a>
+          
+        </li>
+      
+        
+        
+        <li key="p-2-docs/react/drag-drop/index.html">
+          <a href="/docs/react/drag-drop/" class="sidebar-link">&lt;DragDrop /></a>
+          
+        </li>
+      
+        
+        
+        <li key="p-3-docs/react/file-input/index.html">
+          <a href="/docs/react/file-input/" class="sidebar-link">&lt;FileInput /></a>
+          
+        </li>
+      
+        
+        
+        <li key="p-4-docs/react/progress-bar/index.html">
+          <a href="/docs/react/progress-bar/" class="sidebar-link">&lt;ProgressBar /></a>
+          
+        </li>
+      
+        
+        
+        <li key="p-5-docs/react/dashboard/index.html">
+          <a href="/docs/react/dashboard/" class="sidebar-link">&lt;Dashboard /></a>
+          
+        </li>
+      
+        
+        
+        <li key="p-6-docs/react/dashboard-modal/index.html">
+          <a href="/docs/react/dashboard-modal/" class="sidebar-link">&lt;DashboardModal /></a>
+          
+        </li>
+      
+        
+        
+        <li key="p-7-docs/react/native/index.html">
+          <a href="/docs/react/native/" class="sidebar-link">React Native</a>
+          
+        </li>
+      
+    </ul>
+
+    
+    
+    
+        
+        <h3 id="" key="category-7-Other Integrations" data-scroll="no"><a href="/docs/vue/">Other Integrations</a></h3>
+        
+    
+    <ul>
+      
+        
+        
+        <li key="p-0-docs/angular/index.html">
+          <a href="/docs/angular/" class="sidebar-link">Angular</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-1-docs/vue/index.html">
+          <a href="/docs/vue/" class="sidebar-link">Vue</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-2-docs/svelte/index.html">
+          <a href="/docs/svelte/" class="sidebar-link">Svelte</a>
+          
+        </li>
+      
+    </ul>
+
+    
+    
+    
+        
+        <h3 id="" key="category-8-Contributing" data-scroll="no"><a href="/docs/contributing.html">Contributing</a></h3>
+        
+    
+    <ul>
+      
+        
+        
+        <li key="p-0-docs/contributing.html">
+          <a href="/docs/contributing.html" class="sidebar-link">Contributing</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-1-docs/writing-plugins/index.html">
+          <a href="/docs/writing-plugins/" class="sidebar-link current">Writing Plugins</a>
+          
+        </li>
+      
+    </ul>
+
+
+    </div>
+
+    <ul class="Social">
+  <li><a href="https://twitter.com/uppy_io" target="_blank" rel="noopener" class="twitter-follow-button" data-show-count="false" data-dnt="true">Follow @uppy_io</a></li>
+  <li><iframe src="https://ghbtns.com/github-btn.html?user=transloadit&repo=uppy&type=watch&count=true"
+allowtransparency="true" frameborder="0" scrolling="0" width="100" height="20"></iframe></li>
+  <!-- to regenerate you can use this link: https://img.shields.io/badge/community-forum-d8006a.svg -->
+  <li><a href="https://community.transloadit.com/c/uppy" target="_blank" rel="noopener"><img src="/uppy/images/community-forum-d8006a.svg" /> </a></li>
+  <li class="BuildBadge">
+   <span class="wrapper">
+     <a href="https://github.com/transloadit/uppy/actions" target="_blank" rel="noopener"><img src="https://github.com/transloadit/uppy/workflows/End-to-end%20tests/badge.svg" alt="Build Status"></a>
+   </span>
+  </li>
+</ul>
+
+    </div>
+  
+</div>
+
+
+
+<div class="Content js-Content docs with-sidebar">
+    <h1>Writing Plugins</h1>
+    <html><head></head><body><p>You can find already a few useful Uppy plugins out there, but there might come a time when you will want to build your own. Plugins can hook into the upload process or render a custom UI, typically to:</p>
+<ul>
+<li>Render some custom UI element, e.g., <a href="/docs/statusbar">StatusBar</a> or <a href="/docs/dashboard">Dashboard</a>.</li>
+<li>Do the actual uploading, e.g., <a href="/docs/xhrupload">XHRUpload</a> or <a href="/docs/tus">Tus</a>.</li>
+<li>Do work before the upload, like compressing an image or calling external API.</li>
+<li>Interact with a third-party service to process uploads correctly, e.g., <a href="/docs/transloadit">Transloadit</a> or <a href="/docs/aws-s3">AwsS3</a>.</li>
+</ul>
+<p>See a <a href="#Example-of-a-custom-plugin">full example of a plugin</a> below.</p>
+<h2 id="Creating-A-Plugin"><a href="#Creating-A-Plugin" class="headerlink" title="Creating A Plugin"></a>Creating A Plugin</h2><p>Uppy has two classes to create plugins with. <code>BasePlugin</code> for plugins that don’t need a user interface, and <code>UIPlugin</code> for onces that do.<br>Each plugin has an <code>id</code> and a <code>type</code>. <code>id</code>s are used to uniquely identify plugins.<br>A <code>type</code> can be anything—some plugins use <code>type</code>s to decide whether to do something to some other plugin.<br>For example, when targeting plugins at the built-in <code>Dashboard</code> plugin, the Dashboard uses the <code>type</code> to figure out where to mount different UI elements.<br><code>'acquirer'</code>-type plugins are mounted into the tab bar, while <code>'progressindicator'</code>-type plugins are mounted into the progress bar area.</p>
+<p>The plugin constructor receives the Uppy instance in the first parameter, and any options passed to <code>uppy.use()</code> in the second parameter.</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="token keyword module">import</span> <span class="token imports"><span class="token maybe-class-name">BasePlugin</span></span> <span class="token keyword module">from</span> <span class="token string">'@uppy/core/lib/BasePlugin.js'</span>
+
+<span class="token keyword module">export</span> <span class="token keyword module">default</span> <span class="token keyword">class</span> <span class="token class-name">MyPlugin</span> <span class="token keyword">extends</span> <span class="token class-name">BasePlugin</span> <span class="token punctuation">{</span>
+  <span class="token function">constructor</span> <span class="token punctuation">(</span><span class="token parameter">uppy<span class="token punctuation">,</span> opts</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">super</span><span class="token punctuation">(</span>uppy<span class="token punctuation">,</span> opts<span class="token punctuation">)</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">id</span> <span class="token operator">=</span> opts<span class="token punctuation">.</span><span class="token property-access">id</span> <span class="token operator">||</span> <span class="token string">'MyPlugin'</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">type</span> <span class="token operator">=</span> <span class="token string">'example'</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></pre></td></tr></table></figure>
+<h2 id="Methods"><a href="#Methods" class="headerlink" title="Methods"></a>Methods</h2><p>Plugins can define methods to execute certain tasks. The most important method is <code>install()</code>, which is called when a plugin is <code>.use</code>d.</p>
+<p>All the below methods are optional! Only define the methods you need.</p>
+<h3 id="BasePlugin"><a href="#BasePlugin" class="headerlink" title="BasePlugin"></a><code>BasePlugin</code></h3><h4 id="install"><a href="#install" class="headerlink" title="install()"></a><code>install()</code></h4><p>Called when the plugin is <code>.use</code>d. Do any setup work here, like attaching events or adding <a href="#Upload-Hooks">upload hooks</a>.</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="token keyword module">export</span> <span class="token keyword module">default</span> <span class="token keyword">class</span> <span class="token class-name">MyPlugin</span> <span class="token keyword">extends</span> <span class="token class-name">UIPlugin</span> <span class="token punctuation">{</span>
+  <span class="token comment">// ...</span>
+  <span class="token function">install</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">uppy</span><span class="token punctuation">.</span><span class="token method function property-access">on</span><span class="token punctuation">(</span><span class="token string">'upload-progress'</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">onProgress</span><span class="token punctuation">)</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">uppy</span><span class="token punctuation">.</span><span class="token method function property-access">addPostProcessor</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">afterUpload</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></pre></td></tr></table></figure>
+<h4 id="uninstall"><a href="#uninstall" class="headerlink" title="uninstall()"></a><code>uninstall()</code></h4><p>Called when the plugin is removed, or the Uppy instance is closed. This should undo all the work done in the <code>install()</code> method.</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="token keyword module">export</span> <span class="token keyword module">default</span> <span class="token keyword">class</span> <span class="token class-name">MyPlugin</span> <span class="token keyword">extends</span> <span class="token class-name">UIPlugin</span> <span class="token punctuation">{</span>
+  <span class="token comment">// ...</span>
+  <span class="token function">uninstall</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">uppy</span><span class="token punctuation">.</span><span class="token method function property-access">off</span><span class="token punctuation">(</span><span class="token string">'upload-progress'</span><span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">onProgress</span><span class="token punctuation">)</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">uppy</span><span class="token punctuation">.</span><span class="token method function property-access">removePostProcessor</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">afterUpload</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></pre></td></tr></table></figure>
+<h4 id="afterUpdate"><a href="#afterUpdate" class="headerlink" title="afterUpdate()"></a><code>afterUpdate()</code></h4><p>Called after every state update with a debounce, after everything has mounted.</p>
+<h4 id="addTarget"><a href="#addTarget" class="headerlink" title="addTarget()"></a><code>addTarget()</code></h4><p>Use this to add your plugin to another plugin’s target. This is what <code>@uppy/dashboard</code> uses to add other plugins to its UI.</p>
+<h3 id="UIPlugin"><a href="#UIPlugin" class="headerlink" title="UIPlugin"></a><code>UIPlugin</code></h3><p><code>UIPlugin</code> extends the <code>BasePlugin</code> class so it will also contain all the above methods.</p>
+<h4 id="mount-target"><a href="#mount-target" class="headerlink" title="mount(target)"></a><code>mount(target)</code></h4><p>Mount this plugin to the <code>target</code> element. <code>target</code> can be a CSS query selector, a DOM element, or another Plugin. If <code>target</code> is a Plugin, the source (current) plugin will register with the target plugin, and the latter can decide how and where to render the source plugin.</p>
+<p>This method can be overridden to support for different render engines.</p>
+<h4 id="render"><a href="#render" class="headerlink" title="render()"></a><code>render()</code></h4><p>Render this plugin’s UI. Uppy uses <a href="https://preactjs.com" target="_blank" rel="noopener">Preact</a> as its view engine, so <code>render()</code> should return a Preact element.<br><code>render</code> is automatically called by Uppy on each state change.</p>
+<h4 id="onMount"><a href="#onMount" class="headerlink" title="onMount()"></a><code>onMount()</code></h4><p>Called after Preact has rendered the components of the plugin.</p>
+<h4 id="update-state"><a href="#update-state" class="headerlink" title="update(state)"></a><code>update(state)</code></h4><p>Called on each state update. You will rarely need to use this, unless if you want to build a UI plugin using something other than Preact.</p>
+<h4 id="onUnmount"><a href="#onUnmount" class="headerlink" title="onUnmount()"></a><code>onUnmount()</code></h4><p>Called after the elements have been removed from the DOM. Can be used to do some clean up or other side-effects.</p>
+<h2 id="Upload-Hooks"><a href="#Upload-Hooks" class="headerlink" title="Upload Hooks"></a>Upload Hooks</h2><p>When creating an upload, Uppy runs files through an upload pipeline. The pipeline consists of three parts, each of which can be hooked into: Preprocessing, Uploading, and Postprocessing. Preprocessors can be used to configure uploader plugins, encrypt files, resize images, etc., before uploading them. Uploaders do the actual uploading work, such as creating an XMLHttpRequest object and sending the file. Postprocessors do their work after files have been uploaded completely. This could be anything from waiting for a file to propagate across a CDN, to sending another request to relate some metadata to the file.</p>
+<p>Each hook is a function that receives an array containing the file IDs that are being uploaded, and returns a Promise to signal completion. Hooks are added and removed through <code>Uppy</code> methods: <code>addPreProcessor</code>, <code>addUploader</code>, <code>addPostProcessor</code>, and their <code>remove*</code> counterparts. Normally, hooks should be added during the plugin <code>install()</code> method, and removed during the <code>uninstall()</code> method.</p>
+<p>Additionally, upload hooks can fire events to signal progress.</p>
+<p>When adding hooks, make sure to bind the hook <code>fn</code> beforehand! Otherwise, it will be impossible to remove. For example:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="token keyword">class</span> <span class="token class-name">MyPlugin</span> <span class="token keyword">extends</span> <span class="token class-name">BasePlugin</span> <span class="token punctuation">{</span>
+  <span class="token function">constructor</span> <span class="token punctuation">(</span><span class="token parameter">uppy<span class="token punctuation">,</span> opts</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">super</span><span class="token punctuation">(</span>uppy<span class="token punctuation">,</span> opts<span class="token punctuation">)</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">id</span> <span class="token operator">=</span> opts<span class="token punctuation">.</span><span class="token property-access">id</span> <span class="token operator">||</span> <span class="token string">'MyPlugin'</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">type</span> <span class="token operator">=</span> <span class="token string">'example'</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">prepareUpload</span> <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token method function property-access">prepareUpload</span><span class="token punctuation">.</span><span class="token method function property-access">bind</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span> <span class="token comment">// ← this!</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token function">prepareUpload</span> <span class="token punctuation">(</span><span class="token parameter">fileIDs</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span> <span class="token comment">// `this` refers to the `MyPlugin` instance.</span>
+    <span class="token keyword control-flow">return</span> <span class="token known-class-name class-name">Promise</span><span class="token punctuation">.</span><span class="token method function property-access">resolve</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token function">install</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">uppy</span><span class="token punctuation">.</span><span class="token method function property-access">addPreProcessor</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">prepareUpload</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token function">uninstall</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">uppy</span><span class="token punctuation">.</span><span class="token method function property-access">removePreProcessor</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">prepareUpload</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></pre></td></tr></table></figure>
+<p>Or you can define the method as a class field:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="token keyword">class</span> <span class="token class-name">MyPlugin</span> <span class="token keyword">extends</span> <span class="token class-name">UIPlugin</span> <span class="token punctuation">{</span>
+  <span class="token function">constructor</span> <span class="token punctuation">(</span><span class="token parameter">uppy<span class="token punctuation">,</span> opts</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">super</span><span class="token punctuation">(</span>uppy<span class="token punctuation">,</span> opts<span class="token punctuation">)</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">id</span> <span class="token operator">=</span> opts<span class="token punctuation">.</span><span class="token property-access">id</span> <span class="token operator">||</span> <span class="token string">'MyPlugin'</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">type</span> <span class="token operator">=</span> <span class="token string">'example'</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token function-variable function">prepareUpload</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">fileIDs</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token punctuation">{</span> <span class="token comment">// ← this!</span>
+    <span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span> <span class="token comment">// `this` refers to the `MyPlugin` instance.</span>
+    <span class="token keyword control-flow">return</span> <span class="token known-class-name class-name">Promise</span><span class="token punctuation">.</span><span class="token method function property-access">resolve</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token function">install</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">uppy</span><span class="token punctuation">.</span><span class="token method function property-access">addPreProcessor</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">prepareUpload</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token function">uninstall</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">uppy</span><span class="token punctuation">.</span><span class="token method function property-access">removePreProcessor</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">prepareUpload</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></pre></td></tr></table></figure>
+<h3 id="addPreProcessor-fn"><a href="#addPreProcessor-fn" class="headerlink" title="addPreProcessor(fn)"></a><code>addPreProcessor(fn)</code></h3><p>Add a preprocessing function. <code>fn</code> gets called with a list of file IDs before an upload starts. <code>fn</code> should return a Promise. Its resolution value is ignored. To change file data and such, use Uppy state updates, for example using <a href="/docs/uppy#uppy-setFileState-fileID-state"><code>setFileState</code></a>.</p>
+<h3 id="addUploader-fn"><a href="#addUploader-fn" class="headerlink" title="addUploader(fn)"></a><code>addUploader(fn)</code></h3><p>Add an uploader function. <code>fn</code> gets called with a list of file IDs when an upload should start. Uploader functions should do the actual uploading work, such as creating and sending an XMLHttpRequest or calling into some upload service SDK. <code>fn</code> should return a Promise that resolves once all files have been uploaded.</p>
+<p>You may choose to still resolve the Promise if some file uploads fail. This way, any postprocessing will still run on the files that were uploaded successfully, while uploads that failed will be retried when <code>uppy.retryAll</code> is called.</p>
+<h3 id="addPostProcessor-fn"><a href="#addPostProcessor-fn" class="headerlink" title="addPostProcessor(fn)"></a><code>addPostProcessor(fn)</code></h3><p>Add a postprocessing function. <code>fn</code> is called with a list of file IDs when an upload has finished. <code>fn</code> should return a Promise that resolves when the processing work is complete. Again, the resolution value of the Promise is ignored. This hook can be used to do any finishing work. For example, you could wait for file encoding or CDN propagation to complete, or you could do an HTTP API call to create an album containing all images that were uploaded.</p>
+<h3 id="removePreProcessor-removeUploader-removePostProcessor-fn"><a href="#removePreProcessor-removeUploader-removePostProcessor-fn" class="headerlink" title="removePreProcessor/removeUploader/removePostProcessor(fn)"></a><code>removePreProcessor/removeUploader/removePostProcessor(fn)</code></h3><p>Remove a processor or uploader function that was added before. Normally, this should be done in the <code>uninstall()</code> method.</p>
+<h2 id="Progress-events"><a href="#Progress-events" class="headerlink" title="Progress events"></a>Progress events</h2><p>Progress events can be fired for individual files to show feedback to the user. For upload progress events, only emitting how many bytes are expected and how many have been uploaded is enough. Uppy will handle calculating progress percentages, upload speed, etc.</p>
+<p>Preprocessing and postprocessing progress events are plugin-dependent and can refer to anything, so Uppy doesn’t try to be smart about them. Processing progress events can be of two types: determinate or indeterminate. Some processing does not have meaningful progress beyond “not done” and “done”. For example, sending a request to initialize a server-side resource that will serve as the upload destination. In those situations, indeterminate progress is suitable. Other processing does have meaningful progress. For example, encrypting a large file. In those situations, determinate progress is suitable.</p>
+<h3 id="preprocess-progress-fileID-progress"><a href="#preprocess-progress-fileID-progress" class="headerlink" title="preprocess-progress(fileID, progress)"></a><code>preprocess-progress(fileID, progress)</code></h3><p><code>progress</code> is an object with properties:</p>
+<ul>
+<li><code>mode</code> - Either <code>'determinate'</code> or <code>'indeterminate'</code>.</li>
+<li><code>message</code> - A message to show to the user. Something like <code>'Preparing upload...'</code>, but be more specific if possible.</li>
+</ul>
+<p>When <code>mode</code> is <code>'determinate'</code>, also add the <code>value</code> property:</p>
+<ul>
+<li><code>value</code> - A progress value between 0 and 1.</li>
+</ul>
+<h3 id="upload-progress-progress"><a href="#upload-progress-progress" class="headerlink" title="upload-progress(progress)"></a><code>upload-progress(progress)</code></h3><p><code>progress</code> is an object with properties:</p>
+<ul>
+<li><code>uploader</code> - The uploader plugin that fired the event (<code>this</code>).</li>
+<li><code>id</code> - The file ID.</li>
+<li><code>bytesTotal</code> - The full amount of bytes to be uploaded.</li>
+<li><code>bytesUploaded</code> - The amount of bytes that have been uploaded so far.</li>
+</ul>
+<h3 id="postprocess-progress-fileID-progress"><a href="#postprocess-progress-fileID-progress" class="headerlink" title="postprocess-progress(fileID, progress)"></a><code>postprocess-progress(fileID, progress)</code></h3><p><code>progress</code> is an object with properties:</p>
+<ul>
+<li><code>mode</code> - Either <code>'determinate'</code> or <code>'indeterminate'</code>.</li>
+<li><code>message</code> - A message to show to the user. Something like <code>'Preparing upload...'</code>, but be more specific if possible.</li>
+</ul>
+<p>When <code>mode</code> is <code>'determinate'</code>, also add the <code>value</code> property:</p>
+<ul>
+<li><code>value</code> - A progress value between 0 and 1.</li>
+</ul>
+<h3 id="error-err-fileID"><a href="#error-err-fileID" class="headerlink" title="error(err[, fileID])"></a><code>error(err[, fileID])</code></h3><p><code>err</code> is an <code>Error</code> object. <code>fileID</code> can optionally which file fails to inform the user.</p>
+<h3 id="JSX"><a href="#JSX" class="headerlink" title="JSX"></a>JSX</h3><p>Since Uppy uses Preact and not React, the default Babel configuration for JSX elements does not work.<br>You have to import the Preact <code>h</code> function and tell Babel to use it by adding a <code>/** @jsx h */</code> comment at the top of the file.</p>
+<p>See the Preact <a href="https://preactjs.com/guide/getting-started" target="_blank" rel="noopener">Getting Started Guide</a> for more on Babel and JSX.</p>
+<!-- eslint-disable jsdoc/check-tag-names -->
+
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="token doc-comment comment">/** <span class="token keyword">@jsx</span> h */</span>
+<span class="token keyword module">import</span> <span class="token imports"><span class="token punctuation">{</span> <span class="token maybe-class-name">UIPlugin</span> <span class="token punctuation">}</span></span> <span class="token keyword module">from</span> <span class="token string">'@uppy/core'</span>
+<span class="token keyword module">import</span> <span class="token imports"><span class="token punctuation">{</span> h <span class="token punctuation">}</span></span> <span class="token keyword module">from</span> <span class="token string">'preact'</span>
+
+<span class="token keyword">class</span> <span class="token class-name">NumFiles</span> <span class="token keyword">extends</span> <span class="token class-name">UIPlugin</span> <span class="token punctuation">{</span>
+  <span class="token function">render</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> numFiles <span class="token operator">=</span> <span class="token known-class-name class-name">Object</span><span class="token punctuation">.</span><span class="token method function property-access">keys</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">uppy</span><span class="token punctuation">.</span><span class="token property-access">state</span><span class="token punctuation">.</span><span class="token property-access">files</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token property-access">length</span>
+
+    <span class="token keyword control-flow">return</span> <span class="token punctuation">(</span>
+      <span class="token operator">&lt;</span>div<span class="token operator">></span>
+        <span class="token known-class-name class-name">Number</span> <span class="token keyword">of</span> <span class="token literal-property property">files</span><span class="token operator">:</span>
+        <span class="token punctuation">{</span><span class="token string">' '</span><span class="token punctuation">}</span>
+        <span class="token punctuation">{</span>numFiles<span class="token punctuation">}</span>
+      <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
+    <span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></pre></td></tr></table></figure>
+<h2 id="Locales"><a href="#Locales" class="headerlink" title="Locales"></a>Locales</h2><p>For any user facing language that you use while writing your Plugin, please provide them as strings in the <code>defaultLocale</code> property like so:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">defaultLocale</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token literal-property property">strings</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">youCanOnlyUploadFileTypes</span><span class="token operator">:</span> <span class="token string">'You can only upload: %{types}'</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">youCanOnlyUploadX</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token number">0</span><span class="token operator">:</span> <span class="token string">'You can only upload %{smart_count} file'</span><span class="token punctuation">,</span>
+      <span class="token number">1</span><span class="token operator">:</span> <span class="token string">'You can only upload %{smart_count} files'</span><span class="token punctuation">,</span>
+      <span class="token number">2</span><span class="token operator">:</span> <span class="token string">'You can only upload %{smart_count} files'</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span></pre></td></tr></table></figure>
+<p>This allows them to be overridden by Locale Packs, or directly when users pass <code>locale: { strings: youCanOnlyUploadFileTypes: 'Something else completely about %{types}'} }</code>. For this to work, it’s also required that you call <code>this.i18nInit()</code> in the plugin constructor.</p>
+<h2 id="Example-of-a-custom-plugin"><a href="#Example-of-a-custom-plugin" class="headerlink" title="Example of a custom plugin"></a>Example of a custom plugin</h2><p>Below is a full example of a <a href="https://github.com/arturi/uppy-plugin-image-compressor" target="_blank" rel="noopener">small plugin</a> that compresses images before uploading them. You can replace <code>compressorjs</code> method with any other work you need to do. This works especially well for async stuff, like calling an external API.</p>
+<!-- eslint-disable consistent-return -->
+
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="token keyword module">import</span> <span class="token imports"><span class="token punctuation">{</span> <span class="token maybe-class-name">UIPlugin</span> <span class="token punctuation">}</span></span> <span class="token keyword module">from</span> <span class="token string">'@uppy/core'</span>
+<span class="token keyword module">import</span> <span class="token imports"><span class="token maybe-class-name">Translator</span></span> <span class="token keyword module">from</span> <span class="token string">'@uppy/utils/lib/Translator'</span>
+<span class="token keyword module">import</span> <span class="token imports"><span class="token maybe-class-name">Compressor</span></span> <span class="token keyword module">from</span> <span class="token string">'compressorjs/dist/compressor.esm.js'</span>
+
+<span class="token keyword">class</span> <span class="token class-name">UppyImageCompressor</span> <span class="token keyword">extends</span> <span class="token class-name">UIPlugin</span> <span class="token punctuation">{</span>
+  <span class="token function">constructor</span> <span class="token punctuation">(</span><span class="token parameter">uppy<span class="token punctuation">,</span> opts</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> defaultOptions <span class="token operator">=</span> <span class="token punctuation">{</span>
+      <span class="token literal-property property">quality</span><span class="token operator">:</span> <span class="token number">0.6</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">super</span><span class="token punctuation">(</span>uppy<span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token spread operator">...</span>defaultOptions<span class="token punctuation">,</span> <span class="token spread operator">...</span>opts <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">id</span> <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">opts</span><span class="token punctuation">.</span><span class="token property-access">id</span> <span class="token operator">||</span> <span class="token string">'ImageCompressor'</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">type</span> <span class="token operator">=</span> <span class="token string">'modifier'</span>
+
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">defaultLocale</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+      <span class="token literal-property property">strings</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+        <span class="token literal-property property">compressingImages</span><span class="token operator">:</span> <span class="token string">'Compressing images...'</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">// we use those internally in `this.compress`, so they</span>
+    <span class="token comment">// should not be overriden</span>
+    <span class="token keyword">delete</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">opts</span><span class="token punctuation">.</span><span class="token property-access">success</span>
+    <span class="token keyword">delete</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">opts</span><span class="token punctuation">.</span><span class="token property-access">error</span>
+
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token method function property-access">i18nInit</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token function">compress</span> <span class="token punctuation">(</span><span class="token parameter">blob</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword control-flow">return</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">resolve<span class="token punctuation">,</span> reject</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token keyword">new</span> <span class="token class-name">Compressor</span><span class="token punctuation">(</span>blob<span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">{</span>
+      <span class="token spread operator">...</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">opts</span><span class="token punctuation">,</span>
+      <span class="token function">success</span> <span class="token punctuation">(</span><span class="token parameter">result</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword control-flow">return</span> <span class="token function">resolve</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token function">error</span> <span class="token punctuation">(</span><span class="token parameter">err</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword control-flow">return</span> <span class="token function">reject</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span>
+      <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token function-variable function">prepareUpload</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">fileIDs</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> promises <span class="token operator">=</span> fileIDs<span class="token punctuation">.</span><span class="token method function property-access">map</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">fileID</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token punctuation">{</span>
+      <span class="token keyword">const</span> file <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">uppy</span><span class="token punctuation">.</span><span class="token method function property-access">getFile</span><span class="token punctuation">(</span>fileID<span class="token punctuation">)</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">uppy</span><span class="token punctuation">.</span><span class="token method function property-access">emit</span><span class="token punctuation">(</span><span class="token string">'preprocess-progress'</span><span class="token punctuation">,</span> file<span class="token punctuation">,</span> <span class="token punctuation">{</span>
+        <span class="token literal-property property">mode</span><span class="token operator">:</span> <span class="token string">'indeterminate'</span><span class="token punctuation">,</span>
+        <span class="token literal-property property">message</span><span class="token operator">:</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token method function property-access">i18n</span><span class="token punctuation">(</span><span class="token string">'compressingImages'</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+      <span class="token keyword control-flow">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>file<span class="token punctuation">.</span><span class="token property-access">type</span><span class="token punctuation">.</span><span class="token method function property-access">startsWith</span><span class="token punctuation">(</span><span class="token string">'image/'</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword control-flow">return</span>
+      <span class="token punctuation">}</span>
+
+      <span class="token keyword control-flow">return</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token method function property-access">compress</span><span class="token punctuation">(</span>file<span class="token punctuation">.</span><span class="token property-access">data</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token method function property-access">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">compressedBlob</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">uppy</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">[Image Compressor] Image </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>file<span class="token punctuation">.</span><span class="token property-access">id</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> size before/after compression: </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>file<span class="token punctuation">.</span><span class="token property-access">data</span><span class="token punctuation">.</span><span class="token property-access">size</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> / </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>compressedBlob<span class="token punctuation">.</span><span class="token property-access">size</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">uppy</span><span class="token punctuation">.</span><span class="token method function property-access">setFileState</span><span class="token punctuation">(</span>fileID<span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token literal-property property">data</span><span class="token operator">:</span> compressedBlob <span class="token punctuation">}</span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token keyword control-flow">catch</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">err</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">uppy</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">[Image Compressor] Failed to compress </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>file<span class="token punctuation">.</span><span class="token property-access">id</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">:</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span> <span class="token string">'warning'</span><span class="token punctuation">)</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">uppy</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span>err<span class="token punctuation">,</span> <span class="token string">'warning'</span><span class="token punctuation">)</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">const</span> <span class="token function-variable function">emitPreprocessCompleteForAll</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token punctuation">{</span>
+      fileIDs<span class="token punctuation">.</span><span class="token method function property-access">forEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">fileID</span><span class="token punctuation">)</span> <span class="token arrow operator">=></span> <span class="token punctuation">{</span>
+        <span class="token keyword">const</span> file <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">uppy</span><span class="token punctuation">.</span><span class="token method function property-access">getFile</span><span class="token punctuation">(</span>fileID<span class="token punctuation">)</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">uppy</span><span class="token punctuation">.</span><span class="token method function property-access">emit</span><span class="token punctuation">(</span><span class="token string">'preprocess-complete'</span><span class="token punctuation">,</span> file<span class="token punctuation">)</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">// Why emit `preprocess-complete` for all files at once, instead of</span>
+    <span class="token comment">// above when each is processed?</span>
+    <span class="token comment">// Because it leads to StatusBar showing a weird “upload 6 files” button,</span>
+    <span class="token comment">// while waiting for all the files to complete pre-processing.</span>
+    <span class="token keyword control-flow">return</span> <span class="token known-class-name class-name">Promise</span><span class="token punctuation">.</span><span class="token method function property-access">all</span><span class="token punctuation">(</span>promises<span class="token punctuation">)</span>
+      <span class="token punctuation">.</span><span class="token method function property-access">then</span><span class="token punctuation">(</span>emitPreprocessCompleteForAll<span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token function">install</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">uppy</span><span class="token punctuation">.</span><span class="token method function property-access">addPreProcessor</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">prepareUpload</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token function">uninstall</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">uppy</span><span class="token punctuation">.</span><span class="token method function property-access">removePreProcessor</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token property-access">prepareUpload</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword module">export</span> <span class="token keyword module">default</span> <span class="token maybe-class-name">UppyImageCompressor</span></pre></td></tr></table></figure>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script></body></html>
+    
+    
+
+    
+    <div class="footer">Caught a mistake or want to contribute to the documentation?
+       <a href="https://github.com/transloadit/uppy/blob/main/website/src/docs/writing-plugins.md" rel="noreferrer noopener" target="_blank">Edit/fork this page directly on Github</a>!
+    </div>
+</div>
+
+        
+      </main>
+
+      <script defer data-domain="transloadit.github.io" src="https://analytics.transloadit.com/js/plausible.js"></script>
+
+
+      
+        <script src="/uppy/js/smooth-scroll.min.js"></script>
+        <!-- Place this tag in your head or just before your close body tag. -->
+        <script async defer src="https://buttons.github.io/buttons.js"></script>
+      
+      <script src="/uppy/js/common.js"></script>
+
+      <!-- Twitter follow button script -->
+      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+    </div>
+  </body>
+</html>

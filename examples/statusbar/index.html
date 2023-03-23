@@ -1,0 +1,401 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Status Bar — Uppy</title>
+    <meta charset="utf-8">
+    <meta name="title" content="Status Bar — Uppy">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@uppy_io">
+    <meta name="twitter:creator" content="@uppy_io">
+    <meta property="og:url" content="https://transloadit.github.io/uppy/examples/statusbar/index.html">
+    <meta property="og:title" content="Status Bar — Uppy">
+    <meta name="twitter:title" content="Status Bar — Uppy">
+    <meta name="twitter:description" content="">
+    <meta property="og:image" content="http://transloadit.github.io/uppy/images/uppy-social-pink.png">
+    <meta name="twitter:image" content="http://transloadit.github.io/uppy/images/uppy-social-pink.png">
+
+    <meta name="google-site-verification" content="JxARoHXoCI8bD07pLV_u3z6xpuWNcSIZIcHEytyCkUc" />
+
+    <link rel="icon" href="/uppy/images/logos/uppy-dog-head-arrow.png" type="image/x-icon">
+    <link rel="alternate" type="application/rss+xml" title="Uppy" href="/atom.xml">
+
+    <script>
+      window.PAGE_TYPE = "examples"
+    </script>
+    
+<link rel="stylesheet" href="/uppy/css/main.css?version=2">
+
+    <!-- ^ poor man's solution to css cache busting. bump the version when there's something new we really want users to see -->
+  <meta name="generator" content="Hexo 4.2.1"></head>
+  <body class="page-inner ">
+    <div class="page">
+      <div class="TransloaditBar js-TransloaditBar">
+        <div class="TransloaditBar-about">
+          <!-- <a class="TransloaditBar-logo" href="https://transloadit.com/" target="_blank" rel="noopener">
+            <img class="TransloaditBar-logoImg" src="/uppy/images/transloadit-white-glyph.svg" width="20" height="20" alt="Transloadit">
+          </a> -->
+          <!-- <span>Uppy is an open source project by <a class="TransloaditBar-link" href="https://transloadit.com/" target="_blank">Transloadit</a></span> -->
+          This website is no longer maintained, please visit <a href="//uppy.io" target="_blank" rel="noopener" style="color:inherit">uppy.io</a> to get up-to-date info about Uppy.
+        </div>
+      </div>
+
+      <header id="header" class="MainHeader js-MainHeader">
+        <button class="MainHeader-menuBtn js-MenuBtn"></button>
+
+        <span id="logo" class="MainLogo">
+          <a class="MainLogo-link" href="/uppy/">Uppy</a>
+          <!-- Was used for 1.0, we can re-use for 2.0 or major announcements -->
+          <!-- <a class="MainLogo-announcement" href="/blog/2019/04/1.0/">
+            1.0
+            <span class="MainLogo-emoji">
+              <img src="/uppy/images/party-popper.png" srcset="/uppy/images/party-popper@2x.png 2x" alt="🎉">
+            </span>
+          </a> -->
+        </span>
+
+        <nav>
+          <ul id="nav" class="MainMenu">
+            <!-- @todo uncomment search input when we get our own swifttype -->
+<!-- <li>
+  <form id="search-form" class="MainMenu-search">
+    <input type="text" id="search-query" class="MainMenu-searchQuery st-default-search-input">
+  </form>
+</li> -->
+<!--li><a href="/uppy/guide/" class="nav-link">Guide</a></li-->
+<li><a href="/uppy/docs/" class="nav-link">Docs</a></li>
+<li><a href="/uppy/examples/dashboard/" class="nav-link current">Examples</a></li>
+<!--li><a href="/uppy/stats/" class="nav-link">Stats</a></li-->
+<li><a href="/uppy/blog/" class="nav-link">Blog</a></li>
+<li><a href="/uppy/support/" class="nav-link">Support</a></li>
+<li><a href="https://github.com/transloadit/uppy" target="_blank" rel="noopener" class="nav-link">GitHub</a></li>
+
+          </ul>
+        </nav>
+
+        <div class="MainHeader-tagline">
+          The file uploader that <span class="MainHeader-taglinePart js-MainHeader-taglinePart is-visible">loves to play fetch</span>
+        </div>
+
+        <ul class="MainHeader-taglineList js-MainHeader-taglineList">
+          
+          <li>won’t chew on your shoes</li>
+          
+          <li>is fully housebroken</li>
+          
+          <li>just wants to play with you</li>
+          
+          <li>doesn’t hump your leg</li>
+          
+          <li>also accepts cat pictures</li>
+          
+          <li>loves you unconditionally</li>
+          
+          <li>you don’t have to keep on a leash</li>
+          
+          <li>won’t pee on your rug</li>
+          
+          <li>loves to play fetch</li>
+          
+          <li>doesn’t bite (hard)</li>
+          
+          <li>won’t bark at the mailman</li>
+          
+          <li>is great with the kids</li>
+          
+          <li>can digest anything, even chocolate cake</li>
+          
+          <li>is always happy to see you</li>
+          
+          <li>isn’t afraid of fireworks</li>
+          
+          <li>is allowed everywhere</li>
+          
+        </ul>
+      </header>
+
+      <main class="MainContent js-MainContent" id="main">
+        
+          <div class="Sidebar js-Sidebar">
+  <ul class="main-menu">
+    <!-- @todo uncomment search input when we get our own swifttype -->
+<!-- <li>
+  <form id="search-form" class="MainMenu-search">
+    <input type="text" id="search-query" class="MainMenu-searchQuery st-default-search-input">
+  </form>
+</li> -->
+<!--li><a href="/uppy/guide/" class="nav-link">Guide</a></li-->
+<li><a href="/uppy/docs/" class="nav-link">Docs</a></li>
+<li><a href="/uppy/examples/dashboard/" class="nav-link current">Examples</a></li>
+<!--li><a href="/uppy/stats/" class="nav-link">Stats</a></li-->
+<li><a href="/uppy/blog/" class="nav-link">Blog</a></li>
+<li><a href="/uppy/support/" class="nav-link">Support</a></li>
+<li><a href="https://github.com/transloadit/uppy" target="_blank" rel="noopener" class="nav-link">GitHub</a></li>
+
+  </ul>
+  
+  
+  <div class="list">
+    <h2>
+      <a href="/uppy/examples">Examples</a>
+    </h2>
+      
+    <div class="menu-root">
+      
+
+    
+    
+    
+    <ul>
+      
+        
+        
+        <li key="p-0-examples/dashboard/index.html">
+          <a href="/examples/dashboard/" class="sidebar-link">Dashboard</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-1-examples/dragdrop/index.html">
+          <a href="/examples/dragdrop/" class="sidebar-link">Drag and Drop</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-2-examples/xhrupload/index.html">
+          <a href="/examples/xhrupload/" class="sidebar-link">XHR Upload</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-3-examples/i18n/index.html">
+          <a href="/examples/i18n/" class="sidebar-link">CDN & Locales</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-4-examples/statusbar/index.html">
+          <a href="/examples/statusbar/" class="sidebar-link current">Status Bar</a>
+          
+        </li>
+      
+    </ul>
+
+    
+    
+    
+        
+        <h3 id="" key="category-1-File Processing" data-scroll="no"><a href="/examples/markdown-snippets/">File Processing</a></h3>
+        
+    
+    <ul>
+      
+        
+        
+        <li key="p-0-examples/markdown-snippets/index.html">
+          <a href="/examples/markdown-snippets/" class="sidebar-link">Transloadit Markdown Snippets</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-1-examples/transloadit/index.html">
+          <a href="/examples/transloadit/" class="sidebar-link">Transloadit</a>
+          
+        </li>
+      
+    </ul>
+
+
+    </div>
+
+    <ul class="Social">
+  <li><a href="https://twitter.com/uppy_io" target="_blank" rel="noopener" class="twitter-follow-button" data-show-count="false" data-dnt="true">Follow @uppy_io</a></li>
+  <li><iframe src="https://ghbtns.com/github-btn.html?user=transloadit&repo=uppy&type=watch&count=true"
+allowtransparency="true" frameborder="0" scrolling="0" width="100" height="20"></iframe></li>
+  <!-- to regenerate you can use this link: https://img.shields.io/badge/community-forum-d8006a.svg -->
+  <li><a href="https://community.transloadit.com/c/uppy" target="_blank" rel="noopener"><img src="/uppy/images/community-forum-d8006a.svg" /> </a></li>
+  <li class="BuildBadge">
+   <span class="wrapper">
+     <a href="https://github.com/transloadit/uppy/actions" target="_blank" rel="noopener"><img src="https://github.com/transloadit/uppy/workflows/End-to-end%20tests/badge.svg" alt="Build Status"></a>
+   </span>
+  </li>
+</ul>
+
+    </div>
+  
+</div>
+
+
+<div class="Content js-Content examples with-sidebar">
+  <h1>Status Bar Example</h1>
+
+  <html><head></head><body><blockquote><p>The StatusBar plugin shows detailed upload/processing progress with pause/resume/cancel buttons.</p>
+</blockquote>
+
+<!-- Basic Uppy styles -->
+<link rel="stylesheet" href="/uppy/uppy/uppy.min.css">
+
+<div class="grid">
+  <div class="column-full">
+    <div class="UppyInput"></div>
+    <div class="UppyInput-Progress"></div>
+  </div>
+</div>
+
+<script src="app.js"></script>
+
+<hr>
+
+<p id="console-wrapper">
+  Console output: <br>
+</p>
+
+<p>
+  On this page we're using the following HTML snippet:
+</p>
+<figure class="highlight html"><table><tbody><tr><td class="code"><pre><span class="token comment">&lt;!-- Basic Uppy styles --&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/uppy/uppy/uppy.min.css<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>grid<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>column-full<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>UppyInput<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>UppyInput-Progress<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span></pre></td></tr></tbody></table></figure>
+
+<p>
+  Along with this JavaScript:
+</p>
+<figure class="highlight js"><table><tbody><tr><td class="code"><pre><span class="token keyword module">import</span> <span class="token imports"><span class="token maybe-class-name">Uppy</span></span> <span class="token keyword module">from</span> <span class="token string">'@uppy/core'</span>
+<span class="token keyword module">import</span> <span class="token imports"><span class="token maybe-class-name">FileInput</span></span> <span class="token keyword module">from</span> <span class="token string">'@uppy/file-input'</span>
+<span class="token keyword module">import</span> <span class="token imports"><span class="token maybe-class-name">StatusBar</span></span> <span class="token keyword module">from</span> <span class="token string">'@uppy/status-bar'</span>
+<span class="token keyword module">import</span> <span class="token imports"><span class="token maybe-class-name">Tus</span></span> <span class="token keyword module">from</span> <span class="token string">'@uppy/tus'</span>
+
+<span class="token keyword">const</span> uppyOne <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Uppy</span><span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token literal-property property">debug</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token literal-property property">autoProceed</span><span class="token operator">:</span> <span class="token boolean">true</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+uppyOne
+  <span class="token punctuation">.</span><span class="token method function property-access">use</span><span class="token punctuation">(</span><span class="token maybe-class-name">FileInput</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token literal-property property">target</span><span class="token operator">:</span> <span class="token string">'.UppyInput'</span><span class="token punctuation">,</span> <span class="token literal-property property">pretty</span><span class="token operator">:</span> <span class="token boolean">false</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token method function property-access">use</span><span class="token punctuation">(</span><span class="token maybe-class-name">Tus</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token literal-property property">endpoint</span><span class="token operator">:</span> <span class="token string">'https://tusd.tusdemo.net/files/'</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">.</span><span class="token method function property-access">use</span><span class="token punctuation">(</span><span class="token maybe-class-name">StatusBar</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">target</span><span class="token operator">:</span> <span class="token string">'.UppyInput-Progress'</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">hideUploadButton</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    <span class="token literal-property property">hideAfterFinish</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span></pre></td></tr></tbody></table></figure>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script></body></html>
+
+  <p>Please see <a href="/uppy/docs/">documentation</a> for details.</p>
+
+  <hr>
+
+  <p>Hey there stranger! Uppy <img src="/uppy/images/emojis/dog.png" width="14" align="absmiddle">
+    is actively developed and the example section
+    is our playground. Things might not work, but we're working hard to improve.</p>
+  <p>We're on a monthly release cycle and our latest version is
+    <a href="https://github.com/transloadit/uppy/blob/main/CHANGELOG.md#361" target="_blank" rel="noopener">v3.6.1</a>,
+    but the example pages reflect the latest work in our main branch. Here's
+    <a href="https://github.com/transloadit/uppy/compare/uppy@3.6.1...main" target="_blank" rel="noopener">what changed in main since v3.6.1</a>
+    in terms of commits, while the CHANGELOG
+    provides a higher level view of the things planned for our
+    <a href="https://github.com/transloadit/uppy/blob/main/CHANGELOG.md#next" target="_blank" rel="noopener">next release</a>.</p>
+
+  <!-- Add textarea already so it's available immediately for logging.
+  It is later made visible, and moved into the #console-wrapper to position it in layout how
+  you see fit. -->
+
+  <blockquote>Files from the examples are uploaded to our test servers and deleted every 24-72 hours.</blockquote>
+
+  <textarea id="console-log" class="Console"></textarea>
+  <script>
+    function customLog (log, container) {
+      return function () {
+        var text = [];
+        // loop through `arguments`, because console.log accepts multiple
+        var args = Array.prototype.slice.call(arguments);
+        args.forEach(function (arg) {
+          if (arg !== (arg + '')) {
+            // try/catch to prevent TypeError: cyclic object value
+            try {
+              arg = JSON.stringify(arg);
+            } catch (err) {}
+          }
+          text.push(arg);
+        })
+
+        text = text.join(' ');
+
+        log(text);
+
+        container.value += text + '\n';
+        container.scrollTop = container.scrollHeight;
+      };
+    }
+
+    // IE 10 doesn’t support console.debug
+    var consoleDebug = console.debug || console.log
+
+    console.log = customLog(console.log.bind(console), document.getElementById("console-log"));
+    console.debug = customLog(consoleDebug.bind(console), document.getElementById("console-log"));
+    console.warn = customLog(console.warn.bind(console), document.getElementById("console-log"));
+    console.error = customLog(console.error.bind(console), document.getElementById("console-log"));
+  </script>
+
+  <script>
+    // #console-log textarea is declared earlier so it's available immediately for logging.
+    // Here it is made visible, and moved into the #console-wrapper, so you can position it in the layout how
+    // you see fit.
+    document.getElementById('console-wrapper').appendChild(document.getElementById('console-log'));
+    document.getElementById('console-log').style.display = 'block';
+  </script>
+
+  <div class="footer">Caught a mistake or want to contribute to the documentation?
+     <a href="https://github.com/transloadit/uppy/blob/main/website/src/examples/statusbar/index.ejs" rel="noreferrer noopener" target="_blank">Edit/fork this page directly on Github</a>!
+  </div>
+</div>
+
+        
+      </main>
+
+      <script defer data-domain="transloadit.github.io" src="https://analytics.transloadit.com/js/plausible.js"></script>
+
+
+      
+        <script src="/uppy/js/smooth-scroll.min.js"></script>
+        <!-- Place this tag in your head or just before your close body tag. -->
+        <script async defer src="https://buttons.github.io/buttons.js"></script>
+      
+      <script src="/uppy/js/common.js"></script>
+
+      <!-- Twitter follow button script -->
+      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+    </div>
+  </body>
+</html>

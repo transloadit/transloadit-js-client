@@ -1,0 +1,824 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>AWS S3 Multipart — Uppy</title>
+    <meta charset="utf-8">
+    <meta name="title" content="AWS S3 Multipart — Uppy">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@uppy_io">
+    <meta name="twitter:creator" content="@uppy_io">
+    <meta property="og:url" content="https://transloadit.github.io/uppy/docs/aws-s3-multipart/index.html">
+    <meta property="og:title" content="AWS S3 Multipart — Uppy">
+    <meta name="twitter:title" content="AWS S3 Multipart — Uppy">
+    <meta name="twitter:description" content="">
+    <meta property="og:image" content="http://transloadit.github.io/uppy/images/uppy-social-pink.png">
+    <meta name="twitter:image" content="http://transloadit.github.io/uppy/images/uppy-social-pink.png">
+
+    <meta name="google-site-verification" content="JxARoHXoCI8bD07pLV_u3z6xpuWNcSIZIcHEytyCkUc" />
+
+    <link rel="icon" href="/uppy/images/logos/uppy-dog-head-arrow.png" type="image/x-icon">
+    <link rel="alternate" type="application/rss+xml" title="Uppy" href="/atom.xml">
+
+    <script>
+      window.PAGE_TYPE = "docs"
+    </script>
+    
+<link rel="stylesheet" href="/uppy/css/main.css?version=2">
+
+    <!-- ^ poor man's solution to css cache busting. bump the version when there's something new we really want users to see -->
+  <meta name="generator" content="Hexo 4.2.1"></head>
+  <body class="page-inner ">
+    <div class="page">
+      <div class="TransloaditBar js-TransloaditBar">
+        <div class="TransloaditBar-about">
+          <!-- <a class="TransloaditBar-logo" href="https://transloadit.com/" target="_blank" rel="noopener">
+            <img class="TransloaditBar-logoImg" src="/uppy/images/transloadit-white-glyph.svg" width="20" height="20" alt="Transloadit">
+          </a> -->
+          <!-- <span>Uppy is an open source project by <a class="TransloaditBar-link" href="https://transloadit.com/" target="_blank">Transloadit</a></span> -->
+          This website is no longer maintained, please visit <a href="//uppy.io" target="_blank" rel="noopener" style="color:inherit">uppy.io</a> to get up-to-date info about Uppy.
+        </div>
+      </div>
+
+      <header id="header" class="MainHeader js-MainHeader">
+        <button class="MainHeader-menuBtn js-MenuBtn"></button>
+
+        <span id="logo" class="MainLogo">
+          <a class="MainLogo-link" href="/uppy/">Uppy</a>
+          <!-- Was used for 1.0, we can re-use for 2.0 or major announcements -->
+          <!-- <a class="MainLogo-announcement" href="/blog/2019/04/1.0/">
+            1.0
+            <span class="MainLogo-emoji">
+              <img src="/uppy/images/party-popper.png" srcset="/uppy/images/party-popper@2x.png 2x" alt="🎉">
+            </span>
+          </a> -->
+        </span>
+
+        <nav>
+          <ul id="nav" class="MainMenu">
+            <!-- @todo uncomment search input when we get our own swifttype -->
+<!-- <li>
+  <form id="search-form" class="MainMenu-search">
+    <input type="text" id="search-query" class="MainMenu-searchQuery st-default-search-input">
+  </form>
+</li> -->
+<!--li><a href="/uppy/guide/" class="nav-link">Guide</a></li-->
+<li><a href="/uppy/docs/" class="nav-link current">Docs</a></li>
+<li><a href="/uppy/examples/dashboard/" class="nav-link">Examples</a></li>
+<!--li><a href="/uppy/stats/" class="nav-link">Stats</a></li-->
+<li><a href="/uppy/blog/" class="nav-link">Blog</a></li>
+<li><a href="/uppy/support/" class="nav-link">Support</a></li>
+<li><a href="https://github.com/transloadit/uppy" target="_blank" rel="noopener" class="nav-link">GitHub</a></li>
+
+          </ul>
+        </nav>
+
+        <div class="MainHeader-tagline">
+          The file uploader that <span class="MainHeader-taglinePart js-MainHeader-taglinePart is-visible">loves to play fetch</span>
+        </div>
+
+        <ul class="MainHeader-taglineList js-MainHeader-taglineList">
+          
+          <li>won’t chew on your shoes</li>
+          
+          <li>is fully housebroken</li>
+          
+          <li>just wants to play with you</li>
+          
+          <li>doesn’t hump your leg</li>
+          
+          <li>also accepts cat pictures</li>
+          
+          <li>loves you unconditionally</li>
+          
+          <li>you don’t have to keep on a leash</li>
+          
+          <li>won’t pee on your rug</li>
+          
+          <li>loves to play fetch</li>
+          
+          <li>doesn’t bite (hard)</li>
+          
+          <li>won’t bark at the mailman</li>
+          
+          <li>is great with the kids</li>
+          
+          <li>can digest anything, even chocolate cake</li>
+          
+          <li>is always happy to see you</li>
+          
+          <li>isn’t afraid of fireworks</li>
+          
+          <li>is allowed everywhere</li>
+          
+        </ul>
+      </header>
+
+      <main class="MainContent js-MainContent" id="main">
+        
+          
+    <div class="Sidebar js-Sidebar">
+  <ul class="main-menu">
+    <!-- @todo uncomment search input when we get our own swifttype -->
+<!-- <li>
+  <form id="search-form" class="MainMenu-search">
+    <input type="text" id="search-query" class="MainMenu-searchQuery st-default-search-input">
+  </form>
+</li> -->
+<!--li><a href="/uppy/guide/" class="nav-link">Guide</a></li-->
+<li><a href="/uppy/docs/" class="nav-link current">Docs</a></li>
+<li><a href="/uppy/examples/dashboard/" class="nav-link">Examples</a></li>
+<!--li><a href="/uppy/stats/" class="nav-link">Stats</a></li-->
+<li><a href="/uppy/blog/" class="nav-link">Blog</a></li>
+<li><a href="/uppy/support/" class="nav-link">Support</a></li>
+<li><a href="https://github.com/transloadit/uppy" target="_blank" rel="noopener" class="nav-link">GitHub</a></li>
+
+  </ul>
+  
+  
+  <div class="list">
+    <h2>
+      <a href="/uppy/docs">Docs</a>
+    </h2>
+      
+    <div class="menu-root">
+      
+
+    
+    
+    
+    <ul>
+      
+        
+        
+        <li key="p-0-docs/index.html">
+          <a href="/docs/" class="sidebar-link">Getting Started</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-1-docs/uppy/index.html">
+          <a href="/docs/uppy/" class="sidebar-link">Uppy</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-2-docs/companion/index.html">
+          <a href="/docs/companion/" class="sidebar-link">Companion</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-3-docs/plugins/index.html">
+          <a href="/docs/plugins/" class="sidebar-link">List of Plugins</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-4-docs/plugin-options/index.html">
+          <a href="/docs/plugin-options/" class="sidebar-link">Common Plugin Options</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-5-docs/stores/index.html">
+          <a href="/docs/stores/" class="sidebar-link">Custom Stores</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-6-docs/community-projects/index.html">
+          <a href="/docs/community-projects/" class="sidebar-link">Community Projects</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-7-docs/locales/index.html">
+          <a href="/docs/locales/" class="sidebar-link">Locale Packs</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-8-docs/migration-guides.html">
+          <a href="/docs/migration-guides.html" class="sidebar-link">Migration guides</a>
+          
+        </li>
+      
+    </ul>
+
+    
+    
+    
+        
+        <h3 id="" key="category-1-UI Elements" data-scroll="no">UI Elements</h3>
+        
+    
+    <ul>
+      
+        
+        
+        <li key="p-0-docs/dashboard/index.html">
+          <a href="/docs/dashboard/" class="sidebar-link">Dashboard</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-1-docs/status-bar/index.html">
+          <a href="/docs/status-bar/" class="sidebar-link">Status Bar</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-2-docs/progress-bar/index.html">
+          <a href="/docs/progress-bar/" class="sidebar-link">Progress Bar</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-3-docs/informer/index.html">
+          <a href="/docs/informer/" class="sidebar-link">Informer</a>
+          
+        </li>
+      
+    </ul>
+
+    
+    
+    
+        
+        <h3 id="" key="category-2-Sources" data-scroll="no">Sources</h3>
+        
+    
+    <ul>
+      
+        
+        
+        <li key="p-0-docs/drag-drop/index.html">
+          <a href="/docs/drag-drop/" class="sidebar-link">Drag & Drop</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-1-docs/drop-target/index.html">
+          <a href="/docs/drop-target/" class="sidebar-link">Drop Target</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-2-docs/file-input/index.html">
+          <a href="/docs/file-input/" class="sidebar-link">File Input</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-3-docs/audio/index.html">
+          <a href="/docs/audio/" class="sidebar-link">Audio</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-4-docs/webcam/index.html">
+          <a href="/docs/webcam/" class="sidebar-link">Webcam</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-5-docs/screen-capture/index.html">
+          <a href="/docs/screen-capture/" class="sidebar-link">Screen capture</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-6-docs/providers/index.html">
+          <a href="/docs/providers/" class="sidebar-link">Provider Plugins</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-7-docs/box/index.html">
+          <span title='Requires Companion'>ⓒ </span><a href="/docs/box/" class="sidebar-link">Box</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-8-docs/dropbox/index.html">
+          <span title='Requires Companion'>ⓒ </span><a href="/docs/dropbox/" class="sidebar-link">Dropbox</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-9-docs/google-drive/index.html">
+          <span title='Requires Companion'>ⓒ </span><a href="/docs/google-drive/" class="sidebar-link">Google Drive</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-10-docs/instagram/index.html">
+          <span title='Requires Companion'>ⓒ </span><a href="/docs/instagram/" class="sidebar-link">Instagram</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-11-docs/onedrive/index.html">
+          <span title='Requires Companion'>ⓒ </span><a href="/docs/onedrive/" class="sidebar-link">OneDrive</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-12-docs/zoom/index.html">
+          <span title='Requires Companion'>ⓒ </span><a href="/docs/zoom/" class="sidebar-link">Zoom</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-13-docs/facebook/index.html">
+          <span title='Requires Companion'>ⓒ </span><a href="/docs/facebook/" class="sidebar-link">Facebook</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-14-docs/unsplash/index.html">
+          <span title='Requires Companion'>ⓒ </span><a href="/docs/unsplash/" class="sidebar-link">Unsplash</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-15-docs/url/index.html">
+          <span title='Requires Companion'>ⓒ </span><a href="/docs/url/" class="sidebar-link">Import From URL</a>
+          
+        </li>
+      
+    </ul>
+
+    
+    
+    
+        
+        <h3 id="" key="category-3-Destinations" data-scroll="no">Destinations</h3>
+        
+    
+    <ul>
+      
+        
+        
+        <li key="p-0-docs/tus/index.html">
+          <a href="/docs/tus/" class="sidebar-link">Tus</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-1-docs/xhr-upload/index.html">
+          <a href="/docs/xhr-upload/" class="sidebar-link">XHR</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-2-docs/aws-s3/index.html">
+          <a href="/docs/aws-s3/" class="sidebar-link">AWS S3</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-3-docs/aws-s3-multipart/index.html">
+          <a href="/docs/aws-s3-multipart/" class="sidebar-link current">AWS S3 Multipart</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-4-docs/transloadit/index.html">
+          <a href="/docs/transloadit/" class="sidebar-link">Transloadit</a>
+          
+        </li>
+      
+    </ul>
+
+    
+    
+    
+        
+        <h3 id="" key="category-4-Miscellaneous" data-scroll="no">Miscellaneous</h3>
+        
+    
+    <ul>
+      
+        
+        
+        <li key="p-0-docs/form/index.html">
+          <a href="/docs/form/" class="sidebar-link">Form</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-1-docs/golden-retriever/index.html">
+          <a href="/docs/golden-retriever/" class="sidebar-link">Golden Retriever</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-2-docs/image-editor/index.html">
+          <a href="/docs/image-editor/" class="sidebar-link">Image Editor</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-3-docs/thumbnail-generator/index.html">
+          <a href="/docs/thumbnail-generator/" class="sidebar-link">Thumbnail Generator</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-4-docs/redux/index.html">
+          <a href="/docs/redux/" class="sidebar-link">Redux</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-5-docs/compressor/index.html">
+          <a href="/docs/compressor/" class="sidebar-link">Compressor</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-6-docs/remote-sources/index.html">
+          <a href="/docs/remote-sources/" class="sidebar-link">Remote Sources</a>
+          
+        </li>
+      
+    </ul>
+
+    
+    
+    
+    <ul>
+      
+    </ul>
+
+    
+    
+    
+        
+        <h3 id="" key="category-6-React" data-scroll="no"><a href="/docs/react/">React</a></h3>
+        
+    
+    <ul>
+      
+        
+        
+        <li key="p-0-docs/react/index.html">
+          <a href="/docs/react/" class="sidebar-link">Introduction</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-1-docs/react/status-bar/index.html">
+          <a href="/docs/react/status-bar/" class="sidebar-link">&lt;StatusBar /></a>
+          
+        </li>
+      
+        
+        
+        <li key="p-2-docs/react/drag-drop/index.html">
+          <a href="/docs/react/drag-drop/" class="sidebar-link">&lt;DragDrop /></a>
+          
+        </li>
+      
+        
+        
+        <li key="p-3-docs/react/file-input/index.html">
+          <a href="/docs/react/file-input/" class="sidebar-link">&lt;FileInput /></a>
+          
+        </li>
+      
+        
+        
+        <li key="p-4-docs/react/progress-bar/index.html">
+          <a href="/docs/react/progress-bar/" class="sidebar-link">&lt;ProgressBar /></a>
+          
+        </li>
+      
+        
+        
+        <li key="p-5-docs/react/dashboard/index.html">
+          <a href="/docs/react/dashboard/" class="sidebar-link">&lt;Dashboard /></a>
+          
+        </li>
+      
+        
+        
+        <li key="p-6-docs/react/dashboard-modal/index.html">
+          <a href="/docs/react/dashboard-modal/" class="sidebar-link">&lt;DashboardModal /></a>
+          
+        </li>
+      
+        
+        
+        <li key="p-7-docs/react/native/index.html">
+          <a href="/docs/react/native/" class="sidebar-link">React Native</a>
+          
+        </li>
+      
+    </ul>
+
+    
+    
+    
+        
+        <h3 id="" key="category-7-Other Integrations" data-scroll="no"><a href="/docs/vue/">Other Integrations</a></h3>
+        
+    
+    <ul>
+      
+        
+        
+        <li key="p-0-docs/angular/index.html">
+          <a href="/docs/angular/" class="sidebar-link">Angular</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-1-docs/vue/index.html">
+          <a href="/docs/vue/" class="sidebar-link">Vue</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-2-docs/svelte/index.html">
+          <a href="/docs/svelte/" class="sidebar-link">Svelte</a>
+          
+        </li>
+      
+    </ul>
+
+    
+    
+    
+        
+        <h3 id="" key="category-8-Contributing" data-scroll="no"><a href="/docs/contributing.html">Contributing</a></h3>
+        
+    
+    <ul>
+      
+        
+        
+        <li key="p-0-docs/contributing.html">
+          <a href="/docs/contributing.html" class="sidebar-link">Contributing</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-1-docs/writing-plugins/index.html">
+          <a href="/docs/writing-plugins/" class="sidebar-link">Writing Plugins</a>
+          
+        </li>
+      
+    </ul>
+
+
+    </div>
+
+    <ul class="Social">
+  <li><a href="https://twitter.com/uppy_io" target="_blank" rel="noopener" class="twitter-follow-button" data-show-count="false" data-dnt="true">Follow @uppy_io</a></li>
+  <li><iframe src="https://ghbtns.com/github-btn.html?user=transloadit&repo=uppy&type=watch&count=true"
+allowtransparency="true" frameborder="0" scrolling="0" width="100" height="20"></iframe></li>
+  <!-- to regenerate you can use this link: https://img.shields.io/badge/community-forum-d8006a.svg -->
+  <li><a href="https://community.transloadit.com/c/uppy" target="_blank" rel="noopener"><img src="/uppy/images/community-forum-d8006a.svg" /> </a></li>
+  <li class="BuildBadge">
+   <span class="wrapper">
+     <a href="https://github.com/transloadit/uppy/actions" target="_blank" rel="noopener"><img src="https://github.com/transloadit/uppy/workflows/End-to-end%20tests/badge.svg" alt="Build Status"></a>
+   </span>
+  </li>
+</ul>
+
+    </div>
+  
+</div>
+
+
+
+<div class="Content js-Content docs with-sidebar">
+    <h1>AWS S3 Multipart</h1>
+    <html><head></head><body><p>The <code>@uppy/aws-s3-multipart</code> plugin can be used to upload files directly to an S3 bucket using S3’s Multipart upload strategy. With this strategy, files are chopped up in parts of 5MB+ each, so they can be uploaded concurrently. It’s also quite reliable: if a single part fails to upload, only that 5MB chunk has to be retried.</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="token keyword module">import</span> <span class="token imports"><span class="token maybe-class-name">AwsS3Multipart</span></span> <span class="token keyword module">from</span> <span class="token string">'@uppy/aws-s3-multipart'</span>
+
+uppy<span class="token punctuation">.</span><span class="token method function property-access">use</span><span class="token punctuation">(</span><span class="token maybe-class-name">AwsS3Multipart</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  <span class="token literal-property property">limit</span><span class="token operator">:</span> <span class="token number">4</span><span class="token punctuation">,</span>
+  <span class="token literal-property property">companionUrl</span><span class="token operator">:</span> <span class="token string">'https://uppy-companion.myapp.net/'</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span></pre></td></tr></table></figure>
+<h2 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h2><p>This plugin is published as the <code>@uppy/aws-s3-multipart</code> package.</p>
+<p>Install from NPM:</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="token function">npm</span> <span class="token function">install</span> @uppy/aws-s3-multipart</pre></td></tr></table></figure>
+<p>In the <a href="/docs/#With-a-script-tag">CDN package</a>, the plugin class is available on the <code>Uppy</code> global object:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="token keyword">const</span> <span class="token punctuation">{</span> <span class="token maybe-class-name">AwsS3Multipart</span> <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token maybe-class-name">Uppy</span></pre></td></tr></table></figure>
+<h2 id="Options"><a href="#Options" class="headerlink" title="Options"></a>Options</h2><p>The <code>@uppy/aws-s3-multipart</code> plugin has the following configurable options:</p>
+<h3 id="limit-6"><a href="#limit-6" class="headerlink" title="limit: 6"></a><code>limit: 6</code></h3><p>The maximum amount of chunks to upload simultaneously. You should set the limit carefully. Setting it to a value too high could cause issues where the presigned URLs begin to expire before the chunks they are for start uploading. Too low and you will end up with a lot of extra round trips to your server (or Companion) than necessary to presign URLs. If the default chunk size of 5MB is used, a <code>limit</code> between 5 and 6 is recommended.</p>
+<p>Because HTTP/1.1 limits the number of concurrent requests to one origin to 6, it’s recommended to always set a limit of 6 or smaller for all your uploads, or to not override the default.</p>
+<h3 id="retryDelays-0-1000-3000-5000"><a href="#retryDelays-0-1000-3000-5000" class="headerlink" title="retryDelays: [0, 1000, 3000, 5000]"></a><code>retryDelays: [0, 1000, 3000, 5000]</code></h3><p><code>retryDelays</code> are the intervals in milliseconds used to retry a failed chunk.</p>
+<p>By default, we first retry instantly; if that fails, we retry after 1 second; if that fails, we retry after 3 seconds, etc.</p>
+<p>Set to <code>null</code> to disable automatic retries, and fail instantly if any chunk fails to upload.</p>
+<h3 id="companionUrl-null"><a href="#companionUrl-null" class="headerlink" title="companionUrl: null"></a><code>companionUrl: null</code></h3><p>URL of the <a href="/docs/companion">Companion</a> instance to use for proxying calls to the S3 Multipart API.</p>
+<p>This will be used by the default implementations of the upload-related functions below. If you provide your own implementations, a <code>companionUrl</code> is unnecessary.</p>
+<h3 id="companionHeaders"><a href="#companionHeaders" class="headerlink" title="companionHeaders: {}"></a><code>companionHeaders: {}</code></h3><p>Custom headers that should be sent along to <a href="/docs/companion">Companion</a> on every request.</p>
+<p>This will be used by the default implementations of the upload-related functions below. If you provide your own implementations, these headers are not sent automatically.</p>
+<h3 id="companionCookiesRule-39-same-origin-39"><a href="#companionCookiesRule-39-same-origin-39" class="headerlink" title="companionCookiesRule: 'same-origin'"></a><code>companionCookiesRule: 'same-origin'</code></h3><p>This option correlates to the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Request/credentials" target="_blank" rel="noopener">RequestCredentials value</a>, which tells the plugin whether to send cookies to <a href="/docs/companion">Companion</a>.</p>
+<h3 id="allowedMetaFields-null"><a href="#allowedMetaFields-null" class="headerlink" title="allowedMetaFields: null"></a><code>allowedMetaFields: null</code></h3><p>Pass an array of field names to limit the metadata fields that will be added to upload as query parameters.</p>
+<ul>
+<li>Set this to <code>['name']</code> to only send the <code>name</code> field.</li>
+<li>Set this to <code>null</code> (the default) to send <em>all</em> metadata fields.</li>
+<li>Set this to an empty array <code>[]</code> to not send any fields.</li>
+</ul>
+<h3 id="getChunkSize-file"><a href="#getChunkSize-file" class="headerlink" title="getChunkSize(file)"></a><code>getChunkSize(file)</code></h3><p>A function that returns the minimum chunk size to use when uploading the given file.</p>
+<p>The S3 Multipart plugin uploads files in chunks. Chunks are sent one by one to have presigned URLs generated via <a href="#signPart-file-partData"><code>signPart()</code></a>. To reduce the amount of requests for large files, you can choose a larger chunk size, at the cost of having to re-upload more data if one chunk fails to upload.</p>
+<p>S3 requires a minimum chunk size of 5MB, and supports at most 10,000 chunks per multipart upload. If <code>getChunkSize()</code> returns a size that’s too small, Uppy will increase it to S3’s minimum requirements.</p>
+<h3 id="createMultipartUpload-file"><a href="#createMultipartUpload-file" class="headerlink" title="createMultipartUpload(file)"></a><code>createMultipartUpload(file)</code></h3><p>A function that calls the S3 Multipart API to create a new upload. <code>file</code> is the file object from Uppy’s state. The most relevant keys are <code>file.name</code> and <code>file.type</code>.</p>
+<p>Return a Promise for an object with keys:</p>
+<ul>
+<li><code>uploadId</code> - The UploadID returned by S3.</li>
+<li><code>key</code> - The object key for the file. This needs to be returned to allow it to be different from the <code>file.name</code>.</li>
+</ul>
+<p>The default implementation calls out to Companion’s S3 signing endpoints.</p>
+<h3 id="listParts-file-uploadId-key"><a href="#listParts-file-uploadId-key" class="headerlink" title="listParts(file, { uploadId, key })"></a><code>listParts(file, { uploadId, key })</code></h3><p>A function that calls the S3 Multipart API to list the parts of a file that have already been uploaded. Receives the <code>file</code> object from Uppy’s state, and an object with keys:</p>
+<ul>
+<li><code>uploadId</code> - The UploadID of this Multipart upload.</li>
+<li><code>key</code> - The object key of this Multipart upload.</li>
+</ul>
+<p>Return a Promise for an array of S3 Part objects, as returned by the S3 Multipart API. Each object has keys:</p>
+<ul>
+<li><code>PartNumber</code> - The index in the file of the uploaded part.</li>
+<li><code>Size</code> - The size of the part in bytes.</li>
+<li><code>ETag</code> - The ETag of the part, used to identify it when completing the multipart upload and combining all parts into a single file.</li>
+</ul>
+<p>The default implementation calls out to Companion’s S3 signing endpoints.</p>
+<h3 id="prepareUploadParts-file-partData"><a href="#prepareUploadParts-file-partData" class="headerlink" title="prepareUploadParts(file, partData)"></a><code>prepareUploadParts(file, partData)</code></h3><blockquote>
+<p>This option is deprecated. Use <a href="#signPart-file-partData"><code>signPart()</code></a> instead.</p>
+</blockquote>
+<p>A function that generates a batch of signed URLs for the specified part numbers. Receives the <code>file</code> object from Uppy’s state. The <code>partData</code> argument is an object with keys:</p>
+<ul>
+<li><code>uploadId</code> - The UploadID of this Multipart upload.</li>
+<li><code>key</code> - The object key in the S3 bucket.</li>
+<li><code>parts</code> - An array containing a single object with the part number and chunk (<code>Array&lt;{ number: number, chunk: blob }&gt;</code>). <code>number</code> can’t be zero.</li>
+<li><code>signal</code> – An <code>AbortSignal</code> that may be used to abort an ongoing request.</li>
+</ul>
+<p><code>prepareUploadParts</code> should return a <code>Promise</code> with an <code>Object</code> with keys:</p>
+<ul>
+<li><code>presignedUrls</code> - A JavaScript object with the part numbers as keys and the presigned URL for each part as the value.</li>
+<li><code>headers</code> - <strong>(Optional)</strong> Custom headers to send along with every request per part (<code>{ 1: { 'Content-MD5': 'hash' }}</code>). These are (1-based) indexed by part number too so you can for instance send the MD5 hash validation for each part to S3.</li>
+</ul>
+<p>An example of what the return value should look like:</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="token punctuation">{</span>
+  <span class="token property">"presignedUrls"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"1"</span><span class="token operator">:</span> <span class="token string">"https://bucket.region.amazonaws.com/path/to/file.jpg?partNumber=1&amp;..."</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">"headers"</span><span class="token operator">:</span> <span class="token punctuation">{</span> 
+    <span class="token property">"1"</span><span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token property">"Content-MD5"</span><span class="token operator">:</span> <span class="token string">"foo"</span> <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></pre></td></tr></table></figure>
+<h3 id="signPart-file-partData"><a href="#signPart-file-partData" class="headerlink" title="signPart(file, partData)"></a><code>signPart(file, partData)</code></h3><p>A function that generates a signed URL for the specified part number. The <code>partData</code> argument is an object with the keys:</p>
+<ul>
+<li><code>uploadId</code> - The UploadID of this Multipart upload.</li>
+<li><code>key</code> - The object key in the S3 bucket.</li>
+<li><code>partNumber</code> - can’t be zero.</li>
+<li><code>body</code> – The data that will be signed.</li>
+<li><code>signal</code> – An <code>AbortSignal</code> that may be used to abort an ongoing request.</li>
+</ul>
+<p>This function should return a object, or a promise that resolves to an object, with the following keys:</p>
+<ul>
+<li><code>url</code> – the presigned URL, as a <code>string</code>.</li>
+<li><code>headers</code> – <strong>(Optional)</strong> Custom headers to send along with the request to S3 endpoint.</li>
+</ul>
+<p>An example of what the return value should look like:</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="token punctuation">{</span>
+  <span class="token property">"url"</span><span class="token operator">:</span> <span class="token string">"https://bucket.region.amazonaws.com/path/to/file.jpg?partNumber=1&amp;..."</span><span class="token punctuation">,</span>
+  <span class="token property">"headers"</span><span class="token operator">:</span> <span class="token punctuation">{</span> <span class="token property">"Content-MD5"</span><span class="token operator">:</span> <span class="token string">"foo"</span> <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></pre></td></tr></table></figure>
+<h3 id="abortMultipartUpload-file-uploadId-key"><a href="#abortMultipartUpload-file-uploadId-key" class="headerlink" title="abortMultipartUpload(file, { uploadId, key })"></a><code>abortMultipartUpload(file, { uploadId, key })</code></h3><p>A function that calls the S3 Multipart API to abort a Multipart upload, and removes all parts that have been uploaded so far. Receives the <code>file</code> object from Uppy’s state, and an object with keys:</p>
+<ul>
+<li><code>uploadId</code> - The UploadID of this Multipart upload.</li>
+<li><code>key</code> - The object key of this Multipart upload.</li>
+</ul>
+<p>This is typically called when the user cancels an upload. Cancellation cannot fail in Uppy, so the result of this function is ignored.</p>
+<p>The default implementation calls out to Companion’s S3 signing endpoints.</p>
+<h3 id="completeMultipartUpload-file-uploadId-key-parts"><a href="#completeMultipartUpload-file-uploadId-key-parts" class="headerlink" title="completeMultipartUpload(file, { uploadId, key, parts })"></a><code>completeMultipartUpload(file, { uploadId, key, parts })</code></h3><p>A function that calls the S3 Multipart API to complete a Multipart upload, combining all parts into a single object in the S3 bucket. Receives the <code>file</code> object from Uppy’s state, and an object with keys:</p>
+<ul>
+<li><code>uploadId</code> - The UploadID of this Multipart upload.</li>
+<li><code>key</code> - The object key of this Multipart upload.</li>
+<li><code>parts</code> - S3-style list of parts, an array of objects with <code>ETag</code> and <code>PartNumber</code> properties. This can be passed straight to S3’s Multipart API.</li>
+</ul>
+<p>Return a Promise for an object with properties:</p>
+<ul>
+<li><code>location</code> - <strong>(Optional)</strong> A publically accessible URL to the object in the S3 bucket.</li>
+</ul>
+<p>The default implementation calls out to Companion’s S3 signing endpoints.</p>
+<h2 id="S3-Bucket-Configuration"><a href="#S3-Bucket-Configuration" class="headerlink" title="S3 Bucket Configuration"></a>S3 Bucket Configuration</h2><p>This process is the same as the one described in the <a href="/docs/aws-s3/#S3-Bucket-configuration">AWS S3 plugin’s documentation</a>, except for a few differences.</p>
+<p>While the AWS S3 plugin uses <code>POST</code> requests when uploading files to an S3 bucket, the AWS S3 Multipart plugin uses <code>PUT</code> requests when uploading file parts. Additionally, the <code>ETag</code> header must also be exposed (in the response). So the CORS policy needs to look like this:</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="token punctuation">[</span>
+  <span class="token punctuation">{</span>
+    <span class="token property">"AllowedOrigins"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"https://my-app.com"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token property">"AllowedMethods"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"GET"</span><span class="token punctuation">,</span> <span class="token string">"PUT"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token property">"MaxAgeSeconds"</span><span class="token operator">:</span> <span class="token number">3000</span><span class="token punctuation">,</span>
+    <span class="token property">"AllowedHeaders"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+      <span class="token string">"Authorization"</span><span class="token punctuation">,</span>
+      <span class="token string">"x-amz-date"</span><span class="token punctuation">,</span>
+      <span class="token string">"x-amz-content-sha256"</span><span class="token punctuation">,</span>
+      <span class="token string">"content-type"</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token property">"ExposeHeaders"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"ETag"</span><span class="token punctuation">]</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token punctuation">{</span>
+    <span class="token property">"AllowedOrigins"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"*"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token property">"AllowedMethods"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"GET"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token property">"MaxAgeSeconds"</span><span class="token operator">:</span> <span class="token number">3000</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">]</span></pre></td></tr></table></figure>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script></body></html>
+    
+    
+
+    
+    <div class="footer">Caught a mistake or want to contribute to the documentation?
+       <a href="https://github.com/transloadit/uppy/blob/main/website/src/docs/aws-s3-multipart.md" rel="noreferrer noopener" target="_blank">Edit/fork this page directly on Github</a>!
+    </div>
+</div>
+
+        
+      </main>
+
+      <script defer data-domain="transloadit.github.io" src="https://analytics.transloadit.com/js/plausible.js"></script>
+
+
+      
+        <script src="/uppy/js/smooth-scroll.min.js"></script>
+        <!-- Place this tag in your head or just before your close body tag. -->
+        <script async defer src="https://buttons.github.io/buttons.js"></script>
+      
+      <script src="/uppy/js/common.js"></script>
+
+      <!-- Twitter follow button script -->
+      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+    </div>
+  </body>
+</html>

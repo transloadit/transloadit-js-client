@@ -1,0 +1,378 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Uppy 0.18: Dogumentation and The GoldenRetriever — Uppy</title>
+    <meta charset="utf-8">
+    <meta name="title" content="Uppy 0.18: Dogumentation and The GoldenRetriever — Uppy">
+    <meta name="description" content="Hi! Another month — a new Uppy release 🎉
+Note: current latest release is actually 0.19, but this post got delayed, so we are publishing it first. 0.19 post is coming next.
+New documentationDocumentation for Uppy has been re-written, and now features chapters on Uppy’s settings and API, using various plugins, and running Uppy Server. Check it out: &amp;lt;/uppy/docs/&amp;gt;. More chapters to come!
+The Go">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@uppy_io">
+    <meta name="twitter:creator" content="@uppy_io">
+    <meta property="og:url" content="https://transloadit.github.io/uppy/blog/2017/09/0.18/index.html">
+    <meta property="og:title" content="Uppy 0.18: Dogumentation and The GoldenRetriever — Uppy">
+    <meta name="twitter:title" content="Uppy 0.18: Dogumentation and The GoldenRetriever — Uppy">
+    <meta name="twitter:description" content="Hi! Another month — a new Uppy release 🎉
+Note: current latest release is actually 0.19, but this post got delayed, so we are publishing it first. 0.19 post is coming next.
+New documentationDocumentation for Uppy has been re-written, and now features chapters on Uppy’s settings and API, using various plugins, and running Uppy Server. Check it out: &lt;/uppy/docs/&gt;. More chapters to come!
+The Go">
+    <meta property="og:image" content="http://uppy.io/uppy/images/blog/0.18/golden-retriever.jpg">
+    <meta name="twitter:image" content="http://uppy.io/uppy/images/blog/0.18/golden-retriever.jpg">
+
+    <meta name="google-site-verification" content="JxARoHXoCI8bD07pLV_u3z6xpuWNcSIZIcHEytyCkUc" />
+
+    <link rel="icon" href="/uppy/images/logos/uppy-dog-head-arrow.png" type="image/x-icon">
+    <link rel="alternate" type="application/rss+xml" title="Uppy" href="/atom.xml">
+
+    <script>
+      window.PAGE_TYPE = ""
+    </script>
+    
+<link rel="stylesheet" href="/uppy/css/main.css?version=2">
+
+    <!-- ^ poor man's solution to css cache busting. bump the version when there's something new we really want users to see -->
+  <meta name="generator" content="Hexo 4.2.1"></head>
+  <body class="page-inner ">
+    <div class="page">
+      <div class="TransloaditBar js-TransloaditBar">
+        <div class="TransloaditBar-about">
+          <!-- <a class="TransloaditBar-logo" href="https://transloadit.com/" target="_blank" rel="noopener">
+            <img class="TransloaditBar-logoImg" src="/uppy/images/transloadit-white-glyph.svg" width="20" height="20" alt="Transloadit">
+          </a> -->
+          <!-- <span>Uppy is an open source project by <a class="TransloaditBar-link" href="https://transloadit.com/" target="_blank">Transloadit</a></span> -->
+          This website is no longer maintained, please visit <a href="//uppy.io" target="_blank" rel="noopener" style="color:inherit">uppy.io</a> to get up-to-date info about Uppy.
+        </div>
+      </div>
+
+      <header id="header" class="MainHeader js-MainHeader">
+        <button class="MainHeader-menuBtn js-MenuBtn"></button>
+
+        <span id="logo" class="MainLogo">
+          <a class="MainLogo-link" href="/uppy/">Uppy</a>
+          <!-- Was used for 1.0, we can re-use for 2.0 or major announcements -->
+          <!-- <a class="MainLogo-announcement" href="/blog/2019/04/1.0/">
+            1.0
+            <span class="MainLogo-emoji">
+              <img src="/uppy/images/party-popper.png" srcset="/uppy/images/party-popper@2x.png 2x" alt="🎉">
+            </span>
+          </a> -->
+        </span>
+
+        <nav>
+          <ul id="nav" class="MainMenu">
+            <!-- @todo uncomment search input when we get our own swifttype -->
+<!-- <li>
+  <form id="search-form" class="MainMenu-search">
+    <input type="text" id="search-query" class="MainMenu-searchQuery st-default-search-input">
+  </form>
+</li> -->
+<!--li><a href="/uppy/guide/" class="nav-link">Guide</a></li-->
+<li><a href="/uppy/docs/" class="nav-link">Docs</a></li>
+<li><a href="/uppy/examples/dashboard/" class="nav-link">Examples</a></li>
+<!--li><a href="/uppy/stats/" class="nav-link">Stats</a></li-->
+<li><a href="/uppy/blog/" class="nav-link current">Blog</a></li>
+<li><a href="/uppy/support/" class="nav-link">Support</a></li>
+<li><a href="https://github.com/transloadit/uppy" target="_blank" rel="noopener" class="nav-link">GitHub</a></li>
+
+          </ul>
+        </nav>
+
+        <div class="MainHeader-tagline">
+          The file uploader that <span class="MainHeader-taglinePart js-MainHeader-taglinePart is-visible">loves to play fetch</span>
+        </div>
+
+        <ul class="MainHeader-taglineList js-MainHeader-taglineList">
+          
+          <li>won’t chew on your shoes</li>
+          
+          <li>is fully housebroken</li>
+          
+          <li>just wants to play with you</li>
+          
+          <li>doesn’t hump your leg</li>
+          
+          <li>also accepts cat pictures</li>
+          
+          <li>loves you unconditionally</li>
+          
+          <li>you don’t have to keep on a leash</li>
+          
+          <li>won’t pee on your rug</li>
+          
+          <li>loves to play fetch</li>
+          
+          <li>doesn’t bite (hard)</li>
+          
+          <li>won’t bark at the mailman</li>
+          
+          <li>is great with the kids</li>
+          
+          <li>can digest anything, even chocolate cake</li>
+          
+          <li>is always happy to see you</li>
+          
+          <li>isn’t afraid of fireworks</li>
+          
+          <li>is allowed everywhere</li>
+          
+        </ul>
+      </header>
+
+      <main class="MainContent js-MainContent" id="main">
+        
+          <div class="Sidebar js-Sidebar is-blog">
+    <ul class="main-menu">
+        <!-- @todo uncomment search input when we get our own swifttype -->
+<!-- <li>
+  <form id="search-form" class="MainMenu-search">
+    <input type="text" id="search-query" class="MainMenu-searchQuery st-default-search-input">
+  </form>
+</li> -->
+<!--li><a href="/uppy/guide/" class="nav-link">Guide</a></li-->
+<li><a href="/uppy/docs/" class="nav-link">Docs</a></li>
+<li><a href="/uppy/examples/dashboard/" class="nav-link">Examples</a></li>
+<!--li><a href="/uppy/stats/" class="nav-link">Stats</a></li-->
+<li><a href="/uppy/blog/" class="nav-link current">Blog</a></li>
+<li><a href="/uppy/support/" class="nav-link">Support</a></li>
+<li><a href="https://github.com/transloadit/uppy" target="_blank" rel="noopener" class="nav-link">GitHub</a></li>
+
+    </ul>
+    <div class="list">
+        <h2>
+            Recent Posts
+            <a href="/atom.xml" rel="noreferrer noopener" target="_blank" style="vertical-align: middle; margin-left: 5px">
+                <img src="/uppy/images/feed.png" style="width:15px;height:15px">
+            </a>
+        </h2>
+
+        <ul>
+  
+  <li>
+    <a href="/blog/2022/12/3.3/" class="sidebar-link">🎄 Uppy 3.1-3.3: Improved AWS S3 Multipart, Single File Mode</a>
+  </li>
+  
+  <li>
+    <a href="/blog/2022/09/3.0/" class="sidebar-link">Uppy 3.0: Future-proof, conveniently easy, stable as ever</a>
+  </li>
+  
+  <li>
+    <a href="/blog/2022/03/2.4-2.7/" class="sidebar-link">Uppy 2.4-2.7: Image Compressor, Transloadit Rate Limiting, ESM</a>
+  </li>
+  
+  <li>
+    <a href="/blog/2021/12/2.1-2.3/" class="sidebar-link">🎄 Uppy 2.1-2.3: Audio plugin, fast and efficient streaming for Companion, production-ready Unsplash, and more</a>
+  </li>
+  
+  <li>
+    <a href="/blog/2021/08/2.0/" class="sidebar-link">Uppy 2.0.0: smaller, faster, modular plugins, Preact X, stricter types, and much more</a>
+  </li>
+  
+  <li>
+    <a href="/blog/2021/07/1.30/" class="sidebar-link">Uppy 1.30: Angular integration, granular image rotation, Google Drive shortcuts</a>
+  </li>
+  
+  <li>
+    <a href="/blog/2021/05/1.29/" class="sidebar-link">Uppy 1.29: Golden Retriever, disableLocalFiles, Webcam previews, uppy.logout</a>
+  </li>
+  
+  <li>
+    <a href="/blog/2021/04/1.27/" class="sidebar-link">Uppy 1.27: Drop Target plugin, Vue 3 support, Dashboard dynamic meta fields, “Shared with me” in Google Drive</a>
+  </li>
+  
+  <li>
+    <a href="/blog/2021/02/1.26/" class="sidebar-link">Uppy 1.26: Dashboard “disabled”, per-file headers</a>
+  </li>
+  
+  <li>
+    <a href="/blog/2021/01/1.25/" class="sidebar-link">Uppy 1.25: right-to-left scripts, Ukrainian translation, Companion improvements</a>
+  </li>
+  
+  <li>
+    <a href="/blog/2020/12/1.24/" class="sidebar-link">Uppy 1.24: 🎅 Happy Holidays — Svelte, React hook, Auto Open Image Editor</a>
+  </li>
+  
+</ul>
+        <ul class="Social">
+  <li><a href="https://twitter.com/uppy_io" target="_blank" rel="noopener" class="twitter-follow-button" data-show-count="false" data-dnt="true">Follow @uppy_io</a></li>
+  <li><iframe src="https://ghbtns.com/github-btn.html?user=transloadit&repo=uppy&type=watch&count=true"
+allowtransparency="true" frameborder="0" scrolling="0" width="100" height="20"></iframe></li>
+  <!-- to regenerate you can use this link: https://img.shields.io/badge/community-forum-d8006a.svg -->
+  <li><a href="https://community.transloadit.com/c/uppy" target="_blank" rel="noopener"><img src="/uppy/images/community-forum-d8006a.svg" /> </a></li>
+  <li class="BuildBadge">
+   <span class="wrapper">
+     <a href="https://github.com/transloadit/uppy/actions" target="_blank" rel="noopener"><img src="https://github.com/transloadit/uppy/workflows/End-to-end%20tests/badge.svg" alt="Build Status"></a>
+   </span>
+  </li>
+</ul>
+
+    </div>
+</div>
+
+
+<div class="Content js-Content with-sidebar">
+    
+  <h1>Uppy 0.18: Dogumentation and The GoldenRetriever</h1>
+  <div class="post-date">Friday Sep 15, 2017</div>
+    
+    <html><head></head><body><p>Hi! Another month — a new Uppy release 🎉</p>
+<p><em>Note: current latest release is actually <code>0.19</code>, but this post got delayed, so we are publishing it first. <code>0.19</code> post is coming next.</em></p>
+<h2 id="New-documentation"><a href="#New-documentation" class="headerlink" title="New documentation"></a>New documentation</h2><p>Documentation for Uppy has been re-written, and now features chapters on Uppy’s settings and API, using various plugins, and running Uppy Server. Check it out: &lt;/uppy/docs/&gt;. More chapters to come!</p>
+<h2 id="The-GoldenRetriever"><a href="#The-GoldenRetriever" class="headerlink" title="The GoldenRetriever"></a>The GoldenRetriever</h2><p>The GoldenRetriever has been released as a public beta. For details, please refer to the previous post, <a href="/uppy/blog/2017/07/golden-retriever/">The GoldenRetriever: Making uploads survive browser crashes</a>, but the gist is: when enabled, this plugin will save uppy-state to localStorage on every change, and then if your browser crashes, or you accidentaly navigate away from a tab,later when you return, your uploads will resume like nothing happened. Spoiler: it uses Service Workers and IndexedDB.</p>
+<img class="border" src="/uppy/images/blog/0.18/golden-retriever.jpg">
+
+<a id="more"></a>
+
+<h2 id="Multipart-uploader-is-now-XHRUpload"><a href="#Multipart-uploader-is-now-XHRUpload" class="headerlink" title="Multipart uploader is now XHRUpload"></a>Multipart uploader is now XHRUpload</h2><p><code>Multipart</code> has been replaced by a more flexible <code>XHRUpload</code>, so that other plugins, like <code>AwsS3</code>, can depend on it.</p>
+<h2 id="AwsS3"><a href="#AwsS3" class="headerlink" title="AwsS3"></a>AwsS3</h2><p>The <code>AwsS3</code> plugin can be used to upload files directly to an S3 bucket.</p>
+<p>As of now, the AwsS3 plugin “decorates” the <code>XHRUpload</code> plugin. To upload files directly to S3, both the <code>XHRUpload</code> and <code>AwsS3</code> plugins must be used:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="token comment">// No options have to be provided to the XHRUpload plugin,</span>
+<span class="token comment">// the S3 plugin will configure it.</span>
+uppy<span class="token punctuation">.</span><span class="token method function property-access">use</span><span class="token punctuation">(</span><span class="token maybe-class-name">XHRUpload</span><span class="token punctuation">)</span>
+uppy<span class="token punctuation">.</span><span class="token method function property-access">use</span><span class="token punctuation">(</span><span class="token maybe-class-name">AwsS3</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>
+  <span class="token comment">// Options for S3</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span></pre></td></tr></table></figure>
+<p>Please find <a href="/uppy/docs/aws-s3/">more info and examples</a> in the docs.</p>
+<h2 id="Transloadit-getAssemblyOptions"><a href="#Transloadit-getAssemblyOptions" class="headerlink" title="Transloadit getAssemblyOptions"></a>Transloadit <code>getAssemblyOptions</code></h2><p>We’ve added a <code>getAssemblyOptions</code> function option to the <code>Transloadit</code> plugin. This option can return an object or a Promise for an object to configure the Transloadit assembly. The returned object can contain params, a signature, and fields.</p>
+<p><code>getAssemblyOptions</code> is called on each file, so each file can return a different set of options. Files that returned the same options are bundled together and run through a single assembly. Files that return different options will be run through different assemblies.</p>
+<p>This means that it is now possible to make assembly parameters depend on user input from eg. the <code>MetaData</code> plugin, and have different parameters for different files. It’s now also possible to generate very short-lived signatures on the server when an upload starts, by calling fetch inside the <code>getAssemblyOptions</code> hook.</p>
+<h2 id="Webcam-1-2-3-smile"><a href="#Webcam-1-2-3-smile" class="headerlink" title="Webcam: 1, 2, 3 smile!"></a>Webcam: 1, 2, 3 smile!</h2><p>Webcam plugin now has a new exciting feature — ⏱ <code>countdown</code>. If you set it to 3 seconds, for example, then after pressing the capture button, Uppy will count to 3 before actually taking your selfie, so you’ll have the time to fix your hair:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre>uppy<span class="token punctuation">.</span><span class="token method function property-access">use</span><span class="token punctuation">(</span><span class="token maybe-class-name">Webcam</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> <span class="token literal-property property">countdown</span><span class="token operator">:</span> <span class="token number">3</span> <span class="token punctuation">}</span><span class="token punctuation">)</span></pre></td></tr></table></figure>
+<h2 id="Tons-of-Uppy-Server-improvements"><a href="#Tons-of-Uppy-Server-improvements" class="headerlink" title="Tons of Uppy Server improvements"></a>Tons of Uppy Server improvements</h2><ul>
+<li>Uppy Server uses Informer to display errors;</li>
+<li>Pictures from Instagram carousels show up inline;</li>
+<li>Uppy server now returns an <code>i-am</code> containing its instance url;</li>
+<li>Disable socket channel from restarting an already completed file download;</li>
+<li>Uppy client whitelisting has been made optional, you may use wildcard instead;</li>
+<li>Added feature to set master oauth redirect uri for multiple uppy-server instances;</li>
+<li>Added options to support for redis session storage on the standalone server;</li>
+<li>Uppy-server can be started as a binary <code>uppy-server</code>;</li>
+<li>Downloaded files are stored based on uuids;</li>
+<li>Upload state is stored on redis (useful for Goldern Retriever plugin).</li>
+</ul>
+<h2 id="Release-Notes"><a href="#Release-Notes" class="headerlink" title="Release Notes"></a>Release Notes</h2><p>Here is the full list of changes for version <code>0.18</code>:</p>
+<ul>
+<li>goldenretriver: use Service Woker first, then IndexedDB, add file limits for IndexedDB, figure out what restores from where, add throttling for localStorage state sync (@goto-bus-stop @arturi)</li>
+<li>dashboard: flag to hide the upload button, for cases when you want to manually stat the upload (@arturi)</li>
+<li>dashboard: place close btn inside the Dashboard, don’t close on click outside, place source icon near the file size (@arturi)</li>
+<li>core: informer becomes a core API, <code>uppy.info('Smile! 📸', 'warning', 5000)</code> so its more concise with <code>uppy.log('my msg')</code> and supports different UI implementations (@arturi, #271)</li>
+<li>docs: first stage — on using plugins, all options, list of plugins, i18n, uppy-server (@arturi, @goto-bus-stop, @ifedapoolarewaju)</li>
+<li>provider: file size sorting (@ifedapoolarewaju)</li>
+<li>provider: show loading screen when checking auth too (@arturi)</li>
+<li>uploaders: add direct-to-s3 upload plugin (@goto-bus-stop)</li>
+<li>core: ability to re-upload all files, even <code>uploadComplete</code> ones, reset progress (@arturi)</li>
+<li>goldenretriver: recover selected or in progress files after a browser crash or closed tab: alpha-version, add LocalStorage, Service Worker and IndexedDB (@arturi @goto-bus-stop @nqst #268)</li>
+<li>xhrupload: add XHRUpload a more flexible successor to Multipart, so that S3 plugin can depend on it (@goto-bus-stop #242)</li>
+<li>core: add getFile method (@goto-bus-stop, #263)</li>
+<li>provider: use informer to display errors (@ifedapoolarewaju)</li>
+<li>provider: flatten instagram carousels #234 (@ifedapoolarewaju)</li>
+<li>server: add uppy-server url as <code>i-am</code> header (@ifedapoolarewaju)</li>
+<li>server: disable socket channel from restarting an already completed file download (@ifedapoolarewaju)</li>
+<li>server: make uppy client whitelisting optional. You may use wildcard instead (@ifedapoolarewaju)</li>
+<li>server: master oauth redirect uri for multiple uppy-server instances</li>
+<li>server: options support for redis session storage on standalone server (@ifedapoolarewaju)</li>
+<li>server: start uppy-server as binary <code>uppy-server</code> (@ifedapoolarewaju)</li>
+<li>server: store downloaded files based on uuids (@ifedapoolarewaju)</li>
+<li>server: store upload state on redis (@ifedapoolarewaju)</li>
+<li>server: use uppy informer for server errors (@ifedapoolarewaju, #272)</li>
+<li>server: whitelist multiple uppy clients (@ifedapoolarewaju)</li>
+<li>transloadit: emit an event when an assembly is created (@goto-bus-stop / #244)</li>
+<li>transloadit: function option for file-dependent <code>params</code> (@goto-bus-stop / #250)</li>
+<li>tus: Save upload URL early on (@goto-bus-stop #261)</li>
+<li>tus: return immediately if no files are selected (@goto-bus-stop #245)</li>
+<li>uppy-server: add uppy-server metrics to Librato (@ifedapoolarewaju @kiloreux)</li>
+<li>webcam: add 1, 2, 3, smile! to webcam, onBeforeSnapshothook (@arturi, #187, #248)</li>
+<li>website: live example on the homepage, “try me” button, improve /examples (@arturi)</li>
+</ul>
+<p>The Uppy Team</p>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script></body></html>
+
+    <center>
+        <br />
+        <a class="github-button" href="https://github.com/transloadit/uppy" data-icon="octicon-star" data-size="large"
+        data-show-count="true" aria-label="Star transloadit/uppy on GitHub">Star</a>
+    </center>
+
+    <div class="PostAuthors">
+        
+            <div class="PostAuthor">
+                <a class="PostAuthor-link" href="https://transloadit.com/about/#artur" target="_blank" rel="noopener">
+                    <img class="PostAuthor-img" src="https://www.gravatar.com/avatar/6ddfaa9427d64ba52bbe021ea5e2ffef?s=200">
+                    <h4 class="PostAuthor-name">Artur Paikin</h4>
+                    <div class="PostAuthor-tagline">Developer</div>
+                </a>
+            </div>
+        
+    </div>
+  <br />
+    <!-- <ul class="Social">
+        <li><iframe src="https://ghbtns.com/github-btn.html?user=transloadit&repo=uppy&type=watch&count=true"
+                allowtransparency="true" frameborder="0" scrolling="0" width="100" height="20"></iframe></li>
+    </ul> -->
+  <!-- <div id="disqus_thread"></div>
+<script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+
+var disqus_config = function () {
+this.page.url = 'https://uppy.io/blog/2017/09/0.18/';  // Replace PAGE_URL with your page's canonical URL variable
+// this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://uppy.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" target="_blank" rel="noopener">comments powered by Disqus.</a></noscript>
+                             -->
+</div>
+
+        
+      </main>
+
+      <script defer data-domain="transloadit.github.io" src="https://analytics.transloadit.com/js/plausible.js"></script>
+
+
+      
+        <script src="/uppy/js/smooth-scroll.min.js"></script>
+        <!-- Place this tag in your head or just before your close body tag. -->
+        <script async defer src="https://buttons.github.io/buttons.js"></script>
+      
+      <script src="/uppy/js/common.js"></script>
+
+      <!-- Twitter follow button script -->
+      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,52 @@
+<h1 id="Uppy"><a href="#Uppy" class="headerlink" title="Uppy"></a>Uppy</h1><p>Hi, thanks for trying out the bundled version of the Uppy File Uploader. You can use<br>this from a CDN (<code>&lt;script src=&quot;https://releases.transloadit.com/uppy/v3.6.1/uppy.min.js&quot;&gt;&lt;/script&gt;</code>) or bundle it with your webapp.</p>
+<p>Note that the recommended way to use Uppy is to install it with yarn/npm and use a<br>bundler like Webpack so that you can create a smaller custom build with only the<br>things that you need. More info on <a href="https://uppy.io/docs/#With-a-module-bundler" target="_blank" rel="noopener">https://uppy.io/docs/#With-a-module-bundler</a>.</p>
+<h2 id="How-to-use-this-bundle"><a href="#How-to-use-this-bundle" class="headerlink" title="How to use this bundle"></a>How to use this bundle</h2><p>You can extract the contents of this zip to a directory, such as <code>./js/uppy</code>.</p>
+<p>Now you can create an HTML file, for example <code>./upload.html</code>, with the following contents:</p>
+<pre><code class="html"><span class="tag">&lt;<span class="name">html</span>&gt;</span>
+<span class="tag">&lt;<span class="name">head</span>&gt;</span>
+  <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">href</span>=<span class="string">"./js/uppy/uppy.min.css"</span>&gt;</span>
+<span class="tag">&lt;/<span class="name">head</span>&gt;</span>
+
+<span class="tag">&lt;<span class="name">body</span>&gt;</span>
+  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"DashboardContainer"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span>
+  <span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">"UppyModalOpenerBtn"</span>&gt;</span>Upload<span class="tag">&lt;/<span class="name">button</span>&gt;</span>
+  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"uploaded-files"</span>&gt;</span>
+    <span class="tag">&lt;<span class="name">h5</span>&gt;</span>Uploaded files:<span class="tag">&lt;/<span class="name">h5</span>&gt;</span>
+    <span class="tag">&lt;<span class="name">ol</span>&gt;</span><span class="tag">&lt;/<span class="name">ol</span>&gt;</span>
+  <span class="tag">&lt;/<span class="name">div</span>&gt;</span>
+<span class="tag">&lt;/<span class="name">body</span>&gt;</span>
+
+<span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"module"</span>&gt;</span>
+<span class="javascript">  <span class="keyword">import</span> {Uppy, Dashboard, Tus} <span class="keyword">from</span> <span class="string">"./js/uppy/uppy.min.mjs"</span></span>
+<span class="actionscript">  <span class="keyword">var</span> uppy = <span class="keyword">new</span> Uppy({</span>
+<span class="actionscript">    debug      : <span class="literal">true</span>,</span>
+<span class="actionscript">    autoProceed: <span class="literal">false</span>,</span>
+  })
+    .use(Dashboard, {
+<span class="actionscript">      browserBackButtonClose: <span class="literal">false</span>,</span>
+      height                : 470,
+<span class="actionscript">      inline                : <span class="literal">false</span>,</span>
+<span class="actionscript">      replaceTargetContent  : <span class="literal">true</span>,</span>
+<span class="actionscript">      showProgressDetails   : <span class="literal">true</span>,</span>
+<span class="actionscript">      target                : <span class="string">'.DashboardContainer'</span>,</span>
+<span class="actionscript">      trigger               : <span class="string">'.UppyModalOpenerBtn'</span>,</span>
+      metaFields            : [
+<span class="actionscript">        { id: <span class="string">'name'</span>, name: <span class="string">'Name'</span>, placeholder: <span class="string">'file name'</span> },</span>
+<span class="actionscript">        { id: <span class="string">'caption'</span>, name: <span class="string">'Caption'</span>, placeholder: <span class="string">'describe what the image is about'</span> }</span>
+      ]
+    })
+<span class="actionscript">    .use(Tus, { endpoint: <span class="string">'https://tusd.tusdemo.net/files/'</span> })</span>
+<span class="actionscript">    .on(<span class="string">'upload-success'</span>, <span class="function"><span class="keyword">function</span> <span class="params">(file, response)</span> </span>{</span>
+<span class="actionscript">      <span class="keyword">var</span> url      = response.uploadURL</span>
+<span class="actionscript">      <span class="keyword">var</span> fileName = file.name</span>
+
+<span class="javascript">      <span class="built_in">document</span>.querySelector(<span class="string">'.uploaded-files ol'</span>).innerHTML +=</span>
+<span class="handlebars"><span class="xml">        '<span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"' + url + '"</span> <span class="attr">target</span>=<span class="string">"_blank"</span>&gt;</span>' + fileName + '<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span>'</span></span>
+    })
+<span class="tag">&lt;/<span class="name">script</span>&gt;</span></code></pre>
+<p>Now open <code>upload.html</code> in your browser, and the Uppy Dashboard will appear.</p>
+<h2 id="Next-steps"><a href="#Next-steps" class="headerlink" title="Next steps"></a>Next steps</h2><p>In the example you built, Uppy uploads to a demo server where files will be deleted<br>shortly after uploading. You’ll want to target your own tusd server, S3 bucket, or Nginx/Apache server. For the latter, use the Xhr plugin: <a href="https://uppy.io/docs/xhr-upload/" target="_blank" rel="noopener">https://uppy.io/docs/xhr-upload/</a> which uploads using regular multipart form posts, that you’ll existing Ruby or PHP backend will be able to make sense of, as if a <code>&lt;input type=&quot;file&quot;&gt;</code> had been used.</p>
+<p>The Dashboard now opens when clicking the button, but you can also draw it inline into the page. This, and many more configuration options can be found here: <a href="https://uppy.io/docs/dashboard/" target="_blank" rel="noopener">https://uppy.io/docs/dashboard/</a>.</p>
+<p>Uppy has many more Plugins besides Xhr and the Dashboard. For example, you can enable Webcam, Instagram, or video encoding support. For a full list of Plugins check here: <a href="https://uppy.io/docs/plugins/" target="_blank" rel="noopener">https://uppy.io/docs/plugins/</a>.</p>
+<p>Note that for some Plugins, you will need to run a server side component called: Companion. Those plugins are marked with a (c) symbol. Alternatively, you can sign up for a free Transloadit account. Transloadit runs Companion for you, tusd servers to handle resumable file uploads, and can post-process files to scan for viruses, recognize faces, etc. Check: <a href="https://transloadit.com" target="_blank" rel="noopener">https://transloadit.com</a>.</p>
+<h2 id="Getting-help"><a href="#Getting-help" class="headerlink" title="Getting help"></a>Getting help</h2><p>Stuck with anything? We’re welcoming all your questions and feedback over at <a href="https://community.transloadit.com/c/uppy/5" target="_blank" rel="noopener">https://community.transloadit.com/c/uppy/5</a>.</p>

@@ -1,0 +1,923 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Contributing — Uppy</title>
+    <meta charset="utf-8">
+    <meta name="title" content="Contributing — Uppy">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@uppy_io">
+    <meta name="twitter:creator" content="@uppy_io">
+    <meta property="og:url" content="https://transloadit.github.io/uppy/docs/contributing.html">
+    <meta property="og:title" content="Contributing — Uppy">
+    <meta name="twitter:title" content="Contributing — Uppy">
+    <meta name="twitter:description" content="">
+    <meta property="og:image" content="http://transloadit.github.io/uppy/images/uppy-social-pink.png">
+    <meta name="twitter:image" content="http://transloadit.github.io/uppy/images/uppy-social-pink.png">
+
+    <meta name="google-site-verification" content="JxARoHXoCI8bD07pLV_u3z6xpuWNcSIZIcHEytyCkUc" />
+
+    <link rel="icon" href="/uppy/images/logos/uppy-dog-head-arrow.png" type="image/x-icon">
+    <link rel="alternate" type="application/rss+xml" title="Uppy" href="/atom.xml">
+
+    <script>
+      window.PAGE_TYPE = "docs"
+    </script>
+    
+<link rel="stylesheet" href="/uppy/css/main.css?version=2">
+
+    <!-- ^ poor man's solution to css cache busting. bump the version when there's something new we really want users to see -->
+  <meta name="generator" content="Hexo 4.2.1"></head>
+  <body class="page-inner ">
+    <div class="page">
+      <div class="TransloaditBar js-TransloaditBar">
+        <div class="TransloaditBar-about">
+          <!-- <a class="TransloaditBar-logo" href="https://transloadit.com/" target="_blank" rel="noopener">
+            <img class="TransloaditBar-logoImg" src="/uppy/images/transloadit-white-glyph.svg" width="20" height="20" alt="Transloadit">
+          </a> -->
+          <!-- <span>Uppy is an open source project by <a class="TransloaditBar-link" href="https://transloadit.com/" target="_blank">Transloadit</a></span> -->
+          This website is no longer maintained, please visit <a href="//uppy.io" target="_blank" rel="noopener" style="color:inherit">uppy.io</a> to get up-to-date info about Uppy.
+        </div>
+      </div>
+
+      <header id="header" class="MainHeader js-MainHeader">
+        <button class="MainHeader-menuBtn js-MenuBtn"></button>
+
+        <span id="logo" class="MainLogo">
+          <a class="MainLogo-link" href="/uppy/">Uppy</a>
+          <!-- Was used for 1.0, we can re-use for 2.0 or major announcements -->
+          <!-- <a class="MainLogo-announcement" href="/blog/2019/04/1.0/">
+            1.0
+            <span class="MainLogo-emoji">
+              <img src="/uppy/images/party-popper.png" srcset="/uppy/images/party-popper@2x.png 2x" alt="🎉">
+            </span>
+          </a> -->
+        </span>
+
+        <nav>
+          <ul id="nav" class="MainMenu">
+            <!-- @todo uncomment search input when we get our own swifttype -->
+<!-- <li>
+  <form id="search-form" class="MainMenu-search">
+    <input type="text" id="search-query" class="MainMenu-searchQuery st-default-search-input">
+  </form>
+</li> -->
+<!--li><a href="/uppy/guide/" class="nav-link">Guide</a></li-->
+<li><a href="/uppy/docs/" class="nav-link current">Docs</a></li>
+<li><a href="/uppy/examples/dashboard/" class="nav-link">Examples</a></li>
+<!--li><a href="/uppy/stats/" class="nav-link">Stats</a></li-->
+<li><a href="/uppy/blog/" class="nav-link">Blog</a></li>
+<li><a href="/uppy/support/" class="nav-link">Support</a></li>
+<li><a href="https://github.com/transloadit/uppy" target="_blank" rel="noopener" class="nav-link">GitHub</a></li>
+
+          </ul>
+        </nav>
+
+        <div class="MainHeader-tagline">
+          The file uploader that <span class="MainHeader-taglinePart js-MainHeader-taglinePart is-visible">loves to play fetch</span>
+        </div>
+
+        <ul class="MainHeader-taglineList js-MainHeader-taglineList">
+          
+          <li>won’t chew on your shoes</li>
+          
+          <li>is fully housebroken</li>
+          
+          <li>just wants to play with you</li>
+          
+          <li>doesn’t hump your leg</li>
+          
+          <li>also accepts cat pictures</li>
+          
+          <li>loves you unconditionally</li>
+          
+          <li>you don’t have to keep on a leash</li>
+          
+          <li>won’t pee on your rug</li>
+          
+          <li>loves to play fetch</li>
+          
+          <li>doesn’t bite (hard)</li>
+          
+          <li>won’t bark at the mailman</li>
+          
+          <li>is great with the kids</li>
+          
+          <li>can digest anything, even chocolate cake</li>
+          
+          <li>is always happy to see you</li>
+          
+          <li>isn’t afraid of fireworks</li>
+          
+          <li>is allowed everywhere</li>
+          
+        </ul>
+      </header>
+
+      <main class="MainContent js-MainContent" id="main">
+        
+          
+    <div class="Sidebar js-Sidebar">
+  <ul class="main-menu">
+    <!-- @todo uncomment search input when we get our own swifttype -->
+<!-- <li>
+  <form id="search-form" class="MainMenu-search">
+    <input type="text" id="search-query" class="MainMenu-searchQuery st-default-search-input">
+  </form>
+</li> -->
+<!--li><a href="/uppy/guide/" class="nav-link">Guide</a></li-->
+<li><a href="/uppy/docs/" class="nav-link current">Docs</a></li>
+<li><a href="/uppy/examples/dashboard/" class="nav-link">Examples</a></li>
+<!--li><a href="/uppy/stats/" class="nav-link">Stats</a></li-->
+<li><a href="/uppy/blog/" class="nav-link">Blog</a></li>
+<li><a href="/uppy/support/" class="nav-link">Support</a></li>
+<li><a href="https://github.com/transloadit/uppy" target="_blank" rel="noopener" class="nav-link">GitHub</a></li>
+
+  </ul>
+  
+  
+  <div class="list">
+    <h2>
+      <a href="/uppy/docs">Docs</a>
+    </h2>
+      
+    <div class="menu-root">
+      
+
+    
+    
+    
+    <ul>
+      
+        
+        
+        <li key="p-0-docs/index.html">
+          <a href="/docs/" class="sidebar-link">Getting Started</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-1-docs/uppy/index.html">
+          <a href="/docs/uppy/" class="sidebar-link">Uppy</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-2-docs/companion/index.html">
+          <a href="/docs/companion/" class="sidebar-link">Companion</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-3-docs/plugins/index.html">
+          <a href="/docs/plugins/" class="sidebar-link">List of Plugins</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-4-docs/plugin-options/index.html">
+          <a href="/docs/plugin-options/" class="sidebar-link">Common Plugin Options</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-5-docs/stores/index.html">
+          <a href="/docs/stores/" class="sidebar-link">Custom Stores</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-6-docs/community-projects/index.html">
+          <a href="/docs/community-projects/" class="sidebar-link">Community Projects</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-7-docs/locales/index.html">
+          <a href="/docs/locales/" class="sidebar-link">Locale Packs</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-8-docs/migration-guides.html">
+          <a href="/docs/migration-guides.html" class="sidebar-link">Migration guides</a>
+          
+        </li>
+      
+    </ul>
+
+    
+    
+    
+        
+        <h3 id="" key="category-1-UI Elements" data-scroll="no">UI Elements</h3>
+        
+    
+    <ul>
+      
+        
+        
+        <li key="p-0-docs/dashboard/index.html">
+          <a href="/docs/dashboard/" class="sidebar-link">Dashboard</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-1-docs/status-bar/index.html">
+          <a href="/docs/status-bar/" class="sidebar-link">Status Bar</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-2-docs/progress-bar/index.html">
+          <a href="/docs/progress-bar/" class="sidebar-link">Progress Bar</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-3-docs/informer/index.html">
+          <a href="/docs/informer/" class="sidebar-link">Informer</a>
+          
+        </li>
+      
+    </ul>
+
+    
+    
+    
+        
+        <h3 id="" key="category-2-Sources" data-scroll="no">Sources</h3>
+        
+    
+    <ul>
+      
+        
+        
+        <li key="p-0-docs/drag-drop/index.html">
+          <a href="/docs/drag-drop/" class="sidebar-link">Drag & Drop</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-1-docs/drop-target/index.html">
+          <a href="/docs/drop-target/" class="sidebar-link">Drop Target</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-2-docs/file-input/index.html">
+          <a href="/docs/file-input/" class="sidebar-link">File Input</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-3-docs/audio/index.html">
+          <a href="/docs/audio/" class="sidebar-link">Audio</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-4-docs/webcam/index.html">
+          <a href="/docs/webcam/" class="sidebar-link">Webcam</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-5-docs/screen-capture/index.html">
+          <a href="/docs/screen-capture/" class="sidebar-link">Screen capture</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-6-docs/providers/index.html">
+          <a href="/docs/providers/" class="sidebar-link">Provider Plugins</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-7-docs/box/index.html">
+          <span title='Requires Companion'>ⓒ </span><a href="/docs/box/" class="sidebar-link">Box</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-8-docs/dropbox/index.html">
+          <span title='Requires Companion'>ⓒ </span><a href="/docs/dropbox/" class="sidebar-link">Dropbox</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-9-docs/google-drive/index.html">
+          <span title='Requires Companion'>ⓒ </span><a href="/docs/google-drive/" class="sidebar-link">Google Drive</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-10-docs/instagram/index.html">
+          <span title='Requires Companion'>ⓒ </span><a href="/docs/instagram/" class="sidebar-link">Instagram</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-11-docs/onedrive/index.html">
+          <span title='Requires Companion'>ⓒ </span><a href="/docs/onedrive/" class="sidebar-link">OneDrive</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-12-docs/zoom/index.html">
+          <span title='Requires Companion'>ⓒ </span><a href="/docs/zoom/" class="sidebar-link">Zoom</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-13-docs/facebook/index.html">
+          <span title='Requires Companion'>ⓒ </span><a href="/docs/facebook/" class="sidebar-link">Facebook</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-14-docs/unsplash/index.html">
+          <span title='Requires Companion'>ⓒ </span><a href="/docs/unsplash/" class="sidebar-link">Unsplash</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-15-docs/url/index.html">
+          <span title='Requires Companion'>ⓒ </span><a href="/docs/url/" class="sidebar-link">Import From URL</a>
+          
+        </li>
+      
+    </ul>
+
+    
+    
+    
+        
+        <h3 id="" key="category-3-Destinations" data-scroll="no">Destinations</h3>
+        
+    
+    <ul>
+      
+        
+        
+        <li key="p-0-docs/tus/index.html">
+          <a href="/docs/tus/" class="sidebar-link">Tus</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-1-docs/xhr-upload/index.html">
+          <a href="/docs/xhr-upload/" class="sidebar-link">XHR</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-2-docs/aws-s3/index.html">
+          <a href="/docs/aws-s3/" class="sidebar-link">AWS S3</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-3-docs/aws-s3-multipart/index.html">
+          <a href="/docs/aws-s3-multipart/" class="sidebar-link">AWS S3 Multipart</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-4-docs/transloadit/index.html">
+          <a href="/docs/transloadit/" class="sidebar-link">Transloadit</a>
+          
+        </li>
+      
+    </ul>
+
+    
+    
+    
+        
+        <h3 id="" key="category-4-Miscellaneous" data-scroll="no">Miscellaneous</h3>
+        
+    
+    <ul>
+      
+        
+        
+        <li key="p-0-docs/form/index.html">
+          <a href="/docs/form/" class="sidebar-link">Form</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-1-docs/golden-retriever/index.html">
+          <a href="/docs/golden-retriever/" class="sidebar-link">Golden Retriever</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-2-docs/image-editor/index.html">
+          <a href="/docs/image-editor/" class="sidebar-link">Image Editor</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-3-docs/thumbnail-generator/index.html">
+          <a href="/docs/thumbnail-generator/" class="sidebar-link">Thumbnail Generator</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-4-docs/redux/index.html">
+          <a href="/docs/redux/" class="sidebar-link">Redux</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-5-docs/compressor/index.html">
+          <a href="/docs/compressor/" class="sidebar-link">Compressor</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-6-docs/remote-sources/index.html">
+          <a href="/docs/remote-sources/" class="sidebar-link">Remote Sources</a>
+          
+        </li>
+      
+    </ul>
+
+    
+    
+    
+    <ul>
+      
+    </ul>
+
+    
+    
+    
+        
+        <h3 id="" key="category-6-React" data-scroll="no"><a href="/docs/react/">React</a></h3>
+        
+    
+    <ul>
+      
+        
+        
+        <li key="p-0-docs/react/index.html">
+          <a href="/docs/react/" class="sidebar-link">Introduction</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-1-docs/react/status-bar/index.html">
+          <a href="/docs/react/status-bar/" class="sidebar-link">&lt;StatusBar /></a>
+          
+        </li>
+      
+        
+        
+        <li key="p-2-docs/react/drag-drop/index.html">
+          <a href="/docs/react/drag-drop/" class="sidebar-link">&lt;DragDrop /></a>
+          
+        </li>
+      
+        
+        
+        <li key="p-3-docs/react/file-input/index.html">
+          <a href="/docs/react/file-input/" class="sidebar-link">&lt;FileInput /></a>
+          
+        </li>
+      
+        
+        
+        <li key="p-4-docs/react/progress-bar/index.html">
+          <a href="/docs/react/progress-bar/" class="sidebar-link">&lt;ProgressBar /></a>
+          
+        </li>
+      
+        
+        
+        <li key="p-5-docs/react/dashboard/index.html">
+          <a href="/docs/react/dashboard/" class="sidebar-link">&lt;Dashboard /></a>
+          
+        </li>
+      
+        
+        
+        <li key="p-6-docs/react/dashboard-modal/index.html">
+          <a href="/docs/react/dashboard-modal/" class="sidebar-link">&lt;DashboardModal /></a>
+          
+        </li>
+      
+        
+        
+        <li key="p-7-docs/react/native/index.html">
+          <a href="/docs/react/native/" class="sidebar-link">React Native</a>
+          
+        </li>
+      
+    </ul>
+
+    
+    
+    
+        
+        <h3 id="" key="category-7-Other Integrations" data-scroll="no"><a href="/docs/vue/">Other Integrations</a></h3>
+        
+    
+    <ul>
+      
+        
+        
+        <li key="p-0-docs/angular/index.html">
+          <a href="/docs/angular/" class="sidebar-link">Angular</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-1-docs/vue/index.html">
+          <a href="/docs/vue/" class="sidebar-link">Vue</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-2-docs/svelte/index.html">
+          <a href="/docs/svelte/" class="sidebar-link">Svelte</a>
+          
+        </li>
+      
+    </ul>
+
+    
+    
+    
+        
+        <h3 id="" key="category-8-Contributing" data-scroll="no"><a href="/docs/contributing.html">Contributing</a></h3>
+        
+    
+    <ul>
+      
+        
+        
+        <li key="p-0-docs/contributing.html">
+          <a href="/docs/contributing.html" class="sidebar-link current">Contributing</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-1-docs/writing-plugins/index.html">
+          <a href="/docs/writing-plugins/" class="sidebar-link">Writing Plugins</a>
+          
+        </li>
+      
+    </ul>
+
+
+    </div>
+
+    <ul class="Social">
+  <li><a href="https://twitter.com/uppy_io" target="_blank" rel="noopener" class="twitter-follow-button" data-show-count="false" data-dnt="true">Follow @uppy_io</a></li>
+  <li><iframe src="https://ghbtns.com/github-btn.html?user=transloadit&repo=uppy&type=watch&count=true"
+allowtransparency="true" frameborder="0" scrolling="0" width="100" height="20"></iframe></li>
+  <!-- to regenerate you can use this link: https://img.shields.io/badge/community-forum-d8006a.svg -->
+  <li><a href="https://community.transloadit.com/c/uppy" target="_blank" rel="noopener"><img src="/uppy/images/community-forum-d8006a.svg" /> </a></li>
+  <li class="BuildBadge">
+   <span class="wrapper">
+     <a href="https://github.com/transloadit/uppy/actions" target="_blank" rel="noopener"><img src="https://github.com/transloadit/uppy/workflows/End-to-end%20tests/badge.svg" alt="Build Status"></a>
+   </span>
+  </li>
+</ul>
+
+    </div>
+  
+</div>
+
+
+
+<div class="Content js-Content docs with-sidebar">
+    <h1>Contributing</h1>
+    <!-- WARNING! This file was injected. Please edit in ".github/CONTRIBUTING.md" instead and run "inject.js" --><html><head></head><body><h2 id="Uppy-development"><a href="#Uppy-development" class="headerlink" title="Uppy development"></a>Uppy development</h2><p>Fork the repository into your own account first. See the <a href="https://help.github.com/articles/fork-a-repo/" target="_blank" rel="noopener">GitHub Help</a> article for instructions.</p>
+<p>After you have successfully forked the repository, clone it locally.</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="token function">git</span> clone https://github.com/transloadit/uppy.git
+<span class="token builtin class-name">cd</span> uppy</pre></td></tr></table></figure>
+<p>We are using <a href="https://nodejs.org/api/corepack.html" target="_blank" rel="noopener">Corepack</a> to manage version of <a href="https://yarnpkg.com/" target="_blank" rel="noopener">Yarn</a>. Corepack comes pre-installed with Node.js &gt;=16.x, or can be installed through <code>npm</code>. You can run <code>corepack enable</code> to install a <code>yarn</code> executable in your <code>$PATH</code>, or prefix all yarn commands with <code>corepack yarn</code>.</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre>corepack <span class="token parameter variable">-v</span> <span class="token operator">||</span> <span class="token function">npm</span> i <span class="token parameter variable">-g</span> corepack
+<span class="token function">yarn</span> <span class="token parameter variable">-v</span> <span class="token operator">||</span> corepack <span class="token builtin class-name">enable</span>
+<span class="token function">yarn</span> <span class="token function">install</span> <span class="token operator">||</span> corepack <span class="token function">yarn</span> <span class="token function">install</span></pre></td></tr></table></figure>
+<p>Our website’s examples section is also our playground, please read the <a href="#Local-previews">Local Previews</a> section to get up and running.</p>
+<h3 id="Requiring-files"><a href="#Requiring-files" class="headerlink" title="Requiring files"></a>Requiring files</h3><ul>
+<li>If we are <code>require()</code>ing a file from the same subpackage, we can freely use relative imports as long as the required file is under the <code>src</code> directory (for example to import <code>@uppy/dashboard/src/utils/hi.js</code> from <code>@uppy/dashboard/src/index.js</code>, use <code>require('./utils/hi.js')</code>).</li>
+<li>But if we want to <code>require()</code> some file from another subpackage - we should use global @uppy requires, and they should always be in the form of <code>@uppy/:packageName/(lib instead of src)/(same path).js</code></li>
+</ul>
+<h2 id="Tests"><a href="#Tests" class="headerlink" title="Tests"></a>Tests</h2><h3 id="Unit-tests"><a href="#Unit-tests" class="headerlink" title="Unit tests"></a>Unit tests</h3><p>Unit tests are using Jest and can be run with:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="token function">yarn</span> run test:unit</pre></td></tr></table></figure>
+<h3 id="End-to-End-tests"><a href="#End-to-End-tests" class="headerlink" title="End-to-End tests"></a>End-to-End tests</h3><p>We use <a href="https://www.cypress.io/" target="_blank" rel="noopener">Cypress</a> for our e2e test suite. Be sure to checkout “<a href="https://docs.cypress.io/guides/getting-started/writing-your-first-test#Add-a-test-file" target="_blank" rel="noopener">Writing your first test</a>” and the “<a href="https://docs.cypress.io/guides/core-concepts/introduction-to-cypress#Cypress-Can-Be-Simple-Sometimes" target="_blank" rel="noopener">Introduction to Cypress</a>”. You should also be aware of the “<a href="https://docs.cypress.io/guides/references/best-practices" target="_blank" rel="noopener">Best Practices</a>”.</p>
+<p>To get started make sure you have your <code>.env</code> set up. Copy the contents of <code>.env.example</code> to a file named <code>.env</code> and add the values relevant for the test(s) you are trying to run.</p>
+<p>To start the testing suite run:</p>
+<pre><code>yarn e2e</code></pre><p>This will run Cypress in watch-mode, and it will pick up and rebuild any changes to JS files. If you need to change other files (like CSS for example), you need to run the respective <code>yarn build:*</code> scripts.</p>
+<p>Alternatively the following command is the same as the above, except it doesn’t run <code>build</code> first:</p>
+<pre><code>yarn e2e:skip-build</code></pre><p>To generate the boilerplate for a new test run:</p>
+<pre><code>yarn e2e:generate</code></pre><h2 id="Development"><a href="#Development" class="headerlink" title="Development"></a>Development</h2><h3 id="Companion"><a href="#Companion" class="headerlink" title="Companion"></a>Companion</h3><p>To start the Companion server along with Uppy, run:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="token function">yarn</span> run dev:with-companion</pre></td></tr></table></figure>
+<p>or if you only want to run Companion</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="token function">yarn</span> run start:companion</pre></td></tr></table></figure>
+<p>This would get the Companion instance running on <code>http://localhost:3020</code>. It uses <a href="https://github.com/remy/nodemon" target="_blank" rel="noopener">nodemon</a> so it will automatically restart when files are changed.</p>
+<h3 id="Live-example"><a href="#Live-example" class="headerlink" title="Live example"></a>Live example</h3><p>An example server is running at <a href="https://companion.uppy.io" target="_blank" rel="noopener">https://companion.uppy.io</a>, which is deployed with <a href="https://github.com/transloadit/uppy/blob/main/packages/%40uppy/companion/KUBERNETES.md" target="_blank" rel="noopener">Kubernetes</a></p>
+<h3 id="How-the-Authentication-and-Token-mechanism-works"><a href="#How-the-Authentication-and-Token-mechanism-works" class="headerlink" title="How the Authentication and Token mechanism works"></a>How the Authentication and Token mechanism works</h3><p>This section describes how Authentication works between Companion and Providers. While this behaviour is the same for all Providers (Dropbox, Instagram, Google Drive, etc.), we are going to be referring to Dropbox in place of any Provider throughout this section.</p>
+<p>The following steps describe the actions that take place when a user Authenticates and Uploads from Dropbox through Companion:</p>
+<ul>
+<li>The visitor to a website with Uppy clicks <code>Connect to Dropbox</code>.</li>
+<li>Uppy sends a request to Companion, which in turn sends an OAuth request to Dropbox (Requires that OAuth credentials from Dropbox have been added to Companion).</li>
+<li>Dropbox asks the visitor to log in, and whether the Website should be allowed to access your files</li>
+<li>If the visitor agrees, Companion will receive a token from Dropbox, with which we can temporarily download files.</li>
+<li>Companion encrypts the token with a secret key and sends the encrypted token to Uppy (client)</li>
+<li>Every time the visitor clicks on a folder in Uppy, it asks Companion for the new list of files, with this question, the token (still encrypted by Companion) is sent along.</li>
+<li>Companion decrypts the token, requests the list of files from Dropbox and sends it to Uppy.</li>
+<li>When a file is selected for upload, Companion receives the token again according to this procedure, decrypts it again, and thereby downloads the file from Dropbox.</li>
+<li>As the bytes arrive, Companion uploads the bytes to the final destination (depending on the configuration: Apache, a Tus server, S3 bucket, etc).</li>
+<li>Companion reports progress to Uppy, as if it were a local upload.</li>
+<li>Completed!</li>
+</ul>
+<h3 id="Instagram-integration"><a href="#Instagram-integration" class="headerlink" title="Instagram integration"></a>Instagram integration</h3><p>Even though facebook <a href="https://developers.facebook.com/blog/post/2018/06/08/enforce-https-facebook-login/" target="_blank" rel="noopener">allows using</a> <a href="http://localhost" target="_blank" rel="noopener">http://localhost</a> in dev mode, Instagram doesn’t seem to support that, and seems to need a publically available domain name with HTTPS. So we will tunnel requests to localhost using <code>ngrok</code>.</p>
+<p>Make sure that you are using a development facebook app at <a href="https://developers.facebook.com/apps" target="_blank" rel="noopener">https://developers.facebook.com/apps</a></p>
+<p>Go to “Instagram Basic Display” and find <code>Instagram App ID</code> and <code>Instagram App Secret</code>. Put them in a file called <code>.env</code> in the repo root:</p>
+<pre><code>COMPANION_INSTAGRAM_KEY="Instagram App ID"
+COMPANION_INSTAGRAM_SECRET="Instagram App Secret"</code></pre><p><strong>Note!</strong> <code>ngrok</code> seems to be blocked by Instagram now, so you may have to find an alternative.</p>
+<p>Run</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre>ngrok http <span class="token number">3020</span></pre></td></tr></table></figure>
+<p>Note the ngrok https base URL, for example <code>https://e0c7de09808d.ngrok.io</code> and<br>append <code>/instagram/redirect</code> to it, such as:</p>
+<pre><code>https://e0c7de09808d.ngrok.io/instagram/redirect</code></pre><p>Add this full ngrok URL to <code>Valid OAuth Redirect URIs</code> under <code>Instagram Basic Display</code>.</p>
+<p>Edit <code>.env</code> and change to your ngrok URI:</p>
+<pre><code>COMPANION_DOMAIN="e0c7de09808d.ngrok.io"
+COMPANION_PROTOCOL="https"
+VITE_COMPANION_URL = 'https://e0c7de09808d.ngrok.io'</code></pre><p>Go to: Roles -&gt; Roles -&gt; Add Instagram testers -&gt; Add your instagram account</p>
+<p>Go to your instagram account at <a href="https://www.instagram.com/accounts/manage_access/" target="_blank" rel="noopener">https://www.instagram.com/accounts/manage_access/</a></p>
+<p>Tester invites -&gt; Accept</p>
+<p>Now you should be able to test the Instagram integration.</p>
+<h2 id="Zoom"><a href="#Zoom" class="headerlink" title="Zoom"></a>Zoom</h2><p>See above Instagram instructions for setting up a tunnel, but replace <code>instagram</code> with <code>zoom</code> in the URL. Note that <strong>you also have to add the OAuth redirect URL to <code>OAuth allow list</code></strong> in the Zoom Oauth app settings or it will not work.</p>
+<p>Add the following scopes: <code>recording:read</code>, <code>user:read</code>, <code>user_info:read</code></p>
+<p>To test recording a meeting, you need to sign up for a Zoom Pro trial (can be cancelled later), for example using their iOS app.</p>
+<h2 id="Releases"><a href="#Releases" class="headerlink" title="Releases"></a>Releases</h2><p>Before doing a release, check that the examples on the website work:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="token function">yarn</span> start
+<span class="token function">open</span> http://localhost:4000/examples/dashboard</pre></td></tr></table></figure>
+<p>Also check the other examples:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="token function">yarn</span> workspace <span class="token operator">&lt;</span>example-name<span class="token operator">></span> start</pre></td></tr></table></figure>
+<p>Releases are managed by GitHub Actions, here’s an overview of the process to release a new Uppy version:</p>
+<ul>
+<li>Run <code>yarn release</code> on your local machine.</li>
+<li>Follow the instructions and select what packages to release. <strong>Warning:</strong> skipping packages results in those changes being “lost”, meaning they won’t be picked up in the changelog automatically next release. Always try to release all.</li>
+<li>Before committing, check if the generated files look good.</li>
+<li>When asked to edit the next CHANGELOG, only include changes related to the package(s) you selected for release.</li>
+<li>Push to the Transloadit repository using the command given by the tool. Do not open a PR yourself, the GitHub Actions will create one and assign you to it.</li>
+<li>Wait for all the GitHub Actions checks to pass. If one fails, try to figure out why. Do not go ahead without consulting the rest of the team.</li>
+<li>Review the PR thoroughly, and if everything looks good to you, approve the PR. Do not merge it manually!</li>
+<li>After the PR is automatically merged, the demos on transloadit.com should also be updated. Check that some things work locally:<ul>
+<li>the demos in the demo section work (try one that uses an import robot, and one that you need to upload to)</li>
+<li>the demos on the homepage work and can import from Google Drive, Instagram, Dropbox, etc.</li>
+</ul>
+</li>
+</ul>
+<p>If you don’t have access to the transloadit.com source code ping @arturi or @goto-bus-stop and we’ll pick it up. :sparkles:</p>
+<h2 id="Website-development"><a href="#Website-development" class="headerlink" title="Website development"></a>Website development</h2><p>We keep the <a href="http://uppy.io" target="_blank" rel="noopener">uppy.io</a> website in <code>./website</code> to keep docs and code in sync as we are still iterating at high velocity.</p>
+<p>The site is built with <a href="http://hexo.io/" target="_blank" rel="noopener">Hexo</a>, and Travis automatically deploys this onto GitHub Pages (it overwrites the <code>gh-pages</code> branch with Hexo’s build at every change to <code>main</code>). The content is written in Markdown and located in <code>./website/src</code>. Feel free to fork &amp; hack!</p>
+<p>Even though bundled in this repo, the website is regarded as a separate project. As such, it has its own <code>package.json</code> and we aim to keep the surface where the two projects interface as small as possible. <code>./website/update.js</code> is called during website builds to inject the Uppy knowledge into the site.</p>
+<h3 id="Local-previews"><a href="#Local-previews" class="headerlink" title="Local previews"></a>Local previews</h3><ol>
+<li><code>yarn install</code></li>
+<li><code>yarn start</code></li>
+<li>Go to <a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a>. Your changes in <code>/website</code> and <code>/packages/@uppy</code> will be watched, your browser will refresh as files change.</li>
+</ol>
+<p>Then, to work on, for instance, the XHRUpload example, you would edit the following files:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="token variable">${EDITOR}</span> packages/@uppy/core/src/index.js <span class="token punctuation">\</span>
+  packages/@uppy/core/src/Plugin.js <span class="token punctuation">\</span>
+  packages/@uppy/xhr-upload/src/index.js <span class="token punctuation">\</span>
+  website/src/examples/xhrupload/app.es6</pre></td></tr></table></figure>
+<p>And open <a href="http://localhost:4000/examples/xhrupload/" target="_blank" rel="noopener">http://localhost:4000/examples/xhrupload/</a> in your web browser.</p>
+<h2 id="CSS-guidelines"><a href="#CSS-guidelines" class="headerlink" title="CSS guidelines"></a>CSS guidelines</h2><p>The CSS standards followed in this project closely resemble those from <a href="https://gist.github.com/fat/a47b882eb5f84293c4ed" target="_blank" rel="noopener">Medium’s CSS Guidelines</a>. If something is not mentioned here, follow their guidelines.</p>
+<h3 id="Naming-conventions"><a href="#Naming-conventions" class="headerlink" title="Naming conventions"></a>Naming conventions</h3><p>This project uses naming conventions adopted from the SUIT CSS framework.<br><a href="https://github.com/suitcss/suit/blob/master/doc/naming-conventions.md" target="_blank" rel="noopener">Read about them here</a>.</p>
+<p>To quickly summarize:</p>
+<h4 id="Utilities"><a href="#Utilities" class="headerlink" title="Utilities"></a>Utilities</h4><p>Syntax: <code>u-[sm-|md-|lg-]&lt;utilityName&gt;</code></p>
+<figure class="highlight css"><table><tr><td class="code"><pre>.u-utilityName
+.u-floatLeft
+.u-lg-col6</pre></td></tr></table></figure>
+<h4 id="Components"><a href="#Components" class="headerlink" title="Components"></a>Components</h4><p>Syntax: <code>[&lt;namespace&gt;-]&lt;ComponentName&gt;[-descendentName][--modifierName]</code></p>
+<figure class="highlight css"><table><tr><td class="code"><pre>.twt-Button <span class="token comment">/* Namespaced component */</span>
+.MyComponent <span class="token comment">/* Components pascal cased */</span>
+.Button--default <span class="token comment">/* Modified button style */</span>
+.Button--large
+
+.Tweet
+.Tweet-header <span class="token comment">/* Descendents */</span>
+.Tweet-bodyText
+
+.Accordion.is-collapsed <span class="token comment">/* State of component */</span>
+.Accordion.is-expanded</pre></td></tr></table></figure>
+<h3 id="SASS"><a href="#SASS" class="headerlink" title="SASS"></a>SASS</h3><p>This project uses SASS, with some limitations on nesting. One-level-deep nesting is allowed, but nesting may not extend a selector by using the <code>&amp;</code> operator. For example:</p>
+<figure class="highlight sass"><table><tr><td class="code"><pre><span class="token comment">/* BAD */</span>
+<span class="token selector">.Button {</span>
+  <span class="token selector">&amp;--disabled {</span>
+    <span class="token selector">...</span>
+  <span class="token selector">}</span>
+<span class="token selector">}</span>
+
+<span class="token comment">/* GOOD */</span>
+<span class="token selector">.Button {</span>
+  <span class="token selector">...</span>
+<span class="token selector">}</span>
+
+<span class="token selector">.Button--disabled {</span>
+  <span class="token selector">...</span>
+<span class="token selector">}</span></pre></td></tr></table></figure>
+<h3 id="Mobile-first-responsive-approach"><a href="#Mobile-first-responsive-approach" class="headerlink" title="Mobile-first responsive approach"></a>Mobile-first responsive approach</h3><p>Style to the mobile breakpoint with your selectors, then use <code>min-width</code> media queries to add any styles to the tablet or desktop breakpoints.</p>
+<h3 id="Selector-rule-ordering"><a href="#Selector-rule-ordering" class="headerlink" title="Selector, rule ordering"></a>Selector, rule ordering</h3><ul>
+<li>All selectors are sorted alphabetically and by type.</li>
+<li>HTML elements go above classes and IDs in a file.</li>
+<li>Rules are sorted alphabetically.</li>
+</ul>
+<figure class="highlight scss"><table><tr><td class="code"><pre><span class="token comment">/* BAD */</span>
+<span class="token selector">.wrapper </span><span class="token punctuation">{</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> <span class="token number">940</span><span class="token unit">px</span><span class="token punctuation">;</span>
+  <span class="token property">margin</span><span class="token punctuation">:</span> auto<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">h1 </span><span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> <span class="token color">red</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.article </span><span class="token punctuation">{</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> <span class="token number">100</span><span class="token unit">%</span><span class="token punctuation">;</span>
+  <span class="token property">padding</span><span class="token punctuation">:</span> <span class="token number">32</span><span class="token unit">px</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">/* GOOD */</span>
+<span class="token selector">h1 </span><span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> <span class="token color">red</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.article </span><span class="token punctuation">{</span>
+  <span class="token property">padding</span><span class="token punctuation">:</span> <span class="token number">32</span><span class="token unit">px</span><span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> <span class="token number">100</span><span class="token unit">%</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.wrapper </span><span class="token punctuation">{</span>
+  <span class="token property">margin</span><span class="token punctuation">:</span> auto<span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> <span class="token number">940</span><span class="token unit">px</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></pre></td></tr></table></figure>
+<h2 id="Adding-a-new-integration"><a href="#Adding-a-new-integration" class="headerlink" title="Adding a new integration"></a>Adding a new integration</h2><p>Before opening a pull request for the new integration, open an issue to discuss said integration with the Uppy team. After discussing the integration, you can get started on it. First off, you need to construct the basic components for your integration. The following components are the current standard:</p>
+<ul>
+<li><code>Dashboard</code>: Inline Dashboard (<code>inline: true</code>)</li>
+<li><code>DashboardModal</code>: Dashboard as a modal</li>
+<li><code>DragDrop</code></li>
+<li><code>ProgressBar</code></li>
+<li><code>StatusBar</code></li>
+</ul>
+<p>All these components should function as references to the normal component. Depending on how the framework you’re using handles references to the DOM, your approach to creating these may be different. For example, in React, you can assign a property of the component to the reference of a component (<a href="https://github.com/transloadit/uppy/blob/425f9ecfbc8bc48ce6b734e4fc14fa60d25daa97/packages/%40uppy/react/src/Dashboard.js#L47-L54" target="_blank" rel="noopener">see here</a>). This may differ in your framework, but from what we’ve found, the concepts are generally pretty similar.</p>
+<p>If you’re familiar with React, Vue or soon Svelte, it might be useful to read through the code of those integrations, as they lay out a pretty good structure. After the basic components have been built, here are a few more important tasks to get done:</p>
+<ul>
+<li>Add TypeScript support in some capacity (if possible)</li>
+<li>Write documentation</li>
+<li>Add an example</li>
+<li>Configuring the build system</li>
+</ul>
+<h3 id="Common-issues"><a href="#Common-issues" class="headerlink" title="Common issues"></a>Common issues</h3><p>Before going into these tasks, here are a few common gotchas that you should be aware of.</p>
+<h4 id="Dependencies"><a href="#Dependencies" class="headerlink" title="Dependencies"></a>Dependencies</h4><p>Your <code>package.json</code> should resemble something like this:</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="token punctuation">{</span>
+  <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"@uppy/framework"</span><span class="token punctuation">,</span>
+  <span class="token property">"dependencies"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"@uppy/dashboard"</span><span class="token operator">:</span> <span class="token string">"workspace:^"</span><span class="token punctuation">,</span>
+    <span class="token property">"@uppy/drag-drop"</span><span class="token operator">:</span> <span class="token string">"workspace:^"</span><span class="token punctuation">,</span>
+    <span class="token property">"@uppy/progress-bar"</span><span class="token operator">:</span> <span class="token string">"workspace:^"</span><span class="token punctuation">,</span>
+    <span class="token property">"@uppy/status-bar"</span><span class="token operator">:</span> <span class="token string">"workspace:^"</span><span class="token punctuation">,</span>
+    <span class="token property">"@uppy/utils"</span><span class="token operator">:</span> <span class="token string">"workspace:^"</span><span class="token punctuation">,</span>
+    <span class="token property">"prop-types"</span><span class="token operator">:</span> <span class="token string">"^15.6.1"</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">"peerDependencies"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"@uppy/core"</span><span class="token operator">:</span> <span class="token string">"workspace:^"</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">"publishConfig"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"access"</span><span class="token operator">:</span> <span class="token string">"public"</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></pre></td></tr></table></figure>
+<p>The most important part about this is that <code>@uppy/core</code> is a peer dependency. If your framework complains about <code>@uppy/core</code> not being resolved, you can also add it as a dev dependency</p>
+<h3 id="Adding-TypeScript-Support"><a href="#Adding-TypeScript-Support" class="headerlink" title="Adding TypeScript Support"></a>Adding TypeScript Support</h3><p>This section won’t be too in-depth, because TypeScript depends on your framework. As general advice, prefer using <code>d.ts</code> files and vanilla JavaScript over TypeScript files. This is circumstantial, but it makes handling the build system a lot easier when TypeScript doesn’t have to transpiled. The version of typescript in the monorepo is <code>4.1</code>.</p>
+<h3 id="Writing-docs"><a href="#Writing-docs" class="headerlink" title="Writing docs"></a>Writing docs</h3><p>Generally, documentation for integrations can be broken down into a few pieces that apply to every component, and then documentation for each component. The structure should look something like this:</p>
+<ul>
+<li>Installation</li>
+<li>Initializing Uppy (may vary depending on how the framework handles reactivity)</li>
+<li>Usage</li>
+<li><em>For each component</em><ul>
+<li>Loading CSS</li>
+<li>Props</li>
+</ul>
+</li>
+</ul>
+<p>It may be easier to copy the documentation of earlier integrations and change the parts that need to be changed rather than writing this from scratch. Preferably, keep the documentation to one page. For the front-matter, write something like:</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre>title: Framework Name
+type: docs
+module: "@uppy/framework"
+order: 0
+category: "Other Integrations"</pre></td></tr></table></figure>
+<p>This data is used to generate Uppy’s website. Refer to <a href="#website-previews">the section about running the website locally</a> if you’d like to see how the docs look on the website.</p>
+<p>Any change of the documentation that involves a security best practice must substantiated with an external reference. See <a href="https://github.com/transloadit/uppy/issues/3565" target="_blank" rel="noopener">#3565</a>.</p>
+<h3 id="Adding-an-example"><a href="#Adding-an-example" class="headerlink" title="Adding an example"></a>Adding an example</h3><p>You can likely use whatever code generation tool for your framework (ex. <code>create-react-app</code>) to create this example. Make sure you add the same version of <code>@uppy/core</code> to this as your peer dependency required, or you may run into strange issues. Try to include all the components are some of their functionality. <a href="https://github.com/transloadit/uppy/blob/main/examples/react-example/App.js" target="_blank" rel="noopener">The React example</a> is a great… well example of how to do this well.</p>
+<h3 id="Integrating-the-build-system"><a href="#Integrating-the-build-system" class="headerlink" title="Integrating the build system"></a>Integrating the build system</h3><p>The biggest part of this is understanding Uppy’s build system. The high level description is that <code>babel</code> goes through almost all the packages and transpiles all the Javascript files in the <code>src</code> directory to more compatible JavaScript in the <code>lib</code> folder. If you’re using vanilla JavaScript for your integration (like React and Vue do), then you can use this build system and use the files generated as your entry points.</p>
+<p>If you’re using some kind of more abstract file format (like Svelte), then you probably want do to a few things: add the directory name to <a href="https://github.com/transloadit/uppy/blob/425f9ecfbc8bc48ce6b734e4fc14fa60d25daa97/bin/build-lib.js#L15" target="_blank" rel="noopener">this <code>IGNORE</code> regex</a>; add all your build dependencies to the root <code>package.json</code> (try to keep this small); add a new <code>build:framework</code> script to the root <code>package.json</code>. This script usually looks something like this:</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="token punctuation">{</span>
+  <span class="token property">"scripts"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"build:framework"</span><span class="token operator">:</span> <span class="token string">"cd framework &amp;&amp; yarn run build"</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span></pre></td></tr></table></figure>
+<p>Then, add this script to the <code>build:js</code> script. Try running the <code>build:js</code> script and make sure it does not error. It may also be of use to make sure that global dependencies aren’t being used (ex. not having rollup locally and relying on a global install), as these dependencies won’t be present on the machine’s handling building.</p>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script></body></html>
+    
+    
+
+    
+    <div class="footer">Caught a mistake or want to contribute to the documentation?
+       <a href="https://github.com/transloadit/uppy/blob/main/website/src/docs/contributing.md" rel="noreferrer noopener" target="_blank">Edit/fork this page directly on Github</a>!
+    </div>
+</div>
+
+        
+      </main>
+
+      <script defer data-domain="transloadit.github.io" src="https://analytics.transloadit.com/js/plausible.js"></script>
+
+
+      
+        <script src="/uppy/js/smooth-scroll.min.js"></script>
+        <!-- Place this tag in your head or just before your close body tag. -->
+        <script async defer src="https://buttons.github.io/buttons.js"></script>
+      
+      <script src="/uppy/js/common.js"></script>
+
+      <!-- Twitter follow button script -->
+      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+    </div>
+  </body>
+</html>

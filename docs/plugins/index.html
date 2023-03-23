@@ -1,0 +1,1536 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>List of Plugins — Uppy</title>
+    <meta charset="utf-8">
+    <meta name="title" content="List of Plugins — Uppy">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@uppy_io">
+    <meta name="twitter:creator" content="@uppy_io">
+    <meta property="og:url" content="https://transloadit.github.io/uppy/docs/plugins/index.html">
+    <meta property="og:title" content="List of Plugins — Uppy">
+    <meta name="twitter:title" content="List of Plugins — Uppy">
+    <meta name="twitter:description" content="">
+    <meta property="og:image" content="http://transloadit.github.io/uppy/images/uppy-social-pink.png">
+    <meta name="twitter:image" content="http://transloadit.github.io/uppy/images/uppy-social-pink.png">
+
+    <meta name="google-site-verification" content="JxARoHXoCI8bD07pLV_u3z6xpuWNcSIZIcHEytyCkUc" />
+
+    <link rel="icon" href="/uppy/images/logos/uppy-dog-head-arrow.png" type="image/x-icon">
+    <link rel="alternate" type="application/rss+xml" title="Uppy" href="/atom.xml">
+
+    <script>
+      window.PAGE_TYPE = "docs"
+    </script>
+    
+<link rel="stylesheet" href="/uppy/css/main.css?version=2">
+
+    <!-- ^ poor man's solution to css cache busting. bump the version when there's something new we really want users to see -->
+  <meta name="generator" content="Hexo 4.2.1"></head>
+  <body class="page-inner page-plugin-list">
+    <div class="page">
+      <div class="TransloaditBar js-TransloaditBar">
+        <div class="TransloaditBar-about">
+          <!-- <a class="TransloaditBar-logo" href="https://transloadit.com/" target="_blank" rel="noopener">
+            <img class="TransloaditBar-logoImg" src="/uppy/images/transloadit-white-glyph.svg" width="20" height="20" alt="Transloadit">
+          </a> -->
+          <!-- <span>Uppy is an open source project by <a class="TransloaditBar-link" href="https://transloadit.com/" target="_blank">Transloadit</a></span> -->
+          This website is no longer maintained, please visit <a href="//uppy.io" target="_blank" rel="noopener" style="color:inherit">uppy.io</a> to get up-to-date info about Uppy.
+        </div>
+      </div>
+
+      <header id="header" class="MainHeader js-MainHeader">
+        <button class="MainHeader-menuBtn js-MenuBtn"></button>
+
+        <span id="logo" class="MainLogo">
+          <a class="MainLogo-link" href="/uppy/">Uppy</a>
+          <!-- Was used for 1.0, we can re-use for 2.0 or major announcements -->
+          <!-- <a class="MainLogo-announcement" href="/blog/2019/04/1.0/">
+            1.0
+            <span class="MainLogo-emoji">
+              <img src="/uppy/images/party-popper.png" srcset="/uppy/images/party-popper@2x.png 2x" alt="🎉">
+            </span>
+          </a> -->
+        </span>
+
+        <nav>
+          <ul id="nav" class="MainMenu">
+            <!-- @todo uncomment search input when we get our own swifttype -->
+<!-- <li>
+  <form id="search-form" class="MainMenu-search">
+    <input type="text" id="search-query" class="MainMenu-searchQuery st-default-search-input">
+  </form>
+</li> -->
+<!--li><a href="/uppy/guide/" class="nav-link">Guide</a></li-->
+<li><a href="/uppy/docs/" class="nav-link current">Docs</a></li>
+<li><a href="/uppy/examples/dashboard/" class="nav-link">Examples</a></li>
+<!--li><a href="/uppy/stats/" class="nav-link">Stats</a></li-->
+<li><a href="/uppy/blog/" class="nav-link">Blog</a></li>
+<li><a href="/uppy/support/" class="nav-link">Support</a></li>
+<li><a href="https://github.com/transloadit/uppy" target="_blank" rel="noopener" class="nav-link">GitHub</a></li>
+
+          </ul>
+        </nav>
+
+        <div class="MainHeader-tagline">
+          The file uploader that <span class="MainHeader-taglinePart js-MainHeader-taglinePart is-visible">loves to play fetch</span>
+        </div>
+
+        <ul class="MainHeader-taglineList js-MainHeader-taglineList">
+          
+          <li>won’t chew on your shoes</li>
+          
+          <li>is fully housebroken</li>
+          
+          <li>just wants to play with you</li>
+          
+          <li>doesn’t hump your leg</li>
+          
+          <li>also accepts cat pictures</li>
+          
+          <li>loves you unconditionally</li>
+          
+          <li>you don’t have to keep on a leash</li>
+          
+          <li>won’t pee on your rug</li>
+          
+          <li>loves to play fetch</li>
+          
+          <li>doesn’t bite (hard)</li>
+          
+          <li>won’t bark at the mailman</li>
+          
+          <li>is great with the kids</li>
+          
+          <li>can digest anything, even chocolate cake</li>
+          
+          <li>is always happy to see you</li>
+          
+          <li>isn’t afraid of fireworks</li>
+          
+          <li>is allowed everywhere</li>
+          
+        </ul>
+      </header>
+
+      <main class="MainContent js-MainContent" id="main">
+        
+          
+    <div class="Sidebar js-Sidebar">
+  <ul class="main-menu">
+    <!-- @todo uncomment search input when we get our own swifttype -->
+<!-- <li>
+  <form id="search-form" class="MainMenu-search">
+    <input type="text" id="search-query" class="MainMenu-searchQuery st-default-search-input">
+  </form>
+</li> -->
+<!--li><a href="/uppy/guide/" class="nav-link">Guide</a></li-->
+<li><a href="/uppy/docs/" class="nav-link current">Docs</a></li>
+<li><a href="/uppy/examples/dashboard/" class="nav-link">Examples</a></li>
+<!--li><a href="/uppy/stats/" class="nav-link">Stats</a></li-->
+<li><a href="/uppy/blog/" class="nav-link">Blog</a></li>
+<li><a href="/uppy/support/" class="nav-link">Support</a></li>
+<li><a href="https://github.com/transloadit/uppy" target="_blank" rel="noopener" class="nav-link">GitHub</a></li>
+
+  </ul>
+  
+  
+  <div class="list">
+    <h2>
+      <a href="/uppy/docs">Docs</a>
+    </h2>
+      
+    <div class="menu-root">
+      
+
+    
+    
+    
+    <ul>
+      
+        
+        
+        <li key="p-0-docs/index.html">
+          <a href="/docs/" class="sidebar-link">Getting Started</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-1-docs/uppy/index.html">
+          <a href="/docs/uppy/" class="sidebar-link">Uppy</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-2-docs/companion/index.html">
+          <a href="/docs/companion/" class="sidebar-link">Companion</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-3-docs/plugins/index.html">
+          <a href="/docs/plugins/" class="sidebar-link current">List of Plugins</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-4-docs/plugin-options/index.html">
+          <a href="/docs/plugin-options/" class="sidebar-link">Common Plugin Options</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-5-docs/stores/index.html">
+          <a href="/docs/stores/" class="sidebar-link">Custom Stores</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-6-docs/community-projects/index.html">
+          <a href="/docs/community-projects/" class="sidebar-link">Community Projects</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-7-docs/locales/index.html">
+          <a href="/docs/locales/" class="sidebar-link">Locale Packs</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-8-docs/migration-guides.html">
+          <a href="/docs/migration-guides.html" class="sidebar-link">Migration guides</a>
+          
+        </li>
+      
+    </ul>
+
+    
+    
+    
+        
+        <h3 id="" key="category-1-UI Elements" data-scroll="no">UI Elements</h3>
+        
+    
+    <ul>
+      
+        
+        
+        <li key="p-0-docs/dashboard/index.html">
+          <a href="/docs/dashboard/" class="sidebar-link">Dashboard</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-1-docs/status-bar/index.html">
+          <a href="/docs/status-bar/" class="sidebar-link">Status Bar</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-2-docs/progress-bar/index.html">
+          <a href="/docs/progress-bar/" class="sidebar-link">Progress Bar</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-3-docs/informer/index.html">
+          <a href="/docs/informer/" class="sidebar-link">Informer</a>
+          
+        </li>
+      
+    </ul>
+
+    
+    
+    
+        
+        <h3 id="" key="category-2-Sources" data-scroll="no">Sources</h3>
+        
+    
+    <ul>
+      
+        
+        
+        <li key="p-0-docs/drag-drop/index.html">
+          <a href="/docs/drag-drop/" class="sidebar-link">Drag & Drop</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-1-docs/drop-target/index.html">
+          <a href="/docs/drop-target/" class="sidebar-link">Drop Target</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-2-docs/file-input/index.html">
+          <a href="/docs/file-input/" class="sidebar-link">File Input</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-3-docs/audio/index.html">
+          <a href="/docs/audio/" class="sidebar-link">Audio</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-4-docs/webcam/index.html">
+          <a href="/docs/webcam/" class="sidebar-link">Webcam</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-5-docs/screen-capture/index.html">
+          <a href="/docs/screen-capture/" class="sidebar-link">Screen capture</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-6-docs/providers/index.html">
+          <a href="/docs/providers/" class="sidebar-link">Provider Plugins</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-7-docs/box/index.html">
+          <span title='Requires Companion'>ⓒ </span><a href="/docs/box/" class="sidebar-link">Box</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-8-docs/dropbox/index.html">
+          <span title='Requires Companion'>ⓒ </span><a href="/docs/dropbox/" class="sidebar-link">Dropbox</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-9-docs/google-drive/index.html">
+          <span title='Requires Companion'>ⓒ </span><a href="/docs/google-drive/" class="sidebar-link">Google Drive</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-10-docs/instagram/index.html">
+          <span title='Requires Companion'>ⓒ </span><a href="/docs/instagram/" class="sidebar-link">Instagram</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-11-docs/onedrive/index.html">
+          <span title='Requires Companion'>ⓒ </span><a href="/docs/onedrive/" class="sidebar-link">OneDrive</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-12-docs/zoom/index.html">
+          <span title='Requires Companion'>ⓒ </span><a href="/docs/zoom/" class="sidebar-link">Zoom</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-13-docs/facebook/index.html">
+          <span title='Requires Companion'>ⓒ </span><a href="/docs/facebook/" class="sidebar-link">Facebook</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-14-docs/unsplash/index.html">
+          <span title='Requires Companion'>ⓒ </span><a href="/docs/unsplash/" class="sidebar-link">Unsplash</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-15-docs/url/index.html">
+          <span title='Requires Companion'>ⓒ </span><a href="/docs/url/" class="sidebar-link">Import From URL</a>
+          
+        </li>
+      
+    </ul>
+
+    
+    
+    
+        
+        <h3 id="" key="category-3-Destinations" data-scroll="no">Destinations</h3>
+        
+    
+    <ul>
+      
+        
+        
+        <li key="p-0-docs/tus/index.html">
+          <a href="/docs/tus/" class="sidebar-link">Tus</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-1-docs/xhr-upload/index.html">
+          <a href="/docs/xhr-upload/" class="sidebar-link">XHR</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-2-docs/aws-s3/index.html">
+          <a href="/docs/aws-s3/" class="sidebar-link">AWS S3</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-3-docs/aws-s3-multipart/index.html">
+          <a href="/docs/aws-s3-multipart/" class="sidebar-link">AWS S3 Multipart</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-4-docs/transloadit/index.html">
+          <a href="/docs/transloadit/" class="sidebar-link">Transloadit</a>
+          
+        </li>
+      
+    </ul>
+
+    
+    
+    
+        
+        <h3 id="" key="category-4-Miscellaneous" data-scroll="no">Miscellaneous</h3>
+        
+    
+    <ul>
+      
+        
+        
+        <li key="p-0-docs/form/index.html">
+          <a href="/docs/form/" class="sidebar-link">Form</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-1-docs/golden-retriever/index.html">
+          <a href="/docs/golden-retriever/" class="sidebar-link">Golden Retriever</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-2-docs/image-editor/index.html">
+          <a href="/docs/image-editor/" class="sidebar-link">Image Editor</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-3-docs/thumbnail-generator/index.html">
+          <a href="/docs/thumbnail-generator/" class="sidebar-link">Thumbnail Generator</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-4-docs/redux/index.html">
+          <a href="/docs/redux/" class="sidebar-link">Redux</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-5-docs/compressor/index.html">
+          <a href="/docs/compressor/" class="sidebar-link">Compressor</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-6-docs/remote-sources/index.html">
+          <a href="/docs/remote-sources/" class="sidebar-link">Remote Sources</a>
+          
+        </li>
+      
+    </ul>
+
+    
+    
+    
+    <ul>
+      
+    </ul>
+
+    
+    
+    
+        
+        <h3 id="" key="category-6-React" data-scroll="no"><a href="/docs/react/">React</a></h3>
+        
+    
+    <ul>
+      
+        
+        
+        <li key="p-0-docs/react/index.html">
+          <a href="/docs/react/" class="sidebar-link">Introduction</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-1-docs/react/status-bar/index.html">
+          <a href="/docs/react/status-bar/" class="sidebar-link">&lt;StatusBar /></a>
+          
+        </li>
+      
+        
+        
+        <li key="p-2-docs/react/drag-drop/index.html">
+          <a href="/docs/react/drag-drop/" class="sidebar-link">&lt;DragDrop /></a>
+          
+        </li>
+      
+        
+        
+        <li key="p-3-docs/react/file-input/index.html">
+          <a href="/docs/react/file-input/" class="sidebar-link">&lt;FileInput /></a>
+          
+        </li>
+      
+        
+        
+        <li key="p-4-docs/react/progress-bar/index.html">
+          <a href="/docs/react/progress-bar/" class="sidebar-link">&lt;ProgressBar /></a>
+          
+        </li>
+      
+        
+        
+        <li key="p-5-docs/react/dashboard/index.html">
+          <a href="/docs/react/dashboard/" class="sidebar-link">&lt;Dashboard /></a>
+          
+        </li>
+      
+        
+        
+        <li key="p-6-docs/react/dashboard-modal/index.html">
+          <a href="/docs/react/dashboard-modal/" class="sidebar-link">&lt;DashboardModal /></a>
+          
+        </li>
+      
+        
+        
+        <li key="p-7-docs/react/native/index.html">
+          <a href="/docs/react/native/" class="sidebar-link">React Native</a>
+          
+        </li>
+      
+    </ul>
+
+    
+    
+    
+        
+        <h3 id="" key="category-7-Other Integrations" data-scroll="no"><a href="/docs/vue/">Other Integrations</a></h3>
+        
+    
+    <ul>
+      
+        
+        
+        <li key="p-0-docs/angular/index.html">
+          <a href="/docs/angular/" class="sidebar-link">Angular</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-1-docs/vue/index.html">
+          <a href="/docs/vue/" class="sidebar-link">Vue</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-2-docs/svelte/index.html">
+          <a href="/docs/svelte/" class="sidebar-link">Svelte</a>
+          
+        </li>
+      
+    </ul>
+
+    
+    
+    
+        
+        <h3 id="" key="category-8-Contributing" data-scroll="no"><a href="/docs/contributing.html">Contributing</a></h3>
+        
+    
+    <ul>
+      
+        
+        
+        <li key="p-0-docs/contributing.html">
+          <a href="/docs/contributing.html" class="sidebar-link">Contributing</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-1-docs/writing-plugins/index.html">
+          <a href="/docs/writing-plugins/" class="sidebar-link">Writing Plugins</a>
+          
+        </li>
+      
+    </ul>
+
+
+    </div>
+
+    <ul class="Social">
+  <li><a href="https://twitter.com/uppy_io" target="_blank" rel="noopener" class="twitter-follow-button" data-show-count="false" data-dnt="true">Follow @uppy_io</a></li>
+  <li><iframe src="https://ghbtns.com/github-btn.html?user=transloadit&repo=uppy&type=watch&count=true"
+allowtransparency="true" frameborder="0" scrolling="0" width="100" height="20"></iframe></li>
+  <!-- to regenerate you can use this link: https://img.shields.io/badge/community-forum-d8006a.svg -->
+  <li><a href="https://community.transloadit.com/c/uppy" target="_blank" rel="noopener"><img src="/uppy/images/community-forum-d8006a.svg" /> </a></li>
+  <li class="BuildBadge">
+   <span class="wrapper">
+     <a href="https://github.com/transloadit/uppy/actions" target="_blank" rel="noopener"><img src="https://github.com/transloadit/uppy/workflows/End-to-end%20tests/badge.svg" alt="Build Status"></a>
+   </span>
+  </li>
+</ul>
+
+    </div>
+  
+</div>
+
+
+
+<div class="Content js-Content docs with-sidebar">
+    <h1>List of Plugins</h1>
+    <html><head></head><body><p>Everything in Uppy is a Plugin. This lets us offer a wealth of features, but avoid bloating your JS bundle sizes if you don’t need them all.</p>
+<p>See <a href="#package-list">list of packages and sizes</a> below to install what you need.</p>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script></body></html>
+    
+    
+      
+
+    
+    
+    
+    <ul>
+      
+        
+        
+        <li key="p-0-docs/uppy/index.html">
+          <a href="/docs/uppy/" class="sidebar-link">Uppy</a>
+          
+             — The core module that orchestrates everything
+          
+        </li>
+      
+        
+        
+        <li key="p-1-docs/companion/index.html">
+          <a href="/docs/companion/" class="sidebar-link">Companion</a>
+          
+             — Server-side proxy that enables remote sources like Instagram, Google Drive, and Dropbox
+          
+        </li>
+      
+    </ul>
+
+    
+    
+    
+        
+        <h3 id="UI-Elements" key="category-1-UI Elements" data-scroll="no">UI Elements</h3>
+        
+    
+    <ul>
+      
+        
+        
+        <li key="p-0-docs/dashboard/index.html">
+          <a href="/docs/dashboard/" class="sidebar-link">Dashboard</a>
+          
+             — full-featured sleek UI with file previews, metadata editing, upload/pause/resume/cancel buttons and more. Includes <code>StatusBar</code> and <code>Informer</code> plugins by default
+          
+        </li>
+      
+        
+        
+        <li key="p-1-docs/status-bar/index.html">
+          <a href="/docs/status-bar/" class="sidebar-link">Status Bar</a>
+          
+             — advanced upload progress status bar
+          
+        </li>
+      
+        
+        
+        <li key="p-2-docs/progress-bar/index.html">
+          <a href="/docs/progress-bar/" class="sidebar-link">Progress Bar</a>
+          
+             — add a small YouTube-style progress bar at the top of the page
+          
+        </li>
+      
+        
+        
+        <li key="p-3-docs/informer/index.html">
+          <a href="/docs/informer/" class="sidebar-link">Informer</a>
+          
+             — show notifications
+          
+        </li>
+      
+    </ul>
+
+    
+    
+    
+        
+        <h3 id="Sources" key="category-2-Sources" data-scroll="no">Sources</h3>
+        
+    
+    <ul>
+      
+        
+        
+        <li key="p-0-docs/drag-drop/index.html">
+          <a href="/docs/drag-drop/" class="sidebar-link">Drag & Drop</a>
+          
+             — plain and simple drag-and-drop area
+          
+        </li>
+      
+        
+        
+        <li key="p-1-docs/drop-target/index.html">
+          <a href="/docs/drop-target/" class="sidebar-link">Drop Target</a>
+          
+             — drag-and-drop area on any element on the page
+          
+        </li>
+      
+        
+        
+        <li key="p-2-docs/file-input/index.html">
+          <a href="/docs/file-input/" class="sidebar-link">File Input</a>
+          
+             — even more plain and simple, just a button
+          
+        </li>
+      
+        
+        
+        <li key="p-3-docs/audio/index.html">
+          <a href="/docs/audio/" class="sidebar-link">Audio</a>
+          
+             — upload audio recordings
+          
+        </li>
+      
+        
+        
+        <li key="p-4-docs/webcam/index.html">
+          <a href="/docs/webcam/" class="sidebar-link">Webcam</a>
+          
+             — upload selfies or audio / video recordings
+          
+        </li>
+      
+        
+        
+        <li key="p-5-docs/screen-capture/index.html">
+          <a href="/docs/screen-capture/" class="sidebar-link">Screen capture</a>
+          
+             — upload selfies or audio / video recordings
+          
+        </li>
+      
+        
+        
+        <li key="p-6-docs/box/index.html">
+          <span title='Requires Companion'>ⓒ </span><a href="/docs/box/" class="sidebar-link">Box</a>
+          
+             — import files from Box
+          
+        </li>
+      
+        
+        
+        <li key="p-7-docs/dropbox/index.html">
+          <span title='Requires Companion'>ⓒ </span><a href="/docs/dropbox/" class="sidebar-link">Dropbox</a>
+          
+             — import files from Dropbox
+          
+        </li>
+      
+        
+        
+        <li key="p-8-docs/google-drive/index.html">
+          <span title='Requires Companion'>ⓒ </span><a href="/docs/google-drive/" class="sidebar-link">Google Drive</a>
+          
+             — import files from Google Drive
+          
+        </li>
+      
+        
+        
+        <li key="p-9-docs/instagram/index.html">
+          <span title='Requires Companion'>ⓒ </span><a href="/docs/instagram/" class="sidebar-link">Instagram</a>
+          
+             — import files from Instagram
+          
+        </li>
+      
+        
+        
+        <li key="p-10-docs/onedrive/index.html">
+          <span title='Requires Companion'>ⓒ </span><a href="/docs/onedrive/" class="sidebar-link">OneDrive</a>
+          
+             — import files from OneDrive
+          
+        </li>
+      
+        
+        
+        <li key="p-11-docs/zoom/index.html">
+          <span title='Requires Companion'>ⓒ </span><a href="/docs/zoom/" class="sidebar-link">Zoom</a>
+          
+             — import files from Zoom
+          
+        </li>
+      
+        
+        
+        <li key="p-12-docs/facebook/index.html">
+          <span title='Requires Companion'>ⓒ </span><a href="/docs/facebook/" class="sidebar-link">Facebook</a>
+          
+             — import files from Facebook
+          
+        </li>
+      
+        
+        
+        <li key="p-13-docs/unsplash/index.html">
+          <span title='Requires Companion'>ⓒ </span><a href="/docs/unsplash/" class="sidebar-link">Unsplash</a>
+          
+             — import images from Unsplash
+          
+        </li>
+      
+        
+        
+        <li key="p-14-docs/url/index.html">
+          <span title='Requires Companion'>ⓒ </span><a href="/docs/url/" class="sidebar-link">Import From URL</a>
+          
+             — import files from any public URL
+          
+        </li>
+      
+    </ul>
+
+    
+    
+    
+        
+        <h3 id="Destinations" key="category-3-Destinations" data-scroll="no">Destinations</h3>
+        
+    
+    <ul>
+      
+        
+        
+        <li key="p-0-docs/tus/index.html">
+          <a href="/docs/tus/" class="sidebar-link">Tus</a>
+          
+             — uploads using the <a href='https://tus.io' target="_blank" rel="noopener">tus</a> resumable upload protocol
+          
+        </li>
+      
+        
+        
+        <li key="p-1-docs/xhr-upload/index.html">
+          <a href="/docs/xhr-upload/" class="sidebar-link">XHR Upload</a>
+          
+             — classic multipart form uploads or binary uploads using XMLHTTPRequest
+          
+        </li>
+      
+        
+        
+        <li key="p-2-docs/aws-s3/index.html">
+          <a href="/docs/aws-s3/" class="sidebar-link">AWS S3</a>
+          
+             — uploader for AWS S3
+          
+        </li>
+      
+        
+        
+        <li key="p-3-docs/aws-s3-multipart/index.html">
+          <a href="/docs/aws-s3-multipart/" class="sidebar-link">AWS S3 Multipart</a>
+          
+             — uploader for AWS S3 using its resumable Multipart protocol
+          
+        </li>
+      
+        
+        
+        <li key="p-4-docs/transloadit/index.html">
+          <a href="/docs/transloadit/" class="sidebar-link">Transloadit</a>
+          
+             — manipulate and transcode uploaded files using the <a href='https://transloadit.com' target="_blank" rel="noopener">transloadit.com</a> service
+          
+        </li>
+      
+    </ul>
+
+    
+    
+    
+        
+        <h3 id="Miscellaneous" key="category-4-Miscellaneous" data-scroll="no">Miscellaneous</h3>
+        
+    
+    <ul>
+      
+        
+        
+        <li key="p-0-docs/form/index.html">
+          <a href="/docs/form/" class="sidebar-link">Form</a>
+          
+             — collect metadata from <code>&lt;form&gt;</code> right before the Uppy upload, then optionally append results back to the form
+          
+        </li>
+      
+        
+        
+        <li key="p-1-docs/golden-retriever/index.html">
+          <a href="/docs/golden-retriever/" class="sidebar-link">Golden Retriever</a>
+          
+             — restore files and continue uploading after a page refresh or a browser crash
+          
+        </li>
+      
+        
+        
+        <li key="p-2-docs/image-editor/index.html">
+          <a href="/docs/image-editor/" class="sidebar-link">Image Editor</a>
+          
+             — allows users to crop, rotate, zoom and flip images that are added to Uppy
+          
+        </li>
+      
+        
+        
+        <li key="p-3-docs/thumbnail-generator/index.html">
+          <a href="/docs/thumbnail-generator/" class="sidebar-link">Thumbnail Generator</a>
+          
+             — generate preview thumbnails for images to be uploaded
+          
+        </li>
+      
+        
+        
+        <li key="p-4-docs/redux/index.html">
+          <a href="/docs/redux/" class="sidebar-link">Redux</a>
+          
+             — Uppy can use your app’s Redux store for its files and UI state
+          
+        </li>
+      
+        
+        
+        <li key="p-5-docs/compressor/index.html">
+          <a href="/docs/compressor/" class="sidebar-link">Compressor</a>
+          
+             — optimizes images before upload, saving up to 60% on average
+          
+        </li>
+      
+        
+        
+        <li key="p-6-docs/remote-sources/index.html">
+          <a href="/docs/remote-sources/" class="sidebar-link">Remote Sources</a>
+          
+             — Uppy plugin that includes all remote sources that Uppy+Companion offer, like Instagram, Google Drive, Dropox, Box, Unsplash, Url etc
+          
+        </li>
+      
+    </ul>
+
+    
+    
+    
+    <ul>
+      
+    </ul>
+
+    
+    
+    
+        
+        <h3 id="React" key="category-6-React" data-scroll="no">React</h3>
+        
+    
+    <ul>
+      
+        
+        
+        <li key="p-0-docs/react/index.html">
+          <a href="/docs/react/" class="sidebar-link">Introduction</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-1-docs/react/status-bar/index.html">
+          <a href="/docs/react/status-bar/" class="sidebar-link">&lt;StatusBar /></a>
+          
+        </li>
+      
+        
+        
+        <li key="p-2-docs/react/drag-drop/index.html">
+          <a href="/docs/react/drag-drop/" class="sidebar-link">&lt;DragDrop /></a>
+          
+        </li>
+      
+        
+        
+        <li key="p-3-docs/react/file-input/index.html">
+          <a href="/docs/react/file-input/" class="sidebar-link">&lt;FileInput /></a>
+          
+        </li>
+      
+        
+        
+        <li key="p-4-docs/react/progress-bar/index.html">
+          <a href="/docs/react/progress-bar/" class="sidebar-link">&lt;ProgressBar /></a>
+          
+        </li>
+      
+        
+        
+        <li key="p-5-docs/react/dashboard/index.html">
+          <a href="/docs/react/dashboard/" class="sidebar-link">&lt;Dashboard /></a>
+          
+        </li>
+      
+        
+        
+        <li key="p-6-docs/react/dashboard-modal/index.html">
+          <a href="/docs/react/dashboard-modal/" class="sidebar-link">&lt;DashboardModal /></a>
+          
+        </li>
+      
+        
+        
+        <li key="p-7-docs/react/native/index.html">
+          <a href="/docs/react/native/" class="sidebar-link">React Native</a>
+          
+        </li>
+      
+    </ul>
+
+    
+    
+    
+        
+        <h3 id="Other-Integrations" key="category-7-Other Integrations" data-scroll="no">Other Integrations</h3>
+        
+    
+    <ul>
+      
+        
+        
+        <li key="p-0-docs/angular/index.html">
+          <a href="/docs/angular/" class="sidebar-link">Angular</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-1-docs/vue/index.html">
+          <a href="/docs/vue/" class="sidebar-link">Vue</a>
+          
+        </li>
+      
+        
+        
+        <li key="p-2-docs/svelte/index.html">
+          <a href="/docs/svelte/" class="sidebar-link">Svelte</a>
+          
+        </li>
+      
+    </ul>
+
+    
+    
+    
+    <ul>
+      
+    </ul>
+
+
+      <h2 id="package-list">List of Uppy Packages</h2>
+<p>Below is the list of Uppy packages, and their minified and gzipped sizes.</p>
+<small>
+   ⚠️ Note that this includes the dependencies for each package, some of which are shared when you install multiple plugins. For example, the <code>@uppy/dropbox</code> and <code>@uppy/instagram</code> package are both over 11kB including dependencies, but only sum up to about 15kB when they are used together.
+</small>
+
+<div class="table-responsive">
+  <table class="Stats-bundleSizes">
+    <thead>
+      <tr>
+        <th class="Stats-bundleSizeHeader">Package</th>
+        <th class="Stats-bundleSizeHeader">Version</th>
+        <th class="Stats-bundleSizeHeader">Minified</th>
+        <th class="Stats-bundleSizeHeader">Gzip</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+        
+        <tr>
+          <td><a class="Stats-package" target="_blank" href="https://npmjs.com/package/uppy">uppy</a></td>
+          <td>3.6.1</td>
+          <td class="Stats-size">505 KB</td>
+          <td class="
+            Stats-large
+            
+           Stats-size">
+            150 KB
+          </td>
+        </tr>
+      
+        
+        <tr>
+          <td><a class="Stats-package" target="_blank" href="https://npmjs.com/package/@uppy/react">@uppy/react</a></td>
+          <td>3.1.0</td>
+          <td class="Stats-size">147 KB</td>
+          <td class="
+            Stats-large
+            
+           Stats-size">
+            41 KB
+          </td>
+        </tr>
+      
+        
+        <tr>
+          <td><a class="Stats-package" target="_blank" href="https://npmjs.com/package/@uppy/core">@uppy/core</a></td>
+          <td>3.1.1</td>
+          <td class="Stats-size">46 KB</td>
+          <td class="
+            
+            
+           Stats-size">
+            16 KB
+          </td>
+        </tr>
+      
+        
+        <tr>
+          <td><a class="Stats-package" target="_blank" href="https://npmjs.com/package/@uppy/aws-s3">@uppy/aws-s3</a></td>
+          <td>3.0.5</td>
+          <td class="Stats-size">28 KB</td>
+          <td class="
+            
+            Stats-small
+           Stats-size">
+            9.7 KB
+          </td>
+        </tr>
+      
+        
+        <tr>
+          <td><a class="Stats-package" target="_blank" href="https://npmjs.com/package/@uppy/aws-s3-multipart">@uppy/aws-s3-multipart</a></td>
+          <td>3.1.2</td>
+          <td class="Stats-size">34 KB</td>
+          <td class="
+            
+            
+           Stats-size">
+            11 KB
+          </td>
+        </tr>
+      
+        
+        <tr>
+          <td><a class="Stats-package" target="_blank" href="https://npmjs.com/package/@uppy/dashboard">@uppy/dashboard</a></td>
+          <td>3.3.1</td>
+          <td class="Stats-size">126 KB</td>
+          <td class="
+            Stats-large
+            
+           Stats-size">
+            37 KB
+          </td>
+        </tr>
+      
+        
+        <tr>
+          <td><a class="Stats-package" target="_blank" href="https://npmjs.com/package/@uppy/drag-drop">@uppy/drag-drop</a></td>
+          <td>3.0.1</td>
+          <td class="Stats-size">5.2 KB</td>
+          <td class="
+            
+            Stats-small
+           Stats-size">
+            2.1 KB
+          </td>
+        </tr>
+      
+        
+        <tr>
+          <td><a class="Stats-package" target="_blank" href="https://npmjs.com/package/@uppy/dropbox">@uppy/dropbox</a></td>
+          <td>3.1.0</td>
+          <td class="Stats-size">41 KB</td>
+          <td class="
+            
+            
+           Stats-size">
+            13 KB
+          </td>
+        </tr>
+      
+        
+        <tr>
+          <td><a class="Stats-package" target="_blank" href="https://npmjs.com/package/@uppy/file-input">@uppy/file-input</a></td>
+          <td>3.0.1</td>
+          <td class="Stats-size">1.7 KB</td>
+          <td class="
+            
+            Stats-small
+           Stats-size">
+            895 B
+          </td>
+        </tr>
+      
+        
+        <tr>
+          <td><a class="Stats-package" target="_blank" href="https://npmjs.com/package/@uppy/form">@uppy/form</a></td>
+          <td>3.0.1</td>
+          <td class="Stats-size">4.9 KB</td>
+          <td class="
+            
+            Stats-small
+           Stats-size">
+            2.1 KB
+          </td>
+        </tr>
+      
+        
+        <tr>
+          <td><a class="Stats-package" target="_blank" href="https://npmjs.com/package/@uppy/golden-retriever">@uppy/golden-retriever</a></td>
+          <td>3.0.2</td>
+          <td class="Stats-size">14 KB</td>
+          <td class="
+            
+            Stats-small
+           Stats-size">
+            4.3 KB
+          </td>
+        </tr>
+      
+        
+        <tr>
+          <td><a class="Stats-package" target="_blank" href="https://npmjs.com/package/@uppy/google-drive">@uppy/google-drive</a></td>
+          <td>3.1.0</td>
+          <td class="Stats-size">41 KB</td>
+          <td class="
+            
+            
+           Stats-size">
+            13 KB
+          </td>
+        </tr>
+      
+        
+        <tr>
+          <td><a class="Stats-package" target="_blank" href="https://npmjs.com/package/@uppy/informer">@uppy/informer</a></td>
+          <td>3.0.1</td>
+          <td class="Stats-size">5.1 KB</td>
+          <td class="
+            
+            Stats-small
+           Stats-size">
+            1.8 KB
+          </td>
+        </tr>
+      
+        
+        <tr>
+          <td><a class="Stats-package" target="_blank" href="https://npmjs.com/package/@uppy/instagram">@uppy/instagram</a></td>
+          <td>3.1.0</td>
+          <td class="Stats-size">46 KB</td>
+          <td class="
+            
+            
+           Stats-size">
+            18 KB
+          </td>
+        </tr>
+      
+        
+        <tr>
+          <td><a class="Stats-package" target="_blank" href="https://npmjs.com/package/@uppy/image-editor">@uppy/image-editor</a></td>
+          <td>2.1.1</td>
+          <td class="Stats-size">46 KB</td>
+          <td class="
+            
+            
+           Stats-size">
+            15 KB
+          </td>
+        </tr>
+      
+        
+        <tr>
+          <td><a class="Stats-package" target="_blank" href="https://npmjs.com/package/@uppy/progress-bar">@uppy/progress-bar</a></td>
+          <td>3.0.1</td>
+          <td class="Stats-size">1018 B</td>
+          <td class="
+            
+            Stats-small
+           Stats-size">
+            567 B
+          </td>
+        </tr>
+      
+        
+        <tr>
+          <td><a class="Stats-package" target="_blank" href="https://npmjs.com/package/@uppy/screen-capture">@uppy/screen-capture</a></td>
+          <td>3.1.0</td>
+          <td class="Stats-size">12 KB</td>
+          <td class="
+            
+            Stats-small
+           Stats-size">
+            3.7 KB
+          </td>
+        </tr>
+      
+        
+        <tr>
+          <td><a class="Stats-package" target="_blank" href="https://npmjs.com/package/@uppy/status-bar">@uppy/status-bar</a></td>
+          <td>3.0.1</td>
+          <td class="Stats-size">17 KB</td>
+          <td class="
+            
+            Stats-small
+           Stats-size">
+            5.9 KB
+          </td>
+        </tr>
+      
+        
+        <tr>
+          <td><a class="Stats-package" target="_blank" href="https://npmjs.com/package/@uppy/thumbnail-generator">@uppy/thumbnail-generator</a></td>
+          <td>3.0.2</td>
+          <td class="Stats-size">34 KB</td>
+          <td class="
+            
+            
+           Stats-size">
+            11 KB
+          </td>
+        </tr>
+      
+        
+        <tr>
+          <td><a class="Stats-package" target="_blank" href="https://npmjs.com/package/@uppy/transloadit">@uppy/transloadit</a></td>
+          <td>3.1.1</td>
+          <td class="Stats-size">125 KB</td>
+          <td class="
+            Stats-large
+            
+           Stats-size">
+            37 KB
+          </td>
+        </tr>
+      
+        
+        <tr>
+          <td><a class="Stats-package" target="_blank" href="https://npmjs.com/package/@uppy/tus">@uppy/tus</a></td>
+          <td>3.0.5</td>
+          <td class="Stats-size">66 KB</td>
+          <td class="
+            
+            
+           Stats-size">
+            20 KB
+          </td>
+        </tr>
+      
+        
+        <tr>
+          <td><a class="Stats-package" target="_blank" href="https://npmjs.com/package/@uppy/url">@uppy/url</a></td>
+          <td>3.2.0</td>
+          <td class="Stats-size">12 KB</td>
+          <td class="
+            
+            Stats-small
+           Stats-size">
+            4.9 KB
+          </td>
+        </tr>
+      
+        
+        <tr>
+          <td><a class="Stats-package" target="_blank" href="https://npmjs.com/package/@uppy/webcam">@uppy/webcam</a></td>
+          <td>3.3.0</td>
+          <td class="Stats-size">20 KB</td>
+          <td class="
+            
+            Stats-small
+           Stats-size">
+            6.7 KB
+          </td>
+        </tr>
+      
+        
+        <tr>
+          <td><a class="Stats-package" target="_blank" href="https://npmjs.com/package/@uppy/xhr-upload">@uppy/xhr-upload</a></td>
+          <td>3.1.0</td>
+          <td class="Stats-size">28 KB</td>
+          <td class="
+            
+            Stats-small
+           Stats-size">
+            9.2 KB
+          </td>
+        </tr>
+      
+        
+        <tr>
+          <td><a class="Stats-package" target="_blank" href="https://npmjs.com/package/@uppy/drop-target">@uppy/drop-target</a></td>
+          <td>2.0.1</td>
+          <td class="Stats-size">4.5 KB</td>
+          <td class="
+            
+            Stats-small
+           Stats-size">
+            1.9 KB
+          </td>
+        </tr>
+      
+        
+        <tr>
+          <td><a class="Stats-package" target="_blank" href="https://npmjs.com/package/@uppy/store-default">@uppy/store-default</a></td>
+          <td>3.0.2</td>
+          <td class="Stats-size">732 B</td>
+          <td class="
+            
+            Stats-small
+           Stats-size">
+            448 B
+          </td>
+        </tr>
+      
+        
+        <tr>
+          <td><a class="Stats-package" target="_blank" href="https://npmjs.com/package/@uppy/store-redux">@uppy/store-redux</a></td>
+          <td>3.0.2</td>
+          <td class="Stats-size">1.3 KB</td>
+          <td class="
+            
+            Stats-small
+           Stats-size">
+            740 B
+          </td>
+        </tr>
+      
+    </tbody>
+  </table>
+</div>
+
+<h2 id="browser-support">Browser Support</h2>
+
+<p>We aim to support recent versions of Chrome, Firefox, Safari and Edge. We still provide a bundle which should work on IE11, but we are not running tests on it.</p>
+
+    
+
+    
+    <div class="footer">Caught a mistake or want to contribute to the documentation?
+       <a href="https://github.com/transloadit/uppy/blob/main/website/src/docs/plugins.md" rel="noreferrer noopener" target="_blank">Edit/fork this page directly on Github</a>!
+    </div>
+</div>
+
+        
+      </main>
+
+      <script defer data-domain="transloadit.github.io" src="https://analytics.transloadit.com/js/plausible.js"></script>
+
+
+      
+        <script src="/uppy/js/smooth-scroll.min.js"></script>
+        <!-- Place this tag in your head or just before your close body tag. -->
+        <script async defer src="https://buttons.github.io/buttons.js"></script>
+      
+      <script src="/uppy/js/common.js"></script>
+
+      <!-- Twitter follow button script -->
+      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+    </div>
+  </body>
+</html>
