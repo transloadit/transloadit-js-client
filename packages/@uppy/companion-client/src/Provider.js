@@ -27,6 +27,8 @@ function isOriginAllowed (origin, allowedOrigin) {
     .some((pattern) => pattern?.test(origin) || pattern?.test(`${origin}/`)) // allowing for trailing '/'
 }
 
+const thises = new Set()
+
 export default class Provider extends RequestClient {
   #refreshingTokenPromise
 
@@ -157,6 +159,8 @@ export default class Provider extends RequestClient {
 
   /** @protected */
   async request (...args) {
+    thises.add(this)
+    console.log('thises',thises)
     await this.#refreshingTokenPromise
 
     try {
