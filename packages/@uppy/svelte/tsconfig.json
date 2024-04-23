@@ -1,7 +1,7 @@
 {
-  "extends": "@tsconfig/svelte/tsconfig.json",
+  "extends": "../../../tsconfig.shared.json",
   "compilerOptions": {
-    "esModuleInterop": true,
+    "verbatimModuleSyntax": true,
     "sourceMap": true,
   },
   "include": ["src/**/*"],

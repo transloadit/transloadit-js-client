@@ -20,7 +20,6 @@
   },
   "devDependencies": {
     "@rollup/plugin-node-resolve": "^13.0.0",
-    "@tsconfig/svelte": "^5.0.0",
     "rollup": "^2.60.2",
     "rollup-plugin-svelte": "^7.0.0",
     "svelte": "^4.0.0",
