@@ -512,6 +512,7 @@ export default class Transloadit<
           fileRemoved: UppyFile<M, B>,
           reason?: string,
         ) => {
+          console.log('>>> FILE REMOVED')
           // If the assembly has successfully completed, we do not need these checks.
           // Otherwise we may cancel an assembly after it already succeeded
           if (assembly.status?.ok === 'ASSEMBLY_COMPLETED') {
@@ -544,6 +545,7 @@ export default class Transloadit<
         this.uppy.emit('transloadit:assembly-created', status, fileIDs)
 
         this.uppy.log(`[Transloadit] Created Assembly ${assemblyID}`)
+        console.log('>>> return assembly')
         return assembly
       })
       .catch((err) => {

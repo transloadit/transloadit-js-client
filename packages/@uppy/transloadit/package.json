@@ -38,6 +38,7 @@
     "@uppy/core": "workspace:^"
   },
   "devDependencies": {
+    "nock": "^14.0.0-beta.6",
     "vitest": "^1.2.1",
     "whatwg-fetch": "^3.6.2"
   }

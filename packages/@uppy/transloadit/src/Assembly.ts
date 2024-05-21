@@ -63,6 +63,8 @@ class TransloaditAssembly extends Emitter {
 
   connect(): void {
     this.#connectServerSentEvents()
+    // TODO: it should only poll if the SSE connection fails
+    // now we have both at the same time
     this.#beginPolling()
   }
 

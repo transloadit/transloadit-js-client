@@ -220,6 +220,8 @@ export default class Tus<M extends Meta, B extends Body> extends BasePlugin<
   #uploadLocalFile(file: UppyFile<M, B>): Promise<tus.Upload | string> {
     this.resetUploaderReferences(file.id)
 
+    console.log('tus uploadLocalFile')
+
     // Create a new tus upload
     return new Promise<tus.Upload | string>((resolve, reject) => {
       let queuedRequest: ReturnType<RateLimitedQueue['run']>
