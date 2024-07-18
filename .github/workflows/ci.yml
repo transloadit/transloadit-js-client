@@ -2,7 +2,7 @@ name: CI
 
 on:
   push:
-    branches: [main]
+    branches: [main, 5.x]
     paths-ignore:
       - '**.md'
       - 'assets/**'

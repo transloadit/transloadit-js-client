@@ -2,7 +2,7 @@ name: Linters
 
 on:
   push:
-    branches: [main]
+    branches: [main, 5.x]
     paths-ignore:
       - '.github/**'
       - '!.github/workflows/linters.yml'
