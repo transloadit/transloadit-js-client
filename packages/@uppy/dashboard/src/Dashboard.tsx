@@ -7,7 +7,6 @@ import {
   type State,
 } from '@uppy/core'
 import type { ComponentChild, VNode } from 'preact'
-import type { DefinePluginOpts } from '@uppy/core/lib/BasePlugin.js'
 import type { Body, Meta, UppyFile } from '@uppy/utils/lib/UppyFile'
 import StatusBar from '@uppy/status-bar'
 import Informer from '@uppy/informer'
@@ -118,74 +117,83 @@ export interface DashboardState<M extends Meta, B extends Body> {
   [key: string]: unknown
 }
 
-export interface DashboardModalOptions {
-  inline?: false
-  animateOpenClose?: boolean
-  browserBackButtonClose?: boolean
-  closeAfterFinish?: boolean
-  closeModalOnClickOutside?: boolean
-  disablePageScrollWhenModalOpen?: boolean
-}
-
-export interface DashboardInlineOptions {
-  inline: true
-
-  height?: string | number
-  width?: string | number
-}
-
 interface DashboardMiscOptions<M extends Meta, B extends Body>
   extends UIPluginOptions {
-  autoOpen?: 'metaEditor' | 'imageEditor' | null
-  defaultPickerIcon?: typeof defaultPickerIcon
-  disabled?: boolean
-  disableInformer?: boolean
-  disableLocalFiles?: boolean
-  disableStatusBar?: boolean
-  disableThumbnailGenerator?: boolean
-  doneButtonHandler?: null | (() => void)
-  fileManagerSelectionType?: 'files' | 'folders' | 'both'
-  hideCancelButton?: boolean
-  hidePauseResumeButton?: boolean
-  hideProgressAfterFinish?: boolean
-  hideRetryButton?: boolean
-  hideUploadButton?: boolean
-  metaFields?: MetaField[] | ((file: UppyFile<M, B>) => MetaField[])
-  nativeCameraFacingMode?: 'user' | 'environment' | ''
-  note?: string | null
-  onDragLeave?: (event: DragEvent) => void
-  onDragOver?: (event: DragEvent) => void
-  onDrop?: (event: DragEvent) => void
-  onRequestCloseModal?: () => void
-  plugins?: string[]
-  proudlyDisplayPoweredByUppy?: boolean
-  showLinkToFileUploadResult?: boolean
-  showNativePhotoCameraButton?: boolean
-  showNativeVideoCameraButton?: boolean
-  showProgressDetails?: boolean
-  showRemoveButtonAfterComplete?: boolean
-  showSelectedFiles?: boolean
-  singleFileFullScreen?: boolean
-  theme?: 'auto' | 'dark' | 'light'
-  thumbnailHeight?: number
-  thumbnailType?: string
-  thumbnailWidth?: number
-  trigger?: string | Element
-  waitForThumbnailsBeforeUpload?: boolean
+  autoOpen: 'metaEditor' | 'imageEditor' | null
+  defaultPickerIcon: typeof defaultPickerIcon
+  disabled: boolean
+  disableInformer: boolean
+  disableLocalFiles: boolean
+  disableStatusBar: boolean
+  disableThumbnailGenerator: boolean
+  fileManagerSelectionType: 'files' | 'folders' | 'both'
+  hideCancelButton: boolean
+  hidePauseResumeButton: boolean
+  hideProgressAfterFinish: boolean
+  hideRetryButton: boolean
+  hideUploadButton: boolean
+  metaFields: MetaField[] | ((file: UppyFile<M, B>) => MetaField[])
+  nativeCameraFacingMode: 'user' | 'environment' | ''
+  note: string | null
+  onDragLeave: (event: DragEvent) => void
+  onDragOver: (event: DragEvent) => void
+  onDrop: (event: DragEvent) => void
+  plugins: string[]
+  proudlyDisplayPoweredByUppy: boolean
+  showLinkToFileUploadResult: boolean
+  showNativePhotoCameraButton: boolean
+  showNativeVideoCameraButton: boolean
+  showProgressDetails: boolean
+  showRemoveButtonAfterComplete: boolean
+  showSelectedFiles: boolean
+  singleFileFullScreen: boolean
+  theme: 'auto' | 'dark' | 'light'
+  thumbnailHeight: number | undefined
+  thumbnailType: string
+  thumbnailWidth: number
+  waitForThumbnailsBeforeUpload: boolean
+
+  // Dynamic default options
+  /**
+   * `null` means "do not display a Done button",
+   * `undefined` means "I want the default behavior".
+   */
+  doneButtonHandler: null | (() => void)
+  onRequestCloseModal: () => void
 }
 
-export type DashboardOptions<
-  M extends Meta,
-  B extends Body,
-> = DashboardMiscOptions<M, B> &
-  (DashboardModalOptions | DashboardInlineOptions)
+interface DashboardModalOptions<M extends Meta, B extends Body>
+  extends DashboardMiscOptions<M, B> {
+  inline: false
+  animateOpenClose: boolean
+  browserBackButtonClose: boolean
+  closeAfterFinish: boolean
+  closeModalOnClickOutside: boolean
+  disablePageScrollWhenModalOpen: boolean
+  trigger: string | Element | null
+}
 
-const defaultOptions = {
+interface DashboardInlineOptions<M extends Meta, B extends Body>
+  extends DashboardMiscOptions<M, B> {
+  inline: true
+  height: string | number
+  width: string | number
+}
+
+type Options<M extends Meta, B extends Body> =
+  | DashboardModalOptions<M, B>
+  | DashboardInlineOptions<M, B>
+
+export type DashboardOptions<M extends Meta, B extends Body> = Partial<
+  Options<M, B>
+>
+
+const defaultOptions = <M extends Meta, B extends Body>(): DashboardMiscOptions<
+  M,
+  B
+> => ({
   target: 'body',
   metaFields: [],
-  inline: false as boolean,
-  width: 750,
-  height: 550,
   thumbnailWidth: 280,
   thumbnailType: 'image/jpeg',
   waitForThumbnailsBeforeUpload: false,
@@ -198,19 +206,14 @@ const defaultOptions = {
   hidePauseResumeButton: false,
   hideProgressAfterFinish: false,
   note: null,
-  closeModalOnClickOutside: false,
-  closeAfterFinish: false,
   singleFileFullScreen: true,
   disableStatusBar: false,
   disableInformer: false,
   disableThumbnailGenerator: false,
-  disablePageScrollWhenModalOpen: true,
-  animateOpenClose: true,
   fileManagerSelectionType: 'files',
   proudlyDisplayPoweredByUppy: true,
   showSelectedFiles: true,
   showRemoveButtonAfterComplete: false,
-  browserBackButtonClose: false,
   showNativePhotoCameraButton: false,
   showNativeVideoCameraButton: false,
   theme: 'light',
@@ -222,21 +225,45 @@ const defaultOptions = {
   // Dynamic default options, they have to be defined in the constructor (because
   // they require access to the `this` keyword), but we still want them to
   // appear in the default options so TS knows they'll be defined.
-  doneButtonHandler: undefined as any,
-  onRequestCloseModal: null as any,
-} satisfies Partial<DashboardOptions<any, any>>
+  doneButtonHandler: () => {},
+  onRequestCloseModal: () => {},
+
+  onDragLeave: () => {},
+  onDragOver: () => {},
+  onDrop: () => {},
+  thumbnailHeight: undefined,
+  plugins: [],
+})
+
+const defaultModalOptions = <
+  M extends Meta,
+  B extends Body,
+>(): DashboardModalOptions<M, B> => ({
+  ...defaultOptions(),
+  inline: false,
+  animateOpenClose: true,
+  browserBackButtonClose: false,
+  closeAfterFinish: false,
+  closeModalOnClickOutside: false,
+  disablePageScrollWhenModalOpen: true,
+  trigger: null,
+})
+
+const defaultInlineOptions = <
+  M extends Meta,
+  B extends Body,
+>(): DashboardInlineOptions<M, B> => ({
+  ...defaultOptions(),
+  inline: true,
+  width: 750,
+  height: 550,
+})
 
 /**
  * Dashboard UI with previews, metadata editing, tabs for various services and more
  */
 export default class Dashboard<M extends Meta, B extends Body> extends UIPlugin<
-  DefinePluginOpts<
-    // The options object inside the class is not the discriminated union but and intersection of the different subtypes.
-    DashboardMiscOptions<M, B> &
-      Omit<DashboardInlineOptions, 'inline'> &
-      Omit<DashboardModalOptions, 'inline'> & { inline?: boolean },
-    keyof typeof defaultOptions
-  >,
+  Options<M, B>,
   M,
   B,
   DashboardState<M, B>
@@ -266,25 +293,30 @@ export default class Dashboard<M extends Meta, B extends Body> extends UIPlugin<
     typeof setTimeout
   >
 
-  constructor(uppy: Uppy<M, B>, opts?: DashboardOptions<M, B>) {
-    const autoOpen = opts?.autoOpen ?? null
-    super(uppy, { ...defaultOptions, ...opts, autoOpen })
+  constructor(uppy: Uppy<M, B>, passedOpts: DashboardOptions<M, B> = {}) {
+    const options: Options<M, B> =
+      passedOpts.inline === false || passedOpts.inline === undefined ?
+        { ...defaultModalOptions(), ...passedOpts, inline: false }
+      : { ...defaultInlineOptions(), ...passedOpts, inline: true }
+
+    super(uppy, options)
     this.id = this.opts.id || 'Dashboard'
     this.title = 'Dashboard'
     this.type = 'orchestrator'
-
     this.defaultLocale = locale
 
     // Dynamic default options:
-    if (this.opts.doneButtonHandler === undefined) {
-      // `null` means "do not display a Done button", while `undefined` means
-      // "I want the default behavior". For this reason, we need to differentiate `null` and `undefined`.
+    if (passedOpts.doneButtonHandler === undefined) {
       this.opts.doneButtonHandler = () => {
         this.uppy.clear()
         this.requestCloseModal()
       }
     }
-    this.opts.onRequestCloseModal ??= () => this.closeModal()
+    if (passedOpts.onRequestCloseModal === undefined) {
+      this.opts.onRequestCloseModal = () => {
+        this.closeModal()
+      }
+    }
 
     this.i18nInit()
   }
@@ -429,6 +461,8 @@ export default class Dashboard<M extends Meta, B extends Body> extends UIPlugin<
   }
 
   openModal = (): Promise<void> => {
+    if (this.opts.inline) return Promise.resolve()
+
     const { promise, resolve } = createPromise<void>()
     // save scroll position
     this.savedScrollPosition = window.pageYOffset
@@ -468,6 +502,8 @@ export default class Dashboard<M extends Meta, B extends Body> extends UIPlugin<
   }
 
   closeModal = (opts?: { manualClose: boolean }): void | Promise<void> => {
+    if (this.opts.inline) return Promise.resolve()
+
     // Whether the modal is being closed by the user (`true`) or by other means (e.g. browser back button)
     const manualClose = opts?.manualClose ?? true
 
@@ -753,6 +789,7 @@ export default class Dashboard<M extends Meta, B extends Body> extends UIPlugin<
   }
 
   private handleClickOutside = () => {
+    if (this.opts.inline) return
     if (this.opts.closeModalOnClickOutside) this.requestCloseModal()
   }
 
@@ -828,7 +865,7 @@ export default class Dashboard<M extends Meta, B extends Body> extends UIPlugin<
 
     this.setPluginState({ isDraggingOver: true })
 
-    this.opts.onDragOver?.(event)
+    this.opts.onDragOver(event)
   }
 
   private handleDragLeave = (event: DragEvent) => {
@@ -837,7 +874,7 @@ export default class Dashboard<M extends Meta, B extends Body> extends UIPlugin<
 
     this.setPluginState({ isDraggingOver: false })
 
-    this.opts.onDragLeave?.(event)
+    this.opts.onDragLeave(event)
   }
 
   private handleDrop = async (event: DragEvent) => {
@@ -876,7 +913,7 @@ export default class Dashboard<M extends Meta, B extends Body> extends UIPlugin<
       this.addFiles(files)
     }
 
-    this.opts.onDrop?.(event)
+    this.opts.onDrop(event)
   }
 
   private handleRequestThumbnail = (file: UppyFile<M, B>) => {
@@ -922,6 +959,7 @@ export default class Dashboard<M extends Meta, B extends Body> extends UIPlugin<
   }
 
   private handleComplete = ({ failed }: UploadResult<M, B>) => {
+    if (this.opts.inline) return
     if (this.opts.closeAfterFinish && !failed?.length) {
       // All uploads are done
       this.requestCloseModal()
@@ -970,10 +1008,10 @@ export default class Dashboard<M extends Meta, B extends Body> extends UIPlugin<
 
   initEvents = (): void => {
     // Modal open button
-    if (this.opts.trigger && !this.opts.inline) {
-      const showModalTrigger = findAllDOMElements(this.opts.trigger)
-      if (showModalTrigger) {
-        showModalTrigger.forEach((trigger) =>
+    if (!this.opts.inline && this.opts.trigger) {
+      const triggerEls = findAllDOMElements(this.opts.trigger)
+      if (triggerEls) {
+        triggerEls.forEach((trigger) =>
           trigger.addEventListener('click', this.openModal),
         )
       } else {
@@ -1011,11 +1049,13 @@ export default class Dashboard<M extends Meta, B extends Body> extends UIPlugin<
   }
 
   removeEvents = (): void => {
-    const showModalTrigger = findAllDOMElements(this.opts.trigger)
-    if (!this.opts.inline && showModalTrigger) {
-      showModalTrigger.forEach((trigger) =>
-        trigger.removeEventListener('click', this.openModal),
-      )
+    if (!this.opts.inline && this.opts.trigger) {
+      const triggerEls = findAllDOMElements(this.opts.trigger)
+      if (triggerEls) {
+        triggerEls.forEach((trigger) =>
+          trigger.removeEventListener('click', this.openModal),
+        )
+      }
     }
 
     this.stopListeningToResize()
@@ -1202,7 +1242,7 @@ export default class Dashboard<M extends Meta, B extends Body> extends UIPlugin<
       saveFileEditor: this.saveFileEditor,
       closeFileEditor: this.closeFileEditor,
       disableInteractiveElements: this.disableInteractiveElements,
-      animateOpenClose: this.opts.animateOpenClose,
+      animateOpenClose: !this.opts.inline && this.opts.animateOpenClose,
       isClosing: pluginState.isClosing,
       progressindicators,
       editors,
@@ -1231,8 +1271,9 @@ export default class Dashboard<M extends Meta, B extends Body> extends UIPlugin<
       saveFileCard: this.saveFileCard,
       openFileEditor: this.openFileEditor,
       canEditFile: this.canEditFile,
-      width: this.opts.width,
-      height: this.opts.height,
+      // TODO is this sensible
+      width: (this.opts.inline && this.opts.width) || 0,
+      height: (this.opts.inline && this.opts.height) || 0,
       showLinkToFileUploadResult: this.opts.showLinkToFileUploadResult,
       fileManagerSelectionType: this.opts.fileManagerSelectionType,
       proudlyDisplayPoweredByUppy: this.opts.proudlyDisplayPoweredByUppy,
@@ -1264,7 +1305,7 @@ export default class Dashboard<M extends Meta, B extends Body> extends UIPlugin<
   }
 
   #addSpecifiedPluginsFromOptions = () => {
-    const plugins = this.opts.plugins || []
+    const { plugins } = this.opts
 
     plugins.forEach((pluginID) => {
       const plugin = this.uppy.getPlugin(pluginID)
@@ -1344,7 +1385,7 @@ export default class Dashboard<M extends Meta, B extends Body> extends UIPlugin<
     }
   }
 
-  setOptions(opts: Partial<DashboardOptions<M, B>>) {
+  setOptions(opts: DashboardOptions<M, B>) {
     super.setOptions(opts)
     this.uppy
       .getPlugin(this.#getStatusBarId())
@@ -1383,17 +1424,11 @@ export default class Dashboard<M extends Meta, B extends Body> extends UIPlugin<
       isDraggingOver: false,
     })
 
-    const { inline, closeAfterFinish } = this.opts
-    if (inline && closeAfterFinish) {
-      throw new Error(
-        '[Dashboard] `closeAfterFinish: true` cannot be used on an inline Dashboard, because an inline Dashboard cannot be closed at all. Either set `inline: false`, or disable the `closeAfterFinish` option.',
-      )
-    }
-
     const { allowMultipleUploads, allowMultipleUploadBatches } = this.uppy.opts
     if (
       (allowMultipleUploads || allowMultipleUploadBatches) &&
-      closeAfterFinish
+      !this.opts.inline &&
+      this.opts.closeAfterFinish
     ) {
       this.uppy.log(
         '[Dashboard] When using `closeAfterFinish`, we recommended setting the `allowMultipleUploadBatches` option to `false` in the Uppy constructor. See https://uppy.io/docs/uppy/#allowMultipleUploads-true',
@@ -1470,7 +1505,7 @@ export default class Dashboard<M extends Meta, B extends Body> extends UIPlugin<
       if (thumbnail) this.uppy.removePlugin(thumbnail)
     }
 
-    const plugins = this.opts.plugins || []
+    const { plugins } = this.opts
     plugins.forEach((pluginID) => {
       const plugin = this.uppy.getPlugin(pluginID)
       if (plugin) (plugin as any).unmount()
@@ -1480,7 +1515,7 @@ export default class Dashboard<M extends Meta, B extends Body> extends UIPlugin<
       this.darkModeMediaQuery?.removeListener(this.handleSystemDarkModeChange)
     }
 
-    if (this.opts.disablePageScrollWhenModalOpen) {
+    if (!this.opts.inline && this.opts.disablePageScrollWhenModalOpen) {
       document.body.classList.remove('uppy-Dashboard-isFixed')
     }
 
